@@ -368,11 +368,11 @@
   transition: ease 1s;
 }
 
-.doc .imageblock img:active,
+/* .doc .imageblock img:active,
 .doc .image > img:active {
   transform: scale(1.8) translateX(5rem);
   z-index: 11;
-}
+} */
 
 .doc .videoblock iframe {
   width: 100%;

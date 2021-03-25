@@ -4,5 +4,5 @@ Welcome to {project} internal documentation.
 
 As of {localdate}, work to build this site is [.put]#in-flight#. Please *bear* with us.
 
-image::bear.png[width=50%]
+image::bear.png[width=50%,role="zoom"]
 
