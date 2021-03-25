@@ -1,5 +1,5 @@
 {
-  "index_name": "major-tom-docs",
+  "index_name": "cloud_internal_docs",
   "start_urls": [
     {
       "url": "https://fervent-poitras-ccc684.netlify.app/",
@@ -14,10 +14,11 @@
       "selector": "//nav[@class='crumbs']//li[@class='crumb'][last()-1]",
       "type": "xpath",
       "global": true,
-      "default_value": "Magnolia Services Cloud Docs"
+      "default_value": "Docs"
     },
     "lvl1": ".doc h1",
     "lvl2": ".doc h2",
-    "lvl3": ".doc h3"
+    "lvl3": ".doc h3",
+    "lvl4": ".doc h4"
   }
 }
