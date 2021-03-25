@@ -6,3 +6,17 @@ As of {localdate}, work to build this site is [.put]#in-flight#. Please *bear* w
 
 image::bear.png[width=50%,role="zoom"]
 
+== Use kroki for diagrams
+
+.User login flow
+[mermaid,role="zoom"]
+....
+sequenceDiagram
+    User->>+Cockpit: Calls the protected URL.
+    Cockpit->>+SSO module: Magnolia detects access request.
+    SSO module->>+IAM server: Redirect to IAM.
+    IAM server->>+User: Request credentials.
+    User->>+IAM server: Send credentials (correct).
+    IAM server->>+User: Token with scope issued.
+    User->>+Cockpit: Successful login.
+....
