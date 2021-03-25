@@ -1,0 +1,12 @@
+.DS_Store
+*.tmp
+local-build
+local-playbook.yml
+/node_modules/
+/workspace/
+.terraform/
+terraform.tfstate
+terraform.tfstate.backup
+.idea
+debug.log
+/tmp/

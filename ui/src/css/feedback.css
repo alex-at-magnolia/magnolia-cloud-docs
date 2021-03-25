@@ -1,0 +1,104 @@
+/* #feedback {
+display: none;
+} */
+
+/* @media only screen and (min-width: 1000px) { */
+#feedback {
+  height: 3.5rem;
+  width: 3.5rem;
+  position: fixed;
+  top: 88%;
+  right: 2.65rem;
+  z-index: 999;
+  margin: -2rem;
+  margin-left: 0.5rem;
+  /* transform: rotate(-90deg);
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg); */
+  /* filter: progid:dximagetransform.microsoft.basicimage(rotation=3); */
+  padding-top: 12px;
+  padding-left: 8px;
+  display: block;
+  background: var(--color-primary-medium-green);
+  border-radius: 50%;
+  /* border-radius: 8px; */
+  font-family: inherit;
+  font-size: 1.75rem;
+  font-weight: bolder;
+  color: whitesmoke;
+  /* border: 1px solid whitesmoke; */
+  transition: all 0.4s ease-in-out;
+  box-shadow: 3px 5px 7px -3px var(--color-primary-dark-green);
+}
+
+#feedback a {
+  text-decoration: none;
+  font-weight: 300;
+  color: whitesmoke;
+  padding: 10px;
+}
+
+/* #feedback span {
+  font-size: 1.1rem;
+} */
+
+#feedback:hover {
+  background-color: var(--color-primary-green);
+  /* box-shadow: 3px 5px 7px -3px var(--color-brand-dark-green);
+  border: transparent;  */
+  /* transform: rotate(-90deg); */
+}
+/* } */
+
+/* #atlwdg-trigger.atlwdg-trigger {
+  display: none;
+  background: linear-gradient(to right, var(--color-brand-pink) 0%, var(--color-brand-orange) 100%);
+  border: 0;
+  border-radius: 3px 3px 0 0;
+  box-shadow: -2px -4px 30px rgba(0, 0, 0, 0.25);
+  color: #fff !important;
+  font-family: inherit;
+  font-size: 1rem;
+  line-height: 1;
+  padding: 0.6875rem 1.5rem 0.5625rem;
+  right: var(--width-container-gutter);
+  z-index: var(--z-index-feedback);
+}
+
+.atlwdg-trigger::after {
+  content: "?";
+}
+
+@media screen and (min-width: 769px) {
+  #atlwdg-trigger.atlwdg-trigger {
+    display: block;
+  }
+}
+
+#atlwdg-container.atlwdg-popup {
+  width: 769px;
+} */
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: whitesmoke;
+  color: var(--color-primary-green);
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  top: -5px;
+  right: 105%;
+  font-size: smaller;
+}
+
+.tooltiptext {
+  transition: 0.2 ease;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}

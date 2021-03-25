@@ -1,0 +1,16 @@
+name: cloud-service
+title: Magnolia Services Cloud Internal Documentation
+version: master
+nav:
+- modules/ROOT/nav.adoc
+
+
+asciidoc:
+  attributes:
+    ui: Cockpit
+    project: Magnolia Cloud Service
+    product: Magnolia CMS
+    company: Magnolia
+    solution-type: SaaS
+    hosting-country: Switzerland
+    magnolia-latest-version: 6.2.6

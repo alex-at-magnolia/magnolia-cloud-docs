@@ -1,0 +1,42 @@
+site:
+  title: Magnolia Cloud Service Internal Documentation
+  # # the 404 page and sitemap files only get generated when the url property is set
+  # url: https://docs.magnolia-platform.com/
+  start_page: cloud-service:ROOT:index.adoc
+  robots: allow
+
+content:
+  sources:
+  - url: .
+    start_path: home
+    branches: HEAD
+
+# urls:
+#   html_extension_style: indexify
+
+ui:
+  bundle:
+    url: ./ui/build/ui-bundle.zip
+    snapshot: true
+  supplemental_files:
+  - path: .nojekyll
+  - path: ui.yml
+    contents: "static_files: [ .nojekyll ]"
+
+# output:
+#   dir: ./public
+
+# Global asciidoc attributes here
+asciidoc:
+  attributes:
+    ui: Cockpit
+    project: Magnolia Cloud Service
+    product: Magnolia CMS
+    company: Magnolia
+    solution-type: SaaS
+    hosting-country: Switzerland
+    magnolia-latest-version: 6.2.6
+    kroki-fetch-diagram: true
+  extensions:
+  - ./lib/tabs-block.js
+  - asciidoctor-kroki
