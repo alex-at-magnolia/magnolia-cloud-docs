@@ -8,7 +8,7 @@ image::bear.png[width=50%,role="zoom"]
 
 == Use kroki for diagrams
 
-.User login flow
+.User login flow example (from MT)
 [mermaid,role="zoom"]
 ....
 sequenceDiagram
