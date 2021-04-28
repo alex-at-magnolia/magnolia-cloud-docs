@@ -1,0 +1,6 @@
+region = "eu-central-1"
+route53_hosted_zone = "beta.de.magnolia-cloud.com"
+site_domain = "docs.beta.de.magnolia-cloud.com"
+main_domain = "*.beta.de.magnolia-cloud.com"
+ssl_cert_domain = "docs.beta.de.magnolia-cloud.com"
+index_document = "index.html"

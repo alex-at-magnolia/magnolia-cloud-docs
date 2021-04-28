@@ -1,12 +1,11 @@
 {
   "name": "antora-site",
   "description": "Magnolia CMS Documentation Site",
-  "homepage": "https://documentation.magnolia-cms.com",
+  "homepage": "https://docs.beta.de.magnolia-cloud.com",
   "private": true,
   "scripts": {
     "gulp": "gulp",
-    "swagger-cli": "swagger-cli",
-    "preinstall": "git config core.hooksPath hooks"
+    "swagger-cli": "swagger-cli"  
   },
   "dependencies": {
     "@antora/cli": "2.3.3",
