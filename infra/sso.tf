@@ -33,7 +33,7 @@ resource "okta_app_oauth" "sso_app" {
   type                       = "web"
   grant_types                = ["authorization_code"]
   # redirect_uris              = ["https://${aws_cloudfront_distribution.s3_distribution.domain_name}"] site_domain
-  redirect_uris              = ["https://${aws_cloudfront_distribution.s3_distribution.domain_name}"]
+  redirect_uris              = ["https://${var.site_domain}"]
   response_types             = ["code"]
   issuer_mode                = "ORG_URL"
   lifecycle {
