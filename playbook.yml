@@ -8,7 +8,7 @@ site:
 content:
   sources:
   - url: https://git.magnolia-cms.com/scm/cloud/magnolia-cloud.git
-    branches: [MOTION-316-existingInternalDocs]
+    branches: [master]
     start_path: internal-docs
 
 # urls:
