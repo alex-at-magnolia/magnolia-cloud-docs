@@ -32,6 +32,7 @@ resource "okta_app_oauth" "sso_app" {
   label                      = "Authorisation for Internal documentation"
   type                       = "web"
   grant_types                = ["authorization_code"]
+  # redirect_uris              = ["https://${aws_cloudfront_distribution.s3_distribution.domain_name}"] site_domain
   redirect_uris              = ["https://${aws_cloudfront_distribution.s3_distribution.domain_name}"]
   response_types             = ["code"]
   issuer_mode                = "ORG_URL"

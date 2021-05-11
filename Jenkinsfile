@@ -20,7 +20,7 @@
             when {
                 beforeAgent true
                 anyOf {
-                    branch 'CLOUD-270'
+                    branch 'master'
                     changeRequest()
                 }
             }
@@ -55,7 +55,7 @@
             when {
                 beforeAgent true
                 anyOf {
-                    branch 'CLOUD-270'
+                    branch 'master'
                     changeRequest()
                 }
             }
@@ -88,7 +88,7 @@
             when {
                 beforeAgent true
                 anyOf {
-                    branch 'CLOUD-270'
+                    branch 'master'
                     changeRequest()
                 }
             }
@@ -119,7 +119,7 @@
         stage('Deploy Infra in Production') {
             when {
                 beforeAgent true
-                branch 'CLOUD-270'
+                branch 'master'
             }
 
             agent {
@@ -147,7 +147,7 @@
         stage('Deploy Antora site to S3 in Production') {
             when {
                 beforeAgent true
-                branch 'CLOUD-270'
+                branch 'master'
             }
 
             agent {
