@@ -128,6 +128,12 @@ resource "aws_cloudfront_distribution" "s3_distribution" {
     cached_methods   = ["GET", "HEAD"]
     target_origin_id = local.s3_origin_id
 
+    # lambda_function_association {
+    #   event_type   = "viewer-request"
+    #   # lambda_arn = "${aws_lambda_function.lambda_edge.qualified_arn}"
+    #   include_body = false
+    # }
+
     forwarded_values {
       query_string = false
 
@@ -169,3 +175,32 @@ resource "aws_cloudfront_distribution" "s3_distribution" {
     minimum_protocol_version = "TLSv1.2_2018"
   }
 }
+
+#Lambda@edge
+# resource "aws_iam_role" "lambda_edge_exec" {
+#   name = "Internal docs lambda permissions"
+#   assume_role_policy = <<EOF
+# {
+#   "Version": "2012-10-17",
+#   "Statement": [
+#     {
+#       "Action": "sts:AssumeRole",
+#       "Principal": {
+#         "Service": ["lambda.amazonaws.com", "edgelambda.amazonaws.com"]
+#       },
+#       "Effect": "Allow"
+#     }
+#   ]
+# }
+# EOF
+# }
+
+# resource "aws_lambda_function" "lambda_edge" { 
+#   provider = aws.us_east_1
+#   publish  = true
+#   filename      = "lambda.zip"
+#   function_name = "auth_internal_docs"
+#   role          = aws_iam_role.lambda_edge_exec.arn
+#   handler       = "index.handler"
+#   runtime = "nodejs14.x"
+# }

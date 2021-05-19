@@ -13,27 +13,11 @@ data "okta_auth_server" "sso_auth_server" {
   name = local.auth_server_name
 }
 
-# resource "okta_app_oauth" "sso_app" {
-#   for_each = var.deployments
-
-#   label          = each.value
-#   type           = "web"
-#   grant_types    = ["authorization_code"]
-#   redirect_uris  = ["https://author-${each.value}.${var.base_domain}/.auth?client_name=OidcClient"]
-#   response_types = ["code"]
-#   issuer_mode    = "ORG_URL"
-
-#   lifecycle {
-#     ignore_changes = [groups]
-#   }
-# }
-
 resource "okta_app_oauth" "sso_app" {
   label                      = "Authorisation for Internal documentation"
   type                       = "web"
   grant_types                = ["authorization_code"]
-  # redirect_uris              = ["https://${aws_cloudfront_distribution.s3_distribution.domain_name}"] site_domain
-  redirect_uris              = ["https://${var.site_domain}"]
+  redirect_uris              = ["https://${aws_cloudfront_distribution.s3_distribution.domain_name}"]
   response_types             = ["code"]
   issuer_mode                = "ORG_URL"
   lifecycle {
