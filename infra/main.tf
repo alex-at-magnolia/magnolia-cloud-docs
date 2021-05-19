@@ -14,7 +14,7 @@ provider "aws" {
 
 provider "aws" {
   region = "us-east-1"
-  alias = "us-east-1"
+  alias  = "us-east-1"
 }
 
 resource "aws_s3_bucket" "bucket" {
@@ -66,13 +66,13 @@ POLICY
 resource "aws_acm_certificate" "cert" {
   domain_name       = var.main_domain
   validation_method = "DNS"
-  provider = aws.us-east-1
+  provider          = aws.us-east-1
 }
 
 resource "aws_acm_certificate_validation" "cert_validation" {
   certificate_arn         = aws_acm_certificate.cert.arn
   validation_record_fqdns = [aws_route53_record.cert_validation.fqdn]
-  provider = aws.us-east-1
+  provider                = aws.us-east-1
 }
 
 data "aws_route53_zone" "r53_zone" {
@@ -93,8 +93,8 @@ resource "aws_route53_record" "r53_records" {
 
   alias {
     evaluate_target_health = false
-    name    = aws_cloudfront_distribution.s3_distribution.domain_name
-    zone_id = aws_cloudfront_distribution.s3_distribution.hosted_zone_id
+    name                   = aws_cloudfront_distribution.s3_distribution.domain_name
+    zone_id                = aws_cloudfront_distribution.s3_distribution.hosted_zone_id
   }
   zone_id = data.aws_route53_zone.r53_zone.zone_id
 }
@@ -108,7 +108,14 @@ locals {
   s3_origin_id = "${var.site_domain}-s3-origin"
 }
 
+data "aws_cloudformation_export" "FunctionArn" {
+//  depends_on = [aws_cloudformation_stack.okta-cloudfront-auth-docs-internal]
+  provider = aws.us-east-1
+  name = "okta-cloudfront-auth-docs-internal:CloudFrontAuthFunctionVersion"
+}
+
 resource "aws_cloudfront_distribution" "s3_distribution" {
+//  depends_on = [aws_cloudformation_stack.okta-cloudfront-auth-docs-internal]
   origin {
     domain_name = aws_s3_bucket.bucket.bucket_regional_domain_name
     origin_id   = local.s3_origin_id
@@ -128,11 +135,13 @@ resource "aws_cloudfront_distribution" "s3_distribution" {
     cached_methods   = ["GET", "HEAD"]
     target_origin_id = local.s3_origin_id
 
-    # lambda_function_association {
-    #   event_type   = "viewer-request"
-    #   # lambda_arn = "${aws_lambda_function.lambda_edge.qualified_arn}"
-    #   include_body = false
-    # }
+    lambda_function_association {
+      event_type   = "viewer-request"
+      lambda_arn   = data.aws_cloudformation_export.FunctionArn.value
+      // "arn:aws:lambda:us-east-1:024110277478:function:okta-cloudfront-auth-docs-i-CloudFrontAuthFunction-u6m7KjC79amw:1"
+      // aws_cloudformation_stack.okta-cloudfront-auth-docs-internal.outputs["CloudFrontAuthFunctionVersion"]
+      include_body = false
+    }
 
     forwarded_values {
       query_string = false
@@ -176,6 +185,60 @@ resource "aws_cloudfront_distribution" "s3_distribution" {
   }
 }
 
+#Okta Auth via CloudFormation Stack
+resource "aws_cloudformation_stack" "okta-cloudfront-auth-docs-internal" {
+  name          = "okta-cloudfront-auth-docs-internal"
+  capabilities  = ["CAPABILITY_IAM"]
+  template_body = <<STACK
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: SAM configuration for cloudfront-auth function
+Resources:
+  CloudFrontAuthFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: s3://internal-doc-sam/54a7ff20b2ae380aae9e31c8ed801f36
+      Role:
+        Fn::GetAtt:
+        - LambdaEdgeFunctionRole
+        - Arn
+      Runtime: nodejs10.x
+      Handler: index.handler
+      Timeout: 5
+      AutoPublishAlias: LIVE
+  LambdaEdgeFunctionRole:
+    Type: AWS::IAM::Role
+    Properties:
+      Path: /
+      ManagedPolicyArns:
+      - arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+        - Sid: AllowLambdaServiceToAssumeRole
+          Effect: Allow
+          Action:
+          - sts:AssumeRole
+          Principal:
+            Service:
+            - lambda.amazonaws.com
+            - edgelambda.amazonaws.com
+Outputs:
+  CloudFrontAuthFunction:
+    Description: Lambda@Edge CloudFront Auth Function ARN
+    Value:
+      Fn::GetAtt:
+      - CloudFrontAuthFunction
+      - Arn
+  CloudFrontAuthFunctionVersion:
+    Description: Lambda@Edge CloudFront Auth Function ARN with Version
+    Value:
+      Ref: CloudFrontAuthFunction.Version
+    Export:
+      Name: !Join [ ":", [ !Ref "AWS::StackName", CloudFrontAuthFunctionVersion ] ]
+STACK
+}
+
 #Lambda@edge
 # resource "aws_iam_role" "lambda_edge_exec" {
 #   name = "Internal docs lambda permissions"
@@ -195,7 +258,7 @@ resource "aws_cloudfront_distribution" "s3_distribution" {
 # EOF
 # }
 
-# resource "aws_lambda_function" "lambda_edge" { 
+# resource "aws_lambda_function" "lambda_edge" {
 #   provider = aws.us_east_1
 #   publish  = true
 #   filename      = "lambda.zip"

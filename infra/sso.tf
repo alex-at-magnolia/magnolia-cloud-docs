@@ -14,12 +14,13 @@ data "okta_auth_server" "sso_auth_server" {
 }
 
 resource "okta_app_oauth" "sso_app" {
-  label                      = "Authorisation for Internal documentation"
-  type                       = "web"
-  grant_types                = ["authorization_code"]
-  redirect_uris              = ["https://${aws_cloudfront_distribution.s3_distribution.domain_name}"]
-  response_types             = ["code"]
-  issuer_mode                = "ORG_URL"
+  label          = "Authorisation for Internal documentation"
+  type           = "web"
+  grant_types    = ["authorization_code"]
+  login_uri      = "https://${aws_cloudfront_distribution.s3_distribution.domain_name}"
+  redirect_uris  = ["https://${aws_cloudfront_distribution.s3_distribution.domain_name}/_callback"]
+  response_types = ["code"]
+  issuer_mode    = "ORG_URL"
   lifecycle {
     ignore_changes = [groups]
   }
