@@ -30,31 +30,36 @@ resource "aws_s3_bucket" "bucket" {
 resource "aws_s3_bucket_public_access_block" "public_access_block" {
   bucket = aws_s3_bucket.bucket.id
 
-  block_public_acls       = false
-  block_public_policy     = false
-  restrict_public_buckets = false
-  ignore_public_acls      = false
+  block_public_acls       = true
+  block_public_policy     = true
+  restrict_public_buckets = true
+  ignore_public_acls      = true
 }
 
 resource "aws_s3_bucket_policy" "bucket_policy" {
   bucket = aws_s3_bucket.bucket.id
-
+# aws_cloudfront_origin_access_identity.identity.iam_arn
   policy = <<POLICY
 {
     "Version": "2012-10-17",
     "Statement": [
         {
-            "Sid": "PublicReadGetObject",
+            "Sid": "2",
             "Effect": "Allow",
-            "Principal": "*",
-            "Action": [
-              "s3:GetObject",
-              "s3:ListBucket"
-            ],
-            "Resource": [
-              "arn:aws:s3:::${var.site_domain}/*",
-              "arn:aws:s3:::${var.site_domain}"
-            ]
+            "Principal": {
+                "AWS": "AIDAI6577Z7YJ7JIN7P3W"
+            },
+            "Action": "s3:GetObject",
+            "Resource": "arn:aws:s3:::docs.beta.de.magnolia-cloud.com/*"
+        },
+        {
+            "Sid": "2",
+            "Effect": "Allow",
+            "Principal": {
+                "AWS": "arn:aws:iam::cloudfront:user/CloudFront Origin Access Identity ELSJPNAICCW8D"
+            },
+            "Action": "s3:GetObject",
+            "Resource": "arn:aws:s3:::docs.beta.de.magnolia-cloud.com/*"
         }
     ]
 }
@@ -78,8 +83,7 @@ resource "aws_acm_certificate_validation" "cert_validation" {
 data "aws_route53_zone" "r53_zone" {
   name = var.route53_hosted_zone
 }
-# docs.beta.de.magnolia-cloud.com
-# name    = tolist(aws_acm_certificate.cert.domain_validation_options)[0].resource_record_name
+
 resource "aws_route53_record" "cert_validation" {
   name    = tolist(aws_acm_certificate.cert.domain_validation_options)[0].resource_record_name
   type    = tolist(aws_acm_certificate.cert.domain_validation_options)[0].resource_record_type
@@ -101,21 +105,14 @@ resource "aws_route53_record" "r53_records" {
 
 
 resource "aws_cloudfront_origin_access_identity" "identity" {
-  comment = "Origin access identity for docu web in S3 bucket ${var.site_domain}"
+  comment = "docs.internal-okta"
 }
 
 locals {
-  s3_origin_id = "${var.site_domain}-s3-origin"
-}
-
-data "aws_cloudformation_export" "FunctionArn" {
-//  depends_on = [aws_cloudformation_stack.okta-cloudfront-auth-docs-internal]
-  provider = aws.us-east-1
-  name = "okta-cloudfront-auth-docs-internal:CloudFrontAuthFunctionVersion"
+  s3_origin_id = "InternalDocsAuth"
 }
 
 resource "aws_cloudfront_distribution" "s3_distribution" {
-//  depends_on = [aws_cloudformation_stack.okta-cloudfront-auth-docs-internal]
   origin {
     domain_name = aws_s3_bucket.bucket.bucket_regional_domain_name
     origin_id   = local.s3_origin_id
@@ -131,16 +128,14 @@ resource "aws_cloudfront_distribution" "s3_distribution" {
   default_root_object = var.index_document
 
   default_cache_behavior {
-    allowed_methods  = ["DELETE", "GET", "HEAD", "OPTIONS", "PATCH", "POST", "PUT"]
+    allowed_methods  = ["GET", "HEAD"]
     cached_methods   = ["GET", "HEAD"]
     target_origin_id = local.s3_origin_id
 
     lambda_function_association {
       event_type   = "viewer-request"
-      lambda_arn   = data.aws_cloudformation_export.FunctionArn.value
-      // "arn:aws:lambda:us-east-1:024110277478:function:okta-cloudfront-auth-docs-i-CloudFrontAuthFunction-u6m7KjC79amw:1"
-      // aws_cloudformation_stack.okta-cloudfront-auth-docs-internal.outputs["CloudFrontAuthFunctionVersion"]
-      include_body = false
+      lambda_arn = aws_lambda_function.lambda_edge.qualified_arn
+      include_body = true
     }
 
     forwarded_values {
@@ -183,87 +178,63 @@ resource "aws_cloudfront_distribution" "s3_distribution" {
     ssl_support_method       = "sni-only"
     minimum_protocol_version = "TLSv1.2_2018"
   }
+
+  logging_config {
+    bucket          = "internal-docs-logs.s3.amazonaws.com"
+    include_cookies = false
+    prefix          = "cloudfront/"
+  }
 }
 
-#Okta Auth via CloudFormation Stack
-resource "aws_cloudformation_stack" "okta-cloudfront-auth-docs-internal" {
-  name          = "okta-cloudfront-auth-docs-internal"
-  capabilities  = ["CAPABILITY_IAM"]
-  template_body = <<STACK
-AWSTemplateFormatVersion: '2010-09-09'
-Transform: AWS::Serverless-2016-10-31
-Description: SAM configuration for cloudfront-auth function
-Resources:
-  CloudFrontAuthFunction:
-    Type: AWS::Serverless::Function
-    Properties:
-      CodeUri: s3://internal-doc-sam/54a7ff20b2ae380aae9e31c8ed801f36
-      Role:
-        Fn::GetAtt:
-        - LambdaEdgeFunctionRole
-        - Arn
-      Runtime: nodejs10.x
-      Handler: index.handler
-      Timeout: 5
-      AutoPublishAlias: LIVE
-  LambdaEdgeFunctionRole:
-    Type: AWS::IAM::Role
-    Properties:
-      Path: /
-      ManagedPolicyArns:
-      - arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole
-      AssumeRolePolicyDocument:
-        Version: '2012-10-17'
-        Statement:
-        - Sid: AllowLambdaServiceToAssumeRole
-          Effect: Allow
-          Action:
-          - sts:AssumeRole
-          Principal:
-            Service:
-            - lambda.amazonaws.com
-            - edgelambda.amazonaws.com
-Outputs:
-  CloudFrontAuthFunction:
-    Description: Lambda@Edge CloudFront Auth Function ARN
-    Value:
-      Fn::GetAtt:
-      - CloudFrontAuthFunction
-      - Arn
-  CloudFrontAuthFunctionVersion:
-    Description: Lambda@Edge CloudFront Auth Function ARN with Version
-    Value:
-      Ref: CloudFrontAuthFunction.Version
-    Export:
-      Name: !Join [ ":", [ !Ref "AWS::StackName", CloudFrontAuthFunctionVersion ] ]
-STACK
+# Lambda@edge
+resource "aws_iam_role" "lambda_edge_exec" {
+  name = "Internal-docs-lambda"
+  assume_role_policy = <<EOF
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Action": "sts:AssumeRole",
+      "Principal": {
+        "Service": ["lambda.amazonaws.com", "edgelambda.amazonaws.com"]
+      },
+      "Effect": "Allow"
+    }
+  ]
+}
+EOF
 }
 
-#Lambda@edge
-# resource "aws_iam_role" "lambda_edge_exec" {
-#   name = "Internal docs lambda permissions"
-#   assume_role_policy = <<EOF
-# {
-#   "Version": "2012-10-17",
-#   "Statement": [
-#     {
-#       "Action": "sts:AssumeRole",
-#       "Principal": {
-#         "Service": ["lambda.amazonaws.com", "edgelambda.amazonaws.com"]
-#       },
-#       "Effect": "Allow"
-#     }
-#   ]
-# }
-# EOF
-# }
+resource "aws_iam_role_policy" "lambda_edge_exec_policy" {
+  name = "Internal-docs-lambda-policy"
+  role = aws_iam_role.lambda_edge_exec.id
+  policy = <<EOF
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "secretsmanager:GetResourcePolicy",
+                "secretsmanager:GetSecretValue",
+                "secretsmanager:DescribeSecret",
+                "secretsmanager:ListSecretVersionIds",
+                "secretsmanager:ListSecrets"
+            ],
+            "Resource": [
+                "arn:aws:secretsmanager:us-east-1:024110277478:secret:internal-docs-password-m2L2h0"
+            ]
+        }
+    ]
+}
+EOF
+}
 
-# resource "aws_lambda_function" "lambda_edge" {
-#   provider = aws.us_east_1
-#   publish  = true
-#   filename      = "lambda.zip"
-#   function_name = "auth_internal_docs"
-#   role          = aws_iam_role.lambda_edge_exec.arn
-#   handler       = "index.handler"
-#   runtime = "nodejs14.x"
-# }
+resource "aws_lambda_function" "lambda_edge" { 
+  publish  = true
+  filename      = "lambda.zip"
+  function_name = "auth_internal_docs"
+  role          = aws_iam_role.lambda_edge_exec.arn
+  handler       = "index.handler"
+  runtime = "nodejs14.x"
+}

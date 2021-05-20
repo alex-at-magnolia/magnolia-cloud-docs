@@ -41,6 +41,9 @@
                 script {
                     withAWS(region: "${env.AWS_REGION}", credentials: "${env.MAGNOLIA_CLOUD_STAGING_CREDENTIALS_ID}") {
                         dir('infra/') {
+                            // Build lambda
+                            sh "zip --junk-paths lambda.zip auth_lambda/*"
+                            // Apply changes
                             sh "aws iam get-user"
                             sh "terraform init -reconfigure -backend-config='bucket=magnolia-internal-docs-infra-tfstate'"
                             sh "terraform plan -var-file=prod.tfvars"
@@ -138,7 +141,7 @@
                 withAWS(region: "${env.AWS_REGION}", credentials: "${env.MAGNOLIA_CLOUD_STAGING_CREDENTIALS_ID}") {
                     dir('infra/') {
                         sh "terraform init -reconfigure -backend-config='bucket=magnolia-internal-docs-infra-tfstate'"
-                        sh "terraform apply -var-file=prod.tfvars -auto-approve"
+                        sh "terraform plan -var-file=prod.tfvars"
                     }
                 }
             }
