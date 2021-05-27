@@ -5,7 +5,6 @@ following resources:
 - S3 bucket for hosting the site content
 - R53 record for the main site domain
 - ACM certificate to be associated with CloudFront distribution
-- Okta SSO
 - Authentication lambda
 
 The site has a main domain which is managed in one of our Route53 hosted zone. The R53 zone and the 

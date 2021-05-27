@@ -141,7 +141,7 @@
                 withAWS(region: "${env.AWS_REGION}", credentials: "${env.MAGNOLIA_CLOUD_STAGING_CREDENTIALS_ID}") {
                     dir('infra/') {
                         sh "terraform init -reconfigure -backend-config='bucket=magnolia-internal-docs-infra-tfstate'"
-                        sh "terraform plan -var-file=prod.tfvars"
+                        sh "terraform apply -var-file=prod.tfvars -auto-approve"
                     }
                 }
             }
