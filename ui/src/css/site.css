@@ -1,9 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
 @import "typeface-roboto.css";
 @import "typeface-roboto-mono.css";
 @import "vars.css";
 @import "base.css";
 @import "body.css";
+@import "scroll-to-top.css";
 @import "nav.css";
 @import "main.css";
 @import "toolbar.css";

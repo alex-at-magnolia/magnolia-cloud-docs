@@ -8,7 +8,7 @@
 .hljs-keyword,
 .hljs-selector-tag,
 .hljs-subst {
-  color: var(--color-primary-medium-green);
+  color: lightgreen;
   font-weight: var(--monospace-font-weight-bold);
 }
 
@@ -22,7 +22,7 @@
 
 .hljs-string,
 .hljs-doctag {
-  color: var(--color-primary-medium-green);
+  color: lightgreen;
 }
 
 .hljs-title,

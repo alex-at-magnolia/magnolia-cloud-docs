@@ -1,15 +1,9 @@
 .page-versions {
-  display: none;
+  display: block;
   margin-right: 0.2rem;
   margin-left: 0.4rem;
   position: relative;
   line-height: 1;
-}
-
-@media screen and (min-width: 1024px) {
-  .page-versions {
-    display: block;
-  }
 }
 
 .page-versions .version-menu-toggle {

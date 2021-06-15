@@ -29,11 +29,11 @@
 }
 
 .nav {
-  background: var(--nav-background);
+  background: var(--color-jet-70);
   position: relative;
-  top: var(--toolbar-height);
+  top: 0;
   height: var(--nav-height);
-  border-right: whitesmoke 0.25rem solid;
+  border-right: 1px solid whitesmoke;
 }
 
 @media screen and (min-width: 769px) {
@@ -183,16 +183,16 @@ html.is-clipped--nav {
 .is-current-page > .nav-link,
 .is-current-page > .nav-text {
   font-weight: bolder;
-  color: var(--color-primary-green);
+  color: var(--color-green-reflex);
 }
 
 .nav-link:hover {
-  color: var(--color-primary-green);
+  color: var(--color-green-reflex);
   text-decoration: none;
 }
 
 .nav-panel-explore {
-  background: var(--nav-background);
+  background: var(--color-smoke-50);
   display: none;
   flex-direction: column;
   position: absolute;
@@ -205,7 +205,7 @@ html.is-clipped--nav {
 .nav-panel-explore .context {
   font-size: calc(15 / var(--rem-base) * 1rem);
   flex-shrink: 0;
-  color: var(--nav-muted-color);
+  color: var(--color-charcoal);
   box-shadow: 0 -1px 0 var(--nav-panel-divider-color);
   padding: 0 0.25rem 0 0.5rem;
   display: flex;
@@ -234,6 +234,7 @@ html.is-clipped--nav {
   overflow-y: scroll;
   max-height: 100%;
   display: block;
+  color: lightslategrey;
 }
 
 .nav-panel-explore:not(.is-active) .components {
@@ -272,18 +273,28 @@ html.is-clipped--nav {
 
 .nav-panel-explore .component .version a {
   border: 1px solid var(--nav-border-color);
-  border-radius: 0.25rem;
-  color: inherit;
+  /* border-radius: 0.25rem; */
+  color: var(--color-charcoal);
+  background-color: inherit;
   opacity: 0.75;
   white-space: nowrap;
   padding: 0.125em 0.25em;
   display: inherit;
+  transition: 0.5s ease;
+}
+
+.nav-panel-explore .component .version a:hover {
+  background-color: var(--color-primary-green);
+  color: whitesmoke;
+  text-decoration: none;
 }
 
 .nav-panel-explore .component .is-current a {
   border-color: currentColor;
   opacity: 0.9;
   font-weight: var(--body-font-weight-bold);
+  background-color: var(--color-primary-green);
+  color: whitesmoke;
 }
 
 /*
@@ -291,3 +302,36 @@ html.is-clipped--nav {
   content: " (latest)";
 }
 */
+
+.nav i.fa {
+  font-style: normal;
+  font-family: FontAwesome, sans-serif;
+}
+
+.nav .red {
+  color: var(--color-red);
+}
+
+.nav .blue {
+  color: var(--color-primary-ocean-blue);
+}
+
+.nav .green {
+  color: var(--color-primary-green);
+}
+
+.nav .light-green {
+  color: var(--color-green-reflex);
+}
+
+.nav .dark-green {
+  color: var(--color-primary-dark-green);
+}
+
+.nav .grey {
+  color: grey;
+}
+
+.nav .larger {
+  font-size: larger;
+}

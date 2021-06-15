@@ -84,7 +84,7 @@
 
 .toc .toc-menu a.is-active {
   border-left-color: var(--link-font-color);
-  color: var(--doc-font-color);
+  color: var(--color-green-reflex);
 }
 
 .sidebar.toc .toc-menu a:focus {

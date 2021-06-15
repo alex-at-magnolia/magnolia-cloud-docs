@@ -1,54 +1,70 @@
+.search-input-wrapper {
+  position: relative;
+  display: flex;
+}
+
+.search-input-wrapper__icon {
+  position: absolute;
+  left: 17px;
+  top: 52%;
+  transform: translateY(-50%);
+}
+
+::-webkit-input-placeholder { /* Edge */
+  color: var(--color-gray-light);
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: var(--color-gray-light);
+}
+
+::placeholder {
+  color: var(--color-gray-light);
+}
+
+#searchBar {
+  border: 1px solid var(--color-gray-light);
+  background-color: var(--color-smoke-50);
+  height: 44px;
+  min-width: 300px;
+  border-radius: 40px;
+  font-family: var(--body-font-family);
+  font-size: 0.875rem;
+  transition: 1s ease;
+  cursor: auto;
+  outline: none;
+  padding: 0 1rem;
+  padding-left: 2.5rem;
+}
+
+.search-input-wrapper span.algolia-autocomplete {
+  display: flex !important;
+  align-items: center;
+}
+
 @media screen and (max-width: 1200px) {
-  #searchBar {
-    margin-left: 3rem;
-    padding: 1rem;
-    height: 60%;
-    margin-top: 15px;
-    margin-bottom: auto;
-    margin-right: auto;
-    width: 75vw;
-    border: 0.5px solid lightgrey;
-    border-radius: 40px;
-    /* border: 0.1em solid var(--color-primary-light-grey); */
-    background-color: var(--color-primary-light-grey);
-    font-family: var(--body-font-family);
-    font-size: 0.7rem;
-    /* box-shadow: inset -1px 2px 11px -7px var(--color-primary-green); */
-    /* transform: skewX(-8deg); */
-    transition: 1s ease;
-    cursor: auto;
-    outline: none;
+  #searchBar,
+  span.algolia-autocomplete {
+    width: 100%;
+  }
+
+  .search-input-wrapper {
+    width: 100%;
+    margin: auto;
+    padding: 0 0.75rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .navbar-brand svg {
+    width: 132px;
+  }
+
+  .algolia-autocomplete .ds-dropdown-menu [class^=ds-dataset-] {
+    overflow: scroll !important;
   }
 }
 
 @media screen and (min-width: 1200px) {
-  #searchBar {
-    margin-left: 1.5rem;
-    padding-left: 1rem;
-    padding-right: 2px;
-    height: 60%;
-    margin-top: 15px;
-    margin-bottom: auto;
-    width: fit-content;
-    min-width: 300px;
-    border: 0.5px solid lightgrey;
-    border-radius: 40px;
-    /* border: 0.1em solid var(--color-primary-light-grey); */
-    background-color: var(--color-primary-light-grey);
-    font-family: var(--body-font-family);
-    font-size: 0.8rem;
-    /* box-shadow: inset -1px 2px 11px -7px var(--color-primary-green); */
-    /* transform: skewX(-8deg); */
-    transition: 1s ease;
-    cursor: auto;
-    outline: none;
-  }
-
-  /* #searchBar:hover {
-    border-radius: 40px;
-    border: none;
-  } */
-
   #searchBar:disabled {
     background: var(--color-gray-10);
   }

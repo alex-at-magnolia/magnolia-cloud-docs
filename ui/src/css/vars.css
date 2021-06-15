@@ -1,14 +1,18 @@
 :root {
   /* colors */
-  --color-primary-green: #59990c;
+  --color-primary-green: #599900;
   --color-primary-dark-green: #3a6305;
-  --color-primary-medium-green: #90c841;
   --color-primary-light-green: #f5f8ea;
+  --color-green-reflex: #7ecb13;
+  --color-green-darker: #599900;
   --color-primary-plum: #652445;
   --color-primary-gold: #f6c34d;
   --color-primary-light-gold: #ffd87e;
   --color-primary-light-grey: #f6f6f6;
+  --color-primary-yellow: #ffc226;
   --color-primary-blue: #4aace9;
+  --color-primary-ocean-blue: #00aeef;
+  --color-red: #ff562a;
   --color-white: #fff;
   --color-smoke-10: #fefefe;
   --color-smoke-30: #fafafa;
@@ -19,57 +23,61 @@
   --color-gray-30: #8e8e8e;
   --color-gray-50: #808080;
   --color-gray-70: #5d5d5d;
+  --color-gray-light: #a8a8a8;
+  --color-gray-medium: #e9ebe8;
+  --color-gray-dark: #1e1f1c;
   --color-jet-20: #4a4a4a;
   --color-jet-30: #424242;
   --color-jet-50: #333;
   --color-jet-70: #222;
   --color-jet-80: #191919;
   --color-black: #000;
+  --color-charcoal: #36454f;
   /* fonts */
   --rem-base: 18; /* used to compute rem value from desired pixel value (e.g., calc(18 / var(--rem-base) * 1rem) = 18px) */
   --body-font-size: 1.1em;
   --body-font-size--desktop: 1.1em;
   --body-font-size--print: 0.9375em; /* 15px */
   --body-line-height: 1.15;
-  --body-font-color: var(--color-jet-70);
+  --body-font-color: whitesmoke;
   --body-font-family: "Roboto", sans-serif;
-  --body-font-weight-bold: 500;
+  --body-font-weight-bold: 700;
   --monospace-font-family: "Roboto Mono", monospace;
   --monospace-font-weight-bold: 500;
   /* base */
-  --body-background: var(--color-white);
-  --panel-background: var(--color-white);
+  --body-background: var(--color-jet-70);
+  --panel-background: var(--color-jet-70);
   --panel-border-color: var(--color-white);
   --scrollbar-thumb-color: var(--color-gray-10);
   /* navbar */
-  --navbar-background: #36454f;
+  --navbar-background: var(--color-jet-70);
   --navbar-font-color: whitesmoke;
   --navbar_hover-background: var(--color-smoke-90);
-  --navbar-button-background: var(--color-primary-medium-green);
-  --navbar-button-border-color: whitesmoke;
+  --navbar-button-background: var(--color-primary-green);
+  --navbar-button-border-color: var(--panel-border-color);
   --navbar-button-font-color: var(--body-font-color);
   --navbar-menu-border-color: var(--panel-border-color);
-  --navbar-menu-background: var(--color-white);
+  --navbar-menu-background: var(--color-jet-70);
   --navbar-menu-font-color: var(--body-font-color);
-  --navbar-menu_hover-background: var(--color-smoke-50);
+  --navbar-menu_hover-background: black;
   /* nav */
   --nav-background: var(--panel-background);
   --nav-border-color: var(--color-gray-10);
   --nav-line-height: 1.35;
-  --nav-heading-font-color: var(--color-jet-30);
+  --nav-heading-font-color: whitesmoke;
   --nav-muted-color: var(--color-gray-70);
   --nav-panel-divider-color: var(--color-smoke-90);
   --nav-secondary-background: var(--color-smoke-70);
   /* toolbar */
   --toolbar-background: var(--panel-background);
   --toolbar-border-color: var(--panel-border-color);
-  --toolbar-font-color: var(--color-gray-70);
+  --toolbar-font-color: whitesmoke;
   --toolbar-muted-color: var(--color-gray-30);
   --page-version-menu-background: var(--color-smoke-70);
   --page-version-missing-font-color: var(--color-gray-30);
   /* toc */
-  --toc-font-color: var(--nav-muted-color);
-  --toc-heading-font-color: var(--doc-font-color);
+  --toc-font-color: whitesmoke;
+  --toc-heading-font-color: var(--color-green-reflex);
   --toc-border-color: var(--panel-border-color);
   --toc-line-height: 1.2;
   /* admonitions */
@@ -83,29 +91,33 @@
   --tip-on-color: var(--color-white);
   --warning-color: #d32f2f;
   --warning-on-color: var(--color-white);
+  --best-color: #02bfc2;
+  --best-on-color: var(--color-white);
+  --alt-color: var(--color-primary-gold);
+  --alt-on-color: var(--color-white);
   /* doc */
-  --doc-font-color: var(--color-jet-50);
+  --doc-font-color: whitesmoke;
   --doc-font-size: inherit;
   --doc-font-size--desktop: calc(16 / var(--rem-base) * 1rem);
   --doc-line-height: 1.6;
   --doc-margin: 0 auto;
   --doc-margin--desktop: 0 2rem;
-  --heading-font-color: var(--color-jet-80);
+  --heading-font-color: whitesmoke;
   --heading-font-weight: normal;
   --alt-heading-font-weight: var(--body-font-weight-bold);
   --section-divider-color: var(--panel-border-color);
-  --link-font-color: var(--color-primary-green);
+  --link-font-color: var(--color-green-reflex);
   --link_hover-font-color: #104d92;
   --link_unresolved-font-color: var(--important-color);
   --abstract-background: var(--color-smoke-70);
-  --abstract-font-color: var(--color-jet-20);
+  --abstract-font-color: whitesmoke;
   --abstract-border-color: var(--panel-border-color);
   --admonition-background: var(--panel-background);
   --admonition-label-font-weight: var(--body-font-weight-bold);
-  --caption-font-color: var(--color-gray-70);
+  --caption-font-color: whitesmoke;
   --caption-font-weight: var(--body-font-weight-bold);
   --code-background: var(--panel-background);
-  --code-font-color: var(--color-primary-green);
+  --code-font-color: var(--color-green-reflex);
   --example-background: var(--color-white);
   --example-border-color: var(--color-gray-70);
   --kbd-background: var(--panel-background);
@@ -115,17 +127,17 @@
   --pre-annotation-font-color: var(--color-white);
   --quote-background: var(--panel-background);
   --quote-border-color: var(--color-primary-gold);
-  --quote-font-color: var(--color-gray-70);
-  --quote-attribution-font-color: var(--color-gray-30);
+  --quote-font-color: whitesmoke;
+  --quote-attribution-font-color: var(var(--color-primary-green));
   --sidebar-background: var(--color-smoke-90);
   --table-border-color: var(--panel-border-color);
   /* footer */
   --footer-line-height: var(--doc-line-height);
   --footer-background: var(--color-jet-50);
-  --footer-font-color: var(--color-gray-70);
-  --footer-link-font-color: var(--color-primary-green);
+  --footer-font-color: var(--color-green-reflex);
+  --footer-link-font-color: var(--color-green-reflex);
   /* dimensions and positioning */
-  --navbar-height: calc(90 / var(--rem-base) * 1rem);
+  --navbar-height: calc(80 / var(--rem-base) * 1rem);
   --toolbar-height: calc(45 / var(--rem-base) * 1rem);
   --drawer-height: var(--toolbar-height);
   --body-top: var(--navbar-height);

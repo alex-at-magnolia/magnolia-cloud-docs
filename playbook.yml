@@ -2,17 +2,20 @@ site:
   title: Magnolia Cloud Service Internal Documentation
   # # the 404 page and sitemap files only get generated when the url property is set
   # url: https://docs.magnolia-platform.com/
-  start_page: mcs-internal:ROOT:index.adoc
+  start_page: magnolia-saas:ROOT:index.adoc
   robots: allow
 
 content:
   sources:
   - url: https://git.magnolia-cms.com/scm/cloud/magnolia-cloud.git
     branches: [master]
-    start_path: internal-docs
+    start_path: docs
+  - url: https://git.magnolia-cms.com/scm/DOCUMENTATION/product-docs.git
+    branches: [master]
 
-# urls:
-#   html_extension_style: indexify
+urls:
+  html_extension_style: drop
+  redirect_facility: static
 
 ui:
   bundle:
@@ -30,12 +33,9 @@ ui:
 asciidoc:
   attributes:
     ui: Cockpit
-    project: Magnolia Cloud Service
-    product: Magnolia CMS
-    company: Magnolia
     solution-type: SaaS
     hosting-country: Switzerland
-    magnolia-latest-version: 6.2.6
+    magnolia-latest-version: 6.2.9
     kroki-fetch-diagram: true
   extensions:
   - ./lib/tabs-block.js

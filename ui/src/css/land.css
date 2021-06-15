@@ -676,42 +676,103 @@
   }
 }
 
-.title-cards {
-  width: 80%;
+.sect1.personas.cards {
+  max-width: 1440px;
+  width: 100%;
   margin: auto;
-  margin-bottom: 3rem;
-  margin-top: 3rem;
+}
+
+.sect1.personas.cards .sectionbody {
+  margin: 0 1.5rem;
+}
+
+.a-banner {
+  display: none;
+}
+
+/* .a-banner-small {
+  display: none;
+} */
+
+.a-banner-mobile {
+  display: none;
+}
+
+@media screen and (min-width: 1000px) {
+  .a-banner {
+    width: 100%;
+    height: 20vh;
+    display: block;
+  }
+}
+
+.a-banner img {
+  height: 100%;
+  width: 100%;
+}
+
+/* @media screen and (max-width: 999px) {
+  .a-banner-small {
+    width: 75%;
+    margin: auto;
+    height: fit-content;
+    display: block;
+  }
+}
+
+.a-banner-small img {
+  height: 100%;
+  width: 100%;
+} */
+
+@media screen and (max-width: 647px) {
+  .a-banner-mobile {
+    width: 100%;
+    margin: auto;
+    height: fit-content;
+    display: block;
+  }
+}
+
+.a-banner-mobile img {
+  height: 100%;
+  width: 100%;
 }
 
 .feedback-banner {
   width: 100%;
-  background: var(--color-smoke-70);
+  background: white;
   height: fit-content;
-  margin-top: 3rem;
+  margin-top: none;
   text-align: center;
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
-  color: var(--color-primary-dark-green);
+  padding-top: 1.93rem;
+  padding-bottom: 3.25rem;
+  color: white;
+}
+
+.feedback-banner .feedback-banner__text {
+  font-size: 1.75rem;
+  text-align: center;
+  margin-bottom: 1rem;
 }
 
 .feedback-banner button.migrate {
-  display: inline-flex;
-  align-items: center;
   background: var(--color-primary-green);
-  border-radius: 45px;
-  height: 1.75rem;
-  color: whitesmoke;
-  padding: 1.4rem;
-  white-space: nowrap;
-  /* box-shadow: var(--color-primary-green) 0 2px 4px; */
+  border-radius: 25px;
+  color: white;
+  padding: 0.75rem 1.5rem 0.625rem;
   transition: all 0.4s ease-in-out;
   border: none;
-  outline: none;
-  margin-top: 1rem;
 }
 
-.feedback-banner button.migrate:hover {
+.feedback-banner button.migrate:hover,
+.feedback-banner button.migrate:focus {
   background-color: var(--color-primary-dark-green);
+}
+
+.feedback-banner button.migrate,
+.feedback-banner button.migrate:hover,
+.feedback-banner button.migrate:focus {
   outline: none;
 }
 
@@ -755,110 +816,78 @@ h2.welcome-header {
   display: flex;
   flex: 1 0 auto;
   flex-direction: column;
-  margin: 0.75rem 0 0 0.75rem;
+  margin: 0;
   min-width: 0;
-  padding: 1.25rem;
-  box-shadow: darkslategrey 0 2px 4px;
+  padding-top: 88px;
   transition: all 0.3s ease-in-out;
-  /* border: 0.75px solid lightgray; */
+  border-radius: 8px;
+  position: relative;
 }
 
 .land .card h3 {
-  font-size: 1.5rem;
-  line-height: 2rem;
-  padding: 0 0 1rem;
-  position: relative;
-  color: black;
-}
-
-.land .card h3::after {
-  content: "";
-  display: block;
-  position: absolute;
-  max-width: 5.75rem;
-  height: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  border: 1px solid currentColor;
-  width: 25%;
+  font-size: 1.75rem;
+  padding: 1.5rem 0 0.7rem;
 }
 
 .land .card:hover {
-  box-shadow: darkslategrey 0 19px 35px;
-  transform: translate3d(0, -1px, 0);
+  box-shadow: 4px 11px 23px #c5c5c5;
 }
 
-.land .card:nth-of-type(1) {
-  /* background: whitesmoke; */
-  color: var(--color-jet-50);
-  border-top: 0.5rem solid var(--color-primary-blue);
+.sect2.card::before {
+  content: "";
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
+  background-size: cover;
+  height: 40px;
 }
 
-.land .card:nth-of-type(1) h3 {
-  /* background: whitesmoke; */
-  color: var(--color-primary-blue);
+.sect2.card:nth-of-type(1)::before {
+  width: 30px;
+  background-image: url("../img/welcome.svg");
 }
 
-.land .card:nth-of-type(1) a:hover {
-  color: var(--color-primary-blue);
+.sect2.card:nth-of-type(2)::before {
+  width: 40px;
+  background-image: url("../img/developers.svg");
 }
 
-.land .card:nth-of-type(2) {
-  /* background: whitesmoke; */
-  color: var(--color-jet-50);
-  border-top: 0.5rem solid var(--color-primary-green);
+.sect2.card:nth-of-type(3)::before {
+  width: 40px;
+  background-image: url("../img/admin.svg");
 }
 
-.land .card:nth-of-type(2) h3 {
-  /* background: whitesmoke; */
-  color: var(--color-primary-green);
+.sect2.card:nth-of-type(4)::before {
+  width: 26px;
+  background-image: url("../img/author.svg");
 }
 
-.land .card:nth-of-type(2) a:hover {
-  color: var(--color-primary-green);
+.sect2.card:nth-of-type(1) {
+  background: var(--color-green-reflex);
 }
 
-.land .card:nth-of-type(3) {
-  /* background: whitesmoke; */
-  color: var(--color-jet-50);
-  border-top: 0.5rem solid var(--color-primary-gold);
+.sect2.card:nth-of-type(2) {
+  background: var(--color-green-darker);
 }
 
-.land .card:nth-of-type(3) h3 {
-  /* background: whitesmoke; */
-  color: var(--color-primary-gold);
+.sect2.card:nth-of-type(3) {
+  background: var(--color-primary-yellow);
 }
 
-.land .card:nth-of-type(3) a:hover {
-  color: var(--color-primary-gold);
-}
-
-.land .card:nth-of-type(4) {
-  /* background: whitesmoke; */
-  color: var(--color-jet-50);
-  border-top: 0.5rem solid var(--color-primary-dark-green);
-}
-
-.land .card:nth-of-type(4) h3 {
-  /* background: whitesmoke; */
-  color: var(--color-primary-dark-green);
-}
-
-.land .card:nth-of-type(4) a:hover {
-  color: var(--color-primary-dark-green);
+.sect2.card:nth-of-type(4) {
+  background: var(--color-primary-ocean-blue);
 }
 
 .land .card .paragraph {
   font-weight: var(--weight-light);
   margin-top: 1rem;
   flex: 1 0 auto; /* NOTE must specify flex-basis for IE 11 */
+  padding-bottom: 1rem;
 }
 
 .land .card .ulist {
   font-weight: var(--weight-bold);
   margin: 1.5rem 0 0.5rem;
-  /* overflow-wrap: normal; */
   word-wrap: normal; /* NOTE not sure why this is required, but without it, list items get spaced apart */
 }
 
@@ -915,6 +944,46 @@ h2.welcome-header {
   text-align: center;
 }
 
+.sect2.card > h3,
+.sect2.card .paragraph,
+.sect2.card .ulist {
+  background: var(--color-gray-medium);
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-right: 1.4rem;
+  padding-left: 1.4rem;
+  color: var(--color-gray-dark);
+}
+
+.sect2.card .paragraph,
+.sect2.card .ulist {
+  font-size: 1rem;
+}
+
+.sect2.card .ulist {
+  border-radius: 0 0 8px 8px;
+  padding-bottom: 0.75rem;
+}
+
+.sect2.card .ulist li {
+  position: relative;
+  padding: 0;
+  padding-left: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.sect2.card .ulist li::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  background-image: url("../img/chevron-right.svg");
+  background-size: cover;
+}
+
 .land .tiles > h2::after {
   content: "";
   display: block;
@@ -946,6 +1015,26 @@ h2.welcome-header {
 }
 
 @media screen and (min-width: 769px) {
+  .sect2.card::before {
+    height: 80px;
+  }
+
+  .sect2.card:nth-of-type(1)::before {
+    width: 60px;
+  }
+
+  .sect2.card:nth-of-type(2)::before {
+    width: 80px;
+  }
+
+  .sect2.card:nth-of-type(3)::before {
+    width: 80px;
+  }
+
+  .sect2.card:nth-of-type(4)::before {
+    width: 53px;
+  }
+
   .land h1.page,
   .land #preamble {
     margin-left: 0.5rem;
@@ -979,9 +1068,71 @@ h2.welcome-header {
   }
 }
 
-@media screen and (min-width: 1024px) {
+.land .cards-4 .card {
+  flex-basis: 100%;
+  margin-bottom: 1rem;
+}
+
+body {
+  padding-top: 48px !important;
+}
+
+.title-cards {
+  margin-bottom: 2rem;
+  margin-top: 1.5rem;
+}
+
+@media screen and (min-width: 769px) {
+  .sect2.card::before {
+    top: 1rem;
+  }
+
+  .land .card {
+    padding-top: 120px;
+  }
+
+  .land .cards-4 .card {
+    flex-basis: calc(50% - 1.5rem);
+  }
+
+  .sect2.card:nth-last-of-type(2),
+  .sect2.card:nth-last-of-type(4) {
+    margin-right: 1.5rem;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  body {
+    padding-top: 4.4444rem !important;
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  .title-cards {
+    margin-bottom: 3rem;
+    margin-top: 1.5rem;
+  }
+
+  .sect2.card:nth-last-of-type(2),
+  .sect2.card:nth-last-of-type(4) {
+    margin-right: 0;
+  }
+
+  .sect2.card::before {
+    top: 5rem;
+  }
+
+  .land .card {
+    padding-top: 190px;
+  }
+
   .land .cards-4 .card {
     flex-basis: 0;
+    margin-bottom: 0;
+  }
+
+  .sect2.card + .sect2.card {
+    margin-left: 1.5rem;
   }
 }
 

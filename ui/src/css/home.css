@@ -93,7 +93,6 @@
   flex-direction: column;
   margin: 0.75rem 0 0 0.75rem;
   min-width: 0;
-  padding: 1.25rem;
 }
 
 .home .card:nth-of-type(1) {
@@ -117,19 +116,6 @@
   line-height: 2rem;
   padding: 0 0 1rem;
   position: relative;
-}
-
-.home .card h3::after {
-  content: "";
-  display: block;
-  position: absolute;
-  max-width: 5.75rem;
-  height: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  border: 1px solid currentColor;
-  width: 25%;
 }
 
 .home .card .paragraph {
