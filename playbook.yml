@@ -14,7 +14,7 @@ content:
     branches: [master]
 
 urls:
-  html_extension_style: drop
+  # html_extension_style: drop
   redirect_facility: static
 
 ui:
