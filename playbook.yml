@@ -33,6 +33,7 @@ ui:
 asciidoc:
   attributes:
     ui: Cockpit
+    fields-dir: /Templating/Dialog-definition/Field-definition/List-of-fields/
     solution-type: SaaS
     hosting-country: Switzerland
     magnolia-latest-version: 6.2.9
