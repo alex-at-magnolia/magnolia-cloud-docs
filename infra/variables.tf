@@ -1,5 +1,7 @@
 variable "region" {}
 
+variable "account_id" {}
+
 variable "site_domain" {
   description = "FQDN of the site and also the bucket name"
 }
