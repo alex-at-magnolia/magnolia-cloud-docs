@@ -2,6 +2,7 @@
 
     options {
         ansiColor('xterm')
+        withAWS(region: "${env.PLATFORM_AWS_REGION}", credentials: "${env.PLATFORM_CREDENTIALS_ID}")
     }
 
     agent {
@@ -39,15 +40,13 @@
 
             steps {
                 script {
-                    withAWS(region: "${env.AWS_REGION}", credentials: "${env.MAGNOLIA_CLOUD_STAGING_CREDENTIALS_ID}") {
-                        dir('infra/') {
-                            // Build lambda
-                            sh "zip --junk-paths lambda.zip auth_lambda/*"
-                            // Apply changes
-                            sh "aws iam get-user"
-                            sh "terraform init -reconfigure -backend-config='bucket=magnolia-internal-docs-infra-tfstate'"
-                            sh "terraform plan -var-file=prod.tfvars"
-                        }
+                    dir('infra/') {
+                        // Build lambda
+                        sh "zip --junk-paths lambda.zip auth_lambda/*"
+                        // Apply changes
+                        sh "aws iam get-user"
+                        sh "terraform init -reconfigure -backend-config='bucket=magnolia-internal-docs-infra-tfstate' -backend-config=\"role_arn=arn:aws:iam::${env.MAGNOLIA_CLOUD_STAGING_AWS_ACCOUNT_ID}:role/sre-platform\""
+                        sh "terraform plan -var-file=prod.tfvars"
                     }
                 }
             }
@@ -138,11 +137,9 @@
             }
 
             steps {
-                withAWS(region: "${env.AWS_REGION}", credentials: "${env.MAGNOLIA_CLOUD_STAGING_CREDENTIALS_ID}") {
-                    dir('infra/') {
-                        sh "terraform init -reconfigure -backend-config='bucket=magnolia-internal-docs-infra-tfstate'"
-                        sh "terraform apply -var-file=prod.tfvars -auto-approve"
-                    }
+                dir('infra/') {
+                    sh "terraform init -reconfigure -backend-config='bucket=magnolia-internal-docs-infra-tfstate' -backend-config=\"role_arn=arn:aws:iam::${env.MAGNOLIA_CLOUD_STAGING_AWS_ACCOUNT_ID}:role/sre-platform\""
+                    sh "terraform apply -var-file=prod.tfvars -auto-approve"
                 }
             }
         }
@@ -166,7 +163,7 @@
             }
 
             steps {
-                withAWS(region: "${env.AWS_REGION}", credentials: "${env.MAGNOLIA_CLOUD_STAGING_CREDENTIALS_ID}") {
+                withAWS(role: "sre-platform", roleAccount: "${env.MAGNOLIA_CLOUD_STAGING_AWS_ACCOUNT_ID}", region: "${env.AWS_REGION}") {
                     sh "aws s3 cp build/site/ s3://${env.PRODUCTION_S3_BUCKET}/ --recursive"
                     sh "aws s3 sync build/site/ s3://${env.PRODUCTION_S3_BUCKET}/ --delete"
                 }

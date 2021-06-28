@@ -1,4 +1,5 @@
 region = "us-east-1"
+account_id = "024110277478"
 route53_hosted_zone = "beta.de.magnolia-cloud.com"
 site_domain = "docs.beta.de.magnolia-cloud.com"
 main_domain = "*.beta.de.magnolia-cloud.com"

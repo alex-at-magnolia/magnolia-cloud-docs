@@ -10,11 +10,17 @@ terraform {
 
 provider "aws" {
   region = var.region
+  assume_role {
+    role_arn = "arn:aws:iam::${var.account_id}:role/sre-platform"
+  }
 }
 
 provider "aws" {
   region = "us-east-1"
   alias  = "us-east-1"
+  assume_role {
+    role_arn = "arn:aws:iam::${var.account_id}:role/sre-platform"
+  }
 }
 
 resource "aws_s3_bucket" "bucket" {
@@ -56,7 +62,7 @@ resource "aws_s3_bucket_policy" "bucket_policy" {
             "Sid": "2",
             "Effect": "Allow",
             "Principal": {
-                "AWS": "arn:aws:iam::cloudfront:user/CloudFront Origin Access Identity ELSJPNAICCW8D"
+                "AWS": "${aws_cloudfront_origin_access_identity.identity.iam_arn}"
             },
             "Action": "s3:GetObject",
             "Resource": "arn:aws:s3:::docs.beta.de.magnolia-cloud.com/*"
