@@ -1,7 +1,6 @@
  pipeline {
 
     options {
-        ansiColor('xterm')
         withAWS(region: "${env.PLATFORM_AWS_REGION}", credentials: "${env.PLATFORM_CREDENTIALS_ID}")
     }
 
@@ -29,8 +28,6 @@
             agent {
                 docker {
                     image "magnolia-cloud-terragrunt:$env.STB_VERSION"
-                    registryUrl "https://${env.REGISTRY_BASE_URL}"
-                    registryCredentialsId "${env.REGISTRY_CREDENTIALS_ID}"
                     label "docker"
                     reuseNode true
                     alwaysPull true
@@ -127,8 +124,6 @@
             agent {
                 docker {
                     image "magnolia-cloud-terragrunt:$env.STB_VERSION"
-                    registryUrl "https://${env.REGISTRY_BASE_URL}"
-                    registryCredentialsId "${env.REGISTRY_CREDENTIALS_ID}"
                     label "docker"
                     reuseNode true
                     alwaysPull true
@@ -153,8 +148,6 @@
             agent {
                 docker {
                     image "magnolia-cloud-terragrunt:$env.STB_VERSION"
-                    registryUrl "https://${env.REGISTRY_BASE_URL}"
-                    registryCredentialsId "${env.REGISTRY_CREDENTIALS_ID}"
                     label "docker"
                     reuseNode true
                     alwaysPull true
