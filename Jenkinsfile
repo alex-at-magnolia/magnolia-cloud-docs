@@ -59,25 +59,22 @@
                 }
             }
 
-            agent {
-                docker {
-                    image "node:10.22.1-alpine3.9"
-                    label "docker"
-                    reuseNode true
-                    alwaysPull true
-                    args '-u root:root --entrypoint=\'\''
-                }
-            }
         // For testing use same docker image above. and try the commands to get output.... 
 
             steps {
-                echo 'Building UI bundle ...'
-                dir('ui/') {
-                    sh 'apk add build-base libtool automake autoconf nasm zlib'
-                    sh 'rm -rf build'
-                    sh 'npm install'
-                    sh 'npm install gulp-cli'
-                    sh './node_modules/.bin/gulp bundle'
+                script {
+                    docker.withRegistry('') {
+                        docker.image('node:10.22.1-alpine3.9').inside('-u root:root --entrypoint=\'\'') {
+                            echo 'Building UI bundle ...'
+                            dir('ui/') {
+                                sh 'apk add build-base libtool automake autoconf nasm zlib'
+                                sh 'rm -rf build'
+                                sh 'npm install'
+                                sh 'npm install gulp-cli'
+                                sh './node_modules/.bin/gulp bundle'
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -92,24 +89,21 @@
                 }
             }
 
-            agent {
-                docker {
-                    image "antora/antora:2.3.4"
-                    label "docker"
-                    reuseNode true
-                    alwaysPull true
-                }
-            }
-
             steps {
-                withCredentials([string(credentialsId: 'BITBUCKET_ACCESS_TOKEN', variable: 'BITBUCKET_ACCESS_TOKEN')]) {
-                    sh "echo https://sre.robot:${BITBUCKET_ACCESS_TOKEN}@git.magnolia-cms.com >> ~/.git-credentials"
-                    echo 'Building Antora documentation ...'
-                    sh 'npm install'
-                    sh 'rm -rf build/site'
-                    sh 'npm install'
-                    withCredentials([usernamePassword(credentialsId: 'NEXUS_CREDENTIALS', usernameVariable: 'NEXUS_USERNAME', passwordVariable: 'NEXUS_PASSWORD')]) {
-                      sh 'antora generate --fetch playbook.yml'
+                script {
+                    docker.withRegistry('') {
+                        docker.image('antora/antora:2.3.4').inside {
+                          withCredentials([string(credentialsId: 'BITBUCKET_ACCESS_TOKEN', variable: 'BITBUCKET_ACCESS_TOKEN')]) {
+                              sh "echo https://sre.robot:${BITBUCKET_ACCESS_TOKEN}@git.magnolia-cms.com >> ~/.git-credentials"
+                              echo 'Building Antora documentation ...'
+                              sh 'npm install'
+                              sh 'rm -rf build/site'
+                              sh 'npm install'
+                              withCredentials([usernamePassword(credentialsId: 'NEXUS_CREDENTIALS', usernameVariable: 'NEXUS_USERNAME', passwordVariable: 'NEXUS_PASSWORD')]) {
+                                sh 'antora generate --fetch playbook.yml'
+                              }
+                          }
+                        }
                     }
                 }
             }
