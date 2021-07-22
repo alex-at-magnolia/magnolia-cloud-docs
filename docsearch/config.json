@@ -2,19 +2,19 @@
   "index_name": "cloud_internal_docs",
   "start_urls": [
     {
-      "url": "https://fervent-poitras-ccc684.netlify.app/",
+      "url": "http://localhost:8080/magnolia-saas/",
       "page-rank": 5
     }
   ],
   "sitemap_urls": [
-    "https://fervent-poitras-ccc684.netlify.app/sitemap.xml"
+    "http://localhost:8080/sitemap.xml"
   ],
   "selectors": {
     "lvl0": {
       "selector": "//nav[@class='crumbs']//li[@class='crumb'][last()-1]",
       "type": "xpath",
       "global": true,
-      "default_value": "Docs"
+      "default_value": "Magnolia SaaS"
     },
     "lvl1": ".doc h1",
     "lvl2": ".doc h2",
