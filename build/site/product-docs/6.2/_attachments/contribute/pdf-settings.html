@@ -1,0 +1,48 @@
+:doctype: book
+:experimental:
+:reproducible:
+:icons: font
+:listing-caption: figure
+:sectnums:
+:imagesdir: ../../images
+:toc: left
+ifeval::["{backend}" == "html5"]
+:toc-title: Magnolia Docs
+endif::[]
+ifdef::backend-pdf[]
+:toc-title: Table of Contents
+endif::[]
+:toclevels: 2
+:source-highlighter: prettify
+:linkattrs:
+:specialchars:
+:back-cover-image: image:pdf/back-cover.pdf[]
+ifdef::backend-pdf[]
+:title-logo-image: image:pdf/magnolia-medium.png[pdfwidth=4.25in,align=right]
+:source-highlighter: prettify
+endif::[]
+
+ifdef::backend-pdf[]
+[preface]
+== Copyright
+Copyright of Magnolia International(C). This document may not be duplicated, in whole or in part, by any means whatsoever, without the prior written permission of Magnolia International. The information contained in this document is confidential and is the valuable proprietary information of Magnolia International Ltd. Visit link:www.magnolia-cms.com[the Magnolia official website, window="_blank"] to learn more about us as a company.
+endif::[]
+
+// Condition to only include rev history in the print version of the guide.
+ifdef::backend-pdf[]
+[preface]
+== Revision History
+
+[cols="2,2,6"]
+|===
+|Revision |Date |Comments
+
+|`{revnumber}`
+| {revdate}
+| {revremark}
+
+// after every uprev, add the previous under the most recent as so:
+// v1.4 (next line) date (next line) remark
+
+|===
+endif::[]

@@ -10,4 +10,3 @@ terraform.tfstate.backup
 .idea
 debug.log
 /tmp/
-build
