@@ -7,7 +7,7 @@
     }
   ],
   "sitemap_urls": [
-    "http://localhost:8080/sitemap.xml"
+    "https://musing-leakey-929a60.netlify.app/sitemap.xml"
   ],
   "selectors": {
     "lvl0": {
@@ -19,6 +19,6 @@
     "lvl1": ".doc h1",
     "lvl2": ".doc h2",
     "lvl3": ".doc h3",
-    "lvl4": ".doc h4"
+    "lvl4": ".doc p"
   }
 }
