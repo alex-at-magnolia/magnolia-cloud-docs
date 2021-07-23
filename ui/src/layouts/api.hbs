@@ -13,9 +13,11 @@
     ReDoc doesn't change outer page styles
     -->
     <style>
-      body {
+      body, html {
         margin: 0;
         padding: 0;
+        background-color: white !important;
+        scroll-behavior: auto !important;
       }
     </style>
   </head>
@@ -23,27 +25,30 @@
     <a name="top"></a>
     {{> header}}
     <div id="redoc-container"></div>
-    <redoc spec-url='{{{page.attributes.spec}}}'></redoc>
+    {{!-- <redoc spec-url='{{{page.attributes.spec}}}'></redoc> --}}
     <script src="https://cdn.jsdelivr.net/npm/redoc@latest/bundles/redoc.standalone.js"> </script>
-    {{!-- <script>
-      Redoc.init("{{{siteRootPath}}}/api/spec.yaml", {
+    <script>
+      Redoc.init("{{{siteRootPath}}}/{{{page.component.name}}}/_attachments/spec.yaml", {
         scrollYOffset: '#topbar',
         noAutoAuth: true,
+        hideDownloadButton: true,
         requiredPropsFirst: true,
         pathInMiddlePanel: true,
         theme: {
           colors: {
             tonalOffset: 0.3,
             primary: {
-              main: 'green'
+              main: 'green',
+              backgroundColor: '#FFF'
             }
           },
           typography: {
-            fontSize: '14px',
+            fontSize: '16px',
             lineHeight: '1.5em',
             fontWeightRegular: '400',
             fontWeightBold: '700',
             fontWeightLight: '300',
+            fontColor: '#FFF',
             fontFamily: 'Roboto, sans-serif',
             smoothing: 'antialiased',
             optimizeSpeed: true,
@@ -51,16 +56,23 @@
               fontFamily: 'Roboto, sans-serif',
               fontWeight: '400',
               lineHeight: '1.6em',
+              fontColor: '#fff'
             }
           },
           codeSample: {
             fontSize: '13px',
             color: "#fff",
             fontFamily: 'Roboto Mono, monospace'
+          },
+          menu: {
+            backgroundColor: 'white',
+          },
+          rightPanel: {
+            backgroundColor: '#222',
           }
         },
       }, document.getElementById('redoc-container'))
-    </script> --}}
+    </script>
     {{> footer}}
   </body>
 </html>
