@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <sitemap>
-<loc>http://localhost:8080/sitemap-magnolia-saas.xml</loc>
+<loc>https://musing-leakey-929a60.netlify.app/magnolia-saas/sitemap-magnolia-saas.xml</loc>
 </sitemap>
 <sitemap>
-<loc>http://localhost:8080/sitemap-product-docs.xml</loc>
+<loc>https://musing-leakey-929a60.netlify.app/magnolia-saas/sitemap-product-docs.xml</loc>
 </sitemap>
 </sitemapindex>

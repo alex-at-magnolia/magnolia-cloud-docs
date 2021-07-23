@@ -2,7 +2,7 @@
   "index_name": "cloud_internal_docs",
   "start_urls": [
     {
-      "url": "http://localhost:8080/magnolia-saas/",
+      "url": "https://musing-leakey-929a60.netlify.app/magnolia-saas/",
       "page-rank": 5
     }
   ],
