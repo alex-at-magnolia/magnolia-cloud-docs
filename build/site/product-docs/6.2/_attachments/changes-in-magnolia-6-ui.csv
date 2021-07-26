@@ -1,0 +1,373 @@
+Magnolia 5 UI,Magnolia 6 UI,Tests,Conversion support,Conversion test
+FieldDefinition,,,,
+info.magnolia.ui.contentapp.field.LinkFieldSelectionDefinition,No direct replacement,,,"
+"
+info.magnolia.ui.contentapp.field.WorkbenchFieldDefinition,No direct replacement,,,"
+"
+info.magnolia.ui.form.field.definition.BasicTextCodeFieldDefinition,info.magnolia.ui.field.CodeFieldDefinition (codeField),"CodeFieldFactoryTest
+",CodeFieldDefinitionConverter,"CodeFieldDefinitionConverterTest
+
+"
+info.magnolia.ui.form.field.definition.BasicUploadFieldDefinition,info.magnolia.ui.field.UploadFieldDefinition (uploadField),,BasicUploadFieldDefinitionConverter,"BasicUploadFieldDefinitionConverterTest
+
+magnolia-ui-framework-compatibility/src/test/resources/fooModule/forms/upload.yaml
+"
+info.magnolia.ui.form.field.definition.CheckboxFieldDefinition,info.magnolia.ui.field.CheckBoxFieldDefinition (checkBoxField),"CheckBoxFieldFactoryTest
+",CheckboxFieldDefinitionConverter,"CheckboxFieldDefinitionConverterTest
+
+magnolia-ui-framework-compatibility/src/test/resources/fooModule/forms/fieldTypesMix.yaml
+magnolia-ui-framework-compatibility/src/test/resources/fooModule/forms/checkbox.yaml
+"
+info.magnolia.ui.form.field.definition.CodeFieldDefinition,info.magnolia.ui.field.CodeFieldDefinition (codeField),"CodeFieldFactoryTest
+",CodeFieldDefinitionConverter,"CodeFieldDefinitionConverterTest
+
+magnolia-ui-framework-compatibility/src/test/resources/fooModule/forms/code.yaml
+"
+info.magnolia.ui.form.field.definition.CompositeFieldDefinition,info.magnolia.ui.field.CompositeFieldDefinition (compositeField),"magnolia-ui-framework-jcr/src/test/resources/fooModule/forms/multi_field_with_name_decoration.yaml
+magnolia-ui-framework-jcr/src/test/resources/fooModule/forms/simple_multi.yaml
+magnolia-ui-framework-jcr/src/test/resources/fooModule/forms/nested_i18n.yaml
+magnolia-ui-framework-jcr/src/test/resources/fooModule/forms/simple_multi_lex.yaml",CompositeFieldDefinitionConverter,"CompositeFieldDefinitionConverterTest
+
+magnolia-ui-framework-compatibility/src/test/resources/fooModule/forms/multi_subchildren.yaml
+magnolia-ui-framework-compatibility/src/test/resources/fooModule/forms/composite_delegating.yaml
+magnolia-ui-framework-compatibility/src/test/resources/fooModule/forms/multi_nested.yaml
+magnolia-ui-framework-compatibility/src/test/resources/fooModule/forms/multi_delegating.yaml
+magnolia-ui-framework-compatibility/src/test/resources/fooModule/forms/composite_default.yaml
+magnolia-ui-framework-compatibility/src/test/resources/fooModule/fieldTypes/composite.yaml
+"
+info.magnolia.ui.form.field.definition.ConfiguredFieldDefinition,info.magnolia.ui.field.ConfiguredFieldDefinition (-),,,"
+"
+info.magnolia.ui.form.field.definition.DateFieldDefinition,info.magnolia.ui.field.DateFieldDefinition (dateField),,DateFieldDefinitionConverter,"DateFieldDefinitionConverterTest
+
+magnolia-ui-framework-compatibility/src/test/resources/fooModule/forms/fieldTypesMix.yaml
+magnolia-ui-framework-compatibility/src/test/resources/fooModule/forms/date.yaml
+magnolia-ui-framework-compatibility/src/test/resources/fooModule/forms/composite_delegating.yaml
+magnolia-ui-framework-compatibility/src/test/resources/fooModule/forms/composite_default.yaml
+"
+info.magnolia.ui.form.field.definition.HiddenFieldDefinition,info.magnolia.ui.field.HiddenFieldDefinition (hiddenField),"magnolia-ui-framework-jcr/src/test/resources/fooModule/forms/hidden.yaml
+",HiddenFieldDefinitionConverter,"HiddenFieldDefinitionConverterTest
+
+magnolia-ui-framework-compatibility/src/test/resources/fooModule/forms/hidden.yaml
+magnolia-ui-framework-compatibility/src/test/resources/fooModule/forms/fieldTypesMix.yaml
+"
+info.magnolia.ui.form.field.definition.LinkFieldDefinition,info.magnolia.ui.field.LinkFieldDefinition (linkField),"LinkFieldFactoryTest
+LinkFieldDefinitionTest
+",LinkFieldDefinitionConverter,"LinkFieldDefinitionConverterTest
+
+magnolia-ui-framework-compatibility/src/test/resources/fooModule/fieldTypes/link.yaml
+"
+info.magnolia.ui.form.field.definition.MultiValueFieldDefinition,info.magnolia.ui.field.JcrMultiValueFieldDefinition (jcrMultiValueField),,MultiValueFieldDefinitionConverter,"MultiValueFieldDefinitionConverterTest
+
+magnolia-ui-framework-compatibility/src/test/resources/fooModule/forms/multi_subchildren.yaml
+magnolia-ui-framework-compatibility/src/test/resources/fooModule/forms/multi_nested.yaml
+magnolia-ui-framework-compatibility/src/test/resources/fooModule/forms/multi_delegating.yaml
+magnolia-ui-framework-compatibility/src/test/resources/fooModule/forms/multi_default.yaml
+magnolia-ui-framework-compatibility/src/test/resources/fooModule/fieldTypes/multiValue.yaml
+"
+info.magnolia.ui.form.field.definition.OptionGroupFieldDefinition,info.magnolia.ui.field.RadioButtonGroupFieldDefinition (radioButtonGroupField),"magnolia-ui-framework-jcr/src/test/resources/fooModule/forms/switchable.yaml
+",OptionGroupFieldDefinitionConverter,"OptionGroupFieldDefinitionConverterTest
+
+magnolia-ui-framework-compatibility/src/test/resources/fooModule/forms/fieldTypesMix.yaml
+magnolia-ui-framework-compatibility/src/test/resources/fooModule/forms/optiongroup_multi.yaml
+magnolia-ui-framework-compatibility/src/test/resources/fooModule/forms/optiongroup.yaml
+"
+info.magnolia.ui.form.field.definition.PasswordFieldDefinition,MGNLUI-5537,,,"
+"
+info.magnolia.ui.form.field.definition.RichTextFieldDefinition,info.magnolia.ui.field.RichTextFieldDefinition (richTextField),"RichTextFieldFactoryTest
+",RichTextFieldDefinitionConverter,"RichTextFieldDefinitionConverterTest
+
+magnolia-ui-framework-compatibility/src/test/resources/fooModule/forms/rich.yaml
+"
+info.magnolia.ui.form.field.definition.SelectFieldDefinition,info.magnolia.ui.field.AbstractSelectFieldDefinition (-),,SelectFieldDefinitionConverter,"SelectFieldDefinitionConverterTest
+
+magnolia-ui-framework-compatibility/src/test/resources/fooModule/forms/fieldTypesMix.yaml
+magnolia-ui-framework-compatibility/src/test/resources/fooModule/forms/select.yaml
+"
+info.magnolia.ui.form.field.definition.StaticFieldDefinition,info.magnolia.ui.field.StaticFieldViewDefinition (staticField),,StaticFieldDefinitionConverter,"StaticFieldDefinitionConverterTest
+
+"
+info.magnolia.ui.form.field.definition.SwitchableFieldDefinition,info.magnolia.ui.field.ConfiguredSwitchableFieldDefinition (switchableField),"ConfiguredSwitchableFieldDefinitionTest
+magnolia-ui-framework-jcr/src/test/resources/fooModule/forms/switchable.yaml
+",SwitchableFieldDefinitionConverter,"SwitchableFieldDefinitionConverterTest
+
+magnolia-ui-framework-compatibility/src/test/resources/fooModule/forms/switchable_delegating.yaml
+magnolia-ui-framework-compatibility/src/test/resources/fooModule/forms/switchable_default.yaml
+"
+info.magnolia.ui.form.field.definition.TextFieldDefinition,info.magnolia.ui.field.TextFieldDefinition (textField),"magnolia-ui-framework-jcr/src/test/resources/fooModule/forms/with_default_value.yaml
+magnolia-ui-framework-jcr/src/test/resources/fooModule/forms/switchable.yaml
+magnolia-ui-framework-jcr/src/test/resources/fooModule/forms/multi_field_with_name_decoration.yaml
+magnolia-ui-framework-jcr/src/test/resources/fooModule/forms/textfield_multiple_datatypes.yaml
+magnolia-ui-framework-jcr/src/test/resources/fooModule/forms/simple_form.yaml
+magnolia-ui-framework-jcr/src/test/resources/fooModule/forms/simple_multi.yaml
+magnolia-ui-framework-jcr/src/test/resources/fooModule/forms/multi_button_labels.yaml
+magnolia-ui-framework-jcr/src/test/resources/fooModule/forms/nested_i18n.yaml
+magnolia-ui-framework-jcr/src/test/resources/fooModule/forms/multiValuePropertyFormNonLocalised.yaml
+magnolia-ui-framework-jcr/src/test/resources/fooModule/forms/simple_multi_lex.yaml",TextFieldDefinitionConverter,"TextFieldDefinitionConverterTest
+
+magnolia-ui-framework-compatibility/src/test/resources/fooModule/forms/fieldTypesMix.yaml
+magnolia-ui-framework-compatibility/src/test/resources/fooModule/forms/multi_subchildren.yaml
+magnolia-ui-framework-compatibility/src/test/resources/fooModule/forms/composite_delegating.yaml
+magnolia-ui-framework-compatibility/src/test/resources/fooModule/forms/multi_nested.yaml
+magnolia-ui-framework-compatibility/src/test/resources/fooModule/forms/switchable_delegating.yaml
+magnolia-ui-framework-compatibility/src/test/resources/fooModule/forms/multi_delegating.yaml
+magnolia-ui-framework-compatibility/src/test/resources/fooModule/forms/multi_default.yaml
+magnolia-ui-framework-compatibility/src/test/resources/fooModule/forms/composite_default.yaml
+magnolia-ui-framework-compatibility/src/test/resources/fooModule/forms/switchable_default.yaml
+magnolia-ui-framework-compatibility/src/test/resources/fooModule/forms/text.yaml
+magnolia-ui-framework-compatibility/src/test/resources/fooModule/fieldTypes/text.yaml
+"
+info.magnolia.ui.form.field.definition.TwinColSelectFieldDefinition,info.magnolia.ui.field.TwinColSelectFieldDefinition (twinColSelectField),,TwinColSelectFieldDefinitionConverter,"TwinColSelectFieldDefinitionConverterTest
+
+magnolia-ui-framework-compatibility/src/test/resources/fooModule/forms/twincolumn.yaml
+"
+info.magnolia.ui.framework.field.nodetype.NodeTypeSelectFieldDefinition,info.magnolia.ui.field.AbstractSelectFieldDefinition (-),,,"
+"
+,,,,
+FieldValidatorDefinition,,,,
+info.magnolia.ui.form.validator.definition.ConfiguredFieldValidatorDefinition,info.magnolia.ui.field.ConfiguredFieldValidatorDefinition (-),,,"
+"
+info.magnolia.ui.form.validator.definition.EmailValidatorDefinition,info.magnolia.ui.field.EmailValidatorDefinition (emailValidator),,,"
+"
+info.magnolia.ui.form.validator.definition.RegexpValidatorDefinition,info.magnolia.ui.field.RegexpValidatorDefinition (regexpValidator),,,"
+"
+,,,,
+Transformer,,,,
+info.magnolia.ui.form.field.transformer.basic.BCryptTransformer,,,,"
+"
+info.magnolia.ui.form.field.transformer.basic.BasicTransformer,,,,"
+"
+info.magnolia.ui.form.field.transformer.basic.ListToSetTransformer,No direct replacement,,,"
+"
+info.magnolia.ui.form.field.transformer.basic.NotNullInitialStringValueTransformer,No direct replacement,,,"
+"
+info.magnolia.ui.form.field.transformer.composite.CompositeTransformer,info.magnolia.ui.field.CompositeFieldDefinition (compositeField),"magnolia-ui-framework-jcr/src/test/resources/fooModule/forms/multi_field_with_name_decoration.yaml
+magnolia-ui-framework-jcr/src/test/resources/fooModule/forms/simple_multi.yaml
+magnolia-ui-framework-jcr/src/test/resources/fooModule/forms/nested_i18n.yaml
+magnolia-ui-framework-jcr/src/test/resources/fooModule/forms/simple_multi_lex.yaml",,"
+"
+info.magnolia.ui.form.field.transformer.composite.DelegatingCompositeFieldTransformer,Use new framework and CurrentItemProvider instead,,,"
+magnolia-ui-framework-compatibility/src/test/resources/fooModule/forms/composite_delegating.yaml
+magnolia-ui-framework-compatibility/src/test/resources/fooModule/forms/multi_nested.yaml
+magnolia-ui-framework-compatibility/src/test/resources/fooModule/forms/switchable_delegating.yaml
+magnolia-ui-framework-compatibility/src/test/resources/fooModule/forms/multi_delegating.yaml
+"
+info.magnolia.ui.form.field.transformer.composite.DelegatingSubnodeCompositeTransformer,No direct replacement,,,"
+"
+info.magnolia.ui.form.field.transformer.composite.NoOpCompositeTransformer,No direct replacement,,,"
+magnolia-ui-framework-compatibility/src/test/resources/fooModule/forms/multi_subchildren.yaml
+"
+info.magnolia.ui.form.field.transformer.composite.SwitchableTransformer,Use new framework and PropertyNameDecorator instead,,,"
+"
+info.magnolia.ui.form.field.transformer.item.FileTransformer,Use new framework where conversion is done in PropertySetFactory,,,"
+"
+info.magnolia.ui.form.field.transformer.multi.DelegatingMultiValueChildNodeWithLocaleTransformer,info.magnolia.ui.field.WithPropertyNameDecorator (-),,,"
+"
+info.magnolia.ui.form.field.transformer.multi.DelegatingMultiValueFieldTransformer,info.magnolia.ui.editor.ByIndexedChildNodes (-),,,"
+magnolia-ui-framework-compatibility/src/test/resources/fooModule/forms/multi_nested.yaml
+"
+info.magnolia.ui.form.field.transformer.multi.DelegatingMultiValueSubnodeTransformer,info.magnolia.ui.editor.ByLexicographicallyIndexedChildNodes (-),"magnolia-ui-framework-jcr/src/test/resources/fooModule/forms/simple_multi_lex.yaml
+",,"
+magnolia-ui-framework-compatibility/src/test/resources/fooModule/forms/multi_delegating.yaml
+"
+info.magnolia.ui.form.field.transformer.multi.MultiTransformer,info.magnolia.ui.editor.MultiFieldEntryResolution (-),"MultiFieldEntryResolutionTest
+magnolia-ui-framework-jcr/src/test/resources/fooModule/forms/multi_field_with_name_decoration.yaml
+",,"
+"
+info.magnolia.ui.form.field.transformer.multi.MultiValueChildNodeTransformer,No direct replacement,,,"
+"
+info.magnolia.ui.form.field.transformer.multi.MultiValueChildrenNodeTransformer,No direct replacement,,,"
+"
+info.magnolia.ui.form.field.transformer.multi.MultiValueJSONTransformer,No direct replacement,,,"
+"
+info.magnolia.ui.form.field.transformer.multi.MultiValueSubChildrenNodePropertiesTransformer,info.magnolia.ui.editor.ByLexicographicallyIndexedChildNodes (-),"magnolia-ui-framework-jcr/src/test/resources/fooModule/forms/simple_multi_lex.yaml
+",,"
+magnolia-ui-framework-compatibility/src/test/resources/fooModule/forms/multi_subchildren.yaml
+"
+info.magnolia.ui.form.field.transformer.multi.MultiValueSubChildrenNodeTransformer,No direct replacement,,,"
+"
+info.magnolia.ui.form.field.transformer.multi.MultiValueTransformer,info.magnolia.ui.editor.ByMultiValueProperties (-),"ByMultiValuePropertiesTest
+magnolia-ui-framework-jcr/src/test/resources/fooModule/forms/multiValuePropertyFormNonLocalised.yaml
+",,"
+"
+,,,,
+TabDefinition,,,,
+info.magnolia.ui.form.definition.ConfiguredTabDefinition,info.magnolia.ui.framework.layout.TabbedLayoutDefinition (tabbedLayout),"TabbedLayoutProducerTest
+",,"
+"
+,,,,
+FormDefinition,,,,
+info.magnolia.ui.form.definition.ConfiguredFormDefinition,info.magnolia.ui.editor.ConfiguredFormDefinition (-),,,"
+"
+,,,,
+ToolDefinition,,,,
+info.magnolia.ui.framework.tools.ConfiguredFormToolDefinition,No direct replacement,,,"
+"
+info.magnolia.ui.framework.tools.ConfiguredToolDefinition,No direct replacement,,,"
+"
+info.magnolia.ui.framework.tools.FormToolDefinition,No direct replacement,,,"
+"
+info.magnolia.ui.framework.tools.jcr.JcrNodeFormToolDefinition,No direct replacement,,,"
+"
+,,,,
+ColumnDefinition,,,,
+info.magnolia.ui.workbench.column.definition.AbstractColumnDefinition,info.magnolia.ui.contentapp.configuration.column.ConfiguredColumnDefinition (-),,,"
+"
+info.magnolia.ui.workbench.column.definition.BooleanPropertyColumnDefinition,No direct replacement,,,"
+"
+info.magnolia.ui.workbench.column.definition.MetaDataColumnDefinition,info.magnolia.ui.contentapp.configuration.column.DateColumnDefinition (dateColumn),,,"
+"
+info.magnolia.ui.workbench.column.definition.NodeTypeColumnDefinition,Use info.magnolia.jcrbrowser.app.column.JcrTypeColumnDefinition instead,,,"
+"
+info.magnolia.ui.workbench.column.definition.PropertyColumnDefinition,No direct replacement,,,"
+"
+info.magnolia.ui.workbench.column.definition.PropertyTypeColumnDefinition,No direct replacement,,,"
+"
+info.magnolia.ui.workbench.column.definition.StatusColumnDefinition,info.magnolia.ui.contentapp.column.jcr.JcrStatusColumnDefinition (jcrStatusColumn),,,"
+"
+,,,,
+ImageProviderDefinition,,,,
+info.magnolia.ui.imageprovider.definition.ConfiguredImageProviderDefinition,Use new framework and info.magnolia.ui.contentapp.preview.JcrPreviewDefinition,,,"
+"
+,,,,
+ContentConnectorDefinition,,,,
+info.magnolia.ui.vaadin.integration.contentconnector.ConfiguredContentConnectorDefinition,info.magnolia.ui.datasource.BaseDatasourceDefinition (-),,,"
+"
+info.magnolia.ui.vaadin.integration.contentconnector.ConfiguredJcrContentConnectorDefinition,info.magnolia.ui.datasource.jcr.JcrDatasourceDefinition (jcrDatasource),"magnolia-ui-framework-jcr/src/test/resources/fooModule/forms/with_jcr_select.yaml
+",,"
+"
+info.magnolia.ui.vaadin.integration.contentconnector.JcrContentConnectorDefinition,info.magnolia.ui.datasource.jcr.JcrDatasourceDefinition (jcrDatasource),"magnolia-ui-framework-jcr/src/test/resources/fooModule/forms/with_jcr_select.yaml
+",,"
+"
+,,,,
+ContentToolDefinition,,,,
+info.magnolia.ui.workbench.contenttool.ConfiguredContentToolDefinition,info.magnolia.ui.contentapp.configuration.ExtensionViewDefinition (-),,,"
+"
+,,,,
+ContentPresenterDefinition,,,,
+info.magnolia.ui.workbench.definition.ConfiguredContentPresenterDefinition,info.magnolia.ui.contentapp.configuration.GridViewDefinition (-),,,"
+"
+info.magnolia.ui.workbench.list.ListPresenterDefinition,info.magnolia.ui.contentapp.configuration.ListViewDefinition (listView),,,"
+"
+info.magnolia.ui.workbench.search.SearchPresenterDefinition,No direct replacement,,,"
+"
+info.magnolia.ui.workbench.thumbnail.ThumbnailPresenterDefinition,info.magnolia.ui.contentapp.configuration.ThumbnailViewDefinition (thumbnailView),"ThumbnailViewTest
+",,"
+"
+info.magnolia.ui.workbench.tree.TreePresenterDefinition,info.magnolia.ui.contentapp.configuration.TreeViewDefinition (treeView),"TreeViewTest
+",,"
+"
+,,,,
+WorkbenchDefinition,,,,
+info.magnolia.ui.workbench.definition.ConfiguredWorkbenchDefinition,info.magnolia.ui.contentapp.configuration.WorkbenchDefinition (-),,,"
+"
+,,,,
+ActionDefinition,,,,
+info.magnolia.ui.contentapp.browser.action.CopyContentActionDefinition,info.magnolia.ui.contentapp.action.clipboard.CopyContentActionDefinition (copyContentAction),,,"
+"
+info.magnolia.ui.contentapp.browser.action.DelegateByNodeTypeActionDefinition,No direct replacement,,,"
+"
+info.magnolia.ui.contentapp.browser.action.ExpandNodeActionDefinition,No direct replacement,,,"
+"
+info.magnolia.ui.contentapp.browser.action.PasteContentActionDefinition,info.magnolia.ui.contentapp.action.clipboard.PasteContentActionDefinition (pasteContentAction),,,"
+"
+info.magnolia.ui.contentapp.browser.action.RestoreItemPreviousVersionActionDefinition,info.magnolia.ui.contentapp.action.RestoreJcrVersionActionDefinition (restoreJcrVersionAction),,,"
+"
+info.magnolia.ui.contentapp.browser.action.RestoreVersionActionDefinition,info.magnolia.ui.contentapp.action.RestoreJcrVersionAction (-),,,"
+"
+info.magnolia.ui.contentapp.browser.action.SaveItemPropertyActionDefinition,No direct replacement,,,"
+"
+info.magnolia.ui.contentapp.browser.action.ShowVersionsActionDefinition,info.magnolia.ui.contentapp.action.ShowVersionActionDefinition (showVersionAction),,,"
+"
+info.magnolia.ui.contentapp.detail.action.AbstractItemActionDefinition,No direct replacement,,,"
+"
+info.magnolia.ui.contentapp.detail.action.CreateItemActionDefinition,info.magnolia.ui.contentapp.action.OpenLocationActionDefinition (-),"OpenLocationActionTest
+",,"
+"
+info.magnolia.ui.contentapp.detail.action.EditItemActionDefinition,info.magnolia.ui.contentapp.action.OpenLocationActionDefinition (-),"OpenLocationActionTest
+",,"
+"
+info.magnolia.ui.contentapp.detail.action.RestorePreviousVersionActionDefinition,info.magnolia.ui.contentapp.action.RestoreJcrVersionActionDefinition (restoreJcrVersionAction),,,"
+"
+info.magnolia.ui.contentapp.movedialog.action.MoveNodeActionDefinition,info.magnolia.ui.contentapp.action.MoveActionDefinition (moveAction),,,"
+"
+info.magnolia.ui.contentapp.movedialog.action.OpenMoveDialogActionDefinition,info.magnolia.ui.contentapp.action.MoveActionDefinition (moveAction),,,"
+"
+info.magnolia.ui.dialog.action.CallbackDialogActionDefinition,info.magnolia.ui.framework.action.EditorCallbackActionDefinition (-),"EditorCallbackActionTest
+",,"
+"
+info.magnolia.ui.dialog.action.CancelDialogActionDefinition,info.magnolia.ui.api.action.ConfiguredActionDefinition (-),,,"
+"
+info.magnolia.ui.dialog.action.CompatibilityOpenDialogActionDefinition,Used as a compatibility measure to open pre-6.2 dialogs,,,"
+"
+info.magnolia.ui.dialog.action.SaveConfigDialogActionDefinition,info.magnolia.ui.contentapp.action.CommitAction (-),,,"
+"
+info.magnolia.ui.dialog.action.SaveDialogActionDefinition,info.magnolia.ui.contentapp.action.CommitActionDefinition (commitAction),,,"
+"
+info.magnolia.ui.dialog.action.SaveImportDialogActionDefinition,info.magnolia.ui.contentapp.action.CommitActionDefinition (commitAction),,,"
+"
+info.magnolia.ui.dialog.choosedialog.action.ChooseDialogActionDefinition,info.magnolia.ui.api.action.ActionDefinition (-),,,"
+"
+info.magnolia.ui.form.action.CallbackFormActionDefinition,info.magnolia.ui.framework.action.EditorCallbackActionDefinition (-),"EditorCallbackActionTest
+",,"
+"
+info.magnolia.ui.form.action.CancelFormActionDefinition,info.magnolia.ui.contentapp.action.CloseAction (-),,,"
+"
+info.magnolia.ui.form.action.SaveFormActionDefinition,info.magnolia.ui.contentapp.action.CommitActionDefinition (commitAction),,,"
+"
+info.magnolia.ui.framework.action.ActivationActionDefinition,info.magnolia.ui.contentapp.action.JcrCommandActionDefinition (jcrCommandAction),,,"
+"
+info.magnolia.ui.framework.action.AddFolderActionDefinition,info.magnolia.ui.contentapp.action.AddNodeActionDefinition (addNodeAction),,,"
+"
+info.magnolia.ui.framework.action.AddNodeActionDefinition,info.magnolia.ui.contentapp.action.AddNodeActionDefinition (addNodeAction),,,"
+"
+info.magnolia.ui.framework.action.AddPropertyActionDefinition,No direct replacement,,,"
+"
+info.magnolia.ui.framework.action.ConfirmationActionDefinition,info.magnolia.ui.contentapp.action.ConfirmationActionDefinition (confirmationAction),,,"
+"
+info.magnolia.ui.framework.action.DeactivationActionDefinition,info.magnolia.ui.framework.action.ActivationActionDefinition (-),"ActivationActionTest
+",,"
+"
+info.magnolia.ui.framework.action.DeleteActionDefinition,info.magnolia.ui.contentapp.action.JcrCommandActionDefinition (jcrCommandAction),,,"
+"
+info.magnolia.ui.framework.action.DeleteConfirmationActionDefinition,info.magnolia.ui.contentapp.action.DeleteNodesConfirmationActionDefinition (deleteNodesConfirmationAction),,,"
+"
+info.magnolia.ui.framework.action.DeleteItemActionDefinition,info.magnolia.ui.contentapp.action.CommandAction (-),"CommandActionTest
+",,"
+"
+info.magnolia.ui.framework.action.DownloadBinaryActionDefinition,No direct replacement,,,"
+"
+info.magnolia.ui.framework.action.DuplicateNodeActionDefinition,info.magnolia.ui.contentapp.action.AddNodeActionDefinition (addNodeAction),,,"
+"
+info.magnolia.ui.framework.action.EditorCallbackActionDefinition,No direct replacement,,,"
+"
+info.magnolia.ui.framework.action.ExportActionDefinition,info.magnolia.ui.contentapp.action.JcrExportActionDefinition (exportAction),"JcrExportActionTest
+",,"
+"
+info.magnolia.ui.framework.action.ExportYamlActionDefinition,No direct replacement,,,"
+"
+info.magnolia.ui.framework.action.MarkNodeAsDeletedActionDefinition,info.magnolia.ui.contentapp.action.MarkAsDeletedCommandActionDefinition (markAsDeletedAction),"MarkAsDeletedCommandActionTest
+",,"
+"
+info.magnolia.ui.framework.action.OpenCreateDialogActionDefinition,info.magnolia.ui.dialog.actions.OpenDialogActionDefinition (openDialogAction),,,"
+"
+info.magnolia.ui.framework.action.OpenEditDialogActionDefinition,info.magnolia.ui.dialog.actions.OpenDialogActionDefinition (openDialogAction),,,"
+"
+info.magnolia.ui.framework.action.OpenExportDialogActionDefinition,info.magnolia.ui.dialog.actions.OpenDialogActionDefinition (openDialogAction),,,"
+"
+info.magnolia.ui.framework.action.OpenLocationActionDefinition,info.magnolia.ui.contentapp.action.OpenLocationActionDefinition (-),"OpenLocationActionTest
+",,"
+"
+info.magnolia.ui.framework.action.ZipUploadActionDefinition,No direct replacement,,,"
+"
+,,,,
+DialogDefinition,,,,
+info.magnolia.ui.dialog.definition.ChooseDialogDefinition,info.magnolia.ui.chooser.definition.ChooserDefinition (-),,,"
+"
+info.magnolia.ui.dialog.definition.ConfiguredChooseDialogDefinition,info.magnolia.ui.chooser.definition.ChooserDefinition (-),,,"
+"
+info.magnolia.ui.dialog.definition.ConfiguredDialogDefinition,info.magnolia.ui.dialog.ConfiguredDialogDefinition (-),,,"
+"
+info.magnolia.ui.dialog.definition.ConfiguredFormDialogDefinition,info.magnolia.ui.dialog.ConfiguredDialogDefinition (-),,,"
+"
+info.magnolia.ui.dialog.definition.FormDialogDefinition,info.magnolia.ui.dialog.FormDialogDefinition (-),,,"
+"
