@@ -2,12 +2,12 @@
   "index_name": "cloud_internal_docs",
   "start_urls": [
     {
-      "url": "http://docs.beta.de.magnolia-cloud.com/",
+      "url": "https://musing-leakey-929a60.netlify.app/magnolia-saas/",
       "page-rank": 5
     }
   ],
   "sitemap_urls": [
-    "http://docs.beta.de.magnolia-cloud.com/sitemap.xml"
+    "https://musing-leakey-929a60.netlify.app/sitemap-magnolia-saas.xml"
   ],
   "selectors": {
     "lvl0": {
