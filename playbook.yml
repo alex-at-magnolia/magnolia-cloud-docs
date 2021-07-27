@@ -1,7 +1,7 @@
 site:
   title: Magnolia Cloud Service Internal Documentation
   # # the 404 page and sitemap files only get generated when the url property is set
-  url: https://musing-leakey-929a60.netlify.app
+  url: https://saas-docs.beta.de.magnolia-cloud.com/magnolia-saas/
   start_page: magnolia-saas:ROOT:index.adoc
   robots: allow
 
