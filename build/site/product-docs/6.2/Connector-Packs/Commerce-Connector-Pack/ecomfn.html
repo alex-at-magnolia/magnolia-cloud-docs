@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>ecomfn :: Magnolia Cloud Service Internal Documentation</title>
-    <link rel="canonical" href="http://docs.beta.de.magnolia-cloud.com/product-docs/6.2/Connector-Packs/Commerce-Connector-Pack/ecomfn">
+    <link rel="canonical" href="https://saas-docs.beta.de.magnolia-cloud.com/magnolia-saas/product-docs/6.2/Connector-Packs/Commerce-Connector-Pack/ecomfn">
     <meta name="keywords" content="templating-function, front-end-development, e-commerce, connector">
     <meta name="generator" content="Antora 2.3.3">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
@@ -2489,19 +2489,74 @@
 </div>
 </div>
 <div class="sect1">
+<h2 id="_get_product_information_by_product_id_as_a_string"><a class="anchor" href="#_get_product_information_by_product_id_as_a_string"></a>Get product information by product ID as a string</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The argument <code>productId</code> represents a slash separated string of <code>definitionName</code>, <code>connectionName</code> and <code>productId</code>.</p>
+</div>
+<div class="paragraph">
+<p>For example: <code>ecomfn.getProductById("definitionName/connectionName/productId")</code>.</p>
+</div>
+<div class="sect2">
+<h3 id="_method_signature_3"><a class="anchor" href="#_method_signature_3"></a>Method signature</h3>
+<div class="paragraph">
+<p><code>Product getProductById(String productId)</code></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_arguments_3"><a class="anchor" href="#_arguments_3"></a>Arguments</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 70%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Argument</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>productId</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>required</strong></p>
+</div>
+<div class="paragraph">
+<p>The product ID.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_returns_3"><a class="anchor" href="#_returns_3"></a>Returns</h3>
+<div class="paragraph">
+<p>Product information.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_usage_3"><a class="anchor" href="#_usage_3"></a>Usage</h3>
+<div class="paragraph">
+<p><code>ecomfn.getProductById(productId)</code></p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
 <h2 id="_get_all_categories"><a class="anchor" href="#_get_all_categories"></a>Get all categories</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>The method gets all categories.</p>
 </div>
 <div class="sect2">
-<h3 id="_method_signature_3"><a class="anchor" href="#_method_signature_3"></a>Method signature</h3>
+<h3 id="_method_signature_4"><a class="anchor" href="#_method_signature_4"></a>Method signature</h3>
 <div class="paragraph">
 <p><code>Collection&lt;Category&gt; getAllCategories(String definitionName, String connectionName)</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_arguments_3"><a class="anchor" href="#_arguments_3"></a>Arguments</h3>
+<h3 id="_arguments_4"><a class="anchor" href="#_arguments_4"></a>Arguments</h3>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 30%;">
@@ -2536,13 +2591,13 @@
 </table>
 </div>
 <div class="sect2">
-<h3 id="_returns_3"><a class="anchor" href="#_returns_3"></a>Returns</h3>
+<h3 id="_returns_4"><a class="anchor" href="#_returns_4"></a>Returns</h3>
 <div class="paragraph">
 <p>A list of categories.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_usage_3"><a class="anchor" href="#_usage_3"></a>Usage</h3>
+<h3 id="_usage_4"><a class="anchor" href="#_usage_4"></a>Usage</h3>
 <div class="paragraph">
 <p><code>ecomfn.getAllCategories(definitionName, connectionName)</code></p>
 </div>
@@ -2556,13 +2611,13 @@
 <p>The method gets all categories by product ID. For example, you have a product with the ID <code>redhandbag1</code> that belongs to categories such as <code>accessories</code>, <code>red</code>, <code>evening-wear</code> and <code>formal</code>.</p>
 </div>
 <div class="sect2">
-<h3 id="_method_signature_4"><a class="anchor" href="#_method_signature_4"></a>Method signature</h3>
+<h3 id="_method_signature_5"><a class="anchor" href="#_method_signature_5"></a>Method signature</h3>
 <div class="paragraph">
 <p><code>Collection&lt;Category&gt; getCategoriesByProductId(String definitionName, String connectionName, String productId)</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_arguments_4"><a class="anchor" href="#_arguments_4"></a>Arguments</h3>
+<h3 id="_arguments_5"><a class="anchor" href="#_arguments_5"></a>Arguments</h3>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 30%;">
@@ -2606,13 +2661,13 @@
 </table>
 </div>
 <div class="sect2">
-<h3 id="_returns_4"><a class="anchor" href="#_returns_4"></a>Returns</h3>
+<h3 id="_returns_5"><a class="anchor" href="#_returns_5"></a>Returns</h3>
 <div class="paragraph">
 <p>A list of all categories by product ID.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_usage_4"><a class="anchor" href="#_usage_4"></a>Usage</h3>
+<h3 id="_usage_5"><a class="anchor" href="#_usage_5"></a>Usage</h3>
 <div class="paragraph">
 <p><code>ecomfn.getAllCategories(definitionName, connectionName, productId)</code></p>
 </div>
@@ -2626,13 +2681,13 @@
 <p>The method gets all categories by parent category. For example, you have a parent category with the ID <code>summer</code>, that has child categories such as <code>sun-glasses</code>, <code>sun-cream</code>, <code>swimwear</code> and so on.</p>
 </div>
 <div class="sect2">
-<h3 id="_method_signature_5"><a class="anchor" href="#_method_signature_5"></a>Method signature</h3>
+<h3 id="_method_signature_6"><a class="anchor" href="#_method_signature_6"></a>Method signature</h3>
 <div class="paragraph">
 <p><code>Collection&lt;Category&gt; getCategoriesByParentCategoryId(String definitionName, String connectionName, String categoryId)</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_arguments_5"><a class="anchor" href="#_arguments_5"></a>Arguments</h3>
+<h3 id="_arguments_6"><a class="anchor" href="#_arguments_6"></a>Arguments</h3>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 30%;">
@@ -2676,13 +2731,13 @@
 </table>
 </div>
 <div class="sect2">
-<h3 id="_returns_5"><a class="anchor" href="#_returns_5"></a>Returns</h3>
+<h3 id="_returns_6"><a class="anchor" href="#_returns_6"></a>Returns</h3>
 <div class="paragraph">
 <p>A list of all categories by the parent category ID.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_usage_5"><a class="anchor" href="#_usage_5"></a>Usage</h3>
+<h3 id="_usage_6"><a class="anchor" href="#_usage_6"></a>Usage</h3>
 <div class="paragraph">
 <p><code>ecomfn.getCategoriesByParentCategoryId(definitionName, connectionName, categoryId)</code></p>
 </div>
@@ -2696,13 +2751,13 @@
 <p>The method gets all products.</p>
 </div>
 <div class="sect2">
-<h3 id="_method_signature_6"><a class="anchor" href="#_method_signature_6"></a>Method signature</h3>
+<h3 id="_method_signature_7"><a class="anchor" href="#_method_signature_7"></a>Method signature</h3>
 <div class="paragraph">
 <p><code>Collection&lt;Product&gt; getAllProducts(String definitionName, String connectionName)</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_arguments_6"><a class="anchor" href="#_arguments_6"></a>Arguments</h3>
+<h3 id="_arguments_7"><a class="anchor" href="#_arguments_7"></a>Arguments</h3>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 30%;">
@@ -2737,13 +2792,13 @@
 </table>
 </div>
 <div class="sect2">
-<h3 id="_returns_6"><a class="anchor" href="#_returns_6"></a>Returns</h3>
+<h3 id="_returns_7"><a class="anchor" href="#_returns_7"></a>Returns</h3>
 <div class="paragraph">
 <p>A list of all products.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_usage_6"><a class="anchor" href="#_usage_6"></a>Usage</h3>
+<h3 id="_usage_7"><a class="anchor" href="#_usage_7"></a>Usage</h3>
 <div class="paragraph">
 <p><code>ecomfn.getAllProducts(definitionName, connectionName)</code></p>
 </div>
@@ -2757,13 +2812,13 @@
 <p>The method gets all products by category ID.</p>
 </div>
 <div class="sect2">
-<h3 id="_method_signature_7"><a class="anchor" href="#_method_signature_7"></a>Method signature</h3>
+<h3 id="_method_signature_8"><a class="anchor" href="#_method_signature_8"></a>Method signature</h3>
 <div class="paragraph">
 <p><code>Collection&lt;Product&gt; getProductsByCategoryId(String definitionName, String connectionName, String categoryId)</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_arguments_7"><a class="anchor" href="#_arguments_7"></a>Arguments</h3>
+<h3 id="_arguments_8"><a class="anchor" href="#_arguments_8"></a>Arguments</h3>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 30%;">
@@ -2807,13 +2862,13 @@
 </table>
 </div>
 <div class="sect2">
-<h3 id="_returns_7"><a class="anchor" href="#_returns_7"></a>Returns</h3>
+<h3 id="_returns_8"><a class="anchor" href="#_returns_8"></a>Returns</h3>
 <div class="paragraph">
 <p>A list of products by category ID.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_usage_7"><a class="anchor" href="#_usage_7"></a>Usage</h3>
+<h3 id="_usage_8"><a class="anchor" href="#_usage_8"></a>Usage</h3>
 <div class="paragraph">
 <p><code>ecomfn.getProductsByCategoryId(definitionName, connectionName, categoryId)</code></p>
 </div>
@@ -2827,13 +2882,13 @@
 <p>The method gets a URL link to an image by product.</p>
 </div>
 <div class="sect2">
-<h3 id="_method_signature_8"><a class="anchor" href="#_method_signature_8"></a>Method signature</h3>
+<h3 id="_method_signature_9"><a class="anchor" href="#_method_signature_9"></a>Method signature</h3>
 <div class="paragraph">
 <p><code>String getImageLink(Product product)</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_arguments_8"><a class="anchor" href="#_arguments_8"></a>Arguments</h3>
+<h3 id="_arguments_9"><a class="anchor" href="#_arguments_9"></a>Arguments</h3>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 30%;">
@@ -2859,13 +2914,13 @@
 </table>
 </div>
 <div class="sect2">
-<h3 id="_returns_8"><a class="anchor" href="#_returns_8"></a>Returns</h3>
+<h3 id="_returns_9"><a class="anchor" href="#_returns_9"></a>Returns</h3>
 <div class="paragraph">
 <p>An image URL.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_usage_8"><a class="anchor" href="#_usage_8"></a>Usage</h3>
+<h3 id="_usage_9"><a class="anchor" href="#_usage_9"></a>Usage</h3>
 <div class="paragraph">
 <p><code>ecomfn.getImageLink(product)</code></p>
 </div>

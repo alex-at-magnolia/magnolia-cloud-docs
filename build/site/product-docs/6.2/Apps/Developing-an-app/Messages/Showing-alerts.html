@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Showing alerts :: Magnolia Cloud Service Internal Documentation</title>
-    <link rel="canonical" href="http://docs.beta.de.magnolia-cloud.com/product-docs/6.2/Apps/Developing-an-app/Messages/Showing-alerts">
+    <link rel="canonical" href="https://saas-docs.beta.de.magnolia-cloud.com/magnolia-saas/product-docs/6.2/Apps/Developing-an-app/Messages/Showing-alerts">
     <meta name="generator" content="Antora 2.3.3">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
 
@@ -2349,29 +2349,33 @@ the progress of a long-running action. Since alerts are modal they block
 the user interface.</p>
 </div>
 <div class="paragraph">
-<p>To show alerts, inject the
-<a href="https://nexus.magnolia-cms.com/#nexus-search;classname~UiContext" target="_blank" rel="noopener">UiContext</a> interface to your
-class. The <code>UiContext</code> is implemented by <code>AppContext</code>, <code>SubAppContext</code>
-and <code>Shell</code>, so if you have one of those at hand, just reuse them.</p>
+<p>Use javadoc:info.magnolia.ui.AlertBuilder[] to build various alerts.</p>
 </div>
 <div class="paragraph">
 <p>Usage examples:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">@Inject
-public MyCustomClass(UiContext uiContext) {
-   this.uiContext = uiContext;
-}
-
-// Show an ERROR alert.
-private openErrorAlert(String message) {
-   uiContext.openAlert(MessageStyleTypeEnum.ERROR, "Error", "File upload failed.", "OK", null);
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// Show an ERROR alert.
+void openErrorAlert(String message, Runnable confirmationHandler) {
+   AlertBuilder.alert("Error")
+                .withLevel(Notification.Type.ERROR_MESSAGE)
+                .withBody(message)
+                .withConfirmationHandler(confirmationHandler)
+                .withOkButtonCaption("OK")
+                .buildAndOpen();
 }
 
 // Confirm deletion with a WARNING alert.
-private openConfirmationWarning(String message) {
-   uiContext.openConfirmation(MessageStyleTypeEnum.WARNING, "Delete node?", "This action cannot be undone.", "Yes, Delete", "No", true, null);</code></pre>
+void openConfirmationWarning(String message, Runnable confirmationHandler) {
+    AlertBuilder.confirmDialog("Delete node?")
+                .withLevel(Notification.Type.WARNING_MESSAGE)
+                .withBody("This action cannot be undone.")
+                .withConfirmationHandler(confirmationHandler)
+                .withConfirmButtonCaption("Yes, Delete")
+                .withDeclineButtonCaption("No")
+                .buildAndOpen();
+}</code></pre>
 </div>
 </div>
 </div>

@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>E-commerce app :: Magnolia Cloud Service Internal Documentation</title>
-    <link rel="canonical" href="http://docs.beta.de.magnolia-cloud.com/product-docs/6.2/Connector-Packs/Commerce-Connector-Pack/E-commerce-app">
+    <link rel="canonical" href="https://saas-docs.beta.de.magnolia-cloud.com/magnolia-saas/product-docs/6.2/Connector-Packs/Commerce-Connector-Pack/E-commerce-app">
     <meta name="keywords" content="app, e-commerce, connector">
     <meta name="generator" content="Antora 2.3.3">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
@@ -2425,7 +2425,7 @@ pages app</code>.</p>
 <p><strong>Product detail</strong> – Shows detailed information for a specific product.</p>
 </li>
 <li>
-<p><strong>Product list</strong> – Lists all the products for a given connection.</p>
+<p><strong>Product list</strong> – Lists all the products for the selected category (not those for any sub categories).</p>
 </li>
 <li>
 <p><strong>Product teaser</strong> – Shows a given product image with text.</p>
@@ -2445,7 +2445,7 @@ pages app</code>.</p>
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-New component definitions have been  introduced in E-commerce 3.0.
+New component definitions and freemarker template files have been introduced in E-commerce 1.3 with a more user-friendly approach to choosing products, but we provide backwards compatibility for 1.2+.
 </td>
 </tr>
 </table>
@@ -2453,7 +2453,7 @@ New component definitions have been  introduced in E-commerce 3.0.
 <div class="sect2">
 <h3 id="_adding_e_commerce_content_to_a_page"><a class="anchor" href="#_adding_e_commerce_content_to_a_page"></a>Adding e-commerce content to a page</h3>
 <div class="paragraph">
-<p>Magnolia offers a user-friendly way of choosing categories and products from your third party e-commerce solution directly in the Magnolia interface.</p>
+<p>Magnolia offers a user-friendly way of choosing categories and products from your third party e-commerce solution directly in the Magnolia interface from v1.3+.</p>
 </div>
 <div class="paragraph">
 <p>In this example, we create an e-commerce product detail page in the Pages app:</p>
@@ -2496,13 +2496,25 @@ New component definitions have been  introduced in E-commerce 3.0.
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-Use the filters at the top of the columns to find what you&#8217;re looking for faster. In the example below, we have searched for the word <em>green</em> in  the product name column.
+The component chooser dialogs can be configured. For example, if you only have one third party e-commerce solution connected, you can ask your development team to preselect it in the chooser dialog and save yourself a click.
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
 <p><span class="image zoom"><img src="../../_images/ecom/ecom-product-chooser.png" alt="Product chooser dialog" width="600"></span></p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Use the filters at the top of the columns to find what you&#8217;re looking for faster. In the example above, we have searched for the word <em>green</em> in  the product name column.
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p>The product detail from your third-party solution is displayed in the Magnolia page. A link to the product is saved in the Magnolia content.</p>
@@ -2512,18 +2524,6 @@ Use the filters at the top of the columns to find what you&#8217;re looking for 
 </div>
 </li>
 </ol>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-If you only have one third party e-commerce solution connected, you can ask your development team to preselect it in the chooser dialog and save yourself a click.
-</td>
-</tr>
-</table>
 </div>
 <div class="sidebarblock">
 <div class="content">

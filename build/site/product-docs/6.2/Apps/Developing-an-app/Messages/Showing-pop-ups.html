@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Showing pop-ups :: Magnolia Cloud Service Internal Documentation</title>
-    <link rel="canonical" href="http://docs.beta.de.magnolia-cloud.com/product-docs/6.2/Apps/Developing-an-app/Messages/Showing-pop-ups">
+    <link rel="canonical" href="https://saas-docs.beta.de.magnolia-cloud.com/magnolia-saas/product-docs/6.2/Apps/Developing-an-app/Messages/Showing-pop-ups">
     <meta name="generator" content="Antora 2.3.3">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
 
@@ -2349,29 +2349,22 @@ and don’t require user action. Use pop-ups to confirm what the user did
 and provide them with confidence and assurance.</p>
 </div>
 <div class="paragraph">
-<p>To show pop-ups, inject the
-<a href="https://nexus.magnolia-cms.com/#nexus-search;classname~UiContext" target="_blank" rel="noopener">UiContext</a> interface to your
-class. The <code>UiContext</code> is implemented by <code>AppContext</code>, <code>SubAppContext</code>
-and <code>Shell</code>, so if you have one of those at hand, just reuse them.</p>
+<p>To show pop-ups, use the standard Vaadin <a href="https://vaadin.com/api/framework/8/com/vaadin/ui/Notification.html" target="_blank" rel="noopener">Notification</a>.</p>
 </div>
 <div class="paragraph">
 <p>Usage examples:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">@Inject
-public MyCustomClass(UiContext uiContext) {
-    this.uiContext = uiContext;
-}
-
-// Send an INFO notification to the current user.
-private openInfoNotification(String message) {
-    uiContext.openNotification(MessageStyleTypeEnum.INFO, true, message);
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// Send an INFO notification to the current user.
+void openInfoNotification(String message) {
+    Notification notification = Notification.show(message, Notification.Type.HUMANIZED_MESSAGE);
+    notification.setDelayMsec(3600);
 }
 
 // Send an ERROR notification to the current user.
-private openErrorNotification(String message) {
-    uiContext.openNotification(MessageStyleTypeEnum.ERROR, true, message);
+void openErrorNotification(String message) {
+    Notification.show(message, Notification.Type.ERROR_MESSAGE);
 }</code></pre>
 </div>
 </div>

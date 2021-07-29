@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Message view definition :: Magnolia Cloud Service Internal Documentation</title>
-    <link rel="canonical" href="http://docs.beta.de.magnolia-cloud.com/product-docs/6.2/Apps/Developing-an-app/Messages/Message-view-definition">
+    <link rel="canonical" href="https://saas-docs.beta.de.magnolia-cloud.com/magnolia-saas/product-docs/6.2/Apps/Developing-an-app/Messages/Message-view-definition">
     <meta name="generator" content="Antora 2.3.3">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
 
@@ -2357,33 +2357,37 @@ advanced example, see the <code>workflow</code> message view in
 <div class="sectionbody">
 <div class="paragraph">
 <p>Here’s how the <code>default</code> view is defined in
-<code>/modules/ui-admincentral/messageViews/default</code>. Copy or extend it as a
+<code>/modules/admincentral/messageViews/default.yaml</code>. Copy or extend it as a
 starting point for your own view.</p>
 </div>
 <div class="listingblock">
-<div class="title">./default.yaml</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">actions:
-  delete:
+<pre class="highlightjs highlight"><code class="language-yml hljs" data-lang="yml">actions:
+  deleteNotification:
+    implementationClass: info.magnolia.admincentral.apps.notifications.action.DeleteNotificationAndCloseAction
     icon: icon-delete
-    class: info.magnolia.ui.admincentral.shellapp.pulse.message.action.DeleteMessageActionDefinition
-form:
-  tabs:
-    - name: message
-      fields:
-        - name: sender
-          fieldType: text
-        - name: message
-          rows: 7
-          fieldType: text
+    class: info.magnolia.admincentral.apps.notifications.action.DeleteNotificationActionDefinition
 actionbar:
   defaultAction: delete
   sections:
-    - name: messageActions
+    notifications:
       groups:
-        - name: deleteActions
+        actions:
           items:
-            - name: delete</code></pre>
+            deleteNotification:
+              name: deleteNotification
+form:
+  tabs:
+    notification:
+      name: notification
+      fields:
+        sender:
+          class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+        subject:
+          class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+        message:
+          class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+          rows: 5</code></pre>
 </div>
 </div>
 <table class="tableblock frame-all grid-all stretch">
@@ -2444,12 +2448,6 @@ somewhere else. The action bar is displayed on side of the message view.</p>
 </tr>
 </tbody>
 </table>
-<div class="paragraph">
-<p>Here is what a notification looks like in the <code>default</code> view.</p>
-</div>
-<div class="paragraph">
-<p><span class="image zoom"><img src="../../../_images/6-1-messageViewDefinition.png" alt="image" width="600"></span></p>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -2457,19 +2455,18 @@ somewhere else. The action bar is displayed on side of the message view.</p>
 <div class="sectionbody">
 <div class="paragraph">
 <p>To use your custom message view in code, set the view on the
-<a href="https://nexus.magnolia-cms.com/#nexus-search;classname~Message" target="_blank" rel="noopener">Message</a> object before
-sending it.</p>
+javadoc:info.magnolia.ui.api.message.Message[] object before sending it.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">private sendMessageWithCustomView(String messageText) {
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">void sendMessageWithCustomView(String messageText) {
    final Message message = new Message();
    message.setMessage(messageText);
    message.setType(MessageType.INFO);
 
    // format when referencing a view
    // module-name:view-name (as defined in the configuration)
-   message.setView("ui-admincentral:myCustomView");
+   message.setView("admincentral:myCustomView");
    messagesManager.sendLocalMessage(message);
 }</code></pre>
 </div>

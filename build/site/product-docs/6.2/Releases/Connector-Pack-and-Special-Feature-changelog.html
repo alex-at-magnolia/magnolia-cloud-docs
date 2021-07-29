@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Connector Pack and Special Feature changelog :: Magnolia Cloud Service Internal Documentation</title>
-    <link rel="canonical" href="http://docs.beta.de.magnolia-cloud.com/product-docs/6.2/Releases/Connector-Pack-and-Special-Feature-changelog">
+    <link rel="canonical" href="https://saas-docs.beta.de.magnolia-cloud.com/magnolia-saas/product-docs/6.2/Releases/Connector-Pack-and-Special-Feature-changelog">
     <meta name="generator" content="Antora 2.3.3">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
 
@@ -2610,6 +2610,45 @@ decimalNumberFormat: "#0.00"</code></pre>
 <p>See <a href="../Connector-Packs/Commerce-Connector-Pack" class="page">Commerce Connector Pack</a> for an overview.</p>
 </div>
 <div class="sect2">
+<h3 id="_e_commerce_module_1_3"><a class="anchor" href="#_e_commerce_module_1_3"></a>E-commerce module 1.3</h3>
+<div class="paragraph">
+<p>Released on July 21, 2021.</p>
+</div>
+<div class="paragraph">
+<p>This Magnolia CMS 6.2.9+ compatible release brings improvements and bug fixes:</p>
+</div>
+<div class="sect3">
+<h4 id="_intuitive_product_chooser"><a class="anchor" href="#_intuitive_product_chooser"></a>Intuitive product chooser</h4>
+<div class="paragraph">
+<p>A user-friendly product chooser makes <a href="../Connector-Packs/Commerce-Connector-Pack/E-commerce-app#_adding_e_commerce_content_to_a_page" class="page">finding and selecting</a> categories and products faster and simpler for end users.</p>
+</div>
+<div class="paragraph">
+<p><span class="image zoom"><img src="../_images/ecom/ecom-product-chooser.png" alt="Product chooser dialog" width="600"></span></p>
+</div>
+<div class="paragraph">
+<p>Each column provides a filter at the top.</p>
+</div>
+<div class="paragraph">
+<p>The chooser dialog can also be <a href="../Connector-Packs/Commerce-Connector-Pack/E-commerce-module#_configuring_chooser_dialogs_v1_3" class="page">configured</a> to enable or disable certain columns.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_updated_component_definitions_and_template_files"><a class="anchor" href="#_updated_component_definitions_and_template_files"></a>Updated component definitions and template files</h4>
+<div class="paragraph">
+<p>You can find component definitions and template files configured under <code>/ecommerce-templating/templates/components</code>.</p>
+</div>
+<div class="paragraph">
+<p>The components introduced in v1.3 are suffixed with <code>-v3</code>.</p>
+</div>
+<div class="paragraph">
+<p>Those with no suffix are provided for backwards compatibility with E-commerce v1.2.x.</p>
+</div>
+<div class="paragraph">
+<p>You can still view and edit the 1.2.x version components but we recommend you recreate your e-commerce pages using the new component definitions to benefit from the new product chooser dialog and other improvements.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
 <h3 id="_e_commerce_module_1_2_5"><a class="anchor" href="#_e_commerce_module_1_2_5"></a>E-commerce module 1.2.5</h3>
 <div class="paragraph">
 <p>Released on July 21, 2021.</p>
@@ -2654,7 +2693,7 @@ decimalNumberFormat: "#0.00"</code></pre>
 <p>A new <code>locale</code> parameter used for product/category names or descriptions can be set in the commercetools configuration.</p>
 </div>
 <div class="paragraph">
-<p>See the parameter description in the <a href="../Connector-Packs/Commerce-Connector-Pack/E-commerce-module#_connection configuration and implementation" class="page">tab for commercetools</a>.</p>
+<p>See the parameter description in the <a href="../Connector-Packs/Commerce-Connector-Pack/E-commerce-module#_connection_configuration_and_implementation" class="page">tab for commercetools</a>.</p>
 </div>
 <div class="paragraph">
 <p><a href="https://jira.magnolia-cms.com/browse/ECOMMERCE-389" target="_blank" rel="noopener">ECOMMERCE-389</a></p>
