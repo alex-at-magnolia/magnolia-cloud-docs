@@ -146,6 +146,15 @@
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../../Releases/Release-notes-for-Magnolia-CMS-6.2.11"><span class="smalltext">Release notes for Magnolia CMS 6.2.11</span></a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../../Releases/Release-notes-for-Magnolia-CMS-6.2.11/Magnolia-6.2.11-Known-issues">Magnolia 6.2.11 Known issues</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../../../Releases/Release-notes-for-Magnolia-CMS-6.2.10"><span class="smalltext">Release notes for Magnolia CMS 6.2.10</span></a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
@@ -2583,6 +2592,38 @@ dialog.</p>
 <div class="paragraph">
 <p>Button label for removing an item. The value is
 <a href="../../../Administration/Language/Internationalization#_i18n_message_keys" class="page">i18n</a>-able.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>minItems</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>optional</strong>, <em>default is <code>0</code></em></p>
+</div>
+<div class="paragraph">
+<p>Specifies the minimum number of items to be added.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>maxItems</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>optional</strong>, <em>default is <code>Integer.MAX_VALUE</code></em></p>
+</div>
+<div class="paragraph">
+<p>Specifies the maximum number of items to be added.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>If <code>minItems</code> is greater than <code>maxItems</code>, item count validation will be disabled.</p>
+</div>
+</td>
+</tr>
+</table>
 </div></div></td>
 </tr>
 <tr>

@@ -147,6 +147,15 @@
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../Releases/Release-notes-for-Magnolia-CMS-6.2.11"><span class="smalltext">Release notes for Magnolia CMS 6.2.11</span></a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../Releases/Release-notes-for-Magnolia-CMS-6.2.11/Magnolia-6.2.11-Known-issues">Magnolia 6.2.11 Known issues</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../../Releases/Release-notes-for-Magnolia-CMS-6.2.10"><span class="smalltext">Release notes for Magnolia CMS 6.2.10</span></a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
@@ -2344,46 +2353,28 @@
 <div class="ulist">
 <ul>
 <li>
-<p>Create a custom user with superuser role and deactivate the
-<code>superuser</code> user as soon as possible after installation.</p>
+<p>Create a custom user with superuser role and deactivate the <code>superuser</code> user as soon as possible after installation.</p>
 </li>
 <li>
 <p>Keep instances up to date.</p>
 </li>
 <li>
-<p>Store public and author databases in separate physical locations. This
-minimizes the risk of data loss due to hardware failure or breach. The
-likelihood of a simultaneous event on both instances is less than that
-of a single instance in a different location. Failing suitable backup
-data, the surviving instance can be used to restore the instance on
-which the loss or corruption occurred. This tip is not Magnolia
-specific, just good common practice.</p>
+<p>Store public and author databases in separate physical locations. This minimizes the risk of data loss due to hardware failure or breach. The likelihood of a simultaneous event on both instances is less than that of a single instance in a different location. Failing suitable backup data, the surviving instance can be used to restore the instance on which the loss or corruption occurred. This tip is not Magnolia specific, just good common practice.</p>
 </li>
 <li>
-<p>Delegate (move) the JCR repository and all
-<a href="../Architecture/Configuration-management#_defining_properties" class="page">folders
-referenced</a> from the <code>magnolia.properties</code> files outside the webapp.</p>
+<p>Delegate (move) the JCR repository and all <a href="../Architecture/Configuration-management#_defining_properties" class="page">folders referenced</a> from the <code>magnolia.properties</code> files outside the webapp.</p>
 </li>
 <li>
-<p>Run your server with a user account that has only read access to the
-Magnolia webapp. This ensures that a potential attacker can’t use your
-write access to create a file with a malicious script for example.</p>
+<p>Run your server with a user account that has only read access to the Magnolia webapp. This ensures that a potential attacker can’t use your write access to create a file with a malicious script for example.</p>
 </li>
 <li>
-<p>Train users to create secure passwords. Thomas Baeddal’s article
-<a href="http://www.baekdal.com/tips/password-security-usability">Usability of
-passwords</a> covers the subject in depth.</p>
+<p>Train users to create secure passwords. Thomas Baeddal’s article <a href="http://www.baekdal.com/tips/password-security-usability" target="_blank" rel="noopener">Usability of passwords</a> covers the subject in depth.</p>
 </li>
 <li>
-<p>Ensure that anonymous access to AdminCentral URLs is blocked on author
-and public instances. This is the default. Edit the <code>anonymous</code> role and
-create an
-<a href="Roles-and-access-control-lists" class="page">ACL</a> that
-denies access to <code>./magnolia</code> and <code>.magnolia/*</code>.</p>
+<p>Ensure that anonymous access to AdminCentral URLs is blocked on author and public instances. This is the default. Edit the <code>anonymous</code> role and create an <a href="Roles-and-access-control-lists" class="page">ACL</a> that denies access to <code>./magnolia</code> and <code>.magnolia/*</code>.</p>
 </li>
 <li>
-<p>If feasible, block access to the AdminCentral URIs for all users other
-than those inside the local network.</p>
+<p>If feasible, block access to the AdminCentral URIs for all users other than those inside the local network.</p>
 </li>
 </ul>
 </div>
@@ -2395,40 +2386,19 @@ than those inside the local network.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Set up a SSL or TLS connector for Tomcat for encrypted communication
-and secure identification. Enable HTTPS for all sites managed in
-Magnolia. Instructions for
-<a href="http://tomcat.apache.org/tomcat-5.5-doc/ssl-howto.html">Tomcat</a> and
-<a href="http://httpd.apache.org/docs/2.0/ssl/ssl_howto.html">Apache Web server</a>.</p>
+<p>Set up a SSL or TLS connector for Tomcat for encrypted communication and secure identification. Enable HTTPS for all sites managed in Magnolia. Instructions for <a href="https://tomcat.apache.org/tomcat-9.0-doc/ssl-howto.html" target="_blank" rel="noopener">Tomcat</a> and <a href="http://httpd.apache.org/docs/current/ssl/ssl_howto.html" target="_blank" rel="noopener">Apache Web server</a>.</p>
 </li>
 <li>
-<p>Restrict access by IP address or remote host. Instructions for
-<a href="http://tomcat.apache.org/tomcat-5.5-doc/config/valve.html#Remote_Address_Filter">Tomcat</a>
-and <a href="http://httpd.apache.org/docs/2.2/howto/access.html">Apache Web
-server</a>. IP filtering is available also in Magnolia at
-<code>/server/IPConfig</code> where you can configure access based on HTTP method.
-Apply filtering to single IP addresses or to all IP addresses, indicated
-by using * (asterisk). Regular expressions are not supported.</p>
+<p>Restrict access by IP address or remote host. Instructions for <a href="https://tomcat.apache.org/tomcat-9.0-doc/config/valve.html" target="_blank" rel="noopener">Tomcat</a> and <a href="http://httpd.apache.org/docs/current/howto/access.html" target="_blank" rel="noopener">Apache Web server</a>. IP filtering is available also in Magnolia at <code>/server/IPConfig</code> where you can configure access based on HTTP method. Apply filtering to single IP addresses or to all IP addresses, indicated by using <code>*</code> (asterisk). Regular expressions are not supported.</p>
 </li>
 <li>
-<p>Attach a monitoring tool to your Tomcat instance for a better overview
-what is happening in the container. Try
-<a href="http://www.lambdaprobe.org/">Lambda Probe</a> or other
-<a href="http://wiki.magnolia-cms.com/display/DOCS45/Monitoring#Monitoring-JMXmonitoring">JMX
-monitoring</a> tools.</p>
+<p>Attach a monitoring tool to your Tomcat instance for a better overview what is happening in the container. Try <a href="http://www.lambdaprobe.org/" target="_blank" rel="noopener">Lambda Probe</a> or other <a href="http://wiki.magnolia-cms.com/display/DOCS45/Monitoring#Monitoring-JMXmonitoring" target="_blank" rel="noopener">JMX monitoring</a> tools.</p>
 </li>
 <li>
-<p>Change the <code>Server</code> response header field so it does not tell the
-version of Apache and operating system you are running. Attackers can
-use such information to their advantage.
-<a href="http://httpd.apache.org/docs/2.2/mod/core.html#servertokens">Apache Core:
-ServerTokens directive</a></p>
+<p>Change the <code>Server</code> response header field so it does not tell the version of Apache and operating system you are running. Attackers can use such information to their advantage. <a href="http://httpd.apache.org/docs/current/mod/core.html#servertokens" target="_blank" rel="noopener">Apache Core: ServerTokens directive</a></p>
 </li>
 <li>
-<p>Disable caching for secure content via no-cache headers. Do this in
-Magnolia
-<a href="../../Modules/List-of-modules/Cache-modules/Cache-core#_policy_configuration" class="page">browser
-cache policy</a>.</p>
+<p>Disable caching for secure content via no-cache headers. Do this in Magnolia <a href="../../Modules/List-of-modules/Cache-modules/Cache-core#_policy_configuration" class="page">browser cache policy</a>.</p>
 </li>
 </ul>
 </div>
@@ -2438,22 +2408,18 @@ cache policy</a>.</p>
 <h2 id="_resolving_a_lockout"><a class="anchor" href="#_resolving_a_lockout"></a>Resolving a lockout</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>If you accidentally lock out <code>superuser</code> and are unable to access
-AdminCentral:</p>
+<p>If you accidentally lock out <code>superuser</code> and are unable to access AdminCentral:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>If you still remember the <code>superuser</code> password, see
-<a href="https://wiki.magnolia-cms.com/display/WIKI/Re+enabling+a+locked+out+account" target="_blank" rel="noopener">Re-enabling a locked out account</a>.</p>
+<p>If you still remember the <code>superuser</code> password, see <a href="https://wiki.magnolia-cms.com/display/WIKI/Re+enabling+a+locked+out+account" target="_blank" rel="noopener">Re-enabling a locked out account</a>.</p>
 </li>
 <li>
-<p>If you forgot <code>superuser</code> password, see
-<a href="https://wiki.magnolia-cms.com/display/WIKI/Reset+superuser+account" target="_blank" rel="noopener">Reset superuser account</a>.</p>
+<p>If you forgot <code>superuser</code> password, see <a href="https://wiki.magnolia-cms.com/display/WIKI/Reset+superuser+account" target="_blank" rel="noopener">Reset superuser account</a>.</p>
 </li>
 <li>
-<p>If you suspect the lockout is due to errors in recent configuration
-changes, see <a href="https://wiki.magnolia-cms.com/display/WIKI/Rescue+Security+Support" target="_blank" rel="noopener">Rescue Security Support</a>.</p>
+<p>If you suspect the lockout is due to errors in recent configuration changes, see <a href="https://wiki.magnolia-cms.com/display/WIKI/Rescue+Security+Support" target="_blank" rel="noopener">Rescue Security Support</a>.</p>
 </li>
 </ul>
 </div>

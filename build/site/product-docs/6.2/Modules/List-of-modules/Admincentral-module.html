@@ -147,6 +147,15 @@
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../Releases/Release-notes-for-Magnolia-CMS-6.2.11"><span class="smalltext">Release notes for Magnolia CMS 6.2.11</span></a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../Releases/Release-notes-for-Magnolia-CMS-6.2.11/Magnolia-6.2.11-Known-issues">Magnolia 6.2.11 Known issues</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../../Releases/Release-notes-for-Magnolia-CMS-6.2.10"><span class="smalltext">Release notes for Magnolia CMS 6.2.10</span></a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
@@ -2364,7 +2373,7 @@
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Latest</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">6.2.10</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">6.2.11</p></td>
 </tr>
 </tbody>
 </table>
@@ -2387,7 +2396,7 @@ patterns of content suggestions.</p>
 <pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;dependency&gt;
   &lt;groupId&gt;info.magnolia.admincentral&lt;/groupId&gt;
   &lt;artifactId&gt;magnolia-admincentral&lt;/artifactId&gt;
-  &lt;version&gt;6.2.10&lt;/version&gt;
+  &lt;version&gt;6.2.11&lt;/version&gt;
 &lt;/dependency&gt;</code></pre>
 </div>
 </div>
@@ -2426,6 +2435,35 @@ the <a href="../../Apps/App-configuration/App-launcher-layout" class="page">App 
 </ul>
 </div>
 <div class="paragraph">
+<p><strong>Admincentral properties</strong></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 70%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Property</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>homeScreen</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>optional</strong>, <em>default is <code>FIND_BAR</code></em></p>
+</div>
+<div class="paragraph">
+<p>Screen that appears by default when the user logs in or closes an app. Possible values are <code>APP_LAUNCHER</code> and <code>FIND_BAR</code>.</p>
+</div>
+<div class="paragraph">
+<p>For the user configuration, see <a href="../../Administration/Security/Users#_setting_home_screen" class="page">Setting home screen</a>.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
 <p><strong><code>findBar</code> properties</strong></p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
@@ -2446,7 +2484,7 @@ the <a href="../../Apps/App-configuration/App-launcher-layout" class="page">App 
 <p><strong>optional</strong>, <em>default is <code>10</code></em></p>
 </div>
 <div class="paragraph">
-<p>An integer defining the maximum number of search results shown from any
+<p>Integer defining the maximum number of search results shown from any
 single search supplier.</p>
 </div></div></td>
 </tr>
@@ -2456,7 +2494,7 @@ single search supplier.</p>
 <p><strong>optional</strong></p>
 </div>
 <div class="paragraph">
-<p>List of user roles allowed in the Last editor search filter:<br>
+<p>List of user roles allowed in the <strong>Last editor</strong> search filter:<br>
 <span class="image zoom"><img src="../../_images/6-1-admincentralModule-lastEditor.png" alt="image"></span></p>
 </div>
 <div class="paragraph">
@@ -2469,7 +2507,7 @@ single search supplier.</p>
 <i class="fa icon-warning" title="Warning"></i>
 </td>
 <td class="content">
-By allowing all user roles in <code>editorRoles</code> you may experience
+By allowing all user roles in <code>editorRoles</code>, you may experience
 performance issues, especially when a large number of public users are
 registered in a shared user repository on the author instance and you
 open a Find Bar filter.
@@ -2484,7 +2522,7 @@ open a Find Bar filter.
 <p><strong>optional</strong>, <em>default is <code>3</code></em></p>
 </div>
 <div class="paragraph">
-<p>An integer defining the grid size for content suggestions. Compare below
+<p>Integer defining the grid size for content suggestions. Compare below
 the default setting of <code>3</code> on the left and <code>2</code> on the right:<br>
 <span class="image zoom"><img src="../../_images/6-1-AdmincentralModule-suggestionCountPerSupplier.png" alt="image"></span></p>
 </div></div></td>
@@ -2495,12 +2533,11 @@ the default setting of <code>3</code> on the left and <code>2</code> on the righ
 <p><strong>optional</strong></p>
 </div>
 <div class="paragraph">
-<p>List of search result suppliers.</p>
+<p>List of search result suppliers. If undefined, it defaults to all suppliers provided by the
+<a href="Periscope-module" class="page">Periscope module</a>.</p>
 </div>
 <div class="paragraph">
-<p>If undefined, it defaults to all suppliers provided by the
-<a href="Periscope-module" class="page">Periscope module</a>. See
-<a href="Periscope-module#_search_result_suppliers" class="page">Search
+<p>See <a href="Periscope-module#_search_result_suppliers" class="page">Search
 result suppliers</a>.</p>
 </div></div></td>
 </tr>
@@ -2515,6 +2552,18 @@ result suppliers</a>.</p>
 </tr>
 </tbody>
 </table>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Related topics</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="../../Apps/App-configuration/App-launcher-layout" class="page">App launcher layout</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
 </div>
 </div>
 </article>

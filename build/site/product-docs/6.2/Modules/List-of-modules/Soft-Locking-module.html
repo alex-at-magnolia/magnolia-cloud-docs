@@ -147,6 +147,15 @@
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../Releases/Release-notes-for-Magnolia-CMS-6.2.11"><span class="smalltext">Release notes for Magnolia CMS 6.2.11</span></a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../Releases/Release-notes-for-Magnolia-CMS-6.2.11/Magnolia-6.2.11-Known-issues">Magnolia 6.2.11 Known issues</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../../Releases/Release-notes-for-Magnolia-CMS-6.2.10"><span class="smalltext">Release notes for Magnolia CMS 6.2.10</span></a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
@@ -2367,7 +2376,7 @@ Locking</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Latest</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">3.0.1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3.1</p></td>
 </tr>
 </tbody>
 </table>
@@ -2384,6 +2393,62 @@ and facilitates efficient content contribution.</p>
 </div>
 </div>
 <div class="sect1">
+<h2 id="_module_structure"><a class="anchor" href="#_module_structure"></a>Module structure</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 40%;">
+<col style="width: 60%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">artifactID</th>
+<th class="tableblock halign-left valign-top"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>magnolia-soft-locking-parent</code></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Parent reactor.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>{i1} <code>magnolia-soft-locking</code></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Main module containing the implementation as well as the integration functions for the <a href="../../Apps/List-of-apps/Pages-app" class="page">Pages app</a>.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>{i1} <code>magnolia-module-soft-locking</code></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Submodule containing the <a href="https://documentation.magnolia-cms.com/display/DOCS57/Soft+Locking+module" target="_blank" rel="noopener">Soft Locking compatibility module</a>.
+Bundled in <code>magnolia-dx-core-webapp</code> and used for backward compatibility.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+For custom bundles, you have to add it yourself.
+</td>
+</tr>
+</table>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
 <h2 id="_installing_with_maven"><a class="anchor" href="#_installing_with_maven"></a>Installing with Maven</h2>
 <div class="sectionbody">
 <div class="paragraph">
@@ -2392,9 +2457,9 @@ and facilitates efficient content contribution.</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;dependency&gt;
-  &lt;groupId&gt;info.magnolia&lt;/groupId&gt;
-  &lt;artifactId&gt;magnolia-module-soft-locking&lt;/artifactId&gt;
-  &lt;version&gt;3.0.1&lt;/version&gt;
+  &lt;groupId&gt;info.magnolia.soft-locking&lt;/groupId&gt;
+  &lt;artifactId&gt;magnolia-soft-locking&lt;/artifactId&gt;
+  &lt;version&gt;3.1&lt;/version&gt;
 &lt;/dependency&gt;</code></pre>
 </div>
 </div>

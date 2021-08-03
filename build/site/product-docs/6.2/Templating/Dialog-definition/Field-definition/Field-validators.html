@@ -146,6 +146,15 @@
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../../Releases/Release-notes-for-Magnolia-CMS-6.2.11"><span class="smalltext">Release notes for Magnolia CMS 6.2.11</span></a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../../Releases/Release-notes-for-Magnolia-CMS-6.2.11/Magnolia-6.2.11-Known-issues">Magnolia 6.2.11 Known issues</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../../../Releases/Release-notes-for-Magnolia-CMS-6.2.10"><span class="smalltext">Release notes for Magnolia CMS 6.2.10</span></a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
@@ -2458,10 +2467,10 @@ public class EmailValidatorDefinition extends ConfiguredFieldValidatorDefinition
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">{i2} <code>mode</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>required</strong>, <em>default is <code>EDIT</code></em> (used only in node name validation)</p>
+<p><strong>required</strong> (used only in node name validation), <em>default is <code>EDIT</code></em></p>
 </div>
 <div class="paragraph">
-<p>Validation mode for JCR node names when using <code>nodeNameValidator</code>. Validates names as unique for:</p>
+<p>Validation mode when using <code>nodeNameValidator</code>. Validates names for:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -2477,10 +2486,10 @@ public class EmailValidatorDefinition extends ConfiguredFieldValidatorDefinition
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">{i2} <code>pattern</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>required</strong> (used only in regex validation)</p>
+<p><strong>required</strong> (used only in node name and regex validation), <em>default is <code>.+</code> for <code>nodeNameValidator</code></em></p>
 </div>
 <div class="paragraph">
-<p>Regular expression pattern when using <code>regexpValidator</code>.</p>
+<p>Regular expression pattern to validate against when using <code>nodeNameValidator</code> and <code>regexpValidator</code>.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -2574,7 +2583,7 @@ definition class, set the factory class.</p>
 <p><code>info.magnolia.ui.editor.validator.NodeNameValidatorDefinition</code></p>
 </div>
 <div class="paragraph">
-<p>Validates JCR node names as defined in the <code>mode</code> property.</p>
+<p>Validates JCR node names as defined in the <code>mode</code> and <code>pattern</code> properties.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -2585,7 +2594,7 @@ definition class, set the factory class.</p>
 <p><code>info.magnolia.ui.field.RegexpValidatorDefinition</code></p>
 </div>
 <div class="paragraph">
-<p>Validates the regular expression defined in the <code>pattern</code> property.</p>
+<p>Validates text input as defined in the <code>pattern</code> property.</p>
 </div></div></td>
 </tr>
 </tbody>

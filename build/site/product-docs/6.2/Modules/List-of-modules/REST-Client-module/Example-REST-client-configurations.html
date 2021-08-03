@@ -146,6 +146,15 @@
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../../Releases/Release-notes-for-Magnolia-CMS-6.2.11"><span class="smalltext">Release notes for Magnolia CMS 6.2.11</span></a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../../Releases/Release-notes-for-Magnolia-CMS-6.2.11/Magnolia-6.2.11-Known-issues">Magnolia 6.2.11 Known issues</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../../../Releases/Release-notes-for-Magnolia-CMS-6.2.10"><span class="smalltext">Release notes for Magnolia CMS 6.2.10</span></a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
@@ -2341,56 +2350,31 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>The following page describes five examples of configuring and using REST
-clients that are leveraging the possibilities of version 2 of the
-<a href="." class="page">REST Client module</a>:</p>
+<p>This page contains some uses cases for configuring and using REST clients that leverage the possibilities of version 2 of our <a href="." class="page">REST Client module</a>.</p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p>A simple configuration used</p>
-<div class="ulist">
-<ul>
-<li>
-<p>On a web page.</p>
-</li>
-<li>
-<p>In a content app (WARNING: requires the DX Core Edition of
-Magnolia).</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Configuration with the
-<a href=".#_Basicsecurityscheme" class="page">basic
-security scheme</a>.</p>
-</li>
-<li>
-<p>Configuration with an integration of a
-<a href="../JavaScript-Models-module" class="page">JavaScript
-model</a>.</p>
-</li>
-<li>
-<p>Configuration using an OpenAPI schema.</p>
-</li>
-</ul>
-</div>
+<div class="exampleblock">
+<div class="content">
 <div class="paragraph">
-<p>The examples are based on the
-<a href="https://git.magnolia-cms.com/projects/MODULES/repos/rest-client/browse/declarative-rest-demo">declarative-rest-demo</a>
-light module, a sub folder of the REST Client module in our Bitbucket
-repository.</p>
+<p>The examples are based on the <a href="https://git.magnolia-cms.com/projects/MODULES/repos/rest-client/browse/declarative-rest-demo" target="_blank" rel="noopener">declarative-rest-demo</a> light module, a sub folder of the REST Client module in our Bitbucket repository.</p>
 </div>
-<div class="paragraph">
-<p>See also the <a href="../../../Developing/Hello-Magnolia---with-content-via-REST" class="page">Hello
-Magnolia - with content via REST</a> tutorial page containing an additional
-and easy to configure scenario.</p>
+</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+See also the <a href="../../../Developing/Hello-Magnolia---with-content-via-REST" class="page">Hello Magnolia - with content via REST</a> tutorial page containing an additional and easy to configure scenario.
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_prerequisite_a_magnolia_setup"><a class="anchor" href="#_prerequisite_a_magnolia_setup"></a>Prerequisite: A Magnolia setup</h2>
+<h2 id="_prerequisite_set_up_magnolia"><a class="anchor" href="#_prerequisite_set_up_magnolia"></a>Prerequisite: Set up Magnolia</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>To test the REST client configurations, you need:</p>
@@ -2398,19 +2382,34 @@ and easy to configure scenario.</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>A running Magnolia instance.<br>
-If you don’t have Magnolia installed and running, go to the page called
-<a href="../../../Getting-started-with-Magnolia/Installing-Magnolia/Installing-Magnolia-through-npm-CLI" class="page">Installing
-Magnolia through npm CLI</a> and complete the steps described on it.</p>
+<p>A running Magnolia instance.<br></p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+If you don’t have Magnolia installed and running, go to the page called <a href="../../../Getting-started-with-Magnolia/Installing-Magnolia/Installing-Magnolia-through-npm-CLI" class="page">Installing Magnolia through npm CLI</a> and complete the steps described on it.
+</td>
+</tr>
+</table>
+</div>
 </li>
 <li>
-<p>The <code>declarative-rest-demo</code> light module.<br>
-You can get a copy of the light module by cloning the
-<a href="https://git.magnolia-cms.com/projects/MODULES/repos/rest-client/" class="bare">https://git.magnolia-cms.com/projects/MODULES/repos/rest-client/</a>
-repository and extracting the <code>declarative-rest-demo</code> directory to the
-folder defined by the <code>magnolia.resources.dir</code> property. If you
-installed Magnolia using CLI, it is the <code>light-modules</code> folder, located
-in the root of your Magnolia installation:</p>
+<p>The <code>declarative-rest-demo</code> light module.<br></p>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+You can get a copy of the light module by cloning the <a href="https://git.magnolia-cms.com/projects/MODULES/repos/rest-client/" class="bare" target="_blank" rel="noopener">https://git.magnolia-cms.com/projects/MODULES/repos/rest-client/</a> repository and extracting the <code>declarative-rest-demo</code> directory to the folder defined by the <code>magnolia.resources.dir</code> property. If you installed Magnolia using CLI, it is the <code>light-modules</code> folder, located in the root of your Magnolia installation:
+</td>
+</tr>
+</table>
+</div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;your-Magnolia-installation-folder&gt;
@@ -2429,9 +2428,7 @@ in the root of your Magnolia installation:</p>
 <h2 id="_case_1_simple_client_configuration"><a class="anchor" href="#_case_1_simple_client_configuration"></a>Case 1: Simple client configuration</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>In this case, a REST client is configured to send a request to the
-<code>/all</code> path of the <code><a href="https://restcountries.eu/rest/v2" class="bare">https://restcountries.eu/rest/v2</a></code> endpoint to get a
-list of countries. The list is then rendered in two ways:</p>
+<p>In this case, a REST client is configured to send a request to the <code>/all</code> path of the <code><a href="https://restcountries.eu/rest/v2" class="bare">https://restcountries.eu/rest/v2</a></code> endpoint to get a list of countries. The list is then rendered in two ways:</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -2452,35 +2449,30 @@ list of countries. The list is then rendered in two ways:</p>
 </tbody>
 </table>
 <div class="paragraph">
-<p>The configuration of the REST client is common for both of the variants.
-The client is called <code>countries</code>, a name derived from the configuration
-file’s name. The REST call is named <code>allCountries</code>.</p>
+<p>The configuration of the REST client is common for both of the variants. The client is called <code>countries</code>, a name derived from the configuration file’s name. The REST call is named <code>allCountries</code>.</p>
 </div>
-<div class="paragraph">
-<p>&lt;your-Magnolia-installation-folder&gt;/light-modules/declarative-rest-demo/restClients/countries.yaml</p>
+<div class="listingblock">
+<div class="title">&lt;your-Magnolia-installation-folder&gt;/light-modules/declarative-rest-demo/restClients/countries.yaml</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">baseUrl: https://restcountries.eu/rest/v2/
+restCalls:
+  allCountries:
+    method: GET
+    entityClass: com.fasterxml.jackson.databind.JsonNode
+    path: /all</code></pre>
 </div>
-<div class="paragraph">
-<p><a href="https://git.magnolia-cms.com/projects/MODULES/repos/rest-client/raw/declarative-rest-demo/restClients/countries.yaml?at=refs/heads/master" target="_blank" rel="noopener">https://git.magnolia-cms.com/projects/MODULES/repos/rest-client/raw/declarative-rest-demo/restClients/countries.yaml?at=refs/heads/master</a></p>
 </div>
 <div class="sect2">
 <h3 id="_a_used_for_a_web_page"><a class="anchor" href="#_a_used_for_a_web_page"></a>A) Used for a web page</h3>
 <div class="paragraph">
-<p>To render the countries as a list on a web page, you need to add the
-following files to the <code>declarative-rest-demo</code> light-module:</p>
+<p>To render the countries as a list on a web page, you need to add the following files to the <code>declarative-rest-demo</code> light-module:</p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Page template definition</strong></p>
-<div class="paragraph">
-<p>&lt;your-Magnolia-installation-folder&gt;/light-modules/declarative-rest-demo/templates/pages/rest-examples.yaml</p>
-</div>
-</li>
-</ul>
-</div>
+<div class="sect3">
+<h4 id="_page_template_definition"><a class="anchor" href="#_page_template_definition"></a>Page template definition</h4>
 <div class="listingblock">
+<div class="title">&lt;your-Magnolia-installation-folder&gt;/light-modules/declarative-rest-demo/templates/pages/rest-examples.yaml</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-yml hljs" data-lang="yml">title: Rest Examples
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">title: Rest Examples
 templateScript: /declarative-rest-demo/templates/pages/rest-examples.ftl
 renderType: freemarker
 
@@ -2491,20 +2483,25 @@ areas:
         id: declarative-rest-demo:components/countries/allCountries</code></pre>
 </div>
 </div>
-<div class="paragraph">
-<p>+
-Note that the <code>declarative-rest-demo</code> light module already contains a
-page template definition called <code>basic.yaml</code>, which you could also adapt
-and use instead of <code>rest-examples.yaml</code>.
-* <strong>Page template script</strong></p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The <code>declarative-rest-demo</code> light module already contains a page template definition called <code>basic.yaml</code>, which you could also adapt and use instead of <code>rest-examples.yaml</code>.
+</td>
+</tr>
+</table>
 </div>
-<div class="paragraph">
-<p>+
-&lt;your-Magnolia-installation-folder&gt;/light-modules/declarative-rest-demo/templates/pages/rest-examples.ftl</p>
 </div>
+<div class="sect3">
+<h4 id="_page_template_script"><a class="anchor" href="#_page_template_script"></a>Page template script</h4>
 <div class="listingblock">
+<div class="title">&lt;your-Magnolia-installation-folder&gt;/light-modules/declarative-rest-demo/templates/pages/rest-examples.ftl</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-yml hljs" data-lang="yml">[@cms.page /]
+<pre class="highlightjs highlight"><code>[@cms.page /]
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
   &lt;body&gt;
@@ -2515,37 +2512,29 @@ and use instead of <code>rest-examples.yaml</code>.
 </div>
 </div>
 <div class="paragraph">
-<p>+
-After adding these two files, a new page template called Rest Examples
-should be available in the Add page dialog:<br>
-<span class="image zoom"><img src="../../../_images/6-2-ExampleRESTClientConfigurations-pageTemplate.png" alt="image" width="600"></span><br>
-<br>
-* <strong>Component template definition</strong></p>
+<p>After adding these two files, a new page template called Rest Examples should be available in the Add page dialog:</p>
 </div>
 <div class="paragraph">
-<p>+
-&lt;your-Magnolia-installation-folder&gt;/light-modules/declarative-rest-demo/templates/components/countries/allCountries.yaml</p>
+<p><span class="image zoom"><img src="../../../_images/6-2-ExampleRESTClientConfigurations-pageTemplate.png" alt="image" width="600"></span></p>
 </div>
+</div>
+<div class="sect3">
+<h4 id="_component_template_definition"><a class="anchor" href="#_component_template_definition"></a>Component template definition</h4>
 <div class="listingblock">
+<div class="title">&lt;your-Magnolia-installation-folder&gt;/light-modules/declarative-rest-demo/templates/components/countries/allCountries.yaml</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-yml hljs" data-lang="yml">title: List all Countries
 templateScript: /declarative-rest-demo/templates/components/countries/allCountries.ftl
 renderType: freemarker</code></pre>
 </div>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Component template script</strong></p>
-<div class="paragraph">
-<p>&lt;your-Magnolia-installation-folder&gt;/light-modules/declarative-rest-demo/templates/components/countries/allCountries.ftl</p>
 </div>
-</li>
-</ul>
-</div>
+<div class="sect3">
+<h4 id="_component_template_script"><a class="anchor" href="#_component_template_script"></a>Component template script</h4>
 <div class="listingblock">
+<div class="title">&lt;your-Magnolia-installation-folder&gt;/light-modules/declarative-rest-demo/templates/components/countries/allCountries.ftl</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-yml hljs" data-lang="yml">[#assign countries = restfn.call("countries", "allCountries")]
+<pre class="highlightjs highlight"><code>[#assign countries = restfn.call("countries", "allCountries")]
 
 &lt;h2&gt;Countries&lt;/h2&gt;
 
@@ -2557,13 +2546,20 @@ renderType: freemarker</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>+
-Once you have included these files in the light module, you can add the
-new List all Countries component to a page that is using the Rest
-Examples page template. NOTE: Since the component is the
-only one available in the <code>main</code> area of the <code>rest-examples</code> page
-template definition, it is added to the page immediately after you click
-the <strong>Edit page</strong> action.</p>
+<p>Once you have included these files in the light module, you can add the new List all Countries component to a page that is using the Rest Examples page template.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Since the component is the only one available in the <code>main</code> area of the <code>rest-examples</code> page template definition, it is added to the page immediately after you click the <strong>Edit page</strong> action.
+</td>
+</tr>
+</table>
+</div>
 </div>
 </div>
 <div class="sect2">
@@ -2582,16 +2578,19 @@ a DX Core Edition since it requires the REST Client UI module.
 </table>
 </div>
 <div class="paragraph">
-<p>The app’s content type definition is already part of the
-<code>declarative-rest-demo</code> light module, but you have to create the <code>apps</code>
-folder in the local light module and add to the folder an app descriptor
-called <code>countries.yaml</code> from the
-<a href="https://git.magnolia-cms.com/projects/ENTERPRISE/repos/rest-client-ui/" class="bare">https://git.magnolia-cms.com/projects/ENTERPRISE/repos/rest-client-ui/</a>
-repository (access to this repository is restricted).</p>
+<p>The app’s content type definition is already part of the <code>declarative-rest-demo</code> light module, but you have to create the <code>apps</code> folder in the local light module and add to the folder an app descriptor called <code>countries.yaml</code> from the <a href="https://git.magnolia-cms.com/projects/ENTERPRISE/repos/rest-client-ui/" class="bare" target="_blank" rel="noopener">https://git.magnolia-cms.com/projects/ENTERPRISE/repos/rest-client-ui/</a> repository (access to this repository is restricted).</p>
 </div>
-<div class="paragraph">
-<p>To see the list of countries fetched from
-<code><a href="https://restcountries.eu/rest/v2" class="bare">https://restcountries.eu/rest/v2</a></code> as form select options in an app:</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+To see the list of countries fetched from <code><a href="https://restcountries.eu/rest/v2" class="bare">https://restcountries.eu/rest/v2</a></code> as form select options in an app:
+</td>
+</tr>
+</table>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -2599,51 +2598,152 @@ repository (access to this repository is restricted).</p>
 <p>Go to the Applauncher.</p>
 </li>
 <li>
-<p>In the Edit group, open the <em>Countries (select)</em> app:<br>
-<span class="image zoom"><img src="../../../_images/6-2-exampleRESTClientConfigurations-CountriesAppTile.png" alt="image" height="92"></span></p>
+<p>In the Edit group, open the <em>Countries (select)</em> app:</p>
+<div class="paragraph">
+<p><span class="image zoom"><img src="../../../_images/6-2-exampleRESTClientConfigurations-CountriesAppTile.png" alt="image" height="92"></span></p>
+</div>
 </li>
 <li>
 <p>Click <strong>Add country</strong>.</p>
 </li>
 <li>
-<p>Click at the <strong>Name</strong> field. A pulldown list opens with country names as
-select options.</p>
+<p>Click at the <strong>Name</strong> field. A pulldown list opens with country names as select options.</p>
 </li>
 <li>
-<p>Choose a country, for example <em>American Samoa</em>, and click <strong>Save</strong>. The
-country is then shown in the List of stored countries:</p>
+<p>Choose a country, for example <em>American Samoa</em>, and click <strong>Save</strong>.</p>
+<div class="paragraph">
+<p>The country is then shown in the List of stored countries:
+<span class="image zoom"><img src="../../../_images/6-2-ExampleRESTClientConfigurations-listOfStoredCountries.png" alt="image" width="700"></span></p>
+</div>
 </li>
 </ol>
 </div>
-<div class="paragraph">
-<p><span class="image zoom"><img src="../../../_images/6-2-ExampleRESTClientConfigurations-listOfStoredCountries.png" alt="image" width="700"></span></p>
-</div>
-<div class="paragraph">
-<p>The country is also saved locally in the <code>countries</code> workspace, which
-you can check with the <a href="../../../Apps/List-of-apps/JCR-Browser-app" class="page">JCR
-Browser app</a>:</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The country is also saved locally in the <code>countries</code> workspace, which you can check with the <a href="../../../Apps/List-of-apps/JCR-Browser-app" class="page">JCR Browser app</a>:
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p><span class="image zoom"><img src="../../../_images/6-2-ExampleRESTClientConfigurations-countriesInJCRBrowser.png" alt="image" width="700"></span></p>
 </div>
 <div class="paragraph">
-<p>The REST-relevant part of the app descriptor is shown below on lines
-76-84. There, the <code>rest</code>
-<a href="../../../Apps/App-configuration/Data-source-definition" class="page">datasource</a> is
-configured as a
-<a href="JSON-data-source" class="page">JSON
-data source</a> that uses the <code>countries</code> REST client and its
-<code>allCountries</code> REST call:</p>
+<p>The REST-relevant part of the app descriptor is shown below on lines 76-84. There, the <code>rest</code> <a href="../../../Apps/App-configuration/Data-source-definition" class="page">datasource</a> is configured as a <a href="JSON-data-source" class="page">JSON data source</a> that uses the <code>countries</code> REST client and its <code>allCountries</code> REST call:</p>
 </div>
-<div class="paragraph">
-<p>&lt;your-Magnolia-installation-folder&gt;/light-modules/declarative-rest-demo/apps/countries.yaml</p>
+<div class="listingblock">
+<div class="title">&lt;your-Magnolia-installation-folder&gt;/light-modules/declarative-rest-demo/apps/countries.yaml</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">appClass: info.magnolia.ui.contentapp.ContentApp
+class: info.magnolia.ui.contentapp.configuration.ContentAppDescriptor
+icon: icon-content-app #TODO Change icon
+label: Countries (select)
+datasource:
+  class: info.magnolia.ui.datasource.jcr.JcrDatasourceDefinition
+  workspace: countries
+  includeProperties: true
+  allowedNodeTypes:
+    - mgnl:content
+    - mgnl:folder
+subApps:
+  browser:
+    class: info.magnolia.ui.contentapp.configuration.BrowserDescriptor
+    closable: false
+    workbench:
+      contentViews:
+        - name: list
+          $type: listView
+          columns:
+            - name: jcrName
+              label: Country name
+    actionbar:
+      sections:
+        root:
+          availability:
+            root: true
+          groups:
+            addActions:
+              name: addActions
+              items:
+                - name: newCountry
+            editAction:
+              name: editCountry
+              items:
+                - name: editCountry
+    actions:
+      newCountry:
+        class: info.magnolia.ui.contentapp.action.OpenDetailSubappActionDefinition
+        icon: icon-edit
+        appName: countries
+        subAppName: detail
+        viewType: add
+        availability:
+          root: true
+      editCountry:
+        class: info.magnolia.ui.contentapp.action.OpenDetailSubappActionDefinition
+        icon: icon-edit
+        appName: countries
+        subAppName: detail
+        viewType: edit
+        availability:
+          # nodes: true
+          nodeTypes:
+            country: mgnl:content
+  detail:
+    label: Add/Edit Country
+    icon: icon-add-item
+    class: info.magnolia.ui.contentapp.detail.DetailDescriptor
+    itemProvider:
+      class: info.magnolia.ui.editor.JcrNodeFromLocationResolutionDefinition
+      workspace: countries
+      nodeType: mgnl:content
+    actions:
+      cancel:
+        label: Cancel
+        class: info.magnolia.ui.contentapp.action.CloseActionDefinition
+      save:
+        label: Save
+        class: info.magnolia.ui.contentapp.action.CommitActionDefinition
+    form:
+      properties:
+        jcrName:
+          label: Name
+          $type: jsonComboBoxField
+          datasource:
+            name: rest
+            $type: jsonDatasource
+            restClient: countries
+            restCall: allCountries
+            jsonPathExpressions:
+              itemId: '$.name'
+              items: '$.*'
+              describeBy: '$.name'
+              # preview: '$.Flag'
+      layout:
+        class: info.magnolia.ui.framework.layout.TabbedLayoutDefinition
+        tabs:
+          setUp:
+            label: Set up
+            fields:
+              - name: jcrName</code></pre>
 </div>
-<div class="paragraph">
-<p><a href="https://git.magnolia-cms.com/projects/MODULES/repos/rest-client/raw/declarative-rest-demo/apps/countries.yaml?at=refs/heads/master" target="_blank" rel="noopener">https://git.magnolia-cms.com/projects/MODULES/repos/rest-client/raw/declarative-rest-demo/apps/countries.yaml?at=refs/heads/master</a></p>
 </div>
-<div class="paragraph">
-<p>For the full app descriptor, see
-<a href="https://git.magnolia-cms.com/projects/MODULES/repos/rest-client/browse/declarative-rest-demo/apps/countries.yaml" class="bare">https://git.magnolia-cms.com/projects/MODULES/repos/rest-client/browse/declarative-rest-demo/apps/countries.yaml</a>.</p>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+For the full app descriptor, see <a href="https://git.magnolia-cms.com/projects/ENTERPRISE/repos/rest-client-ui/browse/declarative-rest-ui-demo/apps" class="bare" target="_blank" rel="noopener">https://git.magnolia-cms.com/projects/ENTERPRISE/repos/rest-client-ui/browse/declarative-rest-ui-demo/apps</a>.
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
@@ -2652,77 +2752,47 @@ data source</a> that uses the <code>countries</code> REST client and its
 <h2 id="_case_2_configuration_with_a_security_scheme"><a class="anchor" href="#_case_2_configuration_with_a_security_scheme"></a>Case 2: Configuration with a security scheme</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>This case builds on the B variant of Case 1, where the user can select a
-country and save it to the <code>countries</code> workspace.</p>
+<p>This case builds on the B variant of Case 1, where the user can select a country and save it to the <code>countries</code> workspace.</p>
 </div>
 <div class="paragraph">
-<p>First, check in the <a href="../../../Apps/List-of-apps/Definitions-app" class="page">Definitions
-app</a> that an endpoint called <code>countries</code> is configured on your instance:</p>
+<p>First, check in the <a href="../../../Apps/List-of-apps/Definitions-app" class="page">Definitions app</a> that an endpoint called <code>countries</code> is configured on your instance:</p>
 </div>
 <div class="paragraph">
 <p><span class="image zoom"><img src="../../../_images/6-2-ExampleRESTClientConfigurations-countriesEndpoint.png" alt="image" width="700"></span></p>
 </div>
 <div class="paragraph">
-<p>This is an
-<a href="../../../Developing/API/Delivery-API" class="page">API
-v2 Delivery endpoint</a> configuration, defined in the <code>countries.yaml</code>
-file located in the
-<code>&lt;your-Magnolia-installation-folder&gt;/light-modules/declarative-rest-demo/restEndpoints</code>
-directory.</p>
+<p>This is an <a href="../../../Developing/API/Delivery-API" class="page">API v2 Delivery endpoint</a> configuration, defined in the <code>countries.yaml</code> file located in the <code>&lt;your-Magnolia-installation-folder&gt;/light-modules/declarative-rest-demo/restEndpoints</code> directory.</p>
+</div>
+<div class="sect2">
+<h3 id="_client_configuration"><a class="anchor" href="#_client_configuration"></a>Client configuration</h3>
+<div class="paragraph">
+<p>The REST client configuration for this use case is also pre-installed by the <code>declarative-rest-demo</code>. The client name is <code>magnolia-stuff</code> and it uses a <a href=".#_Basicsecurityscheme" class="page">basic security scheme</a> configuration:</p>
 </div>
 <div class="paragraph">
-<p><strong>Client configuration</strong></p>
-</div>
-<div class="paragraph">
-<p>The REST client configuration for this use case is also pre-installed by
-the <code>declarative-rest-demo</code>. The client name is <code>magnolia-stuff</code> and it
-uses a
-<a href=".#_Basicsecurityscheme" class="page">basic
-security scheme</a> configuration:</p>
-</div>
-<div class="paragraph">
-<p>&lt;your-Magnolia-installation-folder&gt;/light-modules/declarative-rest-demo/restClients/magnolia-stuff.yaml</p>
-</div>
-<div class="paragraph">
+<div class="title">&lt;your-Magnolia-installation-folder&gt;/light-modules/declarative-rest-demo/restClients/magnolia-stuff.yaml</div>
 <p><a href="https://git.magnolia-cms.com/projects/MODULES/repos/rest-client/raw/declarative-rest-demo/restClients/magnolia-stuff.yaml?at=refs/heads/master" target="_blank" rel="noopener">https://git.magnolia-cms.com/projects/MODULES/repos/rest-client/raw/declarative-rest-demo/restClients/magnolia-stuff.yaml?at=refs/heads/master</a></p>
 </div>
-<div class="paragraph">
-<p><strong>Page component</strong></p>
 </div>
+<div class="sect2">
+<h3 id="_page_component"><a class="anchor" href="#_page_component"></a>Page component</h3>
 <div class="paragraph">
-<p>The component that renders the country names fetched from the local
-<code>countries</code> workspace has a template definition called <code>countries.yaml</code>
-and a template script called <code>countries.ftl</code>:</p>
+<p>The component that renders the country names fetched from the local <code>countries</code> workspace has a template definition called <code>countries.yaml</code> and a template script called <code>countries.ftl</code>:</p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Component template definition</strong></p>
+<div class="sect3">
+<h4 id="_component_template_definition_2"><a class="anchor" href="#_component_template_definition_2"></a>Component template definition</h4>
 <div class="paragraph">
-<p>&lt;your-Magnolia-installation-folder&gt;/light-modules/declarative-rest-demo/templates/countries/countries.yaml</p>
+<div class="title">&lt;your-Magnolia-installation-folder&gt;/light-modules/declarative-rest-demo/templates/countries/countries.yaml</div>
+<p><a href="https://git.magnolia-cms.com/projects/MODULES/repos/rest-client/raw/declarative-rest-demo/templates/components/countries/countries.yaml?at=refs/heads/master" target="_blank" rel="noopener">https://git.magnolia-cms.com/projects/MODULES/repos/rest-client/raw/declarative-rest-demo/templates/components/countries/countries.yaml?at=refs/heads/master</a></p>
 </div>
-</li>
-</ul>
 </div>
+<div class="sect3">
+<h4 id="_component_template_script_2"><a class="anchor" href="#_component_template_script_2"></a>Component template script</h4>
 <div class="paragraph">
-<p><a href="https://git.magnolia-cms.com/projects/MODULES/repos/rest-client/raw/declarative-rest-demo/templates/components/countries/countries.yaml?at=refs/heads/master" target="_blank" rel="noopener">https://git.magnolia-cms.com/projects/MODULES/repos/rest-client/raw/declarative-rest-demo/templates/components/countries/countries.yaml?at=refs/heads/master</a>
-* <strong>Component template script</strong></p>
-</div>
-<div class="paragraph">
-<p>+
-&lt;your-Magnolia-installation-folder&gt;/light-modules/declarative-rest-demo/templates/countries/countries.ftl</p>
-</div>
-<div class="paragraph">
+<div class="title">&lt;your-Magnolia-installation-folder&gt;/light-modules/declarative-rest-demo/templates/countries/countries.ftl</div>
 <p><a href="https://git.magnolia-cms.com/projects/MODULES/repos/rest-client/raw/declarative-rest-demo/templates/components/countries/countries.ftl?at=refs/heads/master" target="_blank" rel="noopener">https://git.magnolia-cms.com/projects/MODULES/repos/rest-client/raw/declarative-rest-demo/templates/components/countries/countries.ftl?at=refs/heads/master</a></p>
 </div>
-<div class="paragraph">
-<p>To make the component available in the Rest Examples page, append lines
-10 and 11 shown below to the page template:</p>
-</div>
-<div class="paragraph">
-<p>&lt;your-Magnolia-installation-folder&gt;/light-modules/declarative-rest-demo/templates/pages/rest-examples.yaml</p>
-</div>
 <div class="listingblock">
+<div class="title">&lt;your-Magnolia-installation-folder&gt;/light-modules/declarative-rest-demo/templates/pages/rest-examples.yaml</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-yml hljs" data-lang="yml">title: Rest Examples
 templateScript: /declarative-rest-demo/templates/pages/rest-examples.ftl
@@ -2733,24 +2803,35 @@ areas:
     availableComponents:
       allCountries:
         id: declarative-rest-demo:components/countries/allCountries
-      countries:
-        id: declarative-rest-demo:components/countries/countries</code></pre>
+      countries: <i class="conum" data-value="1"></i><b>(1)</b>
+        id: declarative-rest-demo:components/countries/countries <i class="conum" data-value="2"></i><b>(2)</b></code></pre>
 </div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>To make the component available in the Rest Examples page, append countries to the yaml file.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>Ensure you put the id as well.</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
-<p>You can then add the component to a page by choosing <em>List all Countries
-(magnolia repository)</em> from the list of options in the Add component
-dialog:</p>
+<p>You can then add the component to a page by choosing <em>List all Countries(magnolia repository)</em> from the list of options in the Add component dialog:</p>
 </div>
 <div class="paragraph">
 <p><span class="image zoom"><img src="../../../_images/6-2-ExampleRESTClientConfigurations-addComponentDialog.png" alt="image" width="600"></span></p>
 </div>
 <div class="paragraph">
-<p>After adding the component to the page, it displays country names stored
-in the <code>countries</code> workspace:</p>
+<p>After adding the component to the page, it displays country names stored in the <code>countries</code> workspace:</p>
 </div>
 <div class="paragraph">
 <p><span class="image zoom"><img src="../../../_images/6-2-ExampleRESTClientConfigurations-savedCountries.png" alt="image"></span></p>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -2758,12 +2839,7 @@ in the <code>countries</code> workspace:</p>
 <h2 id="_case_3_configuration_used_together_with_a_javascript_model"><a class="anchor" href="#_case_3_configuration_used_together_with_a_javascript_model"></a>Case 3: Configuration used together with a JavaScript model</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>This case makes use of a REST client called <code>books</code> and a JavaScript
-model called <code>search</code>. The model invokes the configured <code>searchByIsbn</code>
-call that queries the <a href="https://openlibrary.org/dev/docs/api/read" class="bare">https://openlibrary.org/dev/docs/api/read</a> API with
-a request for a record of a book identified by an ISBN 13 number. The
-component template script then renders the book’s title, cover image and
-number of pages.</p>
+<p>This case makes use of a REST client called <code>books</code> and a JavaScript model called <code>search</code>. The model invokes the configured <code>searchByIsbn</code> call that queries the <a href="https://openlibrary.org/dev/docs/api/read" class="bare" target="_blank" rel="noopener">https://openlibrary.org/dev/docs/api/read</a> API with a request for a record of a book identified by an ISBN 13 number. The component template script then renders the book’s title, cover image and number of pages.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -2772,72 +2848,154 @@ number of pages.</p>
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-For this example to work, you need to
-<a href="../JavaScript-Models-module#_exposing_components" class="page">expose</a>
-the <code>restClientFactory</code> and <code>restClientRegistry</code> components in the
-configuration of the
-<a href="../JavaScript-Models-module" class="page">JavaScript Models
-module</a>. You can do so by importing the
-<a href="https://git.magnolia-cms.com/projects/MODULES/repos/rest-client/raw/declarative-rest-demo/_install-manually/config.modules.javascript-models.config.yaml?at=refs%2Fheads%2Fmaster">config.modules.javascript-models.config.yaml</a>
-configuration file to <code>/modules/javascript-models</code>.
+For this example to work, you need to <a href="../JavaScript-Models-module#_exposing_components" class="page">expose</a> the <code>restClientFactory</code> and <code>restClientRegistry</code> components in the configuration of the <a href="../JavaScript-Models-module" class="page">JavaScript Models module</a>. You can do so by importing the link:https://git.magnolia-cms.com/projects/MODULES/repos/rest-client/raw/declarative-rest-demo/_install-manually/config.modules javascript-models.config.yaml?at=refs%2Fheads%2Fmaster[config.modules.javascript-models.config.yaml^] configuration file to <code>/modules/javascript-models</code>.
 </td>
 </tr>
 </table>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Client configuration</strong></p>
-<div class="paragraph">
-<p>&lt;your-Magnolia-installation-folder&gt;/light-modules/declarative-rest-demo/restClients/books.yaml</p>
+<div class="sect2">
+<h3 id="_client_configuration_2"><a class="anchor" href="#_client_configuration_2"></a>Client configuration</h3>
+<div class="listingblock">
+<div class="title">&lt;your-Magnolia-installation-folder&gt;/light-modules/declarative-rest-demo/restClients/books.yaml</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">baseUrl: http://openlibrary.org/api
+restCalls:
+  searchByIsbn:
+    method: get
+    entityClass: java.lang.String
+    path: /volumes/brief/isbn/{isbn}.json <i class="conum" data-value="1"></i><b>(1)</b>
+    defaultValues:
+      isbn: 978-3-16-148410-0</code></pre>
 </div>
-</li>
-</ul>
 </div>
-<div class="paragraph">
-<p><a href="https://git.magnolia-cms.com/projects/MODULES/repos/rest-client/raw/declarative-rest-demo/restClients/books.yaml?at=refs/heads/master" target="_blank" rel="noopener">https://git.magnolia-cms.com/projects/MODULES/repos/rest-client/raw/declarative-rest-demo/restClients/books.yaml?at=refs/heads/master</a></p>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>The path property uses the <code>{isbn}</code> template, where the JavaScript model injects the value submitted by the user in the <code>&lt;form/&gt;</code> element.</td>
+</tr>
+</table>
 </div>
-<div class="paragraph">
-<p>+
-The path property uses the <code>{isbn}</code> template, where the JavaScript model
-injects the value submitted by the user in the <code>&lt;form/&gt;</code> element.</p>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+See <a href="https://git.magnolia-cms.com/projects/MODULES/repos/rest-client/raw/declarative-rest-demo/restClients/books.yaml?at=refs/heads/master" target="_blank" rel="noopener">https://git.magnolia-cms.com/projects/MODULES/repos/rest-client/raw/declarative-rest-demo/restClients/books.yaml?at=refs/heads/master</a> for the source file.
+</td>
+</tr>
+</table>
 </div>
-<div class="paragraph">
-<p>+
-<br>
-* <strong>Component template definition</strong></p>
 </div>
-<div class="paragraph">
-<p>+
-&lt;your-Magnolia-installation-folder&gt;/light-modules/declarative-rest-demo/templates/components/books.yaml</p>
+<div class="sect2">
+<h3 id="_component_template_definition_3"><a class="anchor" href="#_component_template_definition_3"></a>Component template definition</h3>
+<div class="listingblock">
+<div class="title">&lt;your-Magnolia-installation-folder&gt;/light-modules/declarative-rest-demo/templates/components/books.yaml</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">title: Book Search
+templateScript: /declarative-rest-demo/templates/components/books/books.ftl
+renderType: freemarker
+modelClass: info.magnolia.module.jsmodels.rendering.JavascriptRenderingModel</code></pre>
 </div>
-<div class="paragraph">
-<p><a href="https://git.magnolia-cms.com/projects/MODULES/repos/rest-client/raw/declarative-rest-demo/templates/components/books/books.yaml?at=refs/heads/master" target="_blank" rel="noopener">https://git.magnolia-cms.com/projects/MODULES/repos/rest-client/raw/declarative-rest-demo/templates/components/books/books.yaml?at=refs/heads/master</a>
-* <strong>Component template script</strong></p>
 </div>
-<div class="paragraph">
-<p>+
-&lt;your-Magnolia-installation-folder&gt;/light-modules/declarative-rest-demo/templates/components/books.ftl</p>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+See <a href="https://git.magnolia-cms.com/projects/MODULES/repos/rest-client/raw/declarative-rest-demo/templates/components/books/books.yaml?at=refs/heads/master" target="_blank" rel="noopener">https://git.magnolia-cms.com/projects/MODULES/repos/rest-client/raw/declarative-rest-demo/templates/components/books/books.yaml?at=refs/heads/master</a> for the source file.
+</td>
+</tr>
+</table>
 </div>
-<div class="paragraph">
-<p><a href="https://git.magnolia-cms.com/projects/MODULES/repos/rest-client/raw/declarative-rest-demo/templates/components/books/books.ftl?at=refs/heads/master" target="_blank" rel="noopener">https://git.magnolia-cms.com/projects/MODULES/repos/rest-client/raw/declarative-rest-demo/templates/components/books/books.ftl?at=refs/heads/master</a>
-* <strong>JavaScript</strong></p>
 </div>
-<div class="paragraph">
-<p>+
-&lt;your-Magnolia-installation-folder&gt;/light-modules/declarative-rest-demo/templates/components/books.js</p>
+<div class="sect2">
+<h3 id="_component_template_script_3"><a class="anchor" href="#_component_template_script_3"></a>Component template script</h3>
+<div class="listingblock">
+<div class="title">&lt;your-Magnolia-installation-folder&gt;/light-modules/declarative-rest-demo/templates/components/books.ftl</div>
+<div class="content">
+<pre class="highlightjs highlight"><code>[#assign isbn = ctx.getParameter("isbn")!]
+[#assign isSubmitted = ctx.getParameter("submit")?has_content?then(true, false)]
+
+[#if isbn?has_content &amp;&amp; isSubmitted]
+    [#assign result = model.search(isbn)]
+[/#if]
+
+&lt;h2&gt;Search books by isbn13&lt;/h2&gt;
+&lt;p&gt;For example: 9780261103252, 9780582517349&lt;/p&gt;
+
+&lt;div style="margin:10px"&gt;
+    &lt;form method="get"&gt;
+        &lt;p&gt;
+            &lt;label for="isbn"&gt;Isbn&lt;/label&gt;
+            &lt;input type="text" name="isbn" /&gt;
+        &lt;/p&gt;
+        &lt;input type="submit" name="submit" value="Search" /&gt;
+    &lt;/form&gt;
+
+
+[#if result?has_content]
+    &lt;p&gt;Title: ${result.title}&lt;/p&gt;
+    &lt;p&gt;Number of pages: ${result.number_of_pages}&lt;/p&gt;
+    &lt;img src="${result.cover.large}" alt="Cover"/&gt;
+[/#if]
+&lt;/div&gt;</code></pre>
 </div>
-<div class="paragraph">
-<p><a href="https://git.magnolia-cms.com/projects/MODULES/repos/rest-client/raw/declarative-rest-demo/templates/components/books/books.js?at=refs/heads/master" target="_blank" rel="noopener">https://git.magnolia-cms.com/projects/MODULES/repos/rest-client/raw/declarative-rest-demo/templates/components/books/books.js?at=refs/heads/master</a></p>
 </div>
-<div class="paragraph">
-<p>To make the <code>books</code> component available for the Rest Examples page,
-append lines 12 and 13 to the page template definition:</p>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+See <a href="https://git.magnolia-cms.com/projects/MODULES/repos/rest-client/raw/declarative-rest-demo/templates/components/books/books.ftl?at=refs/heads/master" target="_blank" rel="noopener">https://git.magnolia-cms.com/projects/MODULES/repos/rest-client/raw/declarative-rest-demo/templates/components/books/books.ftl?at=refs/heads/master</a> for the source file.
+</td>
+</tr>
+</table>
 </div>
-<div class="paragraph">
-<p>&lt;your-Magnolia-installation-folder&gt;/light-modules/declarative-rest-demo/templates/pages/rest-examples.yaml</p>
+</div>
+<div class="sect2">
+<h3 id="_javascript"><a class="anchor" href="#_javascript"></a>JavaScript</h3>
+<div class="listingblock">
+<div class="title">&lt;your-Magnolia-installation-folder&gt;/light-modules/declarative-rest-demo/templates/components/books.js</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">var BookModel = function () {
+
+    var restClient = restClientFactory.createClientIfAbsent(restClientRegistry.getProvider("books").get());
+
+    this.search = function (isbn) {
+        var result = restClient.invoke("searchByIsbn", { isbn: isbn});
+        var data = JSON.parse(result.getEntity());
+        if (data &amp;&amp; data.records) {
+            var keys = Object.keys(data.records);
+            return data.records[keys[0]].data;
+        }
+        return null;
+    }
+};
+
+new BookModel();</code></pre>
+</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+See <a href="https://git.magnolia-cms.com/projects/MODULES/repos/rest-client/raw/declarative-rest-demo/templates/components/books/books.js?at=refs/heads/master" target="_blank" rel="noopener">https://git.magnolia-cms.com/projects/MODULES/repos/rest-client/raw/declarative-rest-demo/templates/components/books/books.js?at=refs/heads/master</a> for the source file.
+</td>
+</tr>
+</table>
 </div>
 <div class="listingblock">
+<div class="title">&lt;your-Magnolia-installation-folder&gt;/light-modules/declarative-rest-demo/templates/pages/rest-examples.yaml</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-yml hljs" data-lang="yml">title: Rest Examples
 templateScript: /declarative-rest-demo/templates/pages/rest-examples.ftl
@@ -2850,25 +3008,39 @@ areas:
         id: declarative-rest-demo:components/countries/allCountries
       countries:
         id: declarative-rest-demo:components/countries/countries
-      books:
-        id: declarative-rest-demo:components/books/books</code></pre>
+      books: <i class="conum" data-value="1"></i><b>(1)</b>
+        id: declarative-rest-demo:components/books/books <i class="conum" data-value="1"></i><b>(1)</b></code></pre>
 </div>
 </div>
-<div class="paragraph">
-<p>You can then add the component to a page by choosing the Book Search
-option in the Add component dialog:</p>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>To make the <code>books</code> component available for the Rest Examples page, append the component to the page template definition:</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+You can then add the component to a page by choosing the Book Search option in the Add component dialog:
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p><span class="image zoom"><img src="../../../_images/6-2-ExampleRESTClientConfigurations-addComponentDialogBookSearch.png" alt="image" width="600"></span></p>
 </div>
 <div class="paragraph">
-<p>The ISBN search form is functional even in the page edit mode. For
-example, after entering <code>9780261103252</code> in the Isbn field and pressing
-the <strong>Search</strong> button, the component should display the following book
-data:</p>
+<p>The ISBN search form is functional even in the page edit mode. For example, after entering <code>9780261103252</code> in the Isbn field and pressing the <strong>Search</strong> button, the component should display the following book data:</p>
 </div>
 <div class="paragraph">
 <p><span class="image zoom"><img src="../../../_images/6-2-exampleRESTClientConfigurations-books.png" alt="image"></span></p>
+</div>
 </div>
 </div>
 </div>
@@ -2876,74 +3048,46 @@ data:</p>
 <h2 id="_case_4_configuration_using_an_openapi_schema"><a class="anchor" href="#_case_4_configuration_using_an_openapi_schema"></a>Case 4: Configuration using an OpenAPI schema</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The benefit of a configuration using an OpenAPI schema is that all that
-is required to configure a REST client is reduced just to two
-properties, <code>class</code> and <code>schemaUrl</code>. For the class you use
-<code>info.magnolia.openapi.client.OpenApiRestClientDefinition</code>, and for the
-<code>schemaUrl</code> you provide a link to an existing definition (file or URL)
-complying with the OpenAPi v3 specification.</p>
+<p>The benefit of a configuration using an OpenAPI schema is that all that is required to configure a REST client is reduced just to two properties, <code>class</code> and <code>schemaUrl</code>. For the class you use <code>info.magnolia.openapi.client.OpenApiRestClientDefinition</code>, and for the <code>schemaUrl</code> you provide a link to an existing definition (file or URL) complying with the OpenAPi v3 specification.</p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Client configuration</strong></p>
-<div class="paragraph">
-<p>&lt;your-Magnolia-installation-folder&gt;/light-modules/declarative-rest-demo/restClients/wikipedia.yaml</p>
-</div>
-</li>
-</ul>
-</div>
+<div class="sect2">
+<h3 id="_client_configuration_3"><a class="anchor" href="#_client_configuration_3"></a>Client configuration</h3>
 <div class="listingblock">
+<div class="title">&lt;your-Magnolia-installation-folder&gt;/light-modules/declarative-rest-demo/restClients/wikipedia.yaml</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-yml hljs" data-lang="yml">class: info.magnolia.openapi.client.OpenApiRestClientDefinition
 schemaUrl: https://en.wikipedia.org/api/rest_v1/?spec</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>The component below uses the <code>onThisDay</code> operationId to target the
-<a href="https://en.wikipedia.org/api/rest_v1/#/Feed/onThisDay"><code>/feed​/onthisday​/{type}​/{mm}​/{dd}</code></a>
-endpoint path of the Wikipedia API. After passing the template values
-for type, month and date, the component displays a list of notable
-events that happened on the given day at some point in the past.</p>
+<p>The component below uses the <code>onThisDay</code> operationId to target the <a href="https://en.wikipedia.org/api/rest_v1/#/Feed/onThisDay" target="_blank" rel="noopener"><code>/feed​/onthisday​/{type}​/{mm}​/{dd}</code></a> endpoint path of the Wikipedia API. After passing the template values for type, month and date, the component displays a list of notable events that happened on the given day at some point in the past.</p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Component template definition</strong></p>
-<div class="paragraph">
-<p>&lt;your-Magnolia-installation-folder&gt;/light-modules/declarative-rest-demo/templates/components/wiki/onthisday.yaml</p>
 </div>
-</li>
-</ul>
-</div>
+<div class="sect2">
+<h3 id="_component_template_definition_4"><a class="anchor" href="#_component_template_definition_4"></a>Component template definition</h3>
 <div class="listingblock">
+<div class="title">&lt;your-Magnolia-installation-folder&gt;/light-modules/declarative-rest-demo/templates/components/wiki/onthisday.yaml</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-yml hljs" data-lang="yml">title: On this Day in the Past
 templateScript: /declarative-rest-demo/templates/components/wiki/onthisday.ftl
 renderType: freemarker</code></pre>
 </div>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Component template script</strong></p>
-<div class="paragraph">
-<p>&lt;your-Magnolia-installation-folder&gt;/light-modules/declarative-rest-demo/templates/components/wiki/onthisday.ftl</p>
 </div>
-</li>
-</ul>
-</div>
+<div class="sect2">
+<h3 id="_component_template_script_4"><a class="anchor" href="#_component_template_script_4"></a>Component template script</h3>
 <div class="listingblock">
+<div class="title">&lt;your-Magnolia-installation-folder&gt;/light-modules/declarative-rest-demo/templates/components/wiki/onthisday.ftl</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-yml hljs" data-lang="yml">[#assign aDateTime = .now]
-[#assign results = restfn.call("wikipedia", "onThisDay", {"type":"all", "mm":aDateTime?string["MM"], "dd":aDateTime?string["dd"]}) ]
+<pre class="highlightjs highlight"><code>[#assign aDateTime = .now]
+[#assign results = restfn.call("wikipedia", "onThisDay", {"type":"all", "mm":aDateTime?string["MM"], "dd":aDateTime?string["dd"]}) ] <i class="conum" data-value="1"></i><b>(1)</b>
 
 &lt;h2&gt;What happened on ${aDateTime?string["MMMM"]} ${aDateTime?string["dd"]} in the past?&lt;/h2&gt;
 
 [#list results.get("selected").elements() as event]
 
 &lt;p&gt;
-  ${event.get("text").textValue()} (${event.get("year").intValue()?c})
+  ${event.get("text").textValue()} (${event.get("year").intValue()?c}) <i class="conum" data-value="2"></i><b>(2)</b>
 &lt;/p&gt;
 
 [/#list]
@@ -2951,26 +3095,20 @@ renderType: freemarker</code></pre>
 &lt;p&gt;(Source: en.wikipedia.org)&lt;/p&gt;</code></pre>
 </div>
 </div>
-<div class="paragraph">
-<p>+
-Line 2: The alias <code>onThisDay</code> is used to target the endpoint path since
-the alias is defined in the schema. If this weren’t the case, you can
-always refer to a call name using the following pattern:
-<code>method:/path/pathAction</code>.<br>
-Line 9: At the end of the directive, the
-<a href="https://freemarker.apache.org/docs/ref_builtins_number.html#ref_builtin_c"><code>c</code></a>
-FreeMarker builtin is used to render the <code>intValue()</code> for the year
-without formatting for human audience, for example as <code>2019</code> rather than
-<code>2,019</code>.</p>
-</div>
-<div class="paragraph">
-<p>To make the <code>onthisday</code> component available for the Rest Examples page,
-append lines 14 and 15 to the page template definition:</p>
-</div>
-<div class="paragraph">
-<p>&lt;your-Magnolia-installation-folder&gt;/light-modules/declarative-rest-demo/templates/pages/rest-examples.yaml</p>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>The alias <code>onThisDay</code> is used to target the endpoint path since the alias is defined in the schema. If this weren’t the case, you can always refer to a call name using the following pattern: <code>method:/path/pathAction</code>.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>At the end of the directive, the <a href="https://freemarker.apache.org/docs/ref_builtins_number.html#ref_builtin_c" target="_blank" rel="noopener"><code>c</code></a> FreeMarker builtin is used to render the <code>intValue()</code> for the year without formatting for human audience, for example as <code>2019</code> rather than <code>2,019</code>.</td>
+</tr>
+</table>
 </div>
 <div class="listingblock">
+<div class="title">&lt;your-Magnolia-installation-folder&gt;/light-modules/declarative-rest-demo/templates/pages/rest-examples.yaml</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-yml hljs" data-lang="yml">title: Rest Examples
 templateScript: /declarative-rest-demo/templates/pages/rest-examples.ftl
@@ -2985,21 +3123,27 @@ areas:
         id: declarative-rest-demo:components/countries/countries
       books:
         id: declarative-rest-demo:components/books/books
-      onthisday:
-        id: declarative-rest-demo:components/wiki/onthisday</code></pre>
+      onthisday: <i class="conum" data-value="1"></i><b>(1)</b>
+        id: declarative-rest-demo:components/wiki/onthisday <i class="conum" data-value="1"></i><b>(1)</b></code></pre>
 </div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>To make the <code>onthisday</code> component available for the Rest Examples page, append the component to the page template definition:</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
-<p>After this, you can add the component to a page built on the Rest
-Examples page template by choosing the On this Day in the Past option in
-the Add component dialog.</p>
+<p>After this, you can add the component to a page built on the Rest Examples page template by choosing the On this Day in the Past option in the Add component dialog.</p>
 </div>
 <div class="paragraph">
-<p>Then, in the page edit mode, a list of notable events for the current
-day is displayed immediately:</p>
+<p>Then, in the page edit mode, a list of notable events for the current day is displayed immediately:</p>
 </div>
 <div class="paragraph">
 <p><span class="image zoom"><img src="../../../_images/6-2-exampleRESTClientConfigurations-OpenAPINov12.png" alt="image" width="600"></span></p>
+</div>
 </div>
 </div>
 </div>
@@ -3009,10 +3153,10 @@ day is displayed immediately:</p>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="https://apis.guru/browse-apis/">https://apis.guru/browse-apis</a></p>
+<p><a href="https://apis.guru/browse-apis/" target="_blank" rel="noopener">https://apis.guru/browse-apis</a></p>
 </li>
 <li>
-<p><a href="https://public-apis.xyz/">https://public-apis.xyz</a></p>
+<p><a href="https://public-apis.xyz/" target="_blank" rel="noopener">https://public-apis.xyz</a></p>
 </li>
 </ul>
 </div>
@@ -3028,14 +3172,7 @@ day is displayed immediately:</p>
 <p><a href="../../../Templating/Template-scripts/Templating-functions/restfn" class="page">restfn</a></p>
 </li>
 <li>
-<p>xref:Developing/Hello-Magnolia---with-content-via-REST.adoc[Hello Magnolia</p>
-<div class="ulist">
-<ul>
-<li>
-<p>with content via REST]</p>
-</li>
-</ul>
-</div>
+<p><a href="../../../Developing/Hello-Magnolia---with-content-via-REST" class="page">Hello Magnolia - with content via REST</a></p>
 </li>
 </ul>
 </div>

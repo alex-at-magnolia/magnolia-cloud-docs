@@ -105,7 +105,13 @@
 </ul>
   </li>
   <li class="nav-item is-current-page" data-depth="2">
+    <button class="nav-item-toggle"></button>
     <a class="nav-link" href="./">Manage your users</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="user-roles">Magnolia SaaS user groups</a>
+  </li>
+</ul>
   </li>
 </ul>
   </li>
@@ -185,7 +191,7 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>intro text around user management including inviting, authorization, removing users, editing users, etc.</p>
+<p>With Magnolia SaaS, you are able to easily manage your users from <strong>admincentral</strong>. This includes inviting new users to the subscription, managing their roles and access, and when needed, removing a user from your subscription.</p>
 </div>
 </div>
 </div>
@@ -247,7 +253,7 @@
 <p>Enter the email(s) of the people you wish to invite to your Magnolia SaaS subscription.</p>
 </li>
 <li>
-<p>Choose the <strong>Authorization</strong> group you want these users to belong to.</p>
+<p>Choose the <strong>User</strong> group you want these users to belong to.</p>
 <div class="admonitionblock note alt">
 <table>
 <tr>
@@ -258,68 +264,69 @@
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 30%;">
-<col style="width: 70%;">
+<col style="width: 10%;">
+<col style="width: 10%;">
+<col style="width: 10%;">
+<col style="width: 10%;">
+<col style="width: 10%;">
+<col style="width: 20%;">
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">Group</th>
-<th class="tableblock halign-left valign-top">Rights</th>
+<th class="tableblock halign-left valign-top">Role</th>
+<th class="tableblock halign-left valign-top">Create</th>
+<th class="tableblock halign-left valign-top">Edit</th>
+<th class="tableblock halign-left valign-top">Publish</th>
+<th class="tableblock halign-left valign-top">Develop</th>
+<th class="tableblock halign-left valign-top">Manage </br> users</th>
+<th class="tableblock halign-left valign-top">Manage </br> subscription</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Subscription Owner</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Full rights including all administrative privileges.</p>
-</div>
-<div class="paragraph">
-<p>This includes cancelling a subscription, so be sure this person knows what they are doing.</p>
-</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Subscription Owners</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">{check-mark}</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">{check-mark}</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">{check-mark}</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">{check-mark}</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">{check-mark}</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">{check-mark}</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Admin</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>All the rights of Developers plus some administrative rights such as:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Managing users</p>
-</li>
-</ul>
-</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Admins</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">{check-mark}</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">{check-mark}</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">{check-mark}</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">{check-mark}</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">{check-mark}</p></td>
+<td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Developer</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>All the rights of a Publisher plus:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Update git connections</p>
-</li>
-</ul>
-</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Developers</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">{check-mark}</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">{check-mark}</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">{check-mark}</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">{check-mark}</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Publisher</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>All the rights of an Editor plus:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Can publish to public sites.</p>
-</li>
-</ul>
-</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Publishers</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">{check-mark}</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">{check-mark}</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">{check-mark}</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Editor</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Can edit information in the author portion of Magnolia SaaS.</p>
-</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Editors</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">{check-mark}</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">{check-mark}</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
 </tr>
 </tbody>
 </table>

@@ -146,6 +146,15 @@
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../Releases/Release-notes-for-Magnolia-CMS-6.2.11"><span class="smalltext">Release notes for Magnolia CMS 6.2.11</span></a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../Releases/Release-notes-for-Magnolia-CMS-6.2.11/Magnolia-6.2.11-Known-issues">Magnolia 6.2.11 Known issues</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../../Releases/Release-notes-for-Magnolia-CMS-6.2.10"><span class="smalltext">Release notes for Magnolia CMS 6.2.10</span></a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
@@ -2812,6 +2821,18 @@ To solve this, define CATALINA_HOME in environment variables. Follow the instruc
 <div class="sect1">
 <h2 id="_other_issues"><a class="anchor" href="#_other_issues"></a>Other issues</h2>
 <div class="sectionbody">
+<div class="sect2">
+<h3 id="_preview_as_visitor_unusable_with_complex_locale_values_for_default_jvm_language"><a class="anchor" href="#_preview_as_visitor_unusable_with_complex_locale_values_for_default_jvm_language"></a>Preview as visitor unusable with complex locale values for default JVM language</h3>
+<div class="paragraph">
+<p>When the default JVM language is English and is defined using a locale value that contains more locale subtags than just the primary language code, for example <code>en_US</code> instead of <code>en</code>, the preview as visitor of a page is unusable.</p>
+</div>
+<div class="paragraph">
+<p>For languages other than English, the issue persists with any form of the locale value, plain or complex, for example with both <code>es</code> and <code>es_ES</code>.</p>
+</div>
+<div class="paragraph">
+<p>For more details and a workaround, see <a href="https://jira.magnolia-cms.com/browse/MGNLPN-564" target="_blank" rel="noopener">MGNLPN-564</a>.</p>
+</div>
+</div>
 <div class="sect2">
 <h3 id="_failing_post_requests_to_graphql_endpoint"><a class="anchor" href="#_failing_post_requests_to_graphql_endpoint"></a>Failing <code>POST</code> requests to GraphQL endpoint</h3>
 <div class="paragraph">

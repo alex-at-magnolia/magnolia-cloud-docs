@@ -147,6 +147,15 @@
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../Releases/Release-notes-for-Magnolia-CMS-6.2.11"><span class="smalltext">Release notes for Magnolia CMS 6.2.11</span></a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../Releases/Release-notes-for-Magnolia-CMS-6.2.11/Magnolia-6.2.11-Known-issues">Magnolia 6.2.11 Known issues</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../../Releases/Release-notes-for-Magnolia-CMS-6.2.10"><span class="smalltext">Release notes for Magnolia CMS 6.2.10</span></a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
@@ -2341,17 +2350,17 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>A <code>user</code> is an account that identifies the person accessing Magnolia. In
+<p>A user is an account that identifies the person accessing Magnolia. In
 addition to a username, Magnolia stores the user’s full name, email
-address, languge and time zone by default. These settings can be edited
-by the user itself on the <a href="#_edit_user_preferences">user preferences
-dialog</a>.</p>
+address, language and time zone by default. These settings can be edited
+by the user itself in the <a href="#_editing_user_profile"><strong>Edit user profile</strong></a>
+dialog.</p>
 </div>
 <div class="paragraph">
-<p>Every user has a certain set of <code>permissions</code> to grant access to
+<p>Every user has a certain set of permissions to grant access to
 resources, content, apps and similar things. Users inherit their
-permissions from the groups and roles the are attached to, see
-<a href="#<em>organizing_users">organizing users</a>. Use the _Security app</em> to
+permissions from the groups and roles they are attached to (see
+<a href="#_organizing_users">Organizing users</a>). Use the Security app to
 <a href="#_editing_user_permissions">edit the permissions of a user</a>.</p>
 </div>
 </div>
@@ -2397,19 +2406,16 @@ the site, newsletters and mailing lists.</p></td>
 </tr>
 </tbody>
 </table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_superuser"><a class="anchor" href="#_superuser"></a><code>superuser</code></h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="_superuser"><a class="anchor" href="#_superuser"></a><code>superuser</code></h3>
 <div class="paragraph">
 <p>The term <code>superuser</code> may refer either to a <em>system user</em> (an account
 type) or to a <em>role</em> (a definition of what a user is allowed to do in
-the system). In a vanilla installation of Magnolia, the superuser role
-is assigned to the superuser account. In addition to the superuser role,
-the superuser account has some other roles too, see
-<a href="#Administration/Security/Default-roles,-groups-and-users.adoc#_system_users" class="page unresolved">Default
-roles, groups and users</a>.</p>
+the system). In a vanilla installation of Magnolia, the <code>superuser</code> role
+is assigned to the <code>superuser</code> account. In addition to the <code>superuser</code> role,
+the <code>superuser</code> account has some other roles too (see
+<a href="Default-roles-groups-and-users#_system_users" class="page">Default
+roles, groups and users</a>).</p>
 </div>
 <div class="paragraph">
 <p>As the name implies, the permissions of the superuser account are
@@ -2421,16 +2427,14 @@ write to all default JCR workspaces on <code>/</code>.</p>
 deactivate the superuser account.</p>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="_anonymous"><a class="anchor" href="#_anonymous"></a><code>anonymous</code></h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="_anonymous"><a class="anchor" href="#_anonymous"></a><code>anonymous</code></h3>
 <div class="paragraph">
 <p>The term <code>anonymous</code> may refer either to a <em>system user</em> or to a <em>role</em>.
-The latter is assigned to the former. Apart from the anonymous role, the
-anonymous system user is by default assigned other roles too, see
-<a href="#Administration/Security/Default-roles,-groups-and-users.adoc#_system_users" class="page unresolved">Default
-roles, groups and users</a>.</p>
+The latter is assigned to the former. Apart from the <code>anonymous</code> role, the
+<code>anonymous</code> system user is by default assigned other roles too (see
+<a href="Default-roles-groups-and-users#_system_users" class="page">Default
+roles, groups and users</a>).</p>
 </div>
 <div class="paragraph">
 <p>Every Magnolia resource intended to be accessible without authentication
@@ -2456,43 +2460,35 @@ you should not activate that role.</p>
 </div>
 </div>
 </div>
+</div>
 <div class="sect1">
-<h2 id="_editing_user_preferences"><a class="anchor" href="#_editing_user_preferences"></a>Editing user preferences</h2>
+<h2 id="_editing_user_profile"><a class="anchor" href="#_editing_user_profile"></a>Editing user profile</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>A logged-in user can set one’s own preferences by clicking the <strong>Edit
-user profile</strong> action in the top right corner. To access the action,
-click the down arrow in the corner:</p>
+<p>Every user can set their own preferences. Next to your username
+in the upper-right corner, click the down arrow and select
+<strong>Edit user profile</strong>.</p>
+</div>
+<div class="paragraph">
+<p>In the <strong>User profile</strong> tab, change your password, full name
+and email address.</p>
 </div>
 <div class="paragraph">
 <p><span class="image zoom"><img src="../../_images/6-1-users-editUserProfile.png" alt="image" width="600"></span></p>
 </div>
 <div class="paragraph">
-<p>The action opens a dialog whose <strong>User profile</strong> tab allows changing the
-user’s password, full name and email address:</p>
+<p>In the <strong>Preferences</strong> tab, change your language,
+<a href="#_setting_time_zone">time zone</a>, and <a href="#_setting_home_screen">home screen</a>.</p>
 </div>
 <div class="paragraph">
-<p><span class="image zoom"><img src="../../_images/6-1-users-editUserProfile.png" alt="image" width="600"></span></p>
+<p><span class="image zoom"><img src="../../_images/6-2-Users-editPreferences.png" alt="image" width="600"></span></p>
 </div>
+<div class="sect2">
+<h3 id="_setting_time_zone"><a class="anchor" href="#_setting_time_zone"></a>Setting time zone</h3>
 <div class="paragraph">
-<p>Use the dialog’s <strong>Preferences</strong> tab to edit the user’s language and
-<a href="#_setting_user_timezone">the time zone</a>.</p>
-</div>
-<div class="paragraph">
-<p><span class="image zoom"><img src="../../_images/6-1-Users-editPreferences.png" alt="image" width="600"></span></p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_setting_the_user_time_zone"><a class="anchor" href="#_setting_the_user_time_zone"></a>Setting the user time zone</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Every user can set one’s own preferred time zone. Open the
-<a href="#_edit_user_preferences">user preferences dialog</a>, click the
-<strong>Preferences</strong> tab and set the time zone accordingly.</p>
-</div>
-<div class="paragraph">
-<p><span class="image zoom"><img src="../../_images/6-1-Users-editTimeZone.png" alt="image" width="600"></span></p>
+<p>Every user can select their own time zone. Open the
+<a href="#_editing_user_profile"><strong>Edit user profile</strong></a> dialog,
+go to the <strong>Preferences</strong> tab and set the time zone accordingly.</p>
 </div>
 <div class="paragraph">
 <p>Magnolia continues to record events such as page creation using the host
@@ -2501,6 +2497,22 @@ preferred time zone.</p>
 </div>
 <div class="paragraph">
 <p><span class="image zoom"><img src="../../_images/6-1-Users-modifiedDate.png" alt="image" width="600"></span></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_setting_home_screen"><a class="anchor" href="#_setting_home_screen"></a>Setting home screen</h3>
+<div class="paragraph">
+<p>The home screen is what appears by default when you log in or close an app.
+Every user can select <strong>App launcher</strong> or <strong>Find Bar suggestions</strong> as their
+home screen. Open the <a href="#_editing_user_profile"><strong>Edit user profile</strong></a>
+dialog, go to the <strong>Preferences</strong> tab and set the home screen accordingly.</p>
+</div>
+<div class="paragraph">
+<p><span class="image zoom"><img src="../../_images/6-2-Users-editPreferences.png" alt="image" width="600"></span></p>
+</div>
+<div class="paragraph">
+<p>For the global configuration, see <a href="../../Modules/List-of-modules/Admincentral-module#_configuration" class="page">Admincentral module: Configuration</a>.</p>
+</div>
 </div>
 </div>
 </div>
@@ -2553,22 +2565,18 @@ tab of the <a href="../../Apps/List-of-apps/Security-app" class="page">Security 
 </tr>
 </table>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_editing_user_permissions"><a class="anchor" href="#_editing_user_permissions"></a>Editing user permissions</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="_editing_user_permissions"><a class="anchor" href="#_editing_user_permissions"></a>Editing user permissions</h3>
 <div class="paragraph">
 <p>Every user known to Magnolia is granted a set of permissions defined by
 roles. You can either assign roles directly to a user, or assign a user
 to a group that itself grants a set of roles (see
-<a href="#_organizing_users">organizing users</a> above).</p>
+<a href="#_organizing_users">Organizing users</a> above).</p>
 </div>
 <div class="paragraph">
 <p>Use the <a href="../../Apps/List-of-apps/Security-app" class="page">Security app</a> to edit the
-permissions. The app is available in the <strong>Set up</strong> group of the
-AdminCentral and by default the <code>superuser</code> role is required to access
-it.</p>
+permissions. The app is available in the <strong>Set up</strong> group of Admincentral, and
+by default the <code>superuser</code> role is required to access it.</p>
 </div>
 <div class="paragraph">
 <p><span class="image zoom"><img src="../../_images/6-1-Users-securityAppTile.png" alt="image"></span></p>
@@ -2591,7 +2599,7 @@ users.</p>
 <li>
 <p><strong>User info</strong>: Use this tab to edit the user’s name and full name, the
 password, the email address, and the language, a property editable also
-in the <a href="#_edit_user_preferences">user preferences dialog</a>. You can use
+in the <a href="#_editing_user_profile"><strong>Edit user profile</strong></a> dialog. You can use
 the tab to enable or disable a user account.<br>
 <span class="image zoom"><img src="../../_images/6-1-Users-editUserInfo.png" alt="image" width="600"></span></p>
 </li>
@@ -2607,39 +2615,36 @@ the tab to enable or disable a user account.<br>
 </div>
 </div>
 </div>
+</div>
 <div class="sect1">
 <h2 id="_automatic_lockout"><a class="anchor" href="#_automatic_lockout"></a>Automatic lockout</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Automatic lockout is a security precaution that prevents users from
+<p>An automatic lockout is a security precaution that prevents users from
 accessing Magnolia after a number of failed login attempts.</p>
 </div>
 <div class="paragraph">
-<p>By default, the lockout is triggered, and the account is automatically
-disabled by a minimum of <code>N+1</code> failed login attempts. The number of
-failed attempts is configurable. When a non-existent username is entered
-lockout does not occur as the account does not exist. The lockout
-applies to system users and admin users but does not affect public
-users. After lockout, an administrator can re-enable the user account by
-checking the <strong>Enabled</strong> box in the user profile. When a lockout occurs,
-this checkbox is cleared.</p>
+<p>By default, a lockout is triggered and an account is automatically
+disabled after <code>N+1</code> failed login attempts. The number of failed
+attempts can be configured. No lockout is triggered when a username
+that does not exist is entered. A lockout applies to both system and
+admin users, but not to public users. After a lockout, an administrator
+can re-enable the account by selecting the <strong>Enabled</strong> checkbox in the
+user profile. When a lockout occurs, this checkbox is cleared.</p>
 </div>
 <div class="paragraph">
 <p><span class="image zoom"><img src="../../_images/6-1-Users-lockout.png" alt="image" width="600"></span></p>
 </div>
 <div class="paragraph">
-<p>The number of failed login attempts <code>N</code> that will trigger lockout is
-configurable using the property <code>maxFailedLoginAttempts</code> at
-<strong>Configuration</strong> &gt; <code>/server/security/userManagers/system</code> and <code>/admin</code>.
+<p>The number of failed login attempts <code>N</code> that will trigger a lockout can be configured using
+the <code>maxFailedLoginAttempts</code> property in <code>/server/security/userManagers/system</code> and <code>/admin</code>.
 Different values may be set for <strong>Users</strong> and <strong>Systems Users</strong>.</p>
 </div>
 <div class="paragraph">
 <p><span class="image zoom"><img src="../../_images/ADVT-users-auto.png" alt="image" width="600"></span></p>
 </div>
-<div class="dlist">
-<dl>
-<dt class="hdlist1">Properties</dt>
-</dl>
+<div class="paragraph">
+<p><strong>Properties</strong></p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
