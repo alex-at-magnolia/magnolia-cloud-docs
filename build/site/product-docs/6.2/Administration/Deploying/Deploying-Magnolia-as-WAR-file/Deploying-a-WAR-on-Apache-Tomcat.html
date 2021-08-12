@@ -149,7 +149,7 @@
     <a class="nav-link" href="../../../Releases/Release-notes-for-Magnolia-CMS-6.2.11"><span class="smalltext">Release notes for Magnolia CMS 6.2.11</span></a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../../Releases/Release-notes-for-Magnolia-CMS-6.2.11/Magnolia-6.2.11-Known-issues">Magnolia 6.2.11 Known issues</a>
+    <a class="nav-link" href="../../../Releases/Release-notes-for-Magnolia-CMS-6.2.11/Magnolia-6.2.11-known-issues">Magnolia 6.2.11 known issues</a>
   </li>
 </ul>
   </li>
@@ -815,10 +815,10 @@
     <span class="nav-text">Nodes and properties APIs</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../../Developing/API/Nodes-and-properties-APIs-(legacy)/Nodes-API">Nodes API</a>
+    <a class="nav-link" href="../../../Developing/API/Nodes-and-properties-APIs/Nodes-API">Nodes API</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../../Developing/API/Nodes-and-properties-APIs-(legacy)/Properties-API">Properties API</a>
+    <a class="nav-link" href="../../../Developing/API/Nodes-and-properties-APIs/Properties-API">Properties API</a>
   </li>
 </ul>
   </li>
@@ -2314,7 +2314,7 @@
       <span class="title">Magnolia SaaS</span>
       <ul class="versions">
         <li class="version is-latest">
-          <a href="../../../../../magnolia-saas/">master</a>
+          <a href="../../../../../saas/">master</a>
         </li>
       </ul>
     </li>
@@ -2326,7 +2326,7 @@
 <main class="article">
 <div class="toolbar" role="navigation">
 <button class="nav-toggle"></button>
-    <a href="../../../../../magnolia-saas/" class="home-link"></a>
+    <a href="../../../../../saas/" class="home-link"></a>
 
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <span class="breadcrumbs-home">
@@ -2477,15 +2477,29 @@ Tomcat will not need that much heap anymore.</p>
 <div class="sect3">
 <h4 id="_unable_to_log_in_with_an_ssoopenid_setup"><a class="anchor" href="#_unable_to_log_in_with_an_ssoopenid_setup"></a>Unable to log in with an SSO/OpenID setup</h4>
 <div class="paragraph">
-<p>In your Tomcat configuration, make sure that the <a href="https://tomcat.apache.org/tomcat-9.0-doc/config/cookie-processor.html" target="_blank" rel="noopener">Cookie processor component</a> does not have the <code>CookieProcessor</code> defined, so remove this line:</p>
+<p>Starting with Magnolia 6.2.10, in your Tomcat configuration, make sure that the <a href="https://tomcat.apache.org/tomcat-9.0-doc/config/cookie-processor.html" target="_blank" rel="noopener"><code>CookieProcessor</code></a> component
+does not have the <code>sameSiteCookies</code> property set to <code>strict</code>. Instead, set the property to <code>Lax</code>:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>&lt;CookieProcessor sameSiteCookies="..." /&gt;</pre>
+<pre>&lt;CookieProcessor sameSiteCookies="Lax" /&gt;</pre>
 </div>
 </div>
 <div class="paragraph">
-<p>The issue has been identified and will be fixed in 6.2.10 (<a href="https://jira.magnolia-cms.com/browse/MAGNOLIA-8112">MAGNOLIA-8112</a>).</p>
+<p>This supports <a href="https://en.wikipedia.org/wiki/OpenID" target="_blank" rel="noopener">OpenID</a> top-level redirects while maintaining decent protection against
+<a href="https://en.wikipedia.org/wiki/Cross-site_request_forgery" target="_blank" rel="noopener">cross-site request forgery</a> (CSRF).</p>
+</div>
+<div class="paragraph">
+<p>Before Magnolia 6.2.10, <code>Lax</code> was only supported in setups that do not use HTTPS behind a proxy (<a href="https://jira.magnolia-cms.com/browse/MAGNOLIA-8112" target="_blank" rel="noopener">MAGNOLIA-8112</a>).
+If that is your case, delete the following line from your Tomcat configuration to make sure that <code>CookieProcessor</code> is not defined:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>&lt;CookieProcessor sameSiteCookies="…" /&gt;</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This approach is less optimal in that there is risk that the effective policy is decided by more recent versions of the browsers themselves, which may lead to unexpected issues.</p>
 </div>
 </div>
 </div>

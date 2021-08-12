@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <sitemap>
-<loc>https://saas-docs.beta.de.magnolia-cloud.com/magnolia-saas/sitemap-magnolia-saas.xml</loc>
+<loc>https://saas-docs.beta.de.magnolia-cloud.com/magnolia-saas/sitemap-product-docs.xml</loc>
 </sitemap>
 <sitemap>
-<loc>https://saas-docs.beta.de.magnolia-cloud.com/magnolia-saas/sitemap-product-docs.xml</loc>
+<loc>https://saas-docs.beta.de.magnolia-cloud.com/magnolia-saas/sitemap-saas.xml</loc>
 </sitemap>
 </sitemapindex>

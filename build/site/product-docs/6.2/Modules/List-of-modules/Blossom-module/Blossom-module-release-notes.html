@@ -149,7 +149,7 @@
     <a class="nav-link" href="../../../Releases/Release-notes-for-Magnolia-CMS-6.2.11"><span class="smalltext">Release notes for Magnolia CMS 6.2.11</span></a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../../Releases/Release-notes-for-Magnolia-CMS-6.2.11/Magnolia-6.2.11-Known-issues">Magnolia 6.2.11 Known issues</a>
+    <a class="nav-link" href="../../../Releases/Release-notes-for-Magnolia-CMS-6.2.11/Magnolia-6.2.11-known-issues">Magnolia 6.2.11 known issues</a>
   </li>
 </ul>
   </li>
@@ -815,10 +815,10 @@
     <span class="nav-text">Nodes and properties APIs</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../../Developing/API/Nodes-and-properties-APIs-(legacy)/Nodes-API">Nodes API</a>
+    <a class="nav-link" href="../../../Developing/API/Nodes-and-properties-APIs/Nodes-API">Nodes API</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../../Developing/API/Nodes-and-properties-APIs-(legacy)/Properties-API">Properties API</a>
+    <a class="nav-link" href="../../../Developing/API/Nodes-and-properties-APIs/Properties-API">Properties API</a>
   </li>
 </ul>
   </li>
@@ -2314,7 +2314,7 @@
       <span class="title">Magnolia SaaS</span>
       <ul class="versions">
         <li class="version is-latest">
-          <a href="../../../../../magnolia-saas/">master</a>
+          <a href="../../../../../saas/">master</a>
         </li>
       </ul>
     </li>
@@ -2326,7 +2326,7 @@
 <main class="article">
 <div class="toolbar" role="navigation">
 <button class="nav-toggle"></button>
-    <a href="../../../../../magnolia-saas/" class="home-link"></a>
+    <a href="../../../../../saas/" class="home-link"></a>
 
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <span class="breadcrumbs-home">
@@ -2349,25 +2349,47 @@
 <h1 class="page">Blossom module release notes</h1>
 <div id="preamble">
 <div class="sectionbody">
-<div class="admonitionblock warning">
+<div class="admonitionblock note">
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-warning" title="Warning"></i>
+<i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
 <div class="title">Magnolia 6 UI compatibility</div>
 <div class="paragraph">
-<p>The Blossom module is generally compatible with <em>Magnolia 6 UI</em> apps.
-However, there are still certain objects which are only injectable in <em>5 UI</em> apps, through the deprecated <code>BlossomFormDialogPresenter</code>: these are Vaadin 7 items, JCR Node and node path.</p>
-</div>
-<div class="paragraph">
-<p>For the time being, please keep using the compatibility Pages app for these use cases.
-The <em>Magnolia 6 UI</em> framework does not have configurable form-dialog presenters, nor Vaadin 7 items.</p>
+<p>The Blossom module is generally compatible with Magnolia <em>6 UI</em> apps, including the <em>6 UI</em> Pages app. For more details, see <a href=".#_updating_to_magnolia_6_2" class="page">Blossom module: Updating to Magnolia 6.2</a>.</p>
 </div>
 </td>
 </tr>
 </table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_version_3_4_5"><a class="anchor" href="#_version_3_4_5"></a>Version 3.4.5</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This version, brought about by <a href="https://jira.magnolia-cms.com/browse/BLOSSOM-276" target="_blank" rel="noopener">BLOSSOM-276</a>, expands support for the Magnolia 6 UI framework:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>Node</code> and node path are now available in <code>DialogCreationContext</code>, as well as for injection into dialog factories. This facilitates migration to 6.2 and the <em>6 UI</em> Pages app.</p>
+</li>
+<li>
+<p><code>DialogCreationContext#getItem()</code> is now deprecated without replacement.</p>
+</li>
+<li>
+<p>The <code>formDialogPresenterClass</code> in the configuration of the module remains ignored in the <em>6 UI</em> apps.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><a href="https://nexus.magnolia-cms.com/content/repositories/magnolia.public.releases/info/magnolia/blossom/magnolia-module-blossom/3.4.5/" target="_blank" rel="noopener">Download</a><br>
+<a href="https://nexus.magnolia-cms.com/content/sites/magnolia.public.sites/modules/magnolia-module-blossom/3.4.5/magnolia-module-blossom/apidocs/index.html" target="_blank" rel="noopener">Javadoc</a><br>
+<a href="https://nexus.magnolia-cms.com/content/sites/magnolia.public.sites/modules/magnolia-module-blossom/3.4.5/magnolia-module-blossom/xref/index.html" target="_blank" rel="noopener">Source cross-reference</a><br>
+<a href="https://git.magnolia-cms.com/projects/BLOSSOM/repos/blossom/browse?at=refs%2Ftags%2Fmagnolia-module-blossom-3.4.5" target="_blank" rel="noopener">Source repository</a></p>
 </div>
 </div>
 </div>
@@ -2664,7 +2686,7 @@ otherwise it won’t be possible to manage personalized components.</p>
 dependency to your bundle:</p>
 </div>
 <div class="paragraph">
-<p>Use version 1.4.4 or higher.</p>
+<p>Use version 1.4.4 or later.</p>
 </div>
 <div class="paragraph">
 <p>Improvements:</p>

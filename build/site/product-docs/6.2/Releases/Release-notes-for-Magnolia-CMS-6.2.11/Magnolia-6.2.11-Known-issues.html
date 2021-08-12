@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Magnolia 6.2.11 Known issues :: Magnolia Cloud Service Internal Documentation</title>
-    <link rel="canonical" href="https://saas-docs.beta.de.magnolia-cloud.com/magnolia-saas/product-docs/6.2/Releases/Release-notes-for-Magnolia-CMS-6.2.11/Magnolia-6.2.11-Known-issues">
+    <title>Magnolia 6.2.11 known issues :: Magnolia Cloud Service Internal Documentation</title>
+    <link rel="canonical" href="https://saas-docs.beta.de.magnolia-cloud.com/magnolia-saas/product-docs/6.2/Releases/Release-notes-for-Magnolia-CMS-6.2.11/Magnolia-6.2.11-known-issues">
     <meta name="generator" content="Antora 2.3.3">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
 
@@ -149,7 +149,7 @@
     <a class="nav-link" href="."><span class="smalltext">Release notes for Magnolia CMS 6.2.11</span></a>
 <ul class="nav-list">
   <li class="nav-item is-current-page" data-depth="3">
-    <a class="nav-link" href="Magnolia-6.2.11-Known-issues">Magnolia 6.2.11 Known issues</a>
+    <a class="nav-link" href="Magnolia-6.2.11-known-issues">Magnolia 6.2.11 known issues</a>
   </li>
 </ul>
   </li>
@@ -815,10 +815,10 @@
     <span class="nav-text">Nodes and properties APIs</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../Developing/API/Nodes-and-properties-APIs-(legacy)/Nodes-API">Nodes API</a>
+    <a class="nav-link" href="../../Developing/API/Nodes-and-properties-APIs/Nodes-API">Nodes API</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../Developing/API/Nodes-and-properties-APIs-(legacy)/Properties-API">Properties API</a>
+    <a class="nav-link" href="../../Developing/API/Nodes-and-properties-APIs/Properties-API">Properties API</a>
   </li>
 </ul>
   </li>
@@ -2314,7 +2314,7 @@
       <span class="title">Magnolia SaaS</span>
       <ul class="versions">
         <li class="version is-latest">
-          <a href="../../../../magnolia-saas/">master</a>
+          <a href="../../../../saas/">master</a>
         </li>
       </ul>
     </li>
@@ -2326,7 +2326,7 @@
 <main class="article">
 <div class="toolbar" role="navigation">
 <button class="nav-toggle"></button>
-    <a href="../../../../magnolia-saas/" class="home-link"></a>
+    <a href="../../../../saas/" class="home-link"></a>
 
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <span class="breadcrumbs-home">
@@ -2338,25 +2338,37 @@
     <li><a href="../../">DX Core</a></li>
     <li><a href="..">Releases</a></li>
     <li><a href="."><span class="smalltext">Release notes for Magnolia CMS 6.2.11</span></a></li>
-    <li><a href="Magnolia-6.2.11-Known-issues">Magnolia 6.2.11 Known issues</a></li>
+    <li><a href="Magnolia-6.2.11-known-issues">Magnolia 6.2.11 known issues</a></li>
   </ul>
 </nav>
 
 </div>
   <div class="content">
 <article class="doc">
-<h1 class="page">Magnolia 6.2.11 Known issues</h1>
+<h1 class="page">Magnolia 6.2.11 known issues</h1>
 <div class="sect1">
-<h2 id="_preview_as_visitor_unusable_with_complex_locale_values_for_default_jvm_language"><a class="anchor" href="#_preview_as_visitor_unusable_with_complex_locale_values_for_default_jvm_language"></a>Preview as visitor unusable with complex locale values for default JVM language</h2>
+<h2 id="_preview_as_visitor_works_only_with_en_as_default_jvm_language"><a class="anchor" href="#_preview_as_visitor_works_only_with_en_as_default_jvm_language"></a>Preview as visitor works only with <code>en</code> as default JVM language</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>When the default JVM language is English and is defined using a locale value that contains more locale subtags than just the primary language code, for example <code>en_US</code> instead of <code>en</code>, the preview as visitor of a page is unusable.</p>
+<p>In Magnolia 6.2.11, preview as visitor does not work when English as the default JVM language specifies a variant (for example, <code>en_US</code> as opposed to just <code>en</code>).</p>
 </div>
 <div class="paragraph">
-<p>For languages other than English, the issue persists with any form of the locale value, plain or complex, for example with both <code>es</code> and <code>es_ES</code>.</p>
+<p>For languages other than English, the issue occurs regardless of whether any variants are defined (for example, with both <code>es</code> and <code>es_ES</code>).</p>
 </div>
 <div class="paragraph">
 <p>For more details and a workaround, see <a href="https://jira.magnolia-cms.com/browse/MGNLPN-564" target="_blank" rel="noopener">MGNLPN-564</a>.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+To fix the issue permanently on your instances, update the <a href="../../Modules/List-of-modules/Personalization-module#_installing_with_maven" class="page">Personalization module</a> to version 2.0.10 or later.
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>

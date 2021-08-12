@@ -149,7 +149,7 @@
     <a class="nav-link" href="../../Releases/Release-notes-for-Magnolia-CMS-6.2.11"><span class="smalltext">Release notes for Magnolia CMS 6.2.11</span></a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../Releases/Release-notes-for-Magnolia-CMS-6.2.11/Magnolia-6.2.11-Known-issues">Magnolia 6.2.11 Known issues</a>
+    <a class="nav-link" href="../../Releases/Release-notes-for-Magnolia-CMS-6.2.11/Magnolia-6.2.11-known-issues">Magnolia 6.2.11 known issues</a>
   </li>
 </ul>
   </li>
@@ -815,10 +815,10 @@
     <span class="nav-text">Nodes and properties APIs</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../Developing/API/Nodes-and-properties-APIs-(legacy)/Nodes-API">Nodes API</a>
+    <a class="nav-link" href="../../Developing/API/Nodes-and-properties-APIs/Nodes-API">Nodes API</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../Developing/API/Nodes-and-properties-APIs-(legacy)/Properties-API">Properties API</a>
+    <a class="nav-link" href="../../Developing/API/Nodes-and-properties-APIs/Properties-API">Properties API</a>
   </li>
 </ul>
   </li>
@@ -2314,7 +2314,7 @@
       <span class="title">Magnolia SaaS</span>
       <ul class="versions">
         <li class="version is-latest">
-          <a href="../../../../magnolia-saas/">master</a>
+          <a href="../../../../saas/">master</a>
         </li>
       </ul>
     </li>
@@ -2326,7 +2326,7 @@
 <main class="article">
 <div class="toolbar" role="navigation">
 <button class="nav-toggle"></button>
-    <a href="../../../../magnolia-saas/" class="home-link"></a>
+    <a href="../../../../saas/" class="home-link"></a>
 
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <span class="breadcrumbs-home">
@@ -2381,22 +2381,17 @@
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Latest</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>3.4.4</p>
+<p>3.4.5</p>
 </div></div></td>
 </tr>
 </tbody>
 </table>
 <div class="paragraph">
-<p>The Blossom module makes the
-<a href="http://projects.spring.io/spring-framework" target="_blank" rel="noopener">Spring Framework</a> available
-for Magnolia. Blossom enables you to create editing components that
-display a high level of dynamic behavior. These components can be used
-by editors to create truly interactive web pages. For example, the
-Spring Framework application stack makes it easier to connect to
-business systems, so that they fetch the information that you want to
-present in your pages. As Blossom is built on the Spring Web MVC,
-familiarity with this framework will ensure a smooth experience working
-with the module.</p>
+<p>The Blossom module makes the <a href="http://projects.spring.io/spring-framework" target="_blank" rel="noopener">Spring Framework</a> available for Magnolia.
+Blossom enables you to create editing components that display a high level of dynamic behavior.
+These components can be used by editors to create truly interactive web pages.
+For example, the Spring Framework application stack makes it easier to connect to business systems, so that they fetch the information that you want to present in your pages.
+As Blossom is built on the Spring Web MVC, familiarity with this framework will ensure a smooth experience working with the module.</p>
 </div>
 </div>
 </div>
@@ -2406,46 +2401,39 @@ with the module.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Annotation based API that builds on the Spring Web MVC. The Blossom
-API automatically detects annotated classes and registers them for use
-in Magnolia. To do this, simply add @Template to your controllers and
-they are ready to be used as building blocks by editors.</p>
+<p>Annotation based API that builds on the Spring Web MVC.
+The Blossom API automatically detects annotated classes and registers them for use in Magnolia.
+To do this, simply add @Template to your controllers and they are ready to be used as building blocks by editors.</p>
 </li>
 <li>
-<p>Exposes controllers as templates and components, allowing you to use
-the controller for building a model. Useful if you need to call a web
-service for information that you need to present or if you need to read
-information from a database.</p>
+<p>Exposes controllers as templates and components, allowing you to use the controller for building a model.
+Useful if you need to call a web service for information that you need to present or if you need to read information from a database.</p>
 </li>
 <li>
-<p>Template based. Having templates (pages, areas and components) backed
-by an MVC framework has the benefit of providing natural web development
-business logic.</p>
+<p>Template based.
+Having templates (pages, areas and components) backed by an MVC framework has the benefit of providing natural web development business logic.</p>
 </li>
 <li>
 <p>Enable the re-use of previously created controllers.</p>
 </li>
 <li>
-<p>Allows you to create dialogs with code rather than configuration. This
-has many benefits:</p>
+<p>Allows you to create dialogs with code rather than configuration.
+This has many benefits:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>you can populate the dialog at runtime with options detected at
-runtime:</p>
+<p>you can populate the dialog at runtime with options detected at runtime:</p>
 </li>
 <li>
-<p>you can obtain dialogs from the repository and place into your source
-control (CVS, SVN, GIT).</p>
+<p>you can obtain dialogs from the repository and place into your source control (CVS, SVN, GIT).</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p>Components can be executed in front of Magnolia. This means that it
-can choose to do a redirect and skip page rendering. This is very
-useful, for instance, if you have a form that on post should either
-present an error message or do a redirect.</p>
+<p>Components can be executed in front of Magnolia.
+This means that it can choose to do a redirect and skip page rendering.
+This is very useful, for instance, if you have a form that on post should either present an error message or do a redirect.</p>
 </li>
 </ul>
 </div>
@@ -2454,17 +2442,6 @@ present an error message or do a redirect.</p>
 <div class="sect1">
 <h2 id="_compatibility_requirements"><a class="anchor" href="#_compatibility_requirements"></a>Compatibility requirements</h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p>The Blossom module is generally compatible with <em>Magnolia 6 UI</em> apps.
-However, there are still certain objects which are only injectable in <em>5 UI</em> apps, through the deprecated <code>BlossomFormDialogPresenter</code>: these are Vaadin 7 items, JCR Node and node path.</p>
-</div>
-<div class="paragraph">
-<p>For the time being, please keep using the compatibility Pages app for these use cases.
-The <em>Magnolia 6 UI</em> framework does not have configurable form-dialog presenters, nor Vaadin 7 items.</p>
-</div>
-<div class="paragraph">
-<p>For previous Magnolia versions, please refer to the table below:</p>
-</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 33.3333%;">
@@ -2492,7 +2469,20 @@ The <em>Magnolia 6 UI</em> framework does not have configurable form-dialog pres
 </tbody>
 </table>
 <div class="paragraph">
-<p>See also <a href="Blossom-module/Blossom-module-release-notes" class="page">Blossom module release notes</a> and <a href="../../Administration/Certified-stack" class="page">Certified stack</a> (for supported Java versions).</p>
+<p>For more information about updating the module and its compatibility, see:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#_updating_to_magnolia_6_2">Updating to Magnolia 6.2</a> (a section below on this page).</p>
+</li>
+<li>
+<p><a href="Blossom-module/Blossom-module-release-notes" class="page">Blossom module release notes</a>.</p>
+</li>
+<li>
+<p><a href="../../Administration/Certified-stack" class="page">Certified stack</a> (for supported Java versions).</p>
+</li>
+</ul>
 </div>
 </div>
 </div>
@@ -2507,7 +2497,7 @@ The <em>Magnolia 6 UI</em> framework does not have configurable form-dialog pres
 <pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;dependency&gt;
   &lt;groupId&gt;info.magnolia.blossom&lt;/groupId&gt;
   &lt;artifactId&gt;magnolia-module-blossom&lt;/artifactId&gt;
-  &lt;version&gt;3.4.4&lt;/version&gt;
+  &lt;version&gt;3.4.5&lt;/version&gt;
 &lt;/dependency&gt;</code></pre>
 </div>
 </div>
@@ -2531,7 +2521,7 @@ The Magnolia Blossom Personalization module is also required. If you are using M
 <pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;dependency&gt;
   &lt;groupId&gt;info.magnolia.personalization&lt;/groupId&gt;
   &lt;artifactId&gt;magnolia-personalization-blossom-compatibility&lt;/artifactId&gt;
-  &lt;version&gt;2.0.9&lt;/version&gt;
+  &lt;version&gt;2.0.10&lt;/version&gt;
 &lt;/dependency&gt;</code></pre>
 </div>
 </div>
@@ -2564,8 +2554,8 @@ If you are using an older branch of Magnolia:
 <div class="sect2">
 <h3 id="_programming_model"><a class="anchor" href="#_programming_model"></a>Programming model</h3>
 <div class="paragraph">
-<p>Blossom is an annotation based API that’s used in combination with
-Spring MVC. This snippet gives an overview of how the API is used.</p>
+<p>Blossom is an annotation based API that’s used in combination with Spring MVC.
+This snippet gives an overview of how the API is used.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -2672,6 +2662,45 @@ details see this
 <a href="Blossom-module/Getting-started-with-Blossom" class="page">Getting
 started with Blossom</a>.</p>
 </div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_updating_to_magnolia_6_2"><a class="anchor" href="#_updating_to_magnolia_6_2"></a>Updating to Magnolia 6.2</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The Blossom module is generally compatible with the <em>6 UI</em> Magnolia apps, including the <em>6 UI</em> Pages app.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+For the <code>Node</code> and node path to be available to the <em>6 UI</em> apps in <code>DialogCreationContext</code>, use Blossom version 3.4.5 or later.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Blossom&#8217;s configuration by code (for example <code>UiConfig</code>, <code>TabBuilder</code>) produces <em>5 UI</em> compatibility dialog definitions, which is fine because Magnolia converts these on the fly to the equivalent <em>6 UI</em> dialogs. The conversion is done using the <a href="../../Upgrading-to-Magnolia/Field-converters" class="page">Field converters</a>.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Custom fields require an extra field converter, along with the updated Vaadin 8 field implementation. These may be registered into the <code>DefinitionConverter#FIELD_DEFINITION_CONVERTERS</code> within a static initializer block.</p>
+</li>
+<li>
+<p>The <code>DialogCreationContext#getItem()</code> is deprecated without replacement.</p>
+</li>
+<li>
+<p>The custom <code>formDialogPresenterClass</code> is no longer supported in <em>6 UI</em> apps.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>While the Magnolia <em>6 UI</em> framework does not have configurable form-dialog presenters, nor Vaadin 7 items, the <em>5 UI</em> (compatibility) Pages app may still be used for cases relying on them.</p>
 </div>
 </div>
 </div>

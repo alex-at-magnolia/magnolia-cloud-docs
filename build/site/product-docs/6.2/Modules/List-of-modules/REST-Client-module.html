@@ -150,7 +150,7 @@
     <a class="nav-link" href="../../Releases/Release-notes-for-Magnolia-CMS-6.2.11"><span class="smalltext">Release notes for Magnolia CMS 6.2.11</span></a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../Releases/Release-notes-for-Magnolia-CMS-6.2.11/Magnolia-6.2.11-Known-issues">Magnolia 6.2.11 Known issues</a>
+    <a class="nav-link" href="../../Releases/Release-notes-for-Magnolia-CMS-6.2.11/Magnolia-6.2.11-known-issues">Magnolia 6.2.11 known issues</a>
   </li>
 </ul>
   </li>
@@ -816,10 +816,10 @@
     <span class="nav-text">Nodes and properties APIs</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../Developing/API/Nodes-and-properties-APIs-(legacy)/Nodes-API">Nodes API</a>
+    <a class="nav-link" href="../../Developing/API/Nodes-and-properties-APIs/Nodes-API">Nodes API</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../Developing/API/Nodes-and-properties-APIs-(legacy)/Properties-API">Properties API</a>
+    <a class="nav-link" href="../../Developing/API/Nodes-and-properties-APIs/Properties-API">Properties API</a>
   </li>
 </ul>
   </li>
@@ -2315,7 +2315,7 @@
       <span class="title">Magnolia SaaS</span>
       <ul class="versions">
         <li class="version is-latest">
-          <a href="../../../../magnolia-saas/">master</a>
+          <a href="../../../../saas/">master</a>
         </li>
       </ul>
     </li>
@@ -2327,7 +2327,7 @@
 <main class="article">
 <div class="toolbar" role="navigation">
 <button class="nav-toggle"></button>
-    <a href="../../../../magnolia-saas/" class="home-link"></a>
+    <a href="../../../../saas/" class="home-link"></a>
 
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <span class="breadcrumbs-home">
@@ -2548,6 +2548,18 @@ instances of clients.</p>
 </div>
 <div class="paragraph">
 <p>Base URL of the REST endpoint to connect with the client.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+You can also use the <code>API_BASE_URL</code> environment variable in the value. For more details, see the <a href="#_using_environment_variables">Using environment variables</a> section.
+</td>
+</tr>
+</table>
 </div></div></td>
 </tr>
 <tr>
@@ -3529,6 +3541,44 @@ restCalls:
 </div>
 </div>
 </div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_using_environment_variables"><a class="anchor" href="#_using_environment_variables"></a>Using environment variables</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You can use environment variables in plain YAML configuration files (not in <a href="../../Developing/YAML#_definition_decoration" class="page">YAML decorator files</a>).</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+This functionality has been introduced with Magnolia 6.2.9 and only works when the <code>magnolia.yaml.envsubst</code> feature flag (JVM option) is set to <code>true</code>.
+</td>
+</tr>
+</table>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Example</dt>
+<dd>
+<p>You have several REST client definitions that differ only by the base URL and authentication credentials. You can use the following environment variables in the definitions: <code>API_BASE_URL</code>, <code>API_USER</code> and <code>API_PWD</code>.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yml hljs" data-lang="yml">baseUrl: !env ${API_BASE_URL}/example/todos
+securitySchemes:
+  basic:
+    $type: basic
+    username: !env ${API_USER}
+    password: !env ${API_PWD}</code></pre>
+</div>
+</div>
+</dd>
+</dl>
 </div>
 </div>
 </div>

@@ -149,7 +149,7 @@
     <a class="nav-link" href="../../Releases/Release-notes-for-Magnolia-CMS-6.2.11"><span class="smalltext">Release notes for Magnolia CMS 6.2.11</span></a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../Releases/Release-notes-for-Magnolia-CMS-6.2.11/Magnolia-6.2.11-Known-issues">Magnolia 6.2.11 Known issues</a>
+    <a class="nav-link" href="../../Releases/Release-notes-for-Magnolia-CMS-6.2.11/Magnolia-6.2.11-known-issues">Magnolia 6.2.11 known issues</a>
   </li>
 </ul>
   </li>
@@ -815,10 +815,10 @@
     <span class="nav-text">Nodes and properties APIs</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../Developing/API/Nodes-and-properties-APIs-(legacy)/Nodes-API">Nodes API</a>
+    <a class="nav-link" href="../../Developing/API/Nodes-and-properties-APIs/Nodes-API">Nodes API</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../Developing/API/Nodes-and-properties-APIs-(legacy)/Properties-API">Properties API</a>
+    <a class="nav-link" href="../../Developing/API/Nodes-and-properties-APIs/Properties-API">Properties API</a>
   </li>
 </ul>
   </li>
@@ -2314,7 +2314,7 @@
       <span class="title">Magnolia SaaS</span>
       <ul class="versions">
         <li class="version is-latest">
-          <a href="../../../../magnolia-saas/">master</a>
+          <a href="../../../../saas/">master</a>
         </li>
       </ul>
     </li>
@@ -2326,7 +2326,7 @@
 <main class="article">
 <div class="toolbar" role="navigation">
 <button class="nav-toggle"></button>
-    <a href="../../../../magnolia-saas/" class="home-link"></a>
+    <a href="../../../../saas/" class="home-link"></a>
 
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <span class="breadcrumbs-home">
@@ -2501,6 +2501,12 @@ definition</a> for more information.</p>
 </div></div></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>tabbedForm</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>info.magnolia.ui.editor.TabWithFieldsFormDefinition</code></p>
+</div></div></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>tabbedLayout</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><code>info.magnolia.ui.framework.layout.TabbedLayoutDefinition</code></p>
@@ -2511,15 +2517,14 @@ definition</a> for more information.</p>
 <div class="sect2">
 <h3 id="_default_layout"><a class="anchor" href="#_default_layout"></a>Default layout</h3>
 <div class="paragraph">
-<p><a href="https://nexus.magnolia-cms.com/#nexus-search;classname~FormLayoutDefinition" target="_blank" rel="noopener">FormLayoutDefinition</a> is the default layout.
+<p>javadoc:info.magnolia.ui.framework.layout.FormLayoutDefinition[] (<code>form</code>) is the default layout.
 Use this layout when there is no need for customization.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_tabbed_layout"><a class="anchor" href="#_tabbed_layout"></a>Tabbed layout</h3>
+<h3 id="_tab_layout"><a class="anchor" href="#_tab_layout"></a>Tab layout</h3>
 <div class="paragraph">
-<p>With
-<a href="https://nexus.magnolia-cms.com/#nexus-search;classname~TabbedLayoutDefinition" target="_blank" rel="noopener">TabbedLayoutDefinition</a>,
+<p>With javadoc:info.magnolia.ui.framework.layout.TabbedLayoutDefinition[] (<code>tabbedLayout</code>),
 you can organize components into tabs.</p>
 </div>
 <div class="listingblock">
@@ -2540,12 +2545,71 @@ you can organize components into tabs.</p>
           - name: phone</code></pre>
 </div>
 </div>
+<div class="paragraph">
+<p>Alternatively, you can use javadoc:info.magnolia.ui.editor.TabWithFieldsFormDefinition[] (<code>tabbedForm</code>) to configure fields in tabs.
+This form comes with a tab layout, which is similar to how a form is defined by default in <em>Magnolia 5 UI</em>.</p>
+</div>
+<div class="listingblock">
+<div class="title">Example definition</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yml hljs" data-lang="yml">form:
+  $type: tabbedForm
+  tabs:
+    firstTab:
+      fields:
+        foo:
+          label: foo
+          $type: textField
+    secondTab:
+      fields:
+        bar:
+          label: bar
+          $type: textField
+          required: true</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>i18n keys from <em>Magnolia 5 UI</em> are not compatible with <code>tabbedForm</code> and must be reconfigured.
+Both <code>myLightModule.myDialog.myTextField[.label]</code> and <code>fields.myTextField[.label]</code>
+are generated for the following <em>Magnolia 6 UI</em> definitions:</p>
+</div>
+<div class="listingblock">
+<div class="title">myLightModule/dialogs/myDialog.yaml</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yml hljs" data-lang="yml">form:
+  properties:
+    myTextField:
+      $type: textField</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">myLightModule/dialogs/myDialog.yaml</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yml hljs" data-lang="yml">form:
+  $type: tabbedForm
+  tabs:
+    tabMain:
+      fields:
+        myTextField:
+          $type: textField</code></pre>
+</div>
+</div>
+</td>
+</tr>
+</table>
+</div>
 </div>
 <div class="sect2">
 <h3 id="_stacked_layout"><a class="anchor" href="#_stacked_layout"></a>Stacked layout</h3>
 <div class="paragraph">
-<p>With
-<a href="https://nexus.magnolia-cms.com/#nexus-search;classname~StackedLayoutProducer" target="_blank" rel="noopener">StackedLayoutProducer</a>,
+<p>With javadoc:info.magnolia.ui.framework.layout.StackedLayoutProducer[] (<code>stacked</code>),
 you can arrange components vertically. Any captions are placed above the
 respective components, which means that more horizontal space is
 allocated to the components themselves. This is the default layout for
@@ -2573,8 +2637,7 @@ allocated to the components themselves. This is the default layout for
 <div class="sect2">
 <h3 id="_horizontal_layout"><a class="anchor" href="#_horizontal_layout"></a>Horizontal layout</h3>
 <div class="paragraph">
-<p>With
-<a href="https://nexus.magnolia-cms.com/#nexus-search;classname~HorizontalLayoutDefinition" target="_blank" rel="noopener">HorizontalLayoutDefinition</a>,
+<p>With javadoc:info.magnolia.ui.framework.layout.HorizontalLayoutDefinition[] (<code>horizontal</code>),
 you can arrange components horizontally. To disable spacing between components,
 set the <code>spacing</code> property to <code>false</code>. Use this layout mainly for
 <a href="Field-definition/List-of-fields/Composite-field" class="page">composite fields</a>.</p>
@@ -2601,8 +2664,7 @@ set the <code>spacing</code> property to <code>false</code>. Use this layout mai
 <div class="sect2">
 <h3 id="_declarative_layout"><a class="anchor" href="#_declarative_layout"></a>Declarative layout</h3>
 <div class="paragraph">
-<p>With
-<a href="https://nexus.magnolia-cms.com/#nexus-search;classname~DeclarativeLayoutDefinition" target="_blank" rel="noopener">DeclarativeLayoutDefinition</a>,
+<p>With javadoc:info.magnolia.ui.framework.layout.DeclarativeLayoutDefinition[] (<code>declarativeLayout</code>),
 you can create form entries in an arbitrary Vaadin component container
 using the
 <a href="https://vaadin.com/docs/framework/application/application-declarative.html" target="_blank" rel="noopener">Vaadin declarative syntax</a>.
@@ -2741,8 +2803,7 @@ added to <code>src/main/resources/info/magnolia/contacts/layout</code>.</p>
 <div class="sect2">
 <h3 id="_action_layout"><a class="anchor" href="#_action_layout"></a>Action layout</h3>
 <div class="paragraph">
-<p>With
-<a href="https://nexus.magnolia-cms.com/#nexus-search;classname~DefaultEditorActionLayoutDefinition" target="_blank" rel="noopener">DefaultEditorActionLayoutDefinition</a>,
+<p>With javadoc:info.magnolia.ui.dialog.layout.DefaultEditorActionLayoutDefinition[] (<code>defaultEditorActionLayout</code>),
 you can define an action area in both dialogs and the detail subapps of
 content apps. This is the default layout for footers and includes
 predefined primary and secondary actions.</p>

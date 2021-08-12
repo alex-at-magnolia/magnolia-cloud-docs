@@ -150,7 +150,7 @@
     <a class="nav-link" href="../../Releases/Release-notes-for-Magnolia-CMS-6.2.11"><span class="smalltext">Release notes for Magnolia CMS 6.2.11</span></a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../Releases/Release-notes-for-Magnolia-CMS-6.2.11/Magnolia-6.2.11-Known-issues">Magnolia 6.2.11 Known issues</a>
+    <a class="nav-link" href="../../Releases/Release-notes-for-Magnolia-CMS-6.2.11/Magnolia-6.2.11-known-issues">Magnolia 6.2.11 known issues</a>
   </li>
 </ul>
   </li>
@@ -816,10 +816,10 @@
     <span class="nav-text">Nodes and properties APIs</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../Developing/API/Nodes-and-properties-APIs-(legacy)/Nodes-API">Nodes API</a>
+    <a class="nav-link" href="../../Developing/API/Nodes-and-properties-APIs/Nodes-API">Nodes API</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../Developing/API/Nodes-and-properties-APIs-(legacy)/Properties-API">Properties API</a>
+    <a class="nav-link" href="../../Developing/API/Nodes-and-properties-APIs/Properties-API">Properties API</a>
   </li>
 </ul>
   </li>
@@ -2315,7 +2315,7 @@
       <span class="title">Magnolia SaaS</span>
       <ul class="versions">
         <li class="version is-latest">
-          <a href="../../../../magnolia-saas/">master</a>
+          <a href="../../../../saas/">master</a>
         </li>
       </ul>
     </li>
@@ -2327,7 +2327,7 @@
 <main class="article">
 <div class="toolbar" role="navigation">
 <button class="nav-toggle"></button>
-    <a href="../../../../magnolia-saas/" class="home-link"></a>
+    <a href="../../../../saas/" class="home-link"></a>
 
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <span class="breadcrumbs-home">
@@ -2373,7 +2373,7 @@
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Latest</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">3.2.3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3.2.5</p></td>
 </tr>
 </tbody>
 </table>
@@ -2393,7 +2393,7 @@
 <pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;dependency&gt;
   &lt;groupId&gt;info.magnolia.livecopy&lt;/groupId&gt;
   &lt;artifactId&gt;magnolia-livecopy&lt;/artifactId&gt;
-  &lt;version&gt;3.2.3&lt;/version&gt;
+  &lt;version&gt;3.2.5&lt;/version&gt;
 &lt;/dependency&gt;</code></pre>
 </div>
 </div>
@@ -2595,6 +2595,18 @@ appear as locked in the live copy pages. For example:</p>
 </div>
 <div class="paragraph">
 <p><span class="image zoom"><img src="../../_images/6-1-lc-locked-link.png" alt="image"></span></p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Links in the page properties (added via the Page Properties dialog) are relinked too.
+</td>
+</tr>
+</table>
 </div>
 </div>
 <div class="sect2">
@@ -2881,6 +2893,120 @@ property which holds the fallback language from the master copy.</p>
 <h2 id="_release_history"><a class="anchor" href="#_release_history"></a>Release history</h2>
 <div class="sectionbody">
 <div class="sect2">
+<h3 id="_live_copy_module_3_2_5"><a class="anchor" href="#_live_copy_module_3_2_5"></a>Live Copy module 3.2.5</h3>
+<div class="paragraph">
+<p>Released on August 9, 2021.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>This release comes with a hot fix for version 3.2.4, which you may skip and update directly to version 3.2.5.</p>
+</div>
+<div class="paragraph">
+<p>This is the recommended version for use with Magnolia 6.2.11.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>This bug fixing release also brings the following improvements:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Improvements</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#_managing_links">Relinking</a> is now supported for links added via the Page Properties dialog. <a href="https://jira.magnolia-cms.com/browse/LIVECOPY-267" target="_blank" rel="noopener">LIVECOPY-267</a></p>
+</li>
+<li>
+<p>Show master reference of component on a tooltip. <a href="https://jira.magnolia-cms.com/browse/LIVECOPY-270" target="_blank" rel="noopener">LIVECOPY-270</a></p>
+</li>
+<li>
+<p>Improve performance for push and relink. <a href="https://jira.magnolia-cms.com/browse/LIVECOPY-230" target="_blank" rel="noopener">LIVECOPY-230</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Bug fixes</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Variants are not published. <a href="https://jira.magnolia-cms.com/browse/LIVECOPY-237" target="_blank" rel="noopener">LIVECOPY-237</a></p>
+</li>
+<li>
+<p>Exception in relink if content does not matching definition. <a href="https://jira.magnolia-cms.com/browse/LIVECOPY-256" target="_blank" rel="noopener">LIVECOPY-256</a></p>
+</li>
+<li>
+<p>LiveCopy changes the user and timestamp of unedited pages. <a href="https://jira.magnolia-cms.com/browse/LIVECOPY-258" target="_blank" rel="noopener">LIVECOPY-258</a></p>
+</li>
+<li>
+<p>Two live copies in the same tree are not working. We have disabled some actions (Duplicate page, Copy page and Paste page) for live copies. <a href="https://jira.magnolia-cms.com/browse/LIVECOPY-260" target="_blank" rel="noopener">LIVECOPY-260</a></p>
+</li>
+<li>
+<p><code>RichText</code> fields and <code>MultiValueCompositeLinkField</code> are automatically protected. <a href="https://jira.magnolia-cms.com/browse/LIVECOPY-263" target="_blank" rel="noopener">LIVECOPY-263</a></p>
+</li>
+<li>
+<p>Relink action doesn&#8217;t work for a link in <code>switchableField</code>. <a href="https://jira.magnolia-cms.com/browse/LIVECOPY-272" target="_blank" rel="noopener">LIVECOPY-272</a></p>
+</li>
+<li>
+<p>Relink action doesn&#8217;t work for <code>linkField</code> in area. <a href="https://jira.magnolia-cms.com/browse/LIVECOPY-273" target="_blank" rel="noopener">LIVECOPY-273</a></p>
+</li>
+<li>
+<p><code>MultiValueCompositeLinkField</code>, <code>MultiValueLinkField</code> cannot relink in <code>StandardRewirePageLinksHelper</code>. <a href="https://jira.magnolia-cms.com/browse/LIVECOPY-275" target="_blank" rel="noopener">LIVECOPY-275</a></p>
+</li>
+<li>
+<p><code>MultiValueCompositeLinkField</code> cannot relink in <code>CompatibilityRewirePageLinksHelper</code>. <a href="https://jira.magnolia-cms.com/browse/LIVECOPY-276" target="_blank" rel="noopener">LIVECOPY-276</a></p>
+</li>
+<li>
+<p><code>MultiValueCompositeRichTextField</code>, <code>MultiValueRichTextField</code> cannot relink in <code>StandardRewirePageLinksHelper</code>. <a href="https://jira.magnolia-cms.com/browse/LIVECOPY-277" target="_blank" rel="noopener">LIVECOPY-277</a></p>
+</li>
+<li>
+<p><code>MultiValueCompositeRichTextField</code>, <code>MultiValueRichTextField</code> cannot relink in <code>CompatibilityRewirePageLinksHelper</code>. <a href="https://jira.magnolia-cms.com/browse/LIVECOPY-278" target="_blank" rel="noopener">LIVECOPY-278</a></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_live_copy_module_2_2_1"><a class="anchor" href="#_live_copy_module_2_2_1"></a>Live Copy module 2.2.1</h3>
+<div class="paragraph">
+<p>Released on August 6, 2021.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+This is the recommended version for use with Magnolia 5.7.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Bug fixing release:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Variants are not published. <a href="https://jira.magnolia-cms.com/browse/LIVECOPY-237" target="_blank" rel="noopener">LIVECOPY-237</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
 <h3 id="_live_copy_module_3_2_3"><a class="anchor" href="#_live_copy_module_3_2_3"></a>Live Copy module 3.2.3</h3>
 <div class="paragraph">
 <p>Released on March 31, 2021.</p>
@@ -2891,10 +3017,10 @@ property which holds the fallback language from the master copy.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Publishing does not set the userName property on the task. <a href="https://jira.magnolia-cms.com/browse/LIVECOPY-246">LIVECOPY-246</a></p>
+<p>Publishing does not set the userName property on the task. <a href="https://jira.magnolia-cms.com/browse/LIVECOPY-246" target="_blank" rel="noopener">LIVECOPY-246</a></p>
 </li>
 <li>
-<p>Push action dialog ignores autoRewire property value. <a href="https://jira.magnolia-cms.com/browse/LIVECOPY-247">LIVECOPY-247</a></p>
+<p>Push action dialog ignores autoRewire property value. <a href="https://jira.magnolia-cms.com/browse/LIVECOPY-247" target="_blank" rel="noopener">LIVECOPY-247</a></p>
 </li>
 </ul>
 </div>
@@ -2910,10 +3036,10 @@ property which holds the fallback language from the master copy.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Push action does not always push content. <a href="https://jira.magnolia-cms.com/browse/LIVECOPY-242">LIVECOPY-242</a></p>
+<p>Push action does not always push content. <a href="https://jira.magnolia-cms.com/browse/LIVECOPY-242" target="_blank" rel="noopener">LIVECOPY-242</a></p>
 </li>
 <li>
-<p>Issues with i18n. See <a href="#_internationalization">Live Copy internationalization</a>. <a href="https://jira.magnolia-cms.com/browse/LIVECOPY-244">LIVECOPY-244</a></p>
+<p>Issues with i18n. See <a href="#_internationalization">Live Copy internationalization</a>. <a href="https://jira.magnolia-cms.com/browse/LIVECOPY-244" target="_blank" rel="noopener">LIVECOPY-244</a></p>
 </li>
 </ul>
 </div>
@@ -2932,7 +3058,7 @@ property which holds the fallback language from the master copy.</p>
 <p>You can protect a field in one language and not another using the language switcher and then clicking on the protect field icon. For example if you want to protect the German version of a given field and not the English version, you switch to German and protect the field. When you switch back to English, the field is not protected.</p>
 </div>
 <div class="paragraph">
-<p><a href="https://jira.magnolia-cms.com/browse/LIVECOPY-209">LIVECOPY-209</a></p>
+<p><a href="https://jira.magnolia-cms.com/browse/LIVECOPY-209" target="_blank" rel="noopener">LIVECOPY-209</a></p>
 </div>
 </div>
 <div class="sect3">
@@ -2941,7 +3067,7 @@ property which holds the fallback language from the master copy.</p>
 <p>Links inside composite fields were not being relinked to the live copy pages correctly and continued to point to the master pages. Now, when you click <strong>Relink all pages to live copy pages</strong>, they are relinked correctly.</p>
 </div>
 <div class="paragraph">
-<p><a href="https://jira.magnolia-cms.com/browse/LIVECOPY-236">LIVECOPY-236</a></p>
+<p><a href="https://jira.magnolia-cms.com/browse/LIVECOPY-236" target="_blank" rel="noopener">LIVECOPY-236</a></p>
 </div>
 </div>
 </div>
@@ -2959,44 +3085,31 @@ UI framework as well as some new functionality and improvements:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>[<a href="https://jira.magnolia-cms.com/browse/LIVECOPY-108" target="_blank" rel="noopener">LIVECOPY-108</a>] -
-Open the Master Page from a live copy</p>
+<p><a href="https://jira.magnolia-cms.com/browse/LIVECOPY-108" target="_blank" rel="noopener">LIVECOPY-108</a> - Open the Master Page from a live copy</p>
 </li>
 <li>
-<p>[<a href="https://jira.magnolia-cms.com/browse/LIVECOPY-42" target="_blank" rel="noopener">LIVECOPY-42</a>] - Add
-a <code>open as new window</code> button for each page in the
-ReferencedPagesField</p>
+<p><a href="https://jira.magnolia-cms.com/browse/LIVECOPY-42" target="_blank" rel="noopener">LIVECOPY-42</a> - Add a <code>open as new window</code> button for each page in the ReferencedPagesField</p>
 </li>
 <li>
-<p>[<a href="https://jira.magnolia-cms.com/browse/LIVECOPY-44" target="_blank" rel="noopener">LIVECOPY-44</a>] - Show
-if the referenced page has page variations in the ReferencedPagesField</p>
+<p><a href="https://jira.magnolia-cms.com/browse/LIVECOPY-44" target="_blank" rel="noopener">LIVECOPY-44</a> - Show if the referenced page has page variations in the ReferencedPagesField</p>
 </li>
 <li>
-<p>[<a href="https://jira.magnolia-cms.com/browse/LIVECOPY-145" target="_blank" rel="noopener">LIVECOPY-145</a>] -
-When I delete Master, LC still shows link to (and actions) to Master</p>
+<p><a href="https://jira.magnolia-cms.com/browse/LIVECOPY-145" target="_blank" rel="noopener">LIVECOPY-145</a> - When I delete Master, LC still shows link to (and actions) to Master</p>
 </li>
 <li>
-<p>[<a href="https://jira.magnolia-cms.com/browse/LIVECOPY-149" target="_blank" rel="noopener">LIVECOPY-149</a>] -
-Locking the component when using the Relink live copy function should be
-optional</p>
+<p><a href="https://jira.magnolia-cms.com/browse/LIVECOPY-149" target="_blank" rel="noopener">LIVECOPY-149</a> - Locking the component when using the Relink live copy function should be optional</p>
 </li>
 <li>
-<p>[<a href="https://jira.magnolia-cms.com/browse/LIVECOPY-150" target="_blank" rel="noopener">LIVECOPY-150</a>] -
-Only push master content pages to specific pages</p>
+<p><a href="https://jira.magnolia-cms.com/browse/LIVECOPY-150" target="_blank" rel="noopener">LIVECOPY-150</a> - Only push master content pages to specific pages</p>
 </li>
 <li>
-<p>[<a href="https://jira.magnolia-cms.com/browse/LIVECOPY-151" target="_blank" rel="noopener">LIVECOPY-151</a>] -
-When pushing master content changes users can auto publish content</p>
+<p><a href="https://jira.magnolia-cms.com/browse/LIVECOPY-151" target="_blank" rel="noopener">LIVECOPY-151</a> - When pushing master content changes users can auto publish content</p>
 </li>
 <li>
-<p>[<a href="https://jira.magnolia-cms.com/browse/LIVECOPY-159" target="_blank" rel="noopener">LIVECOPY-159</a>] -
-Fields under composite/switchable/multi fields are protected
-independently from the parent field</p>
+<p><a href="https://jira.magnolia-cms.com/browse/LIVECOPY-159" target="_blank" rel="noopener">LIVECOPY-159</a> - Fields under composite/switchable/multi fields are protected independently from the parent field</p>
 </li>
 <li>
-<p>[<a href="https://jira.magnolia-cms.com/browse/LIVECOPY-190" target="_blank" rel="noopener">LIVECOPY-190</a>] -
-Change the color of a partially protected component (only certain fields
-are disabled)</p>
+<p><a href="https://jira.magnolia-cms.com/browse/LIVECOPY-190" target="_blank" rel="noopener">LIVECOPY-190</a> - Change the color of a partially protected component (only certain fields are disabled)</p>
 </li>
 </ul>
 </div>
@@ -3006,16 +3119,13 @@ are disabled)</p>
 <div class="ulist">
 <ul>
 <li>
-<p>[<a href="https://jira.magnolia-cms.com/browse/LIVECOPY-171" target="_blank" rel="noopener">LIVECOPY-171</a>] -
-Protect/unprotect complex fields</p>
+<p><a href="https://jira.magnolia-cms.com/browse/LIVECOPY-171" target="_blank" rel="noopener">LIVECOPY-171</a> - Protect/unprotect complex fields</p>
 </li>
 <li>
-<p>[<a href="https://jira.magnolia-cms.com/browse/LIVECOPY-194" target="_blank" rel="noopener">LIVECOPY-194</a>] -
-Push master content changes position of component order</p>
+<p><a href="https://jira.magnolia-cms.com/browse/LIVECOPY-194" target="_blank" rel="noopener">LIVECOPY-194</a> - Push master content changes position of component order</p>
 </li>
 <li>
-<p>[<a href="https://jira.magnolia-cms.com/browse/LIVECOPY-195" target="_blank" rel="noopener">LIVECOPY-195</a>] -
-Enable/disable updates for component does not update the detail page</p>
+<p><a href="https://jira.magnolia-cms.com/browse/LIVECOPY-195" target="_blank" rel="noopener">LIVECOPY-195</a> - Enable/disable updates for component does not update the detail page</p>
 </li>
 </ul>
 </div>
@@ -3032,20 +3142,16 @@ Enable/disable updates for component does not update the detail page</p>
 <div class="ulist">
 <ul>
 <li>
-<p>[<a href="https://jira.magnolia-cms.com/browse/LIVECOPY-173" target="_blank" rel="noopener">LIVECOPY-173</a>] -
-Push master content changes position of component order</p>
+<p><a href="https://jira.magnolia-cms.com/browse/LIVECOPY-173" target="_blank" rel="noopener">LIVECOPY-173</a> - Push master content changes position of component order</p>
 </li>
 <li>
-<p>[<a href="https://jira.magnolia-cms.com/browse/LIVECOPY-178" target="_blank" rel="noopener">LIVECOPY-178</a>] -
-NPE is thrown when attempting to create a live copy from page</p>
+<p><a href="https://jira.magnolia-cms.com/browse/LIVECOPY-178" target="_blank" rel="noopener">LIVECOPY-178</a> - NPE is thrown when attempting to create a live copy from page</p>
 </li>
 <li>
-<p>[<a href="https://jira.magnolia-cms.com/browse/LIVECOPY-217" target="_blank" rel="noopener">LIVECOPY-217</a>] -
-Live Copy relink does not work</p>
+<p><a href="https://jira.magnolia-cms.com/browse/LIVECOPY-217" target="_blank" rel="noopener">LIVECOPY-217</a> - Live Copy relink does not work</p>
 </li>
 <li>
-<p>[<a href="https://jira.magnolia-cms.com/browse/LIVECOPY-218" target="_blank" rel="noopener">LIVECOPY-218</a>] -
-ItemNotFound exception when pushing master content changes</p>
+<p><a href="https://jira.magnolia-cms.com/browse/LIVECOPY-218" target="_blank" rel="noopener">LIVECOPY-218</a> - ItemNotFound exception when pushing master content changes</p>
 </li>
 </ul>
 </div>
@@ -3158,7 +3264,7 @@ ItemNotFound exception when pushing master content changes</p>
 <h3 id="_live_copy_module_2_0_5"><a class="anchor" href="#_live_copy_module_2_0_5"></a>Live Copy module 2.0.5</h3>
 <div class="paragraph">
 <p>POM edited to prevent versioning clash with
-<code>magnolia-pages-editor-widget</code></p>
+<code>magnolia-pages-editor-widget</code>.</p>
 </div>
 </div>
 <div class="sect2">
@@ -3250,14 +3356,19 @@ of the module.</p>
 <div class="sect1">
 <h2 id="_live_copy_compatibility"><a class="anchor" href="#_live_copy_compatibility"></a>Live Copy compatibility</h2>
 <div class="sectionbody">
-<div class="admonitionblock note">
+<div class="admonitionblock note best">
 <table>
 <tr>
 <td class="icon">
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-In versions predating 3.1 and 2.0.7 this module was in the Incubator. Uninstall previous versions before installing 3.1 (or 2.0.7 - Magnolia 5.6).
+<div class="paragraph">
+<p>In versions predating 3.1 and 2.0.7 this module was in the Incubator. Uninstall previous versions before installing a more recent one.</p>
+</div>
+<div class="paragraph">
+<p>For 5.7 compatibility, we recommend you install version 2.2.1 since 2.2.0 is an Incubator version.</p>
+</div>
 </td>
 </tr>
 </table>
@@ -3275,7 +3386,7 @@ In versions predating 3.1 and 2.0.7 this module was in the Incubator. Uninstall 
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>3.2.3</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>3.2.5</strong></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><strong>Magnolia 6.2.6</strong></p>
 </div></div></td>
@@ -3308,6 +3419,12 @@ In versions predating 3.1 and 2.0.7 this module was in the Incubator. Uninstall 
 <td class="tableblock halign-left valign-top"><p class="tableblock">3.0</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Magnolia 6.0</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2.2.1</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Magnolia 5.7</p>
 </div></div></td>
 </tr>
 <tr>
