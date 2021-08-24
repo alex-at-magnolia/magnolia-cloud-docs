@@ -13,6 +13,9 @@ content:
     start_path: docs
   - url: https://git.magnolia-cms.com/scm/DOCUMENTATION/product-docs.git
     branches: [master]
+  - url: https://git.magnolia-cms.com/scm/cloud/mgnlctl.git
+    start_path: docs
+    branches: [CLOUD-756]
 
 urls:
   html_extension_style: drop

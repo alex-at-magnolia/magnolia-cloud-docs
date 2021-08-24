@@ -42,27 +42,10 @@
     </div>
     <div id="topbar-nav" class="navbar-menu">
       <div class="navbar-end">
-        <a href="../../../product-docs/Releases.html" class="navbar-item">Releases</a>
-        <div class="navbar-item has-dropdown is-hoverable">
-          <span class="navbar-link">DX Core
-            <span class="icon-wrapper"><i class="arrow down"></i></span>
-          </span>
-          <div class="navbar-dropdown">
-            <a href="../../../product-docs/Getting-started-with-Magnolia.html" class="navbar-item">Get Started</a>
-            <a href="../../../product-docs/Developing.html" class="navbar-item">Developing</a>
-            <a href="../../../product-docs/Modules.html" class="navbar-item">Modules</a>
-            <a href="../../../product-docs/Developing/API.html" class="navbar-item">API</a>
-            <a href="../../../product-docs/Templating.html" class="navbar-item">Templating</a>
-            <a href="../../../product-docs/Apps.html" class="navbar-item">Apps</a>
-            <a href="../../../product-docs/Connector-Packs.html" class="navbar-item">Connector Packs</a>
-            <a href="../../../magnolia-cli/4.x/index.html" class="navbar-item">CLI</a>
-            <a href="../../../product-docs/Special-Features.html" class="navbar-item">Special Features</a>
-          </div>
-        </div>
-        <a href="../../../cloud/index.html" class="navbar-item">Cloud</a>
+        <a href="../../../saas-cli/" class="navbar-item">SaaS CLI</a>
         <div class="navbar-item navbar-item--button">
           <span class="control">
-            <a class="button is-primary" href="https://www.magnolia-cms.com/getstarted" target="_blank">Get Magnolia</a>
+            <a class="button is-primary" href="https://docs.magnolia-cms.com" target="_blank">DX Core docs</a>
           </span>
         </div>
       </div>
@@ -2327,6 +2310,14 @@
         </li>
       </ul>
     </li>
+    <li class="component">
+      <span class="title">Magnolia SaaS CLI</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../saas-cli/">master</a>
+        </li>
+      </ul>
+    </li>
   </ul>
 </div>
     </div>
@@ -3056,7 +3047,6 @@ See <a href="https://docs.asciidoctor.org/asciidoc/latest/tables/build-a-basic-t
 
 |`parameter`
 | A nice wee description
-
 |=== <i class="conum" data-value="4"></i><b>(4)</b></code></pre>
 </div>
 </div>
@@ -3106,6 +3096,75 @@ See <a href="https://docs.asciidoctor.org/asciidoc/latest/tables/build-a-basic-t
 </tr>
 </tbody>
 </table>
+<div class="paragraph">
+<p> <br></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p><strong>Nesting and indentation of parameters</strong></p>
+</div>
+<div class="paragraph">
+<p>To display the nesting level of the parameters, prefix each child parameter with an indentation tag such as <code>{i1}</code>, <code>{i2}</code> and so on. The number in the tag defines the relative indentation distance. Make sure that there is one space character between the tag and the parameter name.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>[cols="3,7a"]
+|===
+|Parameter|Description
+
+|`parameterOne`
+| A nice wee description
+
+|{i1} `parameterTwo`
+| A nice wee description
+
+|{i2} `parameterThree`
+| A nice wee description
+|===</code></pre>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 70%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>parameterOne</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>A nice wee description</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">{i1} <code>parameterTwo</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>A nice wee description</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">{i2} <code>parameterThree</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>A nice wee description</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</table>
+</div>
 <div class="paragraph">
 <p> <br></p>
 </div>
