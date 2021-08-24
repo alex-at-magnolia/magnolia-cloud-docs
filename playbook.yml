@@ -1,21 +1,21 @@
 site:
   title: Magnolia Cloud Service Internal Documentation
   # # the 404 page and sitemap files only get generated when the url property is set
-  url: https://saas-docs.beta.de.magnolia-cloud.com/magnolia-saas/
+  url: https://saas-docs.beta.de.magnolia-cloud.com/saas/
   start_page: saas:ROOT:index.adoc
   robots: allow
 
 content:
   sources:
   - url: https://git.magnolia-cms.com/scm/cloud/magnolia-cloud.git
-    branches: [master]
+    branches:
+    - [CLOUD-710]
     start_path: docs
   - url: https://git.magnolia-cms.com/scm/DOCUMENTATION/product-docs.git
     branches: [master]
 
 urls:
   html_extension_style: drop
-  redirect_facility: static
 
 ui:
   bundle:

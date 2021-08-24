@@ -5,63 +5,23 @@ Author Name
 :!example-caption:
 :!table-caption:
 :page-pagination:
-:page-layout: default
+:page-layout: home
 
 [.cards.cards-4.personas.conceal-title]
 == {empty}
 
-*test* **test** test
+[.collapse]
+collapse me 
 
-== This is a heading
+[.collapse-content]
+now you see me
 
-and some text with some `inline code`
-
-.test
+.Sidebar
 ****
-announcement was made
+Sidebar content
+
+Goes here
 ****
-
-.What?
-____
-dsafsd
-____
-
-=== And a sub heading
-
-Some stuff::
-
-* a list
-* and stuff
-
-. this
-. does
-. that
-
-[source,yaml]
-----
-truth: true
-fact: false
-----
-
-==== Heading 
-
-more
-
-===== Heading again
-
-more
-
-NOTE: note
-
-TIP: tip
-
-WARNING: warning
-
-IMPORTANT: important
-
-CAUTION: caution
-
-NOTE.best: test
 
 [NOTE.best]
 ====

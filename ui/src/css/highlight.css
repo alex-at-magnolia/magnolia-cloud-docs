@@ -51,7 +51,7 @@
 
 .hljs-regexp,
 .hljs-link {
-  color: #009926;
+  color: var(--color-green-reflex);
 }
 
 .hljs-symbol,
@@ -61,7 +61,7 @@
 
 .hljs-built_in,
 .hljs-builtin-name {
-  color: #0086b3;
+  color: #39fff5;
 }
 
 .hljs-meta {

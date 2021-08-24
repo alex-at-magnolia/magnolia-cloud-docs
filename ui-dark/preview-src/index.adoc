@@ -1,0 +1,77 @@
+= Hardware and Software Requirements
+Author Name
+:idprefix:
+:idseparator: -
+:!example-caption:
+:!table-caption:
+:page-pagination:
+:page-layout: default
+
+[.cards.cards-4.personas.conceal-title]
+== {empty}
+
+*test* **test** test
+
+== This is a heading
+
+and some text with some `inline code`
+
+.test
+****
+announcement was made
+****
+
+.What?
+____
+dsafsd
+____
+
+=== And a sub heading
+
+Some stuff::
+
+* a list
+* and stuff
+
+. this
+. does
+. that
+
+[source,yaml]
+----
+truth: true
+fact: false
+----
+
+==== Heading 
+
+more
+
+===== Heading again
+
+more
+
+NOTE: note
+
+TIP: tip
+
+WARNING: warning
+
+IMPORTANT: important
+
+CAUTION: caution
+
+NOTE.best: test
+
+[NOTE.best]
+====
+testing testing
+====
+
+// note, you can only use it while using the block call for admonition blocks - inline won't work (ex: NOTE:)
+[NOTE.alt,caption=Whatever you need to talk about]
+====
+stuff goes here
+====
+
+image::raccoon.png[role="zoom"]

@@ -52,13 +52,14 @@
   margin: auto;
   padding: 1.5rem;
   border: none;
-  width: 80%;
+  width: 50%;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   -webkit-animation-name: animatetop;
   -webkit-animation-duration: 0.4s;
   animation-name: animatetop;
   animation-duration: 0.8s;
   margin-bottom: 1rem;
+  height: 50vh;
 }
 
 .modal-content p,
@@ -94,16 +95,17 @@
 .modal-content h1 {
   color: var(--color-primary-green);
   font-family: "Roboto", sans-serif;
-  font-weight: normal;
-  font-size: 1.75rem;
+  font-weight: bold;
+  font-size: 2rem;
   text-align: center;
 }
 
 .modal-content h2 {
-  color: var(--color-primary-green);
+  color: var(--color-jet-20);
   font-family: "Roboto", sans-serif;
   font-weight: normal;
-  font-size: 1.2rem;
+  font-size: 1.75rem;
+  text-align: center;
 }
 
 .modal-content h3 {
@@ -127,4 +129,39 @@
   color: var(--color-primary-dark-green);
   text-decoration: none;
   cursor: pointer;
+}
+
+.modal-content div.column {
+  float: left;
+  width: 50%;
+  padding: 2rem;
+  text-align: center;
+}
+
+.modal-content div.column a.review-button-customer button {
+  border-radius: 25px;
+  padding: 0.75rem 1.5rem 0.625rem;
+  background-color: var(--color-primary-green);
+  color: white;
+  text-decoration: none;
+  border: none;
+}
+
+.modal-content div.column a.review-button-partner button {
+  border-radius: 25px;
+  padding: 0.75rem 1.5rem 0.625rem;
+  background-color: var(--color-primary-blue);
+  color: white;
+  text-decoration: none;
+  border: none;
+}
+
+.modal-content a i {
+  color: white;
+  transition: 0.6s ease;
+}
+
+.modal-content a:hover i {
+  display: inline;
+  color: var(--color-primary-gold);
 }

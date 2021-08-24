@@ -37,7 +37,7 @@
 
 .doc > h1.page:first-child {
   font-size: 3rem;
-  color: var(--color-green-reflex);
+  color: var(--color-gray-dark);
   font-weight: 700;
   margin: 0.5rem 0;
 }
@@ -142,6 +142,7 @@
 .doc p code,
 .doc thead code {
   color: var(--code-font-color);
+  background: whitesmoke;
   border-radius: 0.25em;
   font-size: 0.95em;
 }
@@ -250,7 +251,6 @@
 .doc .admonitionblock p,
 .doc .admonitionblock td.content {
   font-size: calc(16 / var(--rem-base) * 1rem);
-  color: var(--color-gray-70);
 }
 
 .doc .admonitionblock td.content > :first-child {
@@ -645,7 +645,6 @@
   background: var(--color-smoke-70);
   /* border-radius: 0.75rem; */
   padding: 0.45rem 1.5rem;
-  color: var(--color-jet-70);
   /* box-shadow: 0 10px 13px -7px #000000c5, 1px 0 3px 4px rgba(0, 0, 0, 0); */
 }
 
@@ -655,7 +654,7 @@
   line-height: 1.3;
   margin-bottom: 0.5em;
   text-align: left;
-  background-color: var(--color-green-reflex);
+  background-color: var(--color-primary-dark-green);
   color: whitesmoke;
   margin-left: -2rem;
   padding: 10px;
@@ -675,8 +674,8 @@
 
 .doc pre:not(.highlight),
 .doc pre.highlight code {
-  background: var(--color-jet-30);
-  box-shadow: inset -1px -2px 5px 2px rgba(89, 153, 12, 0.6);
+  background: darkslategrey;
+  box-shadow: inset -1px -2px 12px 2px rgba(89, 153, 12, 0.6);
   display: block;
   overflow-x: auto;
   padding: 0.75rem;
@@ -970,4 +969,32 @@
 
 .doc .dark-green {
   color: var(--color-primary-dark-green);
+}
+
+.doc .collapse {
+  font-size: larger;
+  color: var(--color-primary-green);
+  background-color: var(--color-smoke-90);
+  padding: 0.8rem;
+  cursor: pointer;
+  border-left: 5px solid var(--color-primary-green);
+  font-weight: bold;
+  transition: 0.75s ease;
+}
+
+.doc .collapse:hover {
+  background-color: var(--color-primary-light-green);
+}
+
+/* .doc .collapse p {
+  border-bottom: 2px solid white;
+  width: fit-content;
+} */
+
+.doc .collapse-content {
+  font-size: inherit;
+  background-color: var(--color-smoke-50);
+  margin-top: -5px;
+  padding: 0.8rem;
+  display: none;
 }

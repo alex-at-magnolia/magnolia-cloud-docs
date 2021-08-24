@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+{{> head defaultPageTitle='Untitled'}}
+  </head>
+  <body class="article{{#with (or page.attributes.role page.role)}} {{{this}}}{{/with}}">
+{{> header}}
+{{> body-home}}
+{{> footer}}
+{{> feedback}}
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h1>Welcome to the new Magnolia documentation site!</h1>
+    <p>We have migrated our product documentation from Confluence Wiki to AsciiDoc and Antora.</p>
+    <h2>Things to Note</h2>
+    <ul>
+      <li>We have a new search functionality powered by<a href="https://www.algolia.com/" target="_blank"> Algolia.</a></li>
+      <li>Commenting is disabled for now but you can find a feedback tab on the right side of each page.</li>
+      <li>You'll find the same content as before, in the same navigational structure.</li>
+      <li>Previous versions of the documentation, such as versions <a href="https://documentation.magnolia-cms.com/display/DOCS61/" target="_blank">6.1</a> and <a target="_blank" href="https://documentation.magnolia-cms.com/display/DOCS57/">5.7</a> remain unchanged. </li>
+      <li>Redirects from the old documentation site are in place. Please check any bookmarks or links you have to the documentation and update them where possible.</li>
+      <li>We recommend viewing the site in Chrome, Firefox, or Edge. There are some minor issues with Safari that we are working on.</li>
+    </ul>
+    <p>You may notice some formatting issues as we finish cleaning up, such as missing images or broken links. We apologize for any inconvenience and thank you for your understanding.</p>
+    <h3>The Magnolia Documentation Team</h3>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  var navbarToggles = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0)
+  if (navbarToggles.length === 0) return
+  navbarToggles.forEach(function (el) {
+    el.addEventListener('click', function (e) {
+      e.stopPropagation()
+      el.classList.toggle('is-active')
+      document.getElementById(el.dataset.target).classList.toggle('is-active')
+      document.documentElement.classList.toggle('is-clipped--navbar')
+    })
+  })
+})
+</script>
+
+<script>
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
+
+
+  </body>
+</html>

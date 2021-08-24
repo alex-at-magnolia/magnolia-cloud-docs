@@ -7,7 +7,7 @@
   font-size: 18px;
   border: none;
   outline: none;
-  background-color: var(--color-green-reflex);
+  background-color: var(--color-primary-green);
   color: white;
   cursor: pointer;
   padding: 10px;
@@ -15,5 +15,5 @@
 }
 
 #scrollTopBtn:hover {
-  background-color: var(--color-primary-green);
+  background-color: var(--color-green-reflex);
 }
