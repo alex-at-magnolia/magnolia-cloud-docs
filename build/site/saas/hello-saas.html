@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Hello SaaS :: Magnolia Cloud Service Internal Documentation</title>
-    <link rel="canonical" href="https://saas-docs.beta.de.magnolia-cloud.com/saas/saas/hello-saas">
+    <link rel="canonical" href="https://saas-docs.beta.de.magnolia-cloud.com/saas/saas/tutorial/hello-saas">
     <meta name="generator" content="Antora 2.3.3">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
 
@@ -151,7 +151,10 @@
     <li class="component is-current">
       <span class="title">Magnolia SaaS</span>
       <ul class="versions">
-        <li class="version is-current is-latest">
+        <li class="version is-latest">
+          <a href="tutorial/">tutorial</a>
+        </li>
+        <li class="version is-current">
           <a href="./">master</a>
         </li>
       </ul>
@@ -172,7 +175,14 @@
 <main class="article">
 <div class="toolbar" role="navigation">
 <button class="nav-toggle"></button>
-    <a href="./" class="home-link"></a>
+  <div class="page-versions">
+  <button class="version-menu-toggle" title="Show other versions of page">master</button>
+  <div class="version-menu">
+    <a class="version" href="tutorial/hello-saas">tutorial</a>
+    <a class="version is-current" href="hello-saas">master</a>
+  </div>
+</div>
+  <a href="tutorial/" class="home-link"></a>
 
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <span class="breadcrumbs-home">
@@ -193,22 +203,7 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>Magnolia SaaS offers frontend developers, administrators, and authors a powerful digital platform experience with the speed of modern cloud deployment. Magnolia SaaS is the quickest way to get up and running with Magnolia for developers and authors alike.</p>
-</div>
-<div class="paragraph">
-<p>This brief tutorial provides you with everything you need to get started using Magnolia SaaS. Here, we guide you on setting up a simple Visual SPA Editor so that authors can editor your headless frontend Magnolia SaaS project.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-The tutorial here is meant to get you started using Magnolia SaaS and is not intended as to represent a production-ready project.
-</td>
-</tr>
-</table>
+<p>Welcome! This brief tutorial provides you with everything you need to get started using Magnolia SaaS.</p>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -216,24 +211,21 @@ The tutorial here is meant to get you started using Magnolia SaaS and is not int
 <div class="ulist">
 <ul>
 <li>
-<p>First, we&#8217;ll <a href="#_clone_the_hello_saas_repo">clone the repo</a> we need for the tutorial.</p>
+<p>First, we&#8217;ll go through a <a href="#_what_is_magnolia_saas">short introduction</a> to Magnolia SaaS.</p>
 </li>
 <li>
-<p>Then, we&#8217;ll <a href="#_connect_your_git_repository">connect that repo</a> to the Magnolia SaaS webhook.</p>
+<p>Next, we&#8217;ll <a href="#Signing up to Magnolia SaaS">sign</a> up to Magnolia SaaS.</p>
 </li>
 <li>
-<p>Next, we&#8217;ll <a href="#_configure_magnolia">configure Magnolia</a> to pick up <code>/.rest</code> changes.</p>
+<p>Then, we&#8217;ll <a href="#_clone_the_hello_saas_repo">clone the repo</a> we need for the tutorial and <a href="#_connect_your_git_repository">connect that repo</a> to the Magnolia SaaS webhook.</p>
 </li>
 <li>
-<p>We&#8217;ll then <a href="#_set_up_the_react_app">set up</a> and <a href="#_edit_the_react_app">edit</a> the React App.</p>
-</li>
-<li>
-<p>Finally, we&#8217;ll deploy it all to <a href="#_deploy_the_app_to_netlify">Netlify</a>.</p>
+<p>In the end, we&#8217;ll complete an <a href="#_hello_saas_tutorial">introductory tutorial</a> to get you up and running with Magnolia SaaS.</p>
 <div class="dlist">
 <dl>
 <dt class="hdlist1">How long will this take? <span class="icon"><i class="fa fa-clock-o"></i></span></dt>
 <dd>
-<p>10-15 minutes</p>
+<p>10 minutes (<em>give or take</em>)</p>
 </dd>
 </dl>
 </div>
@@ -245,20 +237,68 @@ The tutorial here is meant to get you started using Magnolia SaaS and is not int
 </div>
 </div>
 <div class="sect1">
-<h2 id="_prerequisites"><a class="anchor" href="#_prerequisites"></a>Prerequisites</h2>
+<h2 id="_what_is_magnolia_saas"><a class="anchor" href="#_what_is_magnolia_saas"></a>What is Magnolia SaaS?</h2>
 <div class="sectionbody">
-<div class="ulist">
-<ul>
+<div class="paragraph">
+<p>Magnolia SaaS offers frontend developers, administrators, and authors a powerful digital platform experience with the speed of modern cloud deployment. Magnolia SaaS is the quickest way to get up and running with Magnolia for developers and authors alike.</p>
+</div>
+<div class="sect2">
+<h3 id="_already_using_magnolia"><a class="anchor" href="#_already_using_magnolia"></a>Already using Magnolia?</h3>
+<div class="paragraph">
+<p>Magnolia SaaS uses a <strong>headless-first</strong> approach enabling you to more quickly develop and deploy your projects.</p>
+</div>
+<div class="paragraph">
+<p>This means that web developers build templates with their preferred frontend framework, and augment them for content-editing in Magnolia, with just a few lines of <code>yaml</code>.</p>
+</div>
+<div class="paragraph">
+<p>Magnolia SaaS does not provide server-side Freemarker page rendering out-of-the-box. If you are looking for that, see the <a href="../product-docs/6.2/Getting-started-with-Magnolia" class="page">DX Core docs</a>.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_sign_up_to_magnolia_saas"><a class="anchor" href="#_sign_up_to_magnolia_saas"></a>Sign up to Magnolia SaaS</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Signing up to Magnolia SaaS is simple:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
 <li>
-<p>You must have <a href="sign-up" class="page">signed up</a> for Magnolia SaaS.</p>
+<p>Go to the <a href="https://subscription-service-form.beta.de.magnolia-cloud.com/" target="_blank" rel="noopener">Magnolia SaaS Sign up form</a>.</p>
+<div class="paragraph">
+<p><span class="image zoom"><img src="tutorial/_images/saas-sign-up-form.png" alt="saas sign up form"></span></p>
+</div>
 </li>
 <li>
-<p>You must have <a href="https://git-scm.com/" target="_blank" rel="noopener">git</a> installed.</p>
+<p>Complete the sign up form.</p>
 </li>
 <li>
-<p>You must have have <a href="https://www.npmjs.com/" target="_blank" rel="noopener">npm</a> installed.</p>
+<p>Click <strong>Sign up</strong>.</p>
 </li>
-</ul>
+<li>
+<p><em>Voila!</em> That&#8217;s it. You are now signed up for Magnolia SaaS. <span class="icon"><i class="fa fa-rocket-o"></i></span></p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Once you sign up, you are taken to a welcome page (<em>like the one below</em>) with an introductory Magnolia video and some helpful links. While waiting on your instance to provision, go ahead and jump to <a href="#_clone_the_hello_saas_repo">cloning the repo</a> needed for the tutorial.</p>
+</div>
+<div class="imageblock zoom">
+<div class="content">
+<img src="tutorial/_images/sign-up-to-saas.png" alt="sign up to saas">
+</div>
+</div>
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
@@ -343,7 +383,7 @@ You cannot change <code>main</code> as the default branch.
 <hr>
 </div>
 <div class="sect2">
-<h3 id="_prerequisites_2"><a class="anchor" href="#_prerequisites_2"></a>Prerequisites</h3>
+<h3 id="_prerequisites"><a class="anchor" href="#_prerequisites"></a>Prerequisites</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -597,8 +637,60 @@ For more information on Bitbucket webhooks, see <a href="https://support.atlassi
 </div>
 </div>
 <div class="sect1">
-<h2 id="_configure_magnolia"><a class="anchor" href="#_configure_magnolia"></a>Configure Magnolia</h2>
+<h2 id="_hello_saas_tutorial"><a class="anchor" href="#_hello_saas_tutorial"></a>Hello SaaS tutorial</h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>This tutorial guides you on setting up a simple Visual SPA Editor so that authors can editor your headless frontend Magnolia SaaS project.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The tutorial here is meant to get you started using Magnolia SaaS and is not intended as to represent a production-ready project.
+</td>
+</tr>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_prerequisites_2"><a class="anchor" href="#_prerequisites_2"></a>Prerequisites</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>You need to have <a href="https://git-scm.com/" target="_blank" rel="noopener">git</a> installed.</p>
+</li>
+<li>
+<p>You need to have <a href="https://www.npmjs.com/" target="_blank" rel="noopener">npm</a> installed.</p>
+</li>
+<li>
+<p>You must have cloned the <a href="https://git.magnolia-cms.com/projects/DOCUMENTATION/repos/hello-saas/browse" target="_blank" rel="noopener">Hello SaaS tutorial repo</a>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>You must have <a href="#_clone_the_hello_saas_repo">set your remote origin</a> for the repo.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Though not required at all, it would be great if you had a basic familiarity with headless projects and <a href="https://reactjs.org/" target="_blank" rel="noopener">React</a>.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_configure_magnolia"><a class="anchor" href="#_configure_magnolia"></a>Configure Magnolia</h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -611,7 +703,7 @@ For more information on Bitbucket webhooks, see <a href="https://support.atlassi
 <li>
 <p>Go to the <strong>Security</strong> app.</p>
 <div class="paragraph">
-<p><span class="image zoom"><img src="developers/_images/admincentral/find-security-app.gif" alt="find security app"></span></p>
+<p><span class="image zoom"><img src="tutorial/developers/_images/admincentral/find-security-app.gif" alt="find security app"></span></p>
 </div>
 </li>
 </ol>
@@ -637,7 +729,7 @@ For more information on Bitbucket webhooks, see <a href="https://support.atlassi
 <li>
 <p><code>GET</code> <code>/.rest/*</code>.</p>
 <div class="paragraph">
-<p><span class="image zoom"><img src="developers/_images/admincentral/set-anonymous-role-tutorial.png" alt="set anonymous role tutorial"></span></p>
+<p><span class="image zoom"><img src="tutorial/developers/_images/admincentral/set-anonymous-role-tutorial.png" alt="set anonymous role tutorial"></span></p>
 </div>
 </li>
 </ol>
@@ -650,6 +742,7 @@ For more information on Bitbucket webhooks, see <a href="https://support.atlassi
 </div>
 </li>
 </ol>
+</div>
 </div>
 <div class="sect2">
 <h3 id="_test_the_connection"><a class="anchor" href="#_test_the_connection"></a>Test the connection</h3>
@@ -667,33 +760,15 @@ For more information on Bitbucket webhooks, see <a href="https://support.atlassi
 <p>Go to <code>light-modules/spa-lm/restEndpoints/delivery</code>.</p>
 </li>
 <li>
-<p>Open the file called <code>pages_v1.yaml</code>.</p>
+<p>Create a new file called <code>activities_v1.yaml</code>.</p>
 </li>
 <li>
-<p>Copy the following into your <code>pages_v1.yaml</code> file and save the file.</p>
+<p>Copy the following into your <code>activities_v1.yaml</code> file and save the file.</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">class: info.magnolia.rest.delivery.jcr.v2.JcrDeliveryEndpointDefinition
-workspace: website
-depth: 10
-bypassWorkspaceAcls: true
-systemProperties:
- - mgnl:lastModified
- - mgnl:created
- - mgnl:template
-
-nodeTypes:
-  - mgnl:page
-childNodeTypes:
-  - mgnl:area
-  - mgnl:component
-  - mgnl:contentNode
-
-references:
-  - name: assetReference
-    propertyName: image
-    referenceResolver:
-      class: info.magnolia.rest.reference.dam.AssetReferenceResolverDefinition</code></pre>
+workspace: activities
+bypassWorkspaceAcls: true</code></pre>
 </div>
 </div>
 </li>
@@ -701,7 +776,7 @@ references:
 <p>Push your changes to your remote git repo.</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>git add . &amp;&amp; git commit -m "adding the page yaml file for rest" &amp;&amp; git push origin main</code></pre>
+<pre class="highlightjs highlight"><code>git add . &amp;&amp; git commit -m "adding the activites yaml file" &amp;&amp; git push origin main</code></pre>
 </div>
 </div>
 </li>
@@ -716,11 +791,11 @@ references:
 <p>Go back to your admincentral.</p>
 </li>
 <li>
-<p>In the <strong>Find Bar</strong>, type <code>Pages</code>.</p>
+<p>In the <strong>Find Bar</strong>, type <code>Activities</code>.</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Go to the <strong>Pages</strong> app.</p>
+<p>Go to the <strong>Activities</strong> app.</p>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -737,28 +812,21 @@ This app is now available as it is part of your <code>hello-saas</code> repo tha
 </ol>
 </div>
 </li>
-</ol>
-</div>
-<div id="import-pages-yaml-admincentral" class="olist arabic">
-<ol class="arabic">
 <li>
-<p>From <strong>Actions</strong>, select <strong>Import</strong> and import the <a href="_attachments/website.react-minimal.yaml">website.react-minimal.yaml</a> file from your <code>hello-saas</code> repo.</p>
+<p>From <strong>Actions</strong>, select <strong>Import</strong> and import the <a href="_attachments/activities.Basel.yaml">activities.Basel.yaml</a> file from your <code>hello-saas</code> repo.</p>
 </li>
 <li>
-<p>Now, you can see the content being delivered in JSON at <code><a href="https://author-SUB_ID.beta.de.magnolia-cloud.com/.rest/delivery/pages/v1" class="bare">https://author-SUB_ID.beta.de.magnolia-cloud.com/.rest/delivery/pages/v1</a></code>.</p>
+<p>Now, you can see the content being delivered in JSON at <code><a href="https://author-">SUB_ID</a>.beta.de.magnolia-cloud.com/.rest/delivery/activities/v1</code>.</p>
 <div class="paragraph">
-<p><span class="image zoom"><img src="_images/rest/admincentral-rest-endpoint-json-pages.png" alt="admincentral rest endpoint json pages"></span></p>
+<p><span class="image zoom"><img src="_images/rest/admincentral-rest-endpoint-json.png" alt="admincentral rest endpoint json"></span></p>
 </div>
 </li>
 </ol>
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_set_up_the_react_app"><a class="anchor" href="#_set_up_the_react_app"></a>Set up the React App</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="_set_up_the_react_app"><a class="anchor" href="#_set_up_the_react_app"></a>Set up the React App</h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -770,38 +838,22 @@ This app is now available as it is part of your <code>hello-saas</code> repo tha
 </div>
 </li>
 <li>
-<p>Install your npm dependencies using the following at the root of the <code>hello-saas</code> folder.</p>
+<p>Run the following at the root of the <code>hello-saas</code> folder.</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">npm install</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">npm install;
+npm run build:mgnl;</code></pre>
 </div>
 </div>
-</li>
-<li>
-<p>Update your <code>.env</code> file at the root of your <code>hello-saas</code> folder to contain your Magnolia SaaS <code>subscription_id</code>.</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code>REACT_APP_REST_BASE="/.rest/${REACT_APP_CONFIG_ENV}"
-
-REACT_APP_MGNL_BASE_AUTHOR=""
-REACT_APP_MGNL_HOST=https://author-SUB_ID.beta.de.magnolia-cloud.com <i class="conum" data-value="1"></i><b>(1)</b>
-REACT_APP_MGNL_DAM_RAW=${REACT_APP_MGNL_HOST}
-REACT_APP_MGNL_IS_PREVIEW=true
-
-REACT_APP_MGNL_LANGUAGES="en de"
-
-REACT_APP_MGNL_APP_BASE=/react-minimal
-REACT_APP_MGNL_API_TEMPLATES="${REACT_APP_REST_BASE}/template-definitions/v1"
-REACT_APP_MGNL_API_PAGES="${REACT_APP_REST_BASE}/delivery/pages/v1"
-REACT_APP_MGNL_API_PAGES_PREVIEW="${REACT_APP_REST_BASE}/preview/pages/v1"
-REACT_APP_MGNL_API_NAV="${REACT_APP_REST_BASE}/delivery/pagenav/v1"</code></pre>
-</div>
-</div>
-<div class="colist arabic">
+<div class="admonitionblock tip">
 <table>
 <tr>
-<td><i class="conum" data-value="1"></i><b>1</b></td>
-<td>Insert your Magnolia SaaS <code>subscription_id</code> at <code>REACT_APP_MGNL_HOST</code>.</td>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+See the <code>.env</code> file for configuration information.
+</td>
 </tr>
 </table>
 </div>
@@ -830,316 +882,6 @@ Now, let&#8217;s deploy it.
 </div>
 </li>
 </ol>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_edit_the_react_app"><a class="anchor" href="#_edit_the_react_app"></a>Edit the React App</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Now that you have configured Magnolia and made sure your subscription ID was set in your application, you can edit your SPA from Magnolia SaaS&#8217;s admincentral.</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Make sure your SPA is still running at <a href="http://localhost:3000" target="_blank" rel="noopener">localhost:3000</a>.</p>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-If you don&#8217;t see the app running, run the <code>npm run start</code> command from the root of your <code>hello-saas</code> folder.
-</td>
-</tr>
-</table>
-</div>
-</li>
-<li>
-<p>In your browser, go to your Magnolia SaaS subscription.</p>
-<div class="listingblock">
-<div class="title">This is found at</div>
-<div class="content">
-<pre class="highlightjs highlight"><code>https://author-SUB_ID.saas.magnolia-cloud.com</code></pre>
-</div>
-</div>
-</li>
-<li>
-<p>Go to the <strong>Pages</strong> App.</p>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-If you can&#8217;t find it, type <code>Pages</code> in the Findbar at the top of admincentral.
-</td>
-</tr>
-</table>
-</div>
-</li>
-</ol>
-</div>
-<div class="exampleblock">
-<div class="content">
-<div class="paragraph">
-<p>You should see the <code>react-minimal</code> page that you <a href="#import-pages-yaml-admincentral">imported</a> earlier.</p>
-</div>
-</div>
-</div>
-<div class="olist arabic">
-<ol class="arabic" start="4">
-<li>
-<p>Click <strong>Edit Page</strong>.</p>
-<div class="paragraph">
-<p><span class="image zoom"><img src="_images/pages-app/edit-page.png" alt="edit page"></span></p>
-</div>
-</li>
-<li>
-<p>With the editor open, scroll down to the <strong>Headline</strong> that says "Look at you go!".</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>Click the <strong>Headline</strong> component.</p>
-</li>
-<li>
-<p>On the right, click <strong>Edit component</strong>.</p>
-</li>
-<li>
-<p>Change the <strong>Headline Text</strong>.</p>
-</li>
-</ol>
-</div>
-</li>
-<li>
-<p>Go to <a href="http://localhost:3000" class="bare" target="_blank" rel="noopener">http://localhost:3000</a> and see your changes.</p>
-<div class="videoblock">
-<div class="content">
-<video src="_images/pages-app/spa-edit-sync.mp4" width="100%" controls>
-Your browser does not support the video tag.
-</video>
-</div>
-</div>
-</li>
-</ol>
-</div>
-<div class="quoteblock">
-<div class="title"><span class="green"><span class="icon"><i class="fa fa-thumbs-up fa-2x"></i></span></span></div>
-<blockquote>
-<div class="paragraph">
-<p>Well done! You are now editing a SPA application with Magnolia SaaS.</p>
-</div>
-</blockquote>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_deploy_the_app_to_netlify"><a class="anchor" href="#_deploy_the_app_to_netlify"></a>Deploy the app to Netlify</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>For the purposes of this tutorial, we will deploy this simple application to <a href="{saas:developers:tutorial/netlify-url}" target="_blank" rel="noopener">Netlify</a>. This allows you to see how you can edit in Magnolia and see changes reflected directly via your deployed URL.</p>
-</div>
-<div class="sect2">
-<h3 id="_set_up_netlify"><a class="anchor" href="#_set_up_netlify"></a>Set up Netlify</h3>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Go to <a href="https://www.netlify.com/" target="_blank" rel="noopener">Netlify</a>.</p>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-Sign up for a <a href="https://www.netlify.com/pricing/" target="_blank" rel="noopener">free</a> account if you don&#8217;t already have one.
-</td>
-</tr>
-</table>
-</div>
-</li>
-<li>
-<p>Go to the <strong>Sites</strong> tab and click <strong>New site from Git</strong>.</p>
-<div class="paragraph">
-<p><span class="image zoom"><img src="developers/_images/tutorial/netlify-new-site-from-git.png" alt="netlify new site from git"></span></p>
-</div>
-</li>
-<li>
-<p>Choose the Git provider that hosts your <code>hello-saas</code> repo.</p>
-<div class="paragraph">
-<p><span class="image zoom"><img src="developers/_images/tutorial/netlify-choose-git.png" alt="netlify choose git"></span></p>
-</div>
-</li>
-<li>
-<p>Configure the Netlify site settings to build and deploy your app.</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>Choose the branch you want to use to deploy. This should be the <code>main</code> for now.</p>
-</li>
-<li>
-<p>You can leave the <strong>Base directory</strong> empty.</p>
-</li>
-<li>
-<p>In the <strong>Build command</strong> field, copy and paste the following:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code>npm run build:netlify</code></pre>
-</div>
-</div>
-</li>
-<li>
-<p>In the <strong>Publish directory</strong>, type <code>build</code>.</p>
-</li>
-<li>
-<p>Click <strong>Deploy site</strong>.</p>
-<div class="paragraph">
-<p><span class="image zoom"><img src="developers/_images/tutorial/netlify-git-build-settings.png" alt="netlify git build settings"></span></p>
-</div>
-</li>
-</ol>
-</div>
-</li>
-</ol>
-</div>
-<hr>
-</div>
-<div class="sect2">
-<h3 id="_connect_magnolia_to_netlify"><a class="anchor" href="#_connect_magnolia_to_netlify"></a>Connect Magnolia to Netlify</h3>
-<div class="paragraph">
-<p>Here, we&#8217;ll tweak your page <code>yaml</code> files to point to the Netlify URL instead of the <code>localhost:3000</code> that you used previously.</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Go to your <code>hello-saas</code> repo.</p>
-</li>
-<li>
-<p>Navigate down to <code>/light-modules/react-minimal-lm/templates/pages/</code>.</p>
-</li>
-<li>
-<p>In the <code>basic.yaml</code> and <code>contact.yaml</code> files, change the <code>url</code> field to the URL of your Netlify app.</p>
-<div class="listingblock">
-<div class="title"><code>/light-modules/react-minimal-lm/templates/pages/*.yaml</code></div>
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">...
-url: https://hello-saas.netlify.app/ <i class="conum" data-value="1"></i><b>(1)</b>
-dialog: spa-lm:pages/basic
-...</code></pre>
-</div>
-</div>
-<div class="colist arabic">
-<table>
-<tr>
-<td><i class="conum" data-value="1"></i><b>1</b></td>
-<td>The URL should be the URL or your Netlify application. This can be found on Netlify under <strong>Site overview</strong>.</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p><span class="image zoom"><img src="developers/_images/tutorial/netlify-site-url.png" alt="netlify site url"></span></p>
-</div>
-</li>
-</ol>
-</div>
-<div class="olist arabic">
-<ol class="arabic" start="4">
-<li>
-<p>Push your changes to your remote <code>hello-saas</code> repository.</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code>git add .; git commit -m "Configure URLs for Netlify deploy"; git push origin main</code></pre>
-</div>
-</div>
-</li>
-</ol>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_edit_the_react_app_2"><a class="anchor" href="#_edit_the_react_app_2"></a>Edit the React App</h3>
-<div class="paragraph">
-<p>Now that you have configured Magnolia and made sure your subscription ID was set in your application, you can edit your SPA from Magnolia SaaS&#8217;s admincentral.</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>In your browser, go to your Magnolia SaaS subscription.</p>
-<div class="listingblock">
-<div class="title">This is found at</div>
-<div class="content">
-<pre class="highlightjs highlight"><code>https://author-SUB_ID.saas.magnolia-cloud.com</code></pre>
-</div>
-</div>
-</li>
-<li>
-<p>Go to the <strong>Pages</strong> App.</p>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-If you can&#8217;t find it, type <code>Pages</code> in the Findbar at the top of admincentral.
-</td>
-</tr>
-</table>
-</div>
-</li>
-</ol>
-</div>
-<div class="exampleblock">
-<div class="content">
-<div class="paragraph">
-<p>You should see the <code>react-minimal</code> page that you <a href="#import-pages-yaml-admincentral">imported</a> earlier.</p>
-</div>
-</div>
-</div>
-<div class="olist arabic">
-<ol class="arabic" start="4">
-<li>
-<p>Click <strong>Edit Page</strong>.</p>
-<div class="paragraph">
-<p><span class="image zoom"><img src="_images/pages-app/edit-page.png" alt="edit page"></span></p>
-</div>
-</li>
-<li>
-<p>With the editor open, scroll down to the <strong>Headline</strong> that says "Look at you go! You are amazing.".</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>Click the <strong>Headline</strong> component.</p>
-</li>
-<li>
-<p>On the right, click <strong>Edit component</strong>.</p>
-</li>
-<li>
-<p>Change the <strong>Headline Text</strong>.</p>
-</li>
-</ol>
-</div>
-</li>
-<li>
-<p>Go to <a href="https://www.netlify.com/" target="_blank" rel="noopener">your Netlify URL</a> and see your changes.</p>
-<div class="videoblock">
-<div class="content">
-<video src="_images/pages-app/spa-edit-sync-netlify.mp4" width="100%" controls>
-Your browser does not support the video tag.
-</video>
-</div>
-</div>
-</li>
-</ol>
-</div>
-<div class="quoteblock">
-<div class="title"><span class="green"><span class="icon"><i class="fa fa-thumbs-up fa-2x"></i></span></span></div>
-<blockquote>
-<div class="paragraph">
-<p>Well done! You are now editing a SPA application with Magnolia SaaS.</p>
-</div>
-</blockquote>
 </div>
 </div>
 </div>

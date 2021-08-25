@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Developer experience :: Magnolia Cloud Service Internal Documentation</title>
-    <link rel="canonical" href="https://saas-docs.beta.de.magnolia-cloud.com/saas/saas/developers/">
+    <link rel="canonical" href="https://saas-docs.beta.de.magnolia-cloud.com/saas/saas/tutorial/developers/">
     <meta name="generator" content="Antora 2.3.3">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
 
@@ -151,7 +151,10 @@
     <li class="component is-current">
       <span class="title">Magnolia SaaS</span>
       <ul class="versions">
-        <li class="version is-current is-latest">
+        <li class="version is-latest">
+          <a href="../tutorial/">tutorial</a>
+        </li>
+        <li class="version is-current">
           <a href="../">master</a>
         </li>
       </ul>
@@ -172,7 +175,14 @@
 <main class="article">
 <div class="toolbar" role="navigation">
 <button class="nav-toggle"></button>
-    <a href="../" class="home-link"></a>
+  <div class="page-versions">
+  <button class="version-menu-toggle" title="Show other versions of page">master</button>
+  <div class="version-menu">
+    <a class="version" href="../tutorial/developers/">tutorial</a>
+    <a class="version is-current" href="./">master</a>
+  </div>
+</div>
+  <a href="../tutorial/" class="home-link"></a>
 
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <span class="breadcrumbs-home">
@@ -193,7 +203,7 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>Magnolia SaaS is built with the developer experience as a top priority. Developers only need to <a href="connect-with-git" class="page">link their <code>git</code> repository</a> as part of the Magnolia SaaS subscription service. Once synced, developers follow their own workflow to develop light modules for Magnolia and our webhook and configuration ingestion service handles the rest, allowing rapid development and deployment in real-time.</p>
+<p>Magnolia SaaS is built with the developer experience as a top priority. Developers only need to <a href="../tutorial/developers/connect-with-git" class="page">link their <code>git</code> repository</a> as part of the Magnolia SaaS subscription service. Once synced, developers follow their own workflow to develop light modules for Magnolia and our webhook and configuration ingestion service handles the rest, allowing rapid development and deployment in real-time.</p>
 </div>
 <div class="dlist">
 <dl>
@@ -202,13 +212,13 @@
 <div class="ulist">
 <ul>
 <li>
-<p>Syncing your <a href="connect-with-git" class="page"><code>git</code> repository</a> to Magnolia SaaS.</p>
+<p>Syncing your <a href="../tutorial/developers/connect-with-git" class="page"><code>git</code> repository</a> to Magnolia SaaS.</p>
 </li>
 <li>
-<p>Trying out the <a href="../hello-saas" class="page">our starter tutorial</a>.</p>
+<p>Trying out the <a href="../tutorial/hello-saas" class="page">our starter tutorial</a>.</p>
 </li>
 <li>
-<p>Testing the <a href="api/delivery-endpoint" class="page">Delivery API</a> which allows you to obtain data via <code>JSON</code>.</p>
+<p>Testing the <a href="../tutorial/developers/api/delivery-endpoint" class="page">Delivery API</a> which allows you to obtain data via <code>JSON</code>.</p>
 </li>
 </ul>
 </div>
@@ -226,7 +236,7 @@
 <h2 id="_development_environments"><a class="anchor" href="#_development_environments"></a>Development environments</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Magnolia SaaS supports working in multiple development environments. This means that once you <a href="connect-with-git" class="page">sync your repository to Magnolia</a>, you can create as many branches (and therefore, environments) as you need for your project.</p>
+<p>Magnolia SaaS supports working in multiple development environments. This means that once you <a href="../tutorial/developers/connect-with-git" class="page">sync your repository to Magnolia</a>, you can create as many branches (and therefore, environments) as you need for your project.</p>
 </div>
 <div class="paragraph">
 <p>The default branch for Magnolia SaaS is the <code>main</code>. This means that <code>main</code> is considered your production branch.</p>
@@ -250,7 +260,7 @@ You cannot change <code>main</code> as the default branch.
 </div>
 <div class="imageblock zoom">
 <div class="content">
-<img src="_images/admincentral/toggle-branches.gif" alt="toggle branches">
+<img src="../tutorial/developers/_images/admincentral/toggle-branches.gif" alt="toggle branches">
 </div>
 </div>
 </div>

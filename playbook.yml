@@ -8,14 +8,15 @@ site:
 content:
   sources:
   - url: https://git.magnolia-cms.com/scm/cloud/magnolia-cloud.git
-    branches:
-    - [CLOUD-710]
     start_path: docs
+    branches:
+      - master
+      - 'CLOUD-710'
   - url: https://git.magnolia-cms.com/scm/DOCUMENTATION/product-docs.git
     branches: [master]
   - url: https://git.magnolia-cms.com/scm/cloud/mgnlctl.git
     start_path: docs
-    branches: [CLOUD-756]
+    branches: [master]
 
 urls:
   html_extension_style: drop
