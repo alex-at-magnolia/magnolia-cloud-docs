@@ -1178,6 +1178,51 @@ You cannot change <code>main</code> as the default branch.
 <div class="paragraph">
 <p>Magnolia SaaS automatically syncs with any branch following the <code>env/*</code> pattern, e.g., <code>env/hello-saas</code>. This appears as <code>hello-saas</code> in admincentral.</p>
 </div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Branching strategy example flow</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to your local repository.</p>
+</li>
+<li>
+<p>Create a new branch with the <code>env/*</code> pattern.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>git checkout -b env/branch <i class="conum" data-value="1"></i><b>(1)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Notice you must prefix the branch name with <code>env/</code></td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>Make some changes.</p>
+</li>
+<li>
+<p>Push those changes to your remote repository.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>git add .; git commit -m "changes were made"; git push origin env/branch</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Go to <a href="https://subscription-service.beta.de.magnolia-cloud.com" target="_blank" rel="noopener">admincentral</a>.</p>
+</li>
+<li>
+<p>See your new branch (environment) in the dropdown menu.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
 <div class="admonitionblock note">
 <table>
 <tr>
