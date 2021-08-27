@@ -1174,6 +1174,9 @@
     <a class="nav-link" href="../../Modules/List-of-modules/Content-Editor-module/Multi-JCR-block">Multi JCR block</a>
   </li>
   <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../Modules/List-of-modules/Content-Editor-module/Light-rich-text-field">Light rich text field</a>
+  </li>
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../../Modules/List-of-modules/Content-Editor-module/Slug-field">Slug field</a>
   </li>
 </ul>
@@ -2427,11 +2430,11 @@ creating/updating/deleting the content.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_ordering"><a class="anchor" href="#_ordering"></a>Ordering</h4>
+<h4 id="_ordering_of_siblings"><a class="anchor" href="#_ordering_of_siblings"></a>Ordering of siblings</h4>
 <div class="paragraph">
-<p>All siblings of a published node appear in the same order as on the author instance
-at the time of approving publication. To disable such ordering of sibling nodes,
-set <code>/modules/publishing-core/config@orderSiblings</code> to <code>false</code>.</p>
+<p>All siblings of a published node appear in the same order as on the author instance at the time of approving publication.
+If you are publishing nodes with hundreds of child nodes, you may need to disable ordering to significantly speed up the process.
+To do so, set <code>/modules/publishing-core/config@orderSiblings</code> to <code>false</code>.</p>
 </div>
 <div class="admonitionblock note">
 <table>

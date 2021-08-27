@@ -295,7 +295,7 @@ The tutorial here is meant to get you started using Magnolia SaaS and is not int
 <p>Set your <code>remote origin</code> to the remote repository you just created. <em>(GitHub and Bitbucket)</em></p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-sh hljs" data-lang="sh">git remote set-url origin &lt;/path/to/remote/repo&gt;</code></pre>
+<pre class="highlightjs highlight"><code class="language-sh hljs" data-lang="sh">git remote add origin &lt;/path/to/remote/repo&gt;</code></pre>
 </div>
 </div>
 </li>
@@ -795,7 +795,7 @@ This app is now available as it is part of your <code>hello-saas</code> repo tha
 </ol>
 </div>
 <div id="import-pages-yaml-admincentral" class="olist arabic">
-<ol class="arabic">
+<ol class="arabic" start="3">
 <li>
 <p>From <strong>Actions</strong>, select <strong>Import</strong> and import the <a href="_attachments/website.react-minimal.yaml">website.react-minimal.yaml</a> file from your <code>hello-saas</code> repo.</p>
 </li>
@@ -859,6 +859,14 @@ REACT_APP_MGNL_API_NAV="${REACT_APP_REST_BASE}/delivery/pagenav/v1"</code></pre>
 <td>Insert your Magnolia SaaS <code>subscription_id</code> at <code>REACT_APP_MGNL_HOST</code>.</td>
 </tr>
 </table>
+</div>
+</li>
+<li>
+<p>Push the change to your remote git repo.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>git add .; git commit -m "updated the subscription_id"; git push origin main</code></pre>
+</div>
 </div>
 </li>
 <li>

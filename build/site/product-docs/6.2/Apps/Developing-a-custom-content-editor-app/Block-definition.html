@@ -1175,6 +1175,9 @@
     <a class="nav-link" href="../../Modules/List-of-modules/Content-Editor-module/Multi-JCR-block">Multi JCR block</a>
   </li>
   <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../Modules/List-of-modules/Content-Editor-module/Light-rich-text-field">Light rich text field</a>
+  </li>
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../../Modules/List-of-modules/Content-Editor-module/Slug-field">Slug field</a>
   </li>
 </ul>
@@ -2520,16 +2523,19 @@
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">{i1}`implementationClass`</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">{i1} <code>implementationClass</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><strong>optional</strong>, default is <code><em>info.magnolia.ui.editor.FormView</em></code></p>
 </div>
 <div class="paragraph">
 <p>Specifies the implementation used to create the block fields.</p>
+</div>
+<div class="paragraph">
+<p>For a block with a <a href="../../Modules/List-of-modules/Content-Editor-module/Light-rich-text-field" class="page">light rich text field</a>, the <code>implementationClass</code> must be <code>info.magnolia.editor.field.LightRichTextFormView</code>.</p>
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">{i1}`label`</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">{i1} <code>label</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><strong>optional</strong></p>
 </div>
@@ -2538,7 +2544,7 @@
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">{i1}`properties`</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">{i1} <code>properties</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><strong>required</strong></p>
 </div>
