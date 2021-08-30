@@ -3109,6 +3109,28 @@ out of the box:</p>
 </ul>
 </div>
 <div class="sect3">
+<h4 id="_example_configuration"><a class="anchor" href="#_example_configuration"></a>Example configuration</h4>
+<div class="paragraph">
+<p>Example configuration of a security scheme named <code>b1</code> (lines 3 through 6), with a binding to a REST call named <code>myCommand</code> via the <code>securityScheme</code> property.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yml hljs" data-lang="yml">baseUrl: http://localhost:8080/magnoliaPublic
+securitySchemes: # define one or more schemes
+  b1:
+    $type: basic
+    username: superuser
+    password: superuser
+restCalls:
+  myCommand:
+    method: post
+    entityClass: com.fasterxml.jackson.databind.JsonNode
+    path: /.rest/commands/v2/myCatalog/myCommand
+    securityScheme: b1 # set the scheme for the call</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
 <h4 id="_basic_security_scheme"><a class="anchor" href="#_basic_security_scheme"></a>Basic security scheme</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
