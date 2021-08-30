@@ -1,0 +1,88 @@
+'Basel':
+  'jcr:mixinTypes': ['mgnl:hasVersion']
+  'jcr:primaryType': 'mgnl:folder'
+  'jcr:uuid': 'eeaca199-0c1e-45b9-9bc8-9cb5db90d4af'
+  'mgnl:activationStatus': false
+  'mgnl:created': 2021-06-10T11:10:01.181Z
+  'mgnl:createdBy': 'superuser'
+  'mgnl:lastActivated': 2021-07-27T16:06:41.255Z
+  'mgnl:lastActivatedBy': 'christopher.zimmermann+1-do-not-delete@magnolia-cms.com'
+  'mgnl:lastModified': 2021-06-10T11:10:11.574Z
+  'mgnl:lastModifiedBy': 'superuser'
+  'name': 'Basel'
+  'Swimming':
+    'description': '<p>Cool off in the water, for example - take a dip in the Rhein. It is great craic my friend.</p>
+
+      '
+    'description_de': '<p>K&uuml;hlen Sie sich im Wasser ab &ndash; nehmen Sie zum
+      Beispiel ein Bad im Rhein.</p>
+
+      '
+    'jcr:mixinTypes': ['mgnl:hasVersion']
+    'jcr:primaryType': 'activity'
+    'jcr:uuid': '1dfb6f7e-deab-4b87-8cb1-2a0a08873175'
+    'mgnl:activationStatus': false
+    'mgnl:lastActivated': 2021-07-27T16:06:41.255Z
+    'mgnl:lastActivatedBy': 'christopher.zimmermann+1-do-not-delete@magnolia-cms.com'
+    'mgnl:lastModified': 2021-06-10T11:10:16.597Z
+    'mgnl:lastModifiedBy': 'superuser'
+    'name': 'Swimming'
+    'name_de': 'Schwimmen'
+  'Check-out-the-Old-City':
+    'description': '<p>It&#39;s easy to waste a few hours just wandering the streets
+      and hidden staircases in the city.</p>
+
+      '
+    'description_de': '<p>Es ist leicht, ein paar Stunden damit zu verschwenden, durch
+      die Stra&szlig;en und versteckten Treppen der Stadt zu schlendern.</p>
+
+      '
+    'jcr:mixinTypes': ['mgnl:hasVersion']
+    'jcr:primaryType': 'activity'
+    'jcr:uuid': '40d9e09d-49b0-403b-a8bc-0a14fcec087d'
+    'mgnl:activationStatus': false
+    'mgnl:lastActivated': 2021-07-27T16:06:41.257Z
+    'mgnl:lastActivatedBy': 'christopher.zimmermann+1-do-not-delete@magnolia-cms.com'
+    'mgnl:lastModified': 2021-06-10T11:10:56.280Z
+    'mgnl:lastModifiedBy': 'superuser'
+    'name': 'Check out the Old City'
+    'name_de': 'Schauen Sie sich die Altstadt an'
+  'Volleyball':
+    'description': '<p>Grab your friends from work, take a break and hit the beach
+      volleyball courts just up the street.</p>
+
+      '
+    'description_de': '<p>Schnappen Sie sich Ihre Freunde von der Arbeit, machen Sie
+      eine Pause und spielen Sie die Beachvolleyballpl&auml;tze gleich die Stra&szlig;e
+      hinauf.</p>
+
+      '
+    'jcr:mixinTypes': ['mgnl:hasVersion']
+    'jcr:primaryType': 'activity'
+    'jcr:uuid': 'df4f0d1a-325d-4150-94c0-5b800bbbfc0f'
+    'mgnl:activationStatus': false
+    'mgnl:lastActivated': 2021-07-27T16:06:41.258Z
+    'mgnl:lastActivatedBy': 'christopher.zimmermann+1-do-not-delete@magnolia-cms.com'
+    'mgnl:lastModified': 2021-06-10T11:11:22.411Z
+    'mgnl:lastModifiedBy': 'superuser'
+    'name': 'Volleyball'
+    'name_de': 'Volleyball'
+  'Mountain-Biking':
+    'description': '<p>There&#39;s tons of trails in the forest and vinyards. Hit
+      Gempen in the spring for the blooming cherry season.</p>
+
+      '
+    'description_de': '<p>Es gibt unz&auml;hlige Wanderwege im Wald und in den Weinbergen.
+      Besuchen Sie Gempen im Fr&uuml;hjahr zur Kirschbl&uuml;tenzeit.</p>
+
+      '
+    'jcr:mixinTypes': ['mgnl:hasVersion']
+    'jcr:primaryType': 'activity'
+    'jcr:uuid': '038d00a4-e263-4d51-9b4a-be80316b54bb'
+    'mgnl:activationStatus': false
+    'mgnl:lastActivated': 2021-07-27T16:06:41.259Z
+    'mgnl:lastActivatedBy': 'christopher.zimmermann+1-do-not-delete@magnolia-cms.com'
+    'mgnl:lastModified': 2021-06-10T11:11:58.385Z
+    'mgnl:lastModifiedBy': 'superuser'
+    'name': 'Mountain Biking'
+    'name_de': 'Mountainbiking'

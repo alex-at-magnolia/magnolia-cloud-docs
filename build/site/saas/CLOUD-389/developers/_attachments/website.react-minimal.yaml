@@ -1,0 +1,108 @@
+'react-minimal':
+  'jcr:primaryType': 'mgnl:page'
+  'jcr:uuid': '95264732-dca3-4f1f-97df-0c0e640e129e'
+  'mgnl:lastModified': 2021-08-12T05:09:54.581+03:00
+  'mgnl:lastModifiedBy': 'user@magnolia-cms.com'
+  'mgnl:template': 'react-minimal-lm:pages/basic'
+  'title': 'Hello SaaS'
+  'main':
+    'jcr:primaryType': 'mgnl:area'
+    'jcr:uuid': '99f03460-b592-4b60-9008-0da2d73e0933'
+    'mgnl:created': 2021-07-22T16:02:33.132+03:00
+    'mgnl:createdBy': 'user@magnolia-cms.com'
+    'mgnl:lastModified': 2021-08-12T05:09:54.581+03:00
+    'mgnl:lastModifiedBy': 'user@magnolia-cms.com'
+    '0':
+      'jcr:primaryType': 'mgnl:component'
+      'jcr:uuid': 'c3426b01-563b-4911-bdee-b136ec7e523d'
+      'mgnl:created': 2021-07-25T23:27:14.496+03:00
+      'mgnl:createdBy': 'user@magnolia-cms.com'
+      'mgnl:lastModified': 2021-08-12T05:09:54.543+03:00
+      'mgnl:lastModifiedBy': 'user@magnolia-cms.com'
+      'mgnl:template': 'spa-lm:components/list'
+      'expanderItems':
+        'jcr:primaryType': 'mgnl:area'
+        'jcr:uuid': 'a17b9828-65b5-443b-a17a-9b762d804e33'
+        'mgnl:created': 2021-08-03T22:10:07.515+03:00
+        'mgnl:createdBy': 'user@magnolia-cms.com'
+        'mgnl:lastModified': 2021-08-03T22:10:07.515+03:00
+        'mgnl:lastModifiedBy': 'user@magnolia-cms.com'
+      'items':
+        'jcr:primaryType': 'mgnl:area'
+        'jcr:uuid': '914e65f6-ccf4-42c9-9b38-94eefe4d6134'
+        'mgnl:created': 2021-08-12T05:09:54.546+03:00
+        'mgnl:createdBy': 'user@magnolia-cms.com'
+        'mgnl:lastModified': 2021-08-12T05:09:54.546+03:00
+        'mgnl:lastModifiedBy': 'user@magnolia-cms.com'
+    '00':
+      'jcr:primaryType': 'mgnl:component'
+      'jcr:uuid': '96c2d902-caf4-47b0-b846-b0c834c8a01f'
+      'mgnl:created': 2021-07-25T23:27:55.371+03:00
+      'mgnl:createdBy': 'user@magnolia-cms.com'
+      'mgnl:lastModified': 2021-08-03T22:10:07.669+03:00
+      'mgnl:lastModifiedBy': 'user@magnolia-cms.com'
+      'mgnl:template': 'spa-lm:components/expander'
+      'expanderItems':
+        'jcr:primaryType': 'mgnl:area'
+        'jcr:uuid': 'fcf141eb-d98c-4ab6-b076-485d7797787c'
+        'mgnl:created': 2021-08-03T22:10:07.669+03:00
+        'mgnl:createdBy': 'user@magnolia-cms.com'
+        'mgnl:lastModified': 2021-08-03T22:10:07.669+03:00
+        'mgnl:lastModifiedBy': 'user@magnolia-cms.com'
+    '01':
+      'jcr:primaryType': 'mgnl:component'
+      'jcr:uuid': 'dd46935f-1862-404c-8f1a-f78e72503b5c'
+      'mgnl:created': 2021-07-25T23:29:52.677+03:00
+      'mgnl:createdBy': 'user@magnolia-cms.com'
+      'mgnl:lastModified': 2021-08-03T22:10:07.688+03:00
+      'mgnl:lastModifiedBy': 'user@magnolia-cms.com'
+      'mgnl:template': 'spa-lm:components/expander'
+      'expanderItems':
+        'jcr:primaryType': 'mgnl:area'
+        'jcr:uuid': 'd9e779a8-90f0-46ee-9ce2-805a75c0af91'
+        'mgnl:created': 2021-08-03T22:10:07.688+03:00
+        'mgnl:createdBy': 'user@magnolia-cms.com'
+        'mgnl:lastModified': 2021-08-03T22:10:07.688+03:00
+        'mgnl:lastModifiedBy': 'user@magnolia-cms.com'
+    '02':
+      'jcr:primaryType': 'mgnl:component'
+      'jcr:uuid': '3553cde2-d97b-46a5-ae48-a4f034e991be'
+      'mgnl:created': 2021-07-25T23:38:11.732+03:00
+      'mgnl:createdBy': 'user@magnolia-cms.com'
+      'mgnl:lastModified': 2021-08-03T22:10:07.707+03:00
+      'mgnl:lastModifiedBy': 'user@magnolia-cms.com'
+      'mgnl:template': 'spa-lm:components/expander'
+      'expanderItems':
+        'jcr:primaryType': 'mgnl:area'
+        'jcr:uuid': '46227c51-1630-42e8-98fa-e2532ab5df35'
+        'mgnl:created': 2021-08-03T22:10:07.707+03:00
+        'mgnl:createdBy': 'user@magnolia-cms.com'
+        'mgnl:lastModified': 2021-08-03T22:10:07.707+03:00
+        'mgnl:lastModifiedBy': 'user@magnolia-cms.com'
+    '03':
+      'jcr:primaryType': 'mgnl:component'
+      'jcr:uuid': '903c123d-d202-4934-bc99-a20c99298d33'
+      'mgnl:created': 2021-08-03T23:38:47.018+03:00
+      'mgnl:createdBy': 'user@magnolia-cms.com'
+      'mgnl:lastModified': 2021-08-12T05:09:54.581+03:00
+      'mgnl:lastModifiedBy': 'user@magnolia-cms.com'
+      'mgnl:template': 'spa-lm:components/expander'
+      'expanderItems':
+        'jcr:primaryType': 'mgnl:area'
+        'jcr:uuid': 'aab70a7d-e75c-46ee-9fd3-d0ccfd619c69'
+        'mgnl:created': 2021-08-12T05:09:54.581+03:00
+        'mgnl:createdBy': 'user@magnolia-cms.com'
+        'mgnl:lastModified': 2021-08-12T05:09:54.581+03:00
+        'mgnl:lastModifiedBy': 'user@magnolia-cms.com'
+  'extras':
+    'jcr:primaryType': 'mgnl:area'
+    'jcr:uuid': 'b494fcb5-90d6-4f18-adbe-84c8d1087e4f'
+    'mgnl:created': 2021-07-22T16:02:33.188+03:00
+    'mgnl:createdBy': 'user@magnolia-cms.com'
+    'mgnl:lastModified': 2021-07-25T23:42:41.486+03:00
+    'mgnl:lastModifiedBy': 'user@magnolia-cms.com'
+    '00':
+      'jcr:primaryType': 'mgnl:component'
+      'jcr:uuid': '001cd158-a3df-494b-9d5f-d37ac827dff6'
+      'mgnl:template': 'spa-lm:components/headline'
+      'text': 'Look at you go!'

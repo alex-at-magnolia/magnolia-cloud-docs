@@ -9,7 +9,7 @@ content:
   sources:
   - url: https://git.magnolia-cms.com/scm/cloud/magnolia-cloud.git
     start_path: docs
-    branches: [master]
+    branches: [master, 'CLOUD-389']
   - url: https://git.magnolia-cms.com/scm/DOCUMENTATION/product-docs.git
     branches: [master]
   - url: https://git.magnolia-cms.com/scm/cloud/mgnlctl.git
@@ -34,6 +34,7 @@ ui:
 # Global asciidoc attributes here
 asciidoc:
   attributes:
+    check-mark: '&#x2714;'
     ui: Cockpit
     fields-dir: /Templating/Dialog-definition/Field-definition/List-of-fields/
     solution-type: SaaS
