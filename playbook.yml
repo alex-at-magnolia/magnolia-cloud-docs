@@ -9,7 +9,7 @@ content:
   sources:
   - url: https://git.magnolia-cms.com/scm/cloud/magnolia-cloud.git
     start_path: docs
-    branches: ['master','CLOUD-710']
+    branches: [master]
   - url: https://git.magnolia-cms.com/scm/DOCUMENTATION/product-docs.git
     branches: [master]
   - url: https://git.magnolia-cms.com/scm/cloud/mgnlctl.git
@@ -17,7 +17,7 @@ content:
     branches: [master]
 
 urls:
-  html_extension_style: drop
+  html_extension_style: indexify
 
 ui:
   bundle:

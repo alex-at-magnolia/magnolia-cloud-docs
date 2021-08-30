@@ -1,0 +1,3686 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Upgrading to Magnolia {magnolia-major-version} :: Magnolia Cloud Service Internal Documentation</title>
+    <link rel="canonical" href="https://saas-docs.beta.de.magnolia-cloud.com/saas/product-docs/6.2/Upgrading-to-Magnolia/">
+    <meta name="generator" content="Antora 2.3.3">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
+
+<link rel="stylesheet" href="../../../_/css/site.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" href="../../../_/img/mgnl-favicon.png" type="image/png">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../../../index.html">
+        <svg width="220" height="40" viewBox="0 0 220 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M89.8347 6.63219C88.9841 6.62132 88.1402 6.78357 87.3543 7.10906C86.5685 7.43454 85.8571 7.91646 85.2635 8.52548V6.84193H72.7865C70.2399 6.28353 67.6379 6.01728 65.0309 6.04833C54.3517 6.04833 46.1934 9.76972 46.1934 14.7042C46.1934 16.5181 47.4042 17.9154 50.2229 19.2645L48.7058 19.9192L46.5904 20.795C45.537 21.193 44.5414 21.7296 43.6299 22.3907V13.0943C43.6299 8.81458 40.9786 6.63219 35.8261 6.63219C32.7692 6.63219 31.0054 7.19904 29.2218 9.16036L32.1369 11.9946C33.0897 10.9034 33.895 10.4811 35.6531 10.4811C38.0776 10.4811 39.056 11.3569 39.056 13.3579V14.2734H34.74C30.4865 14.2734 28.4817 16.657 28.4817 19.5735C28.4381 21.0876 28.9817 22.5601 29.9988 23.6831C31.0877 24.7715 32.5991 25.2958 34.672 25.2958C36.7449 25.2958 37.9415 24.7715 39.1722 23.5414V25.1229H43.6271V25.0011C44.5685 25.5679 46.2444 26.1348 48.8079 26.7385L45.9892 27.4414C41.6563 28.5127 40.0343 29.0229 38.2336 29.8137C35.7127 30.885 34.4026 32.2341 34.4026 33.7646C34.4026 37.4945 42.4588 40 54.5502 40C68.3486 40 78.5203 36.4628 78.5203 31.7608C78.5203 30.1311 77.1024 28.6913 74.3943 27.7106C72.0747 26.8603 69.8572 26.4097 61.8039 25.3384C55.4548 24.4881 53.5407 24.1281 51.9272 23.4451C51.2239 23.0653 50.7192 22.5608 50.7192 22.0506C50.7192 21.2939 51.4252 20.8404 53.3365 20.095C55.9538 20.5875 58.6132 20.822 61.2764 20.795C71.2467 20.795 79.0023 17.068 79.0023 12.3716C79.0023 10.9715 78.6025 10.1835 77.0911 8.97046C77.0911 8.97046 78.9853 8.97046 80.7775 9.14619V25.1314H85.3543V14.0778C85.3543 11.5837 86.9734 10.7447 88.4111 10.7447C89.8488 10.7447 91.4425 11.595 91.4425 14.0778V25.1314H96.0108V13.4458C96.0108 11.4448 95.6308 9.72154 94.1477 8.24772C93.1382 7.23022 91.6608 6.63219 89.8347 6.63219ZM39.0758 18.3944C39.0758 19.5281 38.8972 20.2565 38.4038 20.7157C37.5984 21.4724 36.7874 21.5943 35.5227 21.5943C33.7334 21.5943 32.8912 20.744 32.8912 19.4856C32.8912 18.2272 33.8014 17.4194 35.4433 17.4194H39.0645L39.0758 18.3944ZM53.3677 27.8892H53.7704C54.9699 27.8892 57.1732 28.1216 60.576 28.6459C63.6783 29.0626 65.3967 29.4027 66.8854 29.8505C69.5028 30.6101 70.8923 31.7013 70.8923 32.9965C70.8923 35.9187 64.2794 38.1379 55.744 38.1379C47.3305 38.1379 41.7272 36.2871 41.7272 33.5124C41.7272 31.8912 43.335 30.5874 46.6528 29.4339C48.9213 28.6318 51.8336 27.9884 53.3365 27.8892H53.3677ZM61.2849 19.1398C56.6741 19.1398 54.088 17.5214 54.088 14.6475C54.088 10.7589 57.7942 7.9813 63.3096 7.9813H63.6896C68.0991 7.9813 70.9036 9.78673 70.9036 12.6097C70.9036 16.4047 66.7805 19.1285 61.2622 19.1285L61.2849 19.1398Z" fill="#1E1F1C"/>
+          <path d="M106.778 6.63232C104.073 6.63232 102.241 7.68951 101.107 8.88273C99.4562 10.6031 99.0365 12.6665 99.0365 15.9684C99.0365 19.2703 99.4562 21.3733 101.107 23.0966C102.241 24.2898 104.061 25.3413 106.778 25.3413C109.495 25.3413 111.346 24.2898 112.449 23.0966C114.103 21.3733 114.522 19.31 114.522 15.9684C114.522 12.6268 114.103 10.5833 112.449 8.88273C111.346 7.68951 109.48 6.63232 106.778 6.63232ZM108.922 20.4069C108.639 20.6817 108.303 20.8954 107.934 21.0349C107.565 21.1743 107.172 21.2365 106.778 21.2175C106.389 21.2371 106.001 21.1751 105.637 21.0355C105.274 20.8959 104.944 20.6817 104.668 20.4069C103.721 19.463 103.613 17.856 103.613 15.9514C103.613 14.0468 103.721 12.4737 104.668 11.5271C104.945 11.2539 105.275 11.041 105.638 10.902C106.001 10.7629 106.389 10.7007 106.778 10.7193C107.171 10.7011 107.565 10.7634 107.933 10.9023C108.302 11.0412 108.638 11.2538 108.922 11.5271C109.872 12.4737 109.974 14.0553 109.974 15.9514C109.974 17.8475 109.872 19.4857 108.922 20.4069Z" fill="#1E1F1C"/>
+          <path d="M122.587 19.6298V0.135742H118.019V19.9076C118.019 22.5066 119.601 25.1396 123.358 25.1396H125.961V21.2794H124.203C123.041 21.2794 122.587 20.7153 122.587 19.6298Z" fill="#1E1F1C"/>
+          <path d="M133.482 6.84766H128.913V25.1429H133.482V6.84766Z" fill="#1E1F1C"/>
+          <path d="M133.513 0H128.84V3.72139H133.513V0Z" fill="#1E1F1C"/>
+          <path d="M143.914 6.63232C140.857 6.63232 139.093 7.19918 137.307 9.16049L140.225 11.9948C141.172 10.9036 141.983 10.4813 143.738 10.4813C146.16 10.4813 147.141 11.357 147.141 13.358V14.2735H142.825C138.572 14.2735 136.567 16.6571 136.567 19.5736C136.522 21.0874 137.065 22.5599 138.081 23.6833C139.17 24.7716 140.684 25.296 142.751 25.296C144.819 25.296 146.021 24.7716 147.252 23.5416V25.1231H151.709V13.0945C151.709 8.81471 149.044 6.63232 143.914 6.63232ZM147.147 18.3945C147.147 19.5282 146.968 20.2566 146.48 20.7158C145.672 21.4725 144.867 21.5944 143.597 21.5944C141.804 21.5944 140.945 20.7441 140.945 19.4857C140.945 18.2273 141.858 17.4195 143.514 17.4195H147.13L147.147 18.3945Z" fill="#1E1F1C"/>
+          <path d="M19.3621 6.63201C18.3336 6.59102 17.3087 6.77757 16.3606 7.17835C15.4126 7.57913 14.5648 8.18424 13.8779 8.95044C12.7181 7.36892 11.0592 6.63201 9.02884 6.63201C8.18003 6.63052 7.33932 6.79706 6.55525 7.12201C5.77117 7.44697 5.05924 7.92391 4.46054 8.5253V6.84175H0V25.1369H4.5683V14.0833C4.5683 11.5891 6.18464 10.7502 7.62517 10.7502C9.0657 10.7502 10.6537 11.6005 10.6537 14.0833V25.1369H15.2191V13.9813C15.2191 11.592 16.8695 10.7502 18.2703 10.7502C19.6712 10.7502 21.3017 11.6005 21.3017 14.0861V25.1398H25.87V13.4456C25.87 11.4446 25.3426 9.72136 23.885 8.24755C22.8358 7.23004 21.1854 6.63201 19.3621 6.63201Z" fill="#1E1F1C"/>
+          <path d="M156.958 5.32267C156.962 5.17787 156.938 5.03367 156.886 4.89831C156.835 4.76296 156.757 4.63909 156.657 4.53381C156.558 4.42852 156.438 4.34388 156.306 4.2847C156.174 4.22553 156.031 4.193 155.886 4.18896H154.185V7.74597H155.112V6.40819H155.492L156.028 7.73746H157.086L156.419 6.24948C156.59 6.1642 156.732 6.03108 156.827 5.86644C156.923 5.7018 156.968 5.51281 156.958 5.32267ZM155.648 5.70246H155.112V4.98539H155.657C155.704 4.98055 155.751 4.98504 155.797 4.99858C155.842 5.01213 155.884 5.03448 155.921 5.06435C155.958 5.09422 155.988 5.13103 156.011 5.17268C156.033 5.21433 156.047 5.26 156.052 5.30708C156.057 5.35417 156.053 5.40174 156.039 5.44709C156.025 5.49244 156.003 5.53468 155.973 5.5714C155.943 5.60811 155.907 5.63858 155.865 5.66107C155.823 5.68356 155.778 5.69762 155.73 5.70246H155.648Z" fill="#1E1F1C"/>
+          <path d="M155.501 2.45459C154.807 2.45347 154.129 2.65812 153.551 3.04262C152.974 3.42712 152.524 3.97418 152.258 4.61453C151.992 5.25488 151.922 5.95971 152.057 6.63978C152.192 7.31986 152.526 7.94458 153.017 8.43485C153.507 8.92511 154.132 9.25887 154.813 9.39386C155.493 9.52885 156.198 9.459 156.839 9.19315C157.48 8.9273 158.027 8.47742 158.412 7.90046C158.796 7.3235 159.001 6.64542 159 5.95208C158.999 5.02495 158.629 4.13622 157.973 3.48064C157.318 2.82506 156.428 2.45609 155.501 2.45459ZM155.501 8.59361C154.977 8.608 154.46 8.46667 154.016 8.18751C153.572 7.90835 153.221 7.5039 153.007 7.0253C152.793 6.54671 152.726 6.01547 152.814 5.49877C152.903 4.98208 153.142 4.50314 153.503 4.12252C153.863 3.74191 154.329 3.47672 154.84 3.3605C155.351 3.24428 155.886 3.28224 156.376 3.46958C156.865 3.65693 157.289 3.98524 157.592 4.413C157.895 4.84076 158.064 5.34875 158.078 5.87272C158.08 5.89632 158.08 5.91998 158.078 5.94358C158.095 6.27484 158.046 6.6061 157.934 6.91842C157.822 7.23075 157.65 7.51802 157.428 7.76384C157.205 8.00967 156.936 8.20922 156.636 8.35111C156.336 8.49299 156.011 8.57444 155.679 8.59078C155.623 8.59361 155.563 8.59645 155.501 8.59361Z" fill="#1E1F1C"/>
+          <path d="M166.98 25V7.9375H171.797C173.281 7.9375 174.594 8.26562 175.734 8.92188C176.875 9.57812 177.754 10.5117 178.371 11.7227C178.996 12.9336 179.312 14.3242 179.32 15.8945V16.9844C179.32 18.5938 179.008 20.0039 178.383 21.2148C177.766 22.4258 176.879 23.3555 175.723 24.0039C174.574 24.6523 173.234 24.9844 171.703 25H166.98ZM169.23 9.78906V23.1602H171.598C173.332 23.1602 174.68 22.6211 175.641 21.543C176.609 20.4648 177.094 18.9297 177.094 16.9375V15.9414C177.094 14.0039 176.637 12.5 175.723 11.4297C174.816 10.3516 173.527 9.80469 171.855 9.78906H169.23Z" fill="#1E1F1C"/>
+          <path d="M181.816 18.543C181.816 17.3008 182.059 16.1836 182.543 15.1914C183.035 14.1992 183.715 13.4336 184.582 12.8945C185.457 12.3555 186.453 12.0859 187.57 12.0859C189.297 12.0859 190.691 12.6836 191.754 13.8789C192.824 15.0742 193.359 16.6641 193.359 18.6484V18.8008C193.359 20.0352 193.121 21.1445 192.645 22.1289C192.176 23.1055 191.5 23.8672 190.617 24.4141C189.742 24.9609 188.734 25.2344 187.594 25.2344C185.875 25.2344 184.48 24.6367 183.41 23.4414C182.348 22.2461 181.816 20.6641 181.816 18.6953V18.543ZM183.996 18.8008C183.996 20.207 184.32 21.3359 184.969 22.1875C185.625 23.0391 186.5 23.4648 187.594 23.4648C188.695 23.4648 189.57 23.0352 190.219 22.1758C190.867 21.3086 191.191 20.0977 191.191 18.543C191.191 17.1523 190.859 16.0273 190.195 15.168C189.539 14.3008 188.664 13.8672 187.57 13.8672C186.5 13.8672 185.637 14.293 184.98 15.1445C184.324 15.9961 183.996 17.2148 183.996 18.8008Z" fill="#1E1F1C"/>
+          <path d="M201.164 23.4648C201.938 23.4648 202.613 23.2305 203.191 22.7617C203.77 22.293 204.09 21.707 204.152 21.0039H206.203C206.164 21.7305 205.914 22.4219 205.453 23.0781C204.992 23.7344 204.375 24.2578 203.602 24.6484C202.836 25.0391 202.023 25.2344 201.164 25.2344C199.438 25.2344 198.062 24.6602 197.039 23.5117C196.023 22.3555 195.516 20.7773 195.516 18.7773V18.4141C195.516 17.1797 195.742 16.082 196.195 15.1211C196.648 14.1602 197.297 13.4141 198.141 12.8828C198.992 12.3516 199.996 12.0859 201.152 12.0859C202.574 12.0859 203.754 12.5117 204.691 13.3633C205.637 14.2148 206.141 15.3203 206.203 16.6797H204.152C204.09 15.8594 203.777 15.1875 203.215 14.6641C202.66 14.1328 201.973 13.8672 201.152 13.8672C200.051 13.8672 199.195 14.2656 198.586 15.0625C197.984 15.8516 197.684 16.9961 197.684 18.4961V18.9062C197.684 20.3672 197.984 21.4922 198.586 22.2812C199.188 23.0703 200.047 23.4648 201.164 23.4648Z" fill="#1E1F1C"/>
+          <path d="M216.023 21.6367C216.023 21.0508 215.801 20.5977 215.355 20.2773C214.918 19.9492 214.148 19.668 213.047 19.4336C211.953 19.1992 211.082 18.918 210.434 18.5898C209.793 18.2617 209.316 17.8711 209.004 17.418C208.699 16.9648 208.547 16.4258 208.547 15.8008C208.547 14.7617 208.984 13.8828 209.859 13.1641C210.742 12.4453 211.867 12.0859 213.234 12.0859C214.672 12.0859 215.836 12.457 216.727 13.1992C217.625 13.9414 218.074 14.8906 218.074 16.0469H215.895C215.895 15.4531 215.641 14.9414 215.133 14.5117C214.633 14.082 214 13.8672 213.234 13.8672C212.445 13.8672 211.828 14.0391 211.383 14.3828C210.938 14.7266 210.715 15.1758 210.715 15.7305C210.715 16.2539 210.922 16.6484 211.336 16.9141C211.75 17.1797 212.496 17.4336 213.574 17.6758C214.66 17.918 215.539 18.207 216.211 18.543C216.883 18.8789 217.379 19.2852 217.699 19.7617C218.027 20.2305 218.191 20.8047 218.191 21.4844C218.191 22.6172 217.738 23.5273 216.832 24.2148C215.926 24.8945 214.75 25.2344 213.305 25.2344C212.289 25.2344 211.391 25.0547 210.609 24.6953C209.828 24.3359 209.215 23.8359 208.77 23.1953C208.332 22.5469 208.113 21.8477 208.113 21.0977H210.281C210.32 21.8242 210.609 22.4023 211.148 22.832C211.695 23.2539 212.414 23.4648 213.305 23.4648C214.125 23.4648 214.781 23.3008 215.273 22.9727C215.773 22.6367 216.023 22.1914 216.023 21.6367Z" fill="#1E1F1C"/>
+        </svg>
+      </a>
+
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a href="../../../saas-cli/" class="navbar-item">SaaS CLI</a>
+        <div class="navbar-item navbar-item--button">
+          <span class="control">
+            <a class="button is-primary" href="https://docs.magnolia-cms.com" target="_blank">DX Core docs</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <!--<div class="lower-head">-->
+
+  <!--</div>-->
+</header>
+<div class="body">
+<div class="nav-container" data-component="product-docs" data-version="6.2">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <span class="nav-text"><span class="green"><span class="icon"><i class="fa fa-code fa-2x"></i></span></span> <span class="larger"><strong>DX Core</strong></span></span>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../Getting-started-with-Magnolia/">Getting Started</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Getting-started-with-Magnolia/Hello-Magnolia/">Hello Magnolia</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../Getting-started-with-Magnolia/Installing-Magnolia/">Installing Magnolia</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Getting-started-with-Magnolia/Installing-Magnolia/Installing-Magnolia-through-npm-CLI/">Installing Magnolia through npm CLI</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Getting-started-with-Magnolia/Installing-Magnolia/Server-sizing/">Server sizing</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Getting-started-with-Magnolia/Installing-Magnolia/Disk-space/">Disk space</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Getting-started-with-Magnolia/Installing-Magnolia/RAM/">RAM</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../Getting-started-with-Magnolia/Demo/">Demo</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Getting-started-with-Magnolia/Demo/Travel-demo-for-editors/">Travel Demo for editors</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Getting-started-with-Magnolia/Demo/Travel-demo-for-developers/">Travel Demo for developers</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Getting-started-with-Magnolia/Magnolia-project-overview/">Magnolia project overview</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Getting-started-with-Magnolia/Getting-started-with-REST/">Getting started with REST</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Getting-started-with-Magnolia/Magnolia-Headless/">Magnolia Headless</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Getting-started-with-Magnolia/Glossary/">Glossary</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Getting-started-with-Magnolia/FAQ/">FAQ</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../Releases/">Releases</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Releases/Recent-features/">Recent features</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../Releases/Release-notes-for-Magnolia-CMS-6.2.11/"><span class="smalltext">Release notes for Magnolia CMS 6.2.11</span></a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Releases/Release-notes-for-Magnolia-CMS-6.2.11/Magnolia-6.2.11-known-issues/">Magnolia 6.2.11 known issues</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../Releases/Release-notes-for-Magnolia-CMS-6.2.10/"><span class="smalltext">Release notes for Magnolia CMS 6.2.10</span></a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Releases/Release-notes-for-Magnolia-CMS-6.2.10/Magnolia-6.2.10-known-issues/">Magnolia 6.2.10 known issues</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Releases/Release-notes-for-Magnolia-CMS-6.2.9/"><span class="smalltext">Release notes for Magnolia CMS 6.2.9</span></a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../Releases/Release-notes-for-Magnolia-CMS-6.2.8/"><span class="smalltext">Release notes for Magnolia CMS 6.2.8</span></a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Releases/Release-notes-for-Magnolia-CMS-6.2.8/Magnolia-6.2.8-known-issues/">Magnolia 6.2.8 known issues</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Releases/Release-notes-for-Magnolia-CMS-6.2.7/"><span class="smalltext">Release notes for Magnolia CMS 6.2.7</span></a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Releases/Release-notes-for-Magnolia-CMS-6.2.6/"><span class="smalltext">Release notes for Magnolia CMS 6.2.6</span></a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Releases/Release-notes-for-Magnolia-CMS-6.2.5/"><span class="smalltext">Release notes for Magnolia CMS 6.2.5</span></a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Releases/Release-notes-for-Magnolia-CMS-6.2.4/"><span class="smalltext">Release notes for Magnolia CMS 6.2.4</span></a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Releases/Release-notes-for-Magnolia-CMS-6.2.3/"><span class="smalltext">Release notes for Magnolia CMS 6.2.3</span></a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Releases/Release-notes-for-Magnolia-CMS-6.2.2/"><span class="smalltext">Release notes for Magnolia CMS 6.2.2</span></a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Releases/Release-notes-for-Magnolia-CMS-6.2.1/"><span class="smalltext">Release notes for Magnolia CMS 6.2.1</span></a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Releases/Release-notes-for-Magnolia-CMS-6.2/"><span class="smalltext">Release notes for Magnolia CMS 6.2</span></a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Releases/Connector-Pack-and-Special-Feature-changelog/">Connector Pack and Special Feature changelog</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item is-current-page" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="./">Upgrading to Magnolia {magnolia-major-version}</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="Changes-in-Magnolia-6-UI/">Changes in Magnolia 6 UI</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="Migrating-an-app-to-Magnolia-6-UI/">Migrating an app to Magnolia 6 UI</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="Field-converters/">Field converters</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="Magnolia-6-UI-ports-of-5-UI-field-transformer-classes/">Magnolia 6 UI ports of 5 UI field transformer classes</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="#magnolia-cli:ROOT:index.adoc">Magnolia CLI</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../Features/">Features</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Features/Cache/">Cache</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Features/Commenting/">Commenting</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../Features/Content-authoring/">Content authoring</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Features/Content-authoring/Content-editor/">Content editor</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Features/Content-tagging/">Content tagging</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Features/Content-Types/">Content Types</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Features/Data-privacy/">Data privacy</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Features/Digital-asset-management/">Digital asset management</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Features/Find-Bar/">Find Bar</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Features/Image-recognition/">Image recognition</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Features/Integration/">Integration</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../Features/Personalization/">Personalization</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Features/Personalization/Component-personalization/">Component personalization</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Features/REST-and-GraphQL/">REST and GraphQL</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Features/Search-engine-optimization/">Search engine optimization</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../Features/Search/">Search</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Features/Search/Jackrabbit-search/">Jackrabbit search</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Features/Search/Solr-search/">Solr search</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Features/Single-page-applications/">Single-page applications</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Features/Tasks/">Tasks</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Features/Text-classification/">Text classification</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Features/Workflow/">Workflow</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../Administration/">Administration</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Administration/Certified-stack/">Certified stack</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../Administration/Deploying/">Deploying</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../Administration/Deploying/Deploying-Magnolia-as-WAR-file/">Deploying Magnolia as WAR file</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../Administration/Deploying/Deploying-Magnolia-as-WAR-file/Deploying-a-WAR-on-Apache-Tomcat/">Deploying a WAR on Apache Tomcat</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Administration/Deploying/WAR-file-with-multiple-configurations/">WAR file with multiple configurations</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Administration/License/">License</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../Administration/Instances/">Instances</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Administration/Instances/Creating-a-new-public-instance/">Creating a new public instance</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Administration/Instances/Receivers/">Receivers</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Administration/Instances/Content-staging/">Content staging</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Administration/Instances/Clustering/">Clustering</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Administration/Instances/Data-store-deployment/">Data store deployment</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../Administration/Architecture/">Architecture</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Administration/Architecture/Configuration-management/">Configuration management</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Administration/Architecture/Content-storage-and-structure/">Content storage and structure</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Administration/Architecture/Node-types/">Node types</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Administration/Architecture/Publishing-overview/">Publishing overview</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Administration/Architecture/Repositories/">Repositories</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../Administration/Architecture/Request-processing-and-filters/">Request processing and filters</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../Administration/Architecture/Request-processing-and-filters/CORS/">CORS</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../Administration/Architecture/Request-processing-and-filters/Custom-filters/">Custom filters</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../Administration/Architecture/Request-processing-and-filters/Dynamic-servlet-mapping/">Dynamic servlet mapping</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../Administration/Architecture/Request-processing-and-filters/Filters/">Filters</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../Administration/Architecture/Request-processing-and-filters/Registering-a-servlet/">Registering a servlet</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Administration/Architecture/Webapp/">Webapp</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Administration/Architecture/Workspaces/">Workspaces</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Administration/Custom-error-page/">Custom error page</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../Administration/Importing-and-exporting-data/">Importing and exporting data</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../Administration/Importing-and-exporting-data/Importing-and-exporting-JCR-data-for-bootstrapping/">Importing and exporting JCR data for bootstrapping</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../Administration/Importing-and-exporting-data/Importing-and-exporting-JCR-data-for-bootstrapping/Bootstrapping-in-light-modules/">Bootstrapping in light modules</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../Administration/Importing-and-exporting-data/Importing-and-exporting-JCR-data-for-bootstrapping/Bootstrapping-in-Maven-modules/">Bootstrapping in Maven modules</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Administration/Importing-and-exporting-data/Downloading-YAML-definition/">Downloading YAML definition</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Administration/Importing-and-exporting-data/Importing-and-exporting-data-for-the-Content-Translation-app/">Importing and exporting data for the Content Translation app</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Administration/Importing-and-exporting-data/Importing-ZIP-files-with-the-Assets-app/">Importing ZIP files with the Assets app</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../Administration/Locale/">Locale</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Administration/Locale/Time-zone/">Time zone</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../Administration/Language/">Language</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Administration/Language/AdminCentral-and-public-locales/">AdminCentral and public locales</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Administration/Language/Language-configuration/">Language configuration</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Administration/Language/Types-of-translatable-text/">Types of translatable text</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Administration/Language/Internationalization/">Internationalization</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Administration/Language/Making-a-module-translatable/">Making a module translatable</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Administration/Language/My-first-translation/">My first translation</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Administration/Language/Multilanguage-structure/">Multilanguage structure</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Administration/Language/Generic-i18n-keys/">Generic i18n keys</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Administration/Language/i18n-API/">i18n API</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Administration/Language/i18n-best-practices/">i18n best practices</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Administration/MIME-type-mapping/">MIME type mapping</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../Administration/Monitoring/">Monitoring</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Administration/Monitoring/Audit/">Audit</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../Administration/Security/">Security</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Administration/Security/Users/">Users</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Administration/Security/Groups/">Groups</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Administration/Security/Roles-and-access-control-lists/">Roles and access control lists</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Administration/Security/Group-and-role-strategies/">Group and role strategies</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Administration/Security/Default-roles-groups-and-users/">Default roles, groups, and users</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Administration/Security/Default-permissions/">Default permissions</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Administration/Security/App-permissions/">App permissions</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../Administration/Security/Publishing-security/">Publishing security</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../Administration/Security/Activation-security/Activation-keys/">Activation keys</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Administration/Security/Cross-site-security/">Cross-site security</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Administration/Security/IP-and-HTTP-permissions/">IP and HTTP permissions</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Administration/Security/Security-best-practices/">Security best practices</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Administration/Security/Security-policy/">Security policy</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../Administration/Troubleshooting/">Troubleshooting</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Administration/Troubleshooting/Publishing-errors/">Publishing errors</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Administration/Troubleshooting/Broken-version-history/">Broken version history</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Administration/Troubleshooting/HTTP-session-persistence/">HTTP session persistence</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Administration/Troubleshooting/Instances-are-not-in-sync/">Instances are not in sync</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../Administration/Troubleshooting/Known-issues/">Known issues</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../Administration/Troubleshooting/Known-issues/Performance-issues/">Performance issues</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Administration/Troubleshooting/Non-EE-receiver-or-subscriber/">Non EE receiver or subscriber</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Administration/Troubleshooting/Repository-inconsistency/">Repository inconsistency</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Administration/Troubleshooting/Debugging-package/">Debugging package</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../Administration/URI-mapping/">URI mapping</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Administration/URI-mapping/URI-to-repository-mapping/">URI to repository mapping</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Administration/URI-mapping/Virtual-URI-mapping/">Virtual URI mapping</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Administration/Voters/">Voters</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Administration/How-to-delete-a-JCR-workspace/">How to delete a JCR workspace</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../Authoring/">Authoring</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Authoring/Logging-in/">Logging in</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Authoring/Editing-pages/">Editing pages</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Authoring/Managing-pages/">Managing pages</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Authoring/Editing-images/">Editing images</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Authoring/Managing-assets/">Managing assets</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Authoring/Publishing/">Publishing</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Authoring/Deleting-and-restoring/">Deleting and restoring</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Authoring/Versioning/">Versioning</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Authoring/Keyboard-shortcuts/">Keyboard shortcuts</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Authoring/Feeds/">Feeds</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../Developing/">Developing</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../Developing/Magnolia-front-end-development/">Magnolia front-end development</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Developing/Magnolia-front-end-development/Magnolia-basics-for-front-end-developers/">Magnolia basics for front-end developers</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Developing/Magnolia-front-end-development/Install-Magnolia/">Install Magnolia</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Developing/Magnolia-front-end-development/Hello-Magnolia-for-front-end-developers/">Hello Magnolia for front-end developers</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Developing/Light-development-in-Magnolia/">Light development in Magnolia</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../Developing/SPA-development-and-Magnolia/">SPA development and Magnolia</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Developing/SPA-development-and-Magnolia/Magnolia-front-end-helpers-for-SPA/">Magnolia front-end helpers for SPA</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Developing/SPA-development-and-Magnolia/Mapping-between-Magnolia-and-SPA-components/">Mapping between Magnolia and SPA components</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Developing/SPA-development-and-Magnolia/Editor-context-of-an-SPA-page/">Editor context of an SPA page</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Developing/SPA-development-and-Magnolia/Attaching-an-SPA-project-to-Magnolia/">Attaching an SPA project to Magnolia</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Developing/YAML/">YAML</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../Developing/Bundles-and-webapps/">Bundles and webapps</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../Developing/Bundles-and-webapps/Creating-a-custom-webapp-with-Maven/">Creating a custom webapp with Maven</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../Developing/Bundles-and-webapps/Creating-a-custom-webapp-with-Maven/Creating-a-minimal-webapp-with-Maven/">Creating a minimal webapp with Maven</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../Developing/Bundles-and-webapps/Creating-a-custom-webapp-with-Maven/Creating-a-DX-Core-webapp-with-Maven/">Creating a DX Core webapp with Maven</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Developing/Commands/">Commands</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../Developing/Content-Types-tutorial/">Content Types tutorial</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Developing/Content-Types-tutorial/Part-I-My-first-content-type/">Part I - My first content type</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Developing/Content-Types-tutorial/Part-II-Complex-content-types-and-security-set-up/">Part II - Complex content types and security set up</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Developing/Defining-JCR-node-types-and-workspaces/">Defining JCR node types and workspaces</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Developing/Definition-decoration/">Definition decoration</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../Developing/Development-environment/">Development environment</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Developing/Development-environment/Apache-Tomcat/">Apache Tomcat</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Developing/Development-environment/Git/">Git</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Developing/Development-environment/Java-Development-Kit/">Java Development Kit</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Developing/Development-environment/Maven/">Maven</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Developing/Hello-Magnolia---with-content-via-REST/">Hello Magnolia - with content via REST</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Developing/How-to-add-an-asset-with-REST/">How to add an asset with REST</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Developing/How-to-create-a-custom-Java-based-REST-endpoint/">How to create a custom Java-based REST endpoint</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Developing/How-to-create-and-use-a-custom-Magnolia-Maven-module-for-custom-Java-components/">How to create and use a custom Magnolia Maven module for custom Java</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Developing/How-to-get-content-as-JSON-an-overview/">How to get content as JSON - an overview</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Developing/How-to-upgrade-from-CE-to-DX-Core/">How to upgrade from CE to DX Core</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Developing/How-to-use-Magnolia-Maven-archetypes/">How to use Magnolia Maven archetypes</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Developing/How-to-work-with-JavaScript-models/">How to work with JavaScript models</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Developing/Integration-modules/">Integration modules</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Developing/Integration-points/">Integration points</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Developing/Resources/">Resources</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../Developing/Reusing-configuration/">Reusing configuration</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Developing/Reusing-configuration/JCR-extends/">JCR extends</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Developing/Reusing-configuration/YAML-inherit-and-include/">YAML inherit and include</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Developing/BOM-for-third-party-libraries/">BOM for third-party libraries</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Developing/Best-practices/">Best practices</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Developing/Tips-and-tricks-to-hack/">Tips and tricks to hack</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../Developing/API/">API</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../Developing/API/Delivery-API/">Delivery API</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Developing/API/Delivery-API/Requesting-localized-content-with-the-delivery-endpoint/">Requesting localized content with the delivery endpoint</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Developing/API/Delivery-API/Resolving-references-with-the-delivery-endpoint/">Resolving references with the delivery endpoint</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Developing/API/GraphQL-API/">GraphQL API</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Developing/API/SPA-templating-API/">SPA templating API</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Developing/API/Commands-API/">Commands API</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Nodes and properties APIs</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Developing/API/Nodes-and-properties-APIs/Nodes-API/">Nodes API</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Developing/API/Nodes-and-properties-APIs/Properties-API/">Properties API</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Developing/API/API-error-handling/">API error handling</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Developing/API/Cache-API/">Cache API</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Developing/API/Health-check-API/">Health check API</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Java Server APIs</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Developing/API/Java-Server-APIs/DAM-API/">DAM API</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Developing/API/Java-Server-APIs/JCR-API/">JCR API</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Developing/API/Java-Server-APIs/Data-privacy-API/">Data privacy API</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Developing/API/Javadoc/">Javadoc</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../Templating/">Templating</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../Templating/Template-definition/">Template definition</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Templating/Template-definition/Page-definition/">Page definition</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../Templating/Template-definition/Area-definition/">Area definition</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../Templating/Template-definition/Area-definition/Component-inheritance/">Component inheritance</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../Templating/Template-definition/Area-definition/Component-autogeneration/">Component autogeneration</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../Templating/Template-definition/Area-definition/Structuring-page-areas/">Structuring page areas</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Templating/Template-definition/Component-definition/">Component definition</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../Templating/Template-scripts/">Template scripts</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Templating/Template-scripts/Directives/">Directives</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../Templating/Template-scripts/Templating-functions/">Templating functions</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../Templating/Template-scripts/Templating-functions/catfn/">catfn</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../Templating/Template-scripts/Templating-functions/cmsfn/">cmsfn</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../Templating/Template-scripts/Templating-functions/damfn/">damfn</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../Templating/Template-scripts/Templating-functions/imgfn/">imgfn</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../Templating/Template-scripts/Templating-functions/jsonfn/">jsonfn</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../Templating/Template-scripts/Templating-functions/navfn/">navfn</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../Templating/Template-scripts/Templating-functions/resfn/">resfn</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../Templating/Template-scripts/Templating-functions/restfn/">restfn</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../Templating/Template-scripts/Templating-functions/searchfn/">searchfn</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../Templating/Template-scripts/Templating-functions/sitefn/">sitefn</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../Templating/Template-scripts/Templating-functions/solrfn/">solrfn</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../Templating/Template-scripts/Templating-functions/tagfn/">tagfn</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../Templating/Template-scripts/Templating-functions/Templating-function-arguments-and-return-types/">Templating function arguments and return types</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Templating/Template-scripts/Rendering-context-objects/">Rendering context objects</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../Templating/Template-scripts/How-to-work-with-images/">How to work with images</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../Templating/Template-scripts/How-to-work-with-images/How-to-work-with-images-using-damfn/">How to work with images using damfn</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../Templating/Template-scripts/How-to-work-with-images/How-to-work-with-images-using-imgfn/">How to work with images using imgfn</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../Templating/Dialog-definition/">Dialog definition</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Templating/Dialog-definition/Dialog-types/">Dialog types</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Templating/Dialog-definition/Form-definition/">Form definition</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../Templating/Dialog-definition/Field-definition/">Field definition</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../Templating/Dialog-definition/Field-definition/List-of-fields/Checkbox-field/">Checkbox field</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../Templating/Dialog-definition/Field-definition/List-of-fields/Code-field/">Code field</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../Templating/Dialog-definition/Field-definition/List-of-fields/Composite-field/">Composite field</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../Templating/Dialog-definition/Field-definition/List-of-fields/Date-field/">Date field</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../Templating/Dialog-definition/Field-definition/List-of-fields/Hidden-field/">Hidden field</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../Templating/Dialog-definition/Field-definition/List-of-fields/Link-field/">Link field</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../Templating/Dialog-definition/Field-definition/List-of-fields/Multi-field/">Multi field</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../Templating/Dialog-definition/Field-definition/List-of-fields/Option-group-field/">Option group field</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../Templating/Dialog-definition/Field-definition/List-of-fields/Checkbox-group-field/">Checkbox group field</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../Templating/Dialog-definition/Field-definition/List-of-fields/Radio-button-group-field/">Radio button group field</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../Templating/Dialog-definition/Field-definition/List-of-fields/Password-field/">Password field</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../Templating/Dialog-definition/Field-definition/List-of-fields/Rich-text-field/">Rich text field</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../Templating/Dialog-definition/Field-definition/List-of-fields/Select-field/">Select field</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../Templating/Dialog-definition/Field-definition/List-of-fields/Combobox-field/">Combobox field</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../Templating/Dialog-definition/Field-definition/List-of-fields/List-field/">List field</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../Templating/Dialog-definition/Field-definition/List-of-fields/Twin-column-field/">Twin-column field</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../Templating/Dialog-definition/Field-definition/List-of-fields/Slider-field/">Slider field</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../Templating/Dialog-definition/Field-definition/List-of-fields/Static-field/">Static field</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../Templating/Dialog-definition/Field-definition/List-of-fields/Switchable-field/">Switchable field</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../Templating/Dialog-definition/Field-definition/List-of-fields/Text-field/">Text field</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../Templating/Dialog-definition/Field-definition/List-of-fields/Token-field/">Token field</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../Templating/Dialog-definition/Field-definition/Custom-fields/">Custom fields</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../Templating/Dialog-definition/Field-definition/Field-validators/">Field validators</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../Templating/Dialog-definition/Field-definition/Item-providers/">Item providers</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../Templating/Site-definition/">Site definition</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Templating/Site-definition/How-to-create-a-site-definition/">How to create a site definition</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../Templating/Site-definition/How-to-use-Multisite/">How to use Multisite</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../Templating/Site-definition/How-to-use-Multisite/Multisite-example-Minisite-using-URL-prefix-and-domain/">Multisite example - Minisite using URL prefix and domain</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../Templating/Site-definition/How-to-use-Multisite/Multisite-example-Two-sites-with-different-domains/">Multisite example - Two sites with different domains</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Templating/Site-definition/Template-prototype/">Template prototype</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Templating/Renderers/">Renderers</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../Templating/Rendering-content/">Rendering content</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Templating/Rendering-content/Model/">Model</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Templating/Template-availability/">Template availability</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Templating/Theme/">Theme</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Templating/Templates-in-MTK/">Templates in MTK</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../Modules/">Modules</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../Modules/List-of-modules/">List of modules</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Modules/List-of-modules/About-App-module/">About App module</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Modules/List-of-modules/Admincentral-module/">Admincentral module</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../Modules/List-of-modules/Advanced-cache-modules/">Advanced cache modules</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../Modules/List-of-modules/Advanced-cache-modules/Advanced-Cache-app-module/">Advanced Cache app module</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../Modules/List-of-modules/Advanced-cache-modules/Advanced-Cache-Policies-module/">Advanced Cache Policies module</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Modules/List-of-modules/Backup-module/">Backup module</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../Modules/List-of-modules/Blossom-module/">Blossom module</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../Modules/List-of-modules/Blossom-module/Blossom-module-release-notes/">Blossom module release notes</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../Modules/List-of-modules/Blossom-module/Getting-started-with-Blossom/">Getting started with Blossom</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../Modules/List-of-modules/Cache-modules/">Cache modules</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../Modules/List-of-modules/Cache-modules/Cache-Browser-app/">Cache Browser app</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../Modules/List-of-modules/Cache-modules/Cache-core/">Cache core</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../Modules/List-of-modules/Cache-modules/Cache-Tools-app/">Cache Tools app</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../Modules/List-of-modules/Cache-modules/Ehcache-3-module/">Ehcache 3 module</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../Modules/List-of-modules/Cache-modules/Memcached-implementation/">Memcached implementation</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../Modules/List-of-modules/Cache-modules/Caching-arbitrary-objects/">Caching arbitrary objects</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Modules/List-of-modules/Campaign-Publisher-module/">Campaign Publisher module</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Modules/List-of-modules/CAS-module/">CAS module</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Modules/List-of-modules/Categorization-module/">Categorization module</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Modules/List-of-modules/Contacts-module/">Contacts module</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Modules/List-of-modules/Content-Dependencies-module/">Content Dependencies module</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../Modules/List-of-modules/Content-Editor-module/">Content Editor module</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../Modules/List-of-modules/Content-Editor-module/Multi-JCR-block/">Multi JCR block</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../Modules/List-of-modules/Content-Editor-module/Light-rich-text-field/">Light rich text field</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../Modules/List-of-modules/Content-Editor-module/Slug-field/">Slug field</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Modules/List-of-modules/Content-Importer-module/">Content Importer module</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../Modules/List-of-modules/Content-Tags-module/">Content Tags module</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../Modules/List-of-modules/Content-Tags-module/How-to-enable-content-tags-for-a-content-app/">How to enable content tags for a content app</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Modules/List-of-modules/Content-Translation-Support-module/">Content Translation Support module</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../Modules/List-of-modules/Content-Types-module/">Content Types module</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../Modules/List-of-modules/Content-Types-module/Content-type-definition/">Content type definition</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../Modules/List-of-modules/Content-Types-module/Content-type-definition/Content-type-Data-source-definition/">Content type Data source definition</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../Modules/List-of-modules/Content-Types-module/Content-type-definition/Content-type-Model-definition/">Content type Model definition</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Modules/List-of-modules/Definitions-App-module/">Definitions App module</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Modules/List-of-modules/Device-Detection-module/">Device Detection module</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Modules/List-of-modules/Diff-module/">Diff module</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../Modules/List-of-modules/Digital-Asset-Management-module/">Digital Asset Management module</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../Modules/List-of-modules/Digital-Asset-Management-module/DAM-core-module/">DAM core module</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../Modules/List-of-modules/Digital-Asset-Management-module/External-DAM-app-module/">External DAM app module</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../Modules/List-of-modules/Digital-Asset-Management-module/Magnolia-DAM-JCR-implementation/">Magnolia DAM JCR implementation</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../Modules/List-of-modules/Digital-Asset-Management-module/Magnolia-DAM-JCR-implementation/DAM-workspace-structure/">DAM workspace structure</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../Modules/List-of-modules/Digital-Asset-Management-module/DAM-Preview-module/">DAM Preview module</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Modules/List-of-modules/Form-module/">Form module</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Modules/List-of-modules/GraphQL-module/">GraphQL module</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Modules/List-of-modules/Groovy-module/">Groovy module</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../Modules/List-of-modules/High-performance-caching-modules/">High performance caching modules</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../Modules/List-of-modules/High-performance-caching-modules/Advanced-Cache-Dynamic-Page-Caching/">Advanced Cache Dynamic Page Caching</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../Modules/List-of-modules/High-performance-caching-modules/Advanced-Cache-for-Personalization/">Advanced Cache for Personalization</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../Modules/List-of-modules/High-performance-caching-modules/SiteMesh-module/">SiteMesh module</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Modules/List-of-modules/IBM-WebSphere-compatibility-module/">IBM WebSphere compatibility module</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Modules/List-of-modules/Image-Recognition-module/">Image Recognition module</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Modules/List-of-modules/Imaging-module/">Imaging module</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Modules/List-of-modules/JavaScript-Models-module/">JavaScript Models module</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Modules/List-of-modules/JCR-Tools-module/">JCR Tools module</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Modules/List-of-modules/LDAP-Connector-module/">LDAP Connector module</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Modules/List-of-modules/Log-Tools-module/">Log Tools module</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../Modules/List-of-modules/Mail-module/">Mail module</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../Modules/List-of-modules/Mail-module/Mail/">Mail</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Modules/List-of-modules/Marketing-Tags-module/">Marketing Tags module</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Modules/List-of-modules/Messages-App-module/">Messages App module</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../Modules/List-of-modules/MTE-module/">MTE module</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../Modules/List-of-modules/MTE-module/MTK-module/">MTK module</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Modules/List-of-modules/Multisite-module/">Multisite module</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Modules/List-of-modules/Observation-module/">Observation module</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Modules/List-of-modules/Pages-module/">Pages module</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Modules/List-of-modules/Password-Manager-module/">Password Manager module</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Modules/List-of-modules/Periscope-module/">Periscope module</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Modules/List-of-modules/Periscope-Result-Ranker-module/">Periscope Result Ranker module</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../Modules/List-of-modules/Personalization-module/">Personalization module</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../Modules/List-of-modules/Personalization-module/My-first-personalized-campaign/">My first personalized campaign</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../Modules/List-of-modules/Personalization-module/Creating-custom-traits/">Creating custom traits</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../Modules/List-of-modules/Personalization-module/Creating-custom-traits-without-Java/">Creating custom traits without Java</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../Modules/List-of-modules/Personalization-module/Creating-custom-traits-without-Java/Cookies-trait-configuration/">Cookies trait configuration</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../Modules/List-of-modules/Personalization-module/Creating-custom-traits-without-Java/Creating-a-custom-cookie-trait-without-Java/">Creating a custom cookie trait without Java</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../Modules/List-of-modules/Privacy-module/">Privacy module</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../Modules/List-of-modules/Privacy-module/GDPR-and-apps/">GDPR and apps</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../Modules/List-of-modules/Privacy-module/GDPR-and-cookies/">GDPR and cookies</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../Modules/List-of-modules/Privacy-module/GDPR-and-forms/">GDPR and forms</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../Modules/List-of-modules/Public-User-Registration-module/">Public User Registration module</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../Modules/List-of-modules/Public-User-Registration-module/Setting-up-PUR-on-a-website/">Setting up PUR on a website</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Modules/List-of-modules/Publishing-module/">Publishing module</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Modules/List-of-modules/Publishing-Transactional-module/">Publishing Transactional module</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Modules/List-of-modules/Resources-module/">Resources module</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../Modules/List-of-modules/REST-Client-module/">REST Client module</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../Modules/List-of-modules/REST-Client-module/Example-REST-client-configurations/">Example REST client configurations</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../Modules/List-of-modules/REST-Client-module/Getting-and-using-REST-client-instances/">Getting and using REST client instances</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../Modules/List-of-modules/REST-Client-module/JSON-data-source/">JSON data source</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../Modules/List-of-modules/REST-module/">REST module</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../Modules/List-of-modules/REST-module/REST-security/">REST security</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../Modules/List-of-modules/REST-module/Tools-to-test-REST-requests/">Tools to test REST requests</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Modules/List-of-modules/RSS-Aggregator-module/">RSS Aggregator module</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Modules/List-of-modules/Scheduler-module/">Scheduler module</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Modules/List-of-modules/Security-App-module/">Security App module</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Modules/List-of-modules/Site-module/">Site module</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Modules/List-of-modules/Soft-Locking-module/">Soft Locking module</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../Modules/List-of-modules/Solr-module/">Solr module</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../Modules/List-of-modules/Solr-module/Installing-Apache-Solr/">Installing Apache Solr</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../Modules/List-of-modules/Solr-module/Indexing-and-crawling-a-website-with-Solr/">Indexing and crawling a website with Solr</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../Modules/List-of-modules/Solr-module/App-configuration-with-Solr/">App configuration with Solr</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../Modules/List-of-modules/Solr-module/Providing-a-Solr-search/">Providing a Solr search</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../Modules/List-of-modules/SSO-module/">SSO module</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../Modules/List-of-modules/SSO-module/Using-a-mock-OIDC-server/">Using a mock OIDC server</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../Modules/List-of-modules/SSO-module/Hiding-the-client-credentials-from-the-configuration-file/">Hiding client credentials from the configuration file</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../Modules/List-of-modules/Synchronization-module/">Synchronization module</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../Modules/List-of-modules/Synchronization-module/Synchronization-REST-module/">Synchronization REST module</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Modules/List-of-modules/Text-Classification-module/">Text Classification module</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Modules/List-of-modules/Tools-module/">Tools module</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../Modules/List-of-modules/UI-Framework-REST-Extensions-module/">UI Framework REST Extensions module</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../Modules/List-of-modules/UI-Framework-REST-Extensions-module/REST-search-result-suppliers-for-Periscope/">REST search result suppliers for Periscope</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../Modules/List-of-modules/UI-module/">UI module</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../Modules/List-of-modules/UI-module/UI-Media-Editor-module/">UI Media Editor module</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Modules/List-of-modules/Virtual-URI-module/">Virtual URI module</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../Modules/List-of-modules/Workflow-module/">Workflow module</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../Modules/List-of-modules/Workflow-module/Magnolia-four-eye-workflow/">Magnolia four-eye workflow</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../Modules/List-of-modules/Workflow-module/Enabling-workflow-in-content-apps/">Enabling workflow in content apps</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../Modules/List-of-modules/Workflow-module/Enabling-workflow-in-content-apps-with-YAML/">Enabling workflow in content apps with YAML</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../Modules/List-of-modules/Workflow-module/Creating-a-custom-workflow-process/">Creating a custom workflow process</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../Modules/List-of-modules/Workflow-module/Custom-tasks/">Custom tasks</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../Modules/List-of-modules/Workflow-module/User-tasks/">User tasks</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../Modules/List-of-modules/Workflow-module/Workflow-processes/">Workflow processes</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../Modules/List-of-modules/Workflow-module/jBPM-integration/">jBPM integration</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../Modules/List-of-modules/Workflow-module/jBPM-integration/Human-Tasks/">Human Tasks</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../Modules/List-of-modules/Workflow-module/jBPM-integration/jBPM-runtime/">jBPM runtime</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../Modules/List-of-modules/Workflow-module/jBPM-integration/JCR-persistence/">JCR persistence</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Modules/Light-modules/">Light modules</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Modules/Installing-a-module/">Installing a module</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Modules/Module-structure/">Module structure</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Modules/Module-configuration/">Module configuration</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Modules/Module-definition-items/">Module definition items</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../Modules/Module-descriptor/">Module descriptor</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Modules/Module-descriptor/XML-based-module-descriptor/">XML-based module descriptor</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Modules/Module-descriptor/YAML-based-module-descriptor/">YAML-based module descriptor</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Modules/Dependency-injection-and-inversion-of-control/">Dependency injection and inversion of control</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../Connector-Packs/">Connector Packs</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../Connector-Packs/Analytics-Connector-Pack/">Analytics Connector Pack</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Connector-Packs/Analytics-Connector-Pack/Analytics-app/">Analytics app</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Connector-Packs/Analytics-Connector-Pack/Analytics-module/">Analytics module</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Connector-Packs/Analytics-Connector-Pack/How-to-config-Adobe-IUX/">How to configure Adobe Analytics data in an IUX slot with filters</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Connector-Packs/Analytics-Connector-Pack/How-to-migrate-analytics/">How to migrate Analytics module 1.1 dashboards to 1.2</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../Connector-Packs/Commerce-Connector-Pack/">Commerce Connector Pack</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Connector-Packs/Commerce-Connector-Pack/E-commerce-app/">E-commerce app</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Connector-Packs/Commerce-Connector-Pack/E-commerce-module/">E-commerce module</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Connector-Packs/Commerce-Connector-Pack/ecomfn/">ecomfn</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Connector-Packs/Commerce-Connector-Pack/How-to-configure-a-custom-e-commerce-connector/">How to configure a custom e-commerce connector</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../Connector-Packs/Commerce-Connector-Pack/E-commerce-REST-endpoints/">E-commerce REST endpoints</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../Connector-Packs/Commerce-Connector-Pack/E-commerce-REST-endpoints/Cart-endpoint-API-v2/">Cart endpoint API v2</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../Connector-Packs/Commerce-Connector-Pack/E-commerce-REST-endpoints/Checkout-endpoint-API-v2/">Checkout endpoint API v2</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../Connector-Packs/Commerce-Connector-Pack/E-commerce-REST-endpoints/User-endpoint-API-v2/">User endpoint API v2</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../Connector-Packs/Commerce-Connector-Pack/E-commerce-REST-endpoints/Category-endpoint-API/">Category endpoint API</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../Connector-Packs/Commerce-Connector-Pack/E-commerce-REST-endpoints/Product-endpoint-API/">Product endpoint API</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../Connector-Packs/Commerce-Connector-Pack/E-commerce-REST-endpoints/Cart-endpoint-API/">Cart endpoint API (deprecated)</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../Connector-Packs/Commerce-Connector-Pack/E-commerce-REST-endpoints/Checkout-endpoint-API/">Checkout endpoint API (deprecated)</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../Connector-Packs/DAM-Connector-Pack/">DAM Connector Pack</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Connector-Packs/DAM-Connector-Pack/External-DAM-module/">External DAM module</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../Connector-Packs/Marketing-Automation-Connector-Pack/">Marketing Automation Connector Pack</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Connector-Packs/Marketing-Automation-Connector-Pack/Marketing-Automation-module/">Marketing Automation module</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Connector-Packs/Marketing-Automation-Connector-Pack/Marketing-Automation-REST-endpoint/">Marketing Automation REST endpoint</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../Connector-Packs/Optimization-Connector-Pack/">Optimization Connector Pack</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Connector-Packs/Optimization-Connector-Pack/Siteimprove-module/">Siteimprove module</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../Special-Features/">Special Features</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../Special-Features/Live-Copy/">Live Copy</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Special-Features/Live-Copy/Live-Copy-module/">Live Copy module</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../Special-Features/ABn-testing/">A/B/n Testing</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Special-Features/ABn-testing/ABn-testing-app/">A/B/n Testing app</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Special-Features/ABn-testing/ABn-testing-module/">A/B/n Testing module</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../Apps/">Apps</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../Apps/List-of-apps/">List of apps</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Apps/List-of-apps/About-Magnolia-app/">About Magnolia app</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Apps/List-of-apps/Assets-app/">Assets app</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Apps/List-of-apps/Backup-app/">Backup app</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Apps/List-of-apps/Campaign-Publisher-app/">Campaign Publisher app</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Apps/List-of-apps/Categories-app/">Categories app</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Apps/List-of-apps/Configuration-app/">Configuration app</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Apps/List-of-apps/Contacts-app/">Contacts app</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Apps/List-of-apps/Content-Translation-app/">Content Translation app</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Apps/List-of-apps/Cookies-app/">Cookies app</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../Apps/List-of-apps/Definitions-app/">Definitions app</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../Apps/List-of-apps/Definitions-app/Definitions-data-source/">Definitions data source</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../Apps/List-of-apps/Definitions-app/Registry-data-source/">Registry data source</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Apps/List-of-apps/Feeds-app/">Feeds app</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Apps/List-of-apps/GraphQL-app/">GraphQL app</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Apps/List-of-apps/Groovy-app/">Groovy app</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Apps/List-of-apps/JCR-Browser-app/">JCR Browser app</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Apps/List-of-apps/JCR-Tools-app/">JCR Tools app</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Apps/List-of-apps/Log-Tools-app/">Log Tools app</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../Apps/List-of-apps/Magnolia-Assets-subapp/">Magnolia Assets subapp</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../Apps/List-of-apps/Magnolia-Assets-subapp/DAM-upload-field/">DAM upload field</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Apps/List-of-apps/Mail-Tools-app/">Mail Tools app</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Apps/List-of-apps/Marketing-Tags-app/">Marketing Tags app</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Apps/List-of-apps/Messages-app/">Messages app</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../Apps/List-of-apps/Notifications-app/">Notifications app</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../Apps/List-of-apps/Notifications-app/Notification-data-source/">Notification data source</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Apps/List-of-apps/Pages-app/">Pages app</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Apps/List-of-apps/Passwords-app/">Passwords app</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Apps/List-of-apps/Preview-app/">Preview app</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Apps/List-of-apps/Publishing-Monitor-app/">Publishing Monitor app</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Apps/List-of-apps/Publishing-Tools-app/">Publishing Tools app</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Apps/List-of-apps/Repository-Tools-app/">Repository Tools app</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Apps/List-of-apps/Resource-Files-app/">Resource Files app</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Apps/List-of-apps/REST-Client-app/">REST Client app</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Apps/List-of-apps/Sample-app/">Sample app</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Apps/List-of-apps/Security-app/">Security app</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Apps/List-of-apps/Site-app/">Site app</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Apps/List-of-apps/Stories-app/">Stories app</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Apps/List-of-apps/Sync-Instance-app/">Sync Instance app</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Apps/List-of-apps/Tags-app/">Tags app</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../Apps/List-of-apps/Tasks-app/">Tasks app</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../Apps/List-of-apps/Tasks-app/Tasks-data-source/">Tasks data source</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Apps/List-of-apps/Visitors-app/">Visitors app</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../Apps/My-first-content-app/">My first content app</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Apps/My-first-content-app/Part-I---Creating-a-basic-content-app/">Part I - Creating a basic content app</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Apps/My-first-content-app/Part-II---Fine-tuning-a-basic-content-app/">Part II - Fine-tuning a basic content app</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../Apps/App-configuration/">App configuration</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Apps/App-configuration/App-descriptor/">App descriptor</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Apps/App-configuration/Subapp-descriptor/">Subapp descriptor</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../Apps/App-configuration/Data-source-definition/">Data source definition</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../Apps/App-configuration/Data-source-definition/JCR-data-source/">JCR data source</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../Apps/App-configuration/Data-source-definition/JCR-data-source/JCR-preview-definition/">JCR preview definition</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../Apps/App-configuration/Data-source-definition/Option-list-data-source/">Option list data source</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../Apps/App-configuration/Data-source-definition/Enum-data-source/">Enum data source</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Apps/App-configuration/Workbench-definition/">Workbench definition</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Apps/App-configuration/Content-view-definition/">Content view definition</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Apps/App-configuration/Column-definition/">Column definition</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Apps/App-configuration/App-launcher-layout/">App launcher layout</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Apps/App-configuration/Action-definition/">Action definition</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Apps/App-configuration/Action-bar-definition/">Action bar definition</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../Apps/Developing-a-custom-content-editor-app/">Developing a custom content editor app</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Apps/Developing-a-custom-content-editor-app/Block-definition/">Block definition</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Apps/Developing-a-custom-content-editor-app/Developing-and-rendering-custom-content-blocks/">Developing and rendering custom content blocks</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Apps/Enabling-versioning-in-content-apps/">Enabling versioning in content apps</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../Apps/Developing-an-app/">Developing an app</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Apps/Developing-an-app/App-framework/">App framework</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Apps/Developing-an-app/Customizing-an-app/">Customizing an app</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Apps/Developing-an-app/Deploying-an-app/">Deploying an app</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Apps/Developing-an-app/Events/">Events</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Apps/Developing-an-app/Location,-location,-location/">Location, location, location</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Apps/Developing-an-app/Magnolia-widgetsets/">Magnolia widgetsets</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../Apps/Developing-an-app/Messages/">Messages</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../Apps/Developing-an-app/Messages/Message-storage/">Message storage</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../Apps/Developing-an-app/Messages/Message-types/">Message types</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../Apps/Developing-an-app/Messages/Message-view-definition/">Message view definition</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../Apps/Developing-an-app/Messages/Showing-alerts/">Showing alerts</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../Apps/Developing-an-app/Messages/Showing-notifications/">Showing notifications</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../Apps/Developing-an-app/Messages/Showing-pop-ups/">Showing pop-ups</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Apps/Developing-an-app/Programming-an-app/">Programming an app</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Apps/Developing-an-app/UI-framework-and-development-pattern-changes-in-Magnolia-6/">UI framework and development pattern changes in Magnolia 6</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../Apps/Designing-an-app/">Designing an app</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Apps/Designing-an-app/Books-and-tools/">Books and tools</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Apps/Designing-an-app/Icons/">Icons</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Apps/How-to-add-SVG-icons-for-apps/">How to add SVG icons for apps</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../Tutorials/">Tutorials</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Tutorials/How-to-guides/">How-to guides</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../Reference/">Reference</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../Support/">Support</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Support/Accessibility-statement/">Accessibility statement</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../Support/Contribute/">Contribute</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../contribute/">Contribute to documentation</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../contribute/writing-toolkit/">Writing toolkit <span class="green"><span class="icon"><i class="fa fa-wrench"></i></span></span></a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Support/Contribute/Contribution-license/">Contribution license</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../Support/Contribute/Finding-and-sharing-light-modules/">Finding and sharing light modules</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../Support/Contribute/Finding-and-sharing-light-modules/Open-sourcing-a-light-module/">Open-sourcing a light module</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../Support/Contribute/Finding-and-sharing-light-modules/Retrieving-light-modules/">Retrieving light modules</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../Support/Contribute/Finding-and-sharing-light-modules/Sharing-light-modules-advanced-topics/">Sharing light modules - advanced topics</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../Support/Deprecation-policy/">Deprecation policy</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Support/Deprecation-policy/Deprecations/">Deprecations</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Support/Documentation-versions/">Documentation versions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Support/End-of-life-policy/">End-of-life policy</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Support/Maintenance-policy/">Magnolia maintenance policy</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Support/Feedback/">Documentation feedback</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Support/Issue-details/">Issue details</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../Support/Magnolia-5-UI-documentation/">Magnolia 5 UI documentation</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../Support/Magnolia-5-UI-documentation/Dialog-definition-5-UI/">Dialog definition - 5 UI</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../Support/Magnolia-5-UI-documentation/Dialog-definition-5-UI/Dialog-types-5-UI/">Dialog types - 5 UI</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../Support/Magnolia-5-UI-documentation/Dialog-definition-5-UI/Dialog-action-definition-5-UI/">Dialog action definition - 5 UI</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../Support/Magnolia-5-UI-documentation/Dialog-definition-5-UI/Form-definition-5-UI/">Form definition - 5 UI</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../Support/Magnolia-5-UI-documentation/Dialog-definition-5-UI/Field-definition-5-UI/">Field definition - 5 UI</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../Support/Magnolia-5-UI-documentation/Dialog-definition-5-UI/Field-definition-5-UI/List-of-fields-5-UI/Basic-upload-field-5-UI/">Basic upload field - 5 UI</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../Support/Magnolia-5-UI-documentation/Dialog-definition-5-UI/Field-definition-5-UI/List-of-fields-5-UI/Checkbox-field-5-UI/">Checkbox field - 5 UI</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../Support/Magnolia-5-UI-documentation/Dialog-definition-5-UI/Field-definition-5-UI/List-of-fields-5-UI/Code-field-5-UI/">Code field - 5 UI</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../Support/Magnolia-5-UI-documentation/Dialog-definition-5-UI/Field-definition-5-UI/List-of-fields-5-UI/Collapsible-composite-field-5-UI/">Collapsible composite field - 5 UI</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../Support/Magnolia-5-UI-documentation/Dialog-definition-5-UI/Field-definition-5-UI/List-of-fields-5-UI/Composite-field-5-UI/">Composite field - 5 UI</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../Support/Magnolia-5-UI-documentation/Dialog-definition-5-UI/Field-definition-5-UI/List-of-fields-5-UI/DAM-upload-field-5-UI/">DAM upload field - 5 UI</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../Support/Magnolia-5-UI-documentation/Dialog-definition-5-UI/Field-definition-5-UI/List-of-fields-5-UI/Date-field-5-UI/">Date field - 5 UI</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../Support/Magnolia-5-UI-documentation/Dialog-definition-5-UI/Field-definition-5-UI/List-of-fields-5-UI/Expanding-text-field-5-UI/">Expanding text field - 5 UI</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../Support/Magnolia-5-UI-documentation/Dialog-definition-5-UI/Field-definition-5-UI/List-of-fields-5-UI/Hidden-field-5-UI/">Hidden field - 5 UI</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../Support/Magnolia-5-UI-documentation/Dialog-definition-5-UI/Field-definition-5-UI/List-of-fields-5-UI/Link-field-5-UI/">Link field - 5 UI</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../Support/Magnolia-5-UI-documentation/Dialog-definition-5-UI/Field-definition-5-UI/List-of-fields-5-UI/Multivalue-field-5-UI/">Multivalue field - 5 UI</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../Support/Magnolia-5-UI-documentation/Dialog-definition-5-UI/Field-definition-5-UI/List-of-fields-5-UI/Option-group-field-5-UI/">Option group field - 5 UI</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../Support/Magnolia-5-UI-documentation/Dialog-definition-5-UI/Field-definition-5-UI/List-of-fields-5-UI/Password-field-5-UI/">Password field - 5 UI</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../Support/Magnolia-5-UI-documentation/Dialog-definition-5-UI/Field-definition-5-UI/List-of-fields-5-UI/Rich-text-field-5-UI/">Rich text field - 5 UI</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../Support/Magnolia-5-UI-documentation/Dialog-definition-5-UI/Field-definition-5-UI/List-of-fields-5-UI/Select-field-5-UI/">Select field - 5 UI</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../Support/Magnolia-5-UI-documentation/Dialog-definition-5-UI/Field-definition-5-UI/List-of-fields-5-UI/Static-field-5-UI/">Static field - 5 UI</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../Support/Magnolia-5-UI-documentation/Dialog-definition-5-UI/Field-definition-5-UI/List-of-fields-5-UI/Switchable-field-5-UI/">Switchable field - 5 UI</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../Support/Magnolia-5-UI-documentation/Dialog-definition-5-UI/Field-definition-5-UI/List-of-fields-5-UI/Text-field-5-UI/">Text field - 5 UI</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../Support/Magnolia-5-UI-documentation/Dialog-definition-5-UI/Field-definition-5-UI/List-of-fields-5-UI/Twin-column-field-5-UI/">Twin-column field - 5 UI</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../Templating/Dialog-definition/Field-definition/List-of-fields/Upload-field/">Upload field</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../Support/Magnolia-5-UI-documentation/Dialog-definition-5-UI/Field-definition-5-UI/Custom-fields-5-UI/">Custom fields - 5 UI</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../Support/Magnolia-5-UI-documentation/Dialog-definition-5-UI/Field-definition-5-UI/Field-validators-5-UI/">Field validators - 5 UI</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../Support/Magnolia-5-UI-documentation/Dialog-definition-5-UI/Field-definition-5-UI/Transforming-field-values-5-UI/">Transforming field values - 5 UI</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../Support/Magnolia-5-UI-documentation/Dialog-definition-5-UI/Field-definition-5-UI/Referencing-fields-5-UI/">Referencing fields - 5 UI</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../Support/Magnolia-5-UI-documentation/Dialog-definition-5-UI/Choose-dialog-5-UI/">Choose dialog - 5 UI</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../Support/Magnolia-5-UI-documentation/Content-apps-5-UI/">Content apps - 5 UI</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../Support/Magnolia-5-UI-documentation/Content-apps-5-UI/Parts-of-a-content-app-5-UI/">Parts of a content app - 5 UI</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../Support/Magnolia-5-UI-documentation/Content-apps-5-UI/App-configuration-5-UI/">App configuration - 5 UI</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../Support/Magnolia-5-UI-documentation/Content-apps-5-UI/App-configuration-5-UI/App-descriptor-5-UI/">App descriptor - 5 UI</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../Support/Magnolia-5-UI-documentation/Content-apps-5-UI/App-configuration-5-UI/Subapp-descriptor-5-UI/">Subapp descriptor - 5 UI</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../Support/Magnolia-5-UI-documentation/Content-apps-5-UI/App-configuration-5-UI/Content-connector-5-UI/">Content connector - 5 UI</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../Support/Magnolia-5-UI-documentation/Content-apps-5-UI/App-configuration-5-UI/Workbench-definition-5-UI/">Workbench definition - 5 UI</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../Support/Magnolia-5-UI-documentation/Content-apps-5-UI/App-configuration-5-UI/Content-view-definition-5-UI/">Content view definition - 5 UI</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../Support/Magnolia-5-UI-documentation/Content-apps-5-UI/App-configuration-5-UI/Column-definition-5-UI/">Column definition - 5 UI</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../Support/Magnolia-5-UI-documentation/Content-apps-5-UI/App-configuration-5-UI/Image-provider-definition-5-UI/">Image provider definition - 5 UI</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../Support/Magnolia-5-UI-documentation/Content-apps-5-UI/App-configuration-5-UI/Editor-definition-5-UI/">Editor definition - 5 UI</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../Support/Magnolia-5-UI-documentation/Content-apps-5-UI/App-configuration-5-UI/Action-definition-5-UI/">Action definition - 5 UI</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../Support/Magnolia-5-UI-documentation/Content-apps-5-UI/List-of-apps-5-UI/">List of apps - 5 UI</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../Support/Magnolia-5-UI-documentation/Content-apps-5-UI/List-of-apps-5-UI/Assets-app-5-UI/">Assets app - 5 UI</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../Support/Magnolia-5-UI-documentation/Content-apps-5-UI/Content-app-framework-5-UI/">Content app framework - 5 UI</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../Support/Magnolia-5-UI-documentation/Content-apps-5-UI/Content-app-with-non-JCR-content-5-UI/">Content app with non-JCR content - 5 UI</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../Support/Magnolia-5-UI-documentation/Content-apps-5-UI/Developing-an-app-5-UI/">Developing an app - 5 UI</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../Support/Magnolia-5-UI-documentation/Content-apps-5-UI/Developing-an-app-5-UI/Model-view-presenter-pattern-5-UI/">Model-view-presenter pattern - 5 UI</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../Support/Magnolia-5-UI-documentation/Content-apps-5-UI/Developing-an-app-5-UI/Overlays-and-modality-5-UI/">Overlays and modality - 5 UI</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../Support/Magnolia-5-UI-documentation/Content-apps-5-UI/Developing-an-app-5-UI/User-interface-frameworks-5-UI/">User interface frameworks - 5 UI</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../Support/Magnolia-5-UI-documentation/Content-apps-5-UI/How-to-enable-content-tags-for-a-content-app-5-UI/">How to enable content tags for a content app - 5 UI</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../Support/Magnolia-5-UI-documentation/Content-editor-5-UI/">Content editor - 5 UI</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../Support/Magnolia-5-UI-documentation/Content-editor-5-UI/Block-definition-5-UI/">Block definition - 5 UI</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../Support/Magnolia-5-UI-documentation/Content-editor-5-UI/Content-Editor-module-5-UI/">Content Editor module - 5 UI</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../Support/Magnolia-5-UI-documentation/Content-editor-5-UI/Developing-a-custom-content-editor-app-5-UI/">Developing a custom content editor app - 5 UI</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../Support/Magnolia-5-UI-documentation/Content-editor-5-UI/Developing-and-rendering-custom-content-blocks-5-UI/">Developing and rendering custom content blocks - 5 UI</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../Support/Magnolia-5-UI-documentation/Content-editor-5-UI/Stories-app-5-UI/">Stories app - 5 UI</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Support/Magnolia-5-UI-documentation/Generic-i18n-keys-5-UI/">Generic i18n keys - 5 UI</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Support/Privacy-policy/">Privacy policy</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Support/Stay-updated/">Stay updated</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Support/Support-for-Magnolia-cloud-customers/">Support for Magnolia cloud customers</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Support/Trademark-notices/">Trademark notices</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">DX Core</span>
+    <span class="version">6.2</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <span class="title">DX Core</span>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../">6.2</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Magnolia SaaS</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../saas/">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Magnolia SaaS CLI</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../saas-cli/">master</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+    <a href="../../../saas/" class="home-link"></a>
+
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <span class="breadcrumbs-home">
+    <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 4L5 0L10 4V10H6V7H4V10H0V4Z" fill="#1E1F1C"/>
+    </svg>
+  </span>
+  <ul>
+    <li><a href="../">DX Core</a></li>
+    <li><a href="./">Upgrading to Magnolia {magnolia-major-version}</a></li>
+  </ul>
+</nav>
+
+</div>
+  <div class="content">
+<article class="doc">
+<h1 class="page">Upgrading to Magnolia {magnolia-major-version}</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>This page contains information about upgrading to
+Magnolia {magnolia-major-version}.x from any previous and
+<a href="../Support/End-of-life-policy/" class="page">currently supported version</a>. Before
+starting the upgrade process, we recommend you read:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The <a href="../Releases/" class="page">release notes</a> for the version you are upgrading to as
+well as for all intermediate versions.</p>
+</li>
+<li>
+<p>The <a href="../Administration/Certified-stack/" class="page">certified stack</a>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>If you are upgrading from a Magnolia release that has already reached
+end of life, <a href="mailto:info@magnolia-cms.com">contact us</a> for migration support.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_migration_strategies_for_magnolia_magnolia_major_version"><a class="anchor" href="#_migration_strategies_for_magnolia_magnolia_major_version"></a>Migration strategies for Magnolia {magnolia-major-version}</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Magnolia {magnolia-major-version} brings significant changes to the UI framework, including changes to app and dialog configuration.</p>
+</div>
+<div class="paragraph">
+<p>There are two different strategies for migrating to Magnolia {magnolia-major-version}, each with its advantages and disadvantages:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong><a href="Migrating-an-app-to-Magnolia-6-UI/" class="page">Migrate apps, dialogs and fields</a> gradually and use the <a href="#_compatibility_layer_and_automatic_conversions">compatibility layer</a>.</strong></p>
+</li>
+</ul>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Advantages</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Disadvantages</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>You do not need to update your definitions as they already work in <em>6 UI</em>.</p>
+</li>
+<li>
+<p>Faster upgrade (but additional effort remains as you migrate apps).</p>
+</li>
+<li>
+<p>Reduced risk because of fewer initial changes.</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>New <em>6 UI</em> features are not available.</p>
+</li>
+<li>
+<p>You need to test your migration repeatedly.</p>
+</li>
+<li>
+<p>More complex to maintain.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Migrate everything upfront (see <a href="Changes-in-Magnolia-6-UI/" class="page">Changes in <em>Magnolia 6 UI</em></a>).</strong></p>
+</li>
+</ul>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Advantages</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Disadvantages</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>All new <em>6 UI</em> features are available.</p>
+</li>
+<li>
+<p>You only need to test your migration once.</p>
+</li>
+<li>
+<p>Easier to maintain.</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Significant effort needed initially to update all your definitions to <em>6 UI</em>.</p>
+</li>
+<li>
+<p>Slower upgrade because of more testing efforts.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_what_to_update"><a class="anchor" href="#_what_to_update"></a>What to update</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_pom_xml_file"><a class="anchor" href="#_pom_xml_file"></a><code>pom.xml</code> file</h3>
+<div class="paragraph">
+<p>It is critical that you update the parent <code>pom.xml</code> file of your webapp, which
+manages all versions for both Magnolia modules and third-party libraries.
+For more details, see <a href="#_upgrading_maven_managed_webapps">Upgrading Maven-managed webapps</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_magnolia_properties_file"><a class="anchor" href="#_magnolia_properties_file"></a><code>magnolia.properties</code> file</h3>
+<div class="paragraph">
+<p>When upgrading Magnolia, it is recommended that you compare your
+<code>magnolia.properties</code> file with the one from the newly released Magnolia
+bundles. Below are the latest versions of the <code>magnolia.properties</code>
+files for Magnolia {magnolia-major-version}.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://git.magnolia-cms.com/projects/PLATFORM/repos/ce/raw/magnolia-empty-webapp/src/main/webapp/WEB-INF/config/default/magnolia.properties?at=refs/tags/magnolia-bundle-{magnolia-major-version}" target="_blank" rel="noopener">Magnolia CE</a></p>
+</li>
+<li>
+<p><a href="https://git.magnolia-cms.com/projects/PLATFORM/repos/dx-core/raw/magnolia-dx-core-webapp/src/main/webapp/WEB-INF/config/default/magnolia.properties?at=refs/tags/magnolia-dx-core-{magnolia-major-version}" target="_blank" rel="noopener">Magnolia DX Core</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_apache_tomcat"><a class="anchor" href="#_apache_tomcat"></a>Apache Tomcat</h3>
+<div class="paragraph">
+<p>If you use Apache Tomcat, We recommend that you always
+update to the latest supported version. For other
+servlet containers, check out the
+<a href="../Administration/Certified-stack/" class="page">certified stack</a>.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="title">Server configuration with <code>relaxedQueryChars</code></div>
+<div class="paragraph">
+<p><a href="../Developing/API/Delivery-API/#_filters" class="page">Advanced query filters in the Delivery API</a> require extra Tomcat configuration, namely setting <code>relaxedQueryChars="[]|"</code>.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_third_party_libraries"><a class="anchor" href="#_third_party_libraries"></a>Third-party libraries</h3>
+<div class="paragraph">
+<p>All changes in third-party libraries are managed via the
+<a href="../Developing/BOM-for-third-party-libraries/" class="page">BOM for third-party
+libraries</a>. If you manage your bundles via Maven using the BOM, all
+updates will be handled automatically.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_how_to_upgrade"><a class="anchor" href="#_how_to_upgrade"></a>How to upgrade</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_general_recommendations"><a class="anchor" href="#_general_recommendations"></a>General recommendations</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>We recommend you first upgrade to the latest release in <em>both your current branch and every intermediate Magnolia branch still maintained</em>
+before upgrading to the latest release in the Magnolia {magnolia-major-version} branch. For example,
+if you are on Magnolia 5.6.3, the upgrade path should ideally be 5.6.3 &#8594; 5.6.14 &#8594; 5.7.11 &#8594; 6.2.9.<br>
+Read the <a href="../Releases/" class="page">release notes</a> for the version you are upgrading to as well as for all intermediate versions.</p>
+</li>
+<li>
+<p>Update all external libraries required by the Magnolia release to
+which you intend to upgrade.</p>
+</li>
+<li>
+<p>Because the upgrade process takes time and is vulnerable to incidents,
+we recommend you minimize the risk by cleaning up your system, removing
+unused data, reindexing everything and doing a full backup first.</p>
+</li>
+<li>
+<p>Once Magnolia is running, check the
+<a href="../Apps/List-of-apps/Definitions-app/" class="page">Definitions app</a> for deprecated
+or problematic definitions.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_compatibility_layer_and_automatic_conversions"><a class="anchor" href="#_compatibility_layer_and_automatic_conversions"></a>Compatibility layer and automatic conversions</h3>
+<div class="paragraph">
+<p>To assist in the transition from <em>Magnolia 5 UI</em> to <em>Magnolia 6 UI</em>, Magnolia
+{magnolia-major-version}.x comes with a compatibility layer.</p>
+</div>
+<div class="paragraph">
+<p><strong>Compatibility features</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><em>6 UI</em> apps are used by default, but <a href="#_restoring_5_ui_apps"><em>5 UI</em> apps can be restored</a>.</p>
+</li>
+<li>
+<p><em>5 UI</em> dialogs and fields can be used with <em>5 UI</em> apps.</p>
+</li>
+<li>
+<p><em>5 UI</em> dialog definitions can be referenced using <em>6 UI</em> app actions. Attempts will be made to convert the definitions on the fly.</p>
+</li>
+<li>
+<p>Most <em>5 UI</em> fields can still be used in the <em>6 UI</em> Pages app.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_migration_guidelines"><a class="anchor" href="#_migration_guidelines"></a>Migration guidelines</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Custom fields, field validators, field transformers and link previews in <em>5 UI</em> cannot be converted to <em>6 UI</em>.</p>
+</li>
+<li>
+<p>If you have custom fields in <em>5 UI</em>, you will need to do one of the following:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Remove them or replace them with Magnolia stock <em>6 UI</em> fields.</p>
+</li>
+<li>
+<p>If they are only used in component dialogs, <a href="#_restoring_5_ui_apps">use the <em>5 UI</em> Pages app</a>
+instead of the default <em>6 UI</em> app.</p>
+</li>
+<li>
+<p><a href="#_migrating_fields_and_validators">Migrate them</a> to <em>6 UI</em> along with any
+<a href="#_migrating_dialogs">dialogs</a> and <a href="#_migrating_content_apps">apps</a> that use them.</p>
+</li>
+<li>
+<p>Create field converters for them (not recommended).</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>If you change your content model due to dialog migrations, you will need to migrate your content as well.
+Content migrations can be done with update tasks in a module version handler (Java) or via the <a href="../Apps/List-of-apps/Groovy-app/" class="page">Groovy app</a>.</p>
+</li>
+<li>
+<p>If you have other customizations of the Magnolia stocks apps (such as custom actions or configuration decorations),
+you will need to either migrate your customizations or <a href="#_restoring_5_ui_apps">use <em>5 UI</em> apps</a>.</p>
+</li>
+<li>
+<p>If you have custom modules, use <a href="#_migrating_custom_modules">pre-built JARs or rebuild your modules</a>.</p>
+</li>
+<li>
+<p>When your system is functioning properly, you can go into production or perform additional migration.</p>
+</li>
+<li>
+<p>Whenever possible, migrate your remaining <em>5 UI</em> app and dialog definitions to get rid of all deprecated items and have consistent <em>6 UI</em> definitions.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>To migrate your dialog definitions, you can use the <a href="https://wiki.magnolia-cms.com/display/SERVICES/Migration+Tool" target="_blank" rel="noopener">Migration Tool module</a>.
+If you still need help with your migration project, contact our <a href="mailto:info@magnolia-cms.com">Services team</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_migrating_dialogs"><a class="anchor" href="#_migrating_dialogs"></a>Migrating dialogs</h3>
+<div class="paragraph">
+<p>With the compatibility layer, most <em>5 UI</em> dialogs will continue to work properly in <em>6 UI</em>.
+However, you may need to migrate a <em>5 UI</em> dialog if it uses a custom field or if you
+want to have a field validator (which the compatibility layer does not support).</p>
+</div>
+<div class="paragraph">
+<p>If you have a custom field and do not want to migrate your <em>5 UI</em> dialog,
+you can also create a converter for that field.</p>
+</div>
+<div class="paragraph">
+<p>See the following dialog and its <em>5 UI</em> and <em>6 UI</em> configurations:</p>
+</div>
+<div class="paragraph">
+<p><span class="image zoom"><img src="../_images/6-2-upgradingTo62x-aDialog5UI6UIconfigs.png" alt="5 and 6 UI dialog definition" width="600"></span></p>
+</div>
+<div class="tabset is-loading">
+<div class="ulist tabs">
+<ul>
+<li>
+<p><a id="tabset1_em-magnolia-5-ui-em"></a><em>Magnolia 5 UI</em></p>
+</li>
+<li>
+<p><a id="tabset1_em-magnolia-6-ui-em"></a><em>Magnolia 6 UI</em></p>
+</li>
+</ul>
+</div>
+<div class="content">
+<div class="tab-pane" aria-labelledby="tabset1_em-magnolia-5-ui-em">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yml hljs" data-lang="yml">label: Dialog
+form:
+  tabs:
+    tab:
+      fields:
+        fooField:
+          fieldType: text
+          label: Text field
+actions:
+  commit:
+    class: info.magnolia.ui.dialog.action.SaveDialogActionDefinition
+  cancel:
+    class: info.magnolia.ui.dialog.action.CancelDialogActionDefinition</code></pre>
+</div>
+</div>
+</div>
+<div class="tab-pane" aria-labelledby="tabset1_em-magnolia-6-ui-em">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">label: Dialog
+form:
+  properties:
+    fooField:
+      $type: textField
+      label: Text field</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p><em>6 UI</em> dialogs require no action definitions. A number of
+<a href="../Templating/Dialog-definition/Form-definition/#_layout_types" class="page">layout options</a> are now available at the form level.</p>
+</div>
+<div class="admonitionblock caution">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-caution" title="Caution"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>If you <a href="../Developing/Definition-decoration/" class="page">decorate</a>,
+<a href="../Developing/Reusing-configuration/YAML-inherit-and-include/" class="page">include,
+inherit or override</a> definitions, make sure that you do not mix <em>5 UI</em> and
+<em>6 UI</em> definitions.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_migrating_fields_and_validators"><a class="anchor" href="#_migrating_fields_and_validators"></a>Migrating fields and validators</h3>
+<div class="paragraph">
+<p>Since Magnolia {magnolia-major-version}, a number of field converters have been
+introduced to convert <em>5 UI</em> field definitions at runtime to <em>6 UI</em>.
+For more details, see <a href="Field-converters/" class="page">Field converters</a>.</p>
+</div>
+<div class="paragraph">
+<p>Custom fields cannot be converted to <em>6 UI</em>. To migrate a custom field,
+it is recommended that you reconfigure it in <em>6 UI</em>.</p>
+</div>
+<div class="paragraph">
+<p>Compare how the following implementations differ in both frameworks:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://git.magnolia-cms.com/projects/PLATFORM/repos/ui/browse/magnolia-ui-framework-compatibility/src/main/java/info/magnolia/ui/form/field/factory" target="_blank" rel="noopener"><em>Magnolia 5 UI</em> factory classes</a></p>
+</li>
+<li>
+<p><a href="https://git.magnolia-cms.com/projects/PLATFORM/repos/ui/browse/magnolia-ui-framework/src/main/java/info/magnolia/ui/field/factory" target="_blank" rel="noopener"><em>Magnolia 6 UI</em> factory classes</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>To create field validators in <em>6 UI</em>, see <a href="../Templating/Dialog-definition/Field-definition/Field-validators/" class="page">Field validators</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_migrating_field_transformers"><a class="anchor" href="#_migrating_field_transformers"></a>Migrating field transformers</h3>
+<div class="paragraph">
+<p><em>Magnolia 5 UI</em> field transformer classes no longer exist in the
+<em>Magnolia 6 UI</em> framework. Their functionality is now
+distributed among different components. For more details, see
+<a href="Magnolia-6-UI-ports-of-5-UI-field-transformer-classes/" class="page"><em>Magnolia 6 UI</em> ports of <em>5 UI</em> field transformer classes</a>.</p>
+</div>
+<div class="sect3">
+<h4 id="_migrating_block_and_custom_content_editor_definitions"><a class="anchor" href="#_migrating_block_and_custom_content_editor_definitions"></a>Migrating block and custom content editor definitions</h4>
+<div class="paragraph">
+<p><em>Magnolia 6 UI</em> framework is implemented in version 2 of the Content Editor module. Custom content editor and block definitions created in the <em>Magnolia 5 UI</em> framework are not compatible with this version of the module and must be migrated.</p>
+</div>
+<div class="paragraph">
+<p>If you wish to keep using the existing 5 UI block and custom content editor definitions, you must install version 1.3.9 of the Content Editor module and use them with this version.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_migrating_content_apps"><a class="anchor" href="#_migrating_content_apps"></a>Migrating content apps</h3>
+<div class="paragraph">
+<p><em>5 UI</em> and <em>6 UI</em> app definitions differ considerably. Compare,
+for example, the following snippets of the Contacts app,
+including the <code>addContact</code> action definition:</p>
+</div>
+<div class="tabset is-loading">
+<div class="ulist tabs">
+<ul>
+<li>
+<p><a id="tabset2_em-magnolia-5-ui-em"></a><em>Magnolia 5 UI</em></p>
+</li>
+<li>
+<p><a id="tabset2_em-magnolia-6-ui-em"></a><em>Magnolia 6 UI</em></p>
+</li>
+</ul>
+</div>
+<div class="content">
+<div class="tab-pane" aria-labelledby="tabset2_em-magnolia-5-ui-em">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yml hljs" data-lang="yml">appClass: info.magnolia.ui.contentapp.ContentApp
+class: info.magnolia.ui.contentapp.ConfiguredContentAppDescriptor
+icon: icon-people
+subApps:
+  browser:
+    class: info.magnolia.ui.contentapp.browser.BrowserSubAppDescriptor
+    subAppClass: info.magnolia.ui.contentapp.browser.BrowserSubApp
+    actions:
+      addContact:
+        appName: contacts
+        class: info.magnolia.ui.contentapp.detail.action.CreateItemActionDefinition
+        icon: icon-add-item
+        nodeType: mgnl:contact
+        subAppId: detail
+        availability:
+          root: true
+          writePermissionRequired: true
+          nodeTypes:
+            folder: mgnl:folder
+          rules:
+            IsNotDeletedRule:
+              implementationClass: info.magnolia.ui.framework.availability.IsNotDeletedRule</code></pre>
+</div>
+</div>
+</div>
+<div class="tab-pane" aria-labelledby="tabset2_em-magnolia-6-ui-em">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yml hljs" data-lang="yml">icon: icon-contacts-app
+class: info.magnolia.ui.contentapp.configuration.ContentAppDescriptor
+appClass: info.magnolia.ui.framework.app.BaseApp
+label: Contacts V8
+datasource:
+  $type: jcrDatasource
+  workspace: contacts
+  includeProperties: true
+  previewDefinition:
+    nodeName: photo
+  allowedNodeTypes:
+    - mgnl:contact
+    - mgnl:folder
+    - mgnl:content
+    - mgnl:contentNode
+subApps:
+  browser:
+    class: info.magnolia.ui.contentapp.configuration.BrowserDescriptor
+    actions:
+      add:
+        label: Add contact
+        icon: icon-people
+        $type: openDetailSubappAction
+        appName: contacts-v8
+        subAppName: detail
+        viewType: add</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>For a step-by-step guide on how to migrate an app, see <a href="Migrating-an-app-to-Magnolia-6-UI/" class="page">Migrating an app to <em>Magnolia 6 UI</em></a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_migrating_content_type_based_apps"><a class="anchor" href="#_migrating_content_type_based_apps"></a>Migrating content-type based apps</h3>
+<div class="paragraph">
+<p>In Magnolia {magnolia-major-version}.x, the <code>!content-type</code> directive generates a <em>6 UI</em>
+app. This means that any overriding or decoration of the app needs to be updated to <em>6 UI</em>.</p>
+</div>
+<div class="listingblock">
+<div class="title">/tourGuides-app.yaml</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yml hljs" data-lang="yml">!content-type:tourGuide
+name: tourGuides-app</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>As an alternative, you
+can use the new <code>!content-type-m5</code> directive to generate a <em>5 UI</em>
+app.</p>
+</div>
+<div class="listingblock">
+<div class="title">/tourGuides-app.yaml</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yml hljs" data-lang="yml">!content-type-m5:tourGuide
+name: tourGuides-app</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In this case, the app will be interpreted as a <em>5 UI</em> app and you do not
+have to update its app definition to <em>6 UI</em>.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>As of Magnolia {magnolia-major-version}.3, the
+<a href="../Modules/List-of-modules/Content-Types-module/Content-type-definition/Content-type-Model-definition/#_property_definition_properties" class="page"><code>type: reference</code> property</a>
+of a <em>6 UI</em> app can be used for a <em>6 UI</em> or <em>5 UI</em> content type.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_migrating_customized_magnolia_apps"><a class="anchor" href="#_migrating_customized_magnolia_apps"></a>Migrating customized Magnolia apps</h3>
+<div class="paragraph">
+<p>With the {magnolia-major-version} release, several Magnolia apps have been migrated to
+the <em>6 UI</em> framework. Update any existing app decorations to <em>6 UI</em>.</p>
+</div>
+<div class="paragraph">
+<p>If in code you refer to the Pages or Assets app using the
+app ID, be aware that the ID is different in <em>6 UI</em>.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">App name</th>
+<th class="tableblock halign-left valign-top"><em>5 UI</em> ID</th>
+<th class="tableblock halign-left valign-top"><em>6 UI</em> ID</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Assets</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>assets</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>dam</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Pages</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>pages</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>pages-app</code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_migrating_blossom_dialogs"><a class="anchor" href="#_migrating_blossom_dialogs"></a>Migrating Blossom dialogs</h3>
+<div class="paragraph">
+<p>The Blossom module is generally compatible with Magnolia <em>6 UI</em> apps, including the <em>6 UI</em> Pages app. For more details, see <a href="../Modules/List-of-modules/Blossom-module/#_updating_to_magnolia_6_2" class="page">Blossom module: Updating to Magnolia 6.2</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_restoring_5_ui_apps"><a class="anchor" href="#_restoring_5_ui_apps"></a>Restoring <em>5 UI</em> apps</h3>
+<div class="paragraph">
+<p>Due to module dependencies, most of the <em>5 UI</em> apps are still included
+in our webapps but are
+<a href="../Apps/App-configuration/App-launcher-layout/#_hiddenApps" class="page">hidden in
+the UI</a>. They are now part of the
+<code>/modules/ui-admincentral/config/appLauncherLayout/hiddenApps</code> group.</p>
+</div>
+<div class="paragraph">
+<p>An exception is the <em>5 UI</em> Pages app, which has been removed from the CE
+webapps. To bring it back, you need to add
+<code>magnolia-pages-app-compatibility</code> to your webapp project.</p>
+</div>
+<div class="paragraph">
+<p>If you want to allow authors to use, for example, the <em>5 UI</em> instead of the
+<em>6 UI</em> Pages app, the most straightforward way is:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>In the Configuration app, go to
+<code>/modules/ui-admincentral/config/appLauncherLayout/groups/edit/apps/</code>.</p>
+</li>
+<li>
+<p>Create a new <code>pages</code> item.</p>
+</li>
+<li>
+<p>Go to <code>/modules/ui-admincentral/config/appLauncherLayout/hiddenApps/</code>.</p>
+</li>
+<li>
+<p>Delete the <code>pages</code> item.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>If you want to use <em>5 UI</em> apps during migration development, often
+side by side with <em>6 UI</em> apps, here are some options:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Configure a role-based setup.</p>
+</li>
+<li>
+<p>Rename or decorate an app with a different label. See
+<a href="../Developing/Definition-decoration/#_changing_the_title_and_icon_of_an_app" class="page">Changing
+the title and icon of an app</a>.</p>
+</li>
+<li>
+<p>Reconfigure the
+<a href="../Apps/App-configuration/App-launcher-layout/" class="page">App launcher layout</a> of groups
+through <code>/modules/ui-admincentral/config/appLauncherLayout/groups</code>. For
+example, add a new <strong>Edit</strong> group for <em>5 UI</em> apps.</p>
+<div class="paragraph">
+<p><span class="image zoom"><img src="../_images/6-2-upgradingTo62x-twoPagesApps-New5UIGroup.png" alt="5 UI Edit group" width="700"></span></p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_migrating_custom_modules"><a class="anchor" href="#_migrating_custom_modules"></a>Migrating custom modules</h3>
+<div class="paragraph">
+<p>If you have custom modules that rely on <em>5 UI</em> modules:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Pre-built JAR files of your custom modules are binary compatible
+with Magnolia {magnolia-major-version}.x. You can add them to
+your <code>WEB-INF/libs</code> folder without any changes.</p>
+</li>
+<li>
+<p>If you want to compile and rebuild your custom modules:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>The composition of UI submodules has changed, and some
+submodules have been removed.</p>
+</li>
+<li>
+<p>Several Magnolia stock apps have already been migrated to <em>6 UI</em>.
+Many of the <em>5 UI</em> apps have been moved to the <code>-compatibility</code>
+modules (for example, <code>magnolia-pages-app-compatibility</code>).</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_upgrading_webapps"><a class="anchor" href="#_upgrading_webapps"></a>Upgrading webapps</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_upgrading_maven_managed_webapps"><a class="anchor" href="#_upgrading_maven_managed_webapps"></a>Upgrading Maven-managed webapps</h3>
+<div class="paragraph">
+<p>Upgrading your Maven-managed (custom) webapp depends on how you have organized your POM files.</p>
+</div>
+<div class="sect3">
+<h4 id="_inherited_bom_files"><a class="anchor" href="#_inherited_bom_files"></a>Inherited BOM files</h4>
+<div class="paragraph">
+<p>The most common use case is that your custom webapp is based on one of
+<a href="../Developing/Bundles-and-webapps/#_artifacts_tableListofpreconfiguredMagnoliabundles" class="page">Magnolia’s
+preconfigured webapps</a>. The structure of the Maven project that manages
+your webapp may look like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-numberLines hljs" data-lang="numberLines">custom-project/
+├── custom-project-webapp
+│ ├── pom.xml <i class="conum" data-value="3"></i><b>(3)</b>
+│ └── src
+└── pom.xml</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Line 3: <code>custom-project/custom-project-webapp/pom.xml</code> is the POM file
+of your custom webapp.</p>
+</div>
+<div class="listingblock">
+<div class="title">custom-project/custom-project-webapp/pom.xml</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd"&gt;
+  &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
+  &lt;parent&gt;
+    &lt;groupId&gt;com.example&lt;/groupId&gt;
+    &lt;artifactId&gt;custom-project&lt;/artifactId&gt; <i class="conum" data-value="5"></i><b>(5)</b>
+    &lt;version&gt;1.0-SNAPSHOT&lt;/version&gt;
+    &lt;relativePath&gt;../pom.xml&lt;/relativePath&gt;
+  &lt;/parent&gt;
+  &lt;artifactId&gt;custom-project-webapp&lt;/artifactId&gt;
+  &lt;name&gt;custom-magnolia: webapp&lt;/name&gt;
+  &lt;packaging&gt;war&lt;/packaging&gt;
+
+  &lt;dependencies&gt;
+    &lt;dependency&gt;
+      &lt;groupId&gt;info.magnolia.dx&lt;/groupId&gt;
+      &lt;artifactId&gt;magnolia-dx-core-webapp&lt;/artifactId&gt;
+      &lt;type&gt;war&lt;/type&gt;
+    &lt;/dependency&gt;
+    &lt;dependency&gt;
+      &lt;groupId&gt;info.magnolia.dx&lt;/groupId&gt;
+      &lt;artifactId&gt;magnolia-dx-core-webapp&lt;/artifactId&gt;
+      &lt;type&gt;pom&lt;/type&gt;
+    &lt;/dependency&gt;
+    &lt;!-- More custom modules here --&gt;
+    &lt;dependency&gt;
+      &lt;groupId&gt;com.example&lt;/groupId&gt;
+      &lt;artifactId&gt;foobar-module&lt;/artifactId&gt;
+    &lt;/dependency&gt;
+  &lt;/dependencies&gt;
+
+  &lt;build&gt;
+    &lt;plugins&gt;
+      &lt;plugin&gt;
+        &lt;artifactId&gt;maven-war-plugin&lt;/artifactId&gt;
+        &lt;configuration&gt;
+          &lt;!-- exclude jars copied "physically" from the webapp overlay - so we only get those resolved by Maven's dependency management --&gt;
+          &lt;dependentWarExcludes&gt;WEB-INF/lib/*.jar&lt;/dependentWarExcludes&gt;
+        &lt;/configuration&gt;
+      &lt;/plugin&gt;
+    &lt;/plugins&gt;
+  &lt;/build&gt;
+&lt;/project&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Line 5: <code>custom-project/pom.xml</code> is the parent POM file of your custom
+webapp. This file manages the dependencies and their versions.</p>
+</div>
+<div class="listingblock">
+<div class="title">custom-project/pom.xml</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd"&gt;
+  &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
+  &lt;groupId&gt;com.example&lt;/groupId&gt;
+  &lt;artifactId&gt;custom-project&lt;/artifactId&gt;
+  &lt;name&gt;custom-magnolia (parent pom)&lt;/name&gt;
+  &lt;version&gt;1.0-SNAPSHOT&lt;/version&gt;
+  &lt;packaging&gt;pom&lt;/packaging&gt;
+
+  &lt;properties&gt;
+    &lt;magnoliaBundleVersion&gt;6.2&lt;/magnoliaBundleVersion&gt;
+    &lt;foobarModuleVersion&gt;1.2&lt;/foobarModuleVersion&gt;
+    &lt;javaVersion&gt;1.8&lt;/javaVersion&gt;
+  &lt;/properties&gt;
+
+  &lt;scm&gt;
+    &lt;connection/&gt;
+    &lt;developerConnection/&gt;
+    &lt;url/&gt;
+  &lt;/scm&gt;
+
+  &lt;dependencyManagement&gt;
+    &lt;dependencies&gt;
+      &lt;dependency&gt;
+        &lt;groupId&gt;info.magnolia.dx&lt;/groupId&gt;
+        &lt;artifactId&gt;magnolia-dx-core-parent&lt;/artifactId&gt;
+        &lt;version&gt;${magnoliaBundleVersion}&lt;/version&gt;
+        &lt;type&gt;pom&lt;/type&gt;
+        &lt;scope&gt;import&lt;/scope&gt;
+      &lt;/dependency&gt;
+      &lt;!-- More dependencies for your custom modules here --&gt;
+      &lt;dependency&gt;
+        &lt;groupId&gt;com.example&lt;/groupId&gt;
+        &lt;artifactId&gt;foobar-module&lt;/artifactId&gt;
+        &lt;version&gt;${foobarModuleVersion}&lt;/version&gt;
+      &lt;/dependency&gt;
+    &lt;/dependencies&gt;
+  &lt;/dependencyManagement&gt;
+
+  &lt;build&gt;
+    &lt;plugins&gt;
+      &lt;plugin&gt;
+        &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+        &lt;artifactId&gt;maven-compiler-plugin&lt;/artifactId&gt;
+        &lt;version&gt;3.7.0&lt;/version&gt;
+        &lt;configuration&gt;
+          &lt;source&gt;${javaVersion}&lt;/source&gt;
+          &lt;target&gt;${javaVersion}&lt;/target&gt;
+        &lt;/configuration&gt;
+      &lt;/plugin&gt;
+    &lt;/plugins&gt;
+
+    &lt;!-- default resources configuration which will filter your module descriptors --&gt;
+    &lt;resources&gt;
+      &lt;resource&gt;
+        &lt;directory&gt;src/main/resources&lt;/directory&gt;
+        &lt;includes&gt;
+          &lt;include&gt;**/*&lt;/include&gt;
+        &lt;/includes&gt;
+      &lt;/resource&gt;
+      &lt;resource&gt;
+        &lt;filtering&gt;true&lt;/filtering&gt;
+        &lt;directory&gt;src/main/resources&lt;/directory&gt;
+        &lt;includes&gt;
+          &lt;include&gt;META-INF/magnolia/*&lt;/include&gt;
+        &lt;/includes&gt;
+      &lt;/resource&gt;
+    &lt;/resources&gt;
+  &lt;/build&gt;
+
+  &lt;repositories&gt;
+    &lt;repository&gt;
+      &lt;id&gt;magnolia.public&lt;/id&gt;
+      &lt;url&gt;https://nexus.magnolia-cms.com/content/groups/public&lt;/url&gt;
+      &lt;snapshots&gt;
+        &lt;enabled&gt;false&lt;/enabled&gt;
+      &lt;/snapshots&gt;
+    &lt;/repository&gt;
+    &lt;repository&gt;
+      &lt;id&gt;magnolia.enterprise.releases&lt;/id&gt;
+      &lt;url&gt;https://nexus.magnolia-cms.com/content/repositories/magnolia.enterprise.releases&lt;/url&gt;
+      &lt;snapshots&gt;
+        &lt;enabled&gt;false&lt;/enabled&gt;
+      &lt;/snapshots&gt;
+    &lt;/repository&gt;
+    &lt;repository&gt;
+      &lt;id&gt;vaadin-addons&lt;/id&gt;
+      &lt;url&gt;https://maven.vaadin.com/vaadin-addons&lt;/url&gt;
+    &lt;/repository&gt;
+  &lt;/repositories&gt;
+
+  &lt;modules&gt;
+    &lt;module&gt;custom-project-webapp&lt;/module&gt;
+  &lt;/modules&gt;
+&lt;/project&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Note that the parent POM (<code>custom-project/pom.xml</code>) manages all versions
+for both Magnolia modules and third-party libraries. It imports
+<code>info.magnolia.dx:magnolia-dx-core-parent</code>, which manages Magnolia DX Core
+module versions and imports the following:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>info.magnolia.bundle:magnolia-bundle-parent</code> to manage Magnolia CE
+module versions.</p>
+</li>
+<li>
+<p><code>info.magnolia.boms:magnolia-external-dependencies</code> to manage
+third-party library versions.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>If the POM files for your custom webapp are organized as shown above,
+you will only need to change one property. In the <code>&lt;properties&gt;</code> tag
+of your parent POM, change the version of the <code>magnoliaBundleVersion</code> property:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;properties&gt;
+  &lt;magnoliaBundleVersion&gt;6.2&lt;/magnoliaBundleVersion&gt; <i class="conum" data-value="2"></i><b>(2)</b>
+  &lt;foobarModuleVersion&gt;1.2&lt;/foobarModuleVersion&gt;
+  &lt;javaVersion&gt;1.8&lt;/javaVersion&gt;
+&lt;/properties&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Line 2: Set <code>magnoliaBundleVersion</code> to your required version.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_maven_dependency_tree"><a class="anchor" href="#_maven_dependency_tree"></a>Maven dependency tree</h4>
+<div class="paragraph">
+<p>Regardless of how your Maven project is organized, building the Maven
+dependency tree helps you analyze the versions of all the Magnolia
+modules and third-party libraries of your custom webapp.</p>
+</div>
+<div class="paragraph">
+<p>Open a shell, go to the directory of your webapp and execute the
+<a href="https://maven.apache.org/plugins/maven-dependency-plugin/tree-mojo.html" target="_blank" rel="noopener">Maven command for the dependency tree</a>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">cd /Users/jdoe/dev/repo/custom-mgnl-webapps/custom-project/custom-project-webapp
+mvn dependency:tree</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_upgrading_manually"><a class="anchor" href="#_upgrading_manually"></a>Upgrading manually</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Stop the application server.</p>
+</li>
+<li>
+<p>Extract the new Magnolia <a href="../Developing/Bundles-and-webapps/" class="page">bundle</a>.</p>
+</li>
+<li>
+<p>Replace the JAR files in the <code>WEB-INF/lib</code> folder of your old Magnolia
+instances with the new ones from the bundle.</p>
+</li>
+<li>
+<p>Remove any module JARs you previously removed from your instances. Add
+any module JARs you previously added.</p>
+</li>
+<li>
+<p>Add new Magnolia modules.</p>
+</li>
+<li>
+<p>Optional: delete the <code>index</code> folder in each workspace directory
+(<code>repositories/magnolia/workspaces/&lt;workspace&gt;/index</code>). Indexes are
+re-created on startup, which might take a while depending on the size of
+your repository.</p>
+</li>
+<li>
+<p>If you customized your <code>magnolia.properties</code> file, compare the changes
+to the file in the new bundle. Properties may have been added or
+removed.</p>
+</li>
+<li>
+<p>Read the release notes for all intermediate versions for any
+additional update tasks. See the <a href="../Releases/" class="page">Releases</a> page.</p>
+</li>
+<li>
+<p>Restart the application server.</p>
+</li>
+<li>
+<p>In your browser, go to the Magnolia instances and run the web update.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_things_to_consider"><a class="anchor" href="#_things_to_consider"></a>Things to consider</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_updating_magnolia_dam_app_jcr"><a class="anchor" href="#_updating_magnolia_dam_app_jcr"></a>Updating <code>magnolia-dam-app-jcr</code></h3>
+<div class="paragraph">
+<p>Updating <code>magnolia-dam-app-jcr</code> (a submodule in the <a href="../Modules/List-of-modules/Digital-Asset-Management-module/" class="page">Digital Asset Management module</a>) to version 3.0.6 or later involves fixing possibly corrupted nodes in the <code>dam</code> workspace, which may take a long time if the workspace is large.</p>
+</div>
+<div class="paragraph">
+<p>For this, a faster but possibly less reliable executor (<code>QueryTask</code>) has been implemented. In case of any inconsistencies, run the update task manually. For more details about this issue, see <a href="https://jira.magnolia-cms.com/browse/MGNLDAM-939" target="_blank" rel="noopener">MGNLDAM-939</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_additional_dependency_for_older_versions_of_solr_module"><a class="anchor" href="#_additional_dependency_for_older_versions_of_solr_module"></a>Additional dependency for older versions of Solr module</h3>
+<div class="paragraph">
+<p>If you are migrating from Magnolia 5.x and are using version 5.2.2 or earlier of the
+<a href="../Modules/List-of-modules/Solr-module/" class="page">Solr module</a>, you need to add
+the following dependency to your bundle:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;dependency&gt;
+  &lt;groupId&gt;info.magnolia&lt;/groupId&gt;
+  &lt;artifactId&gt;magnolia-core-compatibility&lt;/artifactId&gt;
+&lt;/dependency&gt;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_changes_in_rest_client_module"><a class="anchor" href="#_changes_in_rest_client_module"></a>Changes in REST Client module</h3>
+<div class="paragraph">
+<p>With the Magnolia {magnolia-major-version} release, the RESTEasy Client module
+has been deprecated and merged into the REST Client module 2.0.
+<code>magnolia-resteasy-client</code> has been relocated to <code>magnolia-rest-client</code>
+(see the <a href="https://git.magnolia-cms.com/projects/MODULES/repos/rest-client/browse/magnolia-resteasy-client-maven-relocate/pom.xml" target="_blank" rel="noopener">POM file</a>).</p>
+</div>
+<div class="paragraph">
+<p>If your projects have a dependency on <code>magnolia-resteasy-client</code>, we
+recommend that you either:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Update and rebuild the projects without the dependency or</p>
+</li>
+<li>
+<p>Add an older version of the dependency.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>As of the REST Client module 2.0, <code>ClientServiceDefinition</code> has also been deprecated. <code>ProxyDefinition</code> should now be used instead.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_server_push_in_admincentral"><a class="anchor" href="#_server_push_in_admincentral"></a>Server <code>push</code> in AdminCentral</h3>
+<div class="paragraph">
+<p>Server-side <code>push</code> functionality is now provided in AdminCentral. For
+this to work, you must update your <code>WEB-INF/web.xml</code> file. It must
+declare async support on Magnolia’s main filter.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;filter&gt;
+  &lt;display-name&gt;Magnolia global filters&lt;/display-name&gt;
+  &lt;filter-name&gt;magnoliaFilterChain&lt;/filter-name&gt;
+  &lt;filter-class&gt;info.magnolia.cms.filters.MgnlMainFilter&lt;/filter-class&gt;
+  &lt;async-supported&gt;true&lt;/async-supported&gt;
+&lt;/filter&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Since Magnolia does not support <code>push</code> operations over WebSockets, you
+must also add the following new context parameters:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;!-- The following two parameters prevent the Atmosphere Framework from attempting to install --&gt;
+&lt;!-- JSR-356 is not needed and causes issues with our servlet setup --&gt;
+&lt;context-param&gt;
+  &lt;param-name&gt;org.atmosphere.cpr.AtmosphereConfig.getInitParameter&lt;/param-name&gt;
+  &lt;param-value&gt;true&lt;/param-value&gt;
+&lt;/context-param&gt;
+&lt;context-param&gt;
+  &lt;param-name&gt;org.atmosphere.websocket.suppressJSR356&lt;/param-name&gt;
+  &lt;param-value&gt;true&lt;/param-value&gt;
+&lt;/context-param&gt;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_issues_in_h2_1_4_199_and_1_4_200"><a class="anchor" href="#_issues_in_h2_1_4_199_and_1_4_200"></a>Issues in H2 1.4.199 and 1.4.200</h3>
+<div class="paragraph">
+<p>Our <a href="../Administration/Certified-stack/" class="page">Certified stack</a> page sets
+1.4.200 as a baseline for the H2 database in Magnolia {magnolia-major-version}.
+While 1.4.200 fixes a <a href="https://github.com/h2database/h2database/issues/2139" target="_blank" rel="noopener">consistency issue</a>
+found in 1.4.199, it introduces <a href="https://github.com/h2database/h2database/issues/2204" target="_blank" rel="noopener">another issue</a>
+that may affect the structure of tables and the ability of H2 to read previously stored
+data.</p>
+</div>
+<div class="paragraph">
+<p>To keep your systems and data secure, we recommend that you consider
+taking the following measures when upgrading to the Magnolia {magnolia-major-version} branch:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Avoid using H2 1.4.199. This version was introduced with
+the following maintenance releases: 5.5.16, 5.6.13, 5.7.6 and 6.1.3.</p>
+</li>
+<li>
+<p>If you are still running H2 1.4.192, do not upgrade to any of the
+maintenance releases mentioned above. Try updating to 1.4.200 and
+see if you experience any issues. If you come across some issues
+after the update, contact our support.<br>
+Ensure that the H2 database is not exposed through your custom code modifications
+(for example, by accessing the database directly and exposing a query or by other
+payload going directly to it through your application). If you follow these
+recommendations, your installation will not be affected by the security
+issue.</p>
+</li>
+<li>
+<p>If you have already upgraded to H2 1.4.199, downgrading is not possible
+due to upstream data structure changes that are incompatible with
+previous versions. Try updating to 1.4.200 and see if you
+experience any issues. If you come across some issues after the
+update, contact our support.</p>
+</li>
+<li>
+<p>If you are using H2 only in development, you can either:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Delete the local database and downgrade to 1.4.192 or</p>
+</li>
+<li>
+<p>Switch to another database (for example, Derby) and reinstall your
+local version.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_known_issues"><a class="anchor" href="#_known_issues"></a>Known issues</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>See the <a href="../Administration/Troubleshooting/Known-issues/" class="page">Known issues</a> page.</p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Related topics</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#Releases/Release-notes-for-Magnolia-CMS-{magnolia-major-version}.adoc" class="page unresolved">Release notes for
+Magnolia CMS {magnolia-major-version}</a></p>
+</li>
+<li>
+<p><a href="Changes-in-Magnolia-6-UI/" class="page">Changes in
+Magnolia 6 UI</a></p>
+</li>
+<li>
+<p><a href="Migrating-an-app-to-Magnolia-6-UI/" class="page">Migrating
+an app to Magnolia 6 UI</a></p>
+</li>
+<li>
+<p><a href="../Administration/Certified-stack/" class="page">Certified stack</a></p>
+</li>
+<li>
+<p><a href="../Administration/Troubleshooting/Known-issues/" class="page">Known issues</a></p>
+</li>
+<li>
+<p><a href="../Support/End-of-life-policy/" class="page">End-of-life policy</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</article>
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <div class="container">
+    <div class="footer__col footer__logo">
+        <a href="https://www.magnolia-cms.com" target="_blank" class="icon">
+          <svg width="159" height="40" viewBox="0 0 159 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M89.8347 6.63219C88.9841 6.62132 88.1402 6.78357 87.3543 7.10906C86.5685 7.43454 85.8571 7.91646 85.2635 8.52548V6.84193H72.7865C70.2399 6.28353 67.6379 6.01728 65.0309 6.04833C54.3517 6.04833 46.1934 9.76972 46.1934 14.7042C46.1934 16.5181 47.4042 17.9154 50.2229 19.2645L48.7058 19.9192L46.5904 20.795C45.537 21.193 44.5414 21.7296 43.6299 22.3907V13.0943C43.6299 8.81458 40.9786 6.63219 35.8261 6.63219C32.7692 6.63219 31.0054 7.19904 29.2218 9.16036L32.1369 11.9946C33.0897 10.9034 33.895 10.4811 35.6531 10.4811C38.0776 10.4811 39.056 11.3569 39.056 13.3579V14.2734H34.74C30.4865 14.2734 28.4817 16.657 28.4817 19.5735C28.4381 21.0876 28.9817 22.5601 29.9988 23.6831C31.0877 24.7715 32.5991 25.2958 34.672 25.2958C36.7449 25.2958 37.9415 24.7715 39.1722 23.5414V25.1229H43.6271V25.0011C44.5685 25.5679 46.2444 26.1348 48.8079 26.7385L45.9892 27.4414C41.6563 28.5127 40.0343 29.0229 38.2336 29.8137C35.7127 30.885 34.4026 32.2341 34.4026 33.7646C34.4026 37.4945 42.4588 40 54.5502 40C68.3486 40 78.5203 36.4628 78.5203 31.7608C78.5203 30.1311 77.1024 28.6913 74.3943 27.7106C72.0747 26.8603 69.8572 26.4097 61.8039 25.3384C55.4548 24.4881 53.5407 24.1281 51.9272 23.4451C51.2239 23.0653 50.7192 22.5608 50.7192 22.0506C50.7192 21.2939 51.4252 20.8404 53.3365 20.095C55.9538 20.5875 58.6132 20.822 61.2764 20.795C71.2467 20.795 79.0023 17.068 79.0023 12.3716C79.0023 10.9715 78.6025 10.1835 77.0911 8.97046C77.0911 8.97046 78.9853 8.97046 80.7775 9.14619V25.1314H85.3543V14.0778C85.3543 11.5837 86.9734 10.7447 88.4111 10.7447C89.8488 10.7447 91.4425 11.595 91.4425 14.0778V25.1314H96.0108V13.4458C96.0108 11.4448 95.6308 9.72154 94.1477 8.24772C93.1382 7.23022 91.6608 6.63219 89.8347 6.63219ZM39.0758 18.3944C39.0758 19.5281 38.8972 20.2565 38.4038 20.7157C37.5984 21.4724 36.7874 21.5943 35.5227 21.5943C33.7334 21.5943 32.8912 20.744 32.8912 19.4856C32.8912 18.2272 33.8014 17.4194 35.4433 17.4194H39.0645L39.0758 18.3944ZM53.3677 27.8892H53.7704C54.9699 27.8892 57.1732 28.1216 60.576 28.6459C63.6783 29.0626 65.3967 29.4027 66.8854 29.8505C69.5028 30.6101 70.8923 31.7013 70.8923 32.9965C70.8923 35.9187 64.2794 38.1379 55.744 38.1379C47.3305 38.1379 41.7272 36.2871 41.7272 33.5124C41.7272 31.8912 43.335 30.5874 46.6528 29.4339C48.9213 28.6318 51.8336 27.9884 53.3365 27.8892H53.3677ZM61.2849 19.1398C56.6741 19.1398 54.088 17.5214 54.088 14.6475C54.088 10.7589 57.7942 7.9813 63.3096 7.9813H63.6896C68.0991 7.9813 70.9036 9.78673 70.9036 12.6097C70.9036 16.4047 66.7805 19.1285 61.2622 19.1285L61.2849 19.1398Z" fill="#1E1F1C"/>
+            <path d="M106.778 6.63208C104.073 6.63208 102.241 7.68926 101.107 8.88249C99.4562 10.6029 99.0365 12.6662 99.0365 15.9682C99.0365 19.2701 99.4562 21.3731 101.107 23.0963C102.241 24.2896 104.061 25.3411 106.778 25.3411C109.495 25.3411 111.346 24.2896 112.449 23.0963C114.103 21.3731 114.522 19.3098 114.522 15.9682C114.522 12.6266 114.103 10.583 112.449 8.88249C111.346 7.68926 109.48 6.63208 106.778 6.63208ZM108.922 20.4066C108.639 20.6814 108.303 20.8952 107.934 21.0346C107.565 21.1741 107.172 21.2362 106.778 21.2172C106.389 21.2368 106.001 21.1748 105.637 21.0352C105.274 20.8956 104.944 20.6815 104.668 20.4066C103.721 19.4628 103.613 17.8558 103.613 15.9511C103.613 14.0465 103.721 12.4735 104.668 11.5269C104.945 11.2536 105.275 11.0408 105.638 10.9017C106.001 10.7627 106.389 10.7005 106.778 10.7191C107.171 10.7009 107.565 10.7631 107.933 10.902C108.302 11.0409 108.638 11.2535 108.922 11.5269C109.872 12.4735 109.974 14.055 109.974 15.9511C109.974 17.8473 109.872 19.4855 108.922 20.4066Z" fill="#1E1F1C"/>
+            <path d="M122.587 19.6301V0.135986H118.019V19.9078C118.019 22.5068 119.601 25.1399 123.358 25.1399H125.961V21.2796H124.203C123.041 21.2796 122.587 20.7156 122.587 19.6301Z" fill="#1E1F1C"/>
+            <path d="M133.482 6.84741H128.913V25.1426H133.482V6.84741Z" fill="#1E1F1C"/>
+            <path d="M133.513 0H128.84V3.72139H133.513V0Z" fill="#1E1F1C"/>
+            <path d="M143.914 6.63208C140.857 6.63208 139.093 7.19893 137.307 9.16025L140.225 11.9945C141.172 10.9033 141.983 10.481 143.738 10.481C146.16 10.481 147.141 11.3568 147.141 13.3578V14.2733H142.825C138.572 14.2733 136.567 16.6569 136.567 19.5733C136.522 21.0872 137.065 22.5597 138.081 23.683C139.17 24.7714 140.684 25.2957 142.751 25.2957C144.819 25.2957 146.021 24.7714 147.252 23.5413V25.1228H151.709V13.0942C151.709 8.81447 149.044 6.63208 143.914 6.63208ZM147.147 18.3943C147.147 19.528 146.968 20.2564 146.48 20.7155C145.672 21.4723 144.867 21.5942 143.597 21.5942C141.804 21.5942 140.945 20.7439 140.945 19.4855C140.945 18.2271 141.858 17.4193 143.514 17.4193H147.13L147.147 18.3943Z" fill="#1E1F1C"/>
+            <path d="M19.3621 6.63226C18.3336 6.59126 17.3087 6.77782 16.3606 7.17859C15.4126 7.57937 14.5648 8.18448 13.8779 8.95069C12.7181 7.36917 11.0592 6.63226 9.02884 6.63226C8.18003 6.63077 7.33932 6.7973 6.55525 7.12226C5.77117 7.44721 5.05924 7.92415 4.46054 8.52555V6.84199H0V25.1372H4.5683V14.0835C4.5683 11.5894 6.18464 10.7504 7.62517 10.7504C9.0657 10.7504 10.6537 11.6007 10.6537 14.0835V25.1372H15.2191V13.9815C15.2191 11.5922 16.8695 10.7504 18.2703 10.7504C19.6712 10.7504 21.3017 11.6007 21.3017 14.0864V25.14H25.87V13.4458C25.87 11.4448 25.3426 9.72161 23.885 8.24779C22.8358 7.23029 21.1854 6.63226 19.3621 6.63226Z" fill="#1E1F1C"/>
+            <path d="M156.958 5.32267C156.962 5.17787 156.938 5.03367 156.886 4.89831C156.835 4.76296 156.757 4.63909 156.657 4.53381C156.558 4.42852 156.438 4.34388 156.306 4.2847C156.174 4.22553 156.031 4.193 155.886 4.18896H154.185V7.74597H155.112V6.40819H155.492L156.028 7.73746H157.086L156.419 6.24948C156.59 6.1642 156.732 6.03108 156.827 5.86644C156.923 5.7018 156.968 5.51281 156.958 5.32267ZM155.648 5.70246H155.112V4.98539H155.657C155.704 4.98055 155.751 4.98504 155.797 4.99858C155.842 5.01213 155.884 5.03448 155.921 5.06435C155.958 5.09422 155.988 5.13103 156.011 5.17268C156.033 5.21433 156.047 5.26 156.052 5.30708C156.057 5.35417 156.053 5.40174 156.039 5.44709C156.025 5.49244 156.003 5.53468 155.973 5.5714C155.943 5.60811 155.907 5.63858 155.865 5.66107C155.823 5.68356 155.778 5.69762 155.73 5.70246H155.648Z" fill="#1E1F1C"/>
+            <path d="M155.501 2.45459C154.807 2.45347 154.129 2.65812 153.551 3.04262C152.974 3.42712 152.524 3.97418 152.258 4.61453C151.992 5.25488 151.922 5.95971 152.057 6.63978C152.192 7.31986 152.526 7.94458 153.017 8.43485C153.507 8.92511 154.132 9.25887 154.813 9.39386C155.493 9.52885 156.198 9.459 156.839 9.19315C157.48 8.9273 158.027 8.47742 158.412 7.90046C158.796 7.3235 159.001 6.64542 159 5.95208C158.999 5.02495 158.629 4.13622 157.973 3.48064C157.318 2.82506 156.428 2.45609 155.501 2.45459ZM155.501 8.59361C154.977 8.608 154.46 8.46667 154.016 8.18751C153.572 7.90835 153.221 7.5039 153.007 7.0253C152.793 6.54671 152.726 6.01547 152.814 5.49877C152.903 4.98208 153.142 4.50314 153.503 4.12252C153.863 3.74191 154.329 3.47672 154.84 3.3605C155.351 3.24428 155.886 3.28224 156.376 3.46958C156.865 3.65693 157.289 3.98524 157.592 4.413C157.895 4.84076 158.064 5.34875 158.078 5.87272C158.08 5.89632 158.08 5.91998 158.078 5.94358C158.095 6.27484 158.046 6.6061 157.934 6.91842C157.822 7.23075 157.65 7.51802 157.428 7.76384C157.205 8.00967 156.936 8.20922 156.636 8.35111C156.336 8.49299 156.011 8.57444 155.679 8.59078C155.623 8.59361 155.563 8.59645 155.501 8.59361Z" fill="#1E1F1C"/>
+          </svg>
+        </a>
+    </div>
+    <div class="footer__col footer__links">
+      <div class="col">
+  <ul>
+    <li><a href="https://www.magnolia-cms.com/get-started/developer-trial.html" target="_blank" rel="noopener">Developer Trial</a></li>
+    <li><a href="https://hd.magnolia-cms.com/" target="_blank" rel="noopener">Headless Docs</a></li>
+    <li><a href="https://wiki.magnolia-cms.com/" target="_blank" rel="noopener">Community Wiki</a></li>
+  </ul>
+</div>
+<div class="col">
+  <ul>
+    <li><a href="https://www.magnolia-cms.com/support.html" target="_blank" rel="noopener">Support</a></li>
+    <li><a href="https://magnolia-cms.com/blog" target="_blank" rel="noopener">Blog</a></li>
+    <li><a href="https://www.magnolia-cms.com/training" target="_blank" >Training</a></li>
+  </ul>
+</div>
+<div class="col">
+  <ul>
+    <li><a href="https://www.magnolia-cms.com/library.html" target="_blank" >Magnolia Resources</a></li>
+    <li><a href="https://www.magnolia-cms.com/product/architecture-and-tech-stack.html" target="_blank" >Architecture and Tech Stack</a></li>
+    <li><a href="http://mgnl.io/roadmap" target="_blank" >Product Roadmap</a></li>
+  </ul>
+</div>
+
+
+<div class="footer-terms">
+  <span>2021 Magnolia International Ltd. Some rights reserved.</span>
+  <a href="https://www.magnolia-cms.com/legal/privacy.html" target="_blank">Privacy policy</a>
+</div>
+
+    </div>
+    <div class="footer__col footer__socials">
+      <ul class="social-icons">
+  <li class="facebook">
+    <a href="https://www.facebook.com/Magnolia" target="_blank" class="icon">
+      <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg>
+    </a>
+  </li>
+  <li class="twitter">
+    <a href="https://twitter.com/magnolia_cms" target="_blank" class="icon">
+      <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg>    </a>
+  </li>
+  <li class="linkedin">
+    <a href="https://www.linkedin.com/company/magnolia-cms" target="_blank" class="icon">
+      <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24"><path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z"/></svg>
+    </a>
+  </li>
+  <li class="youtube">
+    <a href="https://www.youtube.com/channel/UCKq5WUu8lM799JNKmu49jZA" target="_blank" class="icon">
+      <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg>
+    </a>
+  </li>
+</ul>
+    </div>
+  </div>
+</footer>
+
+<script src="../../../_/js/site.js"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+<script async src="../../../_/js/vendor/clipboard.js"></script>
+<script async src="../../../_/js/vendor/medium-zoom.js"></script>
+<script async src="../../../_/js/vendor/collapse.js"></script>
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
+
+<script type="text/javascript">
+    docsearch({
+        appId: 'IIQKXJ786V',
+        apiKey: '450fd6db7d4e2f26607012f0d8683a29',
+        indexName: 'dev_DOCS',
+        inputSelector: '#searchBar',
+        algoliaOptions: { hitsPerPage: 10 },
+        // debug: true // prevent it from closing on inspection.
+    });
+
+    function toggleDropDown () {
+      var linkEl = document.querySelectorAll('.has-dropdown');
+      var allDrops =  document.querySelectorAll('.has-dropdown .navbar-dropdown');
+      for (var el of linkEl) {
+        el.addEventListener('click', function (e) {
+          for (var drop of allDrops) {
+            drop.style.display = "none";
+          }
+          e.stopPropagation()
+          e.target.nextElementSibling.style.display = "block";
+        })
+      }
+    }
+    if(window.innerWidth < 1200) {
+      toggleDropDown();
+    }
+
+</script>
+
+<script src="//www.eucookie.eu/public/gdpr-cookie-consent.js" type="text/javascript"></script>
+<script type="text/javascript">
+	var cookieConsent = new cookieConsent({
+	clientId: '22aadf89-d87b-4277-83ac-f12dfee5eb1f'
+});
+cookieConsent.run();
+</script>
+
+<script src="//www.eucookie.eu/public/gdpr-cookie-consent.js" type="text/javascript"></script>
+<script type="text/javascript">
+	var cookieConsent = new cookieConsent({
+	clientId: '22aadf89-d87b-4277-83ac-f12dfee5eb1f'
+});
+cookieConsent.run();
+</script>
+<div id="feedback">
+    <a href="https://jira.magnolia-cms.com/secure/CreateIssueDetails!init.jspa?pid=10190&issuetype=4" target="_blank" rel="noopener">
+       Feedback
+    </a>
+</div>
+<button onclick="topFunction()" id="scrollTopBtn" title="Go to top"><i class="fa fa-arrow-circle-up" aria-hidden="true"></i> Top</button>
+
+<script>
+//Get the button
+var mybutton = document.getElementById("scrollTopBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+</script>
+  </body>
+</html>
