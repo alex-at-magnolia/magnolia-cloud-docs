@@ -15,6 +15,9 @@ content:
   - url: https://git.magnolia-cms.com/scm/cloud/mgnlctl.git
     start_path: docs
     branches: [master]
+  - url: https://gitlab.com/magnolia-major-tom/major-tom-documentation.git
+    start_path: docs
+    branches: ['MTOM-88']
 
 urls:
   html_extension_style: indexify
