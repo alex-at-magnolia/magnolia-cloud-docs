@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Manage your users :: Magnolia Cloud Service Internal Documentation</title>
     <link rel="canonical" href="https://saas-docs.beta.de.magnolia-cloud.com/saas/saas/user-management/">
+    <link rel="prev" href="../subscription-management/usage-reports/">
+    <link rel="next" href="user-roles/">
     <meta name="generator" content="Antora 2.3.3">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
 
@@ -169,9 +171,6 @@
         <li class="version is-current is-latest">
           <a href="../">master</a>
         </li>
-        <li class="version">
-          <a href="../CLOUD-389/">CLOUD-389</a>
-        </li>
       </ul>
     </li>
     <li class="component">
@@ -190,14 +189,7 @@
 <main class="article">
 <div class="toolbar" role="navigation">
 <button class="nav-toggle"></button>
-  <div class="page-versions">
-  <button class="version-menu-toggle" title="Show other versions of page">master</button>
-  <div class="version-menu">
-    <a class="version is-current" href="./">master</a>
-    <a class="version" href="../CLOUD-389/user-management/">CLOUD-389</a>
-  </div>
-</div>
-  <a href="../" class="home-link"></a>
+    <a href="../" class="home-link"></a>
 
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <span class="breadcrumbs-home">
@@ -224,58 +216,51 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="_invite_new_user_to_magnolia_saas"><a class="anchor" href="#_invite_new_user_to_magnolia_saas"></a>Invite new user to Magnolia SaaS</h2>
+<h2 id="_prerequisites"><a class="anchor" href="#_prerequisites"></a>Prerequisites</h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p>To add users to your Magnolia SaaS subscription, you need to go to the <strong>Access Management</strong> section within your admincentral.</p>
-</div>
-<div class="sect2">
-<h3 id="_prerequisites"><a class="anchor" href="#_prerequisites"></a>Prerequisites</h3>
 <div class="ulist">
 <ul>
 <li>
 <p>You must have a Magnolia SaaS subscription.</p>
 </li>
 <li>
-<p>You must have admin rights.</p>
+<p>Your account must have either the <strong>Subscription Owner</strong> or <strong>Admin</strong> <a href="user-roles/" class="page">role</a>.</p>
 </li>
 </ul>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_instructions"><a class="anchor" href="#_instructions"></a>Instructions</h3>
+</div>
+<div class="sect1">
+<h2 id="_invite_users"><a class="anchor" href="#_invite_users"></a>Invite users</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You can invite new users to join your Magnolia SaaS subscription.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The instructions below assume you are logged into Magnolia SaaS and have either the Subscription Owner or Admin <a href="user-roles/" class="page">role</a>.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><strong>To invite a user to Magnolia SaaS:</strong></p>
+</div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Go to your admincentral.</p>
+<p>Go to <strong>admincentral</strong>.</p>
 </li>
 <li>
-<p>In the top right:</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>Go to your profile.</p>
+<p>Hover over your profile in the top-right and select <strong>Access management</strong> from the dropdown menu.</p>
 </li>
 <li>
-<p>Choose <strong>Access management</strong> from the list of options.</p>
-</li>
-</ol>
-</div>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p> <br></p>
-</div>
-<div class="dlist">
-<dl>
-<dt class="hdlist1">In Access Management</dt>
-</dl>
-</div>
-<div class="olist arabic">
-<ol class="arabic" start="3">
-<li>
-<p>Click <strong>Add user</strong>.</p>
+<p>Click the <strong>Add user</strong> button.</p>
 </li>
 <li>
 <p>Enter the email(s) of the people you wish to invite to your Magnolia SaaS subscription.</p>
@@ -375,25 +360,122 @@ Your browser does not support the video tag.
 </li>
 </ol>
 </div>
+<div class="sect2">
+<h3 id="_resend_invitation"><a class="anchor" href="#_resend_invitation"></a>Resend invitation</h3>
+<div class="paragraph">
+<p>If the user accidentally deleted the invitation or has not received it, you can resend user invites by clicking the <strong>email icon</strong> next to the <em>pending</em> user&#8217;s name.</p>
+</div>
+<div class="imageblock zoom">
+<div class="content">
+<img src="../_images/admincentral/users/resend-invite.jpg" alt="resend invite">
+</div>
+</div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_change_user_role"><a class="anchor" href="#_change_user_role"></a>Change user role</h2>
+<h2 id="_edit_users"><a class="anchor" href="#_edit_users"></a>Edit users</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>text</p>
+<p>You can edit your Magnolia SaaS users directly from <strong>admincentral</strong>. This includes updating the user&#8217;s name and role.</p>
 </div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The instructions below assume you are logged into Magnolia SaaS and have either the Subscription Owner or Admin <a href="user-roles/" class="page">role</a>.
+</td>
+</tr>
+</table>
 </div>
-</div>
-<div class="sect1">
-<h2 id="_remove_user_from_magnolia_saas_subscription"><a class="anchor" href="#_remove_user_from_magnolia_saas_subscription"></a>Remove user from Magnolia SaaS subscription</h2>
-<div class="sectionbody">
 <div class="paragraph">
-<p>text</p>
+<p><strong>To edit a user:</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>admincentral</strong>.</p>
+</li>
+<li>
+<p>Hover over your profile in the top-right and select <strong>Access management</strong> from the dropdown menu.</p>
+</li>
+<li>
+<p>Update their <a href="#_update_user_name">name</a>, <a href="#_update_user_role">role</a>, or <a href="#_remove_user">remove</a> the user from your Magnolia SaaS subscription.</p>
+</li>
+</ol>
+</div>
+<div class="sect2">
+<h3 id="_update_user_name"><a class="anchor" href="#_update_user_name"></a>Update user name</h3>
+<div class="olist arabic">
+<ol class="arabic" start="4">
+<li>
+<p>Hover over the user you want to update and click the <strong>Edit icon</strong>.</p>
+<div class="paragraph">
+<p><span class="image zoom"><img src="../_images/admincentral/users/edit-user.jpg" alt="edit user"></span></p>
+</div>
+</li>
+<li>
+<p>Update the First or Last name.</p>
+</li>
+<li>
+<p>Don&#8217;t forget to save your changes.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_update_user_role"><a class="anchor" href="#_update_user_role"></a>Update user role</h3>
+<div class="olist arabic">
+<ol class="arabic" start="4">
+<li>
+<p>Hover over the user you want to update and click the <strong>Edit icon</strong>.</p>
+<div class="paragraph">
+<p><span class="image zoom"><img src="../_images/admincentral/users/edit-user.jpg" alt="edit user"></span></p>
+</div>
+</li>
+<li>
+<p>Under the <strong>Group</strong> dropdown, choose the group you want your user to be a part of.</p>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+See <a href="user-roles/" class="page">Magnolia SaaS user groups</a> for more details.
+</td>
+</tr>
+</table>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_remove_user"><a class="anchor" href="#_remove_user"></a>Remove user</h3>
+<div class="olist arabic">
+<ol class="arabic" start="4">
+<li>
+<p>Hover over the user you want to remove and click the <strong>Trash icon</strong>.</p>
+<div class="paragraph">
+<p><span class="image zoom"><img src="../_images/admincentral/users/remove-user.jpg" alt="remove user"></span></p>
+</div>
+</li>
+<li>
+<p>Press <strong>OK</strong> if you are sure you want to remove the user from your Magnolia SaaS subscription.</p>
+</li>
+</ol>
 </div>
 </div>
 </div>
+</div>
+<nav class="pagination">
+  <span class="prev"><a href="../subscription-management/usage-reports/">Usage reports</a></span>
+  <span class="next"><a href="user-roles/">Magnolia SaaS user groups</a></span>
+</nav>
 </article>
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
   <div class="toc-menu"></div>
