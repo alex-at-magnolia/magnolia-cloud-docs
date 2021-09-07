@@ -828,7 +828,7 @@
 
 .post {
   font-size: smaller;
-  background: green;
+  background: var(--color-primary-green);
   color: white;
   padding: 4px;
   border-radius: 4px;
