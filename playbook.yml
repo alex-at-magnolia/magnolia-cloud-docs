@@ -37,6 +37,7 @@ ui:
 # Global asciidoc attributes here
 asciidoc:
   attributes:
+    page-pagination: true
     check-mark: '&#x2714;'
     ui: Cockpit
     fields-dir: /Templating/Dialog-definition/Field-definition/List-of-fields/
