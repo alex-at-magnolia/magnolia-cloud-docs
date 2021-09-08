@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Netlify URLs with Magnolia SaaS :: Magnolia Cloud Service Internal Documentation</title>
     <link rel="canonical" href="https://saas-docs.beta.de.magnolia-cloud.com/saas/saas/hello-saas/netlify-environments/">
-    <link rel="prev" href="../">
+    <link rel="prev" href="../netlify/">
     <link rel="next" href="../../subscription-management/">
     <meta name="generator" content="Antora 2.3.3">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
@@ -90,8 +90,26 @@
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../">Hello SaaS</a>
 <ul class="nav-list">
-  <li class="nav-item is-current-page" data-depth="2">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../clone-repo/">Clone tutorial repo</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../connect-with-git/">Connect the repo to Magnolia SaaS</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../configure-magnolia/">Configure Magnolia SaaS</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../react-app/">Set up the React App</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../netlify/">Deploy to Netlify</a>
+<ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="3">
     <a class="nav-link" href="./">Netlify environments</a>
+  </li>
+</ul>
   </li>
 </ul>
   </li>
@@ -171,9 +189,6 @@
         <li class="version is-current is-latest">
           <a href="../../">master</a>
         </li>
-        <li class="version">
-          <a href="../../CLOUD-819/">CLOUD-819</a>
-        </li>
       </ul>
     </li>
     <li class="component">
@@ -192,14 +207,7 @@
 <main class="article">
 <div class="toolbar" role="navigation">
 <button class="nav-toggle"></button>
-  <div class="page-versions">
-  <button class="version-menu-toggle" title="Show other versions of page">master</button>
-  <div class="version-menu">
-    <a class="version is-current" href="./">master</a>
-    <a class="version" href="../../CLOUD-819/hello-saas/netlify-environments/">CLOUD-819</a>
-  </div>
-</div>
-  <a href="../../" class="home-link"></a>
+    <a href="../../" class="home-link"></a>
 
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <span class="breadcrumbs-home">
@@ -210,6 +218,7 @@
   <ul>
     <li><a href="../../">Magnolia SaaS</a></li>
     <li><a href="../">Hello SaaS</a></li>
+    <li><a href="../netlify/">Deploy to Netlify</a></li>
     <li><a href="./">Netlify environments</a></li>
   </ul>
 </nav>
@@ -339,7 +348,7 @@
 </div>
 </div>
 <nav class="pagination">
-  <span class="prev"><a href="../">Hello SaaS</a></span>
+  <span class="prev"><a href="../netlify/">Deploy to Netlify</a></span>
   <span class="next"><a href="../../subscription-management/">Manage your subscription</a></span>
 </nav>
 </article>
@@ -432,12 +441,12 @@
 
 <script type="text/javascript">
     docsearch({
-        appId: 'IIQKXJ786V',
-        apiKey: '450fd6db7d4e2f26607012f0d8683a29',
-        indexName: 'dev_DOCS',
+        appId: 'QBCG65DI72',
+        apiKey: '06b1d2df8bc87a2687f57b8bafa31ce2',
+        indexName: 'cloud_internal_docs',
         inputSelector: '#searchBar',
-        algoliaOptions: { hitsPerPage: 10 },
-        // debug: true // prevent it from closing on inspection.
+        algoliaOptions: { hitsPerPage: 15 },
+        debug: true // prevent it from closing on inspection.
     });
 
     function toggleDropDown () {
