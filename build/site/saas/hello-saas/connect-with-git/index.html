@@ -82,6 +82,9 @@
     <a class="nav-link" href="../../sign-up/">Sign up to Magnolia SaaS</a>
   </li>
   <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../login/">Log in to Magnolia SaaS</a>
+  </li>
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../../faqs/">FAQs</a>
   </li>
 </ul>
@@ -145,9 +148,6 @@
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../../developers/">Developers</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../../developers/authentication/">Log in to Magnolia SaaS</a>
-  </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../../developers/connect-with-git/">Connect with Git</a>
   </li>
@@ -234,66 +234,6 @@
 <div class="paragraph">
 <p>With Magnolia SaaS, you connect your own <a href="http://git-scm.com/" target="_blank" rel="noopener">git</a> repository so that changes are picked up in real-time by your Magnolia instance. When your Magnolia SaaS subscription is provisioned, we generate your <code>git secret</code> as part of the subscription so that you can connect your git repo to the Webhook service.</p>
 </div>
-<div class="admonitionblock important">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-important" title="Important"></i>
-</td>
-<td class="content">
-The ingestion service (<em>as shown below</em>) needs to have <a href="#_create_webhook_url">the webhook</a> configured properly before it can pick up changes. Because of this, we recommend doing an initial push from your repo after you have <a href="#_create_webhook_in_git_provider">added the webhook</a> to your git repo.
-</td>
-</tr>
-</table>
-</div>
-<div class="imageblock zoom">
-<div class="content">
-<img src="../../developers/_images/git-webhook-flow.png" alt="git webhook flow">
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_the_webhook"><a class="anchor" href="#_the_webhook"></a>The Webhook</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>The Magnolia SaaS Webhook service is an endpoint that listens to your specific git connection for new commits. When you commit new changes to the repo, the webhook verifies your subscription ID and your changes are ingested by the Configuration Ingestion Service.</p>
-</div>
-<div class="listingblock">
-<div class="title">Webhook format</div>
-<div class="content">
-<pre class="highlightjs highlight"><code>https://webhook.beta.de.magnolia-cloud.com/&lt;provider&gt;/&lt;subscriptionId&gt;</code></pre>
-</div>
-</div>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 30%;">
-<col style="width: 70%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">URL section</th>
-<th class="tableblock halign-left valign-top">Notes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>provider</code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Your remote git hosting service.</p>
-</div>
-<div class="paragraph">
-<p>Currently, we support GitHub and Bitbucket.</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>subscriptionId</code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Your Magnolia SaaS subscription ID.</p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
 </div>
 </div>
 <div class="sect1">
@@ -375,7 +315,10 @@ We plan on adding more git providers including GitLab in the near future.
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>From the top navbar, click <strong>Git</strong>.</p>
+<p>Log in to <a href="https://subscription-service.saas.magnolia-cloud.com/" target="_blank" rel="noopener">Magnolia SaaS</a>.</p>
+</li>
+<li>
+<p>Hover over your profile in the top right corner and click <strong>Git configuration</strong>.</p>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -383,27 +326,24 @@ We plan on adding more git providers including GitLab in the near future.
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-When you click the <strong>Git</strong> option, the SSH Public Key is generated for your subscription. Be sure to make note or copy this for when you <a href="#_create_webhook_in_git_provider">create your webhook in your remote git hosting service provider</a>.
+The SSH Public Key is generated when we create your subscription.
 </td>
 </tr>
 </table>
 </div>
 </li>
 <li>
-<p>Under <strong>Step 2</strong>, click <strong>Edit</strong> and:</p>
+<p>Under <strong>Step 2</strong>:</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
 <p>Choose your Git Provider from the dropdown menu.</p>
 </li>
 <li>
-<p>Enter your <a href="#Clone the Hello SaaS repo">the remote git repo URL</a> you created earlier.</p>
-</li>
-</ol>
-</div>
+<p>Enter your <a href="#Clone the Hello SaaS repo">remote git repo URL</a>.</p>
 </li>
 <li>
-<p>Copy the Webhook URL, Webhook Content Type, and Webhook Secret.</p>
+<p>Click <strong>Apply</strong>.</p>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -411,11 +351,42 @@ When you click the <strong>Git</strong> option, the SSH Public Key is generated 
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-You will need these for setting up the webhook for your git hosting service. The webhook URL is generated based on your subscription ID and git hosting service provider (<em>such as Bitbucket or GitHub</em>).
+The webhook URL is generated based on your subscription ID and git hosting service provider (<em>such as Bitbucket or GitHub</em>)
 </td>
 </tr>
 </table>
 </div>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Under <strong>Step 3</strong>:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Copy the Webhook URL, Webhook Content Type (if GitHub), and Webhook Secret.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+You will need these for setting up the webhook for your git hosting service.
+</td>
+</tr>
+</table>
+</div>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p><span class="d-get">optional</span> Under <strong>Step 4</strong>, try out our <a href="../" class="page">Getting started tutorial</a> which includes sample project to try out Magnolia SaaS.</p>
+</li>
+<li>
+<p>Finally, Under <strong>Step 5</strong> sync your repository to your subscription by clicking <strong>Sync now</strong>.</p>
 </li>
 </ol>
 </div>

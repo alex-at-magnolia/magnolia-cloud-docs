@@ -3109,11 +3109,6 @@ Typically users speak to Magnolia via a microphone and the speech
 recognition service translates their voice data into text. The periscope
 executes that text like a normal text query from the user.</p>
 </div>
-<div class="paragraph">
-<p>The default Speech recognition implementation uses
-<a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API">Web
-Speech API</a>.</p>
-</div>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -3122,9 +3117,14 @@ Speech API</a>.</p>
 </td>
 <td class="content">
 <div class="paragraph">
-<p>Check which browsers are supported by the Web Speech API
-<a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API#Browser_compatibility">here</a>.
-At the time of publication, only Google Chrome was supported.</p>
+<p>The speech recognition feature depends on browser capabilities to convert speech to text. The default speech recognition implementation uses the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API">Web Speech API</a>.</p>
+</div>
+<div class="paragraph">
+<p>By modifying the value of the <a href="https://wicg.github.io/speech-api/#speechreco-attributes"><code>lang</code> attribute</a> of the API you can set the language of the recognition.</p>
+</div>
+<div class="paragraph">
+<p>To find out which web browsers support this API, see
+<a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API#Browser_compatibility">Web Speech API: Browser compatibility</a>.</p>
 </div>
 </td>
 </tr>

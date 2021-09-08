@@ -82,6 +82,9 @@
     <a class="nav-link" href="../../sign-up/">Sign up to Magnolia SaaS</a>
   </li>
   <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../login/">Log in to Magnolia SaaS</a>
+  </li>
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../../faqs/">FAQs</a>
   </li>
 </ul>
@@ -145,9 +148,6 @@
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../../developers/">Developers</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../../developers/authentication/">Log in to Magnolia SaaS</a>
-  </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../../developers/connect-with-git/">Connect with Git</a>
   </li>
@@ -249,7 +249,7 @@
 </ul>
 </div>
 <div class="paragraph">
-<p>This page describes each of the usage reports available for Magnolia SaaS as well as instructing you on how to <a href="#_view_usage_reports">view</a>, <a href="#_download_usage_reports">download</a>, and <a href="#_subscribe_to_usage_reports">subscribe</a> to usage reports.</p>
+<p>This page describes each of the usage reports available for Magnolia SaaS as well as instructing you on how to <a href="#View usage reports">view</a>, <a href="#Download usage reports">download</a>, and <a href="#Subscribe to usage reports">subscribe</a> to usage reports.</p>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -289,7 +289,7 @@ Status metrics do not accumulate over time and do not reset for for the next bil
 <dl>
 <dt class="hdlist1">The metrics displayed here are</dt>
 <dd>
-<p><a href="#magnolia-saas:ROOT:subscription-management/usage-reports.adoc#status-metrics" class="page unresolved">Status metrics</a></p>
+<p><a href="#status-metrics">Status metrics</a></p>
 </dd>
 </dl>
 </div>
@@ -298,7 +298,7 @@ Status metrics do not accumulate over time and do not reset for for the next bil
 </div>
 <div class="imageblock zoom">
 <div class="content">
-<img src="magnolia-saas:ROOT:usage-reports/usage-report-users.png" alt="usage report users">
+<img src="../../_images/usage-reports/usage-report-users.png" alt="usage report users">
 </div>
 </div>
 <div class="admonitionblock note alt">
@@ -315,13 +315,13 @@ Status metrics do not accumulate over time and do not reset for for the next bil
 <div class="ulist">
 <ul>
 <li>
-<p>the <a href="#magnolia-saas:ROOT:user-management/user-roles.adoc" class="page unresolved">Subscription Owner</a></p>
+<p>the <a href="../../user-management/user-roles/" class="page">Subscription Owner</a></p>
 </li>
 <li>
 <p>pending users (<em>those who have yet to accept the invite</em>)</p>
 </li>
 <li>
-<p>all users who have accepted the Magnolia SaaS invitation regardless of their <a href="#magnolia-saas:ROOT:user-management/user-roles.adoc" class="page unresolved">role</a></p>
+<p>all users who have accepted the Magnolia SaaS invitation regardless of their <a href="../../user-management/user-roles/" class="page">role</a></p>
 </li>
 </ul>
 </div>
@@ -341,7 +341,7 @@ Status metrics do not accumulate over time and do not reset for for the next bil
 <dl>
 <dt class="hdlist1">The metrics displayed here are</dt>
 <dd>
-<p><a href="#magnolia-saas:ROOT:subscription-management/usage-reports.adoc#cumulative-metrics" class="page unresolved">Cumulative metrics</a></p>
+<p><a href="#cumulative-metrics">Cumulative metrics</a></p>
 </dd>
 </dl>
 </div>
@@ -367,7 +367,7 @@ Status metrics do not accumulate over time and do not reset for for the next bil
 </div>
 <div class="imageblock zoom">
 <div class="content">
-<img src="magnolia-saas:ROOT:usage-reports/usage-report-storage.png" alt="usage report storage">
+<img src="../../_images/usage-reports/usage-report-storage.png" alt="usage report storage">
 </div>
 </div>
 </div>
@@ -379,7 +379,7 @@ Status metrics do not accumulate over time and do not reset for for the next bil
 <dl>
 <dt class="hdlist1">The metrics displayed here are</dt>
 <dd>
-<p><a href="#magnolia-saas:ROOT:subscription-management/usage-reports.adoc#cumulative-metrics" class="page unresolved">Cumulative metrics</a>.</p>
+<p><a href="#cumulative-metrics">Cumulative metrics</a>.</p>
 </dd>
 </dl>
 </div>
@@ -405,7 +405,7 @@ Status metrics do not accumulate over time and do not reset for for the next bil
 </div>
 <div class="imageblock zoom">
 <div class="content">
-<img src="magnolia-saas:ROOT:usage-reports/usage-report-api.png" alt="usage report api">
+<img src="../../_images/usage-reports/usage-report-api.png" alt="usage report api">
 </div>
 </div>
 </div>
@@ -417,7 +417,7 @@ Status metrics do not accumulate over time and do not reset for for the next bil
 <dl>
 <dt class="hdlist1">The metrics displayed here are</dt>
 <dd>
-<p><a href="#magnolia-saas:ROOT:subscription-management/usage-reports.adoc#cumulative-metrics" class="page unresolved">Cumulative metrics</a></p>
+<p><a href="#cumulative-metrics">Cumulative metrics</a></p>
 </dd>
 </dl>
 </div>
@@ -426,36 +426,10 @@ Status metrics do not accumulate over time and do not reset for for the next bil
 </div>
 <div class="imageblock zoom">
 <div class="content">
-<img src="magnolia-saas:ROOT:usage-reports/usage-report-downloads.png" alt="usage report downloads">
+<img src="../../_images/usage-reports/usage-report-downloads.png" alt="usage report downloads">
 </div>
 </div>
 <hr>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_interact_with_the_usage_reports"><a class="anchor" href="#_interact_with_the_usage_reports"></a>Interact with the usage reports</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>The following sections show you how to interact with the usage reports.</p>
-</div>
-<div class="sect2">
-<h3 id="_download_usage_reports"><a class="anchor" href="#_download_usage_reports"></a>Download usage reports</h3>
-<div class="paragraph">
-<p>text</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_view_usage_reports"><a class="anchor" href="#_view_usage_reports"></a>View usage reports</h3>
-<div class="paragraph">
-<p>text</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_subscribe_to_usage_reports"><a class="anchor" href="#_subscribe_to_usage_reports"></a>Subscribe to usage reports</h3>
-<div class="paragraph">
-<p>text</p>
-</div>
-</div>
 </div>
 </div>
 <nav class="pagination">
