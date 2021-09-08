@@ -406,7 +406,47 @@ The SSH Public Key is generated when we create your subscription.
 <p>Choose your Git Provider from the dropdown menu.</p>
 </li>
 <li>
-<p>Enter your remote git repo URL.</p>
+<p>Input your Clone SSH URL.</p>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>You can copy this URL from your remote git repository.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">GitHub</th>
+<th class="tableblock halign-left valign-top">Bitbucket</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock zoom">
+<div class="content">
+<img src="../_images/git/github-clone.jpg" alt="github clone">
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock zoom">
+<div class="content">
+<img src="../_images/git/bitbucket-clone.jpg" alt="bitbucket clone">
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</table>
+</div>
 </li>
 <li>
 <p>Click <strong>Apply</strong>.</p>
@@ -449,7 +489,7 @@ You will need these for setting up the webhook for your git hosting service.
 </div>
 </li>
 <li>
-<p><span class="d-get">optional</span> Under <strong>Step 4</strong>, try out our <a href="../../hello-saas/" class="page">Getting started tutorial</a> which includes sample project to try out Magnolia SaaS.</p>
+<p><span class="get">optional</span> Under <strong>Step 4</strong>, try out our <a href="../../hello-saas/" class="page">Getting started tutorial</a> which includes sample project to try out Magnolia SaaS.</p>
 </li>
 <li>
 <p>Finally, Under <strong>Step 5</strong> sync your repository to your subscription by clicking <strong>Sync now</strong>.</p>
@@ -482,13 +522,13 @@ You will need these for setting up the webhook for your git hosting service.
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Under <strong>Payload URL</strong>, add the Webhook URL that was generated when you <a href="#_create_webhook_url">created your webhook in Magnolia</a>.</p>
+<p>Under <strong>Payload URL</strong>, add the <a href="#_create_webhook_url">Webhook URL</a>.</p>
 </li>
 <li>
 <p>Under <strong>Content type</strong>, select <code>application/json</code> from the dropdown menu.</p>
 </li>
 <li>
-<p>Add the <strong>Secret</strong> that was generated when you <a href="#_create_webhook_url">created your webhook in Magnolia</a>.</p>
+<p>Add the <strong>Secret</strong>.</p>
 </li>
 <li>
 <p>Under <strong>Which events would you like to trigger your webhook</strong>, keep the default value of <strong>Just the <code>push</code> event</strong>.</p>
@@ -501,7 +541,7 @@ You will need these for setting up the webhook for your git hosting service.
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Add the Public Key that was generated when you <a href="#_create_webhook_url">created your webhook in Magnolia</a>.</p>
+<p>Add the <a href="#_create_webhook_url">SSH Public Key</a>.</p>
 </li>
 </ol>
 </div>
@@ -554,10 +594,10 @@ For more information on GitHub webhooks, see <a href="https://docs.github.com/en
 <p>Give your webhook a <strong>Name</strong>.</p>
 </li>
 <li>
-<p>Add the secret that was generated when you <a href="#_create_webhook_url">created your webhook in Magnolia</a>.</p>
+<p>Add the secret.</p>
 </li>
 <li>
-<p>Add the Webhook URL that was generated when you <a href="#_create_webhook_url">created your webhook in Magnolia</a>.</p>
+<p>Add the <a href="#_create_webhook_url">Webhook URL</a>.</p>
 </li>
 <li>
 <p>Under <strong>Events</strong>, keep the default <strong>Push</strong> event that will trigger your webhook.</p>
@@ -573,7 +613,7 @@ For more information on GitHub webhooks, see <a href="https://docs.github.com/en
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Add the Public Key that was generated when you <a href="#_create_webhook_url">created your webhook in Magnolia</a> with a <code>Read</code> permission.</p>
+<p>Add the <a href="#_create_webhook_url">SSH Public Key</a> with a <code>Read</code> permission.</p>
 </li>
 </ol>
 </div>
