@@ -272,6 +272,9 @@ You cannot change <code>main</code> as the default branch.
 <p>You must have a Magnolia SaaS subscription.</p>
 </li>
 <li>
+<p>You should be logged in to <a href="https://id.beta.de.magnolia-cloud.com" target="_blank" rel="noopener">Magnolia SaaS</a></p>
+</li>
+<li>
 <p>You must have your own git repository.</p>
 </li>
 <li>
@@ -281,18 +284,6 @@ You cannot change <code>main</code> as the default branch.
 </div>
 </li>
 </ul>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-We plan on adding more git providers including GitLab in the near future.
-</td>
-</tr>
-</table>
 </div>
 </div>
 <div class="sect2">
@@ -315,10 +306,7 @@ We plan on adding more git providers including GitLab in the near future.
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Log in to <a href="https://id.beta.de.magnolia-cloud.com" target="_blank" rel="noopener">Magnolia SaaS</a>.</p>
-</li>
-<li>
-<p>Hover over your profile in the top right corner and click <strong>Git configuration</strong>.</p>
+<p>Go to your profile in the top right corner and click <strong>Git configuration</strong> from the dropdown menu.</p>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -349,7 +337,7 @@ The SSH Public Key is generated when we create your subscription.
 </td>
 <td class="content">
 <div class="paragraph">
-<p>You can copy this URL from your remote git repository.</p>
+<p>Copy this URL from your remote git repository.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -476,6 +464,18 @@ You will need these for setting up the webhook for your git hosting service.
 <ol class="loweralpha" type="a">
 <li>
 <p>Add the <a href="#_create_webhook_url">SSH Public Key</a>.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+There&#8217;s no need for <code>write</code> access.
+</td>
+</tr>
+</table>
+</div>
 </li>
 </ol>
 </div>
@@ -491,7 +491,7 @@ You will need these for setting up the webhook for your git hosting service.
 <table>
 <tr>
 <td><i class="conum" data-value="1"></i><b>1</b></td>
-<td>Doing this push after configuring the webhook, syncs up the webhook so that the ingestion service is immediately aware of changes that you make.</td>
+<td>This syncs up the webhook so that the ingestion service is immediately aware of changes that you make.</td>
 </tr>
 </table>
 </div>
@@ -563,7 +563,7 @@ For more information on GitHub webhooks, see <a href="https://docs.github.com/en
 <table>
 <tr>
 <td><i class="conum" data-value="1"></i><b>1</b></td>
-<td>Doing this push after configuring the webhook, syncs up the webhook so that the ingestion service is immediately aware of changes that you make.</td>
+<td>This syncs up the webhook so that the ingestion service is immediately aware of changes that you make.</td>
 </tr>
 </table>
 </div>
