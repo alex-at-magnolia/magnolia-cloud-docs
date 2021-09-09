@@ -249,8 +249,21 @@
 <p>Set your <code>remote origin</code> to the remote repository you just created. <em>(GitHub and Bitbucket)</em></p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-sh hljs" data-lang="sh">git remote add origin &lt;/path/to/remote/repo&gt;</code></pre>
+<pre class="highlightjs highlight"><code class="language-sh hljs" data-lang="sh">git remote remove origin <i class="conum" data-value="1"></i><b>(1)</b>
+git remote add origin &lt;/path/to/remote/repo&gt; <i class="conum" data-value="2"></i><b>(2)</b></code></pre>
 </div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Removes the current origin so you can use your preferred git provider.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>Adds the remote origin of your preferred git provider.</td>
+</tr>
+</table>
 </div>
 </li>
 </ol>
