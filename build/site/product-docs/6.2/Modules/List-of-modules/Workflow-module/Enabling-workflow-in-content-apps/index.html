@@ -6,7 +6,7 @@
     <title>Enabling workflow in content apps :: Magnolia Cloud Service Internal Documentation</title>
     <link rel="canonical" href="https://saas-docs.beta.de.magnolia-cloud.com/saas/product-docs/6.2/Modules/List-of-modules/Workflow-module/Enabling-workflow-in-content-apps/">
     <link rel="prev" href="../Magnolia-four-eye-workflow/">
-    <link rel="next" href="../Enabling-workflow-in-content-apps-with-YAML/">
+    <link rel="next" href="../Creating-a-custom-workflow-process/">
     <meta name="keywords" content="workflow">
     <meta name="generator" content="Antora 2.3.3">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
@@ -1514,9 +1514,6 @@
     <a class="nav-link" href="./">Enabling workflow in content apps</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="../Enabling-workflow-in-content-apps-with-YAML/">Enabling workflow in content apps with YAML</a>
-  </li>
-  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../Creating-a-custom-workflow-process/">Creating a custom workflow process</a>
   </li>
   <li class="nav-item" data-depth="4">
@@ -2365,117 +2362,126 @@
   <div class="content">
 <article class="doc">
 <h1 class="page">Enabling workflow in content apps</h1>
-<div class="sect1">
-<h2 id="_publishing_content"><a class="anchor" href="#_publishing_content"></a>Publishing content</h2>
+<div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>To launch the publication of content in content apps, trigger the
-<code>publish</code> action in your app’s actionbar. Configure the action in the
-module configuration under
-<code>/modules/&lt;module-name&gt;/apps/&lt;app-name&gt;/subApps/browser/actions</code>. The
-configuration should look similar to the Assets app, for example.</p>
-</div>
-<div class="paragraph">
-<p>This is what a non-workflow configuration looks like. The configuration
-launches the <code>activate</code> command inside the <code>versioned</code> catalog which is
-part of the Publishing module. The action creates a new version of the
-published item and and activates it to the public instance but does not
-trigger a workflow.</p>
-</div>
-<div class="paragraph">
-<p><span class="image zoom"><img src="../../../../_images/Screen-Shot-2014-03-07-at-16-27-42.png" alt="image"></span></p>
-</div>
-<div class="paragraph">
-<p>Properties related to publishing:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>class</code>: Specifies an action definition class.</p>
-</li>
-<li>
-<p><code>catalog</code>: References a command
-<a href="../../../../Developing/Commands/#_catalogs" class="page">catalog</a>.</p>
-</li>
-<li>
-<p><code>command</code>: A <a href="../../../../Developing/Commands/" class="page">command</a> to be launched inside
-the catalog.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Extendable action skeleton</p>
-</div>
-<div class="paragraph">
-<p>Before you change the action to trigger a workflow, look at the
-available configuration in the Workflow module.</p>
-</div>
-<div class="paragraph">
-<p><span class="image zoom"><img src="../../../../_images/Screen-Shot-2014-07-14-at-12-13-18.png" alt="image"></span></p>
-</div>
-<div class="paragraph">
-<p>You can choose from two action configurations:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>publish</code>: Launches the workflow directly. Use this action when you do
-not want to give an editor the possibility to schedule publishing to a
-future date or add a comment.</p>
-</li>
-<li>
-<p><code>schedulePublication</code>: Opens a dialog where the editor can add a
-publication date and a comment.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>The command name is the same, <code>activate</code>, but the commands reside in
-different catalogs. The default non-workflow action launches an
-<code>activate</code> command from the <code>versioned</code> catalog in the Activation
-module. The other <code>activate</code> command is in the <code>workflow</code> catalog in the
-Workflow module.</p>
-</div>
-<div class="paragraph">
-<p>Use the <code>publish</code> and <code>schedulePublication</code> actions to configure
-workflow for any content app or extend them in your own action
-configuration.</p>
+<p>The Workflow module provides a four-eye content approval workflow preconfigured in the Pages app.
+It is possible, however, for any content app to have a workflow attached to it. If the app already exists, a decoration
+file can be used. For a custom content app, it is easiest to configure the workflow directly in the app descriptor.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_adding_fields_to_publication_dialog"><a class="anchor" href="#_adding_fields_to_publication_dialog"></a>Adding fields to publication dialog</h2>
+<h2 id="_existing_content_apps"><a class="anchor" href="#_existing_content_apps"></a>Existing content apps</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>When using workflow, the editor can add a comment and set the
-publication to a future date. The publication dialog provides fields for
-enter this information.</p>
+<p>With out-of-the-box apps, the best approach is to use a decoration file.
+Using a decoration file allows you to change the configuration in a target app without having to update a YAML-based definition.
+For example, to add a workflow to the Assets app, override the configuration for the <code>publish</code> and <code>unpublish</code> actions.</p>
+</div>
+<div class="listingblock">
+<div class="title">/my-module/decorations/dam-app/apps/dam.yaml</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yml hljs" data-lang="yml">subApps:
+  jcrBrowser:
+    actions:
+      publish: !override &amp;publish
+        $type: openDialogAction
+        dialogId: workflow-pages:publish
+        icon: icon-publish
+        availability:
+          rules:
+            notDeleted: &amp;notDeleted
+              $type: jcrIsDeletedRule
+              negate: true
+            isPublishable: &amp;isPublishable
+              $type: jcrPublishableRule
+      publishRecursive: !override
+        $type: openDialogAction
+        dialogId: workflow-pages:publishRecursive
+        icon: icon-publish-incl-sub
+        availability:
+          rules:
+            notDeleted: *notDeleted
+            hasSubPages:
+              $type: jcrHasChildrenRule
+              nodeTypes:
+                - mgnl:folder
+                - mgnl:asset
+            isPublishable: *isPublishable
+      unpublish: !override &amp;unpublish
+        $type: openDialogAction
+        dialogId: workflow-pages:unPublish
+        icon: icon-unpublish
+        availability:
+          rules:
+            notDeleted: *notDeleted
+            isPublished:
+              $type: jcrPublishedRule
+      publishDeletion: !override
+        $type: openDialogAction
+        dialogId: workflow-pages:publishDeletion
+        icon: icon-unpublish
+        availability:
+          multiple: true
+          rules:
+            isDeleted: &amp;isDeleted
+              $type: jcrIsDeletedRule
+              negate: false</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_custom_content_apps"><a class="anchor" href="#_custom_content_apps"></a>Custom content apps</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>With custom apps, the best approach is to configure the actions directly in the YAML descriptor.
+Simply copy the actions from the above decoration file and paste them into the <code>actions</code> block of your browser subapp.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_configuration"><a class="anchor" href="#_configuration"></a>Configuration</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The above is just one way to configure a workflow for the Assets app. Other options exist if you want to configure things differently.</p>
+</div>
+<div class="sect2">
+<h3 id="_commands"><a class="anchor" href="#_commands"></a>Commands</h3>
+<div class="paragraph">
+<p>The Workflow module provides two commands for publication (<code>activate</code> and <code>deactivate</code>)
+that can be configured in <code>/modules/workflow/commands/workflow</code>. Both <code>activate</code> and
+<code>deactivate</code> are command chains that call <code>VersionCommand</code> before the respective actions.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_scheduling"><a class="anchor" href="#_scheduling"></a>Scheduling</h3>
+<div class="paragraph">
+<p>The above workflow supports scheduling, which is how the Pages app works out of the box. You can schedule
+publication and unpublication for a later date but still execute the workflow immediately.</p>
 </div>
 <div class="paragraph">
-<p><span class="image zoom"><img src="../../../../_images/Screen-Shot-2014-07-14-at-11-32-15.png" alt="image" width="500"></span></p>
+<p>Default scheduling is configured in the
+<a href="https://git.magnolia-cms.com/projects/ENTERPRISE/repos/workflow/browse/magnolia-module-workflow-pages/src/main/resources/workflow-pages/includes/publish.yaml" target="_blank" rel="noopener"><code>publish</code> dialog</a>.
+It is possible to disable scheduling by deleting <code>publicationDate</code> from the dialog.</p>
 </div>
-<div class="paragraph">
-<p>To open the dialog,
-<a href="../../../../Templating/Dialog-definition/#_referencing_dialogs" class="page">reference</a> the
-dialog definition in the <code>dialogName</code> property. Here is an example from
-the <code>schedulePublication</code> action:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yml hljs" data-lang="yml">form:
+  properties:
+    comment:
+      $type: textField
+      rows: 5
+  publicationDate:
+    $type: dateField
+    time: true
+
+actions:
+  commit:
+    class: info.magnolia.module.workflow.action.WorkflowCommandActionDefinition</code></pre>
 </div>
-<div class="paragraph">
-<p><span class="image zoom"><img src="../../../../_images/Screen-Shot-2014-07-14-at-11-37-04.png" alt="image"></span></p>
 </div>
-<div class="paragraph">
-<p>The <code>formTypes</code> configuration tells the form builder what type of input
-is expected in the form fields. The types are then mapped to the form
-configuration using the node name such as <code>publicationDate</code> and
-<code>comment</code>:</p>
-</div>
-<div class="paragraph">
-<p><span class="image zoom"><img src="../../../../_images/Screen-Shot-2014-07-14-at-11-35-27.png" alt="image"></span></p>
-</div>
-<div class="paragraph">
-<p>The <code>presenterClass</code> inside the dialogs definition extends the
-<code>FormDialogPresenter</code> by the necessary functionality for this manual
-mapping.</p>
 </div>
 </div>
 </div>
@@ -2486,44 +2492,33 @@ mapping.</p>
 <p>You can pass custom parameters from your action definition into the
 process using the <code>params</code> node in the action configuration. You can
 reference the parameters in the process as described in
-<a href="../Workflow-processes/" class="page">Input
+<a href="../Workflow-processes/#_input_and_output_parameters" class="page">Input
 and output parameters</a>.</p>
 </div>
-<div class="paragraph">
-<p><span class="image zoom"><img src="../../../../_images/Screen-Shot-2014-07-14-at-12-15-34.png" alt="image"></span></p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yml hljs" data-lang="yml">actions:
+  publish:
+    $type: openDialogAction
+    dialogId: workflow-pages:publish
+    icon: icon-publish
+    availability:
+      rules:
+        notDeleted: &amp;notDeleted
+          $type: jcrIsDeletedRule
+          negate: true
+        isPublishable: &amp;isPublishable
+          $type: jcrPublishableRule
+    params:
+      param1: value1
+      param2: value2</code></pre>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_example"><a class="anchor" href="#_example"></a>Example</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>In this example we enable workflow in the Assets app. Almost all
-properties are already defined in the configuration.</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Remove all properties from our activate action inside the assets app.</p>
-</li>
-<li>
-<p>Add an <code>extends</code> property. Set its value to the <code>schedulePublication</code>
-action.<br>
-<span class="image zoom"><img src="../../../../_images/Screen-Shot-2014-07-14-at-12-09-50.png" alt="image"></span></p>
-</li>
-<li>
-<p>Change the three remaining publication related actions. Extend the
-<code>activate</code> action you already did. Override properties to change the
-default behavior.<br>
-<span class="image zoom"><img src="../../../../_images/Screen-Shot-2014-07-14-at-12-11-37.png" alt="image"></span></p>
-</li>
-</ol>
 </div>
 </div>
 </div>
 <nav class="pagination">
   <span class="prev"><a href="../Magnolia-four-eye-workflow/">Magnolia four-eye workflow</a></span>
-  <span class="next"><a href="../Enabling-workflow-in-content-apps-with-YAML/">Enabling workflow in content apps with YAML</a></span>
+  <span class="next"><a href="../Creating-a-custom-workflow-process/">Creating a custom workflow process</a></span>
 </nav>
 </article>
 <aside class="toc sidebar" data-title="Contents" data-levels="2">

@@ -1514,9 +1514,6 @@
     <a class="nav-link" href="../../../Modules/List-of-modules/Workflow-module/Enabling-workflow-in-content-apps/">Enabling workflow in content apps</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="../../../Modules/List-of-modules/Workflow-module/Enabling-workflow-in-content-apps-with-YAML/">Enabling workflow in content apps with YAML</a>
-  </li>
-  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../../../Modules/List-of-modules/Workflow-module/Creating-a-custom-workflow-process/">Creating a custom workflow process</a>
   </li>
   <li class="nav-item" data-depth="4">
@@ -2384,7 +2381,7 @@ to the <code>superuser</code> role. This restriction is configured in the
 <a href="../../App-configuration/App-launcher-layout/" class="page">app launcher layout</a>.</p>
 </div>
 <div class="paragraph">
-<p>The app is configured in <code>/modules/jcr-browser-app/apps/jcr-browser</code>.</p>
+<p>The app is configured in <code>/jcr-browser/apps/jcr-browser-app.yaml</code>.</p>
 </div>
 </div>
 </div>
@@ -2437,17 +2434,18 @@ the same way as in any other app.</p>
 </li>
 </ul>
 </div>
-<div class="admonitionblock note">
+<div class="admonitionblock warning">
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-note" title="Note"></i>
+<i class="fa icon-warning" title="Warning"></i>
 </td>
 <td class="content">
 <div class="paragraph">
-<p>The <a href="../Configuration-app/" class="page">Configuration app</a> is
-essentially a JCR browser that displays the <code>config</code>
-<a href="../../../Administration/Architecture/Workspaces/" class="page">workspace</a>.</p>
+<p>Editing content directly in the JCR browser rather than in a dedicated app may damage
+the integrity of your data.
+Do not move nodes (such as components from one page area to another) as the dedicated app might apply additional constraints to the move operation.
+Publishing in the JCR browser might differ from publishing in a dedicated app because different rules might apply for including subnodes.</p>
 </div>
 </td>
 </tr>
@@ -2593,75 +2591,6 @@ definition</a>.</p>
 </tr>
 </tbody>
 </table>
-<div class="sect2">
-<h3 id="_editing_in_the_website_jcr_browser"><a class="anchor" href="#_editing_in_the_website_jcr_browser"></a>Editing in the website JCR browser</h3>
-<div class="admonitionblock warning">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-warning" title="Warning"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>Editing content directly in the JCR browser rather than in a dedicated app may damage
-the integrity of your data.</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>There are certain things that you can do in the JCR browser and not
-the editor. For example:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Add multiple similar components to a page using the <strong>Duplicate item</strong>
-action. This saves the time and effort of adding the components from
-scratch in the editor. Duplicates can be modified in the JCR browser or the editor.</p>
-</li>
-<li>
-<p>Add the same component to multiple pages. Duplicate a component in
-one page and then move the duplicate to the same area in one or more other pages.</p>
-</li>
-</ul>
-</div>
-<div class="admonitionblock warning">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-warning" title="Warning"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>Do not move components from one page area to another. For seamless publishing, your page
-content must always comply with the options in the template.</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_publishing_in_the_website_jcr_browser"><a class="anchor" href="#_publishing_in_the_website_jcr_browser"></a>Publishing in the website JCR browser</h3>
-<div class="paragraph">
-<p>Publishing in the JCR browser is different from publishing in
-the Pages app:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>When you publish a page in the JCR browser, only the page and its
-properties are published.</p>
-</li>
-<li>
-<p>When you publish a page in the Pages app, the page and <em>all</em> its
-children (properties, areas and components) are published.</p>
-</li>
-</ul>
-</div>
-</div>
 </div>
 </div>
 <nav class="pagination">

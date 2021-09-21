@@ -1514,9 +1514,6 @@
     <a class="nav-link" href="Enabling-workflow-in-content-apps/">Enabling workflow in content apps</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="Enabling-workflow-in-content-apps-with-YAML/">Enabling workflow in content apps with YAML</a>
-  </li>
-  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="Creating-a-custom-workflow-process/">Creating a custom workflow process</a>
   </li>
   <li class="nav-item" data-depth="4">
@@ -2519,29 +2516,19 @@ the core module.</p>
 <div class="sect2">
 <h3 id="_compatibility_module"><a class="anchor" href="#_compatibility_module"></a>Compatibility module</h3>
 <div class="paragraph">
-<p>We have been gradually removing the old Content API from our modules
-since Magnolia 5.6. If you have custom code relying on classes from the
-old Workflow module then you must do one of two things:</p>
+<p>If you have custom code relying on classes from the <em>Magnolia 5 UI</em>
+Workflow module, you must do one of two things:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Update your code for the
-<a href="https://jira.magnolia-cms.com/browse/MGNLWORKFLOW-359">new version of the
-Workflow module</a>.</p>
+<p>Update your code for the <em>Magnolia 6 UI</em> Workflow module.</p>
 </li>
 <li>
-<p>Or you can use the <code>magnolia-workflow-compatibility</code> module together
-with the <code>magnolia-core-compatibility</code> and the
-<code>magnolia-diff-compatibility</code> modules.</p>
+<p>Use the <code>magnolia-workflow-compatibility</code> module together with the
+<code>magnolia-core-compatibility</code> and <code>magnolia-diff-compatibility</code> modules.</p>
 </li>
 </ul>
-</div>
-<div class="paragraph">
-<p><strong>With maven:</strong></p>
-</div>
-<div class="paragraph">
-<p>Add the following snippet to you pom file:</p>
 </div>
 </div>
 </div>

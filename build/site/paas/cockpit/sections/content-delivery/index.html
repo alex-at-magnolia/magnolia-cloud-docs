@@ -231,7 +231,147 @@
 <h2 id="_cdn_statistics"><a class="anchor" href="#_cdn_statistics"></a>CDN statistics</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>info on CDN stats por favor</p>
+<p>You can view your CDN statistics for an active domain in a content delivery server.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+You must register a domain in the cockpit. If you haven&#8217;t done that, see <a href="#_manage_cdn_domains">Manage CDN domains</a>.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The statistics sections remain empty until you enable a domain for the content delivery server.
+</td>
+</tr>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_view_stats"><a class="anchor" href="#_view_stats"></a>View stats</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Content delivery &gt; Statistics</strong>.</p>
+</li>
+<li>
+<p>Select the desired <strong>domain</strong> from the dropdown list.</p>
+</li>
+<li>
+<p>Select the <strong>Date Range</strong> for the statistics.</p>
+</li>
+</ol>
+</div>
+<div class="imageblock zoom">
+<div class="content">
+<img src="../../_images/stats-choose-filters.gif" alt="stats choose filters">
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 1. Available statistics</caption>
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 70%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Statistic</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Hit Ration</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Rate of hits over all requests per second in the last hour.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Hits</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Requests per second with <code>hit</code> cache status in the last hour.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Miss</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Requests per second with <code>miss</code> cache status in the last hour.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Miss Time</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Requests per millisecond with <code>miss</code> cache status in the last hour.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Requests</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Requests per second in the last hour.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Errors</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Requests per second with <code>error</code> cache status in the last hour.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>GRAPHS</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Requests graph</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Number of requests over a selected time range.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Bandwidth graph</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Number of bytes transmitted over a selected time range.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Requests per Datacenter graph</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Number of requests per datacenter over a selected time range.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_purge_cdn"><a class="anchor" href="#_purge_cdn"></a>Purge CDN</h3>
+<div class="paragraph">
+<p>To purge the cache from the content delivery server for the domains in the selector, click <strong>Purge CDN</strong>.</p>
+</div>
+<div class="imageblock zoom">
+<div class="content">
+<img src="../../_images/purge-cdn.jpg" alt="purge cdn">
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+It does not currently purge your magnolia instances cache.
+</td>
+</tr>
+</table>
+</div>
 </div>
 </div>
 </div>
@@ -249,7 +389,7 @@
 </td>
 <td class="content">
 <div class="paragraph">
-<p>The instructions below assume you have a Magnolia PaaS subscription and the appropriate permission on the Cockpit.</p>
+<p>The instructions below assume you have a Magnolia PaaS subscription and the appropriate permission on the Cockpit. The screenshots are in dark mode.</p>
 </div>
 <div class="paragraph">
 <p>If you are unable to access the <strong>Content delivery</strong> section of the Cockpit, please contact the <a href="https://mgnl.io/cloud-helpdesk" target="_blank" rel="noopener">Helpdesk</a>.</p>
@@ -288,13 +428,85 @@
 <div class="sect2">
 <h3 id="_verify_domain"><a class="anchor" href="#_verify_domain"></a>Verify domain</h3>
 <div class="paragraph">
-<p>instructions</p>
+<p>Before adding a domain to the system, we make sure that you own the domain. You have to create a <code>CNAME</code> record for your provided domain to the id provided in the verification dialog.</p>
+</div>
+<div class="listingblock">
+<div class="title">Example</div>
+<div class="content">
+<pre class="highlightjs highlight"><code>_acme-challenge.domain.com CNAME &lt;id&gt;.auth.mirohost.ch <i class="conum" data-value="1"></i><b>(1)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Where <code>_acme-challenge.domain.com</code> is your domain and the <code>&lt;id&gt;.auth.mirohost.ch</code> is the id from the verification dialog.</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Once you have created the <code>CNAME</code> record following the dialog instructions, you can proceed in the verify dialog.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Content delivery &gt; Domains</strong>.</p>
+<div class="paragraph">
+<p><span class="image zoom"><img src="../../_images/domains-tab.jpg" alt="domains tab"></span></p>
+</div>
+</li>
+<li>
+<p>Click <strong>Verify</strong> next to the domain you wish to verify.</p>
+<div class="paragraph">
+<p><span class="image zoom"><img src="../../_images/domains-verify.jpg" alt="domains verify"></span></p>
+</div>
+</li>
+<li>
+<p>In the pop-up window, click <strong>Verify</strong> once more.</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+We check you own the domain, if it is successfully verified, a new ingress and certificate are created and you can then start using the domain publicly. Certificates are managed automatically by us.
+</td>
+</tr>
+</table>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_enable_cdn"><a class="anchor" href="#_enable_cdn"></a>Enable CDN</h3>
 <div class="paragraph">
-<p>instructions</p>
+<p>To be able to make the CDN on your domain, you must first create a <code>CNAME</code> to point your domain to the <a href="https://www.fastly.com/" target="_blank" rel="noopener">Fastly server <code>j.sni.global.fastly.net</code></a>. Enabling a CDN puts your domain behind a CDN provider.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Example</dt>
+<dd>
+<p><code>domain.com</code> <code>CNAME</code> <code>j.sni.global.fastly.net</code></p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Content delivery &gt; Domains</strong>.</p>
+<div class="paragraph">
+<p><span class="image zoom"><img src="../../_images/domains-tab.jpg" alt="domains tab"></span></p>
+</div>
+</li>
+<li>
+<p>Click on the <strong>Enable CDN button</strong> for the previously verified domain, and it automatically enables your domain on the CDN.</p>
+<div class="paragraph">
+<p><span class="image zoom"><img src="../../_images/domains-enable-cdn.jpg" alt="domains enable cdn"></span></p>
+</div>
+</li>
+</ol>
+</div>
+</dd>
+</dl>
 </div>
 </div>
 </div>

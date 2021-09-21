@@ -1513,9 +1513,6 @@
     <a class="nav-link" href="../Enabling-workflow-in-content-apps/">Enabling workflow in content apps</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="../Enabling-workflow-in-content-apps-with-YAML/">Enabling workflow in content apps with YAML</a>
-  </li>
-  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../Creating-a-custom-workflow-process/">Creating a custom workflow process</a>
   </li>
   <li class="nav-item" data-depth="4">
@@ -2443,9 +2440,6 @@ the workflow will enter a revision cycle where the editor is informed about reas
 </table>
 </div>
 <div class="paragraph">
-<p><span class="image zoom"><img src="../../../../_images/6-1-magnoliaFourEyeWorkflow-submitDialog.png" alt="image" width="600"></span></p>
-</div>
-<div class="paragraph">
 <p>Once Eric clicks the publish button, the workflow is started and a task is created for members the publishers group.</p>
 </div>
 <div class="admonitionblock note">
@@ -2493,16 +2487,7 @@ If you want to have a different publishing group based on content path (or site)
 <p><span class="image zoom"><img src="../../../../_images/6-1-magnoliaFourEyeWorkflow-newTask.png" alt="image" height="106"></span></p>
 </div>
 <div class="paragraph">
-<p>If he opens the Tasks app, he sees a new task created by Eric:</p>
-</div>
-<div class="paragraph">
-<p><span class="image zoom"><img src="../../../../_images/6-1-magnoliaFourEyeWorkflow-NewTask-app.png" alt="image" width="600"></span></p>
-</div>
-<div class="paragraph">
-<p>Double clicking on the task shows the details in the message view and the actions which can be performed on the task.</p>
-</div>
-<div class="paragraph">
-<p><span class="image zoom"><img src="../../../../_images/6-1-magnoliaFourEyeWorkflow-newTask-details.png" alt="image" width="600"></span></p>
+<p>If he opens the Tasks app, he sees a new task created by Eric. Double-clicking the task shows the details in the message view and the actions that can be performed on the task.</p>
 </div>
 <div class="paragraph">
 <p>From this message view a user can take these actions:</p>
@@ -2560,7 +2545,7 @@ If you want to have a different publishing group based on content path (or site)
 </tbody>
 </table>
 <div class="paragraph">
-<p>The message view shown above is configured in the pages app here <code>/modules/pages/messageViews/publish</code>. There is a message view configured for <code>publish</code> and <code>unpublish</code> which extend from the Workflow module here <code>/modules/workflow/messageViews/publish</code>.</p>
+<p>The message view shown above is configured in the Pages app (<code>/modules/pages-app/messageViews/publish</code>). There is a message view configured for <code>publish</code> and <code>unpublish</code> in the Workflow module (<code>/modules/workflow/messageViews/publish</code>).</p>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -2577,7 +2562,7 @@ If you want to have a different publishing group based on content path (or site)
 </table>
 </div>
 <div class="paragraph">
-<p>The message views are then configured to the task here <code>/modules/workflow-jbpm/tasks/publish/viewMapping</code>. The <code>viewMapping</code> configuration tells the system which <code>messageView</code> to display when viewing the details of the task. This is configured on a workspace by workspace basis or using a default.</p>
+<p>The message views are configured for the task in <code>/modules/workflow-jbpm/tasks/publish/viewMapping</code>. The <code>viewMapping</code> configuration tells the system which <code>messageView</code> to display when viewing the task details. This is configured per workspace or using a default.</p>
 </div>
 </div>
 </div>

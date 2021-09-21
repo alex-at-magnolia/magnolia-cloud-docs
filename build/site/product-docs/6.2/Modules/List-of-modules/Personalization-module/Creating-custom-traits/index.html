@@ -1514,9 +1514,6 @@
     <a class="nav-link" href="../../Workflow-module/Enabling-workflow-in-content-apps/">Enabling workflow in content apps</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="../../Workflow-module/Enabling-workflow-in-content-apps-with-YAML/">Enabling workflow in content apps with YAML</a>
-  </li>
-  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../../Workflow-module/Creating-a-custom-workflow-process/">Creating a custom workflow process</a>
   </li>
   <li class="nav-item" data-depth="4">
@@ -2371,11 +2368,6 @@
 <p>This tutorial takes you through the process of creating a custom
 <a href="../../../../Features/Personalization/#_traits_describe_the_visitors" class="page">trait</a>.</p>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_trait"><a class="anchor" href="#_trait"></a>Trait</h2>
-<div class="sectionbody">
 <div class="paragraph">
 <p>A trait is an attribute or property of a visitor or visit, such as age
 or gender, that you can use to personalize content.</p>
@@ -2389,23 +2381,22 @@ component</a>. We create two component variants named <code>WINDOWS</code> and
 </div>
 <div class="paragraph">
 <p>The trait extracts the operating system from the
-<a href="http://en.wikipedia.org/wiki/User_agent">User-Agent</a> in the HTTP header:</p>
+<a href="http://en.wikipedia.org/wiki/User_agent" target="_blank" rel="noopener">user agent</a> in the HTTP header:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
 <p>Windows users are served a component with text that refers to the
-Windows system and a download link at
-<code><a href="ftp://mgnl.travel/maps-offline/windows.zip" class="bare">ftp://mgnl.travel/maps-offline/windows.zip</a></code>.</p>
+Windows system and a download link (ftp://mgnl.travel/maps-offline/windows.zip).</p>
 </li>
 <li>
 <p>OS-X users are served a component with text that refers to the OS-X
-system and a download link at <code><a href="ftp://mgnl.travel/maps-offline/osx.zip" class="bare">ftp://mgnl.travel/maps-offline/osx.zip</a></code>.</p>
+system and a download link (ftp://mgnl.travel/maps-offline/osx.zip).</p>
 </li>
 <li>
-<p>If neither system is detected, Magnolia serves the <code>ORIGINAL</code>
-version of the component, containing generic text and a download link at
-<code><a href="ftp://mgnl.travel/maps-offline/other-systems.zip" class="bare">ftp://mgnl.travel/maps-offline/other-systems.zip</a></code>.</p>
+<p>If neither system is detected, Magnolia serves the original version
+of the component, containing generic text and a download link
+(ftp://mgnl.travel/maps-offline/other-systems.zip).</p>
 </li>
 </ul>
 </div>
@@ -2440,15 +2431,6 @@ repository.</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">git clone http://git.magnolia-cms.com/git/documentation/documentation-trait-tutorial.git</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>After having cloned the repo, you can check out the tagged version for
-the tag named <code>documentation-trait-tutorial-1.3</code>:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">git checkout documentation-trait-tutorial-{docs-trait-tutorial-version}</code></pre>
 </div>
 </div>
 </li>
@@ -2550,12 +2532,6 @@ module.</p>
 <p>Any module can register a trait. Magnolia observes the <code>traits</code> folder
 in your module configuration and adds new traits to a trait registry.
 Registered traits are then displayed to editors in the user interface.</p>
-</div>
-<div class="paragraph">
-<p>Here’s the <code>userAgent</code> trait.</p>
-</div>
-<div class="paragraph">
-<p><span class="image zoom"><img src="../../../../_images/ADVT-custom-trait-reg.png" alt="image" width="700"></span></p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -2669,10 +2645,7 @@ visitor or visit matches the rule or not. When the rule is met,
 personalized content is delivered.</p>
 </div>
 <div class="paragraph">
-<p>The rule field is displayed to users in the Choose audience dialog:</p>
-</div>
-<div class="paragraph">
-<p><span class="image zoom"><img src="../../../../_images/exampletraitselection.png" alt="image" width="350"></span></p>
+<p>The rule field is displayed to users in the <strong>Choose audience</strong> dialog.</p>
 </div>
 <div class="paragraph">
 <p>Choose a
@@ -2759,10 +2732,7 @@ in every case.</p>
 <h3 id="_value_field"><a class="anchor" href="#_value_field"></a>Value field</h3>
 <div class="paragraph">
 <p>A value field is for previewing variants. The field is displayed to
-users in the Preview app when viewing the page as a visitor:</p>
-</div>
-<div class="paragraph">
-<p><span class="image zoom"><img src="../../../../_images/preview_Macintoshtrait_scope_justactionbar_v2.png" alt="image" width="700"></span></p>
+users in the Preview app when viewing the page as a visitor.</p>
 </div>
 <div class="paragraph">
 <p>When you enter a value that matches the rule, for example, <code>Macintosh</code>
@@ -2770,10 +2740,7 @@ in the image above, the voter tests the value against the rule and
 Magnolia displays the content variant associated with the value.</p>
 </div>
 <div class="paragraph">
-<p><code>userAgent</code> value field:</p>
-</div>
-<div class="paragraph">
-<p><span class="image zoom"><img src="../../../../_images/ADVT-custom-trait-value.png" alt="image" height="167"></span></p>
+<p>The <code>userAgent</code> configuration is available at <a href="http://localhost:8080/magnoliaAuthor/.magnolia/admincentral#app:resources:view;/documentation-trait-tutorial/traits/userAgent.yaml:edit" class="bare">http://localhost:8080/magnoliaAuthor/.magnolia/admincentral#app:resources:view;/documentation-trait-tutorial/traits/userAgent.yaml:edit</a>.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -2912,14 +2879,6 @@ filter.</p>
 }</code></pre>
 </div>
 </div>
-<div class="paragraph">
-<p>In the example above the configuration tree is simplified. Other filters
-may also want to be right after <code>contentType</code>. In a production
-environment it may look like this:</p>
-</div>
-<div class="paragraph">
-<p><span class="image zoom"><img src="../../../../_images/filterChain-realSituation-sc_ii.png.png" alt="image" width="700"></span></p>
-</div>
 </div>
 </div>
 </div>
@@ -2933,25 +2892,7 @@ new trait.</p>
 <div class="paragraph">
 <p>The <code>documentation-trait-tutorial</code> module installs an example page named
 <code>maps-download</code> that contains two custom variants of the Text and image
-component:</p>
-</div>
-<div class="paragraph">
-<p><strong>Windows variant</strong></p>
-</div>
-<div class="paragraph">
-<p><span class="image zoom"><img src="../../../../_images/editor_view_win.png" alt="image" width="800"></span></p>
-</div>
-<div class="paragraph">
-<p><strong>OS-X variant</strong></p>
-</div>
-<div class="paragraph">
-<p><span class="image zoom"><img src="../../../../_images/public_view_osx.png" alt="image" width="800"></span></p>
-</div>
-<div class="paragraph">
-<p><strong>Original</strong></p>
-</div>
-<div class="paragraph">
-<p><span class="image zoom"><img src="../../../../_images/editor_view_original.png" alt="image" width="800"></span></p>
+component.</p>
 </div>
 <div class="admonitionblock warning">
 <table>
