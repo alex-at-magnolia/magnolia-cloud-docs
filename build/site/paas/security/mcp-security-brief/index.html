@@ -605,18 +605,11 @@ Magnolia&#8217;s IAM solution is able to integrate with existing IAM solutions.
 <div class="paragraph">
 <p>Users connect to the Cockpit via a custom JSON Web Token implementation. This is an additional layer of security on top of the IAM server solution.</p>
 </div>
-<div class="literalblock zoom kroki-error">
-<div class="title">User login flow</div>
+<div class="imageblock zoom kroki-format-svg kroki">
 <div class="content">
-<pre>sequenceDiagram
-    User-&gt;&gt;+Cockpit: Calls the protected URL.
-    Cockpit-&gt;&gt;+SSO module: Magnolia detects access request.
-    SSO module-&gt;&gt;+IAM server: Redirect to IAM.
-    IAM server-&gt;&gt;+User: Request credentials.
-    User-&gt;&gt;+IAM server: Send credentials (correct).
-    IAM server-&gt;&gt;+User: Token with scope issued.
-    User-&gt;&gt;+Cockpit: Successful login.</pre>
+<img src="../../_images/a9435dce5dd4ed003700be9409b6215671c6f1f3.svg" alt="diagram">
 </div>
+<div class="title">Figure 1. User login flow</div>
 </div>
 </div>
 </div>
