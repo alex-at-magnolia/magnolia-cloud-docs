@@ -18,6 +18,11 @@ content:
   - url: https://gitlab.com/magnolia-major-tom/major-tom-documentation.git
     start_path: docs
     branches: [master]
+  - url: https://git.magnolia-cms.com/scm/incubator/workflow-extended.git
+    start_path: docs
+    branches: [master]
+  - url: https://git.magnolia-cms.com/scm/incubator/incubator-module-docs.git
+    branches: [master]
 
 urls:
   html_extension_style: indexify
@@ -45,6 +50,7 @@ asciidoc:
     hosting-country: Switzerland
     magnolia-latest-version: 6.2.9
     kroki-fetch-diagram: true
+    figure-caption!:
     jira: https://jira.magnolia-cms.com/browse/
   extensions:
   - ./lib/tabs-block.js

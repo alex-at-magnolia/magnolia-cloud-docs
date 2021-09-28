@@ -46,6 +46,7 @@
       <div class="navbar-end">
         <a href="../../../../../saas-cli/" class="navbar-item">SaaS CLI</a>
         <a href="../../../../../paas/" class="navbar-item">PaaS</a>
+        <a href="../../../../../incubator-modules/" class="navbar-item">Incubator Modules</a>
         <div class="navbar-item navbar-item--button">
           <span class="control">
             <a class="button is-primary" href="https://docs.magnolia-cms.com" target="_blank">DX Core docs</a>
@@ -138,6 +139,9 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../../../Releases/Recent-features/">Recent features</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../../Releases/Release-notes-for-Magnolia-CMS-6.2.12/"><span class="smalltext">Release notes for Magnolia CMS 6.2.12</span></a>
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
@@ -662,6 +666,9 @@
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../../Developing/SPA-development-and-Magnolia/Attaching-an-SPA-project-to-Magnolia/">Attaching an SPA project to Magnolia</a>
   </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../../Developing/SPA-development-and-Magnolia/Personalization-of-headless-SPA-projects/">Personalization of headless SPA projects</a>
+  </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
@@ -790,6 +797,9 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../../Developing/API/Delivery-API/Requesting-localized-content-with-the-delivery-endpoint/">Requesting localized content with the delivery endpoint</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../../Developing/API/Delivery-API/Requesting-personalized-content-with-the-delivery-endpoint/">Requesting personalized content with the delivery endpoint</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../../Developing/API/Delivery-API/Resolving-references-with-the-delivery-endpoint/">Resolving references with the delivery endpoint</a>
@@ -1030,6 +1040,9 @@
     <a class="nav-link" href="../../../Templating/Dialog-definition/Field-definition/List-of-fields/Token-field/">Token field</a>
   </li>
   <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../../Templating/Dialog-definition/Field-definition/List-of-fields/Upload-field/">Upload field</a>
+  </li>
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../../../Templating/Dialog-definition/Field-definition/Custom-fields/">Custom fields</a>
   </li>
   <li class="nav-item" data-depth="4">
@@ -1231,7 +1244,7 @@
     <a class="nav-link" href="../../../Modules/List-of-modules/Digital-Asset-Management-module/">Digital Asset Management module</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="../../../Modules/List-of-modules/Digital-Asset-Management-module/DAM-core-module/">DAM core module</a>
+    <a class="nav-link" href="../../../Modules/List-of-modules/Digital-Asset-Management-module/DAM-Core-module/">DAM Core module</a>
   </li>
   <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../../../Modules/List-of-modules/Digital-Asset-Management-module/External-DAM-app-module/">External DAM app module</a>
@@ -2153,9 +2166,6 @@
     <a class="nav-link" href="../../../Support/Magnolia-5-UI-documentation/Dialog-definition-5-UI/Field-definition-5-UI/List-of-fields-5-UI/Twin-column-field-5-UI/">Twin-column field - 5 UI</a>
   </li>
   <li class="nav-item" data-depth="5">
-    <a class="nav-link" href="../../../Templating/Dialog-definition/Field-definition/List-of-fields/Upload-field/">Upload field</a>
-  </li>
-  <li class="nav-item" data-depth="5">
     <a class="nav-link" href="../../../Support/Magnolia-5-UI-documentation/Dialog-definition-5-UI/Field-definition-5-UI/Custom-fields-5-UI/">Custom fields - 5 UI</a>
   </li>
   <li class="nav-item" data-depth="5">
@@ -2309,6 +2319,14 @@
       </ul>
     </li>
     <li class="component">
+      <span class="title">Incubator Module Documentation</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../../../incubator-modules/">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
       <span class="title">Magnolia PaaS</span>
       <ul class="versions">
         <li class="version is-latest">
@@ -2329,6 +2347,14 @@
       <ul class="versions">
         <li class="version is-latest">
           <a href="../../../../../saas-cli/">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Workflow Extended module</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../../../workflow-extended-module/1.2.1/">1.2.1</a>
         </li>
       </ul>
     </li>
@@ -2503,7 +2529,7 @@ public class TreeViewDefinition&lt;T&gt; implements GridViewDefinition&lt;T&gt; 
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>dropConstraint</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code id="_dropConstraint">dropConstraint</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><strong>optional</strong> (used only in tree and list views), <em>default is no drag-and-drop capability</em></p>
 </div>
@@ -2526,51 +2552,21 @@ public class TreeViewDefinition&lt;T&gt; implements GridViewDefinition&lt;T&gt; 
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>icon</code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>optional</strong>, <em>default is <code>icon-view-tree</code>, <code>icon-view-list</code> or <code>icon-view-thumbnails</code> depending on view type</em></p>
-</div>
-<div class="paragraph">
-<p>CSS class that identifies an icon used for the view tab. For available names, see <a href="../../Designing-an-app/Icons/" class="page">Icons</a>.</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>scrollToSelectedItem</code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>optional</strong> (used only in tree and list views), <em>default is <code>true</code> for tree view or <code>false</code> for list view</em></p>
-</div>
-<div class="paragraph">
-<p>Defines whether the selected item is scrolled into view when opening the content app.</p>
-</div>
-<div class="admonitionblock warning">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-warning" title="Warning"></i>
-</td>
-<td class="content">
-Setting <code>scrollToSelectedItem</code> to <code>true</code> for the list view may lead to performance issues with large data sets.
-</td>
-</tr>
-</table>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>multiSelect</code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>optional</strong>, <em>default is <code>true</code> for list and thumbnail views</em></p>
-</div>
-<div class="paragraph">
-<p>When <code>true</code>, views are rendered as checkboxes. When <code>false</code>, views are rendered as radio buttons.</p>
-</div></div></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>name</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><strong>optional</strong>, <em>default is <code>tree</code>, <code>list</code> or <code>thumbnail</code> depending on view type</em></p>
 </div>
 <div class="paragraph">
 <p>Name of the content view.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>icon</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>optional</strong>, <em>default is <code>icon-view-tree</code>, <code>icon-view-list</code> or <code>icon-view-thumbnails</code> depending on view type</em></p>
+</div>
+<div class="paragraph">
+<p>CSS class that identifies an icon used for the view tab. For available names, see <a href="../../Designing-an-app/Icons/" class="page">Icons</a>.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -2590,6 +2586,45 @@ Setting <code>scrollToSelectedItem</code> to <code>true</code> for the list view
 <td class="content">
 You cannot define
 <a href="../Action-bar-definition/" class="page"><code>defaultAction</code></a> and use inline editing at the same time.
+</td>
+</tr>
+</table>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>multiSelect</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>optional</strong>, <em>default is <code>true</code> for list and thumbnail views</em></p>
+</div>
+<div class="paragraph">
+<p>When <code>true</code>, items are rendered as checkboxes. When <code>false</code>, items are rendered as radio buttons.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>multiSelectByRowClick</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>optional</strong>, <em>default is <code>false</code></em></p>
+</div>
+<div class="paragraph">
+<p>When <code>true</code>, multiple items can be selected by clicking rows rather than checkboxes. For this to work, <code>multiSelect</code> must be set to <code>true</code>.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>scrollToSelectedItem</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>optional</strong> (used only in tree and list views), <em>default is <code>true</code> for tree view or <code>false</code> for list view</em></p>
+</div>
+<div class="paragraph">
+<p>Defines whether the selected item is scrolled into view when opening the content app.</p>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+Setting <code>scrollToSelectedItem</code> to <code>true</code> for the list view may lead to performance issues with large data sets.
 </td>
 </tr>
 </table>

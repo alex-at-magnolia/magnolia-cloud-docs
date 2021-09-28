@@ -47,6 +47,7 @@
       <div class="navbar-end">
         <a href="../../../../../saas-cli/" class="navbar-item">SaaS CLI</a>
         <a href="../../../../../paas/" class="navbar-item">PaaS</a>
+        <a href="../../../../../incubator-modules/" class="navbar-item">Incubator Modules</a>
         <div class="navbar-item navbar-item--button">
           <span class="control">
             <a class="button is-primary" href="https://docs.magnolia-cms.com" target="_blank">DX Core docs</a>
@@ -139,6 +140,9 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../../../Releases/Recent-features/">Recent features</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../../Releases/Release-notes-for-Magnolia-CMS-6.2.12/"><span class="smalltext">Release notes for Magnolia CMS 6.2.12</span></a>
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
@@ -663,6 +667,9 @@
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../../Developing/SPA-development-and-Magnolia/Attaching-an-SPA-project-to-Magnolia/">Attaching an SPA project to Magnolia</a>
   </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../../Developing/SPA-development-and-Magnolia/Personalization-of-headless-SPA-projects/">Personalization of headless SPA projects</a>
+  </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
@@ -791,6 +798,9 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../../Developing/API/Delivery-API/Requesting-localized-content-with-the-delivery-endpoint/">Requesting localized content with the delivery endpoint</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../../Developing/API/Delivery-API/Requesting-personalized-content-with-the-delivery-endpoint/">Requesting personalized content with the delivery endpoint</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../../Developing/API/Delivery-API/Resolving-references-with-the-delivery-endpoint/">Resolving references with the delivery endpoint</a>
@@ -1031,6 +1041,9 @@
     <a class="nav-link" href="../../../Templating/Dialog-definition/Field-definition/List-of-fields/Token-field/">Token field</a>
   </li>
   <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../../Templating/Dialog-definition/Field-definition/List-of-fields/Upload-field/">Upload field</a>
+  </li>
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../../../Templating/Dialog-definition/Field-definition/Custom-fields/">Custom fields</a>
   </li>
   <li class="nav-item" data-depth="4">
@@ -1232,7 +1245,7 @@
     <a class="nav-link" href="../../../Modules/List-of-modules/Digital-Asset-Management-module/">Digital Asset Management module</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="../../../Modules/List-of-modules/Digital-Asset-Management-module/DAM-core-module/">DAM core module</a>
+    <a class="nav-link" href="../../../Modules/List-of-modules/Digital-Asset-Management-module/DAM-Core-module/">DAM Core module</a>
   </li>
   <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../../../Modules/List-of-modules/Digital-Asset-Management-module/External-DAM-app-module/">External DAM app module</a>
@@ -2154,9 +2167,6 @@
     <a class="nav-link" href="../../../Support/Magnolia-5-UI-documentation/Dialog-definition-5-UI/Field-definition-5-UI/List-of-fields-5-UI/Twin-column-field-5-UI/">Twin-column field - 5 UI</a>
   </li>
   <li class="nav-item" data-depth="5">
-    <a class="nav-link" href="../../../Templating/Dialog-definition/Field-definition/List-of-fields/Upload-field/">Upload field</a>
-  </li>
-  <li class="nav-item" data-depth="5">
     <a class="nav-link" href="../../../Support/Magnolia-5-UI-documentation/Dialog-definition-5-UI/Field-definition-5-UI/Custom-fields-5-UI/">Custom fields - 5 UI</a>
   </li>
   <li class="nav-item" data-depth="5">
@@ -2310,6 +2320,14 @@
       </ul>
     </li>
     <li class="component">
+      <span class="title">Incubator Module Documentation</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../../../incubator-modules/">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
       <span class="title">Magnolia PaaS</span>
       <ul class="versions">
         <li class="version is-latest">
@@ -2330,6 +2348,14 @@
       <ul class="versions">
         <li class="version is-latest">
           <a href="../../../../../saas-cli/">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Workflow Extended module</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../../../workflow-extended-module/1.2.1/">1.2.1</a>
         </li>
       </ul>
     </li>
@@ -2387,7 +2413,7 @@
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Latest</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">3.2.5</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3.2.6</p></td>
 </tr>
 </tbody>
 </table>
@@ -2407,7 +2433,7 @@
 <pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;dependency&gt;
   &lt;groupId&gt;info.magnolia.livecopy&lt;/groupId&gt;
   &lt;artifactId&gt;magnolia-livecopy&lt;/artifactId&gt;
-  &lt;version&gt;3.2.5&lt;/version&gt;
+  &lt;version&gt;3.2.6&lt;/version&gt;
 &lt;/dependency&gt;</code></pre>
 </div>
 </div>
@@ -2431,13 +2457,10 @@ be an entire site, a sub-tree or just a single page.</p>
 <p><strong>Note</strong></p>
 </div>
 <div class="paragraph">
-<p>As a lot of content can be copied and linked, a single wrong action can
-have a negative impact on a big part of your website. Plan your content
-structure in detail before using Live Copy.</p>
+<p>As a lot of content can be copied and linked, a single wrong action can have a negative impact on a big part of your website. Plan your content structure in detail before using Live Copy.</p>
 </div>
 <div class="paragraph">
-<p>Give the rights to execute Live Copy actions to privileged users with
-sufficient instructions only.</p>
+<p>Give the rights to execute Live Copy actions to privileged users with sufficient instructions only.</p>
 </div>
 </td>
 </tr>
@@ -2590,8 +2613,7 @@ live copy pages</strong>.</p>
 </td>
 <td class="content">
 <div class="paragraph">
-<p>Make sure the corresponding pages in the live copy exist so that the
-links can be relinked within the live copy.</p>
+<p>Make sure the corresponding pages in the live copy exist so that the links can be relinked within the live copy.</p>
 </div>
 </td>
 </tr>
@@ -2601,11 +2623,7 @@ links can be relinked within the live copy.</p>
 <p><span class="image zoom"><img src="../../../_images/6-1-lc-relink-lc-pages.png" alt="image"></span></p>
 </div>
 <div class="paragraph">
-<p>In the <strong>Relink all pages</strong> popup that appears, you have the option of
-disabling updates from master on components that are relinked. This
-means the relinked live copy pages are protected from being overwritten
-when new content is pushed from the master. The relinked components
-appear as locked in the live copy pages. For example:</p>
+<p>In the <strong>Relink all pages</strong> popup that appears, you have the option of disabling updates from master on components that are relinked. This means the relinked live copy pages are protected from being overwritten when new content is pushed from the master. The relinked components appear as locked in the live copy pages. For example:</p>
 </div>
 <div class="paragraph">
 <p><span class="image zoom"><img src="../../../_images/6-1-lc-locked-link.png" alt="image"></span></p>
@@ -2618,6 +2636,42 @@ appear as locked in the live copy pages. For example:</p>
 </td>
 <td class="content">
 Links in the page properties (added via the Page Properties dialog) are relinked too.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p><strong>Note about transformers</strong></p>
+</div>
+<div class="paragraph">
+<p>For compatibility fields (before 6.2.3) that still use (deprecated) <a href="../../../Upgrading-to-Magnolia/Magnolia-6-UI-ports-of-5-UI-field-transformer-classes/" class="page">transformer classes</a>, only the following default transformers are supported:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Composite field: <code>info.magnolia.ui.form.field.transformer.composite.CompositeTransformer</code></p>
+</li>
+<li>
+<p>Switchable field: <code>info.magnolia.ui.form.field.transformer.composite.SwitchableTransformer</code></p>
+</li>
+<li>
+<p>Multivalue field: <code>info.magnolia.ui.form.field.transformer.multi.MultiValueTransformer</code></p>
+</li>
+<li>
+<p>Multivalue composite field: <code>info.magnolia.ui.form.field.transformer.multi.MultiValueSubChildrenNodePropertiesTransformer</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>For example, if you have a link field inside a composite field, the relink function only works if the composite field&#8217;s transformer class is <code>CompositeTransformer</code>.</p>
+</div>
 </td>
 </tr>
 </table>
@@ -2865,20 +2919,12 @@ used as masters.</p>
 <div class="sect2">
 <h3 id="_internationalization"><a class="anchor" href="#_internationalization"></a>Internationalization</h3>
 <div class="paragraph">
-<p>For single-tree multi-language websites, you must use
-<code>info.magnolia.livecopy.i18n.LiveCopyI18nContentSupport</code> in
-the Live Copy’s site definition. This class introduces a <code>masterLocale</code>
-property which holds the fallback language from the master copy.</p>
+<p>For single-tree multi-language websites, you must:</p>
 </div>
-<div class="paragraph">
-<p><span class="image zoom"><img src="../../../_images/6-1-lc-sitedef-locale.png" alt="image" width="600"></span></p>
-</div>
-<div class="paragraph">
-<p>You must also enable multilanguage authoring in <code>/config/server/i18n/authoring</code> and set the class to <code>info.magnolia.livecopy.i18n.LiveCopyMultiSiteI18nAuthoringSupport</code>.</p>
-</div>
-<div class="paragraph">
-<p><span class="image zoom"><img src="../../../_images/6-2-lc-multilang-config.png" alt="image" width="600"></span></p>
-</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Use <code>info.magnolia.livecopy.i18n.LiveCopyI18nContentSupport</code> in the live copy site definition. This class processes the content of the live copy page based on the locale, programmatically retrieving the locale from the master page&#8217;s <a href="../../../Templating/Site-definition/" class="page">Site definition</a>.</p>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -2886,9 +2932,65 @@ property which holds the fallback language from the master copy.</p>
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-<div class="paragraph">
-<p>Due to a limitation of the i18n mechanism, changing <code>masterLocale</code> or <code>defaultLocale</code> after creating live copy pages may cause the system to fail to load content correctly.</p>
+Before version 3.2.6, this class introduced a <code>masterLocale</code> property which held the fallback language from the master copy. From Live Copy 3.2.6+ <code>masterLocale</code> is deprecated. For older versions of Live Copy it is still use.
+</td>
+</tr>
+</table>
 </div>
+<div class="paragraph">
+<p><span class="image zoom"><img src="../../../_images/6-1-lc-sitedef-locale.png" alt="image" width="600"></span></p>
+</div>
+</li>
+<li>
+<p>Enable multilanguage authoring in <code>/config/server/i18n/authoring</code> and set the class to <code>info.magnolia.livecopy.i18n.LiveCopyMultiSiteI18nAuthoringSupport</code>.</p>
+<div class="paragraph">
+<p><span class="image zoom"><img src="../../../_images/6-2-lc-multilang-config.png" alt="image" width="600"></span></p>
+</div>
+</li>
+</ol>
+</div>
+<div class="sect3">
+<h4 id="_about_defaultlocale"><a class="anchor" href="#_about_defaultlocale"></a>About defaultLocale</h4>
+<div class="paragraph">
+<p>The live copy page takes the same tree structure as the master page. This means that the <code>defaultLocale</code> of the master site definition is used to define the structure of both the master and live copy pages.</p>
+</div>
+<div class="paragraph">
+<p>In this example, English is used as the default locale for the master page (<code>defaultLocale = en</code>):</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Master</th>
+<th class="tableblock halign-left valign-top">Live copy</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">title = Hello world</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>title = Hello world</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">title_de = Hallo Welt</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>title_de = Hallo Welt</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Defining the <code>info.magnolia.livecopy.i18n.LiveCopyI18nContentSupport#defaultLocale</code> does not affect the structure of the live copy or the master pages. For example, defining this property as <code>de</code> is like stating that the content of the live copy page will be rendered as German locale by default when first loaded.
 </td>
 </tr>
 </table>
@@ -2917,9 +3019,57 @@ property which holds the fallback language from the master copy.</p>
 </div>
 </div>
 </div>
+</div>
 <div class="sect1">
 <h2 id="_release_history"><a class="anchor" href="#_release_history"></a>Release history</h2>
 <div class="sectionbody">
+<div class="sect2">
+<h3 id="_live_copy_module_3_2_6"><a class="anchor" href="#_live_copy_module_3_2_6"></a>Live Copy module 3.2.6</h3>
+<div class="paragraph">
+<p>Released on September 23, 2021.</p>
+</div>
+<div class="paragraph">
+<p>This bug fixing release also brings the following improvements:</p>
+</div>
+<div class="paragraph">
+<p><strong>Improvements</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Node names are now protected (<code>propertiesToIgnore</code> added) from master content change pushes. <a href="https://jira.magnolia-cms.com/browse/LIVECOPY-290" target="_blank" rel="noopener">LIVECOPY-290</a></p>
+</li>
+<li>
+<p>Improved protection of the <code>MultiValueField</code> field. <a href="https://jira.magnolia-cms.com/browse/LIVECOPY-283" target="_blank" rel="noopener">LIVECOPY-283</a></p>
+</li>
+<li>
+<p>Field transformers are checked before relinking. <a href="https://jira.magnolia-cms.com/browse/LIVECOPY-282" target="_blank" rel="noopener">LIVECOPY-282</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Bug fixes</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Updating a child page makes the parent page appear as updated. <a href="https://jira.magnolia-cms.com/browse/LIVECOPY-222" target="_blank" rel="noopener">LIVECOPY-222</a></p>
+</li>
+<li>
+<p>Live copy <a href="#Modules/List-of-modules/Workflow-module.html">workflows</a> have invalid markup leading to log errors. <a href="https://jira.magnolia-cms.com/browse/LIVECOPY-252" target="_blank" rel="noopener">LIVECOPY-252</a></p>
+</li>
+<li>
+<p>The <code>defaultLocale</code> property affects the selected language in the Pages app. <a href="https://jira.magnolia-cms.com/browse/LIVECOPY-266" target="_blank" rel="noopener">LIVECOPY-266</a></p>
+</li>
+<li>
+<p>Protecting fields in a Switchable Field does not work. <a href="https://jira.magnolia-cms.com/browse/LIVECOPY-281" target="_blank" rel="noopener">LIVECOPY-281</a></p>
+</li>
+<li>
+<p>Protect button does not work correctly if a locale is the default in a live copy tree but not the master default. <a href="https://jira.magnolia-cms.com/browse/LIVECOPY-288" target="_blank" rel="noopener">LIVECOPY-288</a></p>
+</li>
+</ul>
+</div>
+</div>
 <div class="sect2">
 <h3 id="_live_copy_module_3_2_5"><a class="anchor" href="#_live_copy_module_3_2_5"></a>Live Copy module 3.2.5</h3>
 <div class="paragraph">
@@ -2945,10 +3095,9 @@ property which holds the fallback language from the master copy.</p>
 <div class="paragraph">
 <p>This bug fixing release also brings the following improvements:</p>
 </div>
-<div class="ulist">
-<ul>
-<li>
+<div class="paragraph">
 <p><strong>Improvements</strong></p>
+</div>
 <div class="ulist">
 <ul>
 <li>
@@ -2962,9 +3111,9 @@ property which holds the fallback language from the master copy.</p>
 </li>
 </ul>
 </div>
-</li>
-<li>
+<div class="paragraph">
 <p><strong>Bug fixes</strong></p>
+</div>
 <div class="ulist">
 <ul>
 <li>
@@ -2999,9 +3148,6 @@ property which holds the fallback language from the master copy.</p>
 </li>
 <li>
 <p><code>MultiValueCompositeRichTextField</code>, <code>MultiValueRichTextField</code> cannot relink in <code>CompatibilityRewirePageLinksHelper</code>. <a href="https://jira.magnolia-cms.com/browse/LIVECOPY-278" target="_blank" rel="noopener">LIVECOPY-278</a></p>
-</li>
-</ul>
-</div>
 </li>
 </ul>
 </div>
@@ -3414,7 +3560,7 @@ of the module.</p>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>3.2.5</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>3.2.6</strong></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><strong>Magnolia 6.2.6</strong></p>
 </div></div></td>

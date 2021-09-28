@@ -46,6 +46,7 @@
       <div class="navbar-end">
         <a href="../../../../../../saas-cli/" class="navbar-item">SaaS CLI</a>
         <a href="../../../../../../paas/" class="navbar-item">PaaS</a>
+        <a href="../../../../../../incubator-modules/" class="navbar-item">Incubator Modules</a>
         <div class="navbar-item navbar-item--button">
           <span class="control">
             <a class="button is-primary" href="https://docs.magnolia-cms.com" target="_blank">DX Core docs</a>
@@ -138,6 +139,9 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../../../../Releases/Recent-features/">Recent features</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../../../Releases/Release-notes-for-Magnolia-CMS-6.2.12/"><span class="smalltext">Release notes for Magnolia CMS 6.2.12</span></a>
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
@@ -662,6 +666,9 @@
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../../../Developing/SPA-development-and-Magnolia/Attaching-an-SPA-project-to-Magnolia/">Attaching an SPA project to Magnolia</a>
   </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../../../Developing/SPA-development-and-Magnolia/Personalization-of-headless-SPA-projects/">Personalization of headless SPA projects</a>
+  </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
@@ -790,6 +797,9 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../../../Developing/API/Delivery-API/Requesting-localized-content-with-the-delivery-endpoint/">Requesting localized content with the delivery endpoint</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../../../Developing/API/Delivery-API/Requesting-personalized-content-with-the-delivery-endpoint/">Requesting personalized content with the delivery endpoint</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../../../Developing/API/Delivery-API/Resolving-references-with-the-delivery-endpoint/">Resolving references with the delivery endpoint</a>
@@ -1030,6 +1040,9 @@
     <a class="nav-link" href="../../../../Templating/Dialog-definition/Field-definition/List-of-fields/Token-field/">Token field</a>
   </li>
   <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../../../Templating/Dialog-definition/Field-definition/List-of-fields/Upload-field/">Upload field</a>
+  </li>
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../../../../Templating/Dialog-definition/Field-definition/Custom-fields/">Custom fields</a>
   </li>
   <li class="nav-item" data-depth="4">
@@ -1231,7 +1244,7 @@
     <a class="nav-link" href="../../Digital-Asset-Management-module/">Digital Asset Management module</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="../../Digital-Asset-Management-module/DAM-core-module/">DAM core module</a>
+    <a class="nav-link" href="../../Digital-Asset-Management-module/DAM-Core-module/">DAM Core module</a>
   </li>
   <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../../Digital-Asset-Management-module/External-DAM-app-module/">External DAM app module</a>
@@ -2153,9 +2166,6 @@
     <a class="nav-link" href="../../../../Support/Magnolia-5-UI-documentation/Dialog-definition-5-UI/Field-definition-5-UI/List-of-fields-5-UI/Twin-column-field-5-UI/">Twin-column field - 5 UI</a>
   </li>
   <li class="nav-item" data-depth="5">
-    <a class="nav-link" href="../../../../Templating/Dialog-definition/Field-definition/List-of-fields/Upload-field/">Upload field</a>
-  </li>
-  <li class="nav-item" data-depth="5">
     <a class="nav-link" href="../../../../Support/Magnolia-5-UI-documentation/Dialog-definition-5-UI/Field-definition-5-UI/Custom-fields-5-UI/">Custom fields - 5 UI</a>
   </li>
   <li class="nav-item" data-depth="5">
@@ -2309,6 +2319,14 @@
       </ul>
     </li>
     <li class="component">
+      <span class="title">Incubator Module Documentation</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../../../../incubator-modules/">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
       <span class="title">Magnolia PaaS</span>
       <ul class="versions">
         <li class="version is-latest">
@@ -2329,6 +2347,14 @@
       <ul class="versions">
         <li class="version is-latest">
           <a href="../../../../../../saas-cli/">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Workflow Extended module</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../../../../workflow-extended-module/1.2.1/">1.2.1</a>
         </li>
       </ul>
     </li>
@@ -2442,6 +2468,18 @@ block:
 <p>List of Magnolia apps which the editor may choose from for linking of a text element in the field with a Magnolia content item. The apps configured will be displayed in a separate choose dialog.</p>
 </div></div></td>
 </tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>configJsFile</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>optional</strong></p>
+</div>
+<div class="paragraph">
+<p>Location of a custom configuration file.</p>
+</div>
+<div class="paragraph">
+<p>For more details, see the section <a href="#_customization">Customization</a> below.</p>
+</div></div></td>
+</tr>
 </tbody>
 </table>
 <div class="admonitionblock note">
@@ -2476,6 +2514,103 @@ subApps:
 </td>
 </tr>
 </table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_customization"><a class="anchor" href="#_customization"></a>Customization</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Since version 2.0.2 of the Content Editor module, you can customize the field by modifying the associated JavaScript configuration file. For example, you can:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Adjust the color of the field&#8217;s UI.</p>
+</li>
+<li>
+<p>Toggle the typing direction.</p>
+</li>
+<li>
+<p>Enable the CKEditor-native spellchecker.</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Example</dt>
+<dd>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Open the <a href="../../../../Apps/List-of-apps/Resource-Files-app/" class="page">Resource files app</a> and for convenience, create a folder called <code>ckeditor</code> for the new custom configuration.</p>
+</li>
+<li>
+<p>In the folder, create a new file called <code>custom-config.js</code>.</p>
+</li>
+<li>
+<p>Add the following configuration code to the file and save it.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-javascript hljs" data-lang="javascript">CKEDITOR.editorConfig = function( config ) {
+    config.allowedContent = true;
+    config.startupFocus = true;
+    config.enterMode = CKEDITOR.ENTER_P;
+
+    config.plugins = 'basicstyles,link,sharedspace,sourcedialog,toolbar,dialog,contextmenu';
+    config.extraPlugins = 'format_buttons,sharedspace,sourcedialog,onchange,mgnlWorkspaceLink';
+
+    config.skin = 'moono-lisa';
+    config.sharedSpaces = {
+        top: 'toolbar-container'
+    };
+
+    config.toolbarGroups = [
+        { name: 'basicstyles', groups: [ 'basicstyles'] },
+        { name: 'heading_formats', groups: [/*nothing to put here - all the buttons are injected directly by the plugin and this seems to be the way to do it*/] },
+        { name: 'links', groups: [ 'links' ] }
+    ];
+
+    config.removeButtons = 'Underline,Subscript,Strike,Superscript,Styles,Anchor';
+    config.removeDialogTabs = 'image:advanced;link:advanced';
+
+    config.uiColor = '#AADC6E';
+    config.contentsLangDirection = 'rtl';
+    config.disableNativeSpellChecker = false;
+};</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>In the definition of your text block, use the <code>configJsFile</code> property to reference the new configuration file.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">templateId: content-editor:blocks/text
+icon: text-block
+block:
+  implementationClass: info.magnolia.editor.field.LightRichTextFormView
+  properties:
+    text:
+      class: info.magnolia.editor.field.LightRichTextFieldDefinition
+      linkableApps:
+        - pages-app
+        - dam-chooser
+      configJsFile: /.resources/ckeditor/custom-config.js</code></pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</dd>
+</dl>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_further_resources"><a class="anchor" href="#_further_resources"></a>Further resources</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><a href="https://ckeditor.com/docs/ckeditor4/latest/guide/dev_configuration.html#using-the-configjs-file" target="_blank" rel="noopener">Setting CKEditor 4 Configuration</a></p>
 </div>
 </div>
 </div>

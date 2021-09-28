@@ -46,6 +46,7 @@
       <div class="navbar-end">
         <a href="../../../../../../saas-cli/" class="navbar-item">SaaS CLI</a>
         <a href="../../../../../../paas/" class="navbar-item">PaaS</a>
+        <a href="../../../../../../incubator-modules/" class="navbar-item">Incubator Modules</a>
         <div class="navbar-item navbar-item--button">
           <span class="control">
             <a class="button is-primary" href="https://docs.magnolia-cms.com" target="_blank">DX Core docs</a>
@@ -138,6 +139,9 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../../../../Releases/Recent-features/">Recent features</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../../../Releases/Release-notes-for-Magnolia-CMS-6.2.12/"><span class="smalltext">Release notes for Magnolia CMS 6.2.12</span></a>
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
@@ -662,6 +666,9 @@
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../../../Developing/SPA-development-and-Magnolia/Attaching-an-SPA-project-to-Magnolia/">Attaching an SPA project to Magnolia</a>
   </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../../../Developing/SPA-development-and-Magnolia/Personalization-of-headless-SPA-projects/">Personalization of headless SPA projects</a>
+  </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
@@ -790,6 +797,9 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../../../Developing/API/Delivery-API/Requesting-localized-content-with-the-delivery-endpoint/">Requesting localized content with the delivery endpoint</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../../../Developing/API/Delivery-API/Requesting-personalized-content-with-the-delivery-endpoint/">Requesting personalized content with the delivery endpoint</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../../../Developing/API/Delivery-API/Resolving-references-with-the-delivery-endpoint/">Resolving references with the delivery endpoint</a>
@@ -1030,6 +1040,9 @@
     <a class="nav-link" href="../../../../Templating/Dialog-definition/Field-definition/List-of-fields/Token-field/">Token field</a>
   </li>
   <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../../../Templating/Dialog-definition/Field-definition/List-of-fields/Upload-field/">Upload field</a>
+  </li>
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../../../../Templating/Dialog-definition/Field-definition/Custom-fields/">Custom fields</a>
   </li>
   <li class="nav-item" data-depth="4">
@@ -1231,7 +1244,7 @@
     <a class="nav-link" href="../../../../Modules/List-of-modules/Digital-Asset-Management-module/">Digital Asset Management module</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="../../../../Modules/List-of-modules/Digital-Asset-Management-module/DAM-core-module/">DAM core module</a>
+    <a class="nav-link" href="../../../../Modules/List-of-modules/Digital-Asset-Management-module/DAM-Core-module/">DAM Core module</a>
   </li>
   <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../../../../Modules/List-of-modules/Digital-Asset-Management-module/External-DAM-app-module/">External DAM app module</a>
@@ -2153,9 +2166,6 @@
     <a class="nav-link" href="../../../../Support/Magnolia-5-UI-documentation/Dialog-definition-5-UI/Field-definition-5-UI/List-of-fields-5-UI/Twin-column-field-5-UI/">Twin-column field - 5 UI</a>
   </li>
   <li class="nav-item" data-depth="5">
-    <a class="nav-link" href="../../../../Templating/Dialog-definition/Field-definition/List-of-fields/Upload-field/">Upload field</a>
-  </li>
-  <li class="nav-item" data-depth="5">
     <a class="nav-link" href="../../../../Support/Magnolia-5-UI-documentation/Dialog-definition-5-UI/Field-definition-5-UI/Custom-fields-5-UI/">Custom fields - 5 UI</a>
   </li>
   <li class="nav-item" data-depth="5">
@@ -2309,6 +2319,14 @@
       </ul>
     </li>
     <li class="component">
+      <span class="title">Incubator Module Documentation</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../../../../incubator-modules/">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
       <span class="title">Magnolia PaaS</span>
       <ul class="versions">
         <li class="version is-latest">
@@ -2329,6 +2347,14 @@
       <ul class="versions">
         <li class="version is-latest">
           <a href="../../../../../../saas-cli/">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Workflow Extended module</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../../../../workflow-extended-module/1.2.1/">1.2.1</a>
         </li>
       </ul>
     </li>
@@ -2363,26 +2389,31 @@
 <h1 class="page">DAM upload field</h1>
 <div id="preamble">
 <div class="sectionbody">
-<div class="admonitionblock warning">
+<div class="admonitionblock caution">
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-warning" title="Warning"></i>
+<i class="fa icon-caution" title="Caution"></i>
 </td>
 <td class="content">
 <div class="paragraph">
-<p><code>DamUploadFieldDefinition</code> makes only sense in the context of the
+<p>This DAM upload field definition makes only sense in the context of the
 <a href="../" class="page">Magnolia Assets subapp</a>.
 Do not use it generically in any other context.</p>
+</div>
+<div class="paragraph">
+<p>If you work with the <em>Magnolia 5 UI</em> framework, see
+<a href="../../../../Support/Magnolia-5-UI-documentation/Dialog-definition-5-UI/Field-definition-5-UI/List-of-fields-5-UI/DAM-upload-field-5-UI/" class="page">DAM
+upload field for <em>Magnolia 5 UI</em></a> instead.</p>
 </div>
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p><code>DamUploadFieldDefinition</code> renders a field used by the Magnolia Assets
-subapp to upload assets to the DAM workspace. It extends
-<code>UploadFieldDefinition</code> as follows:</p>
+<p>javadoc:info.magnolia.dam.app.field.DamUploadFieldDefinition[] renders a field used by the Magnolia Assets subapp
+to upload assets to the <a href="../../../../Features/Digital-asset-management/" class="page">DAM</a> workspace. It extends
+<a href="../../../../Templating/Dialog-definition/Field-definition/List-of-fields/Upload-field/" class="page"><code>UploadFieldDefinition</code></a> as follows:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -2403,14 +2434,12 @@ in the media editor and for previewing images.</p>
 </ul>
 </div>
 <div class="paragraph">
-<p>This DAM upload field definition is part of the <em>Magnolia 6 UI</em>
-framework. The fully qualified class name is
-<code>info.magnolia.dam.app.field.DamUploadFieldDefinition</code>.</p>
-</div>
-<div class="paragraph">
-<p>If you work with the <em>Magnolia 5 UI</em> framework, see
-<a href="../../../../Support/Magnolia-5-UI-documentation/Dialog-definition-5-UI/Field-definition-5-UI/List-of-fields-5-UI/DAM-upload-field-5-UI/" class="page">DAM
-upload field for <em>Magnolia 5 UI</em></a> instead.</p>
+<p>It is possible to configure <code>DamUploadFieldDefinition</code> in dialogs or other apps,
+but keep in mind that the file will be placed in the workspace for which the field
+has been configured. For example, if you use the field in a dialog for a component
+template, that file (when uploaded using the field) will be stored in the website,
+not the DAM, workspace. It is best practice to keep your assets in the DAM whenever
+possible and link to them using a <a href="../../../../Templating/Dialog-definition/Field-definition/List-of-fields/Link-field/" class="page">link field</a>.</p>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -2427,17 +2456,6 @@ the default field will be rendered.</p>
 </td>
 </tr>
 </table>
-</div>
-<div class="paragraph">
-<p>It is possible to configure <code>DamUploadFieldDefinition</code> in dialogs or
-other apps, but keep in mind that the file will be placed in the
-workspace for which the field has been configured. For example, if you
-use the field in a dialog for a component template, that file (when
-uploaded using the field) will be stored in the website, not the DAM,
-workspace. It is best practice to keep your assets in the DAM whenever
-possible and link to them using a
-<a href="../../../../Templating/Dialog-definition/Field-definition/List-of-fields/Link-field/" class="page">link
-field</a>.</p>
 </div>
 </div>
 </div>
@@ -2461,7 +2479,7 @@ field</a>.</p>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>mediaEditorId</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>optional</strong>, <em>default is `ui-mediaeditor:image`</em></p>
+<p><strong>optional</strong>, <em>default is <code>ui-mediaeditor:image</code></em></p>
 </div>
 <div class="paragraph">
 <p>Media editor to be used for editing the asset. Use the
@@ -2471,7 +2489,7 @@ field</a>.</p>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>mediaEditorSupportedMimeTypes</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>optional</strong>, <em>default is `image\\/(?!svg\\+xml).*`</em></p>
+<p><strong>optional</strong>, <em>default is <code>image\\/(?!svg\\+xml).*</code></em></p>
 </div>
 <div class="paragraph">
 <p>Regular expression to filter supported files by MIME type. Configuration
@@ -2485,7 +2503,7 @@ depends on the value set for the <code>mediaEditorId</code> property.</p>
 </td>
 <td class="content">
 For digital asset management MIME types, see
-<a href="#/Developing/API/DAM-API_.adoc#mediatype" class="page unresolved">MediaType</a>.
+<a href="../../../../Developing/API/Java-Server-APIs/DAM-API/#_mediatype" class="page">MediaType</a>.
 </td>
 </tr>
 </table>
@@ -2511,16 +2529,26 @@ For digital asset management MIME types, see
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>allowedMimeTypePattern</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>optional</strong>, <em>default is <code>.*</code></em> (all types)</p>
+<p><strong>optional</strong>, <em>default is all types</em></p>
 </div>
 <div class="paragraph">
-<p>Regular expression to filter allowed files by MIME type. For example, to
-allow images only, set the value to <code>image\/.*</code>.</p>
+<p>Comma-separated list of allowed MIME types. Examples include <code>image/*</code>, <code>application/pdf</code>, <code>audio/*</code> and <code>video/*</code>.</p>
 </div>
 <div class="paragraph">
-<p>For more information about the supported pattern, see the
-<a href="https://docs.oracle.com/javase/10/docs/api/java/util/regex/Pattern.html" target="_blank" rel="noopener"><code>Pattern</code></a>
-class.</p>
+<p>For a full list, see <a href="https://www.iana.org/assignments/media-types/media-types.xhtml" target="_blank" rel="noopener">IANA Media Types</a>.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+When <code>allowedMimeTypePattern</code> is defined, a validation message can be configured using the <code>typeAbortMessage</code> property
+(see <a href="../../../../Administration/Language/Generic-i18n-keys/" class="page">Generic i18n keys</a>).
+</td>
+</tr>
+</table>
 </div></div></td>
 </tr>
 <tr>
@@ -2530,220 +2558,19 @@ class.</p>
 </div>
 <div class="paragraph">
 <p>Maximum file size in bytes.</p>
-</div></div></td>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+When <code>maxUploadSize</code> is defined, a validation message <em>must</em> be configured using the <code>sizeAbortMessage</code> property
+(see <a href="../../../../Administration/Language/Generic-i18n-keys/" class="page">Generic i18n keys</a>).
+</td>
 </tr>
-</tbody>
 </table>
-<div class="paragraph">
-<p>The following are label properties. Their values are typically retrieved
-from a
-<a href="../../../../Administration/Language/Internationalization/#_i18n_message_bundle" class="page">message
-bundle</a>.</p>
-</div>
-<div class="paragraph">
-<p><strong>Before upload</strong></p>
-</div>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 30%;">
-<col style="width: 70%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Property</th>
-<th class="tableblock halign-left valign-top">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>dropZoneLabel</code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>optional</strong>, <em>default is translated <code>field.upload.basic.drop.hint</code> key</em></p>
-</div>
-<div class="paragraph">
-<p>Text displayed for the drop zone.</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>selectNewLabel</code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>optional</strong>, <em>default is translated <code>field.upload.basic.select.new</code> key</em></p>
-</div>
-<div class="paragraph">
-<p>Text displayed on the upload button.</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>warningNoteLabel</code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>optional</strong>, <em>default is translated <code>field.upload.basic.note.warning</code> key</em></p>
-</div>
-<div class="paragraph">
-<p>Text displayed when the upload is aborted.</p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<div class="paragraph">
-<p><strong>During upload</strong></p>
-</div>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 30%;">
-<col style="width: 70%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Property</th>
-<th class="tableblock halign-left valign-top">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>inProgressLabel</code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>optional</strong>, <em>default is translated <code>field.upload.basic.uploading.file</code> key</em></p>
-</div>
-<div class="paragraph">
-<p>Text showing how many files have been uploaded.</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>inProgressRatioLabel</code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>optional</strong>, <em>default is translated <code>field.upload.basic.uploaded.file</code> key</em></p>
-</div>
-<div class="paragraph">
-<p>Text showing how many files have been uploaded in relation to the total
-number of files.</p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<div class="paragraph">
-<p><strong>After upload</strong></p>
-</div>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 30%;">
-<col style="width: 70%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Property</th>
-<th class="tableblock halign-left valign-top">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>deleteLabel</code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>optional</strong>, <em>default is translated <code>field.upload.basic.select.delete</code> key</em></p>
-</div>
-<div class="paragraph">
-<p>Text displayed on the delete icon.</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>errorNoteLabel</code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>optional</strong>, <em>default is translated <code>field.upload.basic.note.error</code> key</em></p>
-</div>
-<div class="paragraph">
-<p>Text displayed when an error occurs during the upload.</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>fileDetailFormatLabel</code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>optional</strong>, <em>default is translated <code>field.upload.basic.file.detail.format</code> key</em></p>
-</div>
-<div class="paragraph">
-<p>Text displayed for the file format.</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>fileDetailHeaderLabel</code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>optional</strong>, <em>default is translated <code>field.upload.basic.file.detail.header</code> key</em></p>
-</div>
-<div class="paragraph">
-<p>Text displayed for the file header.</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>fileDetailNameLabel</code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>optional</strong>, <em>default is translated <code>field.upload.basic.file.detail.name</code> key</em></p>
-</div>
-<div class="paragraph">
-<p>Text displayed for the file name.</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>fileDetailSizeLabel</code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>optional</strong>, <em>default is translated <code>field.upload.basic.file.detail.size</code> key</em></p>
-</div>
-<div class="paragraph">
-<p>Text displayed for the file size.</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>fileDetailSourceLabel</code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>optional</strong>, <em>default is translated <code>field.upload.basic.file.detail.source</code> key</em></p>
-</div>
-<div class="paragraph">
-<p>Text displayed for the file source.</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>selectAnotherLabel</code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>optional</strong>, <em>default is translated <code>field.upload.basic.select.another</code>
-key</em></p>
-</div>
-<div class="paragraph">
-<p>Text displayed on the upload button.</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>sizeInterruption</code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>optional</strong>, <em>default is translated <code>field.upload.interupted.size</code> key</em></p>
-</div>
-<div class="paragraph">
-<p>Text displayed when the file size is greater than <code>maxUploadSize</code>.</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>successNoteLabel</code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>optional</strong>, <em>default is translated <code>field.upload.basic.note.success</code>
-key</em></p>
-</div>
-<div class="paragraph">
-<p>Text displayed when the upload is successful.</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>typeInterruption</code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>optional</strong>, <em>default is translated <code>field.upload.interupted.type</code> key</em></p>
-</div>
-<div class="paragraph">
-<p>Text displayed when the file type is not set in
-<code>allowedMimeTypePattern</code>.</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>userInterruption</code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>optional</strong>, <em>default is translated <code>field.upload.interupted.user</code> key</em></p>
-</div>
-<div class="paragraph">
-<p>Text displayed when the upload is interrupted.</p>
 </div></div></td>
 </tr>
 </tbody>
@@ -2917,7 +2744,7 @@ Applied only when creating a new item, not for already existing items.
 <td class="content">
 <div class="paragraph">
 <p>For <code>defaultValue</code> to work, the <code>populate</code> property in javadoc:info.magnolia.ui.dialog.actions.OpenDialogActionDefinition[]
-has to be set to <code>false</code>.</p>
+must be set to <code>false</code>.</p>
 </div>
 </td>
 </tr>
@@ -3087,6 +2914,21 @@ The class name is added to the field by calling the Vaadin method <a href="https
 </tr>
 </tbody>
 </table>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Related topics</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="../../../../Features/Digital-asset-management/" class="page">Digital asset management</a></p>
+</li>
+<li>
+<p><a href="../../../../Templating/Dialog-definition/Field-definition/List-of-fields/Upload-field/" class="page">Upload field</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
 </div>
 </div>
 </div>

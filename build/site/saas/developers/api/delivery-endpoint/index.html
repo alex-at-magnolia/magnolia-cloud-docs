@@ -46,6 +46,7 @@
       <div class="navbar-end">
         <a href="../../../../saas-cli/" class="navbar-item">SaaS CLI</a>
         <a href="../../../../paas/" class="navbar-item">PaaS</a>
+        <a href="../../../../incubator-modules/" class="navbar-item">Incubator Modules</a>
         <div class="navbar-item navbar-item--button">
           <span class="control">
             <a class="button is-primary" href="https://docs.magnolia-cms.com" target="_blank">DX Core docs</a>
@@ -179,6 +180,14 @@
       </ul>
     </li>
     <li class="component">
+      <span class="title">Incubator Module Documentation</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../../incubator-modules/">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
       <span class="title">Magnolia PaaS</span>
       <ul class="versions">
         <li class="version is-latest">
@@ -199,6 +208,14 @@
       <ul class="versions">
         <li class="version is-latest">
           <a href="../../../../saas-cli/">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Workflow Extended module</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../../workflow-extended-module/1.2.1/">1.2.1</a>
         </li>
       </ul>
     </li>
@@ -360,7 +377,10 @@
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>path</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em>required</em> The path relative to the <code>rootPath</code> defined in the <a href="#_configuration">configuration</a>.</p>
+<p><em>required</em></p>
+</div>
+<div class="paragraph">
+<p>The path relative to the <code>rootPath</code> defined in the <a href="#_configuration">configuration</a>.</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
 </tr>
@@ -1492,6 +1512,12 @@ nodeTypes:
 </div>
 </div>
 <div class="sect2">
+<h3 id="_retrieving_personalized_content"><a class="anchor" href="#_retrieving_personalized_content"></a>Retrieving personalized content</h3>
+<div class="paragraph">
+<p>For more details about this topic, see <a href="#Developing/API/Delivery-API/Requesting-personalized-content-with-the-delivery-endpoint.adoc" class="page unresolved">Requesting personalized content with the delivery endpoint</a>.</p>
+</div>
+</div>
+<div class="sect2">
 <h3 id="_filtering_examples"><a class="anchor" href="#_filtering_examples"></a>Filtering examples</h3>
 <div class="paragraph">
 <p>We assume you are <a href="https://curl.haxx.se/docs/manpage.html">familiar with
@@ -2060,6 +2086,30 @@ For image variations to be resolved correctly, make sure that the fallback site 
 </div>
 <div class="paragraph">
 <p>The default setting eliminates resolving self-references into fully expanded nodes and thus creating reference cycles. If a self-reference is found, only the value of the @id property of the self-referencing node is returned instead.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>personalized</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>optional</strong>, <em>default is <code>false</code></em></p>
+</div>
+<div class="paragraph">
+<p>If set to <code>true</code>, the endpoint returns personalized content based on <a href="#Features/Personalization.adoc#_traits_describe_the_visitors" class="page unresolved">personalization traits and values</a> defined in the request.</p>
+</div>
+<div class="paragraph">
+<p>For more details, see <a href="#Developing/API/Delivery-API/Requesting-personalized-content-with-the-delivery-endpoint.adoc" class="page unresolved">Requesting personalized content with the delivery endpoint</a>.</p>
+</div>
+<div class="admonitionblock caution">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-caution" title="Caution"></i>
+</td>
+<td class="content">
+This is a DX Core feature provided by the <code>magnolia-personalization-rest</code> submodule.
+</td>
+</tr>
+</table>
 </div></div></td>
 </tr>
 </tbody>

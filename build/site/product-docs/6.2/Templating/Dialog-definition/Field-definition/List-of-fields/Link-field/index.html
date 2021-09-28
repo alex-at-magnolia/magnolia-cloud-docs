@@ -46,6 +46,7 @@
       <div class="navbar-end">
         <a href="../../../../../../../saas-cli/" class="navbar-item">SaaS CLI</a>
         <a href="../../../../../../../paas/" class="navbar-item">PaaS</a>
+        <a href="../../../../../../../incubator-modules/" class="navbar-item">Incubator Modules</a>
         <div class="navbar-item navbar-item--button">
           <span class="control">
             <a class="button is-primary" href="https://docs.magnolia-cms.com" target="_blank">DX Core docs</a>
@@ -138,6 +139,9 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../../../../../Releases/Recent-features/">Recent features</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../../../../Releases/Release-notes-for-Magnolia-CMS-6.2.12/"><span class="smalltext">Release notes for Magnolia CMS 6.2.12</span></a>
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
@@ -662,6 +666,9 @@
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../../../../Developing/SPA-development-and-Magnolia/Attaching-an-SPA-project-to-Magnolia/">Attaching an SPA project to Magnolia</a>
   </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../../../../Developing/SPA-development-and-Magnolia/Personalization-of-headless-SPA-projects/">Personalization of headless SPA projects</a>
+  </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
@@ -790,6 +797,9 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../../../../Developing/API/Delivery-API/Requesting-localized-content-with-the-delivery-endpoint/">Requesting localized content with the delivery endpoint</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../../../../Developing/API/Delivery-API/Requesting-personalized-content-with-the-delivery-endpoint/">Requesting personalized content with the delivery endpoint</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../../../../Developing/API/Delivery-API/Resolving-references-with-the-delivery-endpoint/">Resolving references with the delivery endpoint</a>
@@ -1030,6 +1040,9 @@
     <a class="nav-link" href="../Token-field/">Token field</a>
   </li>
   <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../Upload-field/">Upload field</a>
+  </li>
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../../Custom-fields/">Custom fields</a>
   </li>
   <li class="nav-item" data-depth="4">
@@ -1231,7 +1244,7 @@
     <a class="nav-link" href="../../../../../Modules/List-of-modules/Digital-Asset-Management-module/">Digital Asset Management module</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="../../../../../Modules/List-of-modules/Digital-Asset-Management-module/DAM-core-module/">DAM core module</a>
+    <a class="nav-link" href="../../../../../Modules/List-of-modules/Digital-Asset-Management-module/DAM-Core-module/">DAM Core module</a>
   </li>
   <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../../../../../Modules/List-of-modules/Digital-Asset-Management-module/External-DAM-app-module/">External DAM app module</a>
@@ -2153,9 +2166,6 @@
     <a class="nav-link" href="../../../../../Support/Magnolia-5-UI-documentation/Dialog-definition-5-UI/Field-definition-5-UI/List-of-fields-5-UI/Twin-column-field-5-UI/">Twin-column field - 5 UI</a>
   </li>
   <li class="nav-item" data-depth="5">
-    <a class="nav-link" href="../Upload-field/">Upload field</a>
-  </li>
-  <li class="nav-item" data-depth="5">
     <a class="nav-link" href="../../../../../Support/Magnolia-5-UI-documentation/Dialog-definition-5-UI/Field-definition-5-UI/Custom-fields-5-UI/">Custom fields - 5 UI</a>
   </li>
   <li class="nav-item" data-depth="5">
@@ -2309,6 +2319,14 @@
       </ul>
     </li>
     <li class="component">
+      <span class="title">Incubator Module Documentation</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../../../../../incubator-modules/">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
       <span class="title">Magnolia PaaS</span>
       <ul class="versions">
         <li class="version is-latest">
@@ -2329,6 +2347,14 @@
       <ul class="versions">
         <li class="version is-latest">
           <a href="../../../../../../../saas-cli/">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Workflow Extended module</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../../../../../workflow-extended-module/1.2.1/">1.2.1</a>
         </li>
       </ul>
     </li>
@@ -2381,7 +2407,7 @@ stores a reference to the selected item.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>javadoc:info.magnolia.dam.app.field.DamLinkFieldDefinition[]: links to an asset (<code>damLinkField</code>).</p>
+<p>javadoc:info.magnolia.dam.app.field.DamLinkFieldDefinition[]: links to an asset or folder (<code>damLinkField</code>).</p>
 </li>
 <li>
 <p>javadoc:info.magnolia.pages.app.field.PageLinkFieldDefinition[]: links to a page (<code>pageLinkField</code>).</p>
@@ -2515,6 +2541,21 @@ field for <em>Magnolia 5 UI</em></a> instead.</p>
 </div>
 </div>
 </div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>To restrict <code>damLinkField</code> to assets only, see the commented-out lines in the
+<a href="https://git.magnolia-cms.com/projects/MODULES/repos/dam/browse/magnolia-dam-app/src/main/resources/dam-app-core/includes/chooser.yaml" target="_blank" rel="noopener">DAM <code>chooser</code></a>.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -2543,8 +2584,8 @@ field for <em>Magnolia 5 UI</em></a> instead.</p>
 <p>Unique identifier for the
 <a href="../../../Dialog-types/#_chooser_dialog" class="page">chooser
 dialog</a>. If none is specified, the
-<a href="https://git.magnolia-cms.com/projects/PLATFORM/repos/ui.pub/browse/magnolia-ui-framework-jcr/src/main/resources/ui-framework-jcr/dialogs/chooser.yaml">JCR
-chooser</a> will be used by default.</p>
+<a href="https://git.magnolia-cms.com/projects/PLATFORM/repos/ui.pub/browse/magnolia-ui-framework-jcr/src/main/resources/ui-framework-jcr/dialogs/chooser.yaml" target="_blank" rel="noopener">JCR
+<code>chooser</code></a> will be used by default.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -2962,7 +3003,7 @@ Applied only when creating a new item, not for already existing items.
 <td class="content">
 <div class="paragraph">
 <p>For <code>defaultValue</code> to work, the <code>populate</code> property in javadoc:info.magnolia.ui.dialog.actions.OpenDialogActionDefinition[]
-has to be set to <code>false</code>.</p>
+must be set to <code>false</code>.</p>
 </div>
 </td>
 </tr>

@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <sitemap>
+<loc>https://saas-docs.beta.de.magnolia-cloud.com/saas/sitemap-incubator-modules.xml</loc>
+</sitemap>
+<sitemap>
 <loc>https://saas-docs.beta.de.magnolia-cloud.com/saas/sitemap-paas.xml</loc>
 </sitemap>
 <sitemap>
@@ -11,5 +14,8 @@
 </sitemap>
 <sitemap>
 <loc>https://saas-docs.beta.de.magnolia-cloud.com/saas/sitemap-saas-cli.xml</loc>
+</sitemap>
+<sitemap>
+<loc>https://saas-docs.beta.de.magnolia-cloud.com/saas/sitemap-workflow-extended-module.xml</loc>
 </sitemap>
 </sitemapindex>

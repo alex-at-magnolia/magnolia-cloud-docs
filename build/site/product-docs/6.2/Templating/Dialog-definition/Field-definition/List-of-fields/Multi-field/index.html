@@ -46,6 +46,7 @@
       <div class="navbar-end">
         <a href="../../../../../../../saas-cli/" class="navbar-item">SaaS CLI</a>
         <a href="../../../../../../../paas/" class="navbar-item">PaaS</a>
+        <a href="../../../../../../../incubator-modules/" class="navbar-item">Incubator Modules</a>
         <div class="navbar-item navbar-item--button">
           <span class="control">
             <a class="button is-primary" href="https://docs.magnolia-cms.com" target="_blank">DX Core docs</a>
@@ -138,6 +139,9 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../../../../../Releases/Recent-features/">Recent features</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../../../../Releases/Release-notes-for-Magnolia-CMS-6.2.12/"><span class="smalltext">Release notes for Magnolia CMS 6.2.12</span></a>
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
@@ -662,6 +666,9 @@
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../../../../Developing/SPA-development-and-Magnolia/Attaching-an-SPA-project-to-Magnolia/">Attaching an SPA project to Magnolia</a>
   </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../../../../Developing/SPA-development-and-Magnolia/Personalization-of-headless-SPA-projects/">Personalization of headless SPA projects</a>
+  </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
@@ -790,6 +797,9 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../../../../Developing/API/Delivery-API/Requesting-localized-content-with-the-delivery-endpoint/">Requesting localized content with the delivery endpoint</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../../../../Developing/API/Delivery-API/Requesting-personalized-content-with-the-delivery-endpoint/">Requesting personalized content with the delivery endpoint</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../../../../Developing/API/Delivery-API/Resolving-references-with-the-delivery-endpoint/">Resolving references with the delivery endpoint</a>
@@ -1030,6 +1040,9 @@
     <a class="nav-link" href="../Token-field/">Token field</a>
   </li>
   <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../Upload-field/">Upload field</a>
+  </li>
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../../Custom-fields/">Custom fields</a>
   </li>
   <li class="nav-item" data-depth="4">
@@ -1231,7 +1244,7 @@
     <a class="nav-link" href="../../../../../Modules/List-of-modules/Digital-Asset-Management-module/">Digital Asset Management module</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="../../../../../Modules/List-of-modules/Digital-Asset-Management-module/DAM-core-module/">DAM core module</a>
+    <a class="nav-link" href="../../../../../Modules/List-of-modules/Digital-Asset-Management-module/DAM-Core-module/">DAM Core module</a>
   </li>
   <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../../../../../Modules/List-of-modules/Digital-Asset-Management-module/External-DAM-app-module/">External DAM app module</a>
@@ -2153,9 +2166,6 @@
     <a class="nav-link" href="../../../../../Support/Magnolia-5-UI-documentation/Dialog-definition-5-UI/Field-definition-5-UI/List-of-fields-5-UI/Twin-column-field-5-UI/">Twin-column field - 5 UI</a>
   </li>
   <li class="nav-item" data-depth="5">
-    <a class="nav-link" href="../Upload-field/">Upload field</a>
-  </li>
-  <li class="nav-item" data-depth="5">
     <a class="nav-link" href="../../../../../Support/Magnolia-5-UI-documentation/Dialog-definition-5-UI/Field-definition-5-UI/Custom-fields-5-UI/">Custom fields - 5 UI</a>
   </li>
   <li class="nav-item" data-depth="5">
@@ -2309,6 +2319,14 @@
       </ul>
     </li>
     <li class="component">
+      <span class="title">Incubator Module Documentation</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../../../../../incubator-modules/">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
       <span class="title">Magnolia PaaS</span>
       <ul class="versions">
         <li class="version is-latest">
@@ -2329,6 +2347,14 @@
       <ul class="versions">
         <li class="version is-latest">
           <a href="../../../../../../../saas-cli/">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Workflow Extended module</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../../../../../workflow-extended-module/1.2.1/">1.2.1</a>
         </li>
       </ul>
     </li>
@@ -2366,7 +2392,7 @@
 <div class="paragraph">
 <p>javadoc:info.magnolia.ui.field.MultiFieldDefinition[] renders a complex field composed of
 one or more field sets (for example, three sets of two text fields). Magnolia provides
-three preconfigured multi field definitions:</p>
+four preconfigured multi field definitions:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -2374,6 +2400,11 @@ three preconfigured multi field definitions:</p>
 <p>javadoc:info.magnolia.ui.field.JcrMultiValueFieldDefinition[]:
 allows you to enter multiple values of a single type to be stored as an
 array in a single JCR property (<code>jcrMultiValueField</code>).</p>
+</li>
+<li>
+<p>javadoc:info.magnolia.ui.field.JcrMultiLinkFieldDefinition[]:
+allows you to select multiple values of a single type in a <a href="../../../Dialog-types/#_chooser_dialog" class="page">chooser
+dialog</a> to be stored as an array in a single JCR property (<code>jcrMultiLinkField</code>).</p>
 </li>
 <li>
 <p>javadoc:info.magnolia.ui.field.JcrMultiFieldDefinition[]:
@@ -2404,6 +2435,9 @@ Their fully qualified class names are:</p>
 <p><code>info.magnolia.ui.field.JcrMultiValueFieldDefinition</code></p>
 </li>
 <li>
+<p><code>info.magnolia.ui.field.JcrMultiLinkFieldDefinition</code></p>
+</li>
+<li>
 <p><code>info.magnolia.ui.field.JcrMultiFieldDefinition</code></p>
 </li>
 <li>
@@ -2412,8 +2446,7 @@ Their fully qualified class names are:</p>
 </ul>
 </div>
 <div class="paragraph">
-<p>In the <em>Magnolia 5 UI</em> framework, the field functionally parallel to the
-two JCR fields is
+<p>In the <em>Magnolia 5 UI</em> framework, the field functionally parallel to the JCR fields is
 <a href="../../../../../Support/Magnolia-5-UI-documentation/Dialog-definition-5-UI/Field-definition-5-UI/List-of-fields-5-UI/Multivalue-field-5-UI/" class="page">Multivalue
 field</a>. There is no corresponding <em>5 UI</em> implementation for the JSON
 multi field.</p>
@@ -2427,54 +2460,79 @@ multi field.</p>
 <div class="sect1">
 <h2 id="_example_definitions"><a class="anchor" href="#_example_definitions"></a>Example definitions</h2>
 <div class="sectionbody">
-<div class="sect2">
-<h3 id="_jcr_multi_value_field"><a class="anchor" href="#_jcr_multi_value_field"></a>JCR multi-value field</h3>
+<div class="tabset is-loading">
+<div class="ulist tabs">
+<ul>
+<li>
+<p><a id="tabset1_jcr-multi-value-field"></a>JCR multi-value field</p>
+</li>
+<li>
+<p><a id="tabset1_jcr-multi-link-field"></a>JCR multi-link field</p>
+</li>
+<li>
+<p><a id="tabset1_jcr-multi-field"></a>JCR multi field</p>
+</li>
+<li>
+<p><a id="tabset1_json-multi-field"></a>JSON multi field</p>
+</li>
+</ul>
+</div>
+<div class="content">
+<div class="tab-pane" aria-labelledby="tabset1_jcr-multi-value-field">
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-yml hljs" data-lang="yml">assignedSegments:
   $type: jcrMultiValueField
   field:
     $type: comboBoxField
-    converterClass: info.magnolia.ui.editor.converter.JcrNodeToWorkspaceAndIdConverter
     datasource:
       $type: jcrDatasource
-      workspace: segments
-      describeByProperty: jcrName
-      allowedNodeTypes:
-        - mgnl:segment</code></pre>
+      workspace: website</code></pre>
 </div>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_jcr_multi_field"><a class="anchor" href="#_jcr_multi_field"></a>JCR multi field</h3>
+<div class="tab-pane" aria-labelledby="tabset1_jcr-multi-link-field">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yml hljs" data-lang="yml">jcrMultiLinkField:
+  $type: jcrMultiLinkField
+  field:
+    $type: linkField
+    label: ""
+    datasource:
+      $type: jcrDatasource
+      workspace: tours
+damMultiLinkField:
+  $type: jcrMultiLinkField
+  chooserId: dam-app-core:multiChooser
+  field:
+    $type: damLinkField</code></pre>
+</div>
+</div>
+</div>
+<div class="tab-pane" aria-labelledby="tabset1_jcr-multi-field">
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-yml hljs" data-lang="yml">multi:
-  label: Addresses
   i18n: true
   $type: jcrMultiField
   field:
     $type: compositeField
     properties:
       street:
-        label: Street name
         $type: textField
       city:
-        label: City name
         i18n: true
         $type: textField
       zip:
-        label: ZIP code
         $type: textField</code></pre>
 </div>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_json_multi_field"><a class="anchor" href="#_json_multi_field"></a>JSON multi field</h3>
+<div class="tab-pane" aria-labelledby="tabset1_json-multi-field">
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-yml hljs" data-lang="yml">stationboard:
-  label: Station Board
   $type: jsonMultiField
   itemProvider:
     $type: jsonMultiFieldProvider
@@ -2483,13 +2541,13 @@ multi field.</p>
     idPropertyName: name
     properties:
       name:
-        label: name
         $type: textField
         readOnly: true
       to:
-        label: to
         $type: textField
         readOnly: true</code></pre>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -2522,6 +2580,46 @@ multi field.</p>
 </div>
 <div class="paragraph">
 <p>All <a href="../../#_field_types" class="page">field types</a> are supported. See <a href="../" class="page">List of fields</a> for more information.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<code>JcrMultiLinkFieldDefinition</code> supports only <a href="../Link-field/" class="page">link</a> and <a href="../Combobox-field/" class="page">combobox</a> fields.
+</td>
+</tr>
+</table>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>datasource</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>required</strong> (used only in <code>JcrMultiLinkFieldDefinition</code>)</p>
+</div>
+<div class="paragraph">
+<p>Connects the field to a
+<a href="../../../../../Apps/App-configuration/Data-source-definition/" class="page">data source</a>.
+Options are populated via the configured data source.</p>
+</div>
+<div class="paragraph">
+<p>Use the fully qualified class name or the <code>$type</code> alias if the
+definition class is annotated with
+<code>info.magnolia.ui.datasource.DatasourceType</code>.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>chooserId</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>optional</strong> (used only in <code>JcrMultiLinkFieldDefinition</code>), <em>default is <code>ui-framework-jcr:multiChooser</code></em></p>
+</div>
+<div class="paragraph">
+<p>Unique identifier for the multi-<a href="../../../Dialog-types/#_chooser_dialog" class="page">chooser
+dialog</a>. If none is specified, the
+<a href="https://git.magnolia-cms.com/projects/PLATFORM/repos/ui.pub/browse/magnolia-ui-framework-jcr/src/main/resources/ui-framework-jcr/dialogs/multiChooser.yaml" target="_blank" rel="noopener">JCR
+<code>multiChooser</code></a> will be used by default.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -2605,7 +2703,7 @@ dialog.</p>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>buttonSelectAddLabel</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>optional</strong>, <em>default is translated <code>buttons.add</code> key</em></p>
+<p><strong>optional</strong>, <em>default is translated <code>buttons.add</code> key (translated <code>dialogs.buttons.select.multiple</code> key for <code>JcrMultiLinkFieldDefinition</code>)</em></p>
 </div>
 <div class="paragraph">
 <p>Button label for adding an item. The value is

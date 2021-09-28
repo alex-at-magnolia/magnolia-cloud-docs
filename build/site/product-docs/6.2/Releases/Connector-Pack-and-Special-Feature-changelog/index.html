@@ -46,6 +46,7 @@
       <div class="navbar-end">
         <a href="../../../../saas-cli/" class="navbar-item">SaaS CLI</a>
         <a href="../../../../paas/" class="navbar-item">PaaS</a>
+        <a href="../../../../incubator-modules/" class="navbar-item">Incubator Modules</a>
         <div class="navbar-item navbar-item--button">
           <span class="control">
             <a class="button is-primary" href="https://docs.magnolia-cms.com" target="_blank">DX Core docs</a>
@@ -138,6 +139,9 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../Recent-features/">Recent features</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Release-notes-for-Magnolia-CMS-6.2.12/"><span class="smalltext">Release notes for Magnolia CMS 6.2.12</span></a>
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
@@ -662,6 +666,9 @@
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../Developing/SPA-development-and-Magnolia/Attaching-an-SPA-project-to-Magnolia/">Attaching an SPA project to Magnolia</a>
   </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../Developing/SPA-development-and-Magnolia/Personalization-of-headless-SPA-projects/">Personalization of headless SPA projects</a>
+  </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
@@ -790,6 +797,9 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../Developing/API/Delivery-API/Requesting-localized-content-with-the-delivery-endpoint/">Requesting localized content with the delivery endpoint</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../Developing/API/Delivery-API/Requesting-personalized-content-with-the-delivery-endpoint/">Requesting personalized content with the delivery endpoint</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../Developing/API/Delivery-API/Resolving-references-with-the-delivery-endpoint/">Resolving references with the delivery endpoint</a>
@@ -1030,6 +1040,9 @@
     <a class="nav-link" href="../../Templating/Dialog-definition/Field-definition/List-of-fields/Token-field/">Token field</a>
   </li>
   <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../Templating/Dialog-definition/Field-definition/List-of-fields/Upload-field/">Upload field</a>
+  </li>
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../../Templating/Dialog-definition/Field-definition/Custom-fields/">Custom fields</a>
   </li>
   <li class="nav-item" data-depth="4">
@@ -1231,7 +1244,7 @@
     <a class="nav-link" href="../../Modules/List-of-modules/Digital-Asset-Management-module/">Digital Asset Management module</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="../../Modules/List-of-modules/Digital-Asset-Management-module/DAM-core-module/">DAM core module</a>
+    <a class="nav-link" href="../../Modules/List-of-modules/Digital-Asset-Management-module/DAM-Core-module/">DAM Core module</a>
   </li>
   <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../../Modules/List-of-modules/Digital-Asset-Management-module/External-DAM-app-module/">External DAM app module</a>
@@ -2153,9 +2166,6 @@
     <a class="nav-link" href="../../Support/Magnolia-5-UI-documentation/Dialog-definition-5-UI/Field-definition-5-UI/List-of-fields-5-UI/Twin-column-field-5-UI/">Twin-column field - 5 UI</a>
   </li>
   <li class="nav-item" data-depth="5">
-    <a class="nav-link" href="../../Templating/Dialog-definition/Field-definition/List-of-fields/Upload-field/">Upload field</a>
-  </li>
-  <li class="nav-item" data-depth="5">
     <a class="nav-link" href="../../Support/Magnolia-5-UI-documentation/Dialog-definition-5-UI/Field-definition-5-UI/Custom-fields-5-UI/">Custom fields - 5 UI</a>
   </li>
   <li class="nav-item" data-depth="5">
@@ -2309,6 +2319,14 @@
       </ul>
     </li>
     <li class="component">
+      <span class="title">Incubator Module Documentation</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../../incubator-modules/">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
       <span class="title">Magnolia PaaS</span>
       <ul class="versions">
         <li class="version is-latest">
@@ -2329,6 +2347,14 @@
       <ul class="versions">
         <li class="version is-latest">
           <a href="../../../../saas-cli/">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Workflow Extended module</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../../workflow-extended-module/1.2.1/">1.2.1</a>
         </li>
       </ul>
     </li>
@@ -3681,6 +3707,53 @@ when using them with guidance and expertise from Magnolia.</p>
 <p>See <a href="../../Special-Features/Live-Copy/" class="page">Live Copy</a> for an overview.</p>
 </div>
 <div class="sect2">
+<h3 id="_live_copy_module_3_2_6"><a class="anchor" href="#_live_copy_module_3_2_6"></a>Live Copy module 3.2.6</h3>
+<div class="paragraph">
+<p>Released on September 23, 2021.</p>
+</div>
+<div class="paragraph">
+<p>This bug fixing release also brings the following improvements:</p>
+</div>
+<div class="paragraph">
+<p><strong>Improvements</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Node names are now protected (<code>propertiesToIgnore</code> added) from master content change pushes. <a href="https://jira.magnolia-cms.com/browse/LIVECOPY-290" target="_blank" rel="noopener">LIVECOPY-290</a></p>
+</li>
+<li>
+<p>Improved protection of the <code>MultiValueField</code> field. <a href="https://jira.magnolia-cms.com/browse/LIVECOPY-283" target="_blank" rel="noopener">LIVECOPY-283</a></p>
+</li>
+<li>
+<p>Field transformers are checked before relinking. <a href="https://jira.magnolia-cms.com/browse/LIVECOPY-282" target="_blank" rel="noopener">LIVECOPY-282</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Bug fixes</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Updating a child page makes the parent page appear as updated. <a href="https://jira.magnolia-cms.com/browse/LIVECOPY-222" target="_blank" rel="noopener">LIVECOPY-222</a></p>
+</li>
+<li>
+<p>Live copy <a href="#Modules/List-of-modules/Workflow-module.html">workflows</a> have invalid markup leading to log errors. <a href="https://jira.magnolia-cms.com/browse/LIVECOPY-252" target="_blank" rel="noopener">LIVECOPY-252</a></p>
+</li>
+<li>
+<p>The <code>defaultLocale</code> property affects the selected language in the Pages app. <a href="https://jira.magnolia-cms.com/browse/LIVECOPY-266" target="_blank" rel="noopener">LIVECOPY-266</a></p>
+</li>
+<li>
+<p>Protecting fields in a Switchable Field does not work. <a href="https://jira.magnolia-cms.com/browse/LIVECOPY-281" target="_blank" rel="noopener">LIVECOPY-281</a></p>
+</li>
+<li>
+<p>Protect button does not work correctly if a locale is the default in a live copy tree but not the master default. <a href="https://jira.magnolia-cms.com/browse/LIVECOPY-288" target="_blank" rel="noopener">LIVECOPY-288</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
 <h3 id="_live_copy_module_3_2_5"><a class="anchor" href="#_live_copy_module_3_2_5"></a>Live Copy module 3.2.5</h3>
 <div class="paragraph">
 <p>Released on August 9, 2021.</p>
@@ -3705,10 +3778,9 @@ when using them with guidance and expertise from Magnolia.</p>
 <div class="paragraph">
 <p>This bug fixing release also brings the following improvements:</p>
 </div>
-<div class="ulist">
-<ul>
-<li>
+<div class="paragraph">
 <p><strong>Improvements</strong></p>
+</div>
 <div class="ulist">
 <ul>
 <li>
@@ -3722,9 +3794,9 @@ when using them with guidance and expertise from Magnolia.</p>
 </li>
 </ul>
 </div>
-</li>
-<li>
+<div class="paragraph">
 <p><strong>Bug fixes</strong></p>
+</div>
 <div class="ulist">
 <ul>
 <li>
@@ -3759,9 +3831,6 @@ when using them with guidance and expertise from Magnolia.</p>
 </li>
 <li>
 <p><code>MultiValueCompositeRichTextField</code>, <code>MultiValueRichTextField</code> cannot relink in <code>CompatibilityRewirePageLinksHelper</code>. <a href="https://jira.magnolia-cms.com/browse/LIVECOPY-278" target="_blank" rel="noopener">LIVECOPY-278</a></p>
-</li>
-</ul>
-</div>
 </li>
 </ul>
 </div>
