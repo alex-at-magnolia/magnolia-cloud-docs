@@ -52,6 +52,8 @@ asciidoc:
     kroki-fetch-diagram: true
     figure-caption!:
     jira: https://jira.magnolia-cms.com/browse/
+    mla: link:https://www.magnolia-cms.com/mla.html[MLA^]
+    gpl: link:http://www.gnu.org/licenses/gpl-3.0.html[GPL^]
   extensions:
   - ./lib/tabs-block.js
   - asciidoctor-kroki
