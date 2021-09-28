@@ -45,6 +45,7 @@ asciidoc:
     hosting-country: Switzerland
     magnolia-latest-version: 6.2.9
     kroki-fetch-diagram: true
+    jira: https://jira.magnolia-cms.com/browse/
   extensions:
   - ./lib/tabs-block.js
   - asciidoctor-kroki
