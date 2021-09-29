@@ -101,7 +101,7 @@
     <a class="nav-link" href="../connect-with-git/">Connect the repo to Magnolia SaaS</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../configure-magnolia/">Configure Magnolia SaaS</a>
+    <a class="nav-link" href="../configure-magnolia/">Test the connection</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../react-app/">Set up the React App</a>
@@ -260,28 +260,53 @@
 </div>
 </li>
 <li>
-<p>Create a remote repository with your remote git provider. <em>(GitHub and Bitbucket)</em></p>
+<p>Create a remote repository with your remote git provider. <em>(GitHub and Bitbucket Cloud)</em></p>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p><a href="https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-new-repository" target="_blank" rel="noopener">GitHub: Create a new repo</a><br>
+<a href="https://support.atlassian.com/bitbucket-cloud/docs/create-a-repository/" target="_blank" rel="noopener">Bitbucket Cloud: Create a new repo</a></p>
+</div>
+</td>
+</tr>
+</table>
+</div>
 </li>
 <li>
 <p>Navigate to the local folder containing your cloned <code>hello-saas</code> repository.</p>
 </li>
 <li>
-<p>Set your <code>remote origin</code> to the remote repository you just created. <em>(GitHub and Bitbucket)</em></p>
+<p>Set your <code>remote origin</code> to the remote repository you just created.</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-sh hljs" data-lang="sh">git remote remove origin <i class="conum" data-value="1"></i><b>(1)</b>
-git remote add origin &lt;/path/to/remote/repo&gt; <i class="conum" data-value="2"></i><b>(2)</b></code></pre>
+<pre class="highlightjs highlight"><code class="language-sh hljs" data-lang="sh"> git remote set-url origin &lt;ssh://repo/url.git&gt; <i class="conum" data-value="1"></i><b>(1)</b>
+ git branch -m main <i class="conum" data-value="2"></i><b>(2)</b>
+ git push -u origin --all <i class="conum" data-value="3"></i><b>(3)</b>
+ git push origin --tags <i class="conum" data-value="4"></i><b>(4)</b></code></pre>
 </div>
 </div>
 <div class="colist arabic">
 <table>
 <tr>
 <td><i class="conum" data-value="1"></i><b>1</b></td>
-<td>Removes the current origin so you can use your preferred git provider.</td>
+<td>Sets the remote origin URL.</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="2"></i><b>2</b></td>
-<td>Adds the remote origin of your preferred git provider.</td>
+<td>Sets your default branch to <code>main</code>.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>Pushes everything to <code>main</code>.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="4"></i><b>4</b></td>
+<td>Pushes all <code>--tags</code> to <code>main</code>.</td>
 </tr>
 </table>
 </div>

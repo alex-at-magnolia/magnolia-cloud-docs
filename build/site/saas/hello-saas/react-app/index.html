@@ -101,7 +101,7 @@
     <a class="nav-link" href="../connect-with-git/">Connect the repo to Magnolia SaaS</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../configure-magnolia/">Configure Magnolia SaaS</a>
+    <a class="nav-link" href="../configure-magnolia/">Test the connection</a>
   </li>
   <li class="nav-item is-current-page" data-depth="2">
     <a class="nav-link" href="./">Set up the React App</a>
@@ -265,8 +265,20 @@
 <p>Install your npm dependencies using the following at the root of the <code>hello-saas</code> folder.</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">npm install</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">npm install <i class="conum" data-value="1"></i><b>(1)</b> <i class="conum" data-value="2"></i><b>(2)</b></code></pre>
 </div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>You may need to run the command as an administrator depending on your machine.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>Mac users may need to run <code>sudo npm install</code>.</td>
+</tr>
+</table>
 </div>
 </li>
 <li>
@@ -276,7 +288,7 @@
 <pre class="highlightjs highlight"><code>REACT_APP_REST_BASE="/.rest/${REACT_APP_CONFIG_ENV}"
 
 REACT_APP_MGNL_BASE_AUTHOR=""
-REACT_APP_MGNL_HOST=https://author-SUB_ID.beta.de.magnolia-cloud.com <i class="conum" data-value="1"></i><b>(1)</b>
+REACT_APP_MGNL_HOST=https://author-SUB_ID.saas.magnolia-cloud.com <i class="conum" data-value="1"></i><b>(1)</b>
 REACT_APP_MGNL_DAM_RAW=${REACT_APP_MGNL_HOST}
 REACT_APP_MGNL_IS_PREVIEW=true
 
@@ -315,7 +327,7 @@ REACT_APP_MGNL_API_NAV="${REACT_APP_REST_BASE}/delivery/pagenav/v1"</code></pre>
 </div>
 </li>
 <li>
-<p><em>Nice!</em> Your application is runnin at <a href="http://localhost:3000" class="bare" target="_blank" rel="noopener">http://localhost:3000</a>.</p>
+<p><em>Nice!</em> Your application is running at <a href="http://localhost:3000" class="bare" target="_blank" rel="noopener">http://localhost:3000</a>.</p>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -357,21 +369,7 @@ If you don&#8217;t see the app running, run the <code>npm run start</code> comma
 </div>
 </li>
 <li>
-<p>In your browser, go to your Magnolia SaaS subscription.</p>
-<div class="admonitionblock note alt">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="This is found at:"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p><code><a href="https://author-SUB_ID.saas.magnolia-cloud.com" class="bare">https://author-SUB_ID.saas.magnolia-cloud.com</a></code></p>
-</div>
-</td>
-</tr>
-</table>
-</div>
+<p>In your browser, go to your <a href="https://id.saas.magnolia-cloud.com/" target="_blank" rel="noopener">Magnolia SaaS subscription</a>.</p>
 </li>
 <li>
 <p>Go to the <strong>Pages</strong> App.</p>
@@ -442,7 +440,7 @@ Your browser does not support the video tag.
 </div>
 </div>
 <nav class="pagination">
-  <span class="prev"><a href="../configure-magnolia/">Configure Magnolia SaaS</a></span>
+  <span class="prev"><a href="../configure-magnolia/">Test the connection</a></span>
   <span class="next"><a href="../netlify/">Deploy to Netlify</a></span>
 </nav>
 </article>

@@ -101,7 +101,7 @@
     <a class="nav-link" href="../../hello-saas/connect-with-git/">Connect the repo to Magnolia SaaS</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../../hello-saas/configure-magnolia/">Configure Magnolia SaaS</a>
+    <a class="nav-link" href="../../hello-saas/configure-magnolia/">Test the connection</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../../hello-saas/react-app/">Set up the React App</a>
@@ -306,7 +306,7 @@ The ingestion service (<em>as shown below</em>) needs to have <a href="#_create_
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-Currently, we support GitHub and Bitbucket.
+Currently, we support GitHub and Bitbucket Cloud.
 </td>
 </tr>
 </table>
@@ -329,9 +329,31 @@ Currently, we support GitHub and Bitbucket.
 <p>You have to connect your own git repo so that your Magnolia SaaS subscription picks up your changes as you develop for Magnolia.</p>
 </div>
 <div class="sect2">
+<h3 id="_prerequisites"><a class="anchor" href="#_prerequisites"></a>Prerequisites</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>You must have a Magnolia SaaS subscription.</p>
+</li>
+<li>
+<p>You should be logged in to <a href="https://id.saas.magnolia-cloud.com/" target="_blank" rel="noopener">Magnolia SaaS</a>.</p>
+</li>
+<li>
+<p>You must have your own git repository.</p>
+</li>
+<li>
+<p>Your must use one of the following remote git providers:</p>
+<div class="paragraph">
+<p>GitHub and Bitbucket Cloud</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
 <h3 id="_branches"><a class="anchor" href="#_branches"></a><span class="icon"><i class="fa fa-git-square"></i></span> Branches</h3>
 <div class="paragraph">
-<p>The default branch for Magnolia SaaS is the <code>main</code>. This means that <code>main</code> is considered your production branch.</p>
+<p>The default branch for Magnolia SaaS is the <code>main</code>. This means that <code>main</code> is considered your production branch. Magnolia SaaS automatically syncs with any branch following the <code>env/*</code> pattern, e.g., <code>env/hello-saas</code>. This appears as <code>hello-saas</code> in admincentral.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -340,42 +362,18 @@ Currently, we support GitHub and Bitbucket.
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-You cannot change <code>main</code> as the default branch.
+<div class="paragraph">
+<p>Magnolia SaaS automatically looks for <code>main</code> as the default branch. However, if there is no <code>main</code> branch, Magnolia SaaS takes the first branch available in the git repository.</p>
+</div>
 </td>
 </tr>
 </table>
-</div>
-<div class="paragraph">
-<p>Magnolia SaaS automatically syncs with any branch following the <code>env/*</code> pattern, e.g., <code>env/hello-saas</code>. This appears as <code>hello-saas</code> in admincentral.</p>
-</div>
-<hr>
-</div>
-<div class="sect2">
-<h3 id="_prerequisites"><a class="anchor" href="#_prerequisites"></a>Prerequisites</h3>
-<div class="ulist">
-<ul>
-<li>
-<p>You must have a Magnolia SaaS subscription.</p>
-</li>
-<li>
-<p>You should be logged in to <a href="https://id.saas.magnolia-cloud.com/" target="_blank" rel="noopener">Magnolia SaaS</a></p>
-</li>
-<li>
-<p>You must have your own git repository.</p>
-</li>
-<li>
-<p>Your must use one of the following remote git providers:</p>
-<div class="paragraph">
-<p>GitHub and Bitbucket</p>
-</div>
-</li>
-</ul>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_instructions"><a class="anchor" href="#_instructions"></a>Instructions</h3>
 <div class="paragraph">
-<p>There are two parts for setting up your git repo to sync with Magnolia SaaS.</p>
+<p>There are three parts for setting up your git repo to sync with Magnolia SaaS.</p>
 </div>
 <div class="ulist">
 <ul>
@@ -385,29 +383,44 @@ You cannot change <code>main</code> as the default branch.
 <li>
 <p><a href="#_create_webhook_in_git_provider">Create webhook in git provider</a></p>
 </li>
+<li>
+<p><a href="#_sync_your_repository">Sync your repository</a></p>
+</li>
 </ul>
 </div>
-<div class="sect3">
-<h4 id="_create_webhook_url"><a class="anchor" href="#_create_webhook_url"></a>Create webhook URL</h4>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Go to your profile in the top right corner and click <strong>Git configuration</strong> from the dropdown menu.</p>
-<div class="admonitionblock note">
+<div class="admonitionblock tip">
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-note" title="Note"></i>
+<i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-The SSH Public Key is generated when we create your subscription.
+Make sure you are logged in to <a href="https://id.saas.magnolia-cloud.com/" target="_blank" rel="noopener">Magnolia SaaS</a>.
 </td>
 </tr>
 </table>
 </div>
+<div class="sect3">
+<h4 id="_create_webhook_url"><a class="anchor" href="#_create_webhook_url"></a>Create webhook URL</h4>
+<div class="paragraph">
+<p>Go to your profile in the top right corner and click <strong>Git configuration</strong> from the dropdown menu.</p>
+</div>
+<div class="paragraph">
+<p><span class="image zoom"><img src="../../_images/admincentral/dropdown-git-config.jpg" alt="dropdown git config"></span></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Copy your public key.</p>
+<div class="paragraph">
+<p><span class="image zoom"><img src="../_images/git/git-config-ssh-public-key.jpg" alt="git config ssh public key"></span></p>
+</div>
 </li>
 <li>
 <p>Under <strong>Step 2</strong>:</p>
+<div class="paragraph">
+<p><span class="image zoom"><img src="../_images/git/git-config-ssh-url.jpg" alt="git config ssh url"></span></p>
+</div>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
@@ -465,7 +478,7 @@ The SSH Public Key is generated when we create your subscription.
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-The webhook URL is generated based on your subscription ID and git hosting service provider (<em>such as Bitbucket or GitHub</em>)
+The webhook URL is generated based on your subscription ID and git hosting service provider.
 </td>
 </tr>
 </table>
@@ -475,38 +488,19 @@ The webhook URL is generated based on your subscription ID and git hosting servi
 </div>
 </li>
 <li>
-<p>Under <strong>Step 3</strong>:</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>Copy the Webhook URL, Webhook Content Type (if GitHub), and Webhook Secret.</p>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-You will need these for setting up the webhook for your git hosting service.
-</td>
-</tr>
-</table>
+<p>Under <strong>Step 3</strong>, copy the Webhook URL Webhook Secret. If using GitHub, make note of the Webhook Content Type <code>application/json</code>.</p>
+<div class="paragraph">
+<p><span class="image zoom"><img src="../_images/git/git-config-webhook-url.jpg" alt="git config webhook url"></span></p>
 </div>
-</li>
-</ol>
-</div>
-</li>
-<li>
-<p><span class="get">optional</span> Under <strong>Step 4</strong>, try out our <a href="../../hello-saas/" class="page">Getting started tutorial</a> which includes sample project to try out Magnolia SaaS.</p>
-</li>
-<li>
-<p>Finally, Under <strong>Step 5</strong> sync your repository to your subscription by clicking <strong>Sync now</strong>.</p>
 </li>
 </ol>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_create_webhook_in_git_provider"><a class="anchor" href="#_create_webhook_in_git_provider"></a>Create webhook in git provider</h4>
+<div class="paragraph">
+<p>The following instructions take place in your remote git provider.</p>
+</div>
 <div class="tabset is-loading">
 <div class="ulist tabs">
 <ul>
@@ -545,7 +539,13 @@ You will need these for setting up the webhook for your git hosting service.
 </div>
 </li>
 <li>
+<p>Click <strong>Add webhook</strong>.</p>
+</li>
+<li>
 <p>Go to <strong>Settings &gt; Deploy keys</strong>.</p>
+</li>
+<li>
+<p>Click <strong>Add deploy key</strong>.</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
@@ -670,6 +670,22 @@ For more information on Bitbucket webhooks, see <a href="https://support.atlassi
 </div>
 </div>
 </div>
+</div>
+<div class="paragraph">
+<p> <br></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_sync_your_repository"><a class="anchor" href="#_sync_your_repository"></a>Sync your repository</h4>
+<div class="olist arabic">
+<ol class="arabic" start="4">
+<li>
+<p><span class="get">optional</span> Under <strong>Step 4</strong>, try out our <a href="../../hello-saas/" class="page">Getting started tutorial</a> which includes a sample project to try out Magnolia SaaS.</p>
+</li>
+<li>
+<p>Finally, Under <strong>Step 5</strong> sync your repository to your subscription by clicking <strong>Sync now</strong>.</p>
+</li>
+</ol>
 </div>
 </div>
 </div>

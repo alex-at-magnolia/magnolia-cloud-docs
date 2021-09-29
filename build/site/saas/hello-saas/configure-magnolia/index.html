@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Configure Magnolia :: Magnolia Cloud Service Internal Documentation</title>
+    <title>Test the connection :: Magnolia Cloud Service Internal Documentation</title>
     <link rel="canonical" href="https://saas-docs.beta.de.magnolia-cloud.com/saas/saas/hello-saas/configure-magnolia/">
     <link rel="prev" href="../connect-with-git/">
     <link rel="next" href="../react-app/">
@@ -101,7 +101,7 @@
     <a class="nav-link" href="../connect-with-git/">Connect the repo to Magnolia SaaS</a>
   </li>
   <li class="nav-item is-current-page" data-depth="2">
-    <a class="nav-link" href="./">Configure Magnolia SaaS</a>
+    <a class="nav-link" href="./">Test the connection</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../react-app/">Set up the React App</a>
@@ -238,81 +238,24 @@
   <ul>
     <li><a href="../../">Magnolia SaaS</a></li>
     <li><a href="../">Hello SaaS</a></li>
-    <li><a href="./">Configure Magnolia SaaS</a></li>
+    <li><a href="./">Test the connection</a></li>
   </ul>
 </nav>
 
 </div>
   <div class="content">
 <article class="doc">
-<h1 class="page">Configure Magnolia</h1>
+<h1 class="page">Test the connection</h1>
 <div id="preamble">
-<div class="sectionbody">
-<div class="paragraph">
-<p><span class="post">Hello SaaS</span></p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Log in to <a href="https://id.saas.magnolia-cloud.com/" target="_blank" rel="noopener">Magnolia SaaS</a>.</p>
-</li>
-<li>
-<p>In the Find Bar, type <strong>Security</strong>.</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>Go to the <strong>Security</strong> app.</p>
-<div class="paragraph">
-<p><span class="image zoom"><img src="../../developers/_images/admincentral/find-security-app.gif" alt="find security app"></span></p>
-</div>
-</li>
-</ol>
-</div>
-</li>
-<li>
-<p>Within the <strong>Security</strong> app, to the <strong>Roles</strong> tab.</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>Click <strong>Edit role</strong> for the <strong>anonymous</strong> role.</p>
-</li>
-<li>
-<p>Go to the <strong>Web access</strong> tab.</p>
-</li>
-<li>
-<p>Add the following:</p>
-<div class="olist lowerroman">
-<ol class="lowerroman" type="i">
-<li>
-<p><code>GET</code> <code>/dam/*</code>.</p>
-</li>
-<li>
-<p><code>GET</code> <code>/.rest/*</code>.</p>
-<div class="paragraph">
-<p><span class="image zoom"><img src="../../developers/_images/admincentral/set-anonymous-role-tutorial.png" alt="set anonymous role tutorial"></span></p>
-</div>
-</li>
-</ol>
-</div>
-</li>
-<li>
-<p>Don&#8217;t forget to save your changes.</p>
-</li>
-</ol>
-</div>
-</li>
-</ol>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_test_the_connection"><a class="anchor" href="#_test_the_connection"></a>Test the connection</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Now, let&#8217;s make a small change to your <code>hello-saas</code> repo to ensure everything is connected and working.</p>
 </div>
-<div class="sect2">
-<h3 id="_make_the_change_in_your_repo"><a class="anchor" href="#_make_the_change_in_your_repo"></a>Make the change in your repo</h3>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_make_the_change_in_your_repo"><a class="anchor" href="#_make_the_change_in_your_repo"></a>Make the change in your repo</h2>
+<div class="sectionbody">
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -363,8 +306,10 @@ references:
 </ol>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_see_it_on_admincentral"><a class="anchor" href="#_see_it_on_admincentral"></a>See it on admincentral</h3>
+</div>
+<div class="sect1">
+<h2 id="_see_it_on_admincentral"><a class="anchor" href="#_see_it_on_admincentral"></a>See it on admincentral</h2>
+<div class="sectionbody">
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -397,16 +342,15 @@ This app is now available as it is part of your <code>hello-saas</code> repo tha
 <div id="import-pages-yaml-admincentral" class="olist arabic">
 <ol class="arabic" start="3">
 <li>
-<p>From <strong>Actions</strong>, select <strong>Import</strong> and import the <a href="../../_attachments/website.react-minimal.yaml">website.react-minimal.yaml</a> file.</p>
+<p>From the <strong>Actions</strong> sidebar on the right, select <strong>Import</strong> (<em>you may need to scroll down</em>) and import the <a href="../../_attachments/website.react-minimal.yaml">website.react-minimal.yaml</a> file.</p>
 </li>
 <li>
-<p>Now, you can see the content being delivered in JSON at <code><a href="https://author-SUB_ID.beta.de.magnolia-cloud.com/.rest/delivery/pages/v1" class="bare">https://author-SUB_ID.beta.de.magnolia-cloud.com/.rest/delivery/pages/v1</a></code>.</p>
+<p>Now, you can see the content being delivered in JSON at <code><a href="https://author-SUB_ID.saas.magnolia-cloud.com/.rest/delivery/pages/v1" class="bare">https://author-SUB_ID.saas.magnolia-cloud.com/.rest/delivery/pages/v1</a></code>.</p>
 <div class="paragraph">
 <p><span class="image zoom"><img src="../../_images/rest/admincentral-rest-endpoint-json-pages.png" alt="admincentral rest endpoint json pages"></span></p>
 </div>
 </li>
 </ol>
-</div>
 </div>
 </div>
 </div>

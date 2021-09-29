@@ -101,7 +101,7 @@
     <a class="nav-link" href="../hello-saas/connect-with-git/">Connect the repo to Magnolia SaaS</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../hello-saas/configure-magnolia/">Configure Magnolia SaaS</a>
+    <a class="nav-link" href="../hello-saas/configure-magnolia/">Test the connection</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../hello-saas/react-app/">Set up the React App</a>
@@ -286,7 +286,7 @@
 <div class="sect2">
 <h3 id="_branches"><a class="anchor" href="#_branches"></a><span class="icon"><i class="fa fa-git-square"></i></span> Branches</h3>
 <div class="paragraph">
-<p>The default branch for Magnolia SaaS is the <code>main</code>. This means that <code>main</code> is considered your production branch.</p>
+<p>The default branch for Magnolia SaaS is the <code>main</code>. This means that <code>main</code> is considered your production branch. Magnolia SaaS automatically syncs with any branch following the <code>env/*</code> pattern, e.g., <code>env/hello-saas</code>. This appears as <code>hello-saas</code> in admincentral.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -295,13 +295,12 @@
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-You cannot change <code>main</code> as the default branch.
+<div class="paragraph">
+<p>Magnolia SaaS automatically looks for <code>main</code> as the default branch. However, if there is no <code>main</code> branch, Magnolia SaaS takes the first branch available in the git repository.</p>
+</div>
 </td>
 </tr>
 </table>
-</div>
-<div class="paragraph">
-<p>Magnolia SaaS automatically syncs with any branch following the <code>env/*</code> pattern, e.g., <code>env/hello-saas</code>. This appears as <code>hello-saas</code> in admincentral.</p>
 </div>
 <div class="sidebarblock">
 <div class="content">
