@@ -2388,8 +2388,6 @@
   <div class="content">
 <article class="doc">
 <h1 class="page">Cart endpoint API v2</h1>
-<div id="preamble">
-<div class="sectionbody">
 <div class="paragraph">
 <p>This page describes the v2 <code>cart</code> endpoint, which can be used to interact with your external e-commerce solution’s REST shopping cart service.</p>
 </div>
@@ -2422,36 +2420,55 @@
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-Magento is now Adobe Commerce, powered by Magento. In the examples and configuration below, we refer to Adobe Commerce as Magento.
+Magento is now Adobe Commerce, powered by Magento. In the examples and configuration below, we may refer to Adobe Commerce as Magento.
 </td>
 </tr>
 </table>
 </div>
+<div class="tabset is-loading">
+<div class="ulist tabs">
+<ul>
+<li>
+<p><a id="tabset1_adobe-commerce"></a>Adobe Commerce</p>
+</li>
+<li>
+<p><a id="tabset1_commercetools"></a>commercetools</p>
+</li>
+<li>
+<p><a id="tabset1_salesforce-commerce-cloud"></a>Salesforce Commerce Cloud</p>
+</li>
+<li>
+<p><a id="tabset1_sap-commerce-cloud"></a>SAP Commerce Cloud</p>
+</li>
+</ul>
 </div>
-</div>
-<div class="sect1">
-<h2 id="_post"><a class="anchor" href="#_post"></a><span class="post">POST</span></h2>
-<div class="sectionbody">
-<div class="sect2">
-<h3 id="_post_cart_as_an_anonymous_user"><a class="anchor" href="#_post_cart_as_an_anonymous_user"></a>Post cart as an anonymous user</h3>
+<div class="content">
+<div class="tab-pane" aria-labelledby="tabset1_adobe-commerce">
 <div class="paragraph">
-<p>Creates a cart as an anonymous user.</p>
+<p><span class="post">POST</span></p>
 </div>
-<div class="sect3">
-<h4 id="_request_url"><a class="anchor" href="#_request_url"></a>Request URL</h4>
+<div class="paragraph">
+<div class="title">Post cart as an anonymous or authenticated user</div>
+<p>Creates a cart as an anonymous or authenticated user.</p>
+</div>
+<div class="paragraph">
+<p>If neither the <code>userId</code> or <code>accessToken</code> parameters are provided, a cart for an anonymous user is created.</p>
+</div>
+<div class="paragraph">
+<p><strong>Request URL</strong></p>
+</div>
 <div class="paragraph">
 <p><code>/.rest/ecommerce/v2/carts/</code></p>
 </div>
+<div class="paragraph">
+<p><strong>Parameters</strong></p>
 </div>
-<div class="sect3">
-<h4 id="_parameters"><a class="anchor" href="#_parameters"></a>Parameters</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 20%;">
-<col style="width: 30%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 10%;">
+<col style="width: 22.2222%;">
+<col style="width: 33.3333%;">
+<col style="width: 22.2222%;">
+<col style="width: 22.2223%;">
 </colgroup>
 <thead>
 <tr>
@@ -2459,252 +2476,79 @@ Magento is now Adobe Commerce, powered by Magento. In the examples and configura
 <th class="tableblock halign-left valign-top">Description</th>
 <th class="tableblock halign-left valign-top">Type</th>
 <th class="tableblock halign-left valign-top">Data Type</th>
-<th class="tableblock halign-left valign-top">Connector</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>definitionName</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>required</strong></p>
-</div>
-<div class="paragraph">
-<p>The definition name.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>query</code></p>
-</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>definitionName</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">The definition name.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>query</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><code>string</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>commercetools</p>
-</div>
-<div class="paragraph">
-<p>Magento</p>
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>connectionName</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>required</strong></p>
-</div>
-<div class="paragraph">
-<p>The connection name.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>query</code></p>
-</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>connectionName</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">The connection name.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>query</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><code>string</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>commercetools</p>
-</div>
-<div class="paragraph">
-<p>Magento</p>
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>anonymousId</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>required</strong></p>
-</div>
-<div class="paragraph">
-<p>Identifies the cart belonging to an anonymous user.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>header</code></p>
-</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>userId</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">The user ID.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>header</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><code>string</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>commercetools</p>
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>currencyCode</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>required</strong></p>
-</div>
-<div class="paragraph">
-<p>A three-digit currency code as per
-<a href="https://en.wikipedia.org/wiki/ISO_4217">↗ ISO 4217</a>.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>form</code></p>
-</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>accessToken</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">The user&#8217;s access token.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>header</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><code>string</code></p>
 </div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>currencyCode</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">A three-digit currency code as per
+<a href="https://en.wikipedia.org/wiki/ISO_4217">↗ ISO 4217</a>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>form</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>commercetools</p>
+<p><code>string</code></p>
 </div></div></td>
 </tr>
 </tbody>
 </table>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_post_cart_as_an_authenticated_user"><a class="anchor" href="#_post_cart_as_an_authenticated_user"></a>Post cart as an authenticated user</h3>
 <div class="paragraph">
-<p>Creates a cart for a registered user.</p>
-</div>
-<div class="sect3">
-<h4 id="_request_url_2"><a class="anchor" href="#_request_url_2"></a>Request URL</h4>
-<div class="paragraph">
-<p><code>/.rest/ecommerce/v2/carts/</code></p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_parameters_2"><a class="anchor" href="#_parameters_2"></a>Parameters</h4>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 30%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 10%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Parameter</th>
-<th class="tableblock halign-left valign-top">Description</th>
-<th class="tableblock halign-left valign-top">Type</th>
-<th class="tableblock halign-left valign-top">Data Type</th>
-<th class="tableblock halign-left valign-top">Connector</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>definitionName</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>required</strong></p>
+<p><span class="get">GET</span></p>
 </div>
 <div class="paragraph">
-<p>The definition name.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>query</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>string</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>commercetools</p>
-</div>
-<div class="paragraph">
-<p>Magento</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>connectionName</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>required</strong></p>
-</div>
-<div class="paragraph">
-<p>The connection name.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>query</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>string</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>commercetools</p>
-</div>
-<div class="paragraph">
-<p>Magento</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>userId</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>required</strong>
-commercetools: The unique ID of the user.</p>
-</div>
-<div class="paragraph">
-<p>Magento: Access token.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>header</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>string</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>commercetools</p>
-</div>
-<div class="paragraph">
-<p>Magento</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>currencyCode</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>required</strong></p>
-</div>
-<div class="paragraph">
-<p>A three-digit currency code as per
-<a href="https://en.wikipedia.org/wiki/ISO_4217">↗ ISO 4217</a>.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>form</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>string</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>commercetools</p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_get"><a class="anchor" href="#_get"></a><span class="get">GET</span></h2>
-<div class="sectionbody">
-<div class="sect2">
-<h3 id="_get_a_cart_by_id"><a class="anchor" href="#_get_a_cart_by_id"></a>Get a cart by ID</h3>
-<div class="paragraph">
+<div class="title">Get a cart by ID</div>
 <p>Returns a cart by its ID.</p>
 </div>
-<div class="sect3">
-<h4 id="_request_url_3"><a class="anchor" href="#_request_url_3"></a>Request URL</h4>
+<div class="paragraph">
+<p><strong>Request URL</strong></p>
+</div>
 <div class="paragraph">
 <p><code>/.rest/ecommerce/v2/carts/{cartId}</code></p>
 </div>
+<div class="paragraph">
+<p><strong>Parameters</strong></p>
 </div>
-<div class="sect3">
-<h4 id="_parameters_3"><a class="anchor" href="#_parameters_3"></a>Parameters</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 20%;">
-<col style="width: 30%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 10%;">
+<col style="width: 22.2222%;">
+<col style="width: 33.3333%;">
+<col style="width: 22.2222%;">
+<col style="width: 22.2223%;">
 </colgroup>
 <thead>
 <tr>
@@ -2712,106 +2556,57 @@ commercetools: The unique ID of the user.</p>
 <th class="tableblock halign-left valign-top">Description</th>
 <th class="tableblock halign-left valign-top">Type</th>
 <th class="tableblock halign-left valign-top">Data Type</th>
-<th class="tableblock halign-left valign-top">Connector</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>cartId</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>required</strong></p>
-</div>
-<div class="paragraph">
-<p>commercetools: The unique ID of the cart.</p>
-</div>
-<div class="paragraph">
-<p>Magento: quote ID.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>path</code></p>
-</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>definitionName</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">The definition name.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>query</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><code>string</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>commercetools</p>
-</div>
-<div class="paragraph">
-<p>Magento (anonymous)</p>
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>definitionName</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>required</strong></p>
-</div>
-<div class="paragraph">
-<p>The definition name</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>query</code></p>
-</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>connectionName</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">The connection name.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>query</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><code>string</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>commercetools</p>
-</div>
-<div class="paragraph">
-<p>Magento</p>
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>connectionName</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>required</strong></p>
-</div>
-<div class="paragraph">
-<p>The connection name</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>query</code></p>
-</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>cartId</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required for anonymous users</strong></p>
+<p class="tableblock">The Magento quote ID.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>path</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><code>string</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>commercetools</p>
-</div>
-<div class="paragraph">
-<p>Magento</p>
 </div></div></td>
 </tr>
 </tbody>
 </table>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_get_a_cart_by_user_id"><a class="anchor" href="#_get_a_cart_by_user_id"></a>Get a cart by user ID</h3>
 <div class="paragraph">
+<div class="title">Get a cart by user ID</div>
 <p>Returns a cart by user ID.</p>
 </div>
-<div class="sect3">
-<h4 id="_request_url_4"><a class="anchor" href="#_request_url_4"></a>Request URL</h4>
+<div class="paragraph">
+<p><strong>Request URL</strong></p>
+</div>
 <div class="paragraph">
 <p><code>/.rest/ecommerce/v2/carts/user</code></p>
 </div>
+<div class="paragraph">
+<p><strong>Parameters</strong></p>
 </div>
-<div class="sect3">
-<h4 id="_parameters_4"><a class="anchor" href="#_parameters_4"></a>Parameters</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 20%;">
-<col style="width: 30%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 10%;">
+<col style="width: 22.2222%;">
+<col style="width: 33.3333%;">
+<col style="width: 22.2222%;">
+<col style="width: 22.2223%;">
 </colgroup>
 <thead>
 <tr>
@@ -2819,111 +2614,80 @@ commercetools: The unique ID of the user.</p>
 <th class="tableblock halign-left valign-top">Description</th>
 <th class="tableblock halign-left valign-top">Type</th>
 <th class="tableblock halign-left valign-top">Data Type</th>
-<th class="tableblock halign-left valign-top">Connector</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>userId</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>required</strong></p>
-</div>
-<div class="paragraph">
-<p>commercetools: the unique ID of the user.</p>
-</div>
-<div class="paragraph">
-<p>Magento: the Access token.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>header</code></p>
-</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>definitionName</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">The definition name.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>query</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><code>string</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>commercetools</p>
-</div>
-<div class="paragraph">
-<p>Magento</p>
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>definitionName</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>required</strong></p>
-</div>
-<div class="paragraph">
-<p>The definition name.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>query</code></p>
-</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>connectionName</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">The connection name.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>query</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><code>string</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>commercetools</p>
-</div>
-<div class="paragraph">
-<p>Magento</p>
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>connectionName</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>required</strong></p>
-</div>
-<div class="paragraph">
-<p>The connection name.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>query</code></p>
-</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>userId</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">The <code>userId</code> must be Base64-encoded.</p>
+<p class="tableblock">The Magento Access token.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>header</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><code>string</code></p>
 </div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>userIdEncodingDisabled</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>optional</strong></p>
+<p class="tableblock">Default is <code>false</code> and the <code>userId</code> must be Base64-encoded.</p>
+<p class="tableblock">NOTE: When set to <code>true</code> the <code>userId</code> is not encoded and may contain sensitive information. This should not be used in a production environment.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>query</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>commercetools</p>
-</div>
-<div class="paragraph">
-<p>Magento</p>
+<p><code>string</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>accessToken</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">The user&#8217;s access token.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>header</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>string</code></p>
 </div></div></td>
 </tr>
 </tbody>
 </table>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_post_2"><a class="anchor" href="#_post_2"></a><span class="post">POST</span></h2>
-<div class="sectionbody">
-<div class="sect2">
-<h3 id="_post_an_item_to_cart"><a class="anchor" href="#_post_an_item_to_cart"></a>Post an item to cart</h3>
 <div class="paragraph">
+<p><span class="post">POST</span></p>
+</div>
+<div class="paragraph">
+<div class="title">Post an item to cart</div>
 <p>Adds an item to a cart.</p>
 </div>
-<div class="sect3">
-<h4 id="_request_url_5"><a class="anchor" href="#_request_url_5"></a>Request URL</h4>
+<div class="paragraph">
+<p><strong>Request URL</strong></p>
+</div>
 <div class="paragraph">
 <p><code>/.rest/ecommerce/v2/carts/{cartId}/items</code></p>
 </div>
+<div class="paragraph">
+<p><strong>Parameters</strong></p>
 </div>
-<div class="sect3">
-<h4 id="_parameters_5"><a class="anchor" href="#_parameters_5"></a>Parameters</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 20%;">
-<col style="width: 30%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 10%;">
+<col style="width: 22.2222%;">
+<col style="width: 33.3333%;">
+<col style="width: 22.2222%;">
+<col style="width: 22.2223%;">
 </colgroup>
 <thead>
 <tr>
@@ -2931,192 +2695,103 @@ commercetools: The unique ID of the user.</p>
 <th class="tableblock halign-left valign-top">Description</th>
 <th class="tableblock halign-left valign-top">Type</th>
 <th class="tableblock halign-left valign-top">Data Type</th>
-<th class="tableblock halign-left valign-top">Connector</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>productId</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>required</strong></p>
-</div>
-<div class="paragraph">
-<p>commercetools: the unique ID of the product.</p>
-</div>
-<div class="paragraph">
-<p>Magento: SKU of the product.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>form</code></p>
-</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>definitionName</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">The definition name.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>query</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><code>string</code></p>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>commercetools</p>
-</div>
-<div class="paragraph">
-<p>Magento</p>
-</div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>cartId</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>required in commercetools, only for anonymous in Magento</strong></p>
-</div>
-<div class="paragraph">
-<p>The unique ID of the cart.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>path</code></p>
-</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>connectionName</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">The connection name.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>query</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><code>string</code></p>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>commercetools</p>
-</div>
-<div class="paragraph">
-<p>Magento</p>
-</div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>quantity</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>required</strong>, <em>default is 1</em></p>
-</div>
-<div class="paragraph">
-<p>Quantity of products added to the cart.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>form</code></p>
-</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>productId</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">The Magento SKU of the product.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>form</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><code>string</code></p>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>commercetools</p>
-</div>
-<div class="paragraph">
-<p>Magento</p>
-</div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>quoteId</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>required</strong></p>
-</div>
-<div class="paragraph">
-<p>The quote id.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>form</code></p>
-</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>cartId</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required only for anonymous in Magento</strong></p>
+<p class="tableblock">The unique ID of the cart.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>path</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><code>string</code></p>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Magento</p>
-</div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>definitionName</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>required</strong></p>
-</div>
-<div class="paragraph">
-<p>The definition name.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>query</code></p>
-</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>quantity</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong>, <em>default is 1</em></p>
+<p class="tableblock">Quantity of products added to the cart.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>form</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><code>string</code></p>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>commercetools</p>
-</div>
-<div class="paragraph">
-<p>Magento</p>
-</div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>connectionName</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>required</strong></p>
-</div>
-<div class="paragraph">
-<p>The connection name.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>query</code></p>
-</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>quoteId</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">The Magento quote id.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>form</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><code>string</code></p>
 </div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>userId</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">The <code>userId</code> must be Base64-encoded.</p>
+<p class="tableblock">The Magento Access token.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>header</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>commercetools</p>
-</div>
-<div class="paragraph">
-<p>Magento</p>
+<p><code>string</code></p>
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>accessToken</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>required</strong></p>
-</div>
-<div class="paragraph">
-<p>The access token.</p>
-</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">All</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>accessToken</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">The access token.</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><code>header</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>string</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Magento</p>
 </div></div></td>
 </tr>
 </tbody>
 </table>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_post_the_quantity_of_items"><a class="anchor" href="#_post_the_quantity_of_items"></a>Post the quantity of items</h3>
 <div class="paragraph">
+<div class="title">Post the quantity of items</div>
 <p>Updates the quantity of items in a cart.</p>
 </div>
-<div class="sect3">
-<h4 id="_request_url_6"><a class="anchor" href="#_request_url_6"></a>Request URL</h4>
+<div class="paragraph">
+<p><strong>Request URL</strong></p>
+</div>
 <div class="paragraph">
 <p><code>/.rest/ecommerce/v2/carts/{cartId}/items/{itemId}</code></p>
 </div>
+<div class="paragraph">
+<p><strong>Parameters</strong></p>
 </div>
-<div class="sect3">
-<h4 id="_parameters_6"><a class="anchor" href="#_parameters_6"></a>Parameters</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 20%;">
-<col style="width: 30%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 10%;">
+<col style="width: 22.2222%;">
+<col style="width: 33.3333%;">
+<col style="width: 22.2222%;">
+<col style="width: 22.2223%;">
 </colgroup>
 <thead>
 <tr>
@@ -3124,194 +2799,106 @@ commercetools: The unique ID of the user.</p>
 <th class="tableblock halign-left valign-top">Description</th>
 <th class="tableblock halign-left valign-top">Type</th>
 <th class="tableblock halign-left valign-top">Data Type</th>
-<th class="tableblock halign-left valign-top">Connector</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>itemId</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>required</strong></p>
-</div>
-<div class="paragraph">
-<p>The ID of an item in a cart.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>path</code></p>
-</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>definitionName</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">The definition name.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>query</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><code>string</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>commercetools</p>
-</div>
-<div class="paragraph">
-<p>Magento</p>
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>cartId</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>required in commercetools, only for anonymous in Magento</strong></p>
-</div>
-<div class="paragraph">
-<p>The unique ID of the cart.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>path</code></p>
-</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>connectionName</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">The connection name.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>query</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><code>string</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>commercetools</p>
-</div>
-<div class="paragraph">
-<p>Magento</p>
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>quantity</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>required</strong></p>
-</div>
-<div class="paragraph">
-<p>New quantity of products in the cart.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>form</code></p>
-</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>itemId</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">The ID of an item in a cart.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>path</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><code>string</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>commercetools</p>
-</div>
-<div class="paragraph">
-<p>Magento</p>
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>quoteId</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>required</strong></p>
-</div>
-<div class="paragraph">
-<p>The quote ID.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>form</code></p>
-</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>cartId</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required only for anonymous in Magento</strong></p>
+<p class="tableblock">The unique ID of the cart.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>path</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><code>string</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Magento</p>
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>definitionName</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>required</strong></p>
-</div>
-<div class="paragraph">
-<p>The definition name.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>query</code></p>
-</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>quantity</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">New quantity of products in the cart.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>form</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><code>string</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>commercetools</p>
-</div>
-<div class="paragraph">
-<p>Magento</p>
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>connectionName</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>required</strong></p>
-</div>
-<div class="paragraph">
-<p>The connection name.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>query</code></p>
-</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>quoteId</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">The Magento quote ID.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>form</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><code>string</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>commercetools</p>
-</div>
-<div class="paragraph">
-<p>Magento</p>
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>accessToken</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>required for authenticated users</strong></p>
-</div>
-<div class="paragraph">
-<p>The access token.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>header</code></p>
-</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>userId</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">The <code>userId</code> must be Base64-encoded.</p>
+<p class="tableblock">The Magento Access token.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>header</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><code>string</code></p>
 </div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>accessToken</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required for authenticated users</strong></p>
+<p class="tableblock">The access token.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>header</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Magento</p>
+<p><code>string</code></p>
 </div></div></td>
 </tr>
 </tbody>
 </table>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_delete"><a class="anchor" href="#_delete"></a><span class="delete">DELETE</span></h2>
-<div class="sectionbody">
-<div class="sect2">
-<h3 id="_delete_an_item_from_a_cart"><a class="anchor" href="#_delete_an_item_from_a_cart"></a>Delete an item from a cart</h3>
 <div class="paragraph">
+<p><span class="delete">DELETE</span></p>
+</div>
+<div class="paragraph">
+<div class="title">Delete an item from a cart</div>
 <p>Removes an item from a cart.</p>
 </div>
-<div class="sect3">
-<h4 id="_request_url_7"><a class="anchor" href="#_request_url_7"></a>Request URL</h4>
+<div class="paragraph">
+<p><strong>Request URL</strong></p>
+</div>
 <div class="paragraph">
 <p><code>/.rest/ecommerce/v2/carts/{cartId}/items/{itemId}</code></p>
 </div>
+<div class="paragraph">
+<p><strong>Parameters</strong></p>
 </div>
-<div class="sect3">
-<h4 id="_parameters_7"><a class="anchor" href="#_parameters_7"></a>Parameters</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 20%;">
-<col style="width: 30%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 10%;">
+<col style="width: 22.2222%;">
+<col style="width: 33.3333%;">
+<col style="width: 22.2222%;">
+<col style="width: 22.2223%;">
 </colgroup>
 <thead>
 <tr>
@@ -3319,141 +2906,1595 @@ commercetools: The unique ID of the user.</p>
 <th class="tableblock halign-left valign-top">Description</th>
 <th class="tableblock halign-left valign-top">Type</th>
 <th class="tableblock halign-left valign-top">Data Type</th>
-<th class="tableblock halign-left valign-top">Connector</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>itemId</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>required</strong></p>
-</div>
-<div class="paragraph">
-<p>ID of an item in the cart.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>path</code></p>
-</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>definitionName</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">The definition name.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>query</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><code>string</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>commercetools</p>
-</div>
-<div class="paragraph">
-<p>Magento</p>
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>cartId</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>required</strong></p>
-</div>
-<div class="paragraph">
-<p>The unique ID of the cart.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>path</code></p>
-</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>connectionName</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">The connection name.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>query</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><code>string</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>commercetools</p>
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>definitionName</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>required</strong></p>
-</div>
-<div class="paragraph">
-<p>The definition name.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>query</code></p>
-</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>itemId</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">ID of an item in the cart.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>path</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><code>string</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>commercetools</p>
-</div>
-<div class="paragraph">
-<p>Magento</p>
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>connectionName</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>required</strong></p>
-</div>
-<div class="paragraph">
-<p>The connection name.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>query</code></p>
-</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>cartId</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">The unique ID of the cart.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>path</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><code>string</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>commercetools</p>
-</div>
-<div class="paragraph">
-<p>Magento</p>
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>accessToken</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>required</strong></p>
-</div>
-<div class="paragraph">
-<p>The access token.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>header</code></p>
-</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>userId</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">The <code>userId</code> must be Base64-encoded.</p>
+<p class="tableblock">The Magento Access token.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>header</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><code>string</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Magento - authenticated cart</p>
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>quoteId</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>required</strong></p>
-</div>
-<div class="paragraph">
-<p>The quote id.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>form</code></p>
-</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>accessToken</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">The access token.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>header</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><code>string</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Magento - anonymous</p>
 </div></div></td>
 </tr>
 </tbody>
 </table>
+</div>
+<div class="tab-pane" aria-labelledby="tabset1_commercetools">
+<div class="paragraph">
+<p><span class="post">POST</span></p>
+</div>
+<div class="paragraph">
+<div class="title">Post cart as an anonymous or authenticated user</div>
+<p>Creates a cart as an anonymous or authenticated user.</p>
+</div>
+<div class="paragraph">
+<p>If neither the <code>userId</code> nor <code>accessToken</code> parameters are provided, a cart for an anonymous user is created.</p>
+</div>
+<div class="paragraph">
+<p><strong>Request URL</strong></p>
+</div>
+<div class="paragraph">
+<p><code>/.rest/ecommerce/v2/carts/</code></p>
+</div>
+<div class="paragraph">
+<p><strong>Parameters</strong></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 22.2222%;">
+<col style="width: 33.3333%;">
+<col style="width: 22.2222%;">
+<col style="width: 22.2223%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Data Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>definitionName</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">The definition name.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>query</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>string</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>connectionName</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">The connection name.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>query</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>string</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>userId</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">The user ID.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>header</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>string</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>accessToken</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">The user&#8217;s access token.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>header</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>string</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>anonymousId</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">Identifies the cart belonging to an anonymous user.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>header</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>string</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>currencyCode</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">A three-digit currency code as per
+<a href="https://en.wikipedia.org/wiki/ISO_4217">↗ ISO 4217</a>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>form</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>string</code></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><span class="get">GET</span></p>
+</div>
+<div class="paragraph">
+<div class="title">Get a cart by ID</div>
+<p>Returns a cart by its ID.</p>
+</div>
+<div class="paragraph">
+<p><strong>Request URL</strong></p>
+</div>
+<div class="paragraph">
+<p><code>/.rest/ecommerce/v2/carts/{cartId}</code></p>
+</div>
+<div class="paragraph">
+<p><strong>Parameters</strong></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 22.2222%;">
+<col style="width: 33.3333%;">
+<col style="width: 22.2222%;">
+<col style="width: 22.2223%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Data Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>definitionName</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">The definition name.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>query</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>string</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>connectionName</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">The connection name.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>query</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>string</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>cartId</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">The unique ID of the cart.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>path</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>string</code></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<div class="title">Get a cart by user ID</div>
+<p>Returns a cart by user ID.</p>
+</div>
+<div class="paragraph">
+<p><strong>Request URL</strong></p>
+</div>
+<div class="paragraph">
+<p><code>/.rest/ecommerce/v2/carts/user</code></p>
+</div>
+<div class="paragraph">
+<p><strong>Parameters</strong></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 22.2222%;">
+<col style="width: 33.3333%;">
+<col style="width: 22.2222%;">
+<col style="width: 22.2223%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Data Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>definitionName</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">The definition name.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>query</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>string</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>connectionName</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">The connection name.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>query</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>string</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>userId</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">The <code>userId</code> must be Base64-encoded.</p>
+<p class="tableblock">The unique ID of the user.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>header</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>string</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>userIdEncodingDisabled</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>optional</strong></p>
+<p class="tableblock">Default is <code>false</code> and the <code>userId</code> must be Base64-encoded.</p>
+<p class="tableblock">NOTE: When set to <code>true</code> the <code>userId</code> is not encoded and may contain sensitive information. This should not be used in a production environment.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>query</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>string</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>accessToken</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">The user&#8217;s access token.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>header</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>string</code></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><span class="post">POST</span></p>
+</div>
+<div class="paragraph">
+<div class="title">Post an item to cart</div>
+<p>Adds an item to a cart.</p>
+</div>
+<div class="paragraph">
+<p><strong>Request URL</strong></p>
+</div>
+<div class="paragraph">
+<p><code>/.rest/ecommerce/v2/carts/{cartId}/items</code></p>
+</div>
+<div class="paragraph">
+<p><strong>Parameters</strong></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 22.2222%;">
+<col style="width: 33.3333%;">
+<col style="width: 22.2222%;">
+<col style="width: 22.2223%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Data Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>definitionName</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">The definition name.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>query</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>string</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>connectionName</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">The connection name.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>query</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>string</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>productId</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">The unique ID of the product.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>form</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>string</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>cartId</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">The unique ID of the cart.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>path</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>string</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>quantity</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong>, <em>default is 1</em></p>
+<p class="tableblock">Quantity of products added to the cart.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>form</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>string</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>quoteId</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">The quote id.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>form</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>string</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>userId</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">The <code>userId</code> must be Base64-encoded.</p>
+<p class="tableblock">The unique ID of the user.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>header</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>string</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>accessToken</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">The access token.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>header</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>string</code></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<div class="title">Post the quantity of items</div>
+<p>Updates the quantity of items in a cart.</p>
+</div>
+<div class="paragraph">
+<p><strong>Request URL</strong></p>
+</div>
+<div class="paragraph">
+<p><code>/.rest/ecommerce/v2/carts/{cartId}/items/{itemId}</code></p>
+</div>
+<div class="paragraph">
+<p><strong>Parameters</strong></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 22.2222%;">
+<col style="width: 33.3333%;">
+<col style="width: 22.2222%;">
+<col style="width: 22.2223%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Data Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>definitionName</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">The definition name.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>query</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>string</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>connectionName</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">The connection name.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>query</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>string</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>itemId</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">The ID of an item in a cart.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>path</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>string</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>cartId</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">The unique ID of the cart.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>path</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>string</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>quantity</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">New quantity of products in the cart.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>form</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>string</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>quoteId</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">The quote ID.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>form</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>string</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>userId</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">The <code>userId</code> must be Base64-encoded.</p>
+<p class="tableblock">The unique ID of the user.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>header</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>string</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>accessToken</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required for authenticated users</strong></p>
+<p class="tableblock">The access token.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>header</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>string</code></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><span class="delete">DELETE</span></p>
+</div>
+<div class="paragraph">
+<div class="title">Delete an item from a cart</div>
+<p>Removes an item from a cart.</p>
+</div>
+<div class="paragraph">
+<p><strong>Request URL</strong></p>
+</div>
+<div class="paragraph">
+<p><code>/.rest/ecommerce/v2/carts/{cartId}/items/{itemId}</code></p>
+</div>
+<div class="paragraph">
+<p><strong>Parameters</strong></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 22.2222%;">
+<col style="width: 33.3333%;">
+<col style="width: 22.2222%;">
+<col style="width: 22.2223%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Data Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>definitionName</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">The definition name.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>query</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>string</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>connectionName</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">The connection name.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>query</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>string</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>itemId</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">ID of an item in the cart.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>path</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>string</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>cartId</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">The unique ID of the cart.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>path</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>string</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>userId</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">The <code>userId</code> must be Base64-encoded.</p>
+<p class="tableblock">The unique ID of the user.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>header</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>string</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>accessToken</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">The access token.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>header</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>string</code></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="tab-pane" aria-labelledby="tabset1_salesforce-commerce-cloud">
+<div class="paragraph">
+<div class="title">Prerequisite token</div>
+<p>In the case of <strong>Salesforce Commerce</strong>, before creating a cart, you must prepare a token from Salesforce Commerce. A guest token is required for anonymous users. For logged in users, a token is also required.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>To obtain a guest token, you must <a href="https://developer.commercecloud.com/s/article/CommerceAPI-Authentication">have a Salesforce Commerce  API <code>client_id</code></a> to use in the query parameters.</p>
+</li>
+<li>
+<p>To obtain a logged-in user token, you must <a href="https://developer.commercecloud.com/s/article/CommerceAPI-Authentication">have a Salesforce Commerce  API <code>client_id</code></a> to use in the query parameters and pass valid user credentials as HTTP Basic in base 64 in the form <code>username:password</code>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Query example: <code>https://magnolia1-tech-prtnr-eu02-dw.demandware.net/s/RefArchGlobal/dw/shop/v20_3/customers/auth?<strong>client_id</strong>=0a0dddf0-aaf0-0000-b000-000000c00a0e</code></p>
+</div>
+<div class="paragraph">
+<p>In both cases, in the response header, you have an item named Authorization with a value such as <code>Bearer xyzabc</code>, <code>xyzabc</code> is your token (exclude <code>Bearer</code>).</p>
+</div>
+<div class="paragraph">
+<p><span class="post">POST</span></p>
+</div>
+<div class="paragraph">
+<div class="title">Post cart as an anonymous or authenticated user</div>
+<p>Creates a cart as an anonymous or authenticated user.</p>
+</div>
+<div class="paragraph">
+<p><strong>Request URL</strong></p>
+</div>
+<div class="paragraph">
+<p><code>/.rest/ecommerce/v2/carts/</code></p>
+</div>
+<div class="paragraph">
+<p><strong>Parameters</strong></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 22.2222%;">
+<col style="width: 33.3333%;">
+<col style="width: 22.2222%;">
+<col style="width: 22.2223%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Data Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>definitionName</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">The definition name.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>query</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>string</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>connectionName</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">The connection name.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>query</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>string</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>userId</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">Your Salesforce Commerce token. In the response, you have a <code>basket_id</code> value, which is used as the cartId.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>header</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>string</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>currencyCode</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">A three-digit currency code as per
+<a href="https://en.wikipedia.org/wiki/ISO_4217">↗ ISO 4217</a>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>form</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>string</code></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><span class="get">GET</span></p>
+</div>
+<div class="paragraph">
+<div class="title">Get a cart by ID</div>
+<p>Returns a cart by its ID.</p>
+</div>
+<div class="paragraph">
+<p><strong>Request URL</strong></p>
+</div>
+<div class="paragraph">
+<p><code>/.rest/ecommerce/v2/carts/{cartId}</code></p>
+</div>
+<div class="paragraph">
+<p><strong>Parameters</strong></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 22.2222%;">
+<col style="width: 33.3333%;">
+<col style="width: 22.2222%;">
+<col style="width: 22.2223%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Data Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>definitionName</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">The definition name.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>query</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>string</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>connectionName</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">The connection name.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>query</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>string</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>cartId</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">The Salesforce Commerce <code>basket_id</code>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>path</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>string</code></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<div class="title">Get a cart by basket ID</div>
+<p>Returns a cart by basket ID.</p>
+</div>
+<div class="paragraph">
+<p><strong>Request URL</strong></p>
+</div>
+<div class="paragraph">
+<p><code>/.rest/ecommerce/v2/carts/user</code></p>
+</div>
+<div class="paragraph">
+<p><strong>Parameters</strong></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 22.2222%;">
+<col style="width: 33.3333%;">
+<col style="width: 22.2222%;">
+<col style="width: 22.2223%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Data Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>definitionName</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">The definition name.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>query</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>string</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>connectionName</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">The connection name.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>query</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>string</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>userId</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">Your Salesforce Commerce token.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>header</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>string</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>userIdEncodingDisabled</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>optional</strong></p>
+<p class="tableblock">Default is <code>false</code> and the <code>userId</code> must be Base64-encoded.</p>
+<p class="tableblock">NOTE: When set to <code>true</code> the <code>userId</code> is not encoded and may contain sensitive information. This should not be used in a production environment.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>query</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>string</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>accessToken</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">The user&#8217;s access token.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>header</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>string</code></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><span class="post">POST</span></p>
+</div>
+<div class="paragraph">
+<div class="title">Post an item to cart</div>
+<p>Adds an item to a cart.</p>
+</div>
+<div class="paragraph">
+<p><strong>Request URL</strong></p>
+</div>
+<div class="paragraph">
+<p><code>/.rest/ecommerce/v2/carts/{cartId}/items</code></p>
+</div>
+<div class="paragraph">
+<p><strong>Parameters</strong></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 22.2222%;">
+<col style="width: 33.3333%;">
+<col style="width: 22.2222%;">
+<col style="width: 22.2223%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Data Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>definitionName</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">The definition name.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>query</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>string</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>connectionName</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">The connection name.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>query</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>string</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>productId</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">The ID of the product you want to add to your cart.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>form</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>data</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>cartId</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">The Salesforce Commerce <code>basket_id</code>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>form</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>data</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>quantity</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong>, <em>default is 1</em></p>
+<p class="tableblock">Quantity of products added to the cart.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>form</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>string</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>accessToken</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">The Salesforce Commerce token.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>header</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>string</code></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<div class="title">Post the quantity of items</div>
+<p>Updates the quantity of items in a cart.</p>
+</div>
+<div class="paragraph">
+<p><strong>Request URL</strong></p>
+</div>
+<div class="paragraph">
+<p><code>/.rest/ecommerce/v2/carts/{cartId}/items/{itemId}</code></p>
+</div>
+<div class="paragraph">
+<p><strong>Parameters</strong></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 22.2222%;">
+<col style="width: 33.3333%;">
+<col style="width: 22.2222%;">
+<col style="width: 22.2223%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Data Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>definitionName</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">The definition name.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>query</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>string</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>connectionName</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">The connection name.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>query</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>string</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>itemId</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">Product ID of an item in a cart.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>path</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>string</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>cartId</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">The Salesforce Commerce <code>basket_id</code>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>path</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>string</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>quantity</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">New quantity of products in the cart.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>form</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>string</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>userId</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">The <code>userId</code> must be Base64-encoded.</p>
+<p class="tableblock">Your Salesforce Commerce token.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>header</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>string</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>accessToken</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required for authenticated users</strong></p>
+<p class="tableblock">The access token.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>header</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>string</code></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><span class="delete">DELETE</span></p>
+</div>
+<div class="paragraph">
+<div class="title">Delete an item from a cart</div>
+<p>Removes an item from a cart.</p>
+</div>
+<div class="paragraph">
+<p><strong>Request URL</strong></p>
+</div>
+<div class="paragraph">
+<p><code>/.rest/ecommerce/v2/carts/{cartId}/items/{itemId}</code></p>
+</div>
+<div class="paragraph">
+<p><strong>Parameters</strong></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 22.2222%;">
+<col style="width: 33.3333%;">
+<col style="width: 22.2222%;">
+<col style="width: 22.2223%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Data Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>definitionName</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">The definition name.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>query</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>string</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>connectionName</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">The connection name.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>query</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>string</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>itemId</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">Product ID of an item in the cart.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>path</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>string</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>cartId</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">The Salesforce Commerce <code>basket_id</code>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>path</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>string</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>userId</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">The <code>userId</code> must be Base64-encoded.</p>
+<p class="tableblock">The Salesforce Commerce token.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>header</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>string</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>accessToken</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">The access token.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>header</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>string</code></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="tab-pane" aria-labelledby="tabset1_sap-commerce-cloud">
+<div class="paragraph">
+<p><span class="post">POST</span></p>
+</div>
+<div class="paragraph">
+<div class="title">Post cart as an anonymous or authenticated user</div>
+<p>Creates a cart as an anonymous or authenticated user.</p>
+</div>
+<div class="paragraph">
+<p>If neither the <code>userId</code> nor <code>userToken</code> parameters are provided, a cart for an anonymous user is created.</p>
+</div>
+<div class="paragraph">
+<p><strong>Request URL</strong></p>
+</div>
+<div class="paragraph">
+<p><code>/.rest/ecommerce/v2/carts/</code></p>
+</div>
+<div class="paragraph">
+<p><strong>Parameters</strong></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 22.2222%;">
+<col style="width: 33.3333%;">
+<col style="width: 22.2222%;">
+<col style="width: 22.2223%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Data Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>definitionName</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">The definition name.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>query</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>string</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>connectionName</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">The connection name.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>query</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>string</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>userId</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">The user ID.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>header</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>string</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>userToken</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">The user&#8217;s access token.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>header</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>string</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>anonymousId</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">Identifies the cart belonging to an anonymous user.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>header</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>string</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>currencyCode</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">A three-digit currency code as per
+<a href="https://en.wikipedia.org/wiki/ISO_4217">↗ ISO 4217</a>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>form</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>string</code></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><span class="get">GET</span></p>
+</div>
+<div class="paragraph">
+<div class="title">Get a cart by ID</div>
+<p>Returns a cart by its ID.</p>
+</div>
+<div class="paragraph">
+<p><strong>Request URL</strong></p>
+</div>
+<div class="paragraph">
+<p><code>/.rest/ecommerce/v2/carts/{cartId}</code></p>
+</div>
+<div class="paragraph">
+<p><strong>Parameters</strong></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 22.2222%;">
+<col style="width: 33.3333%;">
+<col style="width: 22.2222%;">
+<col style="width: 22.2223%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Data Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>definitionName</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">The definition name.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>query</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>string</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>connectionName</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">The connection name.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>query</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>string</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>cartId</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">The SAP cart identifier.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>path</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>string</code></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<div class="title">Get a cart by user ID</div>
+<p>Returns a cart by user ID.</p>
+</div>
+<div class="paragraph">
+<p><strong>Request URL</strong></p>
+</div>
+<div class="paragraph">
+<p><code>/.rest/ecommerce/v2/carts/user</code></p>
+</div>
+<div class="paragraph">
+<p><strong>Parameters</strong></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 22.2222%;">
+<col style="width: 33.3333%;">
+<col style="width: 22.2222%;">
+<col style="width: 22.2223%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Data Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>definitionName</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">The definition name.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>query</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>string</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>connectionName</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">The connection name.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>query</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>string</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>userId</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">The <code>userId</code> must be Base64-encoded.</p>
+<p class="tableblock">The SAP user identifier.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>header</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>string</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>userIdEncodingDisabled</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>optional</strong></p>
+<p class="tableblock">Default is <code>false</code> and the <code>userId</code> must be Base64-encoded.</p>
+<p class="tableblock">NOTE: When set to <code>true</code> the <code>userId</code> is not encoded and may contain sensitive information. This should not be used in a production environment.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>query</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>string</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>accessToken</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong>
+The user&#8217;s access token.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>header</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>string</code></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><span class="post">POST</span></p>
+</div>
+<div class="paragraph">
+<div class="title">Post an item to cart</div>
+<p>Adds an item to a cart.</p>
+</div>
+<div class="paragraph">
+<p><strong>Request URL</strong></p>
+</div>
+<div class="paragraph">
+<p><code>/.rest/ecommerce/v2/carts/{cartId}/items</code></p>
+</div>
+<div class="paragraph">
+<p><strong>Parameters</strong></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 22.2222%;">
+<col style="width: 33.3333%;">
+<col style="width: 22.2222%;">
+<col style="width: 22.2223%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Data Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>definitionName</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">The definition name.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>query</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>string</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>connectionName</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">The connection name.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>query</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>string</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>productId</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">The unique ID of the product.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>form</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>string</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>cartId</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">The unique ID of the cart.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>path</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>string</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>quantity</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong>, <em>default is 1</em></p>
+<p class="tableblock">Quantity of products added to the cart.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>form</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>string</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>userId</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong>
+The <code>userId</code> must be Base64-encoded.</p>
+<p class="tableblock">The unique ID of the user.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>header</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>string</code></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<div class="title">Post the quantity of items</div>
+<p>Updates the quantity of items in a cart.</p>
+</div>
+<div class="paragraph">
+<p><strong>Request URL</strong></p>
+</div>
+<div class="paragraph">
+<p><code>/.rest/ecommerce/v2/carts/{cartId}/items/{itemId}</code></p>
+</div>
+<div class="paragraph">
+<p><strong>Parameters</strong></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 22.2222%;">
+<col style="width: 33.3333%;">
+<col style="width: 22.2222%;">
+<col style="width: 22.2223%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Data Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>definitionName</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">The definition name.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>query</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>string</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>connectionName</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">The connection name.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>query</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>string</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>itemId</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">The SAP entry number of an item in a cart.</p>
+<p class="tableblock">Each entry in a cart has an entry number. Cart entries are numbered in ascending order, starting with zero (0).</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>path</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>string</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>cartId</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">The unique ID of the cart.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>path</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>string</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>quantity</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">New quantity of products in the cart.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>form</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>string</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>userId</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">The <code>userId</code> must be Base64-encoded.</p>
+<p class="tableblock">The unique ID of the user.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>header</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>string</code></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><span class="delete">DELETE</span></p>
+</div>
+<div class="paragraph">
+<div class="title">Delete an item from a cart</div>
+<p>Removes an item from a cart.</p>
+</div>
+<div class="paragraph">
+<p><strong>Request URL</strong></p>
+</div>
+<div class="paragraph">
+<p><code>/.rest/ecommerce/v2/carts/{cartId}/items/{itemId}</code></p>
+</div>
+<div class="paragraph">
+<p><strong>Parameters</strong></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 22.2222%;">
+<col style="width: 33.3333%;">
+<col style="width: 22.2222%;">
+<col style="width: 22.2223%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Data Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>definitionName</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">The definition name.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>query</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>string</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>connectionName</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">The connection name.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>query</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>string</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>itemId</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong>
+The SAP entry number of an item in a cart.</p>
+<p class="tableblock">Each entry in a cart has an entry number. Cart entries are numbered in ascending order, starting with zero (0).</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>path</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>string</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>cartId</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">The unique ID of the cart.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>path</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>string</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>userId</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">The <code>userId</code> must be Base64-encoded.</p>
+<p class="tableblock">The unique ID of the user.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>header</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>string</code></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
 <div class="sidebarblock">
 <div class="content">
 <div class="title">Related topics</div>
@@ -3471,10 +4512,6 @@ REST endpoints</a></p>
 <p><a href="../../../../Developing/API/" class="page">API</a></p>
 </li>
 </ul>
-</div>
-</div>
-</div>
-</div>
 </div>
 </div>
 </div>

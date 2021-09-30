@@ -2563,6 +2563,33 @@ are eagerly re-cached.</p>
 <div class="paragraph">
 <p>See also: <a href="#_timestamp_for_last_flushing">Timestamp for last flushing</a></p>
 </div>
+</div>
+<div class="sect2">
+<h3 id="_headless_personalization_and_caching"><a class="anchor" href="#_headless_personalization_and_caching"></a>Headless personalization and caching</h3>
+<div class="paragraph">
+<p>For headless p13n to work correctly with content caching in Magnolia, you have to set <code>/modules/cache/config/contentCaching/&lt;your-configuration&gt;/cachePolicy@includePersonalizedDescendants</code> to <code>true</code>.</p>
+</div>
+<div class="paragraph">
+<p>By setting this property, the <a href="../../High-performance-caching-modules/Advanced-Cache-Dynamic-Page-Caching/#_dynamic_page_caching" class="page">dynamic page caching</a> function is turned off.</p>
+</div>
+<div class="admonitionblock caution">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-caution" title="Caution"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Currently, Magnolia does not support caching for different headers or cookies. Therefore it is impossible to specify for which headers (or cookies) a response should be cached.</p>
+</div>
+<div class="paragraph">
+<p>An improvement addressing this issue has been filed as
+<a href="https://jira.magnolia-cms.com/browse/MGNLCACHE-245" target="_blank" rel="noopener">MGNLCACHE-245</a>.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
 <div class="sect3">
 <h4 id="_changing_waiting_time"><a class="anchor" href="#_changing_waiting_time"></a>Changing waiting time</h4>
 <div class="paragraph">

@@ -2391,7 +2391,7 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>This page describes the <code>user</code> endpoint, which can be used to log in a user and retrieve their address and payment information from your SAP Commerce Cloud service.</p>
+<p>This page describes the <code>user</code> endpoint, which can be used to log in a user and retrieve their address and payment information from your <strong>SAP Commerce Cloud</strong> service.</p>
 </div>
 <div class="paragraph">
 <p>With this endpoint, you can:</p>
@@ -2431,8 +2431,7 @@
 <colgroup>
 <col style="width: 22.2222%;">
 <col style="width: 33.3333%;">
-<col style="width: 11.1111%;">
-<col style="width: 11.1111%;">
+<col style="width: 22.2222%;">
 <col style="width: 22.2223%;">
 </colgroup>
 <thead>
@@ -2441,88 +2440,47 @@
 <th class="tableblock halign-left valign-top">Description</th>
 <th class="tableblock halign-left valign-top">Type</th>
 <th class="tableblock halign-left valign-top">Data Type</th>
-<th class="tableblock halign-left valign-top">Connector</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>definitionName</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>required</strong></p>
-</div>
-<div class="paragraph">
-<p>The definition name.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>query</code></p>
-</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>definitionName</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">The definition name.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>query</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><code>string</code></p>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>SAP Commerce Cloud</p>
-</div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>connectionName</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>required</strong></p>
-</div>
-<div class="paragraph">
-<p>The connection name.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>query</code></p>
-</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>connectionName</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">The connection name.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>query</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><code>string</code></p>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>SAP Commerce Cloud</p>
-</div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>userId</code></p>
-</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>query</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>string</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>userId</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><strong>required</strong></p>
 </div>
 <div class="paragraph">
 <p>The user ID.</p>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>path</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>string</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>SAP Commerce Cloud</p>
-</div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>password</code></p>
-</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>path</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>string</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>password</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><strong>required</strong></p>
 </div>
 <div class="paragraph">
 <p>The user password.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>form</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>string</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>SAP Commerce Cloud</p>
 </div></div></td>
 </tr>
 </tbody>
@@ -2546,8 +2504,7 @@
 <colgroup>
 <col style="width: 22.2222%;">
 <col style="width: 33.3333%;">
-<col style="width: 11.1111%;">
-<col style="width: 11.1111%;">
+<col style="width: 22.2222%;">
 <col style="width: 22.2223%;">
 </colgroup>
 <thead>
@@ -2556,88 +2513,43 @@
 <th class="tableblock halign-left valign-top">Description</th>
 <th class="tableblock halign-left valign-top">Type</th>
 <th class="tableblock halign-left valign-top">Data Type</th>
-<th class="tableblock halign-left valign-top">Connector</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>definitionName</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>required</strong></p>
-</div>
-<div class="paragraph">
-<p>The definition name.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>query</code></p>
-</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>definitionName</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">The definition name.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>query</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><code>string</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>SAP Commerce Cloud</p>
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>connectionName</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>required</strong></p>
-</div>
-<div class="paragraph">
-<p>The connection name.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>query</code></p>
-</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>connectionName</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">The connection name.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>query</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><code>string</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>SAP Commerce Cloud</p>
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>userId</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>required</strong></p>
-</div>
-<div class="paragraph">
-<p>The user ID.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>path</code></p>
-</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>userId</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">The user ID.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>path</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><code>string</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>SAP Commerce Cloud</p>
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>accessToken</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>required</strong></p>
-</div>
-<div class="paragraph">
-<p>The user&#8217;s access token.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>header</code></p>
-</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>accessToken</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">The user&#8217;s access token.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>header</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><code>string</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>SAP Commerce Cloud</p>
 </div></div></td>
 </tr>
 </tbody>
@@ -2666,8 +2578,7 @@
 <colgroup>
 <col style="width: 22.2222%;">
 <col style="width: 33.3333%;">
-<col style="width: 11.1111%;">
-<col style="width: 11.1111%;">
+<col style="width: 22.2222%;">
 <col style="width: 22.2223%;">
 </colgroup>
 <thead>
@@ -2676,88 +2587,43 @@
 <th class="tableblock halign-left valign-top">Description</th>
 <th class="tableblock halign-left valign-top">Type</th>
 <th class="tableblock halign-left valign-top">Data Type</th>
-<th class="tableblock halign-left valign-top">Connector</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>definitionName</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>required</strong></p>
-</div>
-<div class="paragraph">
-<p>The definition name.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>query</code></p>
-</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>definitionName</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">The definition name.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>query</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><code>string</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>SAP Commerce Cloud</p>
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>connectionName</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>required</strong></p>
-</div>
-<div class="paragraph">
-<p>The connection name.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>query</code></p>
-</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>connectionName</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">The connection name.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>query</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><code>string</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>SAP Commerce Cloud</p>
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>userId</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>required</strong></p>
-</div>
-<div class="paragraph">
-<p>The user ID.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>path</code></p>
-</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>userId</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">The user ID.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>path</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><code>string</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>SAP Commerce Cloud</p>
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>accessToken</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>required</strong></p>
-</div>
-<div class="paragraph">
-<p>The user&#8217;s access token.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>header</code></p>
-</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>accessToken</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">The user&#8217;s access token.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>header</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><code>string</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>SAP Commerce Cloud</p>
 </div></div></td>
 </tr>
 </tbody>
@@ -2781,8 +2647,7 @@
 <colgroup>
 <col style="width: 22.2222%;">
 <col style="width: 33.3333%;">
-<col style="width: 11.1111%;">
-<col style="width: 11.1111%;">
+<col style="width: 22.2222%;">
 <col style="width: 22.2223%;">
 </colgroup>
 <thead>
@@ -2791,88 +2656,43 @@
 <th class="tableblock halign-left valign-top">Description</th>
 <th class="tableblock halign-left valign-top">Type</th>
 <th class="tableblock halign-left valign-top">Data Type</th>
-<th class="tableblock halign-left valign-top">Connector</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>definitionName</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>required</strong></p>
-</div>
-<div class="paragraph">
-<p>The definition name.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>query</code></p>
-</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>definitionName</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">The definition name.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>query</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><code>string</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>SAP Commerce Cloud</p>
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>connectionName</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>required</strong></p>
-</div>
-<div class="paragraph">
-<p>The connection name.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>query</code></p>
-</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>connectionName</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">The connection name.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>query</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><code>string</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>SAP Commerce Cloud</p>
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>userId</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>required</strong></p>
-</div>
-<div class="paragraph">
-<p>The user ID.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>path</code></p>
-</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>userId</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">The user ID.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>path</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><code>string</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>SAP Commerce Cloud</p>
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>accessToken</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>required</strong></p>
-</div>
-<div class="paragraph">
-<p>The user&#8217;s access token.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>header</code></p>
-</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>accessToken</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">The user&#8217;s access token.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>header</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><code>string</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>SAP Commerce Cloud</p>
 </div></div></td>
 </tr>
 </tbody>
@@ -2901,8 +2721,7 @@
 <colgroup>
 <col style="width: 22.2222%;">
 <col style="width: 33.3333%;">
-<col style="width: 11.1111%;">
-<col style="width: 11.1111%;">
+<col style="width: 22.2222%;">
 <col style="width: 22.2223%;">
 </colgroup>
 <thead>
@@ -2911,108 +2730,52 @@
 <th class="tableblock halign-left valign-top">Description</th>
 <th class="tableblock halign-left valign-top">Type</th>
 <th class="tableblock halign-left valign-top">Data Type</th>
-<th class="tableblock halign-left valign-top">Connector</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>definitionName</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>required</strong></p>
-</div>
-<div class="paragraph">
-<p>The definition name.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>query</code></p>
-</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>definitionName</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">The definition name.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>query</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><code>string</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>SAP Commerce Cloud</p>
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>connectionName</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>required</strong></p>
-</div>
-<div class="paragraph">
-<p>The connection name.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>query</code></p>
-</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>connectionName</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">The connection name.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>query</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><code>string</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>SAP Commerce Cloud</p>
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>userId</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>required</strong></p>
-</div>
-<div class="paragraph">
-<p>The user ID.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>path</code></p>
-</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>userId</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">The user ID.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>path</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><code>string</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>SAP Commerce Cloud</p>
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>addressId</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>required</strong></p>
-</div>
-<div class="paragraph">
-<p>The address ID.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>path</code></p>
-</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>addressId</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">The address ID.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>path</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><code>string</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>SAP Commerce Cloud</p>
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>accessToken</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>required</strong></p>
-</div>
-<div class="paragraph">
-<p>The user&#8217;s access token.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>header</code></p>
-</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>accessToken</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">The user&#8217;s access token.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>header</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><code>string</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>SAP Commerce Cloud</p>
 </div></div></td>
 </tr>
 </tbody>
@@ -3036,8 +2799,7 @@
 <colgroup>
 <col style="width: 22.2222%;">
 <col style="width: 33.3333%;">
-<col style="width: 11.1111%;">
-<col style="width: 11.1111%;">
+<col style="width: 22.2222%;">
 <col style="width: 22.2223%;">
 </colgroup>
 <thead>
@@ -3046,108 +2808,52 @@
 <th class="tableblock halign-left valign-top">Description</th>
 <th class="tableblock halign-left valign-top">Type</th>
 <th class="tableblock halign-left valign-top">Data Type</th>
-<th class="tableblock halign-left valign-top">Connector</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>definitionName</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>required</strong></p>
-</div>
-<div class="paragraph">
-<p>The definition name.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>query</code></p>
-</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>definitionName</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">The definition name.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>query</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><code>string</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>SAP Commerce Cloud</p>
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>connectionName</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>required</strong></p>
-</div>
-<div class="paragraph">
-<p>The connection name.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>query</code></p>
-</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>connectionName</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">The connection name.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>query</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><code>string</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>SAP Commerce Cloud</p>
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>userId</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>required</strong></p>
-</div>
-<div class="paragraph">
-<p>The user ID.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>path</code></p>
-</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>userId</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">The user ID.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>path</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><code>string</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>SAP Commerce Cloud</p>
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>paymentMethodId</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>required</strong></p>
-</div>
-<div class="paragraph">
-<p>The address ID.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>path</code></p>
-</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>paymentMethodId</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">The address ID.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>path</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><code>string</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>SAP Commerce Cloud</p>
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>accessToken</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>required</strong></p>
-</div>
-<div class="paragraph">
-<p>The user&#8217;s access token.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>header</code></p>
-</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>accessToken</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">The user&#8217;s access token.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>header</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><code>string</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>SAP Commerce Cloud</p>
 </div></div></td>
 </tr>
 </tbody>
@@ -3176,8 +2882,7 @@
 <colgroup>
 <col style="width: 22.2222%;">
 <col style="width: 33.3333%;">
-<col style="width: 11.1111%;">
-<col style="width: 11.1111%;">
+<col style="width: 22.2222%;">
 <col style="width: 22.2223%;">
 </colgroup>
 <thead>
@@ -3186,108 +2891,52 @@
 <th class="tableblock halign-left valign-top">Description</th>
 <th class="tableblock halign-left valign-top">Type</th>
 <th class="tableblock halign-left valign-top">Data Type</th>
-<th class="tableblock halign-left valign-top">Connector</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>definitionName</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>required</strong></p>
-</div>
-<div class="paragraph">
-<p>The definition name.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>query</code></p>
-</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>definitionName</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">The definition name.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>query</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><code>string</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>SAP Commerce Cloud</p>
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>connectionName</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>required</strong></p>
-</div>
-<div class="paragraph">
-<p>The connection name.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>query</code></p>
-</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>connectionName</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">The connection name.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>query</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><code>string</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>SAP Commerce Cloud</p>
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>userId</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>required</strong></p>
-</div>
-<div class="paragraph">
-<p>The user ID.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>path</code></p>
-</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>userId</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">The user ID.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>path</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><code>string</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>SAP Commerce Cloud</p>
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>addressId</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>required</strong></p>
-</div>
-<div class="paragraph">
-<p>The address ID.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>path</code></p>
-</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>addressId</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">The address ID.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>path</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><code>string</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>SAP Commerce Cloud</p>
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>accessToken</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>required</strong></p>
-</div>
-<div class="paragraph">
-<p>The user&#8217;s access token.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>header</code></p>
-</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>accessToken</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">The user&#8217;s access token.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>header</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><code>string</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>SAP Commerce Cloud</p>
 </div></div></td>
 </tr>
 </tbody>
@@ -3311,8 +2960,7 @@
 <colgroup>
 <col style="width: 22.2222%;">
 <col style="width: 33.3333%;">
-<col style="width: 11.1111%;">
-<col style="width: 11.1111%;">
+<col style="width: 22.2222%;">
 <col style="width: 22.2223%;">
 </colgroup>
 <thead>
@@ -3321,108 +2969,52 @@
 <th class="tableblock halign-left valign-top">Description</th>
 <th class="tableblock halign-left valign-top">Type</th>
 <th class="tableblock halign-left valign-top">Data Type</th>
-<th class="tableblock halign-left valign-top">Connector</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>definitionName</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>required</strong></p>
-</div>
-<div class="paragraph">
-<p>The definition name.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>query</code></p>
-</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>definitionName</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">The definition name.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>query</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><code>string</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>SAP Commerce Cloud</p>
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>connectionName</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>required</strong></p>
-</div>
-<div class="paragraph">
-<p>The connection name.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>query</code></p>
-</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>connectionName</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">The connection name.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>query</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><code>string</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>SAP Commerce Cloud</p>
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>userId</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>required</strong></p>
-</div>
-<div class="paragraph">
-<p>The user ID.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>path</code></p>
-</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>userId</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">The user ID.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>path</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><code>string</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>SAP Commerce Cloud</p>
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>paymentMethodId</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>required</strong></p>
-</div>
-<div class="paragraph">
-<p>The address ID.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>path</code></p>
-</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>paymentMethodId</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">The address ID.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>path</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><code>string</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>SAP Commerce Cloud</p>
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>accessToken</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>required</strong></p>
-</div>
-<div class="paragraph">
-<p>The user&#8217;s access token.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>header</code></p>
-</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>accessToken</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">The user&#8217;s access token.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>header</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><code>string</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>SAP Commerce Cloud</p>
 </div></div></td>
 </tr>
 </tbody>

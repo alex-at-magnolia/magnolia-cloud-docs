@@ -2698,6 +2698,40 @@ session.save();</code></pre>
 </li>
 </ul>
 </div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="title">Editing and publishing aspects</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Locale selector is disabled</dt>
+<dd>
+<p>The locale selector combo box is disabled in the following cases:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>The <code>multiJcrBlock</code> field is configured with <code>i18n: true</code> but the story structure has not been migrated yet.</p>
+</li>
+<li>
+<p>The story complies with the new i18n structure but the <code>multiJcrBlock</code> field is configured with <code>i18n: false</code>.</p>
+</li>
+</ul>
+</div>
+</dd>
+<dt class="hdlist1">Publishing stories with multilanguage content</dt>
+<dd>
+<p>When you publish a story where multilanguage content is enabled and present, the whole story node is published, that is all language variants of the blocks in the story are always published.</p>
+</dd>
+</dl>
+</div>
+</td>
+</tr>
+</table>
+</div>
 <div class="sidebarblock">
 <div class="content">
 <div class="title">Related topics</div>
