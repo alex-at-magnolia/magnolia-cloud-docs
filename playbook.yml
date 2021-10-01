@@ -24,6 +24,9 @@ content:
   - url: https://git.magnolia-cms.com/scm/services/url-translation.git
     start_path: docs
     branches: [master]
+  - url: https://git.magnolia-cms.com/scm/incubator/dam-focal.git
+    start_path: docs
+    branches: [master]
   - url: https://git.magnolia-cms.com/scm/incubator/incubator-module-docs.git
     branches: [master]
 
