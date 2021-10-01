@@ -21,6 +21,9 @@ content:
   - url: https://git.magnolia-cms.com/scm/incubator/workflow-extended.git
     start_path: docs
     branches: [master]
+  - url: https://git.magnolia-cms.com/scm/services/url-translation.git
+    start_path: docs
+    branches: [master]
   - url: https://git.magnolia-cms.com/scm/incubator/incubator-module-docs.git
     branches: [master]
 
