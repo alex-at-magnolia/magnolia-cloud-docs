@@ -27,6 +27,9 @@ content:
   - url: https://git.magnolia-cms.com/scm/incubator/dam-focal.git
     start_path: docs
     branches: [master]
+  - url: https://git.magnolia-cms.com/scm/incubator/webhooks.git
+    start_path: docs
+    branches: [master]
   - url: https://git.magnolia-cms.com/scm/incubator/incubator-module-docs.git
     branches: [master]
 
@@ -57,6 +60,7 @@ asciidoc:
     magnolia-latest-version: 6.2.9
     kroki-fetch-diagram: true
     figure-caption!:
+    magnolia: https://www.magnolia-cms.com
     jira: https://jira.magnolia-cms.com/browse/
     mla: link:https://www.magnolia-cms.com/mla.html[MLA^]
     gpl: link:http://www.gnu.org/licenses/gpl-3.0.html[GPL^]
