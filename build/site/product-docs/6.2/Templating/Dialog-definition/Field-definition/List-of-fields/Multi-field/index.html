@@ -2777,6 +2777,19 @@ dialog.</p>
 </div></div></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>itemCountErrorMessage</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>optional</strong>, <em>default is translated <code>validators.multi.itemCount.errorMessage</code> key</em></p>
+</div>
+<div class="paragraph">
+<p>Error message shown when the number of items is less than
+<code>minItems</code> or greater than <code>maxItems</code>. The value can be literal or a
+<a href="../../../../../Administration/Language/Internationalization/#_i18n_message_keys" class="page">key</a> of a
+<a href="../../../../../Administration/Language/Internationalization/#_i18n_message_bundle" class="page">message
+bundle</a>.</p>
+</div></div></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>required</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><strong>optional</strong>, <em>default is <code>false</code></em></p>
@@ -2792,8 +2805,8 @@ label.</p>
 <p><strong>optional</strong>, <em>default is translated <code>validation.message.required</code> key</em></p>
 </div>
 <div class="paragraph">
-<p>Error message shown when <code>required</code> is set to <code>true</code> and the user saves
-an empty field. The value can be literal or a
+<p>Error message shown when <code>required</code> is set to <code>true</code> and
+the user saves an empty field. The value can be literal or a
 <a href="../../../../../Administration/Language/Internationalization/#_i18n_message_keys" class="page">key</a> of a
 <a href="../../../../../Administration/Language/Internationalization/#_i18n_message_bundle" class="page">message
 bundle</a>.</p>

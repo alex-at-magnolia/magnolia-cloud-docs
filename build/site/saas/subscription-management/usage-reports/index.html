@@ -287,20 +287,11 @@
 <li>
 <p><a href="#storage-metrics">Storage and assets</a></p>
 </li>
-<li>
-<p><a href="#api-metrics">API calls</a></p>
-</li>
-<li>
-<p><a href="#download-metrics">Downloads</a></p>
-</li>
 </ul>
 </div>
-<div class="paragraph">
-<p>This page describes each of the usage reports available for Magnolia SaaS as well as instructing you on how to <a href="#View usage reports">view</a>, <a href="#Download usage reports">download</a>, and <a href="#Subscribe to usage reports">subscribe</a> to usage reports.</p>
-</div>
-<div class="sidebarblock">
-<div class="content">
+<div class="quoteblock">
 <div class="title">Metric types</div>
+<blockquote>
 <div id="status-metrics" class="paragraph">
 <p><strong>Status metrics</strong></p>
 </div>
@@ -325,7 +316,7 @@ Status metrics do not accumulate over time and do not reset for for the next bil
 <div class="paragraph">
 <p>Cumulative metrics accumulate over time and are limited per billing period (<em>typically one month</em>). At the beginning of each billing period, the counting of the metric relevant for the limit starts over from <code>0</code>.</p>
 </div>
-</div>
+</blockquote>
 </div>
 </div>
 </div>
@@ -340,13 +331,13 @@ Status metrics do not accumulate over time and do not reset for for the next bil
 </dd>
 </dl>
 </div>
-<div class="paragraph">
-<p>The usage report for Magnolia SaaS <strong>users</strong> displays the total number of users that are registered and who have access to your subscription via Okta. The metrics are displayed in real-time, so if you add or remove a user, this is reflected in the report.</p>
-</div>
 <div class="imageblock zoom">
 <div class="content">
-<img src="../../_images/usage-reports/usage-report-users.png" alt="usage report users">
+<img src="../../_images/usage-reports/usage-reports-users.jpg" alt="usage reports users">
 </div>
+</div>
+<div class="paragraph">
+<p>The usage report for Magnolia SaaS <strong>Users</strong> displays the total number of users that are registered and who have access to your subscription via Okta. The metrics are displayed in real-time, so if you add or remove a user, this is reflected in the report.</p>
 </div>
 <div class="admonitionblock note alt">
 <table>
@@ -382,7 +373,7 @@ Status metrics do not accumulate over time and do not reset for for the next bil
 </div>
 </div>
 <div class="sect1">
-<h2 id="storage-metrics"><a class="anchor" href="#storage-metrics"></a>Storage metrics for Magnolia SaaS</h2>
+<h2 id="storage-metrics"><a class="anchor" href="#storage-metrics"></a>Bucket Size</h2>
 <div class="sectionbody">
 <div class="dlist">
 <dl>
@@ -392,8 +383,13 @@ Status metrics do not accumulate over time and do not reset for for the next bil
 </dd>
 </dl>
 </div>
+<div class="imageblock zoom">
+<div class="content">
+<img src="../../_images/usage-reports/usage-reports-storage.jpg" alt="usage reports storage">
+</div>
+</div>
 <div class="paragraph">
-<p>The usage report for Magnolia SaaS <strong>Storage</strong> displays your current S3 storage. This includes all assets that are uploaded to Magnolia by any user within the subscription.</p>
+<p>The usage report for Magnolia SaaS <strong>Storage</strong> (displayed as <em>Bucket Size</em> in admincentral) displays your current <a href="https://aws.amazon.com/s3/" target="_blank" rel="noopener">S3 storage</a>. This includes all assets that are uploaded to Magnolia by any user within the subscription.</p>
 </div>
 <div class="admonitionblock important">
 <table>
@@ -412,71 +408,6 @@ Status metrics do not accumulate over time and do not reset for for the next bil
 </tr>
 </table>
 </div>
-<div class="imageblock zoom">
-<div class="content">
-<img src="../../_images/usage-reports/usage-report-storage.png" alt="usage report storage">
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="api-metrics"><a class="anchor" href="#api-metrics"></a>API metrics for Magnolia SaaS</h2>
-<div class="sectionbody">
-<div class="dlist">
-<dl>
-<dt class="hdlist1">The metrics displayed here are</dt>
-<dd>
-<p><a href="#cumulative-metrics">Cumulative metrics</a>.</p>
-</dd>
-</dl>
-</div>
-<div class="paragraph">
-<p>The usage report for Magnolia SaaS <strong>API calls</strong> displays the total number of API requests to Magnolia endpoints. Both cached and direct requests are included in the API count.</p>
-</div>
-<div class="admonitionblock caution">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-caution" title="Caution"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>There is a limit to the number of monthly API calls to Magnolia endpoints. You can go over this limit; however, you are charged at a predefined cost per extra API request each month. Please consult with <a href="mailto:support@magnolia-cms.com">Magnolia SaaS support</a> for more information regarding this.</p>
-</div>
-<div class="paragraph">
-<p>Those participants in the "soft launch" phase are not charged for going over the requests threshold.</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-<div class="imageblock zoom">
-<div class="content">
-<img src="../../_images/usage-reports/usage-report-api.png" alt="usage report api">
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="download-metrics"><a class="anchor" href="#download-metrics"></a>Assets metrics for Magnolia SaaS</h2>
-<div class="sectionbody">
-<div class="dlist">
-<dl>
-<dt class="hdlist1">The metrics displayed here are</dt>
-<dd>
-<p><a href="#cumulative-metrics">Cumulative metrics</a></p>
-</dd>
-</dl>
-</div>
-<div class="paragraph">
-<p>The usage report for Magnolia SaaS <strong>Assets</strong> displays the total size of the assets that you served to your subscription on a monthly basis. This is counted in <code>GB</code> or <code>TB</code> depending on the amount of downloaded assets.</p>
-</div>
-<div class="imageblock zoom">
-<div class="content">
-<img src="../../_images/usage-reports/usage-report-downloads.png" alt="usage report downloads">
-</div>
-</div>
-<hr>
 </div>
 </div>
 <nav class="pagination">

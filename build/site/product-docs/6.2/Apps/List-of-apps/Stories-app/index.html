@@ -2432,9 +2432,6 @@
 <div class="paragraph">
 <p>Stories app is a feature available only in DX Core.</p>
 </div>
-<div class="paragraph">
-<p>The app doesn’t yet support multi-language content.</p>
-</div>
 </td>
 </tr>
 </table>
@@ -2782,6 +2779,182 @@ stories must be configured by your development team.</p>
 </tr>
 </tbody>
 </table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_content_internationalization_i18n"><a class="anchor" href="#_content_internationalization_i18n"></a>Content internationalization (i18n)</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><a href="../../../Administration/Language/Internationalization/" class="page">Internationalization</a> (i18n) of content is not supported in the <code>1.3.x</code> and <code>2.0.x</code> versions of the Content Editor module and its Stories app submodule.</p>
+</div>
+<div class="paragraph">
+<p>The feature will only be enabled in version <code>2.1</code>. Until it is released for production-ready use, you cen test it out in version <code>2.1-beta</code>. This version is available on Magnolia Nexus under the following coordinates:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>&lt;dependency&gt;
+  &lt;groupId&gt;info.magnolia.editor&lt;/groupId&gt;
+  &lt;artifactId&gt;content-editor-parent&lt;/artifactId&gt;
+  &lt;version&gt;2.1-beta&lt;/version&gt;
+&lt;/dependency&gt;</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Before adding this beta into your webapp, you must remove the bundled version of the module.</p>
+</div>
+<div class="sect2">
+<h3 id="_compatibility_of_content_and_block_definitions"><a class="anchor" href="#_compatibility_of_content_and_block_definitions"></a>Compatibility of content and block definitions</h3>
+<div class="sect3">
+<h4 id="_flat_vs_nested_content_structure"><a class="anchor" href="#_flat_vs_nested_content_structure"></a>Flat vs nested content structure</h4>
+<div class="paragraph">
+<p>The data model for the internationalized Content Editor stories is different in the beta version. Whereas in <code>1.3.x</code> and <code>2.0.x</code> the <code>mgnl:block</code> elements are stored in a flat node structure,</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>stories
+└── story1
+    ├── 0
+    └── 1</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>in the i18n-supported version, the nodes are locale-nested under intermediate nodes of type <code>mgnl:contentNode</code>, named <code>custom_de</code> and <code>custom</code> in this example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>stories
+└── story1
+    └── custom_de
+    │   ├── 0_de
+    │   └── 1_de
+    └── custom
+        ├── 0
+        └── 1</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This must be reflected in your <code><a href="../../../Modules/List-of-modules/Content-Editor-module/Multi-JCR-block/" class="page">MultiJcrBlockDefinition</a></code>, where you need to add and enable the <code>i18n</code> property.</p>
+</div>
+<div class="paragraph">
+<p>Instead of the <code>CurrentItemProvider</code>, the <code>CompatibleBlockProvider</code> is set as the default provider, which can resolve both flat and nested block nodes. You do not need to declare it in your block definition.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Example definition</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yml hljs" data-lang="yml">custom:
+  label: Blocks
+  $type: multiJcrBlock
+  i18n: true
+  blocks:
+    - text</code></pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+This applies only to the <code>2.0.x</code> block definitions. Block definitions created for version <code>1.3.x</code> (5 UI) of the module are not compatible with the <code>2.1-beta</code> version and must be fully migrated.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_migrating_content_to_2_1_beta"><a class="anchor" href="#_migrating_content_to_2_1_beta"></a>Migrating content to <code>2.1-beta</code></h4>
+<div class="paragraph">
+<p>There are two ways you migrate the non-i18n blocks to the i18n-compatible hierarchy: using a version handler or a Groovy script.</p>
+</div>
+<div class="sect4">
+<h5 id="_version_handler"><a class="anchor" href="#_version_handler"></a>Version handler</h5>
+<div class="paragraph">
+<p>When upgrading the Stories app submodule to version <code>2.1-beta</code> (or <code>2.1</code> once available), all block nodes in the <code>stories</code> workspace will be moved to intermediate nodes, see the <code>MigrateBlockToIntermediateParentTask</code> task.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_groovy_script"><a class="anchor" href="#_groovy_script"></a>Groovy script</h5>
+<div class="paragraph">
+<p>You can run the migration task in the <a href="../Groovy-app/" class="page">Groovy app</a>, especially in case a block node is stored in another workspace.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Example Groovy script</dt>
+</dl>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-groovy hljs" data-lang="groovy">import info.magnolia.editor.setup.MigrateBlockToIntermediateParentTask
+import info.magnolia.module.InstallContextImpl
+import info.magnolia.module.ModuleRegistryImpl
+import info.magnolia.objectfactory.Components
+import javax.jcr.Session
+
+
+Session session =  MgnlContext.getJCRSession("stories");
+task = new MigrateBlockToIntermediateParentTask("stories", "/", "custom");
+task.execute(Components.newInstance(InstallContextImpl.class));
+session.save();</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The parameters in the <code>MigrateBlockToIntermediateParentTask</code>:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>stories</code> - workspace name</p>
+</li>
+<li>
+<p><code>/</code> - path</p>
+</li>
+<li>
+<p><code>custom</code> - name of the intermediate node, the name of the <code>multiJcrBlock</code> field, see <a href="https://git.magnolia-cms.com/projects/ENTERPRISE/repos/content-editor/browse/stories-app/src/main/resources/stories-app/apps/stories.yaml#555" class="bare">https://git.magnolia-cms.com/projects/ENTERPRISE/repos/content-editor/browse/stories-app/src/main/resources/stories-app/apps/stories.yaml#555</a>.</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="title">Editing and publishing aspects</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Locale selector is disabled</dt>
+<dd>
+<p>The locale selector combo box is disabled in the following cases:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>The <code>multiJcrBlock</code> field is configured with <code>i18n: true</code> but the story structure has not been migrated yet.</p>
+</li>
+<li>
+<p>The story complies with the new i18n structure but the <code>multiJcrBlock</code> field is configured with <code>i18n: false</code>.</p>
+</li>
+</ul>
+</div>
+</dd>
+<dt class="hdlist1">Publishing stories with multilanguage content</dt>
+<dd>
+<p>When you publish a story where multilanguage content is enabled and present, the whole story node is published, that is all language variants of the blocks in the story are always published.</p>
+</dd>
+</dl>
+</div>
+</td>
+</tr>
+</table>
+</div>
 <div class="sidebarblock">
 <div class="content">
 <div class="title">Related topics</div>
@@ -2795,6 +2968,8 @@ stories must be configured by your development team.</p>
 module</a></p>
 </li>
 </ul>
+</div>
+</div>
 </div>
 </div>
 </div>
