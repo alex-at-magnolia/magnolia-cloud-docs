@@ -30,6 +30,9 @@ content:
   - url: https://git.magnolia-cms.com/scm/incubator/webhooks.git
     start_path: docs
     branches: [master]
+  - url: https://git.magnolia-cms.com/scm/incubator/ui-framework-javascript.git
+    start_path: docs
+    branches: [master]
   - url: https://git.magnolia-cms.com/scm/incubator/incubator-module-docs.git
     branches: [master]
 

@@ -2336,6 +2336,14 @@
       </ul>
     </li>
     <li class="component">
+      <span class="title">JavaScript Dialog Fields module</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../../../../ui-framework-javascript/">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
       <span class="title">Magnolia PaaS</span>
       <ul class="versions">
         <li class="version is-latest">
@@ -2501,7 +2509,7 @@ way.</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Customize JSON, resolve referenced nodes and renditions, format.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>optional</strong></p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
@@ -2813,30 +2821,90 @@ applied to the resultant JSON of the given node.</p>
 </tr>
 </tbody>
 </table>
-<div class="paragraph">
-<p>|Argument|Description</p>
 </div>
+<div class="sect3">
+<h4 id="_example_3"><a class="anchor" href="#_example_3"></a>Example</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>[#assign damNode = cmsfn.contentByPath("/jolly-jumper", "dam") /]\
+[#assign `[`damJson`]{style="color: rgb(0, 128, 128);"}` = jsonfn.from(damNode).down(2).add("@name").allowOnlyNodeTypes("mgnl:asset").inline().print()]\
+[#assign websiteNode = cmsfn.contentByPath("/vinyl", "website") /]\
+[#assign `[`allJson`]{style="color: rgb(128, 0, 128);"}` = jsonfn.`**`appendFrom`**`(`[`damJson`]{style="color: rgb(0, 128, 128);"}`, websiteNode).down(1).add("@path").allowOnlyNodeTypes("mgnl:page").inline().print() /]\
+&lt;script&gt;\
+var damJson = '${`[`damJson`]{style="color: rgb(0, 128, 128);"}`}';\
+var allJson = '${`[`allJson`]{style="color: rgb(153, 51, 102);"}`}';\
+&lt;/script&gt;</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;script&gt;\
+var damJson = `[`'[{"@name":"jolly-jumper-black-and-white.png"}]`]{style="color: rgb(0, 128, 128);"}`';\
+var allJson = '`[`[{"@name":"jolly-jumper-black-and-white.png"},[{"@path":"/vinyl/rock"},{"@path":"/vinyl/disco"}]]`]{style="color: rgb(153, 51, 102);"}`';\
+&lt;/script&gt;</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_node_customizing_methods"><a class="anchor" href="#_node_customizing_methods"></a>Node customizing methods</h2>
+<div class="sectionbody">
 <div class="paragraph">
-<p>|<code>level</code>
-|<strong>required</strong></p>
+<p>These methods impact the resulting node structure. The methods are
+applied on a
+<a href="../Templating-function-arguments-and-return-types/#_jsonbuilder" class="page"><code>JsonBuilder</code></a>
+object and return a JsonBuilder.</p>
+</div>
+<div class="sect2">
+<h3 id="_down"><a class="anchor" href="#_down"></a><code>down</code></h3>
+<div class="paragraph">
+<p>Define the level of child nodes to get.</p>
+</div>
+<div class="sect3">
+<h4 id="_method_signatures_3"><a class="anchor" href="#_method_signatures_3"></a>Method signatures</h4>
+<div class="paragraph">
+<p><code>JsonBuilder down(int level)</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_arguments_2"><a class="anchor" href="#_arguments_2"></a>Arguments</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 70%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Argument</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>level</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>required</strong></p>
 </div>
 <div class="paragraph">
 <p>An integer defining the level of child nodes to get. Choose values &gt;=1.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
 </div>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 100%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">==== Example</p>
-<p class="tableblock">&#8230;&#8203;.
-[#assign node = cmsfn.contentByPath("/", "website") /]\
-${jsonfn.from(node).add("@path").<code><strong>`down(2)</code></strong><code>.allowOnlyNodeTypes("mgnl:page").print()}
-&#8230;&#8203;.</p>
-<p class="tableblock">[source,js]
-----
-[ {
+<div class="sect3">
+<h4 id="_example_4"><a class="anchor" href="#_example_4"></a>Example</h4>
+<div class="literalblock">
+<div class="content">
+<pre>[#assign node = cmsfn.contentByPath("/", "website") /]\
+${jsonfn.from(node).add("@path").`**`down(2)`**`.allowOnlyNodeTypes("mgnl:page").print()}</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">[ {
   "us-comics" : {
     "@path" : "/comics/us-comics"
   },
@@ -2855,46 +2923,64 @@ ${jsonfn.from(node).add("@path").<code><strong>`down(2)</code></strong><code>.al
     "@path" : "/vinyl/disco"
   },
   "@path" : "/vinyl"
-} ]
-----</p>
-<p class="tableblock">=== `allowOnlyNodeTypes</code></p>
-<p class="tableblock">Allow only node types by a given parameter (or regular expression). The
+} ]</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_allowonlynodetypes"><a class="anchor" href="#_allowonlynodetypes"></a><code>allowOnlyNodeTypes</code></h3>
+<div class="paragraph">
+<p>Allow only node types by a given parameter (or regular expression). The
 method is applied during the <a href="#_print"><code>#print</code> method</a> and subnodes
 of excluded nodes go into the resulting JSON if not specifically
 excluded by the regular expression.</p>
-<p class="tableblock">==== Method signatures</p>
-<p class="tableblock"><code>JsonBuilder allowOnlyNodeTypes(String nodeTypesRegex)</code></p>
-<p class="tableblock">==== Arguments</p>
-<p class="tableblock">[cols="3,7a"]</p></td>
-</tr>
-</tbody>
-</table>
-<div class="paragraph">
-<p>|Argument|Description</p>
 </div>
+<div class="sect3">
+<h4 id="_method_signatures_4"><a class="anchor" href="#_method_signatures_4"></a>Method signatures</h4>
 <div class="paragraph">
-<p>|<code>nodeTypesRegex\</code>
-|<strong>required</strong></p>
+<p><code>JsonBuilder allowOnlyNodeTypes(String nodeTypesRegex)</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_arguments_3"><a class="anchor" href="#_arguments_3"></a>Arguments</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 70%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Argument</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>nodeTypesRegex\</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>required</strong></p>
 </div>
 <div class="paragraph">
 <p>A regular expression that defines the wanted node types.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
 </div>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 100%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">==== Example</p>
-<p class="tableblock">&#8230;&#8203;.
-[#assign damNode = cmsfn.contentByPath("/comics", "dam") /]\
-${jsonfn.from(damNode).down(2)<code><strong></code>.allowOnlyNodeTypes("mgnl:asset")<code></strong></code>.add("@nodeType", "@path").readNodeTypes("mgnl.*").print()}
-&#8230;&#8203;.</p>
-<p class="tableblock">[source,js]
-----
-[ {
+<div class="sect3">
+<h4 id="_example_5"><a class="anchor" href="#_example_5"></a>Example</h4>
+<div class="literalblock">
+<div class="content">
+<pre>[#assign damNode = cmsfn.contentByPath("/comics", "dam") /]\
+${jsonfn.from(damNode).down(2)`**`.allowOnlyNodeTypes("mgnl:asset")`**`.add("@nodeType", "@path").readNodeTypes("mgnl.*").print()}</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">[ {
   "@nodeType" : "mgnl:asset",
-  "@path" : "/comics/9b6c2464fbcf7a371c573f2da26ff6f1.<em>QL80_TTD</em>.jpg"
+  "@path" : "/comics/9b6c2464fbcf7a371c573f2da26ff6f1._QL80_TTD_.jpg"
 }, {
   "@nodeType" : "mgnl:asset",
   "@path" : "/comics/ultra-comics.jpg"
@@ -2904,55 +2990,76 @@ ${jsonfn.from(damNode).down(2)<code><strong></code>.allowOnlyNodeTypes("mgnl:ass
 }, {
   "@nodeType" : "mgnl:asset",
   "@path" : "/comics/a-woman-talking-on-a-comic-scene_1020-627.jpg"
-} ]
-----</p>
-<p class="tableblock">=== <code>readNodeTypes</code></p>
-<p class="tableblock">Allow only node types by a given parameter (or regular expression). The
+} ]</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_readnodetypes"><a class="anchor" href="#_readnodetypes"></a><code>readNodeTypes</code></h3>
+<div class="paragraph">
+<p>Allow only node types by a given parameter (or regular expression). The
 method is applied during input phase and node types that are not defined
 by the regular expression will not be read. As a consequence, a node’s
 subnodes are also skipped, even if they would have been allowed.</p>
-<p class="tableblock">Use this method to, for instance, ensure you do not read (and process)
+</div>
+<div class="paragraph">
+<p>Use this method to, for instance, ensure you do not read (and process)
 JCR history or repository permissions that are also stored in
 repository. The purpose of the method is to ensure that you do not waste
 time processing something that would be discarded anyway.</p>
-<p class="tableblock">==== Method signatures</p>
-<p class="tableblock"><code>JsonBuilder readNodeTypes(String nodeTypesRegex)</code></p>
-<p class="tableblock">==== Arguments</p>
-<p class="tableblock">[cols="3,7a"]</p></td>
-</tr>
-</tbody>
-</table>
-<div class="paragraph">
-<p>|Argument|Description</p>
 </div>
+<div class="sect3">
+<h4 id="_method_signatures_5"><a class="anchor" href="#_method_signatures_5"></a>Method signatures</h4>
 <div class="paragraph">
-<p>|<code>nodeTypesRegex\</code>
-|<strong>required</strong></p>
+<p><code>JsonBuilder readNodeTypes(String nodeTypesRegex)</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_arguments_4"><a class="anchor" href="#_arguments_4"></a>Arguments</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 70%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Argument</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>nodeTypesRegex\</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>required</strong></p>
 </div>
 <div class="paragraph">
 <p>A regular expression to match the allowed node types.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
 </div>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 100%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">==== Example</p>
-<p class="tableblock">&#8230;&#8203;.
-[#assign damNode = cmsfn.contentByPath("/comics", "dam") /]\
-${jsonfn.from(damNode).down(2)<code><strong></code>.readNodeTypes("mgnl:asset")<code></strong></code>.add("@nodeType", "@path").readNodeTypes("mgnl.*").print()}
-&#8230;&#8203;.</p>
-<p class="tableblock">&#8230;&#8203;.
-{
+<div class="sect3">
+<h4 id="_example_6"><a class="anchor" href="#_example_6"></a>Example</h4>
+<div class="literalblock">
+<div class="content">
+<pre>[#assign damNode = cmsfn.contentByPath("/comics", "dam") /]\
+${jsonfn.from(damNode).down(2)`**`.readNodeTypes("mgnl:asset")`**`.add("@nodeType", "@path").readNodeTypes("mgnl.*").print()}</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>{
   "@nodeType" : "mgnl:folder",
-  "9b6c2464fbcf7a371c573f2da26ff6f1.<em>QL80_TTD</em>.jpg" : {
+  "9b6c2464fbcf7a371c573f2da26ff6f1._QL80_TTD_.jpg" : {
     "@nodeType" : "mgnl:asset",
     "jcr:content" : {
       "@nodeType" : "mgnl:resource",
-      "@path" : "/comics/9b6c2464fbcf7a371c573f2da26ff6f1.<em>QL80_TTD</em>.jpg/jcr:content"
+      "@path" : "/comics/9b6c2464fbcf7a371c573f2da26ff6f1._QL80_TTD_.jpg/jcr:content"
     },
-    "@path" : "/comics/9b6c2464fbcf7a371c573f2da26ff6f1.<em>QL80_TTD</em>.jpg"
+    "@path" : "/comics/9b6c2464fbcf7a371c573f2da26ff6f1._QL80_TTD_.jpg"
   },
   "wuffle-comics-no-license-required.jpg" : {
     "@nodeType" : "mgnl:asset",
@@ -2979,56 +3086,78 @@ ${jsonfn.from(damNode).down(2)<code><strong></code>.readNodeTypes("mgnl:asset")<
     },
     "@path" : "/comics/a-woman-talking-on-a-comic-scene_1020-627.jpg"
   }
-}
-&#8230;&#8203;.</p>
-<p class="tableblock">=== <code>childrenAsArray</code></p>
-<p class="tableblock">Select parent nodes by a property and a value to display their children
+}</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_childrenasarray"><a class="anchor" href="#_childrenasarray"></a><code>childrenAsArray</code></h3>
+<div class="paragraph">
+<p>Select parent nodes by a property and a value to display their children
 as an array. The child nodes are organized in an array (see example
 below).</p>
-<p class="tableblock">==== Method signatures</p>
-<p class="tableblock"><code>JsonBuilder childrenAsArray(String propertyName, String valueRegex)</code></p>
-<p class="tableblock">==== Arguments</p>
-<p class="tableblock">[cols="3,7a"]</p></td>
-</tr>
-</tbody>
-</table>
-<div class="paragraph">
-<p>|Argument|Description</p>
 </div>
+<div class="sect3">
+<h4 id="_method_signatures_6"><a class="anchor" href="#_method_signatures_6"></a>Method signatures</h4>
 <div class="paragraph">
-<p>|<code>propertyName</code>
-|<strong>required</strong></p>
+<p><code>JsonBuilder childrenAsArray(String propertyName, String valueRegex)</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_arguments_5"><a class="anchor" href="#_arguments_5"></a>Arguments</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 70%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Argument</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>propertyName</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>required</strong></p>
 </div>
 <div class="paragraph">
 <p>The name of the property used to select the parent node.</p>
-</div>
-<div class="paragraph">
-<p>|<code>valueRegex</code>
-|<strong>required</strong></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>valueRegex</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>required</strong></p>
 </div>
 <div class="paragraph">
 <p>The value (or a regular expression matching the value) of the named
 <code>propertyName</code> property (first argument).</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
 </div>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 100%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">==== Example</p>
-<p class="tableblock">&#8230;&#8203;.
-[#assign damNode = cmsfn.contentByPath("/some-assets", "dam") /]\
+<div class="sect3">
+<h4 id="_example_7"><a class="anchor" href="#_example_7"></a>Example</h4>
+<div class="literalblock">
+<div class="content">
+<pre>[#assign damNode = cmsfn.contentByPath("/some-assets", "dam") /]\
 [#assign jsbTmp = jsonfn.from(damNode).readNodeTypes("mgnl.*").down(2).add("@nodeType", "@path") /]\
 ${jsbTmp.print()}\
-/<strong> below the children nodes of a mgnl:folder are organized within an array </strong>/\
-${jsbTmp`<strong><code>.childrenAsArray("@nodeType", "mgnl:folder")</code></strong><code>.print()}
-&#8230;&#8203;.</p>
-<p class="tableblock">Line 3 renders the JSON without using arrays. Line 5 renders the child
-nodes of nodes of the type `mgnl:folder</code> as arrays.</p>
-<p class="tableblock">[source,js]
-----
-{
+/** below the children nodes of a mgnl:folder are organized within an array **/\
+${jsbTmp`**`.childrenAsArray("@nodeType", "mgnl:folder")`**`.print()}</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Line 3 renders the JSON without using arrays. Line 5 renders the child
+nodes of nodes of the type <code>mgnl:folder</code> as arrays.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">{
   "@nodeType" : "mgnl:folder",
   "iso-125" : {
     "@nodeType" : "mgnl:folder",
@@ -3056,7 +3185,7 @@ nodes of nodes of the type `mgnl:folder</code> as arrays.</p>
   },
   "@path" : "/some-assets"
 }
-/<strong> below the children nodes of a mgnl:folder are organized within an array </strong>/
+/** below the children nodes of a mgnl:folder are organized within an array **/
 {
   "@nodeType" : "mgnl:folder",
   "iso-125" : [ {
@@ -3090,55 +3219,77 @@ nodes of nodes of the type `mgnl:folder</code> as arrays.</p>
     "@path" : "/some-assets/iso-400/fujifilm-400.jpg"
   } ],
   "@path" : "/some-assets"
-}
-----</p>
-<p class="tableblock">=== <code>insertCustom</code></p>
-<p class="tableblock">Replace JSON that is expected to be generated at a given path with given
-custom JSON.</p>
-<p class="tableblock">==== Method signatures</p>
-<p class="tableblock"><code>JsonBuilder insertCustom(String pathSuffix, String json)</code></p>
-<p class="tableblock">==== Arguments</p>
-<p class="tableblock">[cols="3,7a"]</p></td>
-</tr>
-</tbody>
-</table>
-<div class="paragraph">
-<p>|Argument|Description</p>
+}</code></pre>
 </div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_insertcustom"><a class="anchor" href="#_insertcustom"></a><code>insertCustom</code></h3>
 <div class="paragraph">
-<p>|<code>pathSuffix\</code>
-|<strong>required</strong></p>
+<p>Replace JSON that is expected to be generated at a given path with given
+custom JSON.</p>
+</div>
+<div class="sect3">
+<h4 id="_method_signatures_7"><a class="anchor" href="#_method_signatures_7"></a>Method signatures</h4>
+<div class="paragraph">
+<p><code>JsonBuilder insertCustom(String pathSuffix, String json)</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_arguments_6"><a class="anchor" href="#_arguments_6"></a>Arguments</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 70%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Argument</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>pathSuffix\</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>required</strong></p>
 </div>
 <div class="paragraph">
 <p>The path to the node for which you want replace JSON.</p>
-</div>
-<div class="paragraph">
-<p>|<code>json\</code>
-|<strong>required</strong></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>json\</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>required</strong></p>
 </div>
 <div class="paragraph">
 <p>The JSON that replaces the regular JSON.[]\{style=``color: rgb(255, 0,
 0);''}</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
 </div>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 100%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">==== Example</p>
-<p class="tableblock">&#8230;&#8203;.
-[#assign websiteNodes = cmsfn.contentByPath("/vinyl", "website") /]\
+<div class="sect3">
+<h4 id="_example_8"><a class="anchor" href="#_example_8"></a>Example</h4>
+<div class="literalblock">
+<div class="content">
+<pre>[#assign websiteNodes = cmsfn.contentByPath("/vinyl", "website") /]\
 [#assign regularJsonObjects = jsonfn.from(websiteNodes).down(2).readNodeTypes("mgnl:page").add( "@path", "title")/]\
 ${regularJsonObjects.print()}\
-/<strong> </strong>/\
-${regularJsonObjects`<strong><code>.insertCustom("/vinyl/jazz",'{"bluenotes":true, "mind-blowing" : "sometimes", "max-bpm" : 145}')</code></strong><code>.print()}
-&#8230;&#8203;.</p>
-<p class="tableblock">Line 3 renders the `regular</code> JSON. On line 5, the JSON of the node
+/** **/\
+${regularJsonObjects`**`.insertCustom("/vinyl/jazz",'{"bluenotes":true, "mind-blowing" : "sometimes", "max-bpm" : 145}')`**`.print()}</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Line 3 renders the <code>regular</code> JSON. On line 5, the JSON of the node
 with the path <code>/vinyl/jazz</code> is replaced with custom JSON.</p>
-<p class="tableblock">[source,js]
-----
-{
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">{
   "rock" : {
     "title" : "Rock",
     "@path" : "/vinyl/rock"
@@ -3154,7 +3305,7 @@ with the path <code>/vinyl/jazz</code> is replaced with custom JSON.</p>
   "title" : "Best vinyl",
   "@path" : "/vinyl"
 }
-/<strong> </strong>/
+/** **/
 {
   "rock" : {
     "title" : "Rock",
@@ -3171,30 +3322,55 @@ with the path <code>/vinyl/jazz</code> is replaced with custom JSON.</p>
   },
   "title" : "Best vinyl",
   "@path" : "/vinyl"
-}
-----</p>
-<p class="tableblock">==</p>
-<p class="tableblock">== Property defining methods</p>
-<p class="tableblock">Specify which properties of the JCR node should go into the JSON object.
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>==</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_property_defining_methods"><a class="anchor" href="#_property_defining_methods"></a>Property defining methods</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Specify which properties of the JCR node should go into the JSON object.
 Combine inclusionary and exclusionary methods. The resultant set of
 properties is applied to all nodes, subnodes and resolved nodes, if the
 node has a value for the property. The methods are applied on a
 <a href="../Templating-function-arguments-and-return-types/#_jsonbuilder" class="page"><code>JsonBuilder</code></a>
 object and return the JsonBuilder.</p>
-<p class="tableblock">=== <code>addAll</code></p>
-<p class="tableblock">Add all properties.</p>
-<p class="tableblock">==== Method signatures</p>
-<p class="tableblock"><code>JsonBuilder addAll()</code></p>
-<p class="tableblock">==== Arguments</p>
-<p class="tableblock">No arguments.</p>
-<p class="tableblock">==== Example</p>
-<p class="tableblock">&#8230;&#8203;.
-[#assign pageNode = cmsfn.contentByPath("/vinyl", "website") /]\
-${jsonfn.from(pageNode).<code><strong>`addAll()</code></strong><code>.print()}
-&#8230;&#8203;.</p>
-<p class="tableblock">[source,js]
-----
-{
+</div>
+<div class="sect2">
+<h3 id="_addall"><a class="anchor" href="#_addall"></a><code>addAll</code></h3>
+<div class="paragraph">
+<p>Add all properties.</p>
+</div>
+<div class="sect3">
+<h4 id="_method_signatures_8"><a class="anchor" href="#_method_signatures_8"></a>Method signatures</h4>
+<div class="paragraph">
+<p><code>JsonBuilder addAll()</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_arguments_7"><a class="anchor" href="#_arguments_7"></a>Arguments</h4>
+<div class="paragraph">
+<p>No arguments.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_example_9"><a class="anchor" href="#_example_9"></a>Example</h4>
+<div class="literalblock">
+<div class="content">
+<pre>[#assign pageNode = cmsfn.contentByPath("/vinyl", "website") /]\
+${jsonfn.from(pageNode).`**`addAll()`**`.print()}</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">{
   "mgnl:created" : 1486441456877,
   "@link" : "/vinyl-site/",
   "mgnl:template" : "multisite-examples-lightmodule:pages/ms-page",
@@ -3219,45 +3395,63 @@ ${jsonfn.from(pageNode).<code><strong>`addAll()</code></strong><code>.print()}
   "jcr:primaryType" : "mgnl:page",
   "@id" : "17ac0768-4337-4dda-a8da-223c036d299d",
   "@path" : "/vinyl"
-}
-----</p>
-<p class="tableblock">=== `add</code></p>
-<p class="tableblock">Add the wanted properties. You can pass one or many arguments that can
-be regular expressions.</p>
-<p class="tableblock">==== Method signatures</p>
-<p class="tableblock"><code>JsonBuilder add(String&#8230;&#8203; property)</code></p>
-<p class="tableblock">==== Arguments</p>
-<p class="tableblock">[cols="3,7a"]</p></td>
-</tr>
-</tbody>
-</table>
-<div class="paragraph">
-<p>|Argument|Description</p>
+}</code></pre>
 </div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_add"><a class="anchor" href="#_add"></a><code>add</code></h3>
 <div class="paragraph">
-<p>|<code>property</code>
-|<strong>required</strong></p>
+<p>Add the wanted properties. You can pass one or many arguments that can
+be regular expressions.</p>
+</div>
+<div class="sect3">
+<h4 id="_method_signatures_9"><a class="anchor" href="#_method_signatures_9"></a>Method signatures</h4>
+<div class="paragraph">
+<p><code>JsonBuilder add(String&#8230;&#8203; property)</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_arguments_8"><a class="anchor" href="#_arguments_8"></a>Arguments</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 70%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Argument</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>property</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>required</strong></p>
 </div>
 <div class="paragraph">
 <p>The property to be included or a regular expression pattern to match
 properties.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
 </div>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 100%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">==== Example</p>
-<p class="tableblock">&#8230;&#8203;.
-[#assign pageNode = cmsfn.contentByPath("/vinyl", "website") /]\
-${jsonfn.from(pageNode).<code><strong>`add("@.<strong>")</code></strong><code>.print()}\
-/<strong> --- </strong>/\
-${jsonfn.from(pageNode)</code><strong><code>.add("mgnl.</strong>", "title")</code></strong><code>.print()}
-&#8230;&#8203;.</p>
-<p class="tableblock">[source,js]
-----
-{
+<div class="sect3">
+<h4 id="_example_10"><a class="anchor" href="#_example_10"></a>Example</h4>
+<div class="literalblock">
+<div class="content">
+<pre>[#assign pageNode = cmsfn.contentByPath("/vinyl", "website") /]\
+${jsonfn.from(pageNode).`**`add("@.*")`**`.print()}\
+/** --- **/\
+${jsonfn.from(pageNode)`**`.add("mgnl.*", "title")`**`.print()}</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">{
   "@nodeType" : "mgnl:page",
   "@name" : "vinyl",
   "@link" : "/vinyl-site/",
@@ -3265,7 +3459,7 @@ ${jsonfn.from(pageNode)</code><strong><code>.add("mgnl.</strong>", "title")</cod
   "@id" : "17ac0768-4337-4dda-a8da-223c036d299d",
   "@path" : "/vinyl"
 }
-/<strong> --- </strong>/
+/** --- **/
 {
   "mgnl:created" : 1486441456877,
   "mgnl:template" : "multisite-examples-lightmodule:pages/ms-page",
@@ -3277,43 +3471,61 @@ ${jsonfn.from(pageNode)</code><strong><code>.add("mgnl.</strong>", "title")</cod
   "title" : "Best vinyl",
   "mgnl:lastActivatedBy" : "superuser",
   "mgnl:lastModified" : 1490253448807
-}
-----</p>
-<p class="tableblock">=== `exclude</code></p>
-<p class="tableblock">Exclude unwanted properties. You can pass one or many arguments that can
-be regular expressions.</p>
-<p class="tableblock">==== Method signatures</p>
-<p class="tableblock"><code>JsonBuilder exclude(String&#8230;&#8203; property)</code></p>
-<p class="tableblock">==== Arguments</p>
-<p class="tableblock">[cols="3,7a"]</p></td>
-</tr>
-</tbody>
-</table>
-<div class="paragraph">
-<p>|Argument|Description</p>
+}</code></pre>
 </div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_exclude"><a class="anchor" href="#_exclude"></a><code>exclude</code></h3>
 <div class="paragraph">
-<p>|<code>property</code>
-|<strong>required</strong></p>
+<p>Exclude unwanted properties. You can pass one or many arguments that can
+be regular expressions.</p>
+</div>
+<div class="sect3">
+<h4 id="_method_signatures_10"><a class="anchor" href="#_method_signatures_10"></a>Method signatures</h4>
+<div class="paragraph">
+<p><code>JsonBuilder exclude(String&#8230;&#8203; property)</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_arguments_9"><a class="anchor" href="#_arguments_9"></a>Arguments</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 70%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Argument</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>property</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>required</strong></p>
 </div>
 <div class="paragraph">
 <p>The property to be excluded or a regular expression pattern to match
 properties you want to exclude.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
 </div>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 100%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">==== Example</p>
-<p class="tableblock">&#8230;&#8203;.
-[#assign pageNode = cmsfn.contentByPath("/vinyl", "website") /]\
-${jsonfn.from(pageNode).addAll()<code><strong></code>.exclude("jcr.<strong>", "mgnl.</strong>")<code></strong></code>.print()}
-&#8230;&#8203;.</p>
-<p class="tableblock">[source,js]
-----
-{
+<div class="sect3">
+<h4 id="_example_11"><a class="anchor" href="#_example_11"></a>Example</h4>
+<div class="literalblock">
+<div class="content">
+<pre>[#assign pageNode = cmsfn.contentByPath("/vinyl", "website") /]\
+${jsonfn.from(pageNode).addAll()`**`.exclude("jcr.*", "mgnl.*")`**`.print()}</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">{
   "@nodeType" : "mgnl:page",
   "@name" : "vinyl",
   "@link" : "/vinyl-site/",
@@ -3324,41 +3536,72 @@ ${jsonfn.from(pageNode).addAll()<code><strong></code>.exclude("jcr.<strong>", "m
   "@id" : "17ac0768-4337-4dda-a8da-223c036d299d",
   "title" : "Best vinyl",
   "@path" : "/vinyl"
-}
-----</p>
-<p class="tableblock">==</p>
-<p class="tableblock">== Resolving referenced nodes and renditions</p>
-<p class="tableblock">Resolve referenced nodes and image renditions. The methods are applied
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>==</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_resolving_referenced_nodes_and_renditions"><a class="anchor" href="#_resolving_referenced_nodes_and_renditions"></a>Resolving referenced nodes and renditions</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Resolve referenced nodes and image renditions. The methods are applied
 on a
 <a href="../Templating-function-arguments-and-return-types/#_jsonbuilder" class="page"><code>JsonBuilder</code></a>
 object and return the JsonBuilder.</p>
-<p class="tableblock">=== <code>expand</code></p>
-<p class="tableblock">Resolve nodes which are referenced by a property value.</p>
-<p class="tableblock">==== Method signatures</p>
-<p class="tableblock"><code>JsonBuilder expand(String propertyName, String repository)</code></p>
-<p class="tableblock"><code>JsonBuilder expand(String propertyNameRegex, String targetRepository, String targetPropertyName)</code></p>
-<p class="tableblock">==== Arguments</p>
-<p class="tableblock">&#8230;&#8203;.
-expand(propertyName, repository)
-&#8230;&#8203;.</p>
-<p class="tableblock">[cols="3,7a"]</p></td>
-</tr>
-</tbody>
-</table>
+</div>
+<div class="sect2">
+<h3 id="_expand"><a class="anchor" href="#_expand"></a><code>expand</code></h3>
 <div class="paragraph">
-<p>|Argument|Description</p>
+<p>Resolve nodes which are referenced by a property value.</p>
+</div>
+<div class="sect3">
+<h4 id="_method_signatures_11"><a class="anchor" href="#_method_signatures_11"></a>Method signatures</h4>
+<div class="paragraph">
+<p><code>JsonBuilder expand(String propertyName, String repository)</code></p>
 </div>
 <div class="paragraph">
-<p>|<code>propertyName\</code>
-|<strong>required</strong></p>
+<p><code>JsonBuilder expand(String propertyNameRegex, String targetRepository, String targetPropertyName)</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_arguments_10"><a class="anchor" href="#_arguments_10"></a>Arguments</h4>
+<div class="literalblock">
+<div class="content">
+<pre>expand(propertyName, repository)</pre>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 70%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Argument</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>propertyName\</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>required</strong></p>
 </div>
 <div class="paragraph">
 <p>The name of the property which contains the reference to a node in
 another workspace.</p>
-</div>
-<div class="paragraph">
-<p>|<code>repository</code>
-|<strong>required</strong></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>repository</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>required</strong></p>
 </div>
 <div class="paragraph">
 <p>The name of the repository which contains the node to be expanded.</p>
@@ -3367,63 +3610,87 @@ another workspace.</p>
 <div class="content">
 <pre>expand(propertyNameRegex, targetRepository, targetPropertyName)</pre>
 </div>
-</div>
-<div class="paragraph">
-<p>|<code>propertyNameRegex</code>
-|<strong>required</strong></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>propertyNameRegex</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>required</strong></p>
 </div>
 <div class="paragraph">
 <p>A regular expression that matches the name of the property which
 contains the reference to a node in another workspace.</p>
-</div>
-<div class="paragraph">
-<p>|<code>targetRepository</code>
-|<strong>required</strong></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>targetRepository</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>required</strong></p>
 </div>
 <div class="paragraph">
 <p>The name of the target repository which contains the node to be
 expanded.</p>
-</div>
-<div class="paragraph">
-<p>|<code>targetPropertyName</code>
-|<strong>required</strong></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>targetPropertyName</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>required</strong></p>
 </div>
 <div class="paragraph">
 <p>The name of the property of the referenced node.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
 </div>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 100%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">==== Example</p>
-<p class="tableblock">&#8230;&#8203;.
-[<mark>assign contentAppItemNode = cmsfn.contentByPath("/cameras/F3", "cameracollection") /]\
-/<strong> node with references to other nodes </strong>/\
+<div class="sect3">
+<h4 id="_example_12"><a class="anchor" href="#_example_12"></a>Example</h4>
+<div class="literalblock">
+<div class="content">
+<pre>[#assign contentAppItemNode = cmsfn.contentByPath("/cameras/F3", "cameracollection") /]\
+/** node with references to other nodes **/\
 ${jsonfn.from(contentAppItemNode).add("name", "maker", "categories", "images").print()}\
-/<strong> expanding the referenced categories, images and maker </strong>/\
+/** expanding the referenced categories, images and maker **/\
 ${jsonfn.from(contentAppItemNode).add("@link", "name")\
-` <strong><code>.expand("maker", "cameracollection")</code></strong><code>\
-` <strong></code>.expand("categories", "category", "jcr:uuid")<code></strong></code>\
-` <strong><code>.expand("images", "dam")</code></strong><code>\
-` <strong></code>.expand("image", "dam")<code></strong></code>\
-.print()}
-&#8230;&#8203;.</p>
-<p class="tableblock">NOTE:</p>
-<p class="tableblock">* <code>.expand("categor.*", "category", "jcr:uuid")</code> could be replaced with
-<code>.expand("categories", "category")</code> in the above example.
-* when expanding a property, it is not required to add it with the
-<code>#add</code> method.</p>
-<p class="tableblock">&#8230;&#8203;.
-/<strong> node with references to other nodes </strong>/
+` **`.expand("maker", "cameracollection")`**`\
+` **`.expand("categories", "category", "jcr:uuid")`**`\
+` **`.expand("images", "dam")`**`\
+` **`.expand("image", "dam")`**`\
+.print()}</pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p><code>.expand("categor.*", "category", "jcr:uuid")</code> could be replaced with <code>.expand("categories", "category")</code> in the above example.</p>
+</li>
+<li>
+<p>when expanding a property, it is not required to add it with the <code>#add</code> method.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>/** node with references to other nodes **/
 {
   "images" : [ "jcr:59325c09-0966-4810-bf36-329d742201e3", "jcr:fc1b30b2-4d38-45b8-9fba-944ea6084582" ],
   "name" : "F3",
   "maker" : "893a6375-41d9-4405-ab74-ee3b91f97839",
   "categories" : [ "a9b08e78-38f0-4390-b1b7-6f71087d4514", "13e84bb3-6335-4710-92a6-a7f3b27a2e08" ]
 }
-/<strong> expanding the referenced categories, images and maker </strong>/
+/** expanding the referenced categories, images and maker **/
 {
   "images" : [ {
     "@link" : "/dam/jcr:59325c09-0966-4810-bf36-329d742201e3/Nikon_F3_with_HP_viewfinder.jpeg",
@@ -3449,72 +3716,121 @@ ${jsonfn.from(contentAppItemNode).add("@link", "name")\
     "@link" : "/camera-categories/general/analog",
     "name" : "analog"
   } ]
-}
-&#8230;&#8203;.</p>
-<p class="tableblock">Compare the first and second JSON fragments to see how some properties
+}</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Compare the first and second JSON fragments to see how some properties
 have been expanded to include their referenced nodes:</p>
-<p class="tableblock">* <code>#expand</code> can resolve a single reference from a <code>normal</code> field (see
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>#expand</code> can resolve a single reference from a <code>normal</code> field (see
 <code>maker</code>), as well as multiple nodes when the property stores multiple
 values from a
 <a href="../../../../Support/Magnolia-5-UI-documentation/Dialog-definition-5-UI/Field-definition-5-UI/List-of-fields-5-UI/Multivalue-field-5-UI/" class="page">multivalue
-field</a> (see <code>categories</code> and <code>images</code>).
-* The values in <code>categories</code> are the standard <code>UUID`s of the referenced
+field</a> (see <code>categories</code> and <code>images</code>).</p>
+</li>
+<li>
+<p>The values in <code>categories</code> are the standard <code>UUID`s of the referenced
 nodes. The values in `images</code> are asset IDs (AssetProvider ID and a
-UUID). <code>#expand</code> resolves all their referenced nodes correctly.
-* The expanded nodes from the property <code>images</code> has expanded nodes from
+UUID). <code>#expand</code> resolves all their referenced nodes correctly.</p>
+</li>
+<li>
+<p>The expanded nodes from the property <code>images</code> has expanded nodes from
 the <code>dam</code> workspace, thus producing JSON from an asset. The <code>@link</code>
-property can be used to create an <code>&lt;img /&gt;</code> tag.
-* <code>#expand</code> can act on multiple levels:
-<strong> <code>.expand("maker", "cameracollection")</code> expands a maker node which
-itself has the property <code>image</code>.
-</strong> This is also expanded by the expression <code>.expand("image", "dam")</code>
-* If the nodes represent assets, you can also try to get renditions if
+property can be used to create an <code>&lt;img /&gt;</code> tag.</p>
+</li>
+<li>
+<p><code>#expand</code> can act on multiple levels:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>.expand("maker", "cameracollection")</code> expands a maker node which
+itself has the property <code>image</code>.</p>
+</li>
+<li>
+<p>This is also expanded by the expression <code>.expand("image", "dam")</code></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>If the nodes represent assets, you can also try to get renditions if
 any are defined. See method <code>#binaryLinkRendition</code> below.</p>
-<p class="tableblock">=== <code>binaryLinkRendition</code></p>
-<p class="tableblock">Add renditions for assets. This works only if the renditions
-(<a href="#/Templating/Theme.adoc</mark><em>image_variations">image variations</a>) have been
-defined on the current <a href="../../../Theme/" class="page">Theme</a>.</p>
-<p class="tableblock">Each rendition is added as a property of the asset. The property name
-for a rendition follows this pattern: <code>@rendition</em>&lt;rendition-name&gt;</code>. The
-value is a link.</p>
-<p class="tableblock">If a rendition is not defined in the theme, the property is added, but
-the value points to the default link.</p>
-<p class="tableblock">==== Method signature</p>
-<p class="tableblock"><code>JsonBuilder binaryLinkRendition(String&#8230;&#8203; variation)</code></p>
-<p class="tableblock">==== Arguments</p>
-<p class="tableblock">[cols="3,7a"]</p></td>
-</tr>
-</tbody>
-</table>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_binarylinkrendition"><a class="anchor" href="#_binarylinkrendition"></a><code>binaryLinkRendition</code></h3>
 <div class="paragraph">
-<p>|Argument|Description</p>
+<p>Add renditions for assets. This works only if the renditions
+(<a href="../../../Theme/#_image_variations" class="page">image variations</a>) have been
+defined on the current <a href="../../../Theme/" class="page">Theme</a>.</p>
 </div>
 <div class="paragraph">
-<p>|<code>variation\</code>
-|<strong>required</strong></p>
+<p>Each rendition is added as a property of the asset. The property name
+for a rendition follows this pattern: <code>@rendition_&lt;rendition-name&gt;</code>. The
+value is a link.</p>
+</div>
+<div class="paragraph">
+<p>If a rendition is not defined in the theme, the property is added, but
+the value points to the default link.</p>
+</div>
+<div class="sect3">
+<h4 id="_method_signature_2"><a class="anchor" href="#_method_signature_2"></a>Method signature</h4>
+<div class="paragraph">
+<p><code>JsonBuilder binaryLinkRendition(String&#8230;&#8203; variation)</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_arguments_11"><a class="anchor" href="#_arguments_11"></a>Arguments</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 70%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Argument</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>variation\</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>required</strong></p>
 </div>
 <div class="paragraph">
 <p>The image variation (rendition) name of the asset.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
 </div>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 100%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">==== Example</p>
-<p class="tableblock">&#8230;&#8203;.
-[#assign contentAppItemNode = cmsfn.contentByPath("/comics/belgian-comics/morris/lucky-luke/jolly-jumper/main", "website") /]\
+<div class="sect3">
+<h4 id="_example_13"><a class="anchor" href="#_example_13"></a>Example</h4>
+<div class="literalblock">
+<div class="content">
+<pre>[#assign contentAppItemNode = cmsfn.contentByPath("/comics/belgian-comics/morris/lucky-luke/jolly-jumper/main", "website") /]\
 ${jsonfn.from(contentAppItemNode).down(2).allowOnlyNodeTypes("mgnl.*")\
 .add("@nodeType", "image", "@link")\
 .expand("image", "dam")\
-<code><strong></code>.binaryLinkRendition("default","960","foobar")<code></strong></code>\
-.print()}
-&#8230;&#8203;.</p>
-<p class="tableblock">This example renders a component node which contains an image (which is
+`**`.binaryLinkRendition("default","960","foobar")`**`\
+.print()}</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This example renders a component node which contains an image (which is
 expanded) and includes its renditions.</p>
-<p class="tableblock">&#8230;&#8203;.
-[ {
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>[ {
   "@nodeType" : "mgnl:component",
   "image" : {
     "@nodeType" : "mgnl:asset",
@@ -3524,30 +3840,56 @@ expanded) and includes its renditions.</p>
     "@rendition_960" : "/.imaging/mte/comics-theme/960/dam/jolly-jumper/jolly-jumper-black-and-white.png/jcr:content/jolly-jumper-black-and-white.png"
   },
   "@link" : "/comics-site/jollyjumper/main/0.html"
-} ]
-&#8230;&#8203;.</p>
-<p class="tableblock">Note that there is no rendition <em>foobar</em> defined on the theme, therefor
+} ]</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Note that there is no rendition <em>foobar</em> defined on the theme, therefor
 the property <code>@rendition_foobar</code> points to the default rendition.</p>
-<p class="tableblock">== Formatting, i18n and print</p>
-<p class="tableblock">=== <code>inline</code></p>
-<p class="tableblock">Get the JSON string on one line.</p>
-<p class="tableblock">==== Method signature</p>
-<p class="tableblock"><code>JsonBuilder inline()</code></p>
-<p class="tableblock">==== Arguments</p>
-<p class="tableblock">none</p>
-<p class="tableblock">==== Example</p>
-<p class="tableblock">&#8230;&#8203;.
-[#assign pageNode = cmsfn.contentByPath("/vinyl", "website") /]\
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_formatting_i18n_and_print"><a class="anchor" href="#_formatting_i18n_and_print"></a>Formatting, i18n and print</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_inline"><a class="anchor" href="#_inline"></a><code>inline</code></h3>
+<div class="paragraph">
+<p>Get the JSON string on one line.</p>
+</div>
+<div class="sect3">
+<h4 id="_method_signature_3"><a class="anchor" href="#_method_signature_3"></a>Method signature</h4>
+<div class="paragraph">
+<p><code>JsonBuilder inline()</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_arguments_12"><a class="anchor" href="#_arguments_12"></a>Arguments</h4>
+<div class="paragraph">
+<p>none</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_example_14"><a class="anchor" href="#_example_14"></a>Example</h4>
+<div class="literalblock">
+<div class="content">
+<pre>[#assign pageNode = cmsfn.contentByPath("/vinyl", "website") /]\
 [#assign jsonBuilder = jsonfn.fromChildNodesOf(pageNode).readNodeTypes("mgnl:page").down(2).add("title") /]\
-/<strong> multiline </strong>/\
+/** multiline **/\
 ${jsonBuilder.print()}\
-/<strong> single-line </strong>/\
-${jsonBuilder`<strong><code>.inline()</code></strong><code>.print()}
-&#8230;&#8203;.</p>
-<p class="tableblock">This example renders a component node which contains an image (which
+/** single-line **/\
+${jsonBuilder`**`.inline()`**`.print()}</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This example renders a component node which contains an image (which
 gets expanded) and includes its renditions.</p>
-<p class="tableblock">&#8230;&#8203;.
-/<strong> multiline </strong>/
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>/** multiline **/
 [ {
   "title" : "Rock"
 }, {
@@ -3555,112 +3897,185 @@ gets expanded) and includes its renditions.</p>
 }, {
   "title" : "Jazz"
 } ]
-/<strong> single-line </strong>/
-[{"title":"Rock"},{"title":"Disco"},{"title":"Jazz"}]
-&#8230;&#8203;.</p>
-<p class="tableblock">=== `maskChar</code></p>
-<p class="tableblock">Replace one char with another on property names.</p>
-<p class="tableblock">==== Method signature</p>
-<p class="tableblock"><code>JsonBuilder maskChar(char what, char replace)</code></p>
-<p class="tableblock">==== Arguments</p>
-<p class="tableblock">[cols="3,7a"]</p></td>
-</tr>
-</tbody>
-</table>
-<div class="paragraph">
-<p>|Argument|Description</p>
+/** single-line **/
+[{"title":"Rock"},{"title":"Disco"},{"title":"Jazz"}]</pre>
 </div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_maskchar"><a class="anchor" href="#_maskchar"></a><code>maskChar</code></h3>
 <div class="paragraph">
-<p>|<code>what\</code>
-|<strong>required</strong></p>
+<p>Replace one char with another on property names.</p>
+</div>
+<div class="sect3">
+<h4 id="_method_signature_4"><a class="anchor" href="#_method_signature_4"></a>Method signature</h4>
+<div class="paragraph">
+<p><code>JsonBuilder maskChar(char what, char replace)</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_arguments_13"><a class="anchor" href="#_arguments_13"></a>Arguments</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 70%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Argument</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>what\</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>required</strong></p>
 </div>
 <div class="paragraph">
 <p>The char to replace.</p>
-</div>
-<div class="paragraph">
-<p>|<code>replace</code>
-|<strong>required</strong></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>replace</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>required</strong></p>
 </div>
 <div class="paragraph">
 <p>The replacement char.</p>
-</div>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 100%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">==== Example</p>
-<p class="tableblock">&#8230;&#8203;.
-[#assign pageNode = cmsfn.contentByPath("/comics/belgian-comics/morris/lucky-luke/jolly-jumper/in-love", "website") /]\
-[#assign jsonBuilder = jsonfn.from(pageNode).add("mgnl:last.<strong>x") /]\
-${jsonfn.from(pageNode).add("mgnl:lastA.</strong>").print()}\
-/<strong> </strong>/\
-${jsonfn.from(pageNode).add("mgnl:lastA.<strong>")<code><strong></code>.maskChar(':', '_')<code></strong></code>.print()}
-&#8230;&#8203;.</p>
-<p class="tableblock">&#8230;&#8203;.
-{
-  "mgnl:lastActivated" : 1488452079969,
-  "mgnl:lastActivatedBy" : "superuser"
-}
-/<strong> </strong>/
-{
-  "mgnl_lastActivated" : 1488452079969,
-  "mgnl_lastActivatedBy" : "superuser"
-}
-&#8230;&#8203;.</p>
-<p class="tableblock">=== <code>escapeBackslash</code></p>
-<p class="tableblock">Escapes backslashes (<code>\</code>) in the JSON. Use with care and only if
-strictly necessary. Typically backslashes are already escaped!</p>
-<p class="tableblock">==== Method signature</p>
-<p class="tableblock"><code>JsonBuilder escapeBackslash()</code></p>
-<p class="tableblock">==== Arguments</p>
-<p class="tableblock">No arguments.</p>
-<p class="tableblock">==== Example</p>
-<p class="tableblock">&#8230;&#8203;.
-[#assign cameraNode = cmsfn.contentByPath("/cameras/X-Pro2", "cameracollection") /]\
-${jsonfn.from(cameraNode).add("description")<code><strong></code>.escapeBackslash()<code></strong></code>.print()}
-&#8230;&#8203;.</p>
-<p class="tableblock">&#8230;&#8203;.
-/<strong> not especially escaped </strong>/
-{
-  "description" : "&lt;p&gt;/\\ /\\ The Fujifilm X-Pro2 is a &#8230;&#8203;&lt;/p&gt;\n\n&lt;p&gt; &lt;/p&gt;\n"
-}
-/<strong> escaped </strong>/
-{
-  "description" : "&lt;p&gt;/\\\\ /\\\\ The Fujifilm X-Pro2 is a &#8230;&#8203;&lt;/p&gt;\\n\\n&lt;p&gt; &lt;/p&gt;\\n"
-}
-&#8230;&#8203;.</p>
-<p class="tableblock">The backslashes are already escaped.</p>
-<p class="tableblock">=== <code>wrapForI18n</code></p>
-<p class="tableblock">Ensures that localized values are available and the values of the
-properties are set according to the current locale.</p>
-<p class="tableblock">When the function is applied, the nodes are wrapped into
-<a href="https://nexus.magnolia-cms.com/#nexus-search;classname~I18nNodeWrapper" target="_blank" rel="noopener">I18nNodeWrapper</a>.</p>
-<p class="tableblock">==== Method signature</p>
-<p class="tableblock"><code>JsonBuilder wrapForI18n()</code></p>
-<p class="tableblock">==== Arguments</p>
-<p class="tableblock">No arguments</p>
-<p class="tableblock">==== Example</p>
-<p class="tableblock">&#8230;&#8203;.
-[#assign cameraNode = cmsfn.contentByPath("/cameras/X-Pro2", "cameracollection") /]\
-${jsonfn.from(cameraNode).add("description")<code><strong></code>.wrapForI18n()<code></strong></code>.print()}
-&#8230;&#8203;.</p>
-<p class="tableblock">=== <code>print</code></p>
-<p class="tableblock">The <code>print</code> methods returns the JSON as a string. Always call this
-method at the end when you want to render the JSON.</p>
-<p class="tableblock">==== Method signature</p>
-<p class="tableblock"><code>JsonBuilder print()</code></p>
-<p class="tableblock">==== Arguments</p>
-<p class="tableblock">No arguments</p>
-<p class="tableblock">==== Example</p>
-<p class="tableblock">&#8230;&#8203;.
-[#assign pageNode = cmsfn.contentByPath("/vinyl", "website") /]\
-${jsonfn.from(pageNode).addAll().exclude("mgnl.</strong>", "jcr.*")<code><strong></code>.print()<code></strong></code>}
-&#8230;&#8203;.</p></td>
+</div></div></td>
 </tr>
 </tbody>
 </table>
+</div>
+<div class="sect3">
+<h4 id="_example_15"><a class="anchor" href="#_example_15"></a>Example</h4>
+<div class="literalblock">
+<div class="content">
+<pre>[#assign pageNode = cmsfn.contentByPath("/comics/belgian-comics/morris/lucky-luke/jolly-jumper/in-love", "website") /]\
+[#assign jsonBuilder = jsonfn.from(pageNode).add("mgnl:last.*x") /]\
+${jsonfn.from(pageNode).add("mgnl:lastA.*").print()}\
+/** **/\
+${jsonfn.from(pageNode).add("mgnl:lastA.*")`**`.maskChar(':', '_')`**`.print()}</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>{
+  "mgnl:lastActivated" : 1488452079969,
+  "mgnl:lastActivatedBy" : "superuser"
+}
+/** **/
+{
+  "mgnl_lastActivated" : 1488452079969,
+  "mgnl_lastActivatedBy" : "superuser"
+}</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_escapebackslash"><a class="anchor" href="#_escapebackslash"></a><code>escapeBackslash</code></h3>
+<div class="paragraph">
+<p>Escapes backslashes (<code>\</code>) in the JSON. Use with care and only if
+strictly necessary. Typically backslashes are already escaped!</p>
+</div>
+<div class="sect3">
+<h4 id="_method_signature_5"><a class="anchor" href="#_method_signature_5"></a>Method signature</h4>
+<div class="paragraph">
+<p><code>JsonBuilder escapeBackslash()</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_arguments_14"><a class="anchor" href="#_arguments_14"></a>Arguments</h4>
+<div class="paragraph">
+<p>No arguments.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_example_16"><a class="anchor" href="#_example_16"></a>Example</h4>
+<div class="literalblock">
+<div class="content">
+<pre>[#assign cameraNode = cmsfn.contentByPath("/cameras/X-Pro2", "cameracollection") /]\
+${jsonfn.from(cameraNode).add("description")`**`.escapeBackslash()`**`.print()}</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>/** not especially escaped **/
+{
+  "description" : "&lt;p&gt;/\\ /\\ The Fujifilm X-Pro2 is a ...&lt;/p&gt;\n\n&lt;p&gt; &lt;/p&gt;\n"
+}
+/** escaped **/
+{
+  "description" : "&lt;p&gt;/\\\\ /\\\\ The Fujifilm X-Pro2 is a ...&lt;/p&gt;\\n\\n&lt;p&gt; &lt;/p&gt;\\n"
+}</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The backslashes are already escaped.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_wrapfori18n"><a class="anchor" href="#_wrapfori18n"></a><code>wrapForI18n</code></h3>
+<div class="paragraph">
+<p>Ensures that localized values are available and the values of the
+properties are set according to the current locale.</p>
+</div>
+<div class="paragraph">
+<p>When the function is applied, the nodes are wrapped into
+<a href="https://nexus.magnolia-cms.com/#nexus-search;classname~I18nNodeWrapper" target="_blank" rel="noopener">I18nNodeWrapper</a>.</p>
+</div>
+<div class="sect3">
+<h4 id="_method_signature_6"><a class="anchor" href="#_method_signature_6"></a>Method signature</h4>
+<div class="paragraph">
+<p><code>JsonBuilder wrapForI18n()</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_arguments_15"><a class="anchor" href="#_arguments_15"></a>Arguments</h4>
+<div class="paragraph">
+<p>No arguments</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_example_17"><a class="anchor" href="#_example_17"></a>Example</h4>
+<div class="literalblock">
+<div class="content">
+<pre>[#assign cameraNode = cmsfn.contentByPath("/cameras/X-Pro2", "cameracollection") /]\
+${jsonfn.from(cameraNode).add("description")`**`.wrapForI18n()`**`.print()}</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_print"><a class="anchor" href="#_print"></a><code>print</code></h3>
+<div class="paragraph">
+<p>The <code>print</code> methods returns the JSON as a string. Always call this
+method at the end when you want to render the JSON.</p>
+</div>
+<div class="sect3">
+<h4 id="_method_signature_7"><a class="anchor" href="#_method_signature_7"></a>Method signature</h4>
+<div class="paragraph">
+<p><code>JsonBuilder print()</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_arguments_16"><a class="anchor" href="#_arguments_16"></a>Arguments</h4>
+<div class="paragraph">
+<p>No arguments</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_example_18"><a class="anchor" href="#_example_18"></a>Example</h4>
+<div class="literalblock">
+<div class="content">
+<pre>[#assign pageNode = cmsfn.contentByPath("/vinyl", "website") /]\
+${jsonfn.from(pageNode).addAll().exclude("mgnl.*", "jcr.*")`**`.print()`**`}</pre>
+</div>
+</div>
 </div>
 </div>
 </div>
