@@ -27,7 +27,7 @@
 
             agent {
                 docker {
-                    image "magnolia-cloud-terragrunt:$env.STB_VERSION"
+                    image "$env.STB_CI_IMG_NAME:$env.STB_VERSION"
                     label "docker"
                     reuseNode true
                     alwaysPull true
@@ -117,7 +117,7 @@
 
             agent {
                 docker {
-                    image "magnolia-cloud-terragrunt:$env.STB_VERSION"
+                    image "$env.STB_CI_IMG_NAME:$env.STB_VERSION"
                     label "docker"
                     reuseNode true
                     alwaysPull true
@@ -141,7 +141,7 @@
 
             agent {
                 docker {
-                    image "magnolia-cloud-terragrunt:$env.STB_VERSION"
+                    image "$env.STB_CI_IMG_NAME:$env.STB_VERSION"
                     label "docker"
                     reuseNode true
                     alwaysPull true
