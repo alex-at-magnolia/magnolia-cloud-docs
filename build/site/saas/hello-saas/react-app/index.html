@@ -101,7 +101,7 @@
     <a class="nav-link" href="../connect-with-git/">Connect the repo to Magnolia SaaS</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../configure-magnolia/">Test the connection</a>
+    <a class="nav-link" href="../configure-magnolia/">Configure the delivery API</a>
   </li>
   <li class="nav-item is-current-page" data-depth="2">
     <a class="nav-link" href="./">Set up the React App</a>
@@ -338,8 +338,9 @@
 <div class="content">
 <pre class="highlightjs highlight"><code>REACT_APP_REST_BASE="/.rest/${REACT_APP_CONFIG_ENV}"
 
+REACT_APP_MGNL_SUB_ID = "your subscription ID here" <i class="conum" data-value="1"></i><b>(1)</b>
 REACT_APP_MGNL_BASE_AUTHOR=""
-REACT_APP_MGNL_HOST=https://author-SUB_ID.saas.magnolia-cloud.com <i class="conum" data-value="1"></i><b>(1)</b>
+REACT_APP_MGNL_HOST=https://author-${REACT_APP_MGNL_SUB_ID}.saas.magnolia-cloud.com
 REACT_APP_MGNL_DAM_RAW=${REACT_APP_MGNL_HOST}
 REACT_APP_MGNL_IS_PREVIEW=true
 
@@ -356,7 +357,7 @@ REACT_APP_MGNL_API_NAV="${REACT_APP_REST_BASE}/delivery/pagenav/v1"</code></pre>
 <table>
 <tr>
 <td><i class="conum" data-value="1"></i><b>1</b></td>
-<td>Insert your Magnolia SaaS <code>subscription_id</code> at <code>REACT_APP_MGNL_HOST</code>.</td>
+<td>Insert your Magnolia SaaS <code>subscription_id</code> here.</td>
 </tr>
 </table>
 </div>
@@ -491,7 +492,7 @@ Your browser does not support the video tag.
 </div>
 </div>
 <nav class="pagination">
-  <span class="prev"><a href="../configure-magnolia/">Test the connection</a></span>
+  <span class="prev"><a href="../configure-magnolia/">Configure the delivery API</a></span>
   <span class="next"><a href="../netlify/">Deploy to Netlify</a></span>
 </nav>
 </article>
