@@ -13,19 +13,35 @@ nav.pagination span {
 }
 
 nav.pagination .prev {
-  padding-right: 0.5rem;
+  padding: 1.5rem;
+  background-color: whitesmoke;
+  border-radius: 10px;
+  margin-right: 6px;
+  transition: 0.25s ease;
+}
+
+nav.pagination .prev:hover {
+  box-shadow: 1px 1px 1px 1px lightgrey;
 }
 
 nav.pagination .next {
-  margin-left: auto;
-  padding-left: 0.5rem;
+  margin-left: 6px;
+  padding: 1.5rem;
   text-align: right;
+  background-color: whitesmoke;
+  border-radius: 10px;
+  transition: 0.25s ease;
+}
+
+nav.pagination .next:hover {
+  box-shadow: 1px 1px 1px 1px lightgrey;
 }
 
 nav.pagination span::before {
   color: var(--toolbar-muted-color);
   font-size: 0.75em;
   padding-bottom: 0.1em;
+  transition: 0.2s ease;
 }
 
 nav.pagination .prev::before {

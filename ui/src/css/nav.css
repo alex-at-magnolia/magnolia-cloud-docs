@@ -163,7 +163,7 @@ html.is-clipped--nav {
 }
 
 .nav-item-toggle {
-  background: transparent url(../img/caret.svg) no-repeat center / 50%;
+  background: transparent url(../img/plus.svg) no-repeat center / 90%;
   border: none;
   outline: none;
   line-height: inherit;
@@ -172,11 +172,11 @@ html.is-clipped--nav {
   width: calc(var(--nav-line-height) * 1em);
   margin-top: -0.05em;
   margin-left: calc(var(--nav-line-height) * -1em);
-  transition: 0.3s ease-in-out;
+  transition: 0.2s ease-in-out;
 }
 
 .nav-item.is-active > .nav-item-toggle {
-  transform: rotate(90deg);
+  background: transparent url(../img/minus.svg) no-repeat center / 90%;
 }
 
 .is-current-page > .nav-link,

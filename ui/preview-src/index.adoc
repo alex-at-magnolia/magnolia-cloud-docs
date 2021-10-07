@@ -5,7 +5,7 @@ Author Name
 :!example-caption:
 :!table-caption:
 :page-pagination:
-:page-layout: home
+:page-layout: default
 
 [.cards.cards-4.personas.conceal-title]
 == {empty}
