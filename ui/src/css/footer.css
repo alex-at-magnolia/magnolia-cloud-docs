@@ -1,5 +1,8 @@
 footer.footer {
-  background-color: var(--color-gray-medium);
+  background: url(../img/cornered-stairs.svg);
+  background-color: whitesmoke;
+  background-attachment: fixed;
+  background-size: cover;
   padding: 1.75rem 0 1.5rem;
   position: relative;
   z-index: var(--z-index-footer);
@@ -42,7 +45,7 @@ footer .container {
 }
 
 .footer__links .footer-terms span {
-  color: var(--color-gray-light);
+  color: black;
 }
 
 .footer__links .footer-terms a {
@@ -90,8 +93,8 @@ footer .container {
 }
 
 .footer__socials .social-icons .icon:hover {
-  border: 1px solid black;
-  background-color: transparent;
+  border: 1px solid var(--color-primary-gold);
+  background-color: var(--color-primary-gold);
 }
 
 .footer__socials .social-icons .icon:hover path {
