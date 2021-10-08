@@ -2864,7 +2864,7 @@ This can be anything but must share the same name as configured in the IAM insta
 <p><strong>required</strong></p>
 </div>
 <div class="paragraph">
-<p>Defines which data about the user the Magnolia instance should be allowed to request from OIDC.</p>
+<p>Defines the user data that the Magnolia instance should be allowed to request from OIDC.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -2877,6 +2877,36 @@ The <code>openid</code>, <code>profile</code>, and <code>email</code> scopes are
 </td>
 </tr>
 </table>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Azure users</dt>
+<dd>
+<p>For users that implement refresh tokens with Azure, you can add the <code>offline_access</code> scope as well.</p>
+</dd>
+</dl>
+</div>
+<div class="admonitionblock caution">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-caution" title="Caution"></i>
+</td>
+<td class="content">
+This means the session will not expire even when the session TTL has been reached.
+</td>
+</tr>
+</table>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">...
+  pac4j:
+  ...
+    oidc.scope: openid profile email offline_access
+  ...
+...</code></pre>
+</div>
 </div></div></td>
 </tr>
 <tr>

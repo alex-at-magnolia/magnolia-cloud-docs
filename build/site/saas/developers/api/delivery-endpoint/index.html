@@ -303,7 +303,7 @@
 <p>This page describes the <code>delivery</code> endpoint for obtaining JCR data as JSON with Magnolia SaaS.</p>
 </div>
 <div class="paragraph">
-<p><strong>The <code>&lt;magnolia-base-path&gt;</code> for the Delivery API is:</strong> <code>delivery.magnolia-cloud.com</code>.</p>
+<p><strong>The <code>&lt;magnolia-base-path&gt;</code> for the Delivery API is:</strong> <code>delivery.magnolia-cloud.com/</code>.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -338,24 +338,141 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="_prerequisites"><a class="anchor" href="#_prerequisites"></a>Prerequisites</h2>
+<h2 id="_subscription_id_tokens"><a class="anchor" href="#_subscription_id_tokens"></a>Subscription ID tokens</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>In order to use the Delivery API, you must have your <code>subscription_id_token</code> which is provided to you upon signing up for Magnolia SaaS.</p>
+<p>In order to use the Delivery API, you must have your <code>subid_token</code> which is provided to you upon signing up for Magnolia SaaS.</p>
 </div>
 <div class="paragraph">
-<p>Magnolia SaaS requires that you pass your <code>subscription_id_token</code> either as a Custom HTTP Header or as a query parameter when using the endpoint:</p>
+<p>Magnolia SaaS requires that you pass your <code>subid_token</code> either as a Custom HTTP Header or as a query parameter when using the endpoint.</p>
+</div>
+<div class="paragraph">
+<p><strong>Find your subscription ID <a href="../../../faqs/#find-sub-id-faq" class="page">here <span class="icon"><i class="fa fa-id-card"></i></span></a>.</strong></p>
+</div>
+<div class="tabset is-loading">
+<div class="ulist tabs">
+<ul>
+<li>
+<p><a id="tabset1_subid_token-in-custom-http-header"></a>subid_token in Custom HTTP Header</p>
+</li>
+<li>
+<p><a id="tabset1_subid_token-as-query-parameter"></a>subid_token as query parameter</p>
+</li>
+</ul>
+</div>
+<div class="content">
+<div class="tab-pane" aria-labelledby="tabset1_subid_token-in-custom-http-header">
+<div class="listingblock">
+<div class="title">No environment specified</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-html hljs" data-lang="html">curl -H "x-subid_token: YOUR_&lt;subid_token&gt;" -v https://delivery.magnolia-cloud.com/&lt;path&gt;</code></pre>
+</div>
 </div>
 <div class="listingblock">
-<div class="title">Pass subscription_id_token in Custom HTTP Header</div>
+<div class="title">Specify environment</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-curl hljs" data-lang="curl">curl GET -H "x-subscription_id_token: YOUR_&lt;subscription_id_token&gt; <a href="http://delivery.magnolia-cloud.com"" class="bare">http://delivery.magnolia-cloud.com"</a></code></pre>
+<pre class="highlightjs highlight"><code class="language-html hljs" data-lang="html">curl -H "x-subid_token: YOUR_&lt;subid_token&gt;" -v https://delivery.magnolia-cloud.com/environments/&lt;environment&gt;/&lt;path&gt;</code></pre>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 70%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>&lt;path&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>The specific endpoint such as <code>/delivery/pages/v1/react-minimal</code>.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Example</dt>
+<dd>
+<p><code>https://delivery.magnolia-cloud.com/delivery/pages/v1/react-minimal</code></p>
+</dd>
+</dl>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>&lt;environment&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>The environment (<em>branch</em>) such as <code>main</code>.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Example</dt>
+<dd>
+<p><code>https://delivery.magnolia-cloud.com/environments/main/delivery/pages/v1/</code></p>
+</dd>
+</dl>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="tab-pane" aria-labelledby="tabset1_subid_token-as-query-parameter">
+<div class="listingblock">
+<div class="title">No environment specified</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-html hljs" data-lang="html">https://delivery.magnolia-cloud.com/&lt;path&gt;?&lt;subid_token&gt;=YOUR_&lt;subid_token&gt;</code></pre>
 </div>
 </div>
 <div class="listingblock">
-<div class="title">Pass subscription_id_token as query parameter</div>
+<div class="title">Specify environment</div>
 <div class="content">
-<pre class="highlightjs highlight"><code><a href="http://delivery.magnolia-cloud.com/ep/travel/about/main?subscription_id_token=&lt;YOUR_subscription_id_token&gt" class="bare">http://delivery.magnolia-cloud.com/ep/travel/about/main?subscription_id_token=&lt;YOUR_subscription_id_token&gt</a>;</code></pre>
+<pre class="highlightjs highlight"><code class="language-html hljs" data-lang="html">https://delivery.magnolia-cloud.com/environments/&lt;environment&gt;/&lt;path&gt;?&lt;subid_token&gt;=YOUR_&lt;subid_token&gt;</code></pre>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 70%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>&lt;path&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>The specific endpoint such as <code>/delivery/pages/v1/react-minimal</code>.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Example</dt>
+<dd>
+<p><code>https://delivery.magnolia-cloud.com/delivery/pages/v1/react-minimal</code></p>
+</dd>
+</dl>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>&lt;environment&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>The environment (<em>branch</em>) such as <code>main</code>.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Example</dt>
+<dd>
+<p><code>https://delivery.magnolia-cloud.com/environments/main/delivery/pages/v1/</code></p>
+</dd>
+</dl>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 </div>
 </div>
@@ -446,7 +563,7 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-sh hljs" data-lang="sh">curl "http://delivery.magnolia-cloud.com/magnoliaAuthor/delivery/ep/travel/about/main?subscription_id_token=YOUR_subscription_id_token"</code></pre>
+<pre class="highlightjs highlight"><code class="language-sh hljs" data-lang="sh">curl "http://delivery.magnolia-cloud.com//magnoliaAuthor/delivery/ep/travel/about/main?subid_token=YOUR_subid_token"</code></pre>
 </div>
 </div>
 <div class="listingblock">
@@ -530,7 +647,7 @@ The items in the response are returned in their natural (unsorted) order. See al
 <h5 id="_get_child_nodes_in_the_root_of_the_ep_endpoint"><a class="anchor" href="#_get_child_nodes_in_the_root_of_the_ep_endpoint"></a>Get child nodes in the root of the <code>ep</code> endpoint:</h5>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-sh hljs" data-lang="sh">curl "http://delivery.magnolia-cloud.com/magnoliaAuthor/delivery/ep/@nodes?subscription_id_token=YOUR_subscription_id_token"</code></pre>
+<pre class="highlightjs highlight"><code class="language-sh hljs" data-lang="sh">curl "http://delivery.magnolia-cloud.com//magnoliaAuthor/delivery/ep/@nodes?subid_token=YOUR_subid_token"</code></pre>
 </div>
 </div>
 <div class="listingblock">
@@ -595,7 +712,7 @@ nodeTypes:
 <h5 id="_get_child_nodes_in_the_root_of_the_travel_page"><a class="anchor" href="#_get_child_nodes_in_the_root_of_the_travel_page"></a>Get child nodes in the root of the <code>/travel</code> page:</h5>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>curl "http://delivery.magnolia-cloud.com/magnoliaAuthor/delivery/ep/travel/@nodes?subscription_id_token=YOUR_subscription_id_token"</code></pre>
+<pre class="highlightjs highlight"><code>curl "http://delivery.magnolia-cloud.com//magnoliaAuthor/delivery/ep/travel/@nodes?subid_token=YOUR_subid_token"</code></pre>
 </div>
 </div>
 <div class="listingblock">
@@ -895,16 +1012,16 @@ Up to Magnolia 5.6.5, the results provided by the endpoint were sorted alphabeti
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-The following assumes you have passed your subscription_id_token in the Authorization Header. If you prefer, you can pass it as a query parameter as such <code>&lt;endpoint&gt;?subscription_id_token=YOUR_subscription_id_token</code>
+The following assumes you have passed your subid_token in the Authorization Header. If you prefer, you can pass it as a query parameter as such <code>&lt;endpoint&gt;?subid_token=YOUR_subid_token</code>
 </td>
 </tr>
 </table>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>`https://delivery.magnolia-cloud.com/preview/ep/fldr/pg1?version=1.0`
+<pre class="highlightjs highlight"><code>`https://delivery.magnolia-cloud.com//preview/ep/fldr/pg1?version=1.0`
 
-`https://delivery.magnolia-cloud.com/preview/ep/fldr/pg1?version=1.1`</code></pre>
+`https://delivery.magnolia-cloud.com//preview/ep/fldr/pg1?version=1.1`</code></pre>
 </div>
 </div>
 </div>
@@ -945,7 +1062,7 @@ use multiple filters within the same request.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>http://delivery.magnolia-cloud.com/magnoliaAuthor/my-endpoint?description[like]=%25demonstration%25</code></pre>
+<pre class="highlightjs highlight"><code>http://delivery.magnolia-cloud.com//magnoliaAuthor/my-endpoint?description[like]=%25demonstration%25</code></pre>
 </div>
 </div>
 <div class="admonitionblock warning">
@@ -958,7 +1075,7 @@ use multiple filters within the same request.</p>
 <div class="paragraph">
 <p>In some REST clients, you may need to URL-encode also the key
 in the filter parameter. For example:
-<code><a href="http://delivery.magnolia-cloud.com/magnoliaAuthor/my-endpoint?description" class="bare">http://delivery.magnolia-cloud.com/magnoliaAuthor/my-endpoint?description</a></code><strong><code>%5B</code></strong><code>like</code><strong><code>%5D</code></strong><code>=%25demonstration%25</code></p>
+<code><a href="http://delivery.magnolia-cloud.com//magnoliaAuthor/my-endpoint?description" class="bare">http://delivery.magnolia-cloud.com//magnoliaAuthor/my-endpoint?description</a></code><strong><code>%5B</code></strong><code>like</code><strong><code>%5D</code></strong><code>=%25demonstration%25</code></p>
 </div>
 <div class="paragraph">
 <p>See also The RFC standard called <em>Uniform Resource
