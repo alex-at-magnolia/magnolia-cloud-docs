@@ -10,6 +10,8 @@ content:
   - url: https://git.magnolia-cms.com/scm/cloud/magnolia-cloud.git
     start_path: docs
     branches: [master]
+  - url: https://git.magnolia-cms.com/scm/cloud/adr-docs.git
+    branches: [master]
   - url: https://git.magnolia-cms.com/scm/cloud/subscription-service.git
     start_path: adr
     branches: ['CLOUD-934-A']
