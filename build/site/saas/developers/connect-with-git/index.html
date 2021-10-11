@@ -357,7 +357,7 @@ The ingestion service (<em>as shown below</em>) needs to have <a href="#_create_
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-Currently, we support GitHub and Bitbucket Cloud.
+Currently, we support GitHub, Bitbucket Server, Bitbucket Cloud.
 </td>
 </tr>
 </table>
@@ -379,6 +379,14 @@ Currently, we support GitHub and Bitbucket Cloud.
 <div class="paragraph">
 <p>You have to connect your own git repo so that your Magnolia SaaS subscription picks up your changes as you develop for Magnolia.</p>
 </div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Supported Git providers</dt>
+<dd>
+<p>GitHub, Bitbucket Server, Bitbucket Cloud</p>
+</dd>
+</dl>
+</div>
 <div class="sect2">
 <h3 id="_prerequisites"><a class="anchor" href="#_prerequisites"></a>Prerequisites</h3>
 <div class="ulist">
@@ -391,12 +399,6 @@ Currently, we support GitHub and Bitbucket Cloud.
 </li>
 <li>
 <p>You must have your own git repository.</p>
-</li>
-<li>
-<p>Your must use one of the following remote git providers:</p>
-<div class="paragraph">
-<p>GitHub and Bitbucket Cloud</p>
-</div>
 </li>
 </ul>
 </div>
@@ -491,13 +493,15 @@ Make sure you are logged in to <a href="https://id.saas.magnolia-cloud.com/" tar
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
 </colgroup>
 <thead>
 <tr>
 <th class="tableblock halign-left valign-top">GitHub</th>
-<th class="tableblock halign-left valign-top">Bitbucket</th>
+<th class="tableblock halign-left valign-top">Bitbucket Server</th>
+<th class="tableblock halign-left valign-top">Bitbucket Cloud</th>
 </tr>
 </thead>
 <tbody>
@@ -510,6 +514,11 @@ Make sure you are logged in to <a href="https://id.saas.magnolia-cloud.com/" tar
 <td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock zoom">
 <div class="content">
 <img src="../_images/git/bitbucket-clone.jpg" alt="bitbucket clone">
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock zoom">
+<div class="content">
+<img src="../_images/git/bitbucket-clone-cloud.jpg" alt="bitbucket clone cloud">
 </div>
 </div></div></td>
 </tr>
@@ -539,7 +548,7 @@ The webhook URL is generated based on your subscription ID and git hosting servi
 </div>
 </li>
 <li>
-<p>Under <strong>Step 3</strong>, copy the Webhook URL Webhook Secret. If using GitHub, make note of the Webhook Content Type <code>application/json</code>.</p>
+<p>Under <strong>Step 3</strong>, copy the Webhook URL and Webhook Secret (if applicable). If using GitHub, make note of the Webhook Content Type <code>application/json</code>.</p>
 <div class="paragraph">
 <p><span class="image zoom"><img src="../_images/git/git-config-webhook-url.jpg" alt="git config webhook url"></span></p>
 </div>
@@ -559,7 +568,10 @@ The webhook URL is generated based on your subscription ID and git hosting servi
 <p><a id="tabset1_github"></a>GitHub</p>
 </li>
 <li>
-<p><a id="tabset1_bitbucket"></a>Bitbucket</p>
+<p><a id="tabset1_bitbucket-server"></a>Bitbucket Server</p>
+</li>
+<li>
+<p><a id="tabset1_bitbucket-cloud"></a>Bitbucket Cloud</p>
 </li>
 </ul>
 </div>
@@ -648,7 +660,7 @@ For more information on GitHub webhooks, see <a href="https://docs.github.com/en
 </table>
 </div>
 </div>
-<div class="tab-pane" aria-labelledby="tabset1_bitbucket">
+<div class="tab-pane" aria-labelledby="tabset1_bitbucket-server">
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -688,6 +700,84 @@ For more information on GitHub webhooks, see <a href="https://docs.github.com/en
 </li>
 </ol>
 </div>
+</li>
+<li>
+<p>Do an initial <code>git push</code> to the repo (even if you need to <code>--force</code> <strong>(1)</strong> it):</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>git push origin &lt;branch&gt; --force <i class="conum" data-value="1"></i><b>(1)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>This syncs up the webhook so that the ingestion service is immediately aware of changes that you make.</td>
+</tr>
+</table>
+</div>
+</li>
+</ol>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+For more information on Bitbucket webhooks, see <a href="https://confluence.atlassian.com/bitbucketserver/manage-webhooks-938025878.html" target="_blank" rel="noopener">Manage webhooks</a>.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="tab-pane" aria-labelledby="tabset1_bitbucket-cloud">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Repository settings</strong>.</p>
+</li>
+<li>
+<p>Under the Workflow category, click <strong>Webhooks</strong>.</p>
+</li>
+<li>
+<p>Click <strong>Add webhook</strong>.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Give your webhook a <strong>Title</strong>.</p>
+</li>
+<li>
+<p>Add the <a href="#_create_webhook_url">Webhook URL</a>.</p>
+</li>
+<li>
+<p>Under <strong>Events</strong>, keep the default <strong>Push</strong> event that will trigger your webhook.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Click <strong>Save</strong>.</p>
+</li>
+<li>
+<p>Go to <strong>Repository settings &gt; General &gt; Access keys</strong>.</p>
+</li>
+<li>
+<p>Click <strong>Add key</strong>.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Give your key a <strong>Label</strong>.</p>
+</li>
+<li>
+<p>Add the <a href="#_create_webhook_url">SSH Public Key</a>.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Click <strong>Add SSH key</strong>.</p>
 </li>
 <li>
 <p>Do an initial <code>git push</code> to the repo (even if you need to <code>--force</code> <strong>(1)</strong> it):</p>
