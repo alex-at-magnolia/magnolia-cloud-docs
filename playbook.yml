@@ -10,6 +10,12 @@ content:
   - url: https://git.magnolia-cms.com/scm/cloud/magnolia-cloud.git
     start_path: docs
     branches: [master]
+  - url: https://git.magnolia-cms.com/scm/cloud/subscription-service.git
+    start_path: adr
+    branches: ['CLOUD-934-A']
+  - url: https://git.magnolia-cms.com/scm/cloud/vitals.git
+    start_path: adr
+    branches: ['CLOUD-934-B']
   - url: https://git.magnolia-cms.com/scm/DOCUMENTATION/product-docs.git
     branches: [master]
   - url: https://git.magnolia-cms.com/scm/cloud/mgnlctl.git

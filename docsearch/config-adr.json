@@ -1,0 +1,24 @@
+{
+  "index_name": "cloud_adrs",
+  "start_urls": [
+    {
+      "url": "https://saas-docs.beta.de.magnolia-cloud.com/adr/",
+      "page-rank": 5
+    }
+  ],
+  "sitemap_urls": [
+    "https://saas-docs.beta.de.magnolia-cloud.com/saas/sitemap-adr.xml"
+  ],
+  "selectors": {
+    "lvl0": {
+      "selector": "//nav[@class='crumbs']//li[@class='crumb'][last()-1]",
+      "type": "xpath",
+      "global": true,
+      "default_value": "Magnolia SaaS ADRs"
+    },
+    "lvl1": ".doc h1",
+    "lvl2": ".doc h2",
+    "lvl3": ".doc h3",
+    "lvl4": ".doc p"
+  }
+}
