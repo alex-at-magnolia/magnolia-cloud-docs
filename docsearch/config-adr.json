@@ -2,12 +2,16 @@
   "index_name": "cloud_adrs",
   "start_urls": [
     {
-      "url": "https://saas-docs.beta.de.magnolia-cloud.com/adr/",
+      "url": "https://saas-docs.beta.de.magnolia-cloud.com/subscription-service-adr/",
+      "page-rank": 5
+    },
+    {
+      "url": "https://saas-docs.beta.de.magnolia-cloud.com/vitals-adr/",
       "page-rank": 5
     }
   ],
   "sitemap_urls": [
-    "https://saas-docs.beta.de.magnolia-cloud.com/saas/sitemap-adr.xml"
+    "https://saas-docs.beta.de.magnolia-cloud.com/sitemap.xml"
   ],
   "selectors": {
     "lvl0": {
