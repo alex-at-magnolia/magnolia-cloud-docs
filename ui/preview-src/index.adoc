@@ -10,6 +10,9 @@ Author Name
 [.cards.cards-4.personas.conceal-title]
 == {empty}
 
+[.highlight]
+test xref:test.adoc[]
+
 [.collapse]
 collapse me 
 

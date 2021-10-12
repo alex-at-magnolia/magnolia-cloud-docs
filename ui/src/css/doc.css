@@ -998,3 +998,27 @@
   padding: 0.8rem;
   display: none;
 }
+
+.doc .focus {
+  font-size: larger;
+  color: var(--color-green-darker);
+  background-color: var(--color-smoke-90);
+  padding: 0.8rem;
+  cursor: auto;
+  border-left: 5px solid var(--color-primary-green);
+  font-weight: bold;
+  transition: 0.55s ease;
+}
+
+.doc .focus:hover {
+  background-color: var(--color-primary-light-green);
+  border-left: 15px solid var(--color-primary-green);
+}
+
+.doc .focus a {
+  color: var(--color-green-reflex);
+}
+
+.doc .focus a:hover {
+  text-decoration: underline;
+}
