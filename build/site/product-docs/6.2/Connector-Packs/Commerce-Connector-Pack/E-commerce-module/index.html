@@ -3787,7 +3787,19 @@ setting via YAML:</p>
 <p>You can configure the component definition chooser dialogs introduced in v1.3.</p>
 </div>
 <div class="paragraph">
-<p>You can find the component configuration under <code>/ecommerce-templating/templates/components</code>. The components introduced in v1.3 are suffixed with <code>-v3</code>. Those with no suffix are provided for backwards compatibility with E-commerce v1.2.x.</p>
+<p>You can find the component configuration under <code>/ecommerce-templating/dialogs/components</code>.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The components introduced in v1.3 are suffixed with <code>-v3</code>. Those with no suffix are provided for backwards compatibility with E-commerce v1.2.x.
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p><span class="image zoom"><img src="../../../_images/ecom/ecom-product-chooser.png" alt="Product chooser dialog" width="600"></span></p>
@@ -3803,6 +3815,9 @@ setting via YAML:</p>
 </div>
 <div class="paragraph">
 <p>The <strong>Category</strong> and <strong>Product</strong> columns are displayed by default. You can disable them using the <code>enableCategorySelection</code> and <code>enableProductSelection</code> properties under <code>/ecommerce-templating/dialogs/components/&lt;any-v3-component&gt;.yaml</code>.</p>
+</div>
+<div class="paragraph">
+<p>By default, the system remembers the last selected item in a given chooser dialog. You can use the <code>rememberLastSelectedLocation</code> property to change this.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -3837,6 +3852,33 @@ setting via YAML:</p>
 <p>Set to <code>false</code> to disable the product and preview columns.</p>
 </div></div></td>
 </tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>rememberLastSelectedLocation</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>optional</strong>, <em>default is `true`</em></p>
+</div>
+<div class="paragraph">
+<p>When set to <code>true</code>, the system remembers the last item selected and  positions a returning user on it when they reopen the same chooser dialog.</p>
+</div>
+<div class="paragraph">
+<p>When set to <code>false</code>, nothing is preselected in the chooser dialogs.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Each type of e-commerce chooser dialog has its own last selected location. For example, the Product Detail component dialog does not share its last selected location with the Product Teaser component dialog and vice versa.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>When the Pages app is closed, all remembered locations are removed.</p>
+</div></div></td>
+</tr>
 </tbody>
 </table>
 <div class="paragraph">
@@ -3845,16 +3887,11 @@ setting via YAML:</p>
 <div class="listingblock">
 <div class="title">/ecommerce-templating/dialogs/components/category-list-v3.yaml</div>
 <div class="content">
-<pre>form:
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">form:
   properties:
     categoryList:
-      $type: ecommerceChooserField
-      enableCategorySelection: false
-  layout:
-    $type: ecommerceChooserFieldLayout
-footerLayout:
-  $type: defaultEditorActionLayout
-  implementationClass: info.magnolia.ecommerce.app.field.ecommercechooser.EcommerceChooserEditorActionLayoutProducer</pre>
+      $type: ecommerceLinkField
+      enableCategorySelection: false</code></pre>
 </div>
 </div>
 </div>
@@ -3971,7 +4008,7 @@ The <code>ecommerceLinkField</code> replaces the <code>ecommerceChooserField</co
 </table>
 </div>
 <div class="paragraph">
-<p>Here are the default configurations for the different <a href="#Connector-Packs/Commerce-Connector-Pack/E-commerce-app.html#_using_your_e_commerce_content" class="page unresolved">e-commerce components provided</a>:</p>
+<p>Here are the default configurations for the different <a href="../E-commerce-app/#_using_your_e_commerce_content" class="page">e-commerce components provided</a>:</p>
 </div>
 <div class="listingblock">
 <div class="title">/ecommerce-templating/dialogs/components/category-list-v3.yaml</div>

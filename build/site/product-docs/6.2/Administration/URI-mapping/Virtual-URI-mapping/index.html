@@ -2523,7 +2523,7 @@ The following action prefixes are supported for the new URI:</p>
 </div>
 <div class="paragraph">
 <p>to trigger either a temporary redirect, a permanent redirect or a
-forward, respectively. See the <a href="#_Action_prefixes">Action prefixes</a>
+forward, respectively. See the <a href="#_action_prefixes">Action prefixes</a>
 section below for more detailed explanations.</p>
 </div>
 <div class="paragraph">
@@ -2684,7 +2684,7 @@ to use folder hierarchies whenever possible. For the upcoming fix, see
 <p><strong>Example</strong>: A mapping named <code>enterprise-edition</code> forwards users from
 <code>example.com/ee</code> to <code>example.com/enterprise-edition</code>. The
 <code>DefaultVirtualUriMapping</code> class (for description see the
-<a href="#_Mapping_classes">Mapping classes</a> section below) maps one URI to
+<a href="#_mapping_classes">Mapping classes</a> section below) maps one URI to
 another. This ensures that external links that point to <code>example.com/ee</code>
 still work when the target page is renamed.</p>
 </div>
@@ -2728,7 +2728,7 @@ toUri: forward:/enterprise-edition</code></pre>
 </div>
 <div class="paragraph">
 <p>Class that performs the mapping. See the section
-<a href="#_Mapping_classes">Mapping classes</a> below.</p>
+<a href="#_mapping_classes">Mapping classes</a> below.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -2864,35 +2864,16 @@ defined in
 <div class="ulist">
 <ul>
 <li>
-<p><code>forward</code> hides the true target URL from the visitor. The URL that the
-user typed in the browser address bar or the link they clicked remains
-visible. Forward is performed internally by the servlet. Any browser
-reload of the resulting page will repeat the original request, with the
-original URL.</p>
+<p><code>forward</code> hides the true target URL from the visitor. The URL that the user typed in the browser address bar or the link they clicked remains visible. Forward is performed internally by the servlet. Any browser reload of the resulting page will repeat the original request, with the original URL.</p>
 </li>
 <li>
-<p><code>redirect</code> displays the true target URL in the address bar. It is a
-two-step process where the web application instructs the browser to
-fetch a second URL which differs from the original. A browser reload of
-the second URL will not repeat the original request but will rather
-fetch the second URL. Redirect is marginally slower than a forward since
-it requires two browser requests instead of one. A redirect returns HTTP
-status code 302 <code>found</code> to the client. While OK for human visitors,
-this method can be suboptimal from search engine optimization (SEO)
-viewpoint as search engines do not transfer the page rank assigned to
-the old URL to the new URL.</p>
+<p><code>redirect</code> displays the true target URL in the address bar. It is a two-step process where the web application instructs the browser to fetch a second URL which differs from the original. A browser reload of the second URL will not repeat the original request but will rather fetch the second URL. Redirect is marginally slower than a forward since it requires two browser requests instead of one. A redirect returns HTTP status code 302 <code>found</code> to the client. While OK for human visitors, this method can be suboptimal from search engine optimization (SEO) viewpoint as search engines do not transfer the page rank assigned to the old URL to the new URL.</p>
 </li>
 <li>
-<p><code>permanent</code> 301 redirect is a
-<a href="http://www.webconfs.com/how-to-redirect-a-webpage.php">search engine
-friendly</a> option. In this case the HTTP response code is set to 301.
-<a href="http://www.google.com/support/webmasters/bin/answer.py?hl=en&amp;answer=93633" target="_blank" rel="noopener">Google</a>
-and
-<a href="http://help.yahoo.com/l/us/yahoo/smallbusiness/store/pageredirects/pageredirects-15.html" target="_blank" rel="noopener">Yahoo!</a>
-specifically endorse this type of redirection and
-<a href="http://www.bing.com/community/webmaster/f/12252/t/667937.aspx" target="_blank" rel="noopener">Bing</a> is
-following the trend. 301 redirect preserves your search engine ranking
-for the redirected page.</p>
+<p><code>permanent</code> 301 redirect is a <a href="http://www.webconfs.com/how-to-redirect-a-webpage.php" target="_blank" rel="noopener">search engine friendly</a> option. In this case the HTTP response code is set to 301. <a href="http://www.google.com/support/webmasters/bin/answer.py?hl=en&amp;answer=93633" target="_blank" rel="noopener">Google</a> and <a href="http://help.yahoo.com/l/us/yahoo/smallbusiness/store/pageredirects/pageredirects-15.html" target="_blank" rel="noopener">Yahoo!</a> specifically endorse this type of redirection and <a href="http://www.bing.com/community/webmaster/f/12252/t/667937.aspx" target="_blank" rel="noopener">Bing</a> is following the trend. 301 redirect preserves your search engine ranking for the redirected page.</p>
+</li>
+<li>
+<p><code>proxy</code> forwards the original target URL to an external URL, mainly in cases when you need to hide <a href="../../../Connector-Packs/DAM-Connector-Pack/External-DAM-module/" class="page">External Dam</a> URLs.</p>
 </li>
 </ul>
 </div>
