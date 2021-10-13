@@ -2,12 +2,12 @@
   "index_name": "cloud_internal_docs",
   "start_urls": [
     {
-      "url": "https://saas-docs.beta.de.magnolia-cloud.com/magnolia-saas/",
+      "url": "https://saas-docs.beta.de.magnolia-cloud.com/saas/",
       "page-rank": 5
     }
   ],
   "sitemap_urls": [
-    "https://saas-docs.beta.de.magnolia-cloud.com/sitemap-magnolia-saas.xml"
+    "https://saas-docs.beta.de.magnolia-cloud.com/sitemap.xml"
   ],
   "selectors": {
     "lvl0": {
