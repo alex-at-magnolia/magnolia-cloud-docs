@@ -6,7 +6,7 @@
     <title>Set up the React App :: Magnolia Cloud Service Internal Documentation</title>
     <link rel="canonical" href="https://saas-docs.beta.de.magnolia-cloud.com/saas/saas/hello-saas/react-app/">
     <link rel="prev" href="../configure-magnolia/">
-    <link rel="next" href="../netlify/">
+    <link rel="next" href="../edit-react-app/">
     <meta name="generator" content="Antora 2.3.3">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
 
@@ -110,10 +110,19 @@
     <a class="nav-link" href="../connect-with-git/">Connect the repo to Magnolia SaaS</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../configure-magnolia/">Configure the delivery API</a>
+    <a class="nav-link" href="../configure-magnolia/">Test the Delivery API</a>
   </li>
   <li class="nav-item is-current-page" data-depth="2">
     <a class="nav-link" href="./">Set up the React App</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../edit-react-app/">Edit the React App</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../update-headline-component/">Update the Headline component</a>
+  </li>
+</ul>
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
@@ -330,8 +339,6 @@
   <div class="content">
 <article class="doc">
 <h1 class="page">Set up the React App</h1>
-<div id="preamble">
-<div class="sectionbody">
 <div class="paragraph">
 <p><span class="post">Hello SaaS</span></p>
 </div>
@@ -413,120 +420,12 @@ REACT_APP_MGNL_API_NAV="${REACT_APP_REST_BASE}/delivery/pagenav/v1"</code></pre>
 </li>
 <li>
 <p><em>Nice!</em> Your application is running at <a href="http://localhost:3000" class="bare" target="_blank" rel="noopener">http://localhost:3000</a>.</p>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-Now, let&#8217;s deploy it.
-</td>
-</tr>
-</table>
-</div>
 </li>
 </ol>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_edit_the_react_app"><a class="anchor" href="#_edit_the_react_app"></a>Edit the React App</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Now that you have configured Magnolia and made sure your subscription ID was set in your application, you can edit your SPA from Magnolia SaaS&#8217;s admincentral.</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Make sure your SPA is still running at <a href="http://localhost:3000" target="_blank" rel="noopener">localhost:3000</a>.</p>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-If you don&#8217;t see the app running, run the <code>npm run start</code> command from the root of your <code>hello-saas</code> folder.
-</td>
-</tr>
-</table>
-</div>
-</li>
-<li>
-<p>In your browser, go to your <a href="https://id.saas.magnolia-cloud.com/" target="_blank" rel="noopener">Magnolia SaaS subscription</a>.</p>
-</li>
-<li>
-<p>Go to the <strong>Pages</strong> App.</p>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>If you can&#8217;t find it, type <code>Pages</code> in the Findbar at the top of admincentral.</p>
-</div>
-<div class="paragraph">
-<p>You should see the <code>react-minimal</code> page that you imported earlier.</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-</li>
-</ol>
-</div>
-<div class="olist arabic">
-<ol class="arabic" start="4">
-<li>
-<p>Click <strong>Edit Page</strong>.</p>
-<div class="paragraph">
-<p><span class="image zoom"><img src="../../_images/pages-app/edit-page.png" alt="edit page"></span></p>
-</div>
-</li>
-<li>
-<p>With the editor open, scroll down to the <strong>Headline</strong> that says "Look at you go!".</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>Click the <strong>Headline</strong> component.</p>
-</li>
-<li>
-<p>On the right, click <strong>Edit component</strong>.</p>
-</li>
-<li>
-<p>Change the <strong>Headline Text</strong>.</p>
-</li>
-</ol>
-</div>
-</li>
-<li>
-<p>Go to <a href="http://localhost:3000" class="bare" target="_blank" rel="noopener">http://localhost:3000</a> and see your changes.</p>
-<div class="videoblock">
-<div class="content">
-<video src="../../_images/pages-app/spa-edit-sync.mp4" width="100%" controls>
-Your browser does not support the video tag.
-</video>
-</div>
-</div>
-</li>
-</ol>
-</div>
-<div class="quoteblock">
-<div class="title"><span class="green"><span class="icon"><i class="fa fa-thumbs-up fa-2x"></i></span></span></div>
-<blockquote>
-<div class="paragraph">
-<p>Well done! You are now editing a SPA application with Magnolia SaaS.</p>
-</div>
-</blockquote>
-</div>
-</div>
 </div>
 <nav class="pagination">
-  <span class="prev"><a href="../configure-magnolia/">Configure the delivery API</a></span>
-  <span class="next"><a href="../netlify/">Deploy to Netlify</a></span>
+  <span class="prev"><a href="../configure-magnolia/">Test the Delivery API</a></span>
+  <span class="next"><a href="../edit-react-app/">Edit the React App</a></span>
 </nav>
 </article>
 <aside class="toc sidebar" data-title="Contents" data-levels="2">

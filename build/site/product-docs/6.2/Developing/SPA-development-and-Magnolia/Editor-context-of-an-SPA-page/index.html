@@ -2523,6 +2523,20 @@ the status of the current editor context of an SPA page. The status can be that 
 </li>
 </ul>
 </div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>In the <code>EditorContextHelper</code>/<code>EditorContextService</code> context, the <code>inEditor()</code> functions will return <code>false</code> for  Server-Side Rendering (SSR). If you need to render the green (edit) bars, you must set <code>global.mgnlInPageEditor</code> to <code>true</code>.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
 </div>
 </div>
 <div class="sect1">

@@ -3803,12 +3803,14 @@ methods to fetch group names from the directory.</p>
 <h2 id="_testing_and_validating_ldap_configuration"><a class="anchor" href="#_testing_and_validating_ldap_configuration"></a>Testing and validating LDAP Configuration</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The <code>magnolia-ldap-tester</code> artifact is a self-contained executable jar
-which can be executed with:</p>
+<p>You can use the <code>magnolia-ldap-tester</code>, a standalone module for testing ldap/ad configuration outside of Magnolia. The module is available from Magnolia Nexus:  <a href="https://nexus.magnolia-cms.com/service/local/repositories/magnolia.enterprise.releases/content/info/magnolia/magnolia-ldap-tester/1.10.3/magnolia-ldap-tester-1.10.3.jar" target="_blank" rel="noopener">magnolia-ldap-tester-1.10.3.jar</a></p>
 </div>
-<div class="literalblock">
+<div class="paragraph">
+<p>Use the following command to execute the jar:</p>
+</div>
+<div class="listingblock">
 <div class="content">
-<pre>java -jar magnolia-ldap-tester-&lt;version&gt;.jar &lt;LoginModule class name&gt; &lt;config.properties&gt; &lt;username&gt; &lt;password&gt;</pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">java -jar magnolia-ldap-tester-1.10.3.jar &lt;LoginModule class name&gt; &lt;config.properties&gt; &lt;username&gt; &lt;password&gt;</code></pre>
 </div>
 </div>
 <div class="paragraph">

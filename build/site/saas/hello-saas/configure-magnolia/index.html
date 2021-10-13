@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Configure the Delivery API :: Magnolia Cloud Service Internal Documentation</title>
+    <title>Test the Delivery API :: Magnolia Cloud Service Internal Documentation</title>
     <link rel="canonical" href="https://saas-docs.beta.de.magnolia-cloud.com/saas/saas/hello-saas/configure-magnolia/">
     <link rel="prev" href="../connect-with-git/">
     <link rel="next" href="../react-app/">
@@ -110,10 +110,19 @@
     <a class="nav-link" href="../connect-with-git/">Connect the repo to Magnolia SaaS</a>
   </li>
   <li class="nav-item is-current-page" data-depth="2">
-    <a class="nav-link" href="./">Configure the delivery API</a>
+    <a class="nav-link" href="./">Test the Delivery API</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../react-app/">Set up the React App</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../edit-react-app/">Edit the React App</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../update-headline-component/">Update the Headline component</a>
+  </li>
+</ul>
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
@@ -322,78 +331,14 @@
   <ul>
     <li><a href="../../">Magnolia SaaS</a></li>
     <li><a href="../">Hello SaaS</a></li>
-    <li><a href="./">Configure the delivery API</a></li>
+    <li><a href="./">Test the Delivery API</a></li>
   </ul>
 </nav>
 
 </div>
   <div class="content">
 <article class="doc">
-<h1 class="page">Configure the Delivery API</h1>
-<div id="preamble">
-<div class="sectionbody">
-<div class="paragraph">
-<p>Now, let&#8217;s make a small change to your <code>hello-saas</code> repo to ensure everything is connected and working.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_make_the_change_in_your_repo"><a class="anchor" href="#_make_the_change_in_your_repo"></a>Make the change in your repo</h2>
-<div class="sectionbody">
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Navigate to your local <code>hello-saas</code> folder.</p>
-</li>
-<li>
-<p>Go to <code>light-modules/spa-lm/restEndpoints/delivery</code>.</p>
-</li>
-<li>
-<p>Open the file called <code>pages_v1.yaml</code>.</p>
-</li>
-<li>
-<p>Copy the following into your <code>pages_v1.yaml</code> file and save the file.</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">class: info.magnolia.rest.delivery.jcr.v2.JcrDeliveryEndpointDefinition
-workspace: website
-depth: 10
-bypassWorkspaceAcls: true
-systemProperties:
- - mgnl:lastModified
- - mgnl:created
- - mgnl:template
-
-nodeTypes:
-  - mgnl:page
-childNodeTypes:
-  - mgnl:area
-  - mgnl:component
-  - mgnl:contentNode
-
-references:
-  - name: assetReference
-    propertyName: image
-    referenceResolver:
-      class: info.magnolia.rest.reference.dam.AssetReferenceResolverDefinition</code></pre>
-</div>
-</div>
-</li>
-<li>
-<p>Push your changes to your remote git repo.</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code>git add . &amp;&amp; git commit -m "adding the page yaml file for rest" &amp;&amp; git push origin main</code></pre>
-</div>
-</div>
-</li>
-</ol>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_see_it_on_admincentral"><a class="anchor" href="#_see_it_on_admincentral"></a>See it on admincentral</h2>
-<div class="sectionbody">
+<h1 class="page">Test the Delivery API</h1>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -423,8 +368,6 @@ Your browser does not support the video tag.
 </div>
 </li>
 </ol>
-</div>
-</div>
 </div>
 <nav class="pagination">
   <span class="prev"><a href="../connect-with-git/">Connect the repo to Magnolia SaaS</a></span>
