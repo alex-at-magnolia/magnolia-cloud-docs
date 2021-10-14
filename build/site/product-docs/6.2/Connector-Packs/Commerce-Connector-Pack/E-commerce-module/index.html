@@ -3062,16 +3062,15 @@ implementation:
     byProductId: info.magnolia.ecommerce.salesforce.categories.ByProductId
   connectionValidator: info.magnolia.ecommerce.salesforce.common.SalesforceConnectionValidator
 connections:
-  connection2:
+  connection:
     authUrl: https://account.demandware.com/dw/oauth2/access_token
-    baseUrl: https://magnolia1-tech-prtnr-eu02-dw.demandware.net/s/-/dw/data/v20_4
+    baseUrl: https://zzxz-003.sandbox.us01.dx.commercecloud.salesforce.com/s/-/dw/data/v20_10
     enabled: true
     credentials:
       username: your_username
       password: password_or_path_to_password_manager
     parameters:
-      clientId: client_id
-      shopUrl: /s/RefArchGlobal/dw/shop/v20_4
+      shopUrl: /s/RefArchGlobal/dw/shop/v20_10
       siteId: site_id</code></pre>
 </div>
 </div>
@@ -3159,7 +3158,82 @@ connections:
 <p><strong>required</strong></p>
 </div>
 <div class="paragraph">
-<p>Username for Salesforce Commerce Cloud.</p>
+<p>Salesforce Commerce Cloud <code>client_id</code>.</p>
+</div>
+<div class="paragraph">
+<p>The <code>username</code> and <code>password</code> (see below) parameter values are the Salesforce API <code>client_id</code> and password you retrieve from the Salesforce Commerce Cloud Account Manager: <a href="https://account.demandware.com/" class="bare" target="_blank" rel="noopener">https://account.demandware.com/</a>.</p>
+</div>
+<div class="paragraph">
+<p>First, log into your <strong>Salesforce Account Manager</strong> (<a href="https://account.demandware.com" class="bare" target="_blank" rel="noopener">https://account.demandware.com</a>)
+ and go to the <strong>API Client</strong> tab to create a new API client.</p>
+</div>
+<div class="paragraph">
+<p>When creating the API client, note that:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The password you create for the new API client is used as the <code>password</code> parameter value (see next cell).</p>
+</li>
+<li>
+<p>We recommend you use the <code>Salesforce Commerce API</code> role, <code>client_secret_post</code> Token Endpoint Auth method and <code>JWT</code> Access Token Format.</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+See <a href="https://documentation.b2c.commercecloud.salesforce.com/DOC4/index.jsp?topic=%2Fcom.demandware.dochelp%2Fcontent%2Fb2c_commerce%2Ftopics%2Faccount_manager%2Fb2c_account_manager_add_api_client_id.html" target="_blank" rel="noopener">Add an API Client</a> in the Salesforce documentation for details.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Next, log into the <strong>Salesforce  Business Manager</strong> to configure Open Commerce API (OCAPI) client permissions for the API client you created:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Select <strong>Administration</strong> &gt; <strong>Site Development</strong> &gt; <strong>Open Commerce API Settings</strong>.
+<span class="image zoom"><img src="../../../_images/ecom/ecom-sf-business-manager.png" alt="Salesforce Business Manager" width="400"></span></p>
+</li>
+<li>
+<p>Add the API client for both the <strong>Shop</strong> and <strong>Data</strong> APIs.</p>
+<div class="paragraph">
+<p>Shop API configuration example:
+<span class="image zoom"><img src="../../../_images/ecom/ecom-sf-shop-api-config.png" alt="Shop API" width="400"></span></p>
+</div>
+<div class="paragraph">
+<p>Basic sample sandbox configuration: <a href="#attachments/ecom/shop_api.xml">shop_api.xml</a></p>
+</div>
+<div class="paragraph">
+<p>Data API configuration example:
+<span class="image zoom"><img src="../../../_images/ecom/ecom-sf-data-api-config.png" alt="Data API" width="400"></span></p>
+</div>
+<div class="paragraph">
+<p>Basic sample sandbox configuration: <a href="#attachments/ecom/data_api.xml">data_api.xml</a></p>
+</div>
+</li>
+<li>
+<p>Use the <code>client_id</code> from Salesforce  as the <code>username</code> in the Magnolia  <code>salesforce-commerce.yaml</code> file.</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+See "Client Permissions" in the <a href="https://documentation.b2c.commercecloud.salesforce.com/DOC4/index.jsp?topic=%2Fcom.demandware.dochelp%2FOCAPI%2Fcurrent%2Fusage%2FOCAPISettings.html" target="_blank" rel="noopener">Salesforce documentation</a> for more information.
+</td>
+</tr>
+</table>
 </div></div></td>
 </tr>
 <tr>
@@ -3168,30 +3242,15 @@ connections:
 <p><strong>required</strong></p>
 </div>
 <div class="paragraph">
-<p>Password for Salesforce Commerce Cloud or the path to the Magnolia password manager where the password is stored.</p>
+<p>Password entered when creating the Salesforce Commerce Cloud API client (or the path to the Magnolia password manager where the password is stored).</p>
+</div>
+<div class="paragraph">
+<p>See details in the cell above.</p>
 </div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">{i2} <code>parameters</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">{i3} <code>clientId</code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>required</strong></p>
-</div>
-<div class="paragraph">
-<p><code>client_id</code> from Salesforce Commerce Cloud.</p>
-</div>
-<div class="paragraph">
-<p>You must configure client permissions for your Salesforce Commerce Cloud "Open Commerce API Settings" (OCAPI). Use the value of the clientId parameter here as the Salesforce <code>client_id</code> for both the shop and data APIs. See "Client Permissions" in the <a href="https://documentation.b2c.commercecloud.salesforce.com/DOC4/index.jsp?topic=%2Fcom.demandware.dochelp%2FOCAPI%2Fcurrent%2Fusage%2FOCAPISettings.html" target="_blank" rel="noopener">Salesforce documentation</a> for more information.</p>
-</div>
-<div class="paragraph">
-<p>Shop API configuration example:</p>
-</div>
-<div class="paragraph">
-<p><span class="image zoom"><img src="../../../_images/ecom/ecom-sf-shop-api-config.png" alt="image" width="500"></span></p>
-</div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">{i3} <code>shopUrl</code></p></td>

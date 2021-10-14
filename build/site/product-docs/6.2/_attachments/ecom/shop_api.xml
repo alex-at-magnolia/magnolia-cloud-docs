@@ -1,0 +1,101 @@
+{
+	"_v": "20.10",
+	"clients": [{
+			"client_id": "your_api_client_id",
+			"allowed_origins": [],
+			"resources": [{
+					"resource_id": "/customers/auth",
+					"methods": ["post"],
+					"read_attributes": "(**)",
+					"write_attributes": "(**)"
+				},
+				{
+					"resource_id": "/customers",
+					"methods": ["post"],
+					"read_attributes": "(**)",
+					"write_attributes": "(**)"
+				},
+				{
+					"resource_id": "/baskets/*",
+					"methods": ["delete"],
+					"read_attributes": "(**)",
+					"write_attributes": "(**)"
+				},
+				{
+					"resource_id": "/baskets/*",
+					"methods": ["get"],
+					"read_attributes": "(**)",
+					"write_attributes": "(**)"
+				},
+				{
+					"resource_id": "/baskets",
+					"methods": ["post"],
+					"read_attributes": "(**)",
+					"write_attributes": "(**)"
+				},
+				{
+					"resource_id": "/baskets/*/items",
+					"methods": ["post"],
+					"read_attributes": "(**)",
+					"write_attributes": "(**)"
+				},
+				{
+					"resource_id": "/baskets/*/payment_methods",
+					"methods": ["get"],
+					"read_attributes": "(**)",
+					"write_attributes": "(**)"
+				},
+				{
+					"resource_id": "/baskets/*/payment_instruments",
+					"methods": ["post"],
+					"read_attributes": "(**)",
+					"write_attributes": "(**)"
+				},
+				{
+					"resource_id": "/baskets/*/billing_address",
+					"methods": ["put"],
+					"read_attributes": "(**)",
+					"write_attributes": "(**)"
+				},
+				{
+					"resource_id": "/baskets/*/shipments/me/shipping_methods",
+					"methods": ["get"],
+					"read_attributes": "(**)",
+					"write_attributes": "(**)"
+				},
+				{
+					"resource_id": "/baskets/*/shipments/*",
+					"methods": ["patch"],
+					"read_attributes": "(**)",
+					"write_attributes": "(**)"
+				},
+				{
+					"resource_id": "/orders",
+					"methods": ["post"],
+					"read_attributes": "(**)",
+					"write_attributes": "(**)"
+				},
+				{
+					"resource_id": "/site",
+					"methods": ["get"],
+					"read_attributes": "(**)",
+					"write_attributes": "(**)"
+				},
+				{
+					"resource_id": "/product_search",
+					"methods": ["get"],
+					"read_attributes": "(**)",
+					"write_attributes": "(**)",
+					"cache_time": 900
+				},
+				{
+					"resource_id": "/product_search/*",
+					"methods": ["get"],
+					"read_attributes": "(**)",
+					"write_attributes": "(**)",
+					"cache_time": 900
+				}
+			]
+		}
+	]
+}

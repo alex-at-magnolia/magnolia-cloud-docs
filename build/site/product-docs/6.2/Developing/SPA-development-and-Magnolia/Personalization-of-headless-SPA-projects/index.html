@@ -2467,19 +2467,26 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>const params = PersonalizationService.getPersonalizationParams(window.location.search);</pre>
+<pre>const params = new URLSearchParams(window.location.search);</pre>
 </div>
 </div>
 <div class="paragraph">
-<p>The parameters are then included in the request to the delivery endpoint with:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>PersonalizationService.toSearchQuery(params)</pre>
-</div>
+<p>If the parameters are appended to the REST URL, they are then included in the request to the delivery endpoint.</p>
 </div>
 <div class="paragraph">
 <p>Otherwise, the key thing that the frontend must do is include any special header, parameter, or cookie.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+For the edit mode, make sure you include <code>variants=all</code> on the query params.
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p>In this demo project, a user enters their age in a form, and then an <code>x-mgnl-age</code> header is included in the request with the value "Child", "Adult" or "Senior". See in <a href="https://git.magnolia-cms.com/projects/DEMOS/repos/minimal-headless-spa-demos/browse/spa/react-minimal/src/helpers/PageLoader.js" target="_blank" rel="noopener">this example code in the demo project</a>.</p>
