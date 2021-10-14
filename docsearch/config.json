@@ -3,11 +3,11 @@
   "start_urls": [
     {
       "url": "https://saas-docs.beta.de.magnolia-cloud.com/saas/",
-      "page-rank": 5
+      "selectors_key": "default"
     },
     {
       "url": "https://saas-docs.beta.de.magnolia-cloud.com/saas-cli/",
-      "page-rank": 4
+      "selectors_key": "default"
     }
   ],
   "sitemap_urls": [
