@@ -10,45 +10,45 @@ content:
   - url: https://git.magnolia-cms.com/scm/cloud/magnolia-cloud.git
     start_path: docs
     branches: [master]
-  - url: https://git.magnolia-cms.com/scm/cloud/adr-docs.git
-    branches: [master]
-  - url: https://git.magnolia-cms.com/scm/cloud/subscription-service.git
-    start_path: adr
-    branches: ['CLOUD-934-A']
-  - url: https://git.magnolia-cms.com/scm/cloud/vitals.git
-    start_path: adr
-    branches: ['CLOUD-934-B']
+  # - url: https://git.magnolia-cms.com/scm/cloud/adr-docs.git
+  #   branches: [master]
+  # - url: https://git.magnolia-cms.com/scm/cloud/subscription-service.git
+  #   start_path: adr
+  #   branches: ['CLOUD-934-A']
+  # - url: https://git.magnolia-cms.com/scm/cloud/vitals.git
+  #   start_path: adr
+  #   branches: ['CLOUD-934-B']
   - url: https://git.magnolia-cms.com/scm/DOCUMENTATION/product-docs.git
     branches: [master]
   - url: https://git.magnolia-cms.com/scm/cloud/mgnlctl.git
     start_path: docs
     branches: [master]
-  - url: https://gitlab.com/magnolia-major-tom/major-tom-documentation.git
-    start_path: docs
-    branches: [master]
-  - url: https://git.magnolia-cms.com/scm/incubator/workflow-extended.git
-    start_path: docs
-    branches: [master]
-  - url: https://git.magnolia-cms.com/scm/services/url-translation.git
-    start_path: docs
-    branches: [master]
-  - url: https://git.magnolia-cms.com/scm/incubator/dam-focal.git
-    start_path: docs
-    branches: [master]
-  - url: https://git.magnolia-cms.com/scm/incubator/webhooks.git
-    start_path: docs
-    branches: [master]
-  - url: https://git.magnolia-cms.com/scm/incubator/ui-framework-javascript.git
-    start_path: docs
-    branches: [master]
-  - url: https://git.magnolia-cms.com/scm/incubator/spa-rendering-extended.git
-    start_path: docs
-    branches: [master]
-  - url: https://git.magnolia-cms.com/scm/incubator/campaign.git
-    start_path: docs
-    branches: [master]
-  - url: https://git.magnolia-cms.com/scm/incubator/incubator-module-docs.git
-    branches: [master]
+  # - url: https://gitlab.com/magnolia-major-tom/major-tom-documentation.git
+  #   start_path: docs
+  #   branches: [master]
+  # - url: https://git.magnolia-cms.com/scm/incubator/workflow-extended.git
+  #   start_path: docs
+  #   branches: [master]
+  # - url: https://git.magnolia-cms.com/scm/services/url-translation.git
+  #   start_path: docs
+  #   branches: [master]
+  # - url: https://git.magnolia-cms.com/scm/incubator/dam-focal.git
+  #   start_path: docs
+  #   branches: [master]
+  # - url: https://git.magnolia-cms.com/scm/incubator/webhooks.git
+  #   start_path: docs
+  #   branches: [master]
+  # - url: https://git.magnolia-cms.com/scm/incubator/ui-framework-javascript.git
+  #   start_path: docs
+  #   branches: [master]
+  # - url: https://git.magnolia-cms.com/scm/incubator/spa-rendering-extended.git
+  #   start_path: docs
+  #   branches: [master]
+  # - url: https://git.magnolia-cms.com/scm/incubator/campaign.git
+  #   start_path: docs
+  #   branches: [master]
+  # - url: https://git.magnolia-cms.com/scm/incubator/incubator-module-docs.git
+  #   branches: [master]
 
 urls:
   html_extension_style: indexify

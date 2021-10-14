@@ -53,9 +53,6 @@
 </div>
       <div class="navbar-end">
         <a href="../../../../saas-cli/" class="navbar-item">SaaS CLI</a>
-        <a href="../../../../paas/" class="navbar-item">PaaS</a>
-        <a href="../../../../incubator-modules/" class="navbar-item">Incubator Modules</a>
-        <a href="../../../../adr/" class="navbar-item">ADRs</a>
         <div class="navbar-item navbar-item--button">
           <span class="control">
             <a class="button is-primary" href="https://docs.magnolia-cms.com" target="_blank">DX Core docs</a>
@@ -193,58 +190,10 @@
   </div>
   <ul class="components">
     <li class="component">
-      <span class="title">Campaign Manager module</span>
-      <ul class="versions">
-        <li class="version is-latest">
-          <a href="../../../../campaign/">master</a>
-        </li>
-      </ul>
-    </li>
-    <li class="component">
-      <span class="title">DAM Focal module</span>
-      <ul class="versions">
-        <li class="version is-latest">
-          <a href="../../../../dam-focal/">master</a>
-        </li>
-      </ul>
-    </li>
-    <li class="component">
       <span class="title">DX Core</span>
       <ul class="versions">
         <li class="version is-latest">
           <a href="../../../../product-docs/6.2/">6.2</a>
-        </li>
-      </ul>
-    </li>
-    <li class="component">
-      <span class="title">Incubator Module Documentation</span>
-      <ul class="versions">
-        <li class="version is-latest">
-          <a href="../../../../incubator-modules/">master</a>
-        </li>
-      </ul>
-    </li>
-    <li class="component">
-      <span class="title">Internal ADRs</span>
-      <ul class="versions">
-        <li class="version is-latest">
-          <a href="../../../../adr/">master</a>
-        </li>
-      </ul>
-    </li>
-    <li class="component">
-      <span class="title">JavaScript Dialog Fields module</span>
-      <ul class="versions">
-        <li class="version is-latest">
-          <a href="../../../../ui-framework-javascript/">master</a>
-        </li>
-      </ul>
-    </li>
-    <li class="component">
-      <span class="title">Magnolia PaaS</span>
-      <ul class="versions">
-        <li class="version is-latest">
-          <a href="../../../../paas/">master</a>
         </li>
       </ul>
     </li>
@@ -261,54 +210,6 @@
       <ul class="versions">
         <li class="version is-latest">
           <a href="../../../../saas-cli/">master</a>
-        </li>
-      </ul>
-    </li>
-    <li class="component">
-      <span class="title">SaaS Vitals ADRs</span>
-      <ul class="versions">
-        <li class="version is-latest">
-          <a href="../../../../vitals-adr/">master</a>
-        </li>
-      </ul>
-    </li>
-    <li class="component">
-      <span class="title">SPA Renderer Extended module</span>
-      <ul class="versions">
-        <li class="version is-latest">
-          <a href="../../../../spa-rendering-extended/">master</a>
-        </li>
-      </ul>
-    </li>
-    <li class="component">
-      <span class="title">Subscription Service ADRs</span>
-      <ul class="versions">
-        <li class="version is-latest">
-          <a href="../../../../subscription-service-adr/">master</a>
-        </li>
-      </ul>
-    </li>
-    <li class="component">
-      <span class="title">URL Translation Module</span>
-      <ul class="versions">
-        <li class="version is-latest">
-          <a href="../../../../url-translation/">master</a>
-        </li>
-      </ul>
-    </li>
-    <li class="component">
-      <span class="title">Webhooks module</span>
-      <ul class="versions">
-        <li class="version is-latest">
-          <a href="../../../../webhooks/">master</a>
-        </li>
-      </ul>
-    </li>
-    <li class="component">
-      <span class="title">Workflow Extended module</span>
-      <ul class="versions">
-        <li class="version is-latest">
-          <a href="../../../../workflow-extended-module/1.2.1/">1.2.1</a>
         </li>
       </ul>
     </li>
@@ -1730,19 +1631,12 @@ nodeTypes:
 <div class="sect2">
 <h3 id="_filtering_examples"><a class="anchor" href="#_filtering_examples"></a>Filtering examples</h3>
 <div class="paragraph">
-<p>We assume you are <a href="https://curl.haxx.se/docs/manpage.html">familiar with
-<code>cURL</code></a>. Note that cURL requires URL encoding.</p>
-</div>
-<div class="paragraph">
-<p>See
-<a href="../../../../product-docs/6.2/Modules/List-of-modules/REST-module/Tools-to-test-REST-requests/" class="page">tools
-to test REST requests</a> for other possibilities.</p>
+<p>We assume you are <a href="https://curl.haxx.se/docs/manpage.html" target="_blank" rel="noopener">familiar with <code>cURL</code></a>. Note that cURL requires URL encoding.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Find webpages in the <a href="../../../../product-docs/6.2/Getting-started-with-Magnolia/Demo/" class="page">Travel
-Demo</a> which were last modified before or on June 12, 2015:</p>
+<p>Find webpages in the Travel Demo which were last modified before or on June 12, 2015:</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">curl 'http://localhost:8080/magnoliaAuthor/.rest/delivery/ep/?mgnl:lastModified[lte]=2015-06-12' --globoff</code></pre>
@@ -2414,10 +2308,7 @@ evaluated by the system .</p>
 <div class="sect2">
 <h3 id="_location_of_the_endpoint_definitions"><a class="anchor" href="#_location_of_the_endpoint_definitions"></a>Location of the endpoint definitions</h3>
 <div class="paragraph">
-<p>Magnolia REST endpoint definitions are true
-<a href="../../../../product-docs/6.2/Developing/Resources/" class="page">Magnolia Resources</a>. You can create them in a
-light module, in a Magnolia Maven module or in the JCR <code>configuration</code>
-workspace.</p>
+<p>Magnolia REST endpoint definitions are true <a href="https://docs.magnolia-cms.com/product-docs/6.2/Developing/Resources.html" target="_blank" rel="noopener">Magnolia Resources</a>. You can create them in a light module, in a Magnolia Maven module or in the JCR <code>configuration</code> workspace.</p>
 </div>
 <div class="admonitionblock tip">
 <table>
