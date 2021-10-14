@@ -7,11 +7,12 @@
     },
     {
       "url": "https://saas-docs.beta.de.magnolia-cloud.com/saas-cli/",
-      "page-rank": 5
+      "page-rank": 4
     }
   ],
   "sitemap_urls": [
-    "https://saas-docs.beta.de.magnolia-cloud.com/sitemap.xml"
+    "https://saas-docs.beta.de.magnolia-cloud.com/sitemap-saas.xml",
+    "https://saas-docs.beta.de.magnolia-cloud.com/sitemap-saas-cli.xml"
   ],
   "selectors": {
     "lvl0": {
