@@ -376,7 +376,13 @@
     <a class="nav-link" href="../../Administration/Architecture/Publishing-overview/">Publishing overview</a>
   </li>
   <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../../Administration/Architecture/Repositories/">Repositories</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../Administration/Architecture/Repositories/Repositories-configuration/">Repositories configuration</a>
+  </li>
+</ul>
   </li>
   <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
@@ -2703,6 +2709,67 @@ times,</p>
 <div class="paragraph">
 <p>Compare the information in the Tours app to the content on the site
 pages to see how it is reused.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_content_delivery_methods_rest_and_graphql"><a class="anchor" href="#_content_delivery_methods_rest_and_graphql"></a>Content delivery methods: REST and GraphQL</h3>
+<div class="paragraph">
+<p>The Tour Finder page of the demo also showcases two modern ways of content delivery, <a href="../../Developing/API/Delivery-API/" class="page">REST</a> and <a href="../../Developing/API/GraphQL-API/" class="page">GraphQL</a>.</p>
+</div>
+<div class="paragraph">
+<p>In a REST implementation, searching a tour on the page sends a request to a configured REST delivery endpoint accessible through <code>https://demopublic.magnolia-cms.com/.rest/delivery/tours/v1/</code> whereas GraphQL-mediated tour searches are directed to a GraphQL endpoint available at <code>https://demopublic.magnolia-cms.com/.graphql</code>.</p>
+</div>
+<div class="sect3">
+<h4 id="_example_search_a_family_tour_in_europe"><a class="anchor" href="#_example_search_a_family_tour_in_europe"></a>Example search: A family tour in Europe</h4>
+<div class="paragraph">
+<p>Let&#8217;s suppose you are interested in a family-type tour whose destination is in Europe. In the search form, you tick the following filter options:</p>
+</div>
+<div class="paragraph">
+<p><span class="image zoom"><img src="../../_images/6-2-12-Demo-tourFinderRestGrapghQL-checkboxes.png" alt="REST and GraphQL options selection"></span></p>
+</div>
+<div class="paragraph">
+<p>Underneath, the values associated with such a filter configuration are in UUID form and are used as request parameters.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-html hljs" data-lang="html">&lt;label class="ng-binding"&gt;
+  &lt;input type="checkbox" value="6cc50e28-fb0e-4e49-b3b6-728690a2e861"
+     ng-model="useDestinations[destination.id]" ... &gt;Europe
+&lt;/label&gt;
+...
+
+&lt;label class="ng-binding"&gt;
+  &lt;input type="checkbox" value="17da160b-da66-4e09-9e31-5fd040880f4a"
+     ng-model="useTourTypes[tourType.id]" ... &gt;Family
+&lt;/label&gt;</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Query string parameters for a REST request:</p>
+<div class="listingblock">
+<div class="content">
+<pre>destination=6cc50e28-fb0e-4e49-b3b6-728690a2e861&amp;tourTypes=17da160b-da66-4e09-9e31-5fd040880f4a&amp;lang=en</pre>
+</div>
+</div>
+</li>
+<li>
+<p>A request payload for a GraphQL request:</p>
+<div class="listingblock">
+<div class="content">
+<pre>{"query":"query FilterTours($filter: String!) {\n    tours(filter: $filter, limit: 50) {\n        name\n        image {\n            name\n            renditions(renditionNames:[\"960x720\"]) {\n                link\n                renditionName\n            }\n        }\n        tourTypes {\n            displayName\n            icon {\n                link\n            }\n        }\n        destination {\n            displayName\n        }\n        duration\n        _metadata {\n          path\n        }\n    }\n}\n\n","variables":{"filter":"@tourTypes='17da160b-da66-4e09-9e31-5fd040880f4a' AND @destination='6cc50e28-fb0e-4e49-b3b6-728690a2e861'"}}</pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The responses from the server for both of the delivery methods are then instantly rendered on the Tour Finder page as three tours matching the filter selection:</p>
+</div>
+<div class="paragraph">
+<p><span class="image zoom"><img src="../../_images/6-2-12-Demo-tourFinderRestGrapghQLResponses.png" alt="REST and GraphQL options in the Tour Finder - example where response matches a filter setting"></span></p>
+</div>
 </div>
 </div>
 <div class="sect2">

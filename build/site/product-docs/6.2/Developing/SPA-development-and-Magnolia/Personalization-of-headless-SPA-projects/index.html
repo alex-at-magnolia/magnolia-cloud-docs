@@ -377,7 +377,13 @@
     <a class="nav-link" href="../../../Administration/Architecture/Publishing-overview/">Publishing overview</a>
   </li>
   <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../../../Administration/Architecture/Repositories/">Repositories</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../../Administration/Architecture/Repositories/Repositories-configuration/">Repositories configuration</a>
+  </li>
+</ul>
   </li>
   <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
@@ -2372,7 +2378,7 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>Magnolia&#8217;s personalization features can be used on headless projects, including support for the <a href="https://hd.magnolia-cms.com/docs/visual-spa-editor/" target="_blank" rel="noopener">Visual SPA Editor</a>, as well as traditional FreeMarker-based projects. These features are available on headless and SPA with <a href="../../../Modules/List-of-modules/Personalization-module/" class="page">Personalization module</a> (version 2.1.0 and later) and the Magnolia <code>react-editor</code>, <code>vue-editor</code>, <code>angular-editor</code> <a href="https://www.npmjs.com/~magnolia" target="_blank" rel="noopener">npm packages</a> (version 1.1.0 and later).</p>
+<p>Magnolia&#8217;s personalization features can be used on headless projects, including support for the <a href="https://hd.magnolia-cms.com/docs/visual-spa-editor/" target="_blank" rel="noopener">Visual SPA Editor</a>, as well as traditional FreeMarker-based projects. These features are available on headless and SPA with <a href="../../../Modules/List-of-modules/Personalization-module/" class="page">Personalization module</a> (version 2.1.0 and higher) and the Magnolia <code>react-editor</code>, <code>vue-editor</code>, <code>angular-editor</code> <a href="https://www.npmjs.com/~magnolia" target="_blank" rel="noopener">npm packages</a> (version 1.1.0 and higher).</p>
 </div>
 <div class="paragraph">
 <p>As described on <a href="../../API/Delivery-API/Requesting-personalized-content-with-the-delivery-endpoint/" class="page">Requesting personalized content with the delivery endpoint</a>, the Personalization module brings personalization to the REST delivery endpoint as well as new simple request-based traits. These traits are ideal for headless scenarios where you would like to provide the trait information explicitly on the request via a cookie, header, query string, or body parameter.</p>
@@ -2457,7 +2463,7 @@
 <h2 id="_adjust_your_spa_or_frontend_project"><a class="anchor" href="#_adjust_your_spa_or_frontend_project"></a>Adjust your SPA or frontend project</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>In your <code>package.json</code>, ensure you are using version 1.1.0 (or later) of the <code>react-editor</code>, <code>vue-editor</code> or <code>angular-editor</code>. See in <a href="https://git.magnolia-cms.com/projects/DEMOS/repos/minimal-headless-spa-demos/browse/spa/react-minimal/package.json#6" target="_blank" rel="noopener">this example in the demo project</a>.</p>
+<p>In your <code>package.json</code>, ensure you are using version 1.1.1 (or higher) of the <code>react-editor</code>, <code>vue-editor</code> or <code>angular-editor</code>. See in <a href="https://git.magnolia-cms.com/projects/DEMOS/repos/minimal-headless-spa-demos/browse/spa/react-minimal/package.json#6" target="_blank" rel="noopener">this example in the demo project</a>.</p>
 </div>
 <div class="paragraph">
 <p>How you adjust the code of your frontend is dependent on your particular use case. There are, however, some general requirements.</p>

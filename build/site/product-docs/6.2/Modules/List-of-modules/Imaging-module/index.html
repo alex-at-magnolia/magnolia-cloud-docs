@@ -377,7 +377,13 @@
     <a class="nav-link" href="../../../Administration/Architecture/Publishing-overview/">Publishing overview</a>
   </li>
   <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../../../Administration/Architecture/Repositories/">Repositories</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../../Administration/Architecture/Repositories/Repositories-configuration/">Repositories configuration</a>
+  </li>
+</ul>
   </li>
   <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
@@ -2743,9 +2749,9 @@ source image. If you upload a <code>jpg</code>, this generator will produce a
 <h3 id="_parameter_provider_factory"><a class="anchor" href="#_parameter_provider_factory"></a>Parameter provider factory</h3>
 <div class="paragraph">
 <p>Parameters are instructions passed to an operation, such as where to
-load a source image or what text to lay over it. Registering a
-ParameterProviderFactory allows you to pass parameters from different
-sources:</p>
+load a source image or what text to lay over it. Registering
+<code>ParameterProviderFactory</code> allows you to pass parameters
+from different sources:</p>
 </div>
 <div class="paragraph">
 <p>The parameter provider factory is configured in
@@ -2755,7 +2761,7 @@ sources:</p>
 <p><span class="image zoom"><img src="../../../_images/ADVT-imaging-mod-param.png" alt="image" width="700"></span></p>
 </div>
 <div class="paragraph">
-<p>Parameter provider classes:</p>
+<p><strong>Parameter provider classes:</strong></p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -2764,35 +2770,29 @@ sources:</p>
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>info.magnolia.imaging.parameters.BinaryNodeIdentifierParameterProviderFactory</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Node-based <code>ParameterProviderFactory</code> that tries to determine the
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>info.magnolia.imaging.parameters.BinaryJcrNodeIdentifierParameterProviderFactory</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Node-based <code>ParameterProviderFactory</code> that tries to determine
 <code>Node</code> by its identifier.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>info.magnolia.imaging.parameters.BinaryNodePathParameterProviderFactory</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Node-based <code>ParameterProviderFactory</code> that will tries to determine the
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>info.magnolia.imaging.parameters.BinaryJcrNodePathParameterProviderFactory</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Node-based <code>ParameterProviderFactory</code> that tries to determine
 <code>Node</code> by its path.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>info.magnolia.templating.imaging.parameters.ThemeAwareParameterProviderFactory</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Theme -aware <code>ParameterProviderFactory</code>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Theme-aware <code>ParameterProviderFactory</code>.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>info.magnolia.imaging.parameters.AbstractWorkspaceAndPathParameterProviderFactory</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>info.magnolia.imaging.parameters.AbstractJcrWorkspaceAndPathParameterProviderFactory</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Superclass for parameter provider factories based on workspace and
 path.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>info.magnolia.imaging.parameters.AbstractWorkspaceAndIdentifierParameterProviderFactory</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Extracts workspace and identifier from the path. Everything after the
-identifier is ignored. This allows you, for example, to pass a properly
-named file name, to the image.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>info.magnolia.imaging.parameters.AbstractWorkspaceAndUuidParameterProviderFactory</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Extracts workspace and UUID from the path. Everything after the UUID is
-ignored. This allows you, for example to pass a properly named file name
-to the image.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>info.magnolia.imaging.parameters.AbstractJcrWorkspaceAndIdentifierParameterProviderFactory</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Extracts workspace and identifier from path. Everything after the
+identifier is ignored. This allows you, for example, to pass a
+properly named filename to the image.</p></td>
 </tr>
 </tbody>
 </table>
@@ -2876,30 +2876,27 @@ and <code>overlay</code>. The chain is executed from top to bottom.</p>
 </div>
 <div class="paragraph">
 <p>The first operation in an operation chain is typically a load operation.
-Use load class
-<a href="https://nexus.magnolia-cms.com/#nexus-search;classname~FromBinaryNode" target="_blank" rel="noopener">FromBinaryNode</a> to
+Use javadoc:info.magnolia.imaging.operations.load.FromBinaryNode[] to
 load an image from the <a href="../../../Features/Digital-asset-management/" class="page">DAM</a>.</p>
 </div></div></td>
 </tr>
 </tbody>
 </table>
 <div class="sect3">
-<h4 id="_parameterproviderfactory_and_load_operation_class_typing"><a class="anchor" href="#_parameterproviderfactory_and_load_operation_class_typing"></a>ParameterProviderFactory and load operation class typing</h4>
+<h4 id="_parameter_provider_factory_and_load_operation_class_typing"><a class="anchor" href="#_parameter_provider_factory_and_load_operation_class_typing"></a>Parameter provider factory and load operation class typing</h4>
 <div class="paragraph">
-<p>Note that ParameterProviderFactory and ParameterProvider implementations
-are typed. Let’s have a look at the interfaces:</p>
+<p>Note that the <code>ParameterProviderFactory</code> and <code>ParameterProvider</code>
+implementations are typed. Let’s have a look at the interfaces:</p>
 </div>
-<div class="paragraph">
-<p>ParameterProviderFactory</p>
-</div>
-<div class="paragraph">
-<p><a href="https://git.magnolia-cms.com/projects/MODULES/repos/imaging/browse/magnolia-module-imaging/src/main/java/info/magnolia/imaging/ParameterProviderFactory.java?at=master&amp;raw" target="_blank" rel="noopener">https://git.magnolia-cms.com/projects/MODULES/repos/imaging/browse/magnolia-module-imaging/src/main/java/info/magnolia/imaging/ParameterProviderFactory.java?at=master&amp;raw</a></p>
-</div>
-<div class="paragraph">
-<p>ParameterProvider</p>
-</div>
-<div class="paragraph">
-<p><a href="https://git.magnolia-cms.com/projects/MODULES/repos/imaging/browse/magnolia-module-imaging/src/main/java/info/magnolia/imaging/ParameterProvider.java?at=master&amp;raw" target="_blank" rel="noopener">https://git.magnolia-cms.com/projects/MODULES/repos/imaging/browse/magnolia-module-imaging/src/main/java/info/magnolia/imaging/ParameterProvider.java?at=master&amp;raw</a></p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>ParameterProviderFactory</strong>: <a href="https://git.magnolia-cms.com/projects/MODULES/repos/imaging/browse/magnolia-imaging/src/main/java/info/magnolia/imaging/ParameterProviderFactory.java" target="_blank" rel="noopener">https://git.magnolia-cms.com/projects/MODULES/repos/imaging/browse/magnolia-imaging/src/main/java/info/magnolia/imaging/ParameterProviderFactory.java</a></p>
+</li>
+<li>
+<p><strong>ParameterProvider</strong>: <a href="https://git.magnolia-cms.com/projects/MODULES/repos/imaging/browse/magnolia-imaging/src/main/java/info/magnolia/imaging/ParameterProvider.java" target="_blank" rel="noopener">https://git.magnolia-cms.com/projects/MODULES/repos/imaging/browse/magnolia-imaging/src/main/java/info/magnolia/imaging/ParameterProvider.java</a></p>
+</li>
+</ul>
 </div>
 <div class="admonitionblock warning">
 <table>
@@ -2908,18 +2905,17 @@ are typed. Let’s have a look at the interfaces:</p>
 <i class="fa icon-warning" title="Warning"></i>
 </td>
 <td class="content">
-Return type of
-<code>ParameterProviderFactory#newParameterProviderFor</code> and the method
-argument in the class used for a load operation must have the same type!
+<div class="paragraph">
+<p>The return type of <code>ParameterProviderFactory#newParameterProviderFor</code> and the method
+argument in the class used for a load operation must have the same type!</p>
+</div>
+<div class="paragraph">
+<p>For instance, javadoc:info.magnolia.imaging.parameters.BinaryJcrNodePathParameterProviderFactory[]
+and javadoc:info.magnolia.imaging.operations.load.FromBinaryNode[] work well together.</p>
+</div>
 </td>
 </tr>
 </table>
-</div>
-<div class="paragraph">
-<p>For instance <a href="https://nexus.magnolia-cms.com/#nexus-search;classname~BinaryNodePathParameterProviderFactory" target="_blank" rel="noopener">BinaryNodePathParameterProviderFactory</a> (as
-ParameterProviderFactory) and
-<a href="https://nexus.magnolia-cms.com/#nexus-search;classname~FromBinaryNode" target="_blank" rel="noopener">FromBinaryNode</a> work
-nicely together.</p>
 </div>
 </div>
 </div>
@@ -3022,7 +3018,7 @@ ParameterProviderFactory. However, it usually has the following pattern:</p>
 </div>
 <div class="paragraph">
 <p>Here is an example of a path when using
-<a href="https://nexus.magnolia-cms.com/#nexus-search;classname~BinaryNodePathParameterProviderFactory" target="_blank" rel="noopener">BinaryNodePathParameterProviderFactory</a>:</p>
+javadoc:info.magnolia.imaging.parameters.BinaryJcrNodePathParameterProviderFactory[]:</p>
 </div>
 <div class="listingblock">
 <div class="content">

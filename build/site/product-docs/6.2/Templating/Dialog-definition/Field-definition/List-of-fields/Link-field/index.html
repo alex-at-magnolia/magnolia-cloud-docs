@@ -376,7 +376,13 @@
     <a class="nav-link" href="../../../../../Administration/Architecture/Publishing-overview/">Publishing overview</a>
   </li>
   <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../../../../../Administration/Architecture/Repositories/">Repositories</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../../../../Administration/Architecture/Repositories/Repositories-configuration/">Repositories configuration</a>
+  </li>
+</ul>
   </li>
   <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
@@ -2384,7 +2390,7 @@ extends javadoc:info.magnolia.ui.field.ComboBoxFieldDefinition[].</p>
 stores a reference to the selected item.</p>
 </div>
 <div class="paragraph">
-<p>Magnolia provides three preconfigured link field definitions:</p>
+<p>Magnolia provides four preconfigured link field definitions:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -2393,6 +2399,9 @@ stores a reference to the selected item.</p>
 </li>
 <li>
 <p>javadoc:info.magnolia.pages.app.field.PageLinkFieldDefinition[]: links to a page (<code>pageLinkField</code>).</p>
+</li>
+<li>
+<p>javadoc:info.magnolia.resources.app.field.ResourceLinkFieldDefinition[]: links to a resource (<code>resourceLinkField</code>).</p>
 </li>
 <li>
 <p>javadoc:info.magnolia.rest.ui.field.linkfield.JsonLinkFieldDefinition[isEnterprise=true]: links to a JSON node (<code>jsonLinkField</code>).</p>
@@ -2423,6 +2432,9 @@ fully qualified class names are:</p>
 </li>
 <li>
 <p><code>info.magnolia.pages.app.field.PageLinkFieldDefinition</code></p>
+</li>
+<li>
+<p><code>info.magnolia.resources.app.field.ResourceLinkFieldDefinition</code></p>
 </li>
 <li>
 <p><code>info.magnolia.rest.ui.field.linkfield.JsonLinkFieldDefinition</code></p>
@@ -2456,7 +2468,7 @@ field for <em>Magnolia 5 UI</em></a> instead.</p>
 <p><a id="tabset1_external-link"></a>External link</p>
 </li>
 <li>
-<p><a id="tabset1_editable-jcr-asset-link"></a>Editable JCR asset link</p>
+<p><a id="tabset1_resource-link"></a>Resource link</p>
 </li>
 <li>
 <p><a id="tabset1_json-link"></a>JSON link</p>
@@ -2469,8 +2481,7 @@ field for <em>Magnolia 5 UI</em></a> instead.</p>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-yml hljs" data-lang="yml">damLink:
   $type: damLinkField
-  # showOptions allows you to select items from a combobox (performance issues may occur with a large number of items)
-  showOptions: true</code></pre>
+  textInputAllowed: true</code></pre>
 </div>
 </div>
 </div>
@@ -2498,15 +2509,13 @@ field for <em>Magnolia 5 UI</em></a> instead.</p>
 </div>
 </div>
 </div>
-<div class="tab-pane" aria-labelledby="tabset1_editable-jcr-asset-link">
+<div class="tab-pane" aria-labelledby="tabset1_resource-link">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-yml hljs" data-lang="yml">editableJcrAssetLink:
-  $type: linkField
-  textInputAllowed: true # allows you to paste an asset path directly into the text field
-  datasource:
-    $type: jcrDatasource
-    workspace: dam</code></pre>
+<pre class="highlightjs highlight"><code class="language-yml hljs" data-lang="yml">resourceLink:
+  $type: resourceLinkField
+  showOptions: true
+  textInputAllowed: true</code></pre>
 </div>
 </div>
 </div>
@@ -3174,6 +3183,9 @@ The class name is added to the field by calling the Vaadin method <a href="https
 <p><a id="tabset2_page-link"></a>Page link</p>
 </li>
 <li>
+<p><a id="tabset2_resource-link"></a>Resource link</p>
+</li>
+<li>
 <p><a id="tabset2_json-link"></a>JSON link</p>
 </li>
 </ul>
@@ -3197,6 +3209,15 @@ The class name is added to the field by calling the Vaadin method <a href="https
 pageLinkUUID:
   $type: pageLinkField
   defaultValue: 53b073cc-ea3a-4e44-bdea-8c8a790b55c5 # UUID</code></pre>
+</div>
+</div>
+</div>
+<div class="tab-pane" aria-labelledby="tabset2_resource-link">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yml hljs" data-lang="yml">resourceLinkPath:
+  $type: resourceLinkField
+  defaultValue: /boat # path</code></pre>
 </div>
 </div>
 </div>

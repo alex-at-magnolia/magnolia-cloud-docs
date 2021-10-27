@@ -377,7 +377,13 @@
     <a class="nav-link" href="../../../../Administration/Architecture/Publishing-overview/">Publishing overview</a>
   </li>
   <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../../../../Administration/Architecture/Repositories/">Repositories</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../../../Administration/Architecture/Repositories/Repositories-configuration/">Repositories configuration</a>
+  </li>
+</ul>
   </li>
   <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
@@ -2405,13 +2411,7 @@ Cache</a></p></td>
 </table>
 <div class="paragraph">
 <p>The Advanced Cache module is collection of advanced cache strategies to
-help</p>
-</div>
-<div class="paragraph">
-<p>minimize load on the server while ensuring fresh content</p>
-</div>
-<div class="paragraph">
-<p>is served to the users.</p>
+help minimize load on the server while ensuring fresh content is served to the users.</p>
 </div>
 </div>
 </div>
@@ -2438,9 +2438,9 @@ help</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Set cache policy in
+<p>Set the cache policy in
 <code>/modules/cache/config/contentCaching/defaultPageCache/cachePolicy@class</code>
-back to default value <code>info.magnolia.module.cache.cachepolicy.Default</code>.</p>
+back to the default value <code>info.magnolia.module.cache.cachepolicy.Default</code>.</p>
 </li>
 <li>
 <p>Remove the <code>/modules/advanced-cache</code> node and its subnodes.</p>
@@ -2471,17 +2471,17 @@ ready.</p>
 <li>
 <p>Set
 <code>/modules/cache/config/contentCaching/defaultPageCache/cachePolicy@class</code>
-to <code>info.magnolia.module.advancedcache.ServeUntilRecachedCachePolicy</code></p>
+to <code>info.magnolia.module.advancedcache.ServeUntilRecachedCachePolicy</code>.</p>
 </li>
 <li>
 <p>Set
 <code>/modules/cache/config/contentCaching/defaultPageCache/flushPolicy/policies/flushAll@class</code>
-to <code>info.magnolia.module.advancedcache.NotifyFlushListeningPolicy</code></p>
+to <code>info.magnolia.module.advancedcache.NotifyFlushListeningPolicy</code>.</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>See also: <a href="#_timestamp_for_last_flushing">Timestamp for last flushing</a></p>
+<p>See also <a href="#_timestamp_for_last_flushing">Timestamp for last flushing</a>.</p>
 </div>
 </div>
 <div class="sect2">
@@ -2489,106 +2489,78 @@ to <code>info.magnolia.module.advancedcache.NotifyFlushListeningPolicy</code></p
 <div class="paragraph">
 <p>Using this strategy, cache keeps a list of the most frequently served
 entries. The system attempts to refresh these entries as soon as it
-detects an update to content. All other entries are re-cached on
-request. It is possible to configure the number of entries to re-cache
-immediately and to set the lifetime of the most served content:</p>
+detects a content update. All other entries are re-cached on request.
+It is possible to configure the number of entries to re-cache
+immediately and to set the lifetime of the most served content.</p>
+</div>
+<div class="paragraph">
+<p>To enable eager re-caching:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
 <p>Set
 <code>/modules/cache/config/contentCaching/defaultPageCache/cachePolicy@class</code>
-to <code>info.magnolia.module.advancedcache.EagerRecacheCachePolicy</code></p>
+to <code>info.magnolia.module.advancedcache.EagerRecacheCachePolicy</code>.</p>
 </li>
 <li>
 <p>Set
 <code>/modules/cache/config/contentCaching/defaultPageCache/flushPolicy/flushAll@class</code>
-to <code>info.magnolia.module.advancedcache.EagerRecacheFlushPolicy</code><br></p>
+to <code>info.magnolia.module.advancedcache.EagerRecacheFlushPolicy</code>.</p>
 </li>
 <li>
 <p>Set
 <code>/modules/cache/config/contentCaching/defaultPageCache/executors/store/cacheContent@class</code>
-to <code>info.magnolia.module.cache.executor.Store</code></p>
+to <code>info.magnolia.module.cache.executor.Store</code>.</p>
 </li>
 </ul>
 </div>
+<div class="sect3">
+<h4 id="_changing_default_flush_policy"><a class="anchor" href="#_changing_default_flush_policy"></a>Changing default flush policy</h4>
 <div class="paragraph">
 <p>By default, statistics about served pages are retained indefinitely.
-However, you can force the system to flush the cache after each content
-update. To do this:</p>
+If you want to force the system to flush the cache after each
+content update:</p>
 </div>
-<div class="ulist">
-<ul>
+<div class="olist arabic">
+<ol class="arabic">
 <li>
 <p>Create a <code>resetAfterUpdate</code> property node under <code>flushPolicy</code>.</p>
 </li>
 <li>
 <p>Set the value to <code>true</code>.</p>
 </li>
-</ul>
+</ol>
 </div>
 <div class="paragraph">
-<p>To change the number of pages to be eagerly re-cached:</p>
+<p>By default, the top 100 entries are eagerly re-cached on every update. To change that number:</p>
 </div>
-<div class="ulist">
-<ul>
+<div class="olist arabic">
+<ol class="arabic">
 <li>
 <p>Create an <code>eagerRecache</code> property node under <code>flushPolicy</code>.</p>
 </li>
 <li>
-<p>Set the value to the number of top most entries in the list you wish
-to have eagerly re-cached on every update. By default top 100 entries
-are eagerly re-cached.</p>
+<p>Set the value to the number of top entries in the list you wish to
+have eagerly re-cached.</p>
 </li>
-</ul>
+</ol>
 </div>
 <div class="paragraph">
-<p>See also: <a href="#_timestamp_for_last_flushing">Timestamp for last flushing</a></p>
+<p>See also <a href="#_timestamp_for_last_flushing">Timestamp for last flushing</a>.</p>
 </div>
-</div>
-<div class="sect2">
-<h3 id="_headless_personalization_and_caching"><a class="anchor" href="#_headless_personalization_and_caching"></a>Headless personalization and caching</h3>
-<div class="paragraph">
-<p>For headless p13n to work correctly with content caching in Magnolia, you have to set <code>/modules/cache/config/contentCaching/&lt;your-configuration&gt;/cachePolicy@includePersonalizedDescendants</code> to <code>true</code>.</p>
-</div>
-<div class="paragraph">
-<p>By setting this property, the <a href="../../High-performance-caching-modules/Advanced-Cache-Dynamic-Page-Caching/#_dynamic_page_caching" class="page">dynamic page caching</a> function is turned off.</p>
-</div>
-<div class="admonitionblock caution">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-caution" title="Caution"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>Currently, Magnolia does not support caching for different headers or cookies. Therefore it is impossible to specify for which headers (or cookies) a response should be cached.</p>
-</div>
-<div class="paragraph">
-<p>An improvement addressing this issue has been filed as
-<a href="https://jira.magnolia-cms.com/browse/MGNLCACHE-245" target="_blank" rel="noopener">MGNLCACHE-245</a>.</p>
-</div>
-</td>
-</tr>
-</table>
 </div>
 <div class="sect3">
-<h4 id="_changing_waiting_time"><a class="anchor" href="#_changing_waiting_time"></a>Changing waiting time</h4>
+<h4 id="_changing_default_waiting_time"><a class="anchor" href="#_changing_default_waiting_time"></a>Changing default waiting time</h4>
 <div class="paragraph">
-<p>By default Magnolia waits for 10 seconds, while still serving an old
-version of the content, before attempting to re-cache the given entry.
-This timeout is controlled by the <code>blockingTimeout</code> property configured
-in the
-<a href="#Modules/List-of-modules/Cache-modules/Ehcache+3-module.adoc" class="page unresolved">Ehcache 3
-back-end</a>. The <code>blockingTimeout</code> applies to the whole cache factory. If
-you want to change the waiting time for a particular cache policy, use
-the <code>timeout</code> property.</p>
+<p>By default, Magnolia waits for 10 seconds before attempting to re-cache content.
+This timeout is controlled by the <code>blockingTimeout</code> property configured in the
+<a href="../../Cache-modules/Ehcache-3-module/" class="page">Ehcache 3 back-end</a>.
+The <code>blockingTimeout</code> property applies to the whole cache factory.</p>
 </div>
 <div class="paragraph">
-<p>Change the waiting time for the default server and flush
-<a href="../../Cache-modules/Cache-core/#_policy_configuration" class="page">policies</a>
-by adding a <code>timeout</code> node data with value being the number of
-milliseconds to wait (i.e. default value is equivalent of 10 000).</p>
+<p>If you want to change the waiting time for a particular cache policy, add a <code>timeout</code>
+property with the number of milliseconds to wait (the default value is <code>10000</code>).</p>
 </div>
 <div class="admonitionblock warning">
 <table>
@@ -2655,6 +2627,34 @@ at a path that includes the name of your custom policy.</p>
 <div class="paragraph">
 <p>where <code>&lt;custom_cache_name&gt;</code> is the name of your custom policy.</p>
 </div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_headless_personalization_and_caching"><a class="anchor" href="#_headless_personalization_and_caching"></a>Headless personalization and caching</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>For headless personalization to work correctly with content caching in Magnolia, you have to set <code>/modules/cache/config/contentCaching/&lt;your-configuration&gt;/cachePolicy@includePersonalizedDescendants</code> to <code>true</code>.</p>
+</div>
+<div class="paragraph">
+<p>By configuring this property, the <a href="../../High-performance-caching-modules/Advanced-Cache-Dynamic-Page-Caching/#_dynamic_page_caching" class="page">dynamic page-caching</a> function is disabled.</p>
+</div>
+<div class="admonitionblock caution">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-caution" title="Caution"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Magnolia does not currently support caching for different headers or cookies. Therefore, it is impossible to specify for which headers or cookies a response should be cached.</p>
+</div>
+<div class="paragraph">
+<p>See <a href="https://jira.magnolia-cms.com/browse/MGNLCACHE-245" target="_blank" rel="noopener">MGNLCACHE-245</a> for the upcoming improvement.</p>
+</div>
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>

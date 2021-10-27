@@ -376,7 +376,13 @@
     <a class="nav-link" href="../../Administration/Architecture/Publishing-overview/">Publishing overview</a>
   </li>
   <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../../Administration/Architecture/Repositories/">Repositories</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../Administration/Architecture/Repositories/Repositories-configuration/">Repositories configuration</a>
+  </li>
+</ul>
   </li>
   <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
@@ -2374,6 +2380,71 @@
 <p>Summary of major features delivered by Magnolia in the last two years.</p>
 </div>
 <div class="sect2">
+<h3 id="_graphql_module"><a class="anchor" href="#_graphql_module"></a>GraphQL module</h3>
+<div class="paragraph">
+<p>Getting content via API&#8217;s is the foundation of a Headless CMS approach. The new GraphQL standard for working with content over API empowers frontend developers to be able to get exactly the content that they need from Magnolia.</p>
+</div>
+<div class="paragraph">
+<p>Due to its standardized approach, it&#8217;s easy for developers to start using. This standardization also makes it easier for other systems to connect and integrate with Magnolia.</p>
+</div>
+<div class="paragraph">
+<p>The GraphQL endpoint is available instantly. For each Magnolia content type in the system, GraphQL types are automatically created. You only need to configure your desired access rights for the content, and the endpoint is ready to use.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The GraphQL endpoint provides access only to Magnolia content types. Content from Pages or Stories is not supported. The REST delivery endpoints are the best suited for these content.</p>
+</div>
+<div class="paragraph">
+<p>The GraphQL endpoint is read-only. It delivers Magnolia content, it does not support writing or changing Magnolia content.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+See the <a href="../../Modules/List-of-modules/GraphQL-module/" class="page">GraphQL module</a> page for more details.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_abn_testing_special_feature"><a class="anchor" href="#_abn_testing_special_feature"></a>A/B/n Testing Special Feature</h3>
+<div class="paragraph">
+<p>A/B/n testing is a statistical testing strategy in which two or more versions of a page are compared with each other. The goal of testing is to determine which version of a page performs better among customers to increase your online conversion rates.</p>
+</div>
+<div class="paragraph">
+<p>Magnolia offers native A/B/n Testing to help you make decisions about your content based on real data from your existing traffic.</p>
+</div>
+<div class="paragraph">
+<p>Our marketer-friendly <a href="../../Special-Features/ABn-testing/ABn-testing-app/" class="page">Testing app</a> enables you to quickly create and manage your tests in a single location.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+See <a href="../../Special-Features/ABn-testing/" class="page">A/B/n Testing</a> for an overview of the functionality provided. Note that A/B/n Testing is compatible with <a href="../Release-notes-for-Magnolia-CMS-6.2.4/" class="page">Magnolia CMS 6.2.4</a> onwards.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
 <h3 id="_multisource_content"><a class="anchor" href="#_multisource_content"></a>Multisource content</h3>
 <div class="paragraph">
 <p>Siloed content that is spread across disparate systems makes it
@@ -2494,7 +2565,7 @@ See <a href="../Release-notes-for-Magnolia-CMS-6.2/" class="page">Magnolia 6.2</
 <p>The DAM Connector Pack enables you to seamlessly integrate with your external DAM or storage system. This means you can access and use all your assets centrally from Magnolia regardless of where they are stored, eliminating the need for switching tools, costly and time-consuming asset migration or changing processes.</p>
 </div>
 <div class="paragraph">
-<p>The DAM connector pack caters to enterprise customers who have thousands of assets to manage, including videos, PDFs and images. The pack provides out-of-the-box connectors to:</p>
+<p>The DAM Connector Pack caters to enterprise customers who have thousands of assets to manage, including videos, PDFs and images. The pack provides out-of-the-box connectors to:</p>
 </div>
 <div class="ulist">
 <ul>

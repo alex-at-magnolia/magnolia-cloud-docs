@@ -377,7 +377,13 @@
     <a class="nav-link" href="../../../Administration/Architecture/Publishing-overview/">Publishing overview</a>
   </li>
   <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../../../Administration/Architecture/Repositories/">Repositories</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../../Administration/Architecture/Repositories/Repositories-configuration/">Repositories configuration</a>
+  </li>
+</ul>
   </li>
   <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
@@ -2482,23 +2488,6 @@ and audiences.</p>
 </li>
 </ul>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_installing_with_maven"><a class="anchor" href="#_installing_with_maven"></a>Installing with Maven</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Maven is the easiest way to install the module. Add the following to your bundle:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;dependency&gt;
-  &lt;groupId&gt;info.magnolia.personalization&lt;/groupId&gt;
-  &lt;artifactId&gt;magnolia-personalization-blossom-compatibility&lt;/artifactId&gt;
-  &lt;version&gt;2.1.0&lt;/version&gt;
-&lt;/dependency&gt;</code></pre>
-</div>
-</div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;dependency&gt;
@@ -2597,6 +2586,72 @@ and audiences.</p>
   &lt;version&gt;2.1.0&lt;/version&gt;
 &lt;/dependency&gt;</code></pre>
 </div>
+</div>
+<div class="paragraph">
+<p>Part of the module is also the <code>magnolia-personalization-blossom-compatibility</code>.</p>
+</div>
+<div class="admonitionblock caution">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-caution" title="Caution"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>To be able to use personalization in the Delivery API, you should:</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Add the Blossom dependency (<code>magnolia-personalization-blossom-compatibility</code>) only <strong>if you are using the Blossom modules in your project</strong>:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;dependency&gt;
+  &lt;groupId&gt;info.magnolia.personalization&lt;/groupId&gt;
+  &lt;artifactId&gt;magnolia-personalization-blossom-compatibility&lt;/artifactId&gt;
+  &lt;version&gt;2.1.0&lt;/version&gt;
+&lt;/dependency&gt;</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Make sure that in the content of your <code>pom.xml</code> for your webapp you include the following two dependencies <strong>if your project is generated from the <a href="../../../Developing/How-to-use-Magnolia-Maven-archetypes/" class="page">Magnolia webapp archetype</a></strong>:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">...
+  &lt;dependencies&gt;
+   ...
+
+   &lt;!-- include p13n for rest --&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;info.magnolia.personalization&lt;/groupId&gt;
+        &lt;artifactId&gt;magnolia-personalization-rest&lt;/artifactId&gt;
+        &lt;version&gt;2.1.0&lt;/version&gt;
+      &lt;/dependency&gt;
+
+  &lt;/dependencies&gt;
+
+  &lt;dependencyManagement&gt;
+    &lt;dependencies&gt;
+      &lt;!-- include dependency management for p13n 2.1.0 --&gt;
+      &lt;dependency&gt;
+        &lt;groupId&gt;info.magnolia.personalization&lt;/groupId&gt;
+        &lt;artifactId&gt;magnolia-personalization-parent&lt;/artifactId&gt;
+        &lt;version&gt;2.1.0&lt;/version&gt;
+        &lt;type&gt;pom&lt;/type&gt;
+        &lt;scope&gt;import&lt;/scope&gt;
+      &lt;/dependency&gt;
+    &lt;/dependencies&gt;
+  &lt;/dependencyManagement&gt;
+...</code></pre>
+</div>
+</div>
+</li>
+</ol>
 </div>
 </div>
 </div>

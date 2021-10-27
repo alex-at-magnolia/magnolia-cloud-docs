@@ -377,7 +377,13 @@
     <a class="nav-link" href="../../../Administration/Architecture/Publishing-overview/">Publishing overview</a>
   </li>
   <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../../../Administration/Architecture/Repositories/">Repositories</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../../Administration/Architecture/Repositories/Repositories-configuration/">Repositories configuration</a>
+  </li>
+</ul>
   </li>
   <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
@@ -2425,6 +2431,23 @@ set <code>disabled</code> to <code>true</code> via decoration.</p>
 <pre class="highlightjs highlight"><code class="language-yml hljs" data-lang="yml">resultRankerConfiguration:
   disabled: true</code></pre>
 </div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Alternatively, to minimize configuration actions, the same can be achieved if you download the following zip file and extract its contents into your <a href="../../Light-modules/#_what_is_magnolia_resources_dir" class="page">resources directory</a>:</p>
+</div>
+<div class="paragraph">
+<p><code><a href="../../../_attachments/disableRanker.zip">disableRanker.zip</a></code></p>
+</div>
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p>This can help you reduce memory usage or resolve potential compatibility issues with DL4J libraries.</p>

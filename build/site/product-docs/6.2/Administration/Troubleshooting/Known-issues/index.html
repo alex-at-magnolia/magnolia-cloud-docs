@@ -376,7 +376,13 @@
     <a class="nav-link" href="../../Architecture/Publishing-overview/">Publishing overview</a>
   </li>
   <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../../Architecture/Repositories/">Repositories</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../Architecture/Repositories/Repositories-configuration/">Repositories configuration</a>
+  </li>
+</ul>
   </li>
   <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
@@ -3548,8 +3554,9 @@ For more details, see the reported <a href="https://github.com/bytedeco/javacv/i
 </div>
 </div>
 </div>
-<div class="sect3">
-<h4 id="_resizing_a_gif_image_results_in_an_http_500_error"><a class="anchor" href="#_resizing_a_gif_image_results_in_an_http_500_error"></a>Resizing a GIF image results in an HTTP 500 error</h4>
+</div>
+<div class="sect2">
+<h3 id="_resizing_a_gif_image_results_in_an_http_500_error"><a class="anchor" href="#_resizing_a_gif_image_results_in_an_http_500_error"></a>Resizing a GIF image results in an HTTP 500 error</h3>
 <div class="paragraph">
 <p>Specific JVMs do not support GIF image compression. In particular, when using version 11 of OpenJDK and its derivatives to process a GIF image via standard image variations, the variations are not rendered and the browser console displays an error:</p>
 </div>
@@ -3589,7 +3596,6 @@ More details about the error are shown if you open the image link directly:
 <p>Avoid processing GIFs via image variations; use direct links to render the images.</p>
 </li>
 </ul>
-</div>
 </div>
 </div>
 </div>

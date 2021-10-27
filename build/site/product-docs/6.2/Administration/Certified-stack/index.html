@@ -377,7 +377,13 @@
     <a class="nav-link" href="../Architecture/Publishing-overview/">Publishing overview</a>
   </li>
   <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../Architecture/Repositories/">Repositories</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../Architecture/Repositories/Repositories-configuration/">Repositories configuration</a>
+  </li>
+</ul>
   </li>
   <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
@@ -2565,6 +2571,28 @@ ranker provides.</p>
 </tr>
 </table>
 </div>
+<div class="sect2">
+<h3 id="_known_jvm_related_issues"><a class="anchor" href="#_known_jvm_related_issues"></a>Known JVM-related issues</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="../Troubleshooting/Known-issues/#_java_out_of_memory" class="page">Java out of memory</a></p>
+</li>
+<li>
+<p><a href="../Troubleshooting/Known-issues/#_preview_as_visitor_works_only_with_en_as_default_jvm_language" class="page">Preview as visitor works only with en as default JVM language</a></p>
+</li>
+<li>
+<p><a href="../Troubleshooting/Known-issues/#_rest_endpoint_not_behaving_as_expected_with_java_1" class="page">REST endpoint not behaving as expected with Java 11</a></p>
+</li>
+<li>
+<p><a href="../Troubleshooting/Known-issues/#_dl4jnd4j_issues" class="page">DL4J/ND4J issues</a></p>
+</li>
+<li>
+<p><a href="../Troubleshooting/Known-issues/#_resizing_a_gif_image_results_in_an_http_500_error" class="page">Resizing a GIF image results in an HTTP 500 error</a></p>
+</li>
+</ul>
+</div>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -2576,7 +2604,7 @@ ranker provides.</p>
 <p>Tomcat. Please check Apache’s
 <a href="http://tomcat.apache.org/whichversion.html" target="_blank" rel="noopener">Apache Tomcat - Which Version
 Do I Want?</a> page to find out about compatibility between Tomcat and Java
-versions. We recommend version 9.0.43 of Tomcat.</p>
+versions. We recommend you use the latest version of Tomcat 9.</p>
 </li>
 </ul>
 </div>
@@ -2748,7 +2776,7 @@ websites to ensure maximum security.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Apache Jackrabbit 2.20</p>
+<p>Apache Jackrabbit {jackrabbit-latest-version}</p>
 </li>
 </ul>
 </div>

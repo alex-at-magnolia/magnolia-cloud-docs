@@ -377,7 +377,13 @@
     <a class="nav-link" href="../../../../Administration/Architecture/Publishing-overview/">Publishing overview</a>
   </li>
   <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../../../../Administration/Architecture/Repositories/">Repositories</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../../../Administration/Architecture/Repositories/Repositories-configuration/">Repositories configuration</a>
+  </li>
+</ul>
   </li>
   <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
@@ -2461,10 +2467,8 @@ properties of the <code>/travel/about</code> page in the
 <div class="paragraph">
 <p>The responses are returned based on the following configuration:</p>
 </div>
-<div class="paragraph">
-<p>/&lt;my-module&gt;/restEndpoints/ep.yaml</p>
-</div>
 <div class="listingblock">
+<div class="title">/&lt;my-module&gt;/restEndpoints/ep.yaml</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">class: info.magnolia.rest.delivery.jcr.v2.JcrDeliveryEndpointDefinition
 workspace: website
@@ -2649,7 +2653,7 @@ may return is acceptable.</p>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Accept-Language: de-DE</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>`/.rest/ep/travel/about `</p>
+<p><code>/.rest/ep/travel/about</code></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Server-driven content negotiation is used to select the best match for the language tag specified in the header.</p>
@@ -2709,7 +2713,7 @@ of <a href="https://nexus.magnolia-cms.com/#nexus-search;classname~AbstractI18nC
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">not set</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>`/.rest/ep/travel/about?lang=de-DE `</p>
+<p><code>/.rest/ep/travel/about?lang=de-DE</code></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Selects the closest supported locale to that specified by the <code>lang</code> parameter.</p>

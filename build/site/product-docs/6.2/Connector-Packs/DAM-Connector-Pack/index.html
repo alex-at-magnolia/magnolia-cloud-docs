@@ -376,7 +376,13 @@
     <a class="nav-link" href="../../Administration/Architecture/Publishing-overview/">Publishing overview</a>
   </li>
   <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../../Administration/Architecture/Repositories/">Repositories</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../Administration/Architecture/Repositories/Repositories-configuration/">Repositories configuration</a>
+  </li>
+</ul>
   </li>
   <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
@@ -2373,7 +2379,7 @@
 <p>The DAM Connector Pack enables you to seamlessly integrate with your external DAM or storage system. This means you can access and use all your assets centrally from Magnolia regardless of where they are stored, eliminating the need for switching tools, costly and time-consuming asset migration or changing processes.</p>
 </div>
 <div class="paragraph">
-<p>The DAM connector pack caters to enterprise customers who have thousands of assets to manage, including videos, PDFs and images. The pack provides out-of-the-box connectors to:</p>
+<p>The DAM Connector Pack caters to enterprise customers who have thousands of assets to manage, including videos, PDFs and images. The pack provides out-of-the-box connectors to:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -2404,7 +2410,7 @@ If you want to connect to another third-party tool, extend the <a href="../../De
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-Magnolia Professional Services has developed several additional <a href="https://documentation.magnolia-cms.com/display/SERVICES/Incubator" target="_blank" rel="noopener">Incubator module connectors</a>. For example: Aprimo, Celum, Cloudinary and Frontify. Incubator modules are only available to Magnolia Enterprise customers.
+Magnolia Professional Services have developed several additional <a href="https://documentation.magnolia-cms.com/display/SERVICES/Incubator" target="_blank" rel="noopener">Incubator module connectors</a>. For example: Aprimo, Celum, Cloudinary and Frontify. Incubator modules are only available to Magnolia Enterprise customers.
 </td>
 </tr>
 </table>
@@ -2421,7 +2427,7 @@ Magnolia Professional Services has developed several additional <a href="https:/
 <p>The DAM Connector Pack makes assets from your asset provider account available directly within Magnolia, close to your content.</p>
 </div>
 <div class="paragraph">
-<p><span class="image zoom"><img src="../../_images/6-2-extdam-intro.png" alt="Assets app with Bynder and S3 tabs" width="600"></span></p>
+<p><span class="image zoom"><img src="../../_images/extdam/6-2-extdam-intro.png" alt="Assets app with Bynder and S3 tabs" width="600"></span></p>
 </div>
 <div class="paragraph">
 <p>This means you can work with several DAM systems from one central location:</p>
@@ -2492,19 +2498,48 @@ workflow</a> does <em>not</em> apply.
 <p>Content authors can use external assets seamlessly in the <a href="../../Apps/List-of-apps/Pages-app/" class="page">Pages app</a> or other content apps.</p>
 </div>
 <div class="paragraph">
-<p><span class="image zoom"><img src="../../_images/6-2-extdam-pages-app.png" alt="external asset in pages app" width="600"></span></p>
+<p><span class="image zoom"><img src="../../_images/extdam/6-2-extdam-pages-app.png" alt="external asset in pages app" width="600"></span></p>
 </div>
 <div class="paragraph">
 <p>The DAM Connector Pack provides a sample <strong>Text and external image</strong> page component in the <a href="#/DOCS62/Pages-app.adoc" class="page unresolved">Pages app</a> so that editors and marketers can select and use external assets directly.</p>
 </div>
 <div class="paragraph">
-<p><span class="image zoom"><img src="../../_images/6-2-extdam-component.png" alt="add text and image component" width="500"></span></p>
+<p><span class="image zoom"><img src="../../_images/extdam/6-2-extdam-component.png" alt="add text and image component" width="500"></span></p>
 </div>
 <div class="paragraph">
 <p>When selecting an asset, choose from the configured providers to access the assets.</p>
 </div>
 <div class="paragraph">
-<p><span class="image zoom"><img src="../../_images/6-2-extdam-selectinpages.png" alt="select asset provider" width="500"></span></p>
+<p><span class="image zoom"><img src="../../_images/extdam/extdam-selectinpages.png" alt="select asset provider" width="500"></span></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_search_for_assets"><a class="anchor" href="#_search_for_assets"></a>Search for assets</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Use the Magnolia <a href="../../Features/Find-Bar/" class="page">Find bar</a> to search for assets across all your providers.</p>
+</div>
+<div class="paragraph">
+<p><span class="image zoom"><img src="../../_images/extdam/extdam-find-bar.png" alt="Search assets using the find bar" width="500"></span></p>
+</div>
+<div class="paragraph">
+<p>When using external assets in the Pages app via the asset chooser dialog, you can also search directly in the dialog before selecting your asset:</p>
+</div>
+<div class="paragraph">
+<p><span class="image zoom"><img src="../../_images/extdam/extdam-dialog-search.png" alt="Search assets in dialog" width="500"></span></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+All the external assets loaded in Magnolia are searched, but not those that have not been loaded yet from your external provider.
+</td>
+</tr>
+</table>
 </div>
 <div class="sidebarblock">
 <div class="content">
