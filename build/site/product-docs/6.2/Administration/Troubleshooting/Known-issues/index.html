@@ -1825,6 +1825,9 @@
     <a class="nav-link" href="../../../Apps/List-of-apps/Passwords-app/">Passwords app</a>
   </li>
   <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../../Apps/List-of-apps/Personas-app/">Personas app</a>
+  </li>
+  <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../../Apps/List-of-apps/Preview-app/">Preview app</a>
   </li>
   <li class="nav-item" data-depth="3">
@@ -3589,6 +3592,21 @@ More details about the error are shown if you open the image link directly:
 <h5 id="_workarounds"><a class="anchor" href="#_workarounds"></a>Workarounds</h5>
 <div class="ulist">
 <ul>
+<li>
+<p>Add a new property called <code>compressionType</code> to the configuration of the output format of your GIF image generator (<code>/modules/imaging/config/generators/&lt;generator-name&gt;/outputFormat</code>) and set its value to <code>LZW</code>.</p>
+<div class="admonitionblock caution">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-caution" title="Caution"></i>
+</td>
+<td class="content">
+Due to a change between Java 8 and Java 11 you have to specifically use upper case <code>LZW</code>.
+</td>
+</tr>
+</table>
+</div>
+</li>
 <li>
 <p>Use a JVM that provides support for processing GIF images (Oracle).</p>
 </li>

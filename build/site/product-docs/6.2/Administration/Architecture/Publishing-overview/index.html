@@ -1825,6 +1825,9 @@
     <a class="nav-link" href="../../../Apps/List-of-apps/Passwords-app/">Passwords app</a>
   </li>
   <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../../Apps/List-of-apps/Personas-app/">Personas app</a>
+  </li>
+  <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../../Apps/List-of-apps/Preview-app/">Preview app</a>
   </li>
   <li class="nav-item" data-depth="3">
@@ -2507,6 +2510,26 @@ of time and will try to obtain a lock for the operation. If the
 operation receives the lock, it can proceed with content (un)publishing.
 If not, publishing is considered unsuccessful and the respective status
 code is returned to the sender.</p>
+</div>
+<div class="admonitionblock caution">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-caution" title="Caution"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p><strong>Content publishing and content synchronization</strong></p>
+</div>
+<div class="paragraph">
+<p>Always wait with content publishing actions until all content synchronization tasks have been finished.</p>
+</div>
+<div class="paragraph">
+<p>If you attempt to publish a page while the Synchronisation module is mid-sync and has not yet synchronised the page&#8217;s parent, the publishing process will fail.</p>
+</div>
+</td>
+</tr>
+</table>
 </div>
 </div>
 <div class="sect2">

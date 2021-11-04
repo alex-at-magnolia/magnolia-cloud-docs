@@ -1825,6 +1825,9 @@
     <a class="nav-link" href="../../../Apps/List-of-apps/Passwords-app/">Passwords app</a>
   </li>
   <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../../Apps/List-of-apps/Personas-app/">Personas app</a>
+  </li>
+  <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../../Apps/List-of-apps/Preview-app/">Preview app</a>
   </li>
   <li class="nav-item" data-depth="3">
@@ -2653,29 +2656,41 @@ public class MainDialogFactory {
 <div class="paragraph">
 <p>This sample is a complete web application based on the current Magnolia and requires nothing more than a Maven installation.</p>
 </div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Before Blossom 3.4.7, the sample was in a separate <code>samples</code> Git project. Now it is part of the <code>blossom</code> Git repository.
+</td>
+</tr>
+</table>
+</div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Clone the <a href="https://git.magnolia-cms.com/scm/blossom/samples.git">git repository</a>.
-If you work with an older version of Blossom (see the <a href="#_compatibility_requirements">Compatibility</a> section above), switch to the respective release branch.</p>
+<p>Clone the <a href="https://git.magnolia-cms.com/scm/modules/blossom.git" target="_blank" rel="noopener"><code>blossom</code> repository</a>.
+If you work with an earlier version of Blossom (see <a href="#_compatibility_requirements">Compatibility requirements</a>), switch to the respective release branch.</p>
 </li>
 <li>
-<p>Build the project and then run <code>magnolia-blossom-sample-webapp</code> using <code>mvn jetty:run-war</code>.</p>
+<p>Build the project and run <code>magnolia-blossom-sample-webapp</code> using <code>mvn jetty:run-war</code>.</p>
 </li>
 <li>
-<p>When maven has downloaded the necessary artifacts and started the application point your browser to <a href="http://localhost:8080/">localhost:8080</a>.</p>
+<p>When maven has downloaded the necessary artifacts and started the application, point your browser to <a href="http://localhost:8080/"><code>localhost:8080</code></a>.</p>
 </li>
 <li>
-<p>Magnolia will now be in install mode and display a list of modules for install.<br>
-Complete the installation wizard and then log in using <code>superuser</code> for both username and password.</p>
+<p>Magnolia will now display a list of modules for install.
+Complete the installation wizard and log in using <code>superuser</code> for both the username and password.</p>
 </li>
 </ol>
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>git clone http://git.magnolia-cms.com/git/modules/blossom/samples.git
-cd samples
-mvn install
+<pre>git clone https://git.magnolia-cms.com/scm/modules/blossom.git
+cd blossom
+mvn clean verify
 cd magnolia-blossom-sample-webapp
 export MAVEN_OPTS="-XX:-CMSClassUnloadingEnabled -XX:PermSize=256M -XX:MaxPermSize=512M -Xmx512m"
 mvn jetty:run-war</pre>

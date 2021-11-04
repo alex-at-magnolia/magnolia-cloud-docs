@@ -1826,6 +1826,9 @@
     <a class="nav-link" href="../Passwords-app/">Passwords app</a>
   </li>
   <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Personas-app/">Personas app</a>
+  </li>
+  <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../Preview-app/">Preview app</a>
   </li>
   <li class="nav-item" data-depth="3">
@@ -2378,7 +2381,7 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>Magnolia REST Client app allows testing of configured REST clients.</p>
+<p>The Magnolia REST Client app allows testing of configured REST clients.</p>
 </div>
 </div>
 </div>
@@ -2386,12 +2389,19 @@
 <h2 id="_installing"><a class="anchor" href="#_installing"></a>Installing</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The app is installed by the
-<a href="../../../Modules/List-of-modules/REST-Client-module/" class="page">Rest Client module</a> and
-with the exception of <code>magnolia-tomcat-barebone</code> is included in all
-Magnolia 6.2
-<a href="../../../Developing/Bundles-and-webapps/#_list_of_preconfigured_magnolia_bundles" class="page">preconfigured
-Magnolia bundles</a>.</p>
+<p>The app is installed by the <a href="../../../Modules/List-of-modules/REST-Client-module/" class="page">Rest Client module</a> and is included in all Magnolia 6.2 <a href="../../../Developing/Bundles-and-webapps/#_list_of_preconfigured_magnolia_bundles" class="page">preconfigured Magnolia bundles</a>.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+This excludes the <code>magnolia-tomcat-barebone</code> bundle.
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
@@ -2404,76 +2414,142 @@ Magnolia bundles</a>.</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Open the app by clicking its tile in the <strong>Dev</strong> group of the App
-launcher.</p>
+<p>Go to <strong>Apps &gt; REST Client</strong>.</p>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Search "REST Client" in the Find bar.
+</td>
+</tr>
+</table>
+</div>
 </li>
 <li>
-<p>In the <strong>Rest client</strong> field, select a configured client. If the client
-already includes a pre-configured REST call definition, a note about
-this will be displayed just below the field. One or more of the
-following configuration fields and options will be either shown or
-hidden depending on the extent of the actual configuration:</p>
-<div class="ulist">
-<ul>
+<p>In the <strong>Rest client</strong> field, select a configured client.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+If the client already includes a pre-configured REST call definition, a note about this will be displayed just below the field.
+</td>
+</tr>
+</table>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>One or more of the following configuration fields and options will be either shown or hidden depending on the extent of the actual configuration:</p>
+</div>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
 <li>
 <p><strong>Rest calls</strong>. The call to be executed on the given client</p>
 </li>
 <li>
-<p><strong>Rest service</strong>. The REST service class name. (NOTE: Configure
-pre-seeded services under
-<code>/module/rest-client-app/config/serviceClasses</code>.)</p>
+<p><strong>Rest service</strong>. The REST service class name.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Configure pre-seeded services under <code>/module/rest-client-app/config/serviceClasses</code>.
+</td>
+</tr>
+</table>
+</div>
 </li>
 <li>
 <p><strong>Service method</strong>. The method to be executed on the given client.</p>
 </li>
 <li>
-<p><strong>Method annotations</strong>. The annotations of the service method and method
-parameters of the selected REST client. The parameter without
-annotations is the request body.</p>
+<p><strong>Method annotations</strong>. The annotations of the service method and method parameters of the selected REST client. The parameter without annotations is the request body.</p>
 </li>
 <li>
-<p><strong>Method parameters</strong>. The service method parameters or the
-<code>queryParameters</code> and <code>defaultValues</code> of the call. Enter one per line.
-Leave the line for the <code>body</code> parameter empty.<br></p>
+<p><strong>Method parameters</strong>. The service method parameters or the <code>queryParameters</code> and <code>defaultValues</code> of the call. Enter one per line. Leave the line for the <code>body</code> parameter empty.</p>
 </li>
 <li>
-<p><strong>Authentication</strong>. The options are <strong>None</strong>, <strong>Basic</strong> and <strong>Bearer</strong>, with
-the last two requiring additional configuration data: <strong>Username</strong> and
-<strong>Password</strong> (Basic), and <strong>Token</strong> (Bearer).</p>
+<p><strong>Authentication</strong>. The options are <code>None</code>, <code>Basic`and `Bearer</code>, with the last two requiring additional configuration data such as <strong>Username</strong> and <strong>Password</strong> (<code>Basic</code>), and <strong>Token</strong> (<code>Bearer</code>).</p>
 </li>
 <li>
-<p><strong>Request body</strong>. An optional request body. The value will be used as
-the service method parameter without annotations, if present.</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Click <strong>Send request</strong>.The <strong>Response</strong> field displays the response
-received from the endpoint.</p>
+<p><strong>Request body</strong>. An optional request body. The value will be used as the service method parameter without annotations, if present.</p>
 </li>
 </ol>
+</div>
+<div class="paragraph">
+<p>Click <strong>Send request</strong> when you have completed the fields.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The <strong>Response</strong> field displays the response received from the endpoint.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><span class="image zoom"><img src="../../../_images/apps/rest-client/rest-client-app-overview.jpg" alt="user-interface-api-testing"></span></p>
 </div>
 <div class="sect2">
 <h3 id="_example_configuration"><a class="anchor" href="#_example_configuration"></a>Example configuration</h3>
 <div class="listingblock">
 <div class="title">books.yaml</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-yml hljs" data-lang="yml">baseUrl: <a href="http://openlibrary.org/api" class="bare">http://openlibrary.org/api</a>
-restCalls:
-  searchByIsbn:
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">baseUrl: http://openlibrary.org/api <i class="conum" data-value="1"></i><b>(1)</b>
+restCalls: <i class="conum" data-value="2"></i><b>(2)</b>
+  searchByIsbn: <i class="conum" data-value="3"></i><b>(3)</b>
     method: get
     entityClass: java.lang.String
     path: /volumes/brief/isbn/{isbn}.json</code></pre>
 </div>
 </div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Specify the base URL for your API.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>Declare the <code>restCalls</code> section. This is where your rest API calls will be.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>Specify your rest call.
+<div class="exampleblock">
+<div class="content">
 <div class="paragraph">
-<p>Use the <a href="../Definitions-app/" class="page">Definitions app</a> to
-check that your REST client definition has been registered in the
-instance.</p>
+<p>Typically, rest calls require a <code>method</code>, <code>entityClass</code>, and <code>path</code>.</p>
 </div>
-<div class="paragraph">
-<p><span class="image zoom"><img src="../../../_images/6-2-restClientApp-example.png" alt="image" width="600"></span></p>
+</div>
+</div></td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Use the <a href="../Definitions-app/" class="page">Definitions app</a> to check that your REST client definition has been registered in the instance.
+</td>
+</tr>
+</table>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -2484,12 +2560,10 @@ instance.</p>
 <p><a href="../../../Modules/List-of-modules/REST-Client-module/" class="page">REST Client module</a></p>
 </li>
 <li>
-<p><a href="../../../Getting-started-with-Magnolia/Getting-started-with-REST/" class="page">Getting
-started with REST</a></p>
+<p><a href="../../../Getting-started-with-Magnolia/Getting-started-with-REST/" class="page">Getting started with REST</a></p>
 </li>
 <li>
-<p><a href="../../../Modules/List-of-modules/REST-Client-module/Example-REST-client-configurations/" class="page">Example
-REST client configurations</a></p>
+<p><a href="../../../Modules/List-of-modules/REST-Client-module/Example-REST-client-configurations/" class="page">Example REST client configurations</a></p>
 </li>
 </ul>
 </div>

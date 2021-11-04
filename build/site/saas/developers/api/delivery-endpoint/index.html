@@ -86,7 +86,13 @@
     <a class="nav-link" href="../../../">Magnolia SaaS</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../../../sign-up/">Sign up to Magnolia SaaS</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../../sign-up/passwords/">Password requirements</a>
+  </li>
+</ul>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../../../login/">Log in to Magnolia SaaS</a>
@@ -974,15 +980,6 @@ Up to Magnolia 5.6.5, the results provided by the endpoint were sorted alphabeti
 <div class="paragraph">
 <p>Allows you to retrieve and preview a specific version of a content item. The request URL must be formed with <code>preview</code> in the path.</p>
 </div>
-<div class="exampleblock">
-<div class="title">Example 1. Example</div>
-<div class="content">
-<div class="paragraph">
-<p>Let there be a page <code>/fldr/pg1</code> which can be delivered through the <code>ep</code> endpoint using the URL</p>
-</div>
-<div class="paragraph">
-<p>Provided two versions, <code>1.0</code> and <code>1.1</code>, exist for the page, you can use the following URLs to request the versions <code>1.0</code> and <code>1.1</code>, respectively:</p>
-</div>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -990,19 +987,55 @@ Up to Magnolia 5.6.5, the results provided by the endpoint were sorted alphabeti
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-The following assumes you have passed your subid_token in the Authorization Header. If you prefer, you can pass it as a query parameter as such <code>&lt;endpoint&gt;?subid_token=YOUR_subid_token</code>
+<div class="paragraph">
+<p>When endpoints are placed in the <code>delivery</code> folder, the <code>preview</code> endpoint is automatically created by Magnolia.</p>
+</div>
+<div class="paragraph">
+<p>It can be accessed by replacing word <code>delivery</code> with <code>preview</code> in the URL and adding a specific version.</p>
+</div>
+<div class="paragraph">
+<p>For other endpoints (<em>those not in the delivery folder</em>), the <code>preview</code> endpoint must be created.</p>
+</div>
 </td>
 </tr>
 </table>
 </div>
-<div class="listingblock">
+<div class="exampleblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>`https://delivery.saas.magnolia-cloud.com//preview/ep/fldr/pg1?version=1.0`
-
-`https://delivery.saas.magnolia-cloud.com//preview/ep/fldr/pg1?version=1.1`</code></pre>
+<div class="paragraph">
+<p><code>&lt;magnolia-base-path&gt;/.rest/delivery/endpointPath/{path}</code></p>
+</div>
+<div class="paragraph">
+<p><code>&lt;magnolia-base-path&gt;/.rest/preview/endpointPath/{path}?version=1.0</code></p>
 </div>
 </div>
 </div>
+<div class="paragraph">
+<p>Let there be a page <code>/fldr/pg1</code> which can be delivered through the <code>ep</code> endpoint using the URL:</p>
+</div>
+<div class="admonitionblock note best">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The following assumes you have passed your subid_token in the Authorization Header. If you prefer, you can pass it as a query parameter as such <code>&lt;endpoint&gt;?subid_token=YOUR_subid_token</code></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code><a href="https://delivery.saas.magnolia-cloud.com//preview/ep/fldr/pg1?version=1.0" class="bare">https://delivery.saas.magnolia-cloud.com//preview/ep/fldr/pg1?version=1.0</a></code></p>
+</li>
+<li>
+<p><code><a href="https://delivery.saas.magnolia-cloud.com//preview/ep/fldr/pg1?version=1.1" class="bare">https://delivery.saas.magnolia-cloud.com//preview/ep/fldr/pg1?version=1.1</a></code></p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
 </tr>
