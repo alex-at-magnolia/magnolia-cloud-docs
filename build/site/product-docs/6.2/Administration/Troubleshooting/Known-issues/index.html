@@ -2867,6 +2867,17 @@ To solve this, define CATALINA_HOME in environment variables. Follow the instruc
 <h2 id="_other_issues"><a class="anchor" href="#_other_issues"></a>Other issues</h2>
 <div class="sectionbody">
 <div class="sect2">
+<h3 id="_embedded_application_server_libraries_may_cause_admincentral_to_freeze"><a class="anchor" href="#_embedded_application_server_libraries_may_cause_admincentral_to_freeze"></a>Embedded application server libraries may cause Admincentral to freeze</h3>
+<div class="paragraph">
+<p>The Atmosphere Framework bundles several push (Comet) driver implementations. It typically picks the one appropriate for the currently used application server,
+but if your webapp for some reason brings in other application server libraries (such as Jetty or Grizzly), Atmosphere may pick a wrong driver. This can cause
+Admincentral to become unresponsive while waiting for push connections.</p>
+</div>
+<div class="paragraph">
+<p>To mitigate these problems, try to avoid bundling such libraries. See <a href="https://jira.magnolia-cms.com/browse/MGNLUI-6899" target="_blank" rel="noopener">MGNLUI-6899</a> for more details.</p>
+</div>
+</div>
+<div class="sect2">
 <h3 id="_preview_as_visitor_works_only_with_en_as_default_jvm_language"><a class="anchor" href="#_preview_as_visitor_works_only_with_en_as_default_jvm_language"></a>Preview as visitor works only with <code>en</code> as default JVM language</h3>
 <div class="paragraph">
 <p>In Magnolia 6.2.11, preview as visitor does not work when English as the default JVM language specifies a variant (for example, <code>en_US</code> as opposed to just <code>en</code>).</p>
