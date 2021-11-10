@@ -1853,6 +1853,9 @@
     <a class="nav-link" href="../../../../../Apps/List-of-apps/Security-app/">Security app</a>
   </li>
   <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../../../../Apps/List-of-apps/Segments-app/">Segments app</a>
+  </li>
+  <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../../../../Apps/List-of-apps/Site-app/">Site app</a>
   </li>
   <li class="nav-item" data-depth="3">
@@ -2380,48 +2383,28 @@
   <div class="content">
 <article class="doc">
 <h1 class="page">Cookies trait configuration</h1>
+<div id="preamble">
+<div class="sectionbody">
 <div class="paragraph">
-<p>Magnolia’s cookie trait
-<a href="https://nexus.magnolia-cms.com/#nexus-search;classname~Cookies" target="_blank" rel="noopener">Cookies</a> reads data
-from cookies with the
-<a href="https://nexus.magnolia-cms.com/#nexus-search;classname~CookieParameterConverter" target="_blank" rel="noopener">CookieParameterConverter</a>
-and uses the
-<a href="https://nexus.magnolia-cms.com/#nexus-search;classname~CookieVoter" target="_blank" rel="noopener">CookieVoter</a> to
-render the appropriate content variation according to configuration.</p>
-</div>
-<div class="paragraph">
-<p>The cookies trait and all its classes are part of the
-<em>magnolia-personalization-traits</em> submodule which is installed with the
-<a href="../../" class="page">Personalization
-module</a>. The cookie trait supports multiple cookies. You can configure
-as many cookies as you like for multiple use cases and use them
-simultaneously.</p>
-</div>
-<div class="paragraph">
-<p><em>magnolia-personalization-traits</em> installs a default configuration. You
-can add your own cookies by defining custom options in the:</p>
+<p>As of version 2.1.0, the <a href="../../" class="page">Personalization module</a> provides <a href="../#_two_magnolia_cookie_trait_implementations" class="page">two implementations of cookie traits</a>:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Rule field</strong>: Options display in the
-<a href="../../../../../Features/Personalization/#_choosing_an_audience" class="page"><strong>Choose audience</strong></a>
-dialog.</p>
+<p>New cookie trait implementation in the <code>magnolia-personalization-traits</code> submodule.</p>
 </li>
 <li>
-<p><strong>Value field</strong>: Options display in the
-<a href="../../../../../Apps/List-of-apps/Preview-app/" class="page">Preview app</a>.</p>
+<p>Older (deprecated) implementation in the <code>magnolia-personalization-compatibility</code> submodule.</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>The configuration is in
-<code>/modules/personalization-traits/traits/cookies</code>. Use the
-<a href="../../../../../Apps/List-of-apps/Configuration-app/" class="page">Configuration app</a> to edit.</p>
+<p>Even though in both implementations you can create and use multiple cookies, we recommend using the new implementation since a cookie trait is easily configurable there using the <code>@TraitType</code> annotation.</p>
 </div>
-<div class="paragraph">
-<p><span class="image zoom"><img src="../../../../../_images/ADVT-cookie-trait.png" alt="image" width="600"></span></p>
 </div>
+</div>
+<div class="sect2">
+<h3 id="_cookie_trait_definition_properties"><a class="anchor" href="#_cookie_trait_definition_properties"></a>Cookie trait definition properties</h3>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 30%;">
@@ -2435,12 +2418,79 @@ dialog.</p>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>&lt;cookie&gt;\</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>&lt;cookie&gt;</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><strong>required</strong></p>
 </div>
 <div class="paragraph">
 <p>Trait name.</p>
+</div>
+<div class="paragraph">
+<p>The property can be omitted if the definition is done using a YAML configuration file. The value is taken from the name of the file.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>$type</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>required</strong> (module version 2.1.x and later)</p>
+</div>
+<div class="paragraph">
+<p>Since you are configuring a cookie trait, use <code>cookieTrait</code> as the value.</p>
+</div>
+<div class="paragraph">
+<p>The <code>$type</code> property defines the trait type for delivery of personalized content. The following types are available:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>cookieTrait</code></p>
+</li>
+<li>
+<p><code>headerTrait</code></p>
+</li>
+<li>
+<p><code>requestParameterTrait</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>See also <a href="../../../../../Developing/API/Delivery-API/Requesting-personalized-content-with-the-delivery-endpoint/" class="page">Requesting personalized content with the delivery endpoint</a>.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The <code>$type</code> property is only required for the new traits. It does not need to be configured for the traits that were present in the older (pre-2.1) versions of the Personalization module:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>date</code></p>
+</li>
+<li>
+<p><code>cookies</code></p>
+</li>
+<li>
+<p><code>country</code></p>
+</li>
+<li>
+<p><code>visitor</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>All of these pre-configured traits are now provided by the <code>magnolia-personalization-compatibility</code> submodule.</p>
+</div>
+<div class="paragraph">
+<p>Due to session security restrictions, the <code>country</code> trait can only be used if Magnolia and an SPA application are on the same domain.</p>
+</div>
+</td>
+</tr>
+</table>
 </div></div></td>
 </tr>
 <tr>
@@ -2449,9 +2499,10 @@ dialog.</p>
 <p><strong>required</strong></p>
 </div>
 <div class="paragraph">
-<p>Field used to <em>define</em> permitted values for the trait. See
-<a href="../Creating-a-custom-cookie-trait-without-Java/Configuring-a-custom-cookie-trait/#_configuring_the_rule_field" class="page">Configuring
-the rule field</a> below.</p>
+<p>Field used to <em>define</em> permitted values for the trait. The options display in the <a href="../../../../../Features/Personalization/#_choosing_an_audience" class="page">Choose audience</a> dialog.</p>
+</div>
+<div class="paragraph">
+<p>See also <a href="../Creating-a-custom-cookie-trait-without-Java/Configuring-a-custom-cookie-trait/#_configuring_the_rule_field" class="page">Configuring the rule field</a>.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -2460,64 +2511,170 @@ the rule field</a> below.</p>
 <p><strong>required</strong></p>
 </div>
 <div class="paragraph">
-<p>Field used to <em>set</em> permitted values for personalized content delivery.
-See
-<a href="../Creating-a-custom-cookie-trait-without-Java/Configuring-a-custom-cookie-trait/#_configuring_the_value_field" class="page">Configuring
-the value field</a> below.</p>
+<p>Field used to <em>set</em> permitted values for personalized content delivery. The options display in the <a href="../../../../../Apps/List-of-apps/Preview-app/" class="page">Preview app</a>.</p>
+</div>
+<div class="paragraph">
+<p>See also <a href="../Creating-a-custom-cookie-trait-without-Java/Configuring-a-custom-cookie-trait/#_configuring_the_value_field" class="page">Configuring the value field</a>.</p>
 </div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>converterClass</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>required</strong></p>
+<p><strong>required</strong> (module version 2.0.x and earlier)</p>
 </div>
 <div class="paragraph">
-<p><a href="https://nexus.magnolia-cms.com/#nexus-search;classname~CookieParameterConverter" target="_blank" rel="noopener">CookieParameterConverter</a>
-: Cookie parameter converter.</p>
+<p>Cookie parameter converter (<a href="https://nexus.magnolia-cms.com/#nexus-search;classname~CookieParameterConverter" target="_blank" rel="noopener">CookieParameterConverter</a>).</p>
 </div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>defaultPreviewTrait</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>optional</strong>, <em>default is <code>false</code></em></p>
+<p><strong>optional</strong>, <em>default is <code>false</code></em> (module version 2.0.x and earlier)</p>
 </div>
 <div class="paragraph">
-<p>Displays all cookie trait options in the Preview app by default when set
-to <code>true</code>.</p>
+<p>Displays all cookie trait options in the Preview app by default when set to <code>true</code>.</p>
 </div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>defaultRuleTrait</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>optional</strong>. <em>default is <code>false</code></em></p>
+<p><strong>optional</strong>. <em>default is <code>false</code></em> (module version 2.0.x and earlier)</p>
 </div>
 <div class="paragraph">
-<p>&lt;insert&gt;</p>
+<p>Indicates whether the trait should be pre-set in the Choose audience dialog.</p>
 </div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>traitClass</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>required</strong></p>
+<p><strong>required</strong> (module version 2.0.x and earlier)</p>
 </div>
 <div class="paragraph">
-<p><a href="https://nexus.magnolia-cms.com/#nexus-search;classname~Cookies" target="_blank" rel="noopener">Cookies</a> : Specifies
-the cookie trait.</p>
+<p>Specifies the cookie trait class (<a href="https://nexus.magnolia-cms.com/#nexus-search;classname~Cookies" target="_blank" rel="noopener">Cookies</a>).</p>
 </div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>voterClass</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>required</strong></p>
+<p><strong>required</strong> (module version 2.0.x and earlier)</p>
 </div>
 <div class="paragraph">
-<p><a href="https://nexus.magnolia-cms.com/#nexus-search;classname~CookieVoter" target="_blank" rel="noopener">CookieVoter</a> :
-Matches the cookie name to the cookie value. See
-<a href="../../../../../Administration/Voters/" class="page">Voters</a>.</p>
+<p>Matches the cookie name to the cookie value (<a href="https://nexus.magnolia-cms.com/#nexus-search;classname~CookieVoter" target="_blank" rel="noopener">CookieVoter</a>). See also <a href="../../../../../Administration/Voters/" class="page">Voters</a>.</p>
 </div></div></td>
 </tr>
 </tbody>
 </table>
+</div>
+<div class="sect1">
+<h2 id="_configuration_examples"><a class="anchor" href="#_configuration_examples"></a>Configuration examples</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_new_implementation"><a class="anchor" href="#_new_implementation"></a>New implementation</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">cookies:
+  $type: cookieTrait
+  ruleField:
+    $type: comboBoxField
+    name: value
+    label: Gender
+    datasource: &amp;datasource
+      $type: optionListDatasource
+      options:
+        - name: male
+          value: male
+        - name: female
+          value: female
+        - name: other
+          value: other
+  valueField:
+    $type: comboBoxField
+    label: Gender
+    datasource: *datasource</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Cookie trait configuration from a light module</dt>
+<dd>
+<p>The <code>name</code> is omitted as it is taken from the name of the YAML file.</p>
+<div class="listingblock">
+<div class="title">&lt;light-module&gt;/traits/cookies.yaml</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">$type: cookieTrait
+ruleField:
+  ...
+valueField:
+  ...</code></pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_deprecated_implementation"><a class="anchor" href="#_deprecated_implementation"></a>Deprecated implementation</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">cookies:
+  converterClass: info.magnolia.personalization.cookie.CookieParameterConverter
+  defaultPreviewTrait: false
+  defaultRuleTrait: false
+  traitClass: info.magnolia.personalization.cookie.Cookies
+  voterClass: info.magnolia.personalization.cookie.CookieVoter
+  ruleField:
+    class: info.magnolia.ui.form.field.definition.SwitchableFieldDefinition
+    transformerClass: info.magnolia.personalization.cookie.CookieFieldTransformer
+    options:
+      weatherLocality:
+        value: weatherLocality
+      tourType:
+        value: tourType
+    fields:
+      weatherLocality:
+        class: info.magnolia.ui.form.field.definition.SelectFieldDefinition
+        defaultValue: any
+        options:
+          any:
+            label: cookies.anyValue
+            value: any
+          london:
+            value: London
+          basel:
+            value: Basel
+      tourType:
+        class: info.magnolia.ui.form.field.definition.SelectFieldDefinition
+        defaultValue: none
+        options:
+          any:
+            label: cookies.anyValue
+            value: any
+          none:
+            label: cookies.noValue
+            value: none
+  valueField:
+    class: info.magnolia.ui.form.field.definition.OptionGroupFieldDefinition
+    multiselect: true
+    options:
+      weatherLocalityLondon:
+        value: weatherLocality=London
+      weatherLocalityBasel:
+        value: weatherLocality=Basel
+      tourTypeAny:
+        value: tourType=any</code></pre>
+</div>
+</div>
 <div class="sidebarblock">
 <div class="content">
 <div class="title">Related topics</div>
@@ -2551,6 +2708,9 @@ and reading a custom cookie</a></p>
 personalization</a></p>
 </li>
 </ul>
+</div>
+</div>
+</div>
 </div>
 </div>
 </div>

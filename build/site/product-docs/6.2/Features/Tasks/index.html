@@ -1853,6 +1853,9 @@
     <a class="nav-link" href="../../Apps/List-of-apps/Security-app/">Security app</a>
   </li>
   <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../Apps/List-of-apps/Segments-app/">Segments app</a>
+  </li>
+  <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../Apps/List-of-apps/Site-app/">Site app</a>
   </li>
   <li class="nav-item" data-depth="3">
@@ -2570,7 +2573,7 @@ the system event bus.</p>
 </div>
 <div class="paragraph">
 <p>Magnolia uses
-<code>info.magnolia.ui.admincentral.shellapp.pulse.task.action.ClaimTaskAction</code>
+<code>info.magnolia.task.app.actions.ClaimTasksAction</code>
 inside the Tasks app for this step.</p>
 </div>
 </div>
@@ -2595,7 +2598,7 @@ already <code>InProgress</code> from another user.</p>
 </div>
 <div class="paragraph">
 <p>using the
-<code>info.magnolia.ui.admincentral.shellapp.pulse.task.action.ClaimTaskActionDefinition</code>
+<code>info.magnolia.task.app.actions.ClaimTasksActionDefinition</code>
 class but adds <code>notifyPreviousAssignee</code>, which is set to <code>true</code> by
 default and will trigger sending an i18n-able notification in the Tasks
 app to the previous assignee in the publication sequence that the task
@@ -2611,7 +2614,7 @@ has been reclaimed by another user:</p>
 </div>
 <div class="paragraph">
 <p>Please note that <code>notifyPreviousAssignee</code> is present also in
-<code>info.magnolia.ui.admincentral.shellapp.pulse.task.action.ClaimTasksActionDefinition</code>.</p>
+<code>info.magnolia.task.app.actions.ClaimTasksActionDefinition</code>.</p>
 </div>
 </div>
 </div>
@@ -2639,14 +2642,32 @@ will take care of notifying any handlers registered to the system event
 bus.</p>
 </div>
 <div class="paragraph">
-<p>Magnolia uses
-<code>info.magnolia.ui.admincentral.shellapp.pulse.task.action.ResolveTaskAction</code>
+<p>Magnolia uses <code>info.magnolia.task.app.actions.AbortTasksActionDefinition</code>
 inside the Tasks app for this step. It allows you to define a decision
 inside the configuration which is mainly used for approving or rejecting
 a publication.</p>
 </div>
-<div class="paragraph">
-<p><span class="image zoom"><img src="../../_images/ADVT-tasks-resolve.png" alt="image" width="550"></span></p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">abort:
+  class: info.magnolia.task.app.actions.AbortTasksActionDefinition
+  decision: abort
+  icon: icon-publish
+  availability:
+    multiple: true
+    rules:
+      canAbort:
+        assignee: false
+        class: info.magnolia.task.app.actions.availability.TaskAvailabilityRuleDefinition
+        status:
+          Created: Created
+          Failed: Failed
+          InProgress: InProgress
+          Scheduled: Scheduled
+    access:
+      roles:
+        superuser: superuser</code></pre>
+</div>
 </div>
 <div class="paragraph">
 <p>After resolving the task using the <code>ResolveTask</code> action the result map
@@ -2741,8 +2762,18 @@ event bus.</p>
 <p>Every task type needs a unique name. The name is used to read the task
 definition from the task registry in your module configuration.</p>
 </div>
-<div class="paragraph">
-<p><span class="image zoom"><img src="../../_images/ADVT-tasks-def.png" alt="image" height="215"></span></p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">'publish':
+  'class': 'info.magnolia.module.workflow.jbpm.humantask.definition.PublicationTaskDefinition'
+  'parameterResolver': 'info.magnolia.livecopy.workflow.jbpm.humantask.DynamicPublicationTaskParameterResolver'
+  'taskJobFactoryClass': 'info.magnolia.module.workflow.jbpm.humantask.schedule.PublicationTaskJobFactory'
+  'groups':
+    'publishers': 'publishers'
+  'viewMapping':
+    'default': 'workflow:publish'
+    'website': 'pages-app:publish'</code></pre>
+</div>
 </div>
 <div class="paragraph">
 <p>The simplest <a href="https://nexus.magnolia-cms.com/#nexus-search;classname~TaskDefinition" target="_blank" rel="noopener">TaskDefinition</a>
@@ -2787,7 +2818,7 @@ All properties below are <strong>required</strong>.
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">{i1} <code>class</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>The class mapping used for <em>node2bean</em> to initialize the POJO. <code>info.magnolia.task.definition.TaskDefinition</code>.</p>
+<p>The class mapping used for <em>map2bean</em> to initialize the POJO. <code>info.magnolia.task.definition.TaskDefinition</code>.</p>
 </div></div></td>
 </tr>
 </tbody>
@@ -2802,9 +2833,7 @@ All properties below are <strong>required</strong>.
 <div class="paragraph">
 <p>As with any definition used in Magnolia, you can define your own
 extensions to the task definition and add configurable nodes and
-properties. This is especially useful in combination with a custom
-<a href="#_task_presenter">Task presenter</a> for putting together the detail
-view.</p>
+properties.</p>
 </div>
 </td>
 </tr>
@@ -2849,71 +2878,46 @@ mappings.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_task_presenter"><a class="anchor" href="#_task_presenter"></a>Task presenter</h2>
+<h2 id="_configuring_actions"><a class="anchor" href="#_configuring_actions"></a>Configuring actions</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>A task presenter is started when a user opens a task to see its details.
-The presenter builds the form and action bar which are displayed to the
-user in the browser. Magnolia provides a
-<a href="https://nexus.magnolia-cms.com/#nexus-search;classname~DefaultTaskDetailPresenter" target="_blank" rel="noopener">DefaultTaskDetailPresenter</a>.
-See <a href="#_task_view">Task view</a> for its functionality.</p>
+<p>The <code>abort</code>, <code>archive</code> and <code>claim</code> tasks are configured as
+bulk actions.</p>
 </div>
 <div class="paragraph">
-<p>Most likely the task data you want to display in the Tasks app can be
-rendered with the <code>DefaultTaskDetailPresenter</code>. But in case the default
-presenter is not sufficient you can implement your own presenter and
-have it render whatever view is needed.</p>
-</div>
-<div class="paragraph">
-<p>To implement a custom presenter, extend or use
-<a href="https://nexus.magnolia-cms.com/#nexus-search;classname~TaskUiDefinition" target="_blank" rel="noopener">TaskUiDefinition</a>
-instead of <a href="https://nexus.magnolia-cms.com/#nexus-search;classname~TaskDefinition" target="_blank" rel="noopener">TaskDefinition</a>
-and add a <code>presenterClass</code> property with a custom implementation of the
-<a href="https://nexus.magnolia-cms.com/#nexus-search;classname~TaskDetailPresenter" target="_blank" rel="noopener">TaskDetailPresenter</a>
-interface to the configuration.</p>
-</div>
-<div class="paragraph">
-<p><span class="image zoom"><img src="../../_images/ADVT-tasks-presenter.png" alt="image" height="235"></span></p>
-</div>
-<div class="paragraph">
-<p>In your implementation, you can access the task object as well as its
-definition using injection:</p>
-</div>
-<div class="paragraph">
-<p>Example of a task presenter</p>
+<p>The decoration file below adds a setting for the <code>abort</code> action in the task browser and detail (the
+definition class is
+<code>info.magnolia.task.app.actions.AbortTasksActionDefinition</code>)
+with the <code>travel-demo-publisher</code> role set to access this action:</p>
 </div>
 <div class="listingblock">
+<div class="title">&lt;my-light-module&gt;/decorations/tasks-app/apps/tasks-app.yaml</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">@Inject
-public GroceryTaskPresenter(GroceryView view, TaskUiDefinition definition, Task task) {
-    ...
-}</code></pre>
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">subApps:
+  allTasks:
+    actions:
+      abort:
+        availability:
+          access:
+            roles:
+              - travel-demo-publisher</code></pre>
 </div>
 </div>
+<div class="listingblock">
+<div class="title">&lt;my-light-module&gt;/decorations/pages-app/messageViews/publish.yaml</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">actions:
+  abort:
+    availability:
+      access:
+        roles:
+          - travel-demo-publisher</code></pre>
 </div>
-</div>
-<div class="sect1">
-<h2 id="_configuring_bulk_actions"><a class="anchor" href="#_configuring_bulk_actions"></a>Configuring bulk actions</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>The <code>abort</code>, <code>archive</code> and <code>claim</code> tasks can be configured as
-bulk-actions as per default user roles. Specify the user roles for the
-tasks via the <code>bulkActions</code> node in the configuration of the
-<code>ui-admincentral</code> module.</p>
-</div>
-<div class="paragraph">
-<p>The tree below shows the default setting for the <code>archive</code> action (the
-definition class is
-<code>info.magnolia.ui.admincentral.shellapp.pulse.task.action.ArchiveTasksActionDefinition</code>)
-with the <code>superuser</code> role set to access this action:</p>
 </div>
 <div class="paragraph">
-<p><span class="image zoom"><img src="../../_images/ADVT-tasks-bulk.png" alt="image" width="653"></span></p>
-</div>
-<div class="paragraph">
-<p>To allow bulk actions for other users, add their role names from the
+<p>To allow actions for different users, add their role names from the
 list of
-<a href="#Administration/Security/Default-roles,-groups-and-users.adoc#_default_roles" class="page unresolved">default
+<a href="../../Administration/Security/Default-roles-groups-and-users/#_default_roles" class="page">default
 roles</a> as the properties and values of the <code>roles</code> subnode.</p>
 </div>
 <div class="paragraph">

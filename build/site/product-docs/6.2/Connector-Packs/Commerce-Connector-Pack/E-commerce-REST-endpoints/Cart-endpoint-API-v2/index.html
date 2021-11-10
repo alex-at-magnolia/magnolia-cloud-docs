@@ -1853,6 +1853,9 @@
     <a class="nav-link" href="../../../../Apps/List-of-apps/Security-app/">Security app</a>
   </li>
   <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../../../Apps/List-of-apps/Segments-app/">Segments app</a>
+  </li>
+  <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../../../Apps/List-of-apps/Site-app/">Site app</a>
   </li>
   <li class="nav-item" data-depth="3">
@@ -2443,7 +2446,7 @@ Magento is now Adobe Commerce, powered by Magento. In the examples and configura
 <p>Creates a cart as an anonymous or authenticated user.</p>
 </div>
 <div class="paragraph">
-<p>If neither the <code>userId</code> or <code>accessToken</code> parameters are provided, a cart for an anonymous user is created.</p>
+<p>If <code>accessToken</code> parameters are provided, a cart for an authenticated user is created. See <code><a href="https://devdocs.magento.com/guides/v2.4/rest/tutorials/orders/order-create-customer.html" class="bare">https://devdocs.magento.com/guides/v2.4/rest/tutorials/orders/order-create-customer.html</a></code> for generating accessToken</p>
 </div>
 <div class="paragraph">
 <p><strong>Request URL</strong></p>
@@ -2489,29 +2492,10 @@ Magento is now Adobe Commerce, powered by Magento. In the examples and configura
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>userId</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
-<p class="tableblock">The user ID.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>header</code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>string</code></p>
-</div></div></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>accessToken</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required for authenticated users</strong></p>
 <p class="tableblock">The user&#8217;s access token.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>header</code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>string</code></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>currencyCode</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
-<p class="tableblock">A three-digit currency code as per
-<a href="https://en.wikipedia.org/wiki/ISO_4217">↗ ISO 4217</a>.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>form</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><code>string</code></p>
 </div></div></td>
@@ -2590,7 +2574,7 @@ Magento is now Adobe Commerce, powered by Magento. In the examples and configura
 <p><strong>Request URL</strong></p>
 </div>
 <div class="paragraph">
-<p><code>/.rest/ecommerce/v2/carts/user</code></p>
+<p><code>/.rest/ecommerce/v2/carts/user/{userId}</code></p>
 </div>
 <div class="paragraph">
 <p><strong>Parameters</strong></p>
@@ -2632,19 +2616,8 @@ Magento is now Adobe Commerce, powered by Magento. In the examples and configura
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>userId</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
-<p class="tableblock">The <code>userId</code> must be Base64-encoded.</p>
-<p class="tableblock">The Magento Access token.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>header</code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>string</code></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>userIdEncodingDisabled</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>optional</strong></p>
-<p class="tableblock">Default is <code>false</code> and the <code>userId</code> must be Base64-encoded.</p>
-<p class="tableblock">NOTE: When set to <code>true</code> the <code>userId</code> is not encoded and may contain sensitive information. This should not be used in a production environment.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>query</code></p></td>
+<p class="tableblock">The user&#8217;s access token.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>path</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><code>string</code></p>
 </div></div></td>
@@ -2721,7 +2694,7 @@ Magento is now Adobe Commerce, powered by Magento. In the examples and configura
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>cartId</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required only for anonymous in Magento</strong></p>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
 <p class="tableblock">The unique ID of the cart.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>path</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
@@ -2747,18 +2720,8 @@ Magento is now Adobe Commerce, powered by Magento. In the examples and configura
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>userId</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
-<p class="tableblock">The <code>userId</code> must be Base64-encoded.</p>
-<p class="tableblock">The Magento Access token.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>header</code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>string</code></p>
-</div></div></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>accessToken</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required for authenticated users</strong></p>
 <p class="tableblock">The access token.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>header</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
@@ -2828,7 +2791,7 @@ Magento is now Adobe Commerce, powered by Magento. In the examples and configura
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>cartId</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required only for anonymous in Magento</strong></p>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
 <p class="tableblock">The unique ID of the cart.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>path</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
@@ -2849,16 +2812,6 @@ Magento is now Adobe Commerce, powered by Magento. In the examples and configura
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
 <p class="tableblock">The Magento quote ID.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>form</code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>string</code></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>userId</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
-<p class="tableblock">The <code>userId</code> must be Base64-encoded.</p>
-<p class="tableblock">The Magento Access token.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>header</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><code>string</code></p>
 </div></div></td>
@@ -2943,18 +2896,8 @@ Magento is now Adobe Commerce, powered by Magento. In the examples and configura
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>userId</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
-<p class="tableblock">The <code>userId</code> must be Base64-encoded.</p>
-<p class="tableblock">The Magento Access token.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>header</code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>string</code></p>
-</div></div></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>accessToken</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required for authenticated users</strong></p>
 <p class="tableblock">The access token.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>header</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
@@ -3522,7 +3465,7 @@ Magento is now Adobe Commerce, powered by Magento. In the examples and configura
 <p>Query example: <code>https://magnolia1-tech-prtnr-eu02-dw.demandware.net/s/RefArchGlobal/dw/shop/v20_3/customers/auth?<strong>client_id</strong>=0a0dddf0-aaf0-0000-b000-000000c00a0e</code></p>
 </div>
 <div class="paragraph">
-<p>In both cases, in the response header, you have an item named Authorization with a value such as <code>Bearer xyzabc</code>, <code>xyzabc</code> is your token (exclude <code>Bearer</code>).</p>
+<p>In both cases, in the response header, you have an item named Authorization with a value such as <code>Bearer xyzabc</code>, <code>xyzabc</code> is your <code>token</code> (exclude <code>Bearer</code>).</p>
 </div>
 <div class="paragraph">
 <p><span class="post">POST</span></p>
@@ -3575,20 +3518,10 @@ Magento is now Adobe Commerce, powered by Magento. In the examples and configura
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>userId</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>accessToken</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
-<p class="tableblock">Your Salesforce Commerce token. In the response, you have a <code>basket_id</code> value, which is used as the cartId.</p></td>
+<p class="tableblock">Your Salesforce Commerce token mentioned above. In the response, you have a <code>basket_id</code> value, which is used as the cartId.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>header</code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>string</code></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>currencyCode</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
-<p class="tableblock">A three-digit currency code as per
-<a href="https://en.wikipedia.org/wiki/ISO_4217">↗ ISO 4217</a>.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>form</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><code>string</code></p>
 </div></div></td>
@@ -3650,86 +3583,6 @@ Magento is now Adobe Commerce, powered by Magento. In the examples and configura
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
 <p class="tableblock">The Salesforce Commerce <code>basket_id</code>.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>path</code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>string</code></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<div class="paragraph">
-<p><span class="get">GET</span></p>
-</div>
-<div class="paragraph">
-<div class="title">Get a cart by basket ID</div>
-<p>Returns a cart by basket ID.</p>
-</div>
-<div class="paragraph">
-<p><strong>Request URL</strong></p>
-</div>
-<div class="paragraph">
-<p><code>/.rest/ecommerce/v2/carts/user</code></p>
-</div>
-<div class="paragraph">
-<p><strong>Parameters</strong></p>
-</div>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 22.2222%;">
-<col style="width: 33.3333%;">
-<col style="width: 22.2222%;">
-<col style="width: 22.2223%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Parameter</th>
-<th class="tableblock halign-left valign-top">Description</th>
-<th class="tableblock halign-left valign-top">Type</th>
-<th class="tableblock halign-left valign-top">Data Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>definitionName</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
-<p class="tableblock">The definition name.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>query</code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>string</code></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>connectionName</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
-<p class="tableblock">The connection name.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>query</code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>string</code></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>userId</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
-<p class="tableblock">Your Salesforce Commerce token.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>header</code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>string</code></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>userIdEncodingDisabled</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>optional</strong></p>
-<p class="tableblock">Default is <code>false</code> and the <code>userId</code> must be Base64-encoded.</p>
-<p class="tableblock">NOTE: When set to <code>true</code> the <code>userId</code> is not encoded and may contain sensitive information. This should not be used in a production environment.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>query</code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>string</code></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>accessToken</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
-<p class="tableblock">The user&#8217;s access token.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>header</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><code>string</code></p>
 </div></div></td>
@@ -3902,19 +3755,9 @@ Magento is now Adobe Commerce, powered by Magento. In the examples and configura
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>userId</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
-<p class="tableblock">The <code>userId</code> must be Base64-encoded.</p>
-<p class="tableblock">Your Salesforce Commerce token.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>header</code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>string</code></p>
-</div></div></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>accessToken</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required for authenticated users</strong></p>
-<p class="tableblock">The access token.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">Your Salesforce Commerce token.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>header</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><code>string</code></p>
@@ -3991,19 +3834,9 @@ Magento is now Adobe Commerce, powered by Magento. In the examples and configura
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>userId</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
-<p class="tableblock">The <code>userId</code> must be Base64-encoded.</p>
-<p class="tableblock">The Salesforce Commerce token.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>header</code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>string</code></p>
-</div></div></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>accessToken</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
-<p class="tableblock">The access token.</p></td>
+<p class="tableblock">The Salesforce Commerce token.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>header</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><code>string</code></p>
@@ -4238,8 +4071,8 @@ Magento is now Adobe Commerce, powered by Magento. In the examples and configura
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>accessToken</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong>
-The user&#8217;s access token.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">The user&#8217;s access token.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>header</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><code>string</code></p>
@@ -4326,8 +4159,8 @@ The user&#8217;s access token.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>userId</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong>
-The <code>userId</code> must be Base64-encoded.</p>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">The <code>userId</code> must be Base64-encoded.</p>
 <p class="tableblock">The unique ID of the user.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>header</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
@@ -4478,8 +4311,8 @@ The <code>userId</code> must be Base64-encoded.</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>itemId</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong>
-The SAP entry number of an item in a cart.</p>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>required</strong></p>
+<p class="tableblock">The SAP entry number of an item in a cart.</p>
 <p class="tableblock">Each entry in a cart has an entry number. Cart entries are numbered in ascending order, starting with zero (0).</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>path</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">

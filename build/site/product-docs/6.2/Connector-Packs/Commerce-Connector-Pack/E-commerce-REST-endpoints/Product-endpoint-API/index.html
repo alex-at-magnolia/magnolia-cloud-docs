@@ -1853,6 +1853,9 @@
     <a class="nav-link" href="../../../../Apps/List-of-apps/Security-app/">Security app</a>
   </li>
   <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../../../Apps/List-of-apps/Segments-app/">Segments app</a>
+  </li>
+  <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../../../Apps/List-of-apps/Site-app/">Site app</a>
   </li>
   <li class="nav-item" data-depth="3">
@@ -2463,12 +2466,10 @@ Magento is now Adobe Commerce, powered by Magento. In the examples and configura
 <pre>curl --user 'superuser:superuser' --request GET "http://localhost:8080/magnoliaAuthor/.rest/ecommerce/v1/products?definitionName=magento&amp;connectionName=connection"</pre>
 </div>
 </div>
-<div class="sect4">
-<h5 id="_response"><a class="anchor" href="#_response"></a>Response</h5>
-<div class="paragraph">
-<p>JSON</p>
+<div class="paragraph collapse">
+<p>JSON response</p>
 </div>
-<div class="listingblock">
+<div class="listingblock collapse-content">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">[
     {
@@ -2581,7 +2582,6 @@ Magento is now Adobe Commerce, powered by Magento. In the examples and configura
 </div>
 </div>
 </div>
-</div>
 <div class="sect3">
 <h4 id="_commercetools_example"><a class="anchor" href="#_commercetools_example"></a>commercetools example</h4>
 <div class="paragraph">
@@ -2592,12 +2592,10 @@ Magento is now Adobe Commerce, powered by Magento. In the examples and configura
 <pre>curl --user 'superuser:superuser' --request GET "http://localhost:8080/magnoliaAuthor/.rest/ecommerce/v1/products?definitionName=commercetools&amp;connectionName=connection"</pre>
 </div>
 </div>
-<div class="sect4">
-<h5 id="_response_2"><a class="anchor" href="#_response_2"></a>Response</h5>
-<div class="paragraph">
-<p>JSON</p>
+<div class="paragraph collapse">
+<p>JSON response</p>
 </div>
-<div class="listingblock">
+<div class="listingblock collapse-content">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">[
    {
@@ -2751,6 +2749,163 @@ Magento is now Adobe Commerce, powered by Magento. In the examples and configura
 </div>
 </div>
 </div>
+<div class="sect3">
+<h4 id="_salesforce_commerce_example"><a class="anchor" href="#_salesforce_commerce_example"></a>Salesforce Commerce example</h4>
+<div class="paragraph">
+<p>Gets a list of all the products.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>curl --user 'superuser:superuser' --request GET "http://localhost:8080/magnoliaAuthor/.rest/ecommerce/v1/products?definitionName=salesforce-commerce&amp;connectionName=connection-RefArch"</pre>
+</div>
+</div>
+<div class="paragraph collapse">
+<p>JSON response</p>
+</div>
+<div class="listingblock collapse-content">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">[
+    {
+        "id": {
+            "definitionName": "salesforce-commerce",
+            "connectionName": "connection-RefArch",
+            "itemId": "electronics-m-catalog~S2510211M"
+        },
+        "name": "Samsung Digimax A6 - Digital camera - 6.0 Mpix - optical zoom: 3 x - supported memory: MMC, SD",
+        "price": "399.99",
+        "sku": "S2510211M",
+        "description": "",
+        "status": null,
+        "visibility": null,
+        "weight": null,
+        "categoryIds": [
+            {
+                "definitionName": "salesforce-commerce",
+                "connectionName": "connection-RefArch",
+                "itemId": "storefront-catalog-m-en~electronics-digital-cameras"
+            },
+            {
+                "definitionName": "salesforce-commerce",
+                "connectionName": "connection-RefArch",
+                "itemId": "electronics-m-catalog~electronics-digital-cameras"
+            }
+        ],
+        "images": [
+            "https://zzxz-003.sandbox.us01.dx.commercecloud.salesforce.com/on/demandware.static/-/Sites-electronics-m-catalog/default/va49692be9eb16e6e7d5a8630f27fdc60a9d38e4d/images/large/Samsung-DigimaxA6.jpg",
+            "https://zzxz-003.sandbox.us01.dx.commercecloud.salesforce.com/on/demandware.static/-/Sites-electronics-m-catalog/default/va49692be9eb16e6e7d5a8630f27fdc60a9d38e4d/images/medium/Samsung-DigimaxA6.jpg",
+            "https://zzxz-003.sandbox.us01.dx.commercecloud.salesforce.com/on/demandware.static/-/Sites-electronics-m-catalog/default/va49692be9eb16e6e7d5a8630f27fdc60a9d38e4d/images/small/Samsung-DigimaxA6.jpg"
+        ],
+        "imageGroups": [
+            {
+                "images": [
+                    {
+                        "type": "media_file",
+                        "disBaseLink": "https://edge.disstg.commercecloud.salesforce.com/dw/image/v2/ZZXZ_003/on/demandware.static/-/Sites-electronics-m-catalog/default/va49692be9eb16e6e7d5a8630f27fdc60a9d38e4d/images/large/Samsung-DigimaxA6.jpg",
+                        "link": "https://zzxz-003.sandbox.us01.dx.commercecloud.salesforce.com/on/demandware.static/-/Sites-electronics-m-catalog/default/va49692be9eb16e6e7d5a8630f27fdc60a9d38e4d/images/large/Samsung-DigimaxA6.jpg"
+                    }
+                ],
+                "type": "image_group"
+            },
+            {
+                "images": [
+                    {
+                        "type": "media_file",
+                        "disBaseLink": "https://edge.disstg.commercecloud.salesforce.com/dw/image/v2/ZZXZ_003/on/demandware.static/-/Sites-electronics-m-catalog/default/va49692be9eb16e6e7d5a8630f27fdc60a9d38e4d/images/medium/Samsung-DigimaxA6.jpg",
+                        "link": "https://zzxz-003.sandbox.us01.dx.commercecloud.salesforce.com/on/demandware.static/-/Sites-electronics-m-catalog/default/va49692be9eb16e6e7d5a8630f27fdc60a9d38e4d/images/medium/Samsung-DigimaxA6.jpg"
+                    }
+                ],
+                "type": "image_group"
+            },
+            {
+                "images": [
+                    {
+                        "type": "media_file",
+                        "disBaseLink": "https://edge.disstg.commercecloud.salesforce.com/dw/image/v2/ZZXZ_003/on/demandware.static/-/Sites-electronics-m-catalog/default/va49692be9eb16e6e7d5a8630f27fdc60a9d38e4d/images/small/Samsung-DigimaxA6.jpg",
+                        "link": "https://zzxz-003.sandbox.us01.dx.commercecloud.salesforce.com/on/demandware.static/-/Sites-electronics-m-catalog/default/va49692be9eb16e6e7d5a8630f27fdc60a9d38e4d/images/small/Samsung-DigimaxA6.jpg"
+                    }
+                ],
+                "type": "image_group"
+            }
+        ]
+    }
+]
+...</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_sap_example"><a class="anchor" href="#_sap_example"></a>SAP example</h4>
+<div class="paragraph">
+<p>Gets a list of all the products.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>curl --user 'superuser:superuser' --request GET "http://localhost:8080/magnoliaAuthor/.rest/ecommerce/v1/products?definitionName=sap-commerce&amp;connectionName=electronics"</pre>
+</div>
+</div>
+<div class="paragraph collapse">
+<p>JSON response</p>
+</div>
+<div class="listingblock collapse-content">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">[
+    {
+        "name": "AC-VQ900AM",
+        "price": "$168.52",
+        "description": "- Compatible with InfoLITHIUM M series batteries for Camcorders, Cyber-shot and DSLR cameras.&lt;br/&gt;- Quick recharge.&lt;br/&gt;- Includes LCD panel showing battery status.&lt;br/&gt;- Relay type recharges two batteries.",
+        "images": [
+            "https://40.114.149.179:9002/medias/?context=bWFzdGVyfGltYWdlc3w5NjM5fGltYWdlL2pwZWd8aW1hZ2VzL2hiNC9oN2EvODc5NzI3MDA4MTU2Ni5qcGd8NzM1ZmNkZDEzOGFhZDMxZmVkMWU4ZTNhZDBiOTllZWNkOGRlYzllMzhiNjQwODViZTgwYzYxYzkwNGQyMjYyZA"
+        ],
+        "id": {
+            "definitionName": "sap-commerce",
+            "connectionName": "electronics",
+            "itemId": "1298094"
+        },
+        "sku": "1298094",
+        "status": null,
+        "visibility": null,
+        "weight": null,
+        "categoryIds": []
+    },
+    {
+        "name": "AC Power Adapter ACK-E2",
+        "price": "$64.92",
+        "description": "The ACK-E2 AC Adapter Kit contains AC Adapter AC-E2, AC Cable and DR Coupler DR-400.",
+        "images": [
+            "https://40.114.149.179:9002/medias/?context=bWFzdGVyfGltYWdlc3w5NDI5fGltYWdlL2pwZWd8aW1hZ2VzL2hkNS9oMWIvODc5NzI5MTI0OTY5NC5qcGd8NWZhZjc5ZjhiYzYyYTMwMjA2M2Y2Mjk0ZDg1YTMzNDAyNjM2NWYzZTdkYzBhYTQxNTE0NGFkZTNjOTYyMDM0ZA"
+        ],
+        "id": {
+            "definitionName": "sap-commerce",
+            "connectionName": "electronics",
+            "itemId": "594471"
+        },
+        "sku": "594471",
+        "status": null,
+        "visibility": null,
+        "weight": null,
+        "categoryIds": []
+    },
+    {
+        "name": "InfoLITHIUM Battery, NP-FM55H",
+        "price": "$149.69",
+        "description": "-Lithium-ion cells with no 'Memory Effect'. &lt;br/&gt;-Highly efficient, compact and light-weight. &lt;br/&gt;-Capacity: 11.5Wh, 1,600mAh.",
+        "images": [
+            "https://40.114.149.179:9002/medias/?context=bWFzdGVyfGltYWdlc3wxMTIwMnxpbWFnZS9qcGVnfGltYWdlcy9oOWMvaGFjLzg3OTcyODg4OTAzOTguanBnfDgwYWI1ZTY1ZDY5MWZmMjkwZGUyOTI1M2VkODJmNmJiNWJjNWUyNTAzMWRjOTc2YTU0N2FiMGUxOTExZjc1OWU"
+        ],
+        "id": {
+            "definitionName": "sap-commerce",
+            "connectionName": "electronics",
+            "itemId": "482105"
+        },
+        "sku": "482105",
+        "status": null,
+        "visibility": null,
+        "weight": null,
+        "categoryIds": []
+    },
+.....</code></pre>
+</div>
+</div>
 </div>
 </div>
 <div class="sect2">
@@ -2823,12 +2978,10 @@ Magento is now Adobe Commerce, powered by Magento. In the examples and configura
 <pre>curl --user 'superuser:superuser' --request GET "http://localhost:8080/magnoliaAuthor/.rest/ecommerce/v1/products/24-MB01?definitionName=magento&amp;connectionName=connection"</pre>
 </div>
 </div>
-<div class="sect4">
-<h5 id="_response_3"><a class="anchor" href="#_response_3"></a>Response</h5>
-<div class="paragraph">
-<p>JSON</p>
+<div class="paragraph collapse">
+<p>JSON response</p>
 </div>
-<div class="listingblock">
+<div class="listingblock collapse-content">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">{
     "name": "Wayfarer Messenger Bag",
@@ -2876,7 +3029,6 @@ Magento is now Adobe Commerce, powered by Magento. In the examples and configura
 </div>
 </div>
 </div>
-</div>
 <div class="sect3">
 <h4 id="_commercetools_example_2"><a class="anchor" href="#_commercetools_example_2"></a>commercetools example</h4>
 <div class="paragraph">
@@ -2887,12 +3039,10 @@ Magento is now Adobe Commerce, powered by Magento. In the examples and configura
 <pre>curl --user 'superuser:superuser' --request GET "http://localhost:8080/magnoliaAuthor/.rest/ecommerce/v1/products/cb292097-a8cf-4b51-8258-879d3e85036a?definitionName=commercetools&amp;connectionName=connection"</pre>
 </div>
 </div>
-<div class="sect4">
-<h5 id="_response_4"><a class="anchor" href="#_response_4"></a>Response</h5>
-<div class="paragraph">
-<p>JSON</p>
+<div class="paragraph collapse">
+<p>JSON response</p>
 </div>
-<div class="listingblock">
+<div class="listingblock collapse-content">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">{
     "id": {
@@ -3398,6 +3548,109 @@ Magento is now Adobe Commerce, powered by Magento. In the examples and configura
 </div>
 </div>
 </div>
+<div class="sect3">
+<h4 id="_salesforce_commerce_example_2"><a class="anchor" href="#_salesforce_commerce_example_2"></a>Salesforce Commerce example</h4>
+<div class="paragraph">
+<p>Gets the product with an ID of <code>electronics-m-catalog~canon-eos-50d-bodyM</code>.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>curl --user 'superuser:superuser' --request GET "http://localhost:8080/magnoliaAuthor/.rest/ecommerce/v1/products/electronics-m-catalog~canon-eos-50d-bodyM?definitionName=salesforce-commerce&amp;connectionName=connection-RefArch"</pre>
+</div>
+</div>
+<div class="paragraph collapse">
+<p>JSON response</p>
+</div>
+<div class="listingblock collapse-content">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">{
+    "id": {
+        "definitionName": "salesforce-commerce",
+        "connectionName": "connection-RefArch",
+        "itemId": "electronics-m-catalog~canon-eos-50d-bodyM"
+    },
+    "name": "Canon EOS 50D Digital SLR Camera (body only)",
+    "price": "979.99",
+    "sku": "canon-eos-50d-bodyM",
+    "description": " Canon's new EOS 50D bridges the gap between the novice and the seasoned pro with a perfect combination of high-speed and quality. It features an APS-C sized 15.1-megapixel CMOS sensor for tremendous images, new DIGIC 4 Image Processor for fine detail and superior color reproduction, and improved ISO capabilities up to 12800 for uncompromised shooting even in the dimmest situations. It features a refined 3.0-inch Clear View LCD (920,000 dots) monitor, supercharged Live View Function with Face Detection Live mode, plus a number of new automatic Image Correction settings and HDMI output for viewing images on an HDTV. Pick up the EOS 50D and you'll experience true digital inspiration! ",
+    "status": null,
+    "visibility": null,
+    "weight": null,
+    "categoryIds": [
+        {
+            "definitionName": "salesforce-commerce",
+            "connectionName": "connection-RefArch",
+            "itemId": "electronics-m-catalog~electronics-digital-cameras"
+        }
+    ],
+    "images": [
+        "https://zzxz-003.sandbox.us01.dx.commercecloud.salesforce.com/on/demandware.static/-/Sites-electronics-m-catalog/default/va49692be9eb16e6e7d5a8630f27fdc60a9d38e4d/images/large/canon-eos-50d-body.jpg",
+        "https://zzxz-003.sandbox.us01.dx.commercecloud.salesforce.com/on/demandware.static/-/Sites-electronics-m-catalog/default/va49692be9eb16e6e7d5a8630f27fdc60a9d38e4d/images/medium/canon-eos-50d-body.jpg",
+        "https://zzxz-003.sandbox.us01.dx.commercecloud.salesforce.com/on/demandware.static/-/Sites-electronics-m-catalog/default/va49692be9eb16e6e7d5a8630f27fdc60a9d38e4d/images/small/canon-eos-50d-body.jpg"
+    ],
+    "imageGroups": [
+        {
+            "images": [
+                {
+                    "type": "media_file",
+                    "disBaseLink": "https://edge.disstg.commercecloud.salesforce.com/dw/image/v2/ZZXZ_003/on/demandware.static/-/Sites-electronics-m-catalog/default/va49692be9eb16e6e7d5a8630f27fdc60a9d38e4d/images/large/canon-eos-50d-body.jpg",
+                    "link": "https://zzxz-003.sandbox.us01.dx.commercecloud.salesforce.com/on/demandware.static/-/Sites-electronics-m-catalog/default/va49692be9eb16e6e7d5a8630f27fdc60a9d38e4d/images/large/canon-eos-50d-body.jpg"
+                }
+            ],
+            "type": "image_group"
+        }
+    ]
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_sap_example_2"><a class="anchor" href="#_sap_example_2"></a>SAP example</h4>
+<div class="paragraph">
+<p>Gets the product with an ID of <code>847942</code>.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>curl --user 'superuser:superuser' --request GET "http://localhost:8080/magnoliaAuthor/.rest/ecommerce/v1/products/847942?definitionName=sap-commerce&amp;connectionName=electronics"</pre>
+</div>
+</div>
+<div class="paragraph collapse">
+<p>JSON response</p>
+</div>
+<div class="listingblock collapse-content">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">{
+    "name": "AC Adapter",
+    "price": "$218.56",
+    "description": "-Quick charger for infoLITHIUM™ H and P series. &lt;br/&gt;-Consecutive dual battery charging. &lt;br/&gt;-Compatible with H and P series batteries. &lt;br/&gt;-Indicates charging time &amp; current remaining battery life.",
+    "images": [
+        "https://40.114.149.179:9002/medias/?context=bWFzdGVyfGltYWdlc3wzMTE5MXxpbWFnZS9qcGVnfGltYWdlcy9oODEvaDYyLzg3OTcyNjgxMTU0ODYuanBnfDdkNzJhZjExNWYxODk3MjgzNmZjOTA1MzdkMmI3NTJiNDk2OGQ1YWE1MjcwMDEyNTFhZTEyNjM5NTZlNzMxNWE",
+        "https://40.114.149.179:9002/medias/?context=bWFzdGVyfGltYWdlc3wxMzk4MnxpbWFnZS9qcGVnfGltYWdlcy9oMDcvaGVhLzg3OTcyOTQzOTU0MjIuanBnfDA3MjkzYzRmMDBhNDk1OGRmNjhiZDA4ZmUxOTA2MDVkZDdhYmJkOWUzM2U2YmM5ODVkZDkwMThlMThjMzdjMTE"
+    ],
+    "id": {
+        "definitionName": "sap-commerce",
+        "connectionName": "electronics",
+        "itemId": "847942"
+    },
+    "sku": "847942",
+    "status": null,
+    "visibility": null,
+    "weight": null,
+    "categoryIds": [
+        {
+            "definitionName": "sap-commerce",
+            "connectionName": "electronics",
+            "itemId": "electronicsProductCatalog/Online/829"
+        },
+        {
+            "definitionName": "sap-commerce",
+            "connectionName": "electronics",
+            "itemId": "electronicsProductCatalog/Online/brand_5"
+        }
+    ]
+}</code></pre>
+</div>
+</div>
 </div>
 </div>
 <div class="sect2">
@@ -3469,12 +3722,10 @@ Magento is now Adobe Commerce, powered by Magento. In the examples and configura
 <pre>curl --user 'superuser:superuser' --request GET "http://localhost:8080/magnoliaAuthor/.rest/ecommerce/v1/products/category/6?definitionName=magento&amp;connectionName=connection"</pre>
 </div>
 </div>
-<div class="sect4">
-<h5 id="_response_5"><a class="anchor" href="#_response_5"></a>Response</h5>
-<div class="paragraph">
-<p>JSON</p>
+<div class="paragraph collapse">
+<p>JSON response</p>
 </div>
-<div class="listingblock">
+<div class="listingblock collapse-content">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">[
     {
@@ -3819,7 +4070,6 @@ Magento is now Adobe Commerce, powered by Magento. In the examples and configura
 </div>
 </div>
 </div>
-</div>
 <div class="sect3">
 <h4 id="_commercetools_example_3"><a class="anchor" href="#_commercetools_example_3"></a>commercetools example</h4>
 <div class="paragraph">
@@ -3831,12 +4081,10 @@ Magento is now Adobe Commerce, powered by Magento. In the examples and configura
 <pre>curl --user 'superuser:superuser' --request GET "http://localhost:8080/magnoliaAuthor/.rest/ecommerce/v1/products/category/5c804c8d-d628-41fe-84ca-6f5a1fb161a9?definitionName=commercetools&amp;connectionName=connection"</pre>
 </div>
 </div>
-<div class="sect4">
-<h5 id="_response_6"><a class="anchor" href="#_response_6"></a>Response</h5>
-<div class="paragraph">
-<p>JSON</p>
+<div class="paragraph collapse">
+<p>JSON response</p>
 </div>
-<div class="listingblock">
+<div class="listingblock collapse-content">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">[
     {
@@ -3910,6 +4158,155 @@ Magento is now Adobe Commerce, powered by Magento. In the examples and configura
 ...</code></pre>
 </div>
 </div>
+</div>
+<div class="sect3">
+<h4 id="_salesforce_commerce_example_3"><a class="anchor" href="#_salesforce_commerce_example_3"></a>Salesforce Commerce example</h4>
+<div class="paragraph">
+<p>Gets the list of products from the category with an ID of
+<code>electronics-m-catalog~electronics-digital-cameras</code>.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>curl --user 'superuser:superuser' --request GET "http://localhost:8080/magnoliaAuthor/.rest/ecommerce/v1/products/category/electronics-m-catalog~electronics-digital-cameras?definitionName=salesforce-commerce&amp;connectionName=connection-RefArch"</pre>
+</div>
+</div>
+<div class="paragraph collapse">
+<p>JSON response</p>
+</div>
+<div class="listingblock collapse-content">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">[
+    {
+        "id": {
+            "definitionName": "salesforce-commerce",
+            "connectionName": "connection-RefArch",
+            "itemId": "electronics-m-catalog~S2510211M"
+        },
+        "name": "Samsung Digimax A6 - Digital camera - 6.0 Mpix - optical zoom: 3 x - supported memory: MMC, SD",
+        "price": "399.99",
+        "sku": "S2510211M",
+        "description": "",
+        "status": null,
+        "visibility": null,
+        "weight": null,
+        "categoryIds": [
+            {
+                "definitionName": "salesforce-commerce",
+                "connectionName": "connection-RefArch",
+                "itemId": "electronics-m-catalog~electronics-digital-cameras"
+            }
+        ],
+        "images": [
+            "https://zzxz-003.sandbox.us01.dx.commercecloud.salesforce.com/on/demandware.static/-/Sites-electronics-m-catalog/default/va49692be9eb16e6e7d5a8630f27fdc60a9d38e4d/images/large/Samsung-DigimaxA6.jpg",
+            "https://zzxz-003.sandbox.us01.dx.commercecloud.salesforce.com/on/demandware.static/-/Sites-electronics-m-catalog/default/va49692be9eb16e6e7d5a8630f27fdc60a9d38e4d/images/medium/Samsung-DigimaxA6.jpg",
+            "https://zzxz-003.sandbox.us01.dx.commercecloud.salesforce.com/on/demandware.static/-/Sites-electronics-m-catalog/default/va49692be9eb16e6e7d5a8630f27fdc60a9d38e4d/images/small/Samsung-DigimaxA6.jpg"
+        ],
+        "imageGroups": [
+            {
+                "images": [
+                    {
+                        "type": "media_file",
+                        "disBaseLink": "https://edge.disstg.commercecloud.salesforce.com/dw/image/v2/ZZXZ_003/on/demandware.static/-/Sites-electronics-m-catalog/default/va49692be9eb16e6e7d5a8630f27fdc60a9d38e4d/images/large/Samsung-DigimaxA6.jpg",
+                        "link": "https://zzxz-003.sandbox.us01.dx.commercecloud.salesforce.com/on/demandware.static/-/Sites-electronics-m-catalog/default/va49692be9eb16e6e7d5a8630f27fdc60a9d38e4d/images/large/Samsung-DigimaxA6.jpg"
+                    }
+                ],
+                "type": "image_group"
+            },
+            {
+                "images": [
+                    {
+                        "type": "media_file",
+                        "disBaseLink": "https://edge.disstg.commercecloud.salesforce.com/dw/image/v2/ZZXZ_003/on/demandware.static/-/Sites-electronics-m-catalog/default/va49692be9eb16e6e7d5a8630f27fdc60a9d38e4d/images/medium/Samsung-DigimaxA6.jpg",
+                        "link": "https://zzxz-003.sandbox.us01.dx.commercecloud.salesforce.com/on/demandware.static/-/Sites-electronics-m-catalog/default/va49692be9eb16e6e7d5a8630f27fdc60a9d38e4d/images/medium/Samsung-DigimaxA6.jpg"
+                    }
+                ],
+                "type": "image_group"
+            },
+            {
+                "images": [
+                    {
+                        "type": "media_file",
+                        "disBaseLink": "https://edge.disstg.commercecloud.salesforce.com/dw/image/v2/ZZXZ_003/on/demandware.static/-/Sites-electronics-m-catalog/default/va49692be9eb16e6e7d5a8630f27fdc60a9d38e4d/images/small/Samsung-DigimaxA6.jpg",
+                        "link": "https://zzxz-003.sandbox.us01.dx.commercecloud.salesforce.com/on/demandware.static/-/Sites-electronics-m-catalog/default/va49692be9eb16e6e7d5a8630f27fdc60a9d38e4d/images/small/Samsung-DigimaxA6.jpg"
+                    }
+                ],
+                "type": "image_group"
+            }
+        ]
+    },
+    {
+        "id": {
+            "definitionName": "salesforce-commerce",
+            "connectionName": "connection-RefArch",
+            "itemId": "electronics-m-catalog~canon-eos-50d-bodyM"
+        },
+        "name": "Canon EOS 50D Digital SLR Camera (body only)",
+        "price": "979.99",
+        "sku": "canon-eos-50d-bodyM",
+        "description": " Canon's new EOS 50D bridges the gap between the novice and the seasoned pro with a perfect combination of high-speed and quality. It features an APS-C sized 15.1-megapixel CMOS sensor for tremendous images, new DIGIC 4 Image Processor for fine detail and superior color reproduction, and improved ISO capabilities up to 12800 for uncompromised shooting even in the dimmest situations. It features a refined 3.0-inch Clear View LCD (920,000 dots) monitor, supercharged Live View Function with Face Detection Live mode, plus a number of new automatic Image Correction settings and HDMI output for viewing images on an HDTV. Pick up the EOS 50D and you'll experience true digital inspiration! ",
+        "status": null,
+        "visibility": null,
+        "weight": null,
+        "categoryIds": [
+            {
+                "definitionName": "salesforce-commerce",
+                "connectionName": "connection-RefArch",
+                "itemId": "electronics-m-catalog~electronics-digital-cameras"
+            }
+        ],
+        "images": [
+            "https://zzxz-003.sandbox.us01.dx.commercecloud.salesforce.com/on/demandware.static/-/Sites-electronics-m-catalog/default/va49692be9eb16e6e7d5a8630f27fdc60a9d38e4d/images/large/canon-eos-50d-body.jpg",
+            "https://zzxz-003.sandbox.us01.dx.commercecloud.salesforce.com/on/demandware.static/-/Sites-electronics-m-catalog/default/va49692be9eb16e6e7d5a8630f27fdc60a9d38e4d/images/medium/canon-eos-50d-body.jpg",
+            "https://zzxz-003.sandbox.us01.dx.commercecloud.salesforce.com/on/demandware.static/-/Sites-electronics-m-catalog/default/va49692be9eb16e6e7d5a8630f27fdc60a9d38e4d/images/small/canon-eos-50d-body.jpg"
+        ],
+        "imageGroups": [
+            {
+                "images": [
+                    {
+                        "type": "media_file",
+                        "disBaseLink": "https://edge.disstg.commercecloud.salesforce.com/dw/image/v2/ZZXZ_003/on/demandware.static/-/Sites-electronics-m-catalog/default/va49692be9eb16e6e7d5a8630f27fdc60a9d38e4d/images/large/canon-eos-50d-body.jpg",
+                        "link": "https://zzxz-003.sandbox.us01.dx.commercecloud.salesforce.com/on/demandware.static/-/Sites-electronics-m-catalog/default/va49692be9eb16e6e7d5a8630f27fdc60a9d38e4d/images/large/canon-eos-50d-body.jpg"
+                    }
+                ],
+                "type": "image_group"
+            },
+            {
+                "images": [
+                    {
+                        "type": "media_file",
+                        "disBaseLink": "https://edge.disstg.commercecloud.salesforce.com/dw/image/v2/ZZXZ_003/on/demandware.static/-/Sites-electronics-m-catalog/default/va49692be9eb16e6e7d5a8630f27fdc60a9d38e4d/images/medium/canon-eos-50d-body.jpg",
+                        "link": "https://zzxz-003.sandbox.us01.dx.commercecloud.salesforce.com/on/demandware.static/-/Sites-electronics-m-catalog/default/va49692be9eb16e6e7d5a8630f27fdc60a9d38e4d/images/medium/canon-eos-50d-body.jpg"
+                    }
+                ],
+                "type": "image_group"
+            },
+            {
+                "images": [
+                    {
+                        "type": "media_file",
+                        "disBaseLink": "https://edge.disstg.commercecloud.salesforce.com/dw/image/v2/ZZXZ_003/on/demandware.static/-/Sites-electronics-m-catalog/default/va49692be9eb16e6e7d5a8630f27fdc60a9d38e4d/images/small/canon-eos-50d-body.jpg",
+                        "link": "https://zzxz-003.sandbox.us01.dx.commercecloud.salesforce.com/on/demandware.static/-/Sites-electronics-m-catalog/default/va49692be9eb16e6e7d5a8630f27fdc60a9d38e4d/images/small/canon-eos-50d-body.jpg"
+                    }
+                ],
+                "type": "image_group"
+            }
+        ]
+    }
+]
+...</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Currently, there is no API for <code>productByCategoryId</code> in the SAP connector, so we cannot provide an example of the REST endpoint in this case.
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>

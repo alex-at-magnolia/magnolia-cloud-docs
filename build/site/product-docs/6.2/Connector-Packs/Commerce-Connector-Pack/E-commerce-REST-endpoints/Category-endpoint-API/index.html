@@ -1853,6 +1853,9 @@
     <a class="nav-link" href="../../../../Apps/List-of-apps/Security-app/">Security app</a>
   </li>
   <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../../../Apps/List-of-apps/Segments-app/">Segments app</a>
+  </li>
+  <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../../../Apps/List-of-apps/Site-app/">Site app</a>
   </li>
   <li class="nav-item" data-depth="3">
@@ -2461,12 +2464,10 @@ Magento is now Adobe Commerce, powered by Magento. In the examples and configura
 <pre>curl --user 'superuser:superuser' --request GET "http://localhost:8080/magnoliaAuthor/.rest/ecommerce/v1/categories/list?definitionName=magento&amp;connectionName=connection"</pre>
 </div>
 </div>
-<div class="sect4">
-<h5 id="_response"><a class="anchor" href="#_response"></a>Response</h5>
-<div class="paragraph">
-<p>JSON</p>
+<div class="paragraph collapse">
+<p>JSON response</p>
 </div>
-<div class="listingblock">
+<div class="listingblock collapse-content">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">[
     {
@@ -2611,7 +2612,6 @@ Magento is now Adobe Commerce, powered by Magento. In the examples and configura
 </div>
 </div>
 </div>
-</div>
 <div class="sect3">
 <h4 id="_commercetools_example"><a class="anchor" href="#_commercetools_example"></a>commercetools example</h4>
 <div class="paragraph">
@@ -2622,12 +2622,10 @@ Magento is now Adobe Commerce, powered by Magento. In the examples and configura
 <pre>curl --user 'superuser:superuser' --request GET "http://localhost:8080/magnoliaAuthor/.rest/ecommerce/v1/categories/list?definitionName=commercetools&amp;connectionName=connection"</pre>
 </div>
 </div>
-<div class="sect4">
-<h5 id="_response_2"><a class="anchor" href="#_response_2"></a>Response</h5>
-<div class="paragraph">
-<p>JSON</p>
+<div class="paragraph collapse">
+<p>JSON response</p>
 </div>
-<div class="listingblock">
+<div class="listingblock collapse-content">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">[
     {
@@ -2862,6 +2860,338 @@ Magento is now Adobe Commerce, powered by Magento. In the examples and configura
 </div>
 </div>
 </div>
+<div class="sect3">
+<h4 id="_salesforce_commerce_example"><a class="anchor" href="#_salesforce_commerce_example"></a>Salesforce Commerce example</h4>
+<div class="paragraph">
+<p>Gets a list of all the categories.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>curl --user 'superuser:superuser' --request GET "http://localhost:8080/magnoliaAuthor/.rest/ecommerce/v1/categories/list?definitionName=salesforce-commerce&amp;connectionName=connection-RefArch"</pre>
+</div>
+</div>
+<div class="paragraph collapse">
+<p>JSON response</p>
+</div>
+<div class="listingblock collapse-content">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">[
+   {
+      "id":{
+         "definitionName":"salesforce-commerce",
+         "connectionName":"connection-RefArch",
+         "itemId":"electronics-m-catalog~electronics"
+      },
+      "description":"",
+      "name":"Electronics",
+      "position":5,
+      "level":null,
+      "parentId":"electronics-m-catalog~root",
+      "path":"Electronics",
+      "assignedSites":[
+
+      ]
+   },
+   {
+      "id":{
+         "definitionName":"salesforce-commerce",
+         "connectionName":"connection-RefArch",
+         "itemId":"electronics-m-catalog~electronics-accessories"
+      },
+      "description":"",
+      "name":"Accessories",
+      "position":null,
+      "level":null,
+      "parentId":"electronics-m-catalog~electronics",
+      "path":"Accessories",
+      "assignedSites":[
+
+      ]
+   },
+   {
+      "id":{
+         "definitionName":"salesforce-commerce",
+         "connectionName":"connection-RefArch",
+         "itemId":"electronics-m-catalog~electronics-camcorders"
+      },
+      "description":"",
+      "name":"Camcorders",
+      "position":null,
+      "level":null,
+      "parentId":"electronics-m-catalog~electronics",
+      "path":"Camcorders",
+      "assignedSites":[
+
+      ]
+   },
+   {
+      "id":{
+         "definitionName":"salesforce-commerce",
+         "connectionName":"connection-RefArch",
+         "itemId":"electronics-m-catalog~electronics-digital-cameras"
+      },
+      "description":"",
+      "name":"Digital Cameras",
+      "position":null,
+      "level":null,
+      "parentId":"electronics-m-catalog~electronics",
+      "path":"Digital Cameras",
+      "assignedSites":[
+
+      ]
+   },
+   {
+      "id":{
+         "definitionName":"salesforce-commerce",
+         "connectionName":"connection-RefArch",
+         "itemId":"electronics-m-catalog~electronics-digital-media-players"
+      },
+      "description":"",
+      "name":"Electronics Digital Media Players",
+      "position":null,
+      "level":null,
+      "parentId":"electronics-m-catalog~electronics",
+      "path":"Electronics Digital Media Players",
+      "assignedSites":[
+
+      ]
+   },
+   {
+      "id":{
+         "definitionName":"salesforce-commerce",
+         "connectionName":"connection-RefArch",
+         "itemId":"electronics-m-catalog~electronics-game-consoles"
+      },
+      "description":"",
+      "name":"Game Consoles",
+      "position":null,
+      "level":null,
+      "parentId":"electronics-m-catalog~electronics-gaming",
+      "path":"Game Consoles",
+      "assignedSites":[
+
+      ]
+   },
+   {
+      "id":{
+         "definitionName":"salesforce-commerce",
+         "connectionName":"connection-RefArch",
+         "itemId":"electronics-m-catalog~electronics-games"
+      },
+      "description":"",
+      "name":"Games",
+      "position":null,
+      "level":null,
+      "parentId":"electronics-m-catalog~electronics-gaming",
+      "path":"Games",
+      "assignedSites":[
+
+      ]
+   },
+   {
+      "id":{
+         "definitionName":"salesforce-commerce",
+         "connectionName":"connection-RefArch",
+         "itemId":"electronics-m-catalog~electronics-gaming"
+      },
+      "description":"",
+      "name":"Electronics Gaming",
+      "position":null,
+      "level":null,
+      "parentId":"electronics-m-catalog~electronics",
+      "path":"Electronics Gaming",
+      "assignedSites":[
+
+      ]
+   },
+   {
+      "id":{
+         "definitionName":"salesforce-commerce",
+         "connectionName":"connection-RefArch",
+         "itemId":"electronics-m-catalog~electronics-gps-units"
+      },
+      "description":"",
+      "name":"GPS Units",
+      "position":null,
+      "level":null,
+      "parentId":"electronics-m-catalog~electronics",
+      "path":"GPS Units",
+      "assignedSites":[
+
+      ]
+   },
+   {
+      "id":{
+         "definitionName":"salesforce-commerce",
+         "connectionName":"connection-RefArch",
+         "itemId":"electronics-m-catalog~electronics-mobile-phones"
+      },
+      "description":"",
+      "name":"Mobile Phones",
+      "position":null,
+      "level":null,
+      "parentId":"electronics-m-catalog~electronics",
+      "path":"Mobile Phones",
+      "assignedSites":[
+
+      ]
+   },
+   {
+      "id":{
+         "definitionName":"salesforce-commerce",
+         "connectionName":"connection-RefArch",
+         "itemId":"electronics-m-catalog~electronics-televisions"
+      },
+      "description":"",
+      "name":"TVs",
+      "position":null,
+      "level":null,
+      "parentId":"electronics-m-catalog~electronics",
+      "path":"TVs",
+      "assignedSites":[
+
+      ]
+   },
+   {
+      "id":{
+         "definitionName":"salesforce-commerce",
+         "connectionName":"connection-RefArch",
+         "itemId":"electronics-m-catalog~electronics-televisions-flat-screen"
+      },
+      "description":"",
+      "name":"Flat Screen",
+      "position":null,
+      "level":null,
+      "parentId":"electronics-m-catalog~electronics-televisions",
+      "path":"Flat Screen",
+      "assignedSites":[
+
+      ]
+   },
+   {
+      "id":{
+         "definitionName":"salesforce-commerce",
+         "connectionName":"connection-RefArch",
+         "itemId":"electronics-m-catalog~electronics-televisions-projection"
+      },
+      "description":"",
+      "name":"Projection",
+      "position":null,
+      "level":null,
+      "parentId":"electronics-m-catalog~electronics-televisions",
+      "path":"Projection",
+      "assignedSites":[
+
+      ]
+   },
+   {
+      "id":{
+         "definitionName":"salesforce-commerce",
+         "connectionName":"connection-RefArch",
+         "itemId":"electronics-m-catalog~electronics-televisions-tv-dvd-combo"
+      },
+      "description":"",
+      "name":"TV/DVD Combo",
+      "position":null,
+      "level":null,
+      "parentId":"electronics-m-catalog~electronics-televisions",
+      "path":"TV/DVD Combo",
+      "assignedSites":[
+
+      ]
+   },
+   {
+      "id":{
+         "definitionName":"salesforce-commerce",
+         "connectionName":"connection-RefArch",
+         "itemId":"electronics-m-catalog~root"
+      },
+      "description":"",
+      "name":"Electronics Master Catalog",
+      "position":null,
+      "level":null,
+      "parentId":"electronics-m-catalog",
+      "path":"Electronics Master Catalog",
+      "assignedSites":[
+
+      ]
+   }
+]</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_sap_example"><a class="anchor" href="#_sap_example"></a>SAP example</h4>
+<div class="paragraph">
+<p>Gets a list of all the categories.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>curl --user 'superuser:superuser' --request GET "http://localhost:8080/magnoliaAuthor/.rest/ecommerce/v1/categories/list?definitionName=sap-commerce&amp;connectionName=electronics"</pre>
+</div>
+</div>
+<div class="paragraph collapse">
+<p>JSON response</p>
+</div>
+<div class="listingblock collapse-content">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">[
+    {
+        "id": {
+            "definitionName": "sap-commerce",
+            "connectionName": "electronics",
+            "itemId": "electronicsProductCatalog"
+        },
+        "name": "Electronics Product Catalog",
+        "description": null,
+        "position": null,
+        "level": null,
+        "parentId": null,
+        "path": null
+    },
+    {
+        "id": {
+            "definitionName": "sap-commerce",
+            "connectionName": "electronics",
+            "itemId": "electronicsProductCatalog/Staged"
+        },
+        "name": "Staged",
+        "description": null,
+        "position": null,
+        "level": null,
+        "parentId": "electronicsProductCatalog",
+        "path": null
+    },
+    {
+        "id": {
+            "definitionName": "sap-commerce",
+            "connectionName": "electronics",
+            "itemId": "electronicsProductCatalog/Online"
+        },
+        "name": "Online",
+        "description": null,
+        "position": null,
+        "level": null,
+        "parentId": "electronicsProductCatalog",
+        "path": null
+    },
+    {
+        "id": {
+            "definitionName": "sap-commerce",
+            "connectionName": "electronics",
+            "itemId": "electronicsProductCatalog/Online/B2C_Color"
+        },
+        "name": "Color",
+        "description": null,
+        "position": null,
+        "level": null,
+        "parentId": "electronicsProductCatalog/Online",
+        "path": null
+    },
+    .......
+]</code></pre>
+</div>
+</div>
 </div>
 </div>
 <div class="sect2">
@@ -2933,12 +3263,10 @@ Magento is now Adobe Commerce, powered by Magento. In the examples and configura
 <pre>curl --user 'superuser:superuser' --request GET "http://localhost:8080/magnoliaAuthor/.rest/ecommerce/v1/categories/2?definitionName=magento&amp;connectionName=connection"</pre>
 </div>
 </div>
-<div class="sect4">
-<h5 id="_response_3"><a class="anchor" href="#_response_3"></a>Response</h5>
-<div class="paragraph">
-<p>JSON</p>
+<div class="paragraph collapse">
+<p>JSON response</p>
 </div>
-<div class="listingblock">
+<div class="listingblock collapse-content">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">{
     "id": {
@@ -2983,7 +3311,6 @@ Magento is now Adobe Commerce, powered by Magento. In the examples and configura
 </div>
 </div>
 </div>
-</div>
 <div class="sect3">
 <h4 id="_commercetools_example_2"><a class="anchor" href="#_commercetools_example_2"></a>commercetools example</h4>
 <div class="paragraph">
@@ -2994,12 +3321,10 @@ Magento is now Adobe Commerce, powered by Magento. In the examples and configura
 <pre>curl --user 'superuser:superuser' --request GET "http://localhost:8080/magnoliaAuthor/.rest/ecommerce/v1/categories/77a188b9-9c85-4aff-ae4d-9a8fc22f19cf?definitionName=commercetools&amp;connectionName=connection"</pre>
 </div>
 </div>
-<div class="sect4">
-<h5 id="_response_4"><a class="anchor" href="#_response_4"></a>Response</h5>
-<div class="paragraph">
-<p>JSON</p>
+<div class="paragraph collapse">
+<p>JSON response</p>
 </div>
-<div class="listingblock">
+<div class="listingblock collapse-content">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">{
     "id": {
@@ -3116,6 +3441,70 @@ Magento is now Adobe Commerce, powered by Magento. In the examples and configura
 </div>
 </div>
 </div>
+<div class="sect3">
+<h4 id="_salesforce_commerce_example_2"><a class="anchor" href="#_salesforce_commerce_example_2"></a>Salesforce Commerce example</h4>
+<div class="paragraph">
+<p>Gets the category with an ID of <code>electronics-m-catalog~electronics</code>.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>curl --user 'superuser:superuser' --request GET "http://localhost:8080/magnoliaAuthor/.rest/ecommerce/v1/categories/electronics-m-catalog~electronics?definitionName=salesforce-commerce&amp;connectionName=connection-RefArch"</pre>
+</div>
+</div>
+<div class="paragraph collapse">
+<p>JSON response</p>
+</div>
+<div class="listingblock collapse-content">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">{
+    {
+    "id": {
+        "definitionName": "salesforce-commerce",
+        "connectionName": "connection-RefArch",
+        "itemId": "electronics-m-catalog~electronics"
+    },
+    "description": "",
+    "name": "Electronics",
+    "position": 5,
+    "level": null,
+    "parentId": "electronics-m-catalog~root",
+    "path": "Electronics",
+    "assignedSites": []
+}
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_sap_example_2"><a class="anchor" href="#_sap_example_2"></a>SAP example</h4>
+<div class="paragraph">
+<p>Gets the category with an ID of <code>electronicsProductCatalog</code>.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>curl --user 'superuser:superuser' --request GET "http://localhost:8080/magnoliaAuthor/.rest/ecommerce/v1/categories/electronicsProductCatalog?definitionName=sap-commerce&amp;connectionName=electronics"</pre>
+</div>
+</div>
+<div class="paragraph collapse">
+<p>JSON response</p>
+</div>
+<div class="listingblock collapse-content">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">{
+    "id": {
+        "definitionName": "sap-commerce",
+        "connectionName": "electronics",
+        "itemId": "electronicsProductCatalog"
+    },
+    "name": "Electronics Product Catalog",
+    "description": null,
+    "position": null,
+    "level": null,
+    "parentId": null,
+    "path": null
+}</code></pre>
+</div>
+</div>
 </div>
 </div>
 <div class="sect2">
@@ -3189,12 +3578,10 @@ Magento is now Adobe Commerce, powered by Magento. In the examples and configura
 <pre>curl --user 'superuser:superuser' --request GET "http://localhost:8080/magnoliaAuthor/.rest/ecommerce/v1/categories/product/24-MB01?definitionName=magento&amp;connectionName=connection"</pre>
 </div>
 </div>
-<div class="sect4">
-<h5 id="_response_5"><a class="anchor" href="#_response_5"></a>Response</h5>
-<div class="paragraph">
-<p>JSON</p>
+<div class="paragraph collapse">
+<p>JSON response</p>
 </div>
-<div class="listingblock">
+<div class="listingblock collapse-content">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">[
     {
@@ -3317,7 +3704,6 @@ Magento is now Adobe Commerce, powered by Magento. In the examples and configura
 </div>
 </div>
 </div>
-</div>
 <div class="sect3">
 <h4 id="_commercetools_example_3"><a class="anchor" href="#_commercetools_example_3"></a>commercetools example</h4>
 <div class="paragraph">
@@ -3329,12 +3715,10 @@ Magento is now Adobe Commerce, powered by Magento. In the examples and configura
 <pre>curl --user 'superuser:superuser' --request GET "http://localhost:8080/magnoliaAuthor/.rest/ecommerce/v1/categories/product/cb292097-a8cf-4b51-8258-879d3e85036a?definitionName=commercetools&amp;connectionName=connection"</pre>
 </div>
 </div>
-<div class="sect4">
-<h5 id="_response_6"><a class="anchor" href="#_response_6"></a>Response</h5>
-<div class="paragraph">
-<p>JSON</p>
+<div class="paragraph collapse">
+<p>JSON response</p>
 </div>
-<div class="listingblock">
+<div class="listingblock collapse-content">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">[
     {
@@ -3447,6 +3831,128 @@ Magento is now Adobe Commerce, powered by Magento. In the examples and configura
 </div>
 </div>
 </div>
+<div class="sect3">
+<h4 id="_salesforce_commerce_example_3"><a class="anchor" href="#_salesforce_commerce_example_3"></a>Salesforce Commerce example</h4>
+<div class="paragraph">
+<p>Gets the category corresponding to the product with an ID of
+<code>electronics-m-catalog~canon-eos-50d-bodyM</code>.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>curl --user 'superuser:superuser' --request GET "http://localhost:8080/magnoliaAuthor/.rest/ecommerce/v1/categories/product/electronics-m-catalog~canon-eos-50d-bodyM?definitionName=salesforce-commerce&amp;connectionName=connection-RefArch"</pre>
+</div>
+</div>
+<div class="paragraph collapse">
+<p>JSON response</p>
+</div>
+<div class="listingblock collapse-content">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">[
+    {
+        "id": {
+            "definitionName": "salesforce-commerce",
+            "connectionName": "connection-RefArch",
+            "itemId": "storefront-catalog-m-en~newarrivals-electronics"
+        },
+        "description": "",
+        "name": "Electronics",
+        "position": 5,
+        "level": null,
+        "parentId": "storefront-catalog-m-en~newarrivals",
+        "path": "Electronics",
+        "assignedSites": []
+    },
+    {
+        "id": {
+            "definitionName": "salesforce-commerce",
+            "connectionName": "connection-RefArch",
+            "itemId": "electronics-m-catalog~electronics-digital-cameras"
+        },
+        "description": "",
+        "name": "Digital Cameras",
+        "position": null,
+        "level": null,
+        "parentId": "electronics-m-catalog~electronics",
+        "path": "Digital Cameras",
+        "assignedSites": []
+    },
+    {
+        "id": {
+            "definitionName": "salesforce-commerce",
+            "connectionName": "connection-RefArch",
+            "itemId": "storefront-catalog-m-en~electronics-digital-cameras"
+        },
+        "description": "",
+        "name": "Digital Cameras",
+        "position": 7,
+        "level": null,
+        "parentId": "storefront-catalog-m-en~electronics",
+        "path": "Digital Cameras",
+        "assignedSites": []
+    },
+    {
+        "id": {
+            "definitionName": "salesforce-commerce",
+            "connectionName": "connection-RefArch",
+            "itemId": "storefront-catalog-m-en~sale-electronics-digital"
+        },
+        "description": "",
+        "name": "Digital Cameras",
+        "position": 4,
+        "level": null,
+        "parentId": "storefront-catalog-m-en~sale-electronics",
+        "path": "Digital Cameras",
+        "assignedSites": []
+    }
+]</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_sap_example_3"><a class="anchor" href="#_sap_example_3"></a>SAP example</h4>
+<div class="paragraph">
+<p>Gets the category corresponding to the product with an ID of <code>553637</code>.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>curl --user 'superuser:superuser' --request GET "http://localhost:8080/magnoliaAuthor/.rest/ecommerce/v1/categories/product/553637?definitionName=sap-commerce&amp;connectionName=electronics"</pre>
+</div>
+</div>
+<div class="paragraph collapse">
+<p>JSON response</p>
+</div>
+<div class="listingblock collapse-content">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">[
+    {
+        "id": {
+            "definitionName": "sap-commerce",
+            "connectionName": "electronics",
+            "itemId": "electronicsProductCatalog/Online/brand_26"
+        },
+        "name": "Samsung",
+        "description": null,
+        "position": null,
+        "level": null,
+        "parentId": "electronicsProductCatalog/Online/brands",
+        "path": null
+    },
+    {
+        "id": {
+            "definitionName": "sap-commerce",
+            "connectionName": "electronics",
+            "itemId": "electronicsProductCatalog/Online/576"
+        },
+        "name": "Digital Compacts",
+        "description": null,
+        "position": null,
+        "level": null,
+        "parentId": "electronicsProductCatalog/Online/575",
+        "path": null
+    }
+]</code></pre>
+</div>
+</div>
 </div>
 </div>
 <div class="sect2">
@@ -3519,12 +4025,10 @@ Magento is now Adobe Commerce, powered by Magento. In the examples and configura
 <pre>curl --user 'superuser:superuser' --request GET "http://localhost:8080/magnoliaAuthor/.rest/ecommerce/v1/categories/?parentId=3&amp;definitionName=magento&amp;connectionName=connection"</pre>
 </div>
 </div>
-<div class="sect4">
-<h5 id="_response_7"><a class="anchor" href="#_response_7"></a>Response</h5>
-<div class="paragraph">
-<p>JSON</p>
+<div class="paragraph collapse">
+<p>JSON response</p>
 </div>
-<div class="listingblock">
+<div class="listingblock collapse-content">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">[
     {
@@ -3687,7 +4191,6 @@ Magento is now Adobe Commerce, powered by Magento. In the examples and configura
 </div>
 </div>
 </div>
-</div>
 <div class="sect3">
 <h4 id="_commercetools_example_4"><a class="anchor" href="#_commercetools_example_4"></a>commercetools example</h4>
 <div class="paragraph">
@@ -3699,12 +4202,10 @@ Magento is now Adobe Commerce, powered by Magento. In the examples and configura
 <pre>curl --user 'superuser:superuser' --request GET "http://localhost:8080/magnoliaAuthor/.rest/ecommerce/v1/categories/?parentId=cf94acbc-bf7c-4b45-8679-77284c5b76f9&amp;definitionName=commercetools&amp;connectionName=connection"</pre>
 </div>
 </div>
-<div class="sect4">
-<h5 id="_response_8"><a class="anchor" href="#_response_8"></a>Response</h5>
-<div class="paragraph">
-<p>JSON</p>
+<div class="paragraph collapse">
+<p>JSON response</p>
 </div>
-<div class="listingblock">
+<div class="listingblock collapse-content">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">[
     {
@@ -3821,6 +4322,210 @@ Magento is now Adobe Commerce, powered by Magento. In the examples and configura
     }
 ]</code></pre>
 </div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_salesforce_commerce_example_4"><a class="anchor" href="#_salesforce_commerce_example_4"></a>Salesforce Commerce example</h4>
+<div class="paragraph">
+<p>Gets the child category of the parent category with an ID of
+<code>electronics-m-catalog~electronics</code>.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>curl --user 'superuser:superuser' --request GET "http://localhost:8080/magnoliaAuthor/.rest/ecommerce/v1/categories/?parentId=electronics-m-catalog~electronics&amp;definitionName=salesforce-commerce&amp;connectionName=connection-RefArch"</pre>
+</div>
+</div>
+<div class="paragraph collapse">
+<p>JSON response</p>
+</div>
+<div class="listingblock collapse-content">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">[
+    {
+        "id": {
+            "definitionName": "salesforce-commerce",
+            "connectionName": "connection-RefArch",
+            "itemId": "electronics-m-catalog~electronics-accessories"
+        },
+        "description": "",
+        "name": "Accessories",
+        "position": null,
+        "level": null,
+        "parentId": "electronics-m-catalog~electronics",
+        "path": "Accessories",
+        "assignedSites": []
+    },
+    {
+        "id": {
+            "definitionName": "salesforce-commerce",
+            "connectionName": "connection-RefArch",
+            "itemId": "electronics-m-catalog~electronics-camcorders"
+        },
+        "description": "",
+        "name": "Camcorders",
+        "position": null,
+        "level": null,
+        "parentId": "electronics-m-catalog~electronics",
+        "path": "Camcorders",
+        "assignedSites": []
+    },
+    {
+        "id": {
+            "definitionName": "salesforce-commerce",
+            "connectionName": "connection-RefArch",
+            "itemId": "electronics-m-catalog~electronics-digital-cameras"
+        },
+        "description": "",
+        "name": "Digital Cameras",
+        "position": null,
+        "level": null,
+        "parentId": "electronics-m-catalog~electronics",
+        "path": "Digital Cameras",
+        "assignedSites": []
+    },
+    {
+        "id": {
+            "definitionName": "salesforce-commerce",
+            "connectionName": "connection-RefArch",
+            "itemId": "electronics-m-catalog~electronics-digital-media-players"
+        },
+        "description": "",
+        "name": "Electronics Digital Media Players",
+        "position": null,
+        "level": null,
+        "parentId": "electronics-m-catalog~electronics",
+        "path": "Electronics Digital Media Players",
+        "assignedSites": []
+    },
+    {
+        "id": {
+            "definitionName": "salesforce-commerce",
+            "connectionName": "connection-RefArch",
+            "itemId": "electronics-m-catalog~electronics-gaming"
+        },
+        "description": "",
+        "name": "Electronics Gaming",
+        "position": null,
+        "level": null,
+        "parentId": "electronics-m-catalog~electronics",
+        "path": "Electronics Gaming",
+        "assignedSites": []
+    },
+    {
+        "id": {
+            "definitionName": "salesforce-commerce",
+            "connectionName": "connection-RefArch",
+            "itemId": "electronics-m-catalog~electronics-gps-units"
+        },
+        "description": "",
+        "name": "GPS Units",
+        "position": null,
+        "level": null,
+        "parentId": "electronics-m-catalog~electronics",
+        "path": "GPS Units",
+        "assignedSites": []
+    },
+    {
+        "id": {
+            "definitionName": "salesforce-commerce",
+            "connectionName": "connection-RefArch",
+            "itemId": "electronics-m-catalog~electronics-mobile-phones"
+        },
+        "description": "",
+        "name": "Mobile Phones",
+        "position": null,
+        "level": null,
+        "parentId": "electronics-m-catalog~electronics",
+        "path": "Mobile Phones",
+        "assignedSites": []
+    },
+    {
+        "id": {
+            "definitionName": "salesforce-commerce",
+            "connectionName": "connection-RefArch",
+            "itemId": "electronics-m-catalog~electronics-televisions"
+        },
+        "description": "",
+        "name": "TVs",
+        "position": null,
+        "level": null,
+        "parentId": "electronics-m-catalog~electronics",
+        "path": "TVs",
+        "assignedSites": []
+    }
+]</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_sap_example_4"><a class="anchor" href="#_sap_example_4"></a>SAP example</h4>
+<div class="paragraph">
+<p>Gets the child category of the parent category with an ID of  <code>electronicsProductCatalog/Online/1</code>.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>curl --user 'superuser:superuser' --request GET "http://localhost:8080/magnoliaAuthor/.rest/ecommerce/v1/categories?definitionName=sap-commerce&amp;connectionName=electronics&amp;parentId=electronicsProductCatalog/Online/1"</pre>
+</div>
+</div>
+<div class="paragraph collapse">
+<p>JSON response</p>
+</div>
+<div class="listingblock collapse-content">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">[
+    {
+        "id": {
+            "definitionName": "sap-commerce",
+            "connectionName": "electronics",
+            "itemId": "electronicsProductCatalog/Online/106"
+        },
+        "name": "Components",
+        "description": null,
+        "position": null,
+        "level": null,
+        "parentId": "electronicsProductCatalog/Online/1",
+        "path": null
+    },
+    {
+        "id": {
+            "definitionName": "sap-commerce",
+            "connectionName": "electronics",
+            "itemId": "electronicsProductCatalog/Online/206"
+        },
+        "name": "Data storage",
+        "description": null,
+        "position": null,
+        "level": null,
+        "parentId": "electronicsProductCatalog/Online/1",
+        "path": null
+    },
+    {
+        "id": {
+            "definitionName": "sap-commerce",
+            "connectionName": "electronics",
+            "itemId": "electronicsProductCatalog/Online/571"
+        },
+        "name": "Cameras",
+        "description": null,
+        "position": null,
+        "level": null,
+        "parentId": "electronicsProductCatalog/Online/1",
+        "path": null
+    },
+    {
+        "id": {
+            "definitionName": "sap-commerce",
+            "connectionName": "electronics",
+            "itemId": "electronicsProductCatalog/Online/1421"
+        },
+        "name": "Binoculars",
+        "description": null,
+        "position": null,
+        "level": null,
+        "parentId": "electronicsProductCatalog/Online/1",
+        "path": null
+    }
+]</code></pre>
 </div>
 </div>
 </div>
