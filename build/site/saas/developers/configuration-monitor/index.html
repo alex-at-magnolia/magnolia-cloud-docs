@@ -119,7 +119,7 @@
     <a class="nav-link" href="../../hello-saas/connect-with-git/">Connect the repo to Magnolia SaaS</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../../hello-saas/configure-magnolia/">Test the Delivery API</a>
+    <a class="nav-link" href="../../hello-saas/test-delivery-api/">Test the Delivery API</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../../hello-saas/react-app/">Set up the React App</a>
@@ -277,7 +277,7 @@
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Log into <a href="https://id.saas.magnolia-cloud.com/" target="_blank" rel="noopener">Magnolia SaaS</a>.</p>
+<p>Log into <a href="https://id.saas.magnolia-cloud.com" target="_blank" rel="noopener">Magnolia SaaS</a>.</p>
 </li>
 <li>
 <p>Go to <strong>Tools &gt; Configuration Monitor</strong>.</p>
@@ -369,7 +369,7 @@ If you only have one environment (<code>main</code>), nothing appears in the env
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-curl hljs" data-lang="curl">curl https://author-SUB_ID.saas.magnolia-cloud.com/.rest/delivery/configuration-events</code></pre>
+<pre class="highlightjs highlight"><code class="language-curl hljs" data-lang="curl">curl https://delivery-preview.saas.magnolia-cloud.com/delivery/configuration-events?subid_token=YOUR_SUBID_TOKEN</code></pre>
 </div>
 </div>
 <div class="admonitionblock tip">
@@ -379,7 +379,12 @@ If you only have one environment (<code>main</code>), nothing appears in the env
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-Add an event id to retrieve a specific event. <code>/.rest/delivery/configuration-events/&lt;id&gt;</code>
+<div class="paragraph">
+<p>Add an event id to retrieve a specific event.</p>
+</div>
+<div class="paragraph">
+<p><code>/delivery/configuration-events/&lt;EVENT_ID&gt;?subid_token=&lt;YOUR_SUBID_TOKEN&gt;</code></p>
+</div>
 </td>
 </tr>
 </table>
