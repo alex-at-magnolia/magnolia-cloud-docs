@@ -147,6 +147,9 @@
     <a class="nav-link" href="../../../../Releases/Recent-features/">Recent features</a>
   </li>
   <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../../../Releases/Release-notes-for-Magnolia-CMS-6.2.13/"><span class="smalltext">Release notes for Magnolia CMS 6.2.13</span></a>
+  </li>
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../../../../Releases/Release-notes-for-Magnolia-CMS-6.2.12/"><span class="smalltext">Release notes for Magnolia CMS 6.2.12</span></a>
   </li>
   <li class="nav-item" data-depth="2">
@@ -2464,7 +2467,7 @@ connector</a> instead.</p>
 </div>
 <div class="paragraph">
 <p>Specifies the parameters for
-<a href="https://nexus.magnolia-cms.com/#nexus-search;classname~JcrPreviewProvider" target="_blank" rel="noopener">JcrPreviewProvider</a>.</p>
+javadoc:info.magnolia.ui.contentapp.preview.JcrPreviewProvider[].</p>
 </div>
 <div class="paragraph">
 <p>See
@@ -2549,11 +2552,11 @@ nodes and subnodes are displayed.</p>
 <p>Name of a JCR property displayed by <code>jcrTitleColumn</code> that stores node
 names including special characters.</p>
 </div>
-<div class="admonitionblock note">
+<div class="admonitionblock important">
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-note" title="Note"></i>
+<i class="fa icon-important" title="Important"></i>
 </td>
 <td class="content">
 <div class="paragraph">
@@ -2584,6 +2587,20 @@ path is operated on.</p>
 <p>List of JCR properties the data source sorts by. Possible values for
 <a href="https://vaadin.com/api/framework/8/com/vaadin/shared/data/sort/SortDirection.html" target="_blank" rel="noopener"><code>SortDirection</code></a>
 are <code>ascending</code> and <code>descending</code>.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Sorting does not work in the unfiltered tree view.</p>
+</div>
+</td>
+</tr>
+</table>
 </div></div></td>
 </tr>
 </tbody>
@@ -2648,7 +2665,7 @@ or link to an image).</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>info.magnolia.ui.availability.AvailabilityChecker</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>info.magnolia.ui.availability.JcrAvailabilityChecker</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Checks whether items comply with the criteria defined in
-<a href="https://nexus.magnolia-cms.com/#nexus-search;classname~AvailabilityDefinition" target="_blank" rel="noopener">AvailabilityDefinition</a>.</p></td>
+javadoc:info.magnolia.ui.api.availability.AvailabilityDefinition[].</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>info.magnolia.ui.observation.DatasourceObservation</code></p></td>
@@ -2745,22 +2762,22 @@ etc).</p></td>
 <div class="sectionbody">
 <div class="paragraph">
 <p>In <a href="../../Column-definition/" class="page">columns</a>,
-<a href="https://nexus.magnolia-cms.com/#nexus-search;classname~JcrDataProvider" target="_blank" rel="noopener">JcrDataProvider</a> supports
+javadoc:info.magnolia.ui.contentapp.JcrDataProvider[] supports
 filtering by:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
 <p>Node name
-(<a href="https://nexus.magnolia-cms.com/#nexus-search;classname~JcrTitleColumnDefinition" target="_blank" rel="noopener">JcrTitleColumnDefinition</a>)</p>
+(javadoc:info.magnolia.ui.contentapp.column.jcr.JcrTitleColumnDefinition[])</p>
 </li>
 <li>
 <p>Node path
-(<a href="https://nexus.magnolia-cms.com/#nexus-search;classname~JcrPathColumnDefinition" target="_blank" rel="noopener">JcrPathColumnDefinition</a>)</p>
+(javadoc:info.magnolia.ui.contentapp.column.jcr.JcrPathColumnDefinition[])</p>
 </li>
 <li>
 <p>Publication status
-(<a href="https://nexus.magnolia-cms.com/#nexus-search;classname~JcrStatusColumnDefinition" target="_blank" rel="noopener">JcrStatusColumnDefinition</a>)</p>
+(javadoc:info.magnolia.ui.contentapp.column.jcr.JcrStatusColumnDefinition[])</p>
 </li>
 <li>
 <p>Any other JCR property value</p>
@@ -2774,10 +2791,9 @@ filtering by:</p>
 <i class="fa icon-warning" title="Warning"></i>
 </td>
 <td class="content">
-Because filter objects are shared between views, the same
-filter components should be available in both tree and list views
-(except for
-<a href="https://nexus.magnolia-cms.com/#nexus-search;classname~JcrPathColumnDefinition" target="_blank" rel="noopener">JcrPathColumnDefinition</a>,
+Because filter objects are shared between views, the same filter
+components should be available in both tree and list views (except for
+javadoc:info.magnolia.ui.contentapp.column.jcr.JcrPathColumnDefinition[],
 which is expected to be only in the list view).
 </td>
 </tr>

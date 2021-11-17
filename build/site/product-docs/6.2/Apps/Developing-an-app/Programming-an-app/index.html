@@ -148,6 +148,9 @@
     <a class="nav-link" href="../../../Releases/Recent-features/">Recent features</a>
   </li>
   <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../../Releases/Release-notes-for-Magnolia-CMS-6.2.13/"><span class="smalltext">Release notes for Magnolia CMS 6.2.13</span></a>
+  </li>
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../../../Releases/Release-notes-for-Magnolia-CMS-6.2.12/"><span class="smalltext">Release notes for Magnolia CMS 6.2.12</span></a>
   </li>
   <li class="nav-item" data-depth="2">
@@ -2384,10 +2387,19 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>To program an app, you need a development environment. Use the same
-environment you would use for other Magnolia development tasks. See
-<a href="http://documentation.magnolia-cms.com/developing.html">Developing</a> for
-instructions on how to set it up.</p>
+<p>To program an app, you need a development environment. Use the same environment you would use for other Magnolia development tasks.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+See <a href="../../../Developing/Development-environment/" class="page">Development environment</a> for instructions on how to set up your development environment.
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
@@ -2395,8 +2407,7 @@ instructions on how to set it up.</p>
 <h2 id="_components"><a class="anchor" href="#_components"></a>Components</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><strong>Note -</strong> The term component is a developer term that here refers to Java
-objects, not templating components.</p>
+<p>The term <strong>component</strong> is a developer term that here refers to Java objects, not templating components.</p>
 </div>
 <div class="paragraph">
 <p>A component provides a service such as keeping a registry of templates.
@@ -2419,8 +2430,11 @@ HTTP request or a user session. The duration is known as scope.</p>
 components described for it. Component providers have the app component
 provider as their parent:</p>
 </div>
-<div class="paragraph">
-<p><span class="image zoom"><img src="/Apps/Developing-an-app/app-component-hierarchy.png" alt="image"></span></p>
+<div class="imageblock zoom kroki-format-svg kroki">
+<div class="content">
+<img src="../../../_images/c3c3b326fedbe79102194401f1f508b0ea43bb81.svg" alt="diagram">
+</div>
+<div class="title">App component hierarchy</div>
 </div>
 </div>
 </div>
@@ -2432,10 +2446,8 @@ provider as their parent:</p>
 module descriptor that doesn’t declare any components yet. It just
 declares the module name and version.</p>
 </div>
-<div class="paragraph">
-<p>A minimal module descriptor</p>
-</div>
 <div class="listingblock">
+<div class="title">A minimal module descriptor</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;!DOCTYPE module SYSTEM "module.dtd"&gt;
 &lt;module&gt;
@@ -2495,10 +2507,8 @@ AdminCentral. For example:</p>
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p>Component defined in a module descriptor XML file</p>
-</div>
 <div class="listingblock">
+<div class="title">Component defined in a module descriptor XML file</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;components&gt;
   &lt;id&gt;app-helloworld&lt;/id&gt;
@@ -2576,10 +2586,8 @@ need.</p>
 functionality. Otherwise use <code>info.magnolia.ui.framework.app.BaseApp</code> as
 the app class in the configuration.</p>
 </div>
-<div class="paragraph">
-<p>Implementing an app class and injecting a dependency on AppContext.</p>
-</div>
 <div class="listingblock">
+<div class="title">Implementing an app class and injecting a dependency on AppContext.</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">public class HelloWorldApp extends BaseApp {
     @Inject
@@ -2611,10 +2619,8 @@ subapp based on the app name and subapp ID as defined in the
 </li>
 </ol>
 </div>
-<div class="paragraph">
-<p>Override App methods</p>
-</div>
 <div class="listingblock">
+<div class="title">Override App methods</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">public class HelloWorldApp extends BaseApp {
 
@@ -2641,10 +2647,8 @@ subapp based on the app name and subapp ID as defined in the
 cleanup. The cleanup can involve closing files, closing network
 connections and so on.</p>
 </div>
-<div class="paragraph">
-<p>Stopping an app</p>
-</div>
 <div class="listingblock">
+<div class="title">Stopping an app</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">@Override
 public void stop() {
@@ -2660,10 +2664,8 @@ public void stop() {
 handle changing the location. In your app class, override the
 <code>locationChanged</code> method.</p>
 </div>
-<div class="paragraph">
-<p>Handling a location change</p>
-</div>
 <div class="listingblock">
+<div class="title">Handling a location change</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">@Override
 public void locationChanged(Location location) {
@@ -2708,10 +2710,8 @@ class, implement any custom methods or functionality you need. Inject
 the <code>SubAppContext</code> and a view associated with the subApp as a
 dependency.</p>
 </div>
-<div class="paragraph">
-<p>Implementing a SubApp</p>
-</div>
 <div class="listingblock">
+<div class="title">Implementing a SubApp</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">public class MyMainSubApp extends BaseSubApp {
 
@@ -2806,10 +2806,8 @@ you define a dependency on another module, then this module will be
 installed and started before your module. In order to develop a basic
 app, add the following section to your module descriptor:</p>
 </div>
-<div class="paragraph">
-<p>Adding a dependency on AdminCentral.</p>
-</div>
 <div class="listingblock">
+<div class="title">Adding a dependency on AdminCentral.</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;dependencies&gt;
     &lt;dependency&gt;
@@ -2844,10 +2842,8 @@ buttons to the view and listens to actions by implementing the
 <p>In addition to the <code>SubAppContext</code> and the <code>View</code> we also inject the
 <code>LocationController</code> which will be used to open the <code>greeter</code> subApp.</p>
 </div>
-<div class="paragraph">
-<p>Creating a main subapp</p>
-</div>
 <div class="listingblock">
+<div class="title">Creating a main subapp</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">public class HelloWorldMainSubApp extends BaseSubApp implements HelloWorldMainSubAppView.Listener {
 
@@ -2885,10 +2881,8 @@ buttons to the view and listens to actions by implementing the
 <div class="paragraph">
 <p>A simple interface providing methods to add buttons in the view.</p>
 </div>
-<div class="paragraph">
-<p>View Interface and Listener for actions in the view</p>
-</div>
 <div class="listingblock">
+<div class="title">View Interface and Listener for actions in the view</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">public interface HelloWorldMainSubAppView extends View {
 
@@ -2904,10 +2898,8 @@ buttons to the view and listens to actions by implementing the
 <div class="paragraph">
 <p>The view consists of a VerticalLayout and a Label <code>Say Hello!</code>.</p>
 </div>
-<div class="paragraph">
-<p>Implementing a View for the main subapp</p>
-</div>
 <div class="listingblock">
+<div class="title">Implementing a View for the main subapp</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">public class HelloWorldMainSubAppViewImpl implements HelloWorldMainSubAppView {
 
@@ -2958,10 +2950,8 @@ app and launching the <code>greeter</code> subApp.</p>
 <div class="paragraph">
 <p>A simple interface providing a method to set the name.</p>
 </div>
-<div class="paragraph">
-<p>Simple View Interface</p>
-</div>
 <div class="listingblock">
+<div class="title">Simple View Interface</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">public interface HelloWorldGreeterSubAppView extends View {
     void setGreeting(String name);
@@ -2972,10 +2962,8 @@ app and launching the <code>greeter</code> subApp.</p>
 <p>The view consists of a VerticalLayout and a Label
 <code>"Hello " + name + "!"</code>.</p>
 </div>
-<div class="paragraph">
-<p>Implementing a View for the main subapp</p>
-</div>
 <div class="listingblock">
+<div class="title">Implementing a View for the main subapp</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">public class HelloWorldGreeterSubAppViewImpl implements HelloWorldGreeterSubAppView {
 
@@ -3000,10 +2988,8 @@ app and launching the <code>greeter</code> subApp.</p>
 <p>The <code>HelloWorldGreeterSubApp</code> will override the default caption of the
 tab by the name passed as a parameter and set it on the view.</p>
 </div>
-<div class="paragraph">
-<p>Creating a main subapp</p>
-</div>
 <div class="listingblock">
+<div class="title">Creating a main subapp</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">public class HelloWorldGreeterSubApp extends BaseSubApp {
 

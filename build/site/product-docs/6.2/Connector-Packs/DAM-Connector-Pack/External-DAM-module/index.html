@@ -148,6 +148,9 @@
     <a class="nav-link" href="../../../Releases/Recent-features/">Recent features</a>
   </li>
   <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../../Releases/Release-notes-for-Magnolia-CMS-6.2.13/"><span class="smalltext">Release notes for Magnolia CMS 6.2.13</span></a>
+  </li>
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../../../Releases/Release-notes-for-Magnolia-CMS-6.2.12/"><span class="smalltext">Release notes for Magnolia CMS 6.2.12</span></a>
   </li>
   <li class="nav-item" data-depth="2">
@@ -2409,7 +2412,7 @@
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Latest</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1.0.8</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.0.1</p></td>
 </tr>
 </tbody>
 </table>
@@ -2477,7 +2480,7 @@
 <pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;dependency&gt;
   &lt;groupId&gt;info.magnolia.external.dam&lt;/groupId&gt;
   &lt;artifactId&gt;magnolia-external-dam&lt;/artifactId&gt;
-  &lt;version&gt;1.0.8&lt;/version&gt;
+  &lt;version&gt;1.0.1&lt;/version&gt;
 &lt;/dependency&gt;</code></pre>
 </div>
 </div>
@@ -2486,7 +2489,7 @@
 <pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;dependency&gt;
   &lt;groupId&gt;info.magnolia.external.dam&lt;/groupId&gt;
   &lt;artifactId&gt;magnolia-external-dam-bynder&lt;/artifactId&gt;
-  &lt;version&gt;1.0.8&lt;/version&gt;
+  &lt;version&gt;1.0.1&lt;/version&gt;
 &lt;/dependency&gt;</code></pre>
 </div>
 </div>
@@ -2495,7 +2498,7 @@
 <pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;dependency&gt;
   &lt;groupId&gt;info.magnolia.external.dam&lt;/groupId&gt;
   &lt;artifactId&gt;magnolia-external-dam-s3&lt;/artifactId&gt;
-  &lt;version&gt;1.0.8&lt;/version&gt;
+  &lt;version&gt;1.0.1&lt;/version&gt;
 &lt;/dependency&gt;</code></pre>
 </div>
 </div>
@@ -3128,6 +3131,18 @@ See the Bynder documentation: <a href="https://bynder.docs.apiary.io/#reference/
 <div class="paragraph">
 <p>To protect the URLs of private Bynder assets rendered in Magnolia, you must use the proxy service provided.</p>
 </div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+The proxy service is also required if you want to use Bynder image variations.
+</td>
+</tr>
+</table>
+</div>
 <div class="paragraph">
 <p>The proxy service enforces security by generating a Magnolia URL that hides the private Bynder URL.</p>
 </div>
@@ -3204,6 +3219,113 @@ The proxy service is only available with Magnolia 6.2.6+. If you use an earlier 
 </tr>
 </tbody>
 </table>
+</div>
+<div class="sect2">
+<h3 id="_using_bynder_image_derivatives"><a class="anchor" href="#_using_bynder_image_derivatives"></a>Using Bynder image derivatives</h3>
+<div class="paragraph">
+<p>You must enable proxy mode to use Bynder derivatives in Magnolia.</p>
+</div>
+<div class="paragraph">
+<p>Bynder provides <em>image derivatives</em> (referred to as <em>variations</em> or <em>renditions</em> in Magnolia) by default, such as:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>small</code></p>
+</li>
+<li>
+<p><code>medium</code></p>
+</li>
+<li>
+<p><code>large</code></p>
+</li>
+<li>
+<p><code>original</code></p>
+</li>
+<li>
+<p><code>thumbnail</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>These derivatives can be used as the rendition names in the Magnolia <a href="../../../Templating/Template-scripts/Templating-functions/damfn/" class="page">DAM templating function (damfn)</a>.</p>
+</div>
+<div class="paragraph">
+<p>For example, to retrieve the <code>small</code> Bynder derivative:</p>
+</div>
+<div class="listingblock">
+<div class="title">/templates/pages/sample.ftl</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-html hljs" data-lang="html">&lt;!DOCTYPE html&gt;
+&lt;html xml:lang="${cmsfn.language()}" lang="${cmsfn.language()}"&gt;
+  &lt;head&gt;
+    [@cms.page /]
+    &lt;meta charset="utf-8" /&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1" /&gt;
+    &lt;title&gt;${content.windowTitle!content.title!}&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body class="sample-dam ${cmsfn.language()}"&gt;
+
+    &lt;div class="container"&gt;
+      &lt;h3&gt;Bynder ID: ${content.assetId}&lt;/h3&gt;
+
+      &lt;h4&gt;small&lt;/h4&gt;
+      &lt;img src="${damfn.getAssetLink(content.assetId, "small")}"/&gt;
+
+    &lt;/div&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Only <em>image</em> type Bynder asset derivatives can be used in Magnolia.</p>
+</div>
+<div class="paragraph">
+<p>To see which derivatives are available for a given Bynder image, look in the <strong>Size variations</strong> field in the asset details view:</p>
+</div>
+<div class="paragraph">
+<p><span class="image zoom"><img src="../../../_images/extdam/extdam-bynder-derivatives.png" alt="Bynder derivatives information" width="400"></span></p>
+</div>
+<div class="paragraph">
+<p>Magnolia falls back to the <code>original</code> derivative if the requested derivative is unavailable.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Retrieving Bynder derivatives differs from using typical Magnolia image variations:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>You do not have to define image variations in a <a href="../../../Templating/Theme/" class="page">theme</a> when using Bynder derivatives.</p>
+</li>
+<li>
+<p>In your template script, instead of the Magnolia asset <code>itemKey</code> or <code>renditionName</code>, you use the Bynder derivative name (<code>small</code>, <code>medium</code>, <code>large</code>, <code>original</code> and so on).</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>For more information about Bynder derivatives, we recommend the following pages in the Bynder documentation:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://support.bynder.com/hc/en-us/articles/360013931139-Derivatives-Create-Smaller-Versions-of-Assets-" target="_blank" rel="noopener">Derivatives (Create Smaller Versions of Assets)</a></p>
+</li>
+<li>
+<p><a href="https://developer-docs.bynder.com/api/downloading-assets/">Downloading Assets</a></p>
+</li>
+</ul>
+</div>
 </div>
 </div>
 </div>
@@ -3292,6 +3414,34 @@ The proxy service is only available with Magnolia 6.2.6+. If you use an earlier 
 </tbody>
 </table>
 </div>
+<div class="sect2">
+<h3 id="_configuring_the_aws_regions_list"><a class="anchor" href="#_configuring_the_aws_regions_list"></a>Configuring the AWS regions list</h3>
+<div class="paragraph">
+<p>When creating an S3 bucket in the Assets app, only AWS-enabled regions are displayed to users.</p>
+</div>
+<div class="paragraph">
+<p>If your users want to use a disabled region, you must enable it first in AWS as described in <a href="https://docs.aws.amazon.com/general/latest/gr/rande-manage.html" target="_blank" rel="noopener">Managing AWS Regions</a> in the AWS documentation.</p>
+</div>
+<div class="paragraph">
+<p>Then you must remove the newly enabled region from the list of disabled regions in the Magnolia configuration so that it appears in the chooser.</p>
+</div>
+<div class="listingblock">
+<div class="title">/dam-s3/config.yaml</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">disabledRegions:
+  - "ap-east-1"
+  - "af-south-1"
+  - "eu-south-1"
+  - "me-south-1"
+  - "cn-north-1"
+  - "cn-northwest-1"
+  - "us-gov-east-1"
+  - "us-gov-west-1"
+  - "us-iso-east-1"
+  - "us-isob-east-1"</code></pre>
+</div>
+</div>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -3308,6 +3458,163 @@ The proxy service is only available with Magnolia 6.2.6+. If you use an earlier 
 <div class="sect1">
 <h2 id="_release_history"><a class="anchor" href="#_release_history"></a>Release history</h2>
 <div class="sectionbody">
+<div class="sect2">
+<h3 id="_external_dam_module_1_1_0"><a class="anchor" href="#_external_dam_module_1_1_0"></a>External DAM module 1.1.0</h3>
+<div class="paragraph">
+<p>Released on November 15, 2021.</p>
+</div>
+<div class="paragraph">
+<p>This release brings a number of improvements and bug fixes.</p>
+</div>
+<div class="sect3">
+<h4 id="_support_for_bynder_image_derivatives"><a class="anchor" href="#_support_for_bynder_image_derivatives"></a>Support for Bynder image derivatives</h4>
+<div class="paragraph">
+<p>Bynder provides different <em>image derivatives</em> (referred to as <em>image variations</em> in Magnolia) such as large, medium, small.
+This functionality is now integrated into Magnolia and can be used via the <a href="../../../Templating/Template-scripts/How-to-work-with-images/How-to-work-with-images-using-damfn/" class="page">DAM templating function (damfn)</a>.</p>
+</div>
+<div class="paragraph">
+<p>For example, to retrieve the <code>small</code> Bynder derivative:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">damfn.getAssetLink(bynderAsset, "small")</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Bynder derivatives do not function in the same way as standard Magnolia image variations as described in <a href="../../../Templating/Template-scripts/How-to-work-with-images/How-to-work-with-images-using-damfn/#<em>defining_image_variations" class="page">Defining image variations</a>. You do _not</em> have to configure the <a href="../../../Templating/Theme/" class="page">theme</a> to use Bynder derivatives.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+You must <a href="#_configuring_the_proxy_service_to_protect_private_asset_urls">configure the Bynder proxy service</a> to use variations. Only image assets have variations.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>To see which image variations are available for a given Bynder asset, look in the asset details view:</p>
+</div>
+<div class="paragraph">
+<p><span class="image zoom"><img src="../../../_images/extdam/extdam-bynder-derivatives.png" alt="Bynder derivatives information" width="400"></span></p>
+</div>
+<div class="paragraph">
+<p>See <a href="#modules/ROOT/pages/Connector-Packs/DAM-Connector-Pack/External-DAM-module.adoc#_using_bynder_image_derivatives" class="page unresolved">Using Bynder image derivatives</a> for more information.</p>
+</div>
+<div class="paragraph">
+<p>For more information about Bynder derivatives, see <a href="https://support.bynder.com/hc/en-us/articles/360013931139-Derivatives-Create-Smaller-Versions-of-Assets-" target="_blank" rel="noopener">Derivatives (Create Smaller Versions of Assets)</a> in the Bynder documentation.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+We do not support image variations for S3 assets. You must upload different versions of the same image if you need to use variations.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><a href="https://jira.magnolia-cms.com/browse/EXTDAM-305" target="_blank" rel="noopener">EXTDAM-305</a>, <a href="https://jira.magnolia-cms.com/browse/EXTDAM-307" target="_blank" rel="noopener">EXTDAM-307</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_improved_caching_of_s3_bucket_regions"><a class="anchor" href="#_improved_caching_of_s3_bucket_regions"></a>Improved caching of S3 bucket regions</h4>
+<div class="paragraph">
+<p>We have improved S3 caching of bucket regions in Magnolia to fix an issue causing performance problems when using the delivery endpoint for Cloud customers.</p>
+</div>
+<div class="paragraph">
+<p><a href="https://jira.magnolia-cms.com/browse/EXTDAM-318" target="_blank" rel="noopener">EXTDAM-318</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_name_column_filters"><a class="anchor" href="#_name_column_filters"></a>Name column filters</h4>
+<div class="paragraph">
+<p>When selecting external assets, you can now use a filter at the top of the Name column for both Bynder and S3 to reduce the number of assets displayed.</p>
+</div>
+<div class="paragraph">
+<p><span class="image zoom"><img src="../../../_images/extdam/extdam-name-col-filter.png" alt="Name column filter" width="400"></span></p>
+</div>
+<div class="paragraph">
+<p>Note that in the case of S3, you must open the bucket of your choice before filtering within it. Filtering at the root level does not produce results.</p>
+</div>
+<div class="paragraph">
+<p><a href="https://jira.magnolia-cms.com/browse/EXTDAM-295" target="_blank" rel="noopener">EXTDAM-295</a>, <a href="https://jira.magnolia-cms.com/browse/EXTDAM-294" target="_blank" rel="noopener">EXTDAM-294</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_aws_regions_are_listed_by_code_and_unavailable_regions_are_not_displayed"><a class="anchor" href="#_aws_regions_are_listed_by_code_and_unavailable_regions_are_not_displayed"></a>AWS Regions are listed by code and unavailable regions are not displayed</h4>
+<div class="paragraph">
+<p>When creating an S3 bucket in the Assets app, the list of regions available are ordered alphabetically and unavailable regions are no longer displayed.</p>
+</div>
+<div class="paragraph">
+<p><span class="image zoom"><img src="../../../_images/extdam/extdam-S3-regions.png" alt="Name column filter" width="400"></span></p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+For more information about AWS disabled regions, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande-manage.html" target="_blank" rel="noopener">Managing AWS Regions</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><a href="https://jira.magnolia-cms.com/browse/EXTDAM-292" target="_blank" rel="noopener">EXTDAM-292</a>, <a href="https://jira.magnolia-cms.com/browse/EXTDAM-311" target="_blank" rel="noopener">EXTDAM-311</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_demo_text_and_external_image_component_removed"><a class="anchor" href="#_demo_text_and_external_image_component_removed"></a>Demo Text and External Image component removed</h4>
+<div class="paragraph">
+<p>Previously the DAM Connector Pack provided a sample <strong>Text and External Image</strong> component in the Travel demo to help get users started using external assets in pages.</p>
+</div>
+<div class="paragraph">
+<p>This sample component has now been removed. We recommend you use the standard MTK <a href="../../../Templating/Templates-in-MTK/#_component_templates" class="page">Text and Image component</a> instead.</p>
+</div>
+<div class="paragraph">
+<p><a href="https://jira.magnolia-cms.com/browse/EXTDAM-145" target="_blank" rel="noopener">EXTDAM-145</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_s3_asset_names_can_no_longer_be_edited"><a class="anchor" href="#_s3_asset_names_can_no_longer_be_edited"></a>S3 asset names can no longer be edited</h4>
+<div class="paragraph">
+<p>To avoid S3 asset link references breaking, it is no longer possible to rename S3 assets in Magnolia.</p>
+</div>
+<div class="paragraph">
+<p>The <strong>Asset name</strong> field is now disabled in the asset details view.</p>
+</div>
+<div class="paragraph">
+<p><a href="https://jira.magnolia-cms.com/browse/EXTDAM-315" target="_blank" rel="noopener">EXTDAM-315</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_bug_fix"><a class="anchor" href="#_bug_fix"></a>Bug fix</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Sorting by name does not work for S3 and Bynder. <a href="https://jira.magnolia-cms.com/browse/EXTDAM-150" target="_blank" rel="noopener">EXTDAM-150</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
 <div class="sect2">
 <h3 id="_external_dam_module_1_0_8"><a class="anchor" href="#_external_dam_module_1_0_8"></a>External DAM module 1.0.8</h3>
 <div class="paragraph">
@@ -3326,7 +3633,7 @@ The proxy service is only available with Magnolia 6.2.6+. If you use an earlier 
 <p>Released on June 1, 2021.</p>
 </div>
 <div class="paragraph">
-<p>This release brings full compatibility with <a href="../../../Releases/Release-notes-for-Magnolia-CMS-6.2.9/" class="page">Magnolia 6.2.9</a> and a number of improvements.</p>
+<p>This release brings a number of improvements.</p>
 </div>
 <div class="sect3">
 <h4 id="_one_asset_provider_per_link_field"><a class="anchor" href="#_one_asset_provider_per_link_field"></a>One asset provider per link field</h4>
@@ -3347,7 +3654,7 @@ The proxy service is only available with Magnolia 6.2.6+. If you use an earlier 
 <p>Released on April 26, 2021.</p>
 </div>
 <div class="paragraph">
-<p>This release brings full compatibility with <a href="../../../Releases/Release-notes-for-Magnolia-CMS-6.2.8/" class="page">Magnolia 6.2.8</a> and a number of improvements and bug fixes.</p>
+<p>This release brings a number of improvements and bug fixes.</p>
 </div>
 <div class="sect3">
 <h4 id="_bynder_and_aws_s3_subapps_disabled_by_default"><a class="anchor" href="#_bynder_and_aws_s3_subapps_disabled_by_default"></a>Bynder and AWS S3 subapps disabled by default</h4>
@@ -3376,7 +3683,7 @@ When upgrading from an earlier version of External DAM, subapps that were previo
 <div class="sect3">
 <h4 id="_aws_default_credential_provider_chain"><a class="anchor" href="#_aws_default_credential_provider_chain"></a>AWS default credential provider chain</h4>
 <div class="paragraph">
-<p>As an alternative to using the static Magnolia Password manager app to store your AWS S3 credentials, you can now <a href="#_using_the_AWS_default_credential_provider_chain">use the AWS default credential provider chain</a>.</p>
+<p>As an alternative to using the static Magnolia Password manager app to store your AWS S3 credentials, you can now <a href="#_aws_default_credential_provider_chain">use the AWS default credential provider chain</a>.</p>
 </div>
 <div class="paragraph">
 <p><a href="https://jira.magnolia-cms.com/browse/AWSFNDN-25" target="_blank" rel="noopener">AWSFNDN-25</a></p>
@@ -3389,7 +3696,7 @@ When upgrading from an earlier version of External DAM, subapps that were previo
 <p>Released on March 30, 2021.</p>
 </div>
 <div class="paragraph">
-<p>This release brings full compatibility with <a href="../../../Releases/Release-notes-for-Magnolia-CMS-6.2.7/" class="page">Magnolia 6.2.7</a> and a third party library update:</p>
+<p>This release delivers a third party library update:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -3408,7 +3715,7 @@ When upgrading from an earlier version of External DAM, subapps that were previo
 <p>Released on January 28, 2021.</p>
 </div>
 <div class="paragraph">
-<p>This release brings full compatibility with <a href="../../../Releases/Release-notes-for-Magnolia-CMS-6.2.6/" class="page">Magnolia 6.2.6</a> and a number of improvements and bug fixes.</p>
+<p>This release brings a number of improvements and bug fixes.</p>
 </div>
 <div class="sect3">
 <h4 id="_proxy_service_to_protect_private_asset_urls_bynder"><a class="anchor" href="#_proxy_service_to_protect_private_asset_urls_bynder"></a>Proxy service to protect private asset URLS (Bynder)</h4>
@@ -3615,52 +3922,52 @@ minor improvements and bug fixes:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>[<a href="https://jira.magnolia-cms.com/browse/EXTDAM-105" target="_blank" rel="noopener">EXTDAM-105</a>] -
+<p><a href="https://jira.magnolia-cms.com/browse/EXTDAM-105" target="_blank" rel="noopener">EXTDAM-105</a> -
 (Bynder) Allow upload another image when editing</p>
 </li>
 <li>
-<p>[<a href="https://jira.magnolia-cms.com/browse/EXTDAM-106" target="_blank" rel="noopener">EXTDAM-106</a>] -
+<p><a href="https://jira.magnolia-cms.com/browse/EXTDAM-106" target="_blank" rel="noopener">EXTDAM-106</a> -
 (Bynder) Set the asset’s name with the name of the upload file</p>
 </li>
 <li>
-<p>[<a href="https://jira.magnolia-cms.com/browse/EXTDAM-121" target="_blank" rel="noopener">EXTDAM-121</a> ] - Cache
+<p><a href="https://jira.magnolia-cms.com/browse/EXTDAM-121" target="_blank" rel="noopener">EXTDAM-121</a> - Cache
 is not applied when browsing through app-chooser</p>
 </li>
 <li>
-<p>[<a href="https://jira.magnolia-cms.com/browse/EXTDAM-119" target="_blank" rel="noopener">EXTDAM-119</a>] - Adjust
+<p><a href="https://jira.magnolia-cms.com/browse/EXTDAM-119" target="_blank" rel="noopener">EXTDAM-119</a> - Adjust
 to Periscope changes in 6.2.1</p>
 </li>
 <li>
-<p>[<a href="https://jira.magnolia-cms.com/browse/EXTDAM-104" target="_blank" rel="noopener">EXTDAM-104</a>] - Show
+<p><a href="https://jira.magnolia-cms.com/browse/EXTDAM-104" target="_blank" rel="noopener">EXTDAM-104</a> - Show
 notification to the user when an async action started</p>
 </li>
 <li>
-<p>[<a href="https://jira.magnolia-cms.com/browse/EXTDAM-108" target="_blank" rel="noopener">EXTDAM-108</a>] -
+<p><a href="https://jira.magnolia-cms.com/browse/EXTDAM-108" target="_blank" rel="noopener">EXTDAM-108</a> -
 (Bynder) Correct notify message with apostrophe</p>
 </li>
 <li>
-<p>[<a href="https://jira.magnolia-cms.com/browse/EXTDAM-112" target="_blank" rel="noopener">EXTDAM-112</a>] -
+<p><a href="https://jira.magnolia-cms.com/browse/EXTDAM-112" target="_blank" rel="noopener">EXTDAM-112</a> -
 (Bynder) Edit asset fails with exception</p>
 </li>
 <li>
-<p>[<a href="https://jira.magnolia-cms.com/browse/EXTDAM-113" target="_blank" rel="noopener">EXTDAM-113</a>] -
+<p><a href="https://jira.magnolia-cms.com/browse/EXTDAM-113" target="_blank" rel="noopener">EXTDAM-113</a> -
 (Bynder) Changing the image is not reflected in the tree unless the name
 is updated</p>
 </li>
 <li>
-<p>[<a href="https://jira.magnolia-cms.com/browse/EXTDAM-114" target="_blank" rel="noopener">EXTDAM-114</a>] -
-Periscope search is case sensitive</p>
+<p><a href="https://jira.magnolia-cms.com/browse/EXTDAM-114" target="_blank" rel="noopener">EXTDAM-114</a>-
+Periscope search is case-sensitive</p>
 </li>
 <li>
-<p>[<a href="https://jira.magnolia-cms.com/browse/EXTDAM-115" target="_blank" rel="noopener">EXTDAM-115</a>] - (S3)
-Double click on bucket or folder opens the editor</p>
+<p><a href="https://jira.magnolia-cms.com/browse/EXTDAM-115" target="_blank" rel="noopener">EXTDAM-115</a> - (S3)
+Double-click on bucket or folder opens the editor</p>
 </li>
 <li>
-<p>[<a href="https://jira.magnolia-cms.com/browse/EXTDAM-116" target="_blank" rel="noopener">EXTDAM-116</a>] - (S3)
+<p><a href="https://jira.magnolia-cms.com/browse/EXTDAM-116" target="_blank" rel="noopener">EXTDAM-116</a> - (S3)
 Strange behaviour deleting a folder</p>
 </li>
 <li>
-<p>[<a href="https://jira.magnolia-cms.com/browse/EXTDAM-120" target="_blank" rel="noopener">EXTDAM-120</a>] -
+<p><a href="https://jira.magnolia-cms.com/browse/EXTDAM-120" target="_blank" rel="noopener">EXTDAM-120</a> -
 (Bynder) The item deletion does not happen immediately</p>
 </li>
 </ul>
@@ -3698,19 +4005,11 @@ overview of the functionality provided.</p>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>1.0.6</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>6.2.8</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>1.1.0</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>6.2.13</strong></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1.0.5</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">6.2.7</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1.0.4</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">6.2.6</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1.0.3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.0.3+</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">6.2.4</p></td>
 </tr>
 <tr>
