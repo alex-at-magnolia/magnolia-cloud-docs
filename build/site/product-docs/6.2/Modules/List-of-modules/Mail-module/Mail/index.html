@@ -2457,20 +2457,20 @@ configuration node:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>SMTP server (the name of your mail server).</p>
+<p>SMTP server (the name of your mail server)</p>
 </li>
 <li>
-<p>SMTP port (dependent on security setting).</p>
+<p>SMTP port (based on your security settings)</p>
 </li>
 <li>
-<p>Authentication:</p>
+<p>Authentication</p>
 <div class="ulist">
 <ul>
 <li>
-<p>No authentication required.</p>
+<p>No authentication required</p>
 </li>
 <li>
-<p>Authentication with username and password:</p>
+<p>Authentication with username and password</p>
 <div class="ulist">
 <ul>
 <li>
@@ -2483,7 +2483,7 @@ configuration node:</p>
 </div>
 </li>
 <li>
-<p>Authentication with <a href="https://tools.ietf.org/html/rfc6749">OAuth 2.0</a>:</p>
+<p>Authentication with <a href="https://tools.ietf.org/html/rfc6749" target="_blank" rel="noopener">OAuth 2.0</a></p>
 <div class="ulist">
 <ul>
 <li>
@@ -2493,10 +2493,10 @@ configuration node:</p>
 <p>Client ID</p>
 </li>
 <li>
-<p><a href="https://tools.ietf.org/html/rfc6749#section-1.5">Refresh Token</a></p>
+<p><a href="https://tools.ietf.org/html/rfc6749#section-1.5" target="_blank" rel="noopener">Refresh Token</a></p>
 </li>
 <li>
-<p><a href="https://tools.ietf.org/html/rfc6749#section-2.3">Client Secret</a></p>
+<p><a href="https://tools.ietf.org/html/rfc6749#section-2.3" target="_blank" rel="noopener">Client Secret</a></p>
 </li>
 </ul>
 </div>
@@ -2505,17 +2505,17 @@ configuration node:</p>
 </div>
 </li>
 <li>
-<p>Connection security method:</p>
+<p>Connection security method</p>
 <div class="ulist">
 <ul>
 <li>
-<p>No encryption.</p>
+<p>No encryption</p>
 </li>
 <li>
-<p>SSL.</p>
+<p>Use SSL</p>
 </li>
 <li>
-<p>STARTTLS.</p>
+<p>Use STARTTLS</p>
 </li>
 </ul>
 </div>
@@ -2530,15 +2530,15 @@ configuration node:</p>
 <div class="paragraph">
 <p>The <strong>Verify setup</strong> subapp provides tools to:</p>
 </div>
-<div class="olist arabic">
-<ol class="arabic">
+<div class="ulist">
+<ul>
 <li>
-<p>Verify the current mail settings.</p>
+<p><a href="#_verify_the_current_mail_settings">Verify the current mail settings</a>.</p>
 </li>
 <li>
-<p>Verify <a href="#_message_templates">message templates</a>.</p>
+<p><a href="#_verify_message_templates">Verify message templates</a>.</p>
 </li>
-</ol>
+</ul>
 </div>
 <div class="sect2">
 <h3 id="_verify_the_current_mail_settings"><a class="anchor" href="#_verify_the_current_mail_settings"></a>Verify the current mail settings</h3>
@@ -2551,8 +2551,8 @@ logged in user’s profile.</p>
 <div class="paragraph">
 <p>To send a test message:</p>
 </div>
-<div class="ulist">
-<ul>
+<div class="olist arabic">
+<ol class="arabic">
 <li>
 <p>Access the relevant profile, typically <code>superuser</code>, in the
 <a href="../../../../Apps/List-of-apps/Security-app/" class="page">Security app</a>. Go to <strong>System users</strong>
@@ -2572,7 +2572,7 @@ and add your email address in the <code>superuser</code> profile.</p>
 <li>
 <p>Click <strong>Send test mail</strong>.</p>
 </li>
-</ul>
+</ol>
 </div>
 </div>
 <div class="sect2">
@@ -2590,8 +2590,8 @@ profile.</p>
 <div class="paragraph">
 <p>To send a test message:</p>
 </div>
-<div class="ulist">
-<ul>
+<div class="olist arabic">
+<ol class="arabic">
 <li>
 <p>Select a template in the dropdown. Only registered templates are
 available. See <a href="#_templates_configuration">Templates configuration</a>
@@ -2604,29 +2604,56 @@ configuration.</p>
 <li>
 <p>Click <strong>Send test mail</strong>.</p>
 </li>
-</ul>
+</ol>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_smtp_session_debugging"><a class="anchor" href="#_smtp_session_debugging"></a>SMTP Session debugging</h3>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_smtp_connection_timeout"><a class="anchor" href="#_smtp_connection_timeout"></a>SMTP connection timeout</h2>
+<div class="sectionbody">
 <div class="paragraph">
-<p>Using the <code>debug</code> setting on the SMTP configuration will enable a dump
-of the session data to the standard log file.</p>
+<p>Using the <code>timeoutInMillis</code> setting on the SMTP configuration will define
+when a connection attempt to the server times out.</p>
+</div>
+<div class="paragraph">
+<p>To set connection timeout:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>From the Configuration app, find the SMTP configuration node
+(<code>/modules/mail/config/smtpConfiguration</code>).</p>
+</li>
+<li>
+<p>Add a <code>timeoutInMillis</code> property and set its value accordingly.
+The default value is <code>5000</code> (milliseconds).</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_smtp_session_debugging"><a class="anchor" href="#_smtp_session_debugging"></a>SMTP session debugging</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Using the <code>debug</code> setting on the SMTP configuration will enable
+a dump of the session data to the standard log file.</p>
 </div>
 <div class="paragraph">
 <p>To enable session debugging:</p>
 </div>
-<div class="ulist">
-<ul>
+<div class="olist arabic">
+<ol class="arabic">
 <li>
-<p>From the Configuration app, find the SMTP configuration node here
-<code>/modules/mail/config/smtpConfiguration</code>.</p>
+<p>From the Configuration app, find the SMTP configuration node
+(<code>/modules/mail/config/smtpConfiguration</code>).</p>
 </li>
 <li>
-<p>Add a <code>debug</code> property and set its value <code>true</code>.</p>
+<p>Add a <code>debug</code> property and set its value to <code>true</code>.</p>
 </li>
 <li>
-<p>From the log file (or the Log Tools app) see the detailed session
+<p>From the log file (or the Log Tools app), see the detailed session
 data:</p>
 <div class="literalblock">
 <div class="content">
@@ -2693,8 +2720,7 @@ QUIT
 </div>
 </div>
 </li>
-</ul>
-</div>
+</ol>
 </div>
 </div>
 </div>
