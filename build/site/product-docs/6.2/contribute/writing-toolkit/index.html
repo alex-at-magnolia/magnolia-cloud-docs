@@ -3604,6 +3604,73 @@ class Meta{
 <h2 id="_custom_asciidoc"><a class="anchor" href="#_custom_asciidoc"></a>Custom asciidoc</h2>
 <div class="sectionbody">
 <div class="sect2">
+<h3 id="_embedded_diagrams"><a class="anchor" href="#_embedded_diagrams"></a>Embedded diagrams</h3>
+<div class="paragraph">
+<p>Instead of using external tools to create sequence diagrams, flowcharts, and other visuals, you can embed the source directly in the <code>.adoc</code> file.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+We use the <a href="https://github.com/Mogztter/asciidoctor-kroki" target="_blank" rel="noopener">asciidoctor-kroki</a> extension as part of our antora playbook which enables this feature. If you do not have the asciidoctor-kroki extension locally or it is not included in your local playbook, you may not see the results.
+</td>
+</tr>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_instructions"><a class="anchor" href="#_instructions"></a>Instructions</h4>
+<div class="paragraph">
+<p>An example is below, you simply need to wrap the diagram in a typical source block, but replace <code>source</code> with <code>mermaid</code>.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Use a <a href="https://mermaid.live/" target="_blank" rel="noopener">Live editor</a> if you need help getting started.
+</td>
+</tr>
+</table>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-adoc hljs" data-lang="adoc">[mermaid]
+----
+flowchart TB
+    A[[Repo]]
+    B(pom.xml)
+    C(README)
+    subgraph src/main
+        E(file.java)
+        F(file.java)
+    end
+    subgraph docs
+        G(file.adoc)
+        H(file.adoc)
+    end
+    A--&gt;B
+    A--&gt;C
+    A--&gt;E
+    A--&gt;F
+    A--&gt;G
+    A--&gt;H
+----</code></pre>
+</div>
+</div>
+<div class="imageblock kroki">
+<div class="content">
+<img src="../../_images/43475160a11a372778b8827c941f90b1e9e8c0ed.svg" alt="diagram">
+</div>
+<div class="title">Output</div>
+</div>
+</div>
+</div>
+<div class="sect2">
 <h3 id="_javadoc_extension"><a class="anchor" href="#_javadoc_extension"></a>Javadoc extension</h3>
 <div class="sect3">
 <h4 id="_source_15"><a class="anchor" href="#_source_15"></a>Source</h4>
@@ -3689,9 +3756,9 @@ Tabs require an extension.
 </div>
 <div class="sect3">
 <h4 id="_source_17"><a class="anchor" href="#_source_17"></a>Source</h4>
-<div class="literalblock">
+<div class="listingblock">
 <div class="content">
-<pre>[tabs] <i class="conum" data-value="1"></i><b>(1)</b>
+<pre class="highlightjs highlight"><code>[tabs] <i class="conum" data-value="1"></i><b>(1)</b>
 ==== <i class="conum" data-value="2"></i><b>(2)</b>
 version1-file:: <i class="conum" data-value="3"></i><b>(3)</b>
 + <i class="conum" data-value="4"></i><b>(4)</b>
@@ -3711,7 +3778,7 @@ version2-file::
 configuration: is now this way
 ----
 --
-==== <i class="conum" data-value="7"></i><b>(7)</b></pre>
+==== <i class="conum" data-value="7"></i><b>(7)</b></code></pre>
 </div>
 </div>
 <div class="colist arabic">
