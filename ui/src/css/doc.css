@@ -826,7 +826,7 @@
   word-break: break-word; /* overflow-wrap for table cells; gives space higher precedence than hyphen opportunity */
 }
 
-.post {
+.d-post {
   font-size: smaller;
   background: var(--color-primary-green);
   color: white;
@@ -837,7 +837,7 @@
   box-shadow: -1px 1px 6px -1px rgba(0, 0, 0, 0.75);
 }
 
-.put {
+.d-put {
   font-size: smaller;
   background: purple;
   color: white;
@@ -848,7 +848,7 @@
   box-shadow: -1px 1px 6px -1px rgba(0, 0, 0, 0.75);
 }
 
-.get {
+.d-get {
   font-size: smaller;
   background: blue;
   color: white;
@@ -859,7 +859,7 @@
   box-shadow: -1px 1px 6px -1px rgba(0, 0, 0, 0.75);
 }
 
-.delete {
+.d-delete {
   font-size: smaller;
   background: red;
   color: white;

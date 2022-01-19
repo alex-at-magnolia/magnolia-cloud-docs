@@ -8,7 +8,7 @@
     <link rel="prev" href="../Image-Recognition-module/">
     <link rel="next" href="../JavaScript-Models-module/">
     <meta name="keywords" content="module, free, cloud">
-    <meta name="generator" content="Antora 2.3.3">
+    <meta name="generator" content="Antora 3.0.0">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
 
 <link rel="stylesheet" href="../../../../../_/css/site.css">
@@ -146,6 +146,12 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../../../Releases/Recent-features/">Recent features</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../../Releases/Release-notes-for-Magnolia-CMS-6.2.15/"><span class="smalltext">Release notes for Magnolia CMS 6.2.15</span></a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../../Releases/Release-notes-for-Magnolia-CMS-6.2.14/"><span class="smalltext">Release notes for Magnolia CMS 6.2.14</span></a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../../../Releases/Release-notes-for-Magnolia-CMS-6.2.13/"><span class="smalltext">Release notes for Magnolia CMS 6.2.13</span></a>
@@ -488,6 +494,9 @@
     <a class="nav-link" href="../../../Administration/Language/i18n-API/">i18n API</a>
   </li>
   <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../../Administration/Language/Choiceformatting-i18n-messages/">Choiceformatting i18n messages</a>
+  </li>
+  <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../../Administration/Language/i18n-best-practices/">i18n best practices</a>
   </li>
 </ul>
@@ -681,6 +690,9 @@
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../../Developing/SPA-development-and-Magnolia/Attaching-an-SPA-project-to-Magnolia/">Attaching an SPA project to Magnolia</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../../Developing/SPA-development-and-Magnolia/SPA-hosting/">Hosting the SPA</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../../Developing/SPA-development-and-Magnolia/Personalization-of-headless-SPA-projects/">Personalization of headless SPA projects</a>
@@ -1193,6 +1205,9 @@
     <a class="nav-link" href="../Categorization-module/">Categorization module</a>
   </li>
   <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Configuration-Framework-module/">Configuration Framework module</a>
+  </li>
+  <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../Contacts-module/">Contacts module</a>
   </li>
   <li class="nav-item" data-depth="3">
@@ -1374,17 +1389,23 @@
     <a class="nav-link" href="../Personalization-module/My-first-personalized-campaign/">My first personalized campaign</a>
   </li>
   <li class="nav-item" data-depth="4">
+    <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../Personalization-module/Creating-custom-traits/">Creating custom traits</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../Personalization-module/Creating-custom-traits-with-complex-fields/">Creating custom traits with complex fields</a>
   </li>
-  <li class="nav-item" data-depth="4">
+  <li class="nav-item" data-depth="5">
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../Personalization-module/Creating-custom-traits-without-Java/">Creating custom traits without Java</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="5">
+  <li class="nav-item" data-depth="6">
     <a class="nav-link" href="../Personalization-module/Creating-custom-traits-without-Java/Cookies-trait-configuration/">Cookies trait configuration</a>
   </li>
-  <li class="nav-item" data-depth="5">
+  <li class="nav-item" data-depth="6">
     <a class="nav-link" href="../Personalization-module/Creating-custom-traits-without-Java/Creating-a-custom-cookie-trait-without-Java/">Creating a custom cookie trait without Java</a>
+  </li>
+</ul>
   </li>
 </ul>
   </li>
@@ -1948,6 +1969,9 @@
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../../Apps/Developing-a-custom-non-jcr-content-app/">Developing a custom (non-JCR) content app</a>
+  </li>
+  <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../../../Apps/Developing-a-custom-content-editor-app/">Developing a custom content editor app</a>
 <ul class="nav-list">
@@ -2335,7 +2359,7 @@
     <li class="component is-current">
       <span class="title">DX Core</span>
       <ul class="versions">
-        <li class="version is-current is-latest">
+        <li class="version is-current">
           <a href="../../../">6.2</a>
         </li>
       </ul>
@@ -2343,7 +2367,7 @@
     <li class="component">
       <span class="title">Magnolia SaaS</span>
       <ul class="versions">
-        <li class="version is-latest">
+        <li class="version">
           <a href="../../../../../saas/">master</a>
         </li>
       </ul>
@@ -2351,7 +2375,7 @@
     <li class="component">
       <span class="title">Magnolia SaaS CLI</span>
       <ul class="versions">
-        <li class="version is-latest">
+        <li class="version">
           <a href="../../../../../saas-cli/">master</a>
         </li>
       </ul>
@@ -2391,7 +2415,7 @@
 resize and crop each image by hand as the imaging engine generate
 variations on the fly. Administrators create the rules that determine
 the sizes of derivatives. Editors save time as they can select an image
-from the <a href="../../../Features/Digital-asset-management/" class="page">DAM</a> or upload one, and
+from the <a href="../../../Features/Digital-asset-management/" class="xref page">DAM</a> or upload one, and
 it will be automatically adapted to match the rule.</p>
 </div>
 <div class="admonitionblock note">
@@ -2436,7 +2460,7 @@ server.</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Issues</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://jira.magnolia-cms.com/browse/MGNLIMG" target="_blank" rel="noopener">MGNLIMG</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://jira.magnolia-cms.com/browse/MGNLIMG" target="_blank" rel="noopener">MGNLIMG</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Maven site</p></td>
@@ -2444,7 +2468,7 @@ server.</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Latest</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">3.5.1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3.5.2</p></td>
 </tr>
 </tbody>
 </table>
@@ -2461,7 +2485,7 @@ server.</p>
 <pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;dependency&gt;
   &lt;groupId&gt;info.magnolia.imaging&lt;/groupId&gt;
   &lt;artifactId&gt;magnolia-imaging&lt;/artifactId&gt;
-  &lt;version&gt;3.5.1&lt;/version&gt;
+  &lt;version&gt;3.5.2&lt;/version&gt;
 &lt;/dependency&gt;</code></pre>
 </div>
 </div>
@@ -2507,7 +2531,7 @@ with the <code>magnolia-core-compatibility</code> module.</p>
 <pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;dependency&gt;
   &lt;groupId&gt;info.magnolia.imaging&lt;/groupId&gt;
   &lt;artifactId&gt;magnolia-imaging-compatibility&lt;/artifactId&gt;
-  &lt;version&gt;3.5.1&lt;/version&gt;
+  &lt;version&gt;3.5.2&lt;/version&gt;
 &lt;/dependency&gt;</code></pre>
 </div>
 </div>
@@ -2562,7 +2586,7 @@ image, with the given generator and parameters, to an output stream.</p>
 <div class="paragraph">
 <p><a href="https://nexus.magnolia-cms.com/#nexus-search;classname~ImagingServlet" target="_blank" rel="noopener">ImagingServlet</a> is registered in the
 Magnolia
-<a href="../../../Administration/Architecture/Request-processing-and-filters/Filters/" class="page">servlet
+<a href="../../../Administration/Architecture/Request-processing-and-filters/Filters/" class="xref page">servlet
 filter chain</a> in <code>/server/filters/servlets/ImagingServlet</code>. The servlet
 is responsible for <a href="#_image_request_processing">generating images</a>.</p>
 </div>
@@ -2578,7 +2602,7 @@ is responsible for <a href="#_image_request_processing">generating images</a>.</
 <p><a href="https://nexus.magnolia-cms.com/#nexus-search;classname~ImageGenerator" target="_blank" rel="noopener">ImageGenerator</a> is a component that
 generates variants from a source image based on configuration.
 Generators are used by
-<a href="../../../Support/Magnolia-5-UI-documentation/Content-apps-5-UI/App-configuration-5-UI/Image-provider-definition-5-UI/" class="page">image
+<a href="../../../Support/Magnolia-5-UI-documentation/Content-apps-5-UI/App-configuration-5-UI/Image-provider-definition-5-UI/" class="xref page">image
 provider</a> classes to render images in the UI and on pages.</p>
 </div>
 <div class="paragraph">
@@ -2621,8 +2645,8 @@ provider</a> classes to render images in the UI and on pages.</p>
 </div>
 <div class="paragraph">
 <p><code>large</code>, <code>portrait</code> and <code>thumbnail</code> are used in the UI to generate
-images in apps. <code>mte</code> generates <a href="../../../Templating/Theme/" class="page">image variations</a>
-in a <a href="../../../Templating/Theme/" class="page">theme</a>.</p>
+images in apps. <code>mte</code> generates <a href="../../../Templating/Theme/" class="xref page">image variations</a>
+in a <a href="../../../Templating/Theme/" class="xref page">theme</a>.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -2812,7 +2836,7 @@ properly named filename to the image.</p></td>
 <p>The Imaging module can resize and crop images, overlay text and apply
 image filters. These are called image operations and are configured in
 <code>/modules/imaging/config/generators/&lt;generator name&gt;/operations</code>. Image
-operations can also be configured in a <a href="../../../Templating/Theme/" class="page">theme</a>.</p>
+operations can also be configured in a <a href="../../../Templating/Theme/" class="xref page">theme</a>.</p>
 </div>
 <div class="paragraph">
 <p>An image operation chain consists of one or more operations. A simple
@@ -2886,7 +2910,7 @@ and <code>overlay</code>. The chain is executed from top to bottom.</p>
 <div class="paragraph">
 <p>The first operation in an operation chain is typically a load operation.
 Use javadoc:info.magnolia.imaging.operations.load.FromBinaryNode[] to
-load an image from the <a href="../../../Features/Digital-asset-management/" class="page">DAM</a>.</p>
+load an image from the <a href="../../../Features/Digital-asset-management/" class="xref page">DAM</a>.</p>
 </div></div></td>
 </tr>
 </tbody>
@@ -2953,7 +2977,7 @@ name.</p>
 <h3 id="_imaging_workspace"><a class="anchor" href="#_imaging_workspace"></a>Imaging workspace</h3>
 <div class="paragraph">
 <p>The imaging engine stores generated images in the <code>imaging</code>
-<a href="../../../Administration/Architecture/Workspaces/" class="page">workspace</a>.</p>
+<a href="../../../Administration/Architecture/Workspaces/" class="xref page">workspace</a>.</p>
 </div>
 <div class="paragraph">
 <p>The path where generated images are stored depends on the
@@ -3006,7 +3030,7 @@ default path is:</p>
 </div>
 <div class="paragraph">
 <p>Here’s the same image generated by the <code>portrait</code> and <code>mte</code> generators
-in the <a href="../../../Apps/List-of-apps/JCR-Browser-app/" class="page">JCR Browser app</a>. The
+in the <a href="../../../Apps/List-of-apps/JCR-Browser-app/" class="xref page">JCR Browser app</a>. The
 <code>960x720</code> <a href="#_image_variations_in_a_theme">variation</a> is configured in
 the <code>travel-demo-theme</code>.</p>
 </div>
@@ -3099,12 +3123,12 @@ interface for imaging.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>magnolia-dam-imaging</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://nexus.magnolia-cms.com/#nexus-search;classname~ImagingBasedAssetRenderer" target="_blank" rel="noopener">ImagingBasedAssetRenderer</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Asset renderer that uses <code>ImagingSupport</code> to generate
-<a href="../../../Developing/API/Java-Server-APIs/DAM-API/" class="page">renditions</a>.</p></td>
+<a href="../../../Developing/API/Java-Server-APIs/DAM-API/" class="xref page">renditions</a>.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>magnolia-templating-essentials-imaging</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://nexus.magnolia-cms.com/#nexus-search;classname~ThemeDelegatingImagingSupport" target="_blank" rel="noopener">ThemeDelegatingImagingSupport</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ImagingSupport that delegates to a <a href="../../../Templating/Theme/" class="page">Theme</a>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ImagingSupport that delegates to a <a href="../../../Templating/Theme/" class="xref page">Theme</a>.</p></td>
 </tr>
 </tbody>
 </table>
@@ -3120,8 +3144,8 @@ allowed. Variations are configured in a theme which allows you to
 configure image look and feel in the same place as CSS.</p>
 </div>
 <div class="paragraph">
-<p>See <a href="../../../Templating/Theme/" class="page">Image variations</a> and
-<a href="../../../Templating/Template-scripts/How-to-work-with-images/How-to-work-with-images-using-damfn/" class="page">Displaying
+<p>See <a href="../../../Templating/Theme/" class="xref page">Image variations</a> and
+<a href="../../../Templating/Template-scripts/How-to-work-with-images/How-to-work-with-images-using-damfn/" class="xref page">Displaying
 resized images</a> for more.</p>
 </div>
 </div>
@@ -3141,15 +3165,15 @@ resized images</a> for more.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="../../../Templating/Template-scripts/How-to-work-with-images/How-to-work-with-images-using-imgfn/" class="page">How
+<p><a href="../../../Templating/Template-scripts/How-to-work-with-images/How-to-work-with-images-using-imgfn/" class="xref page">How
 to work with images using <code>imgfn</code></a></p>
 </li>
 <li>
-<p><a href="../../../Templating/Template-scripts/How-to-work-with-images/How-to-work-with-images-using-damfn/" class="page">How
+<p><a href="../../../Templating/Template-scripts/How-to-work-with-images/How-to-work-with-images-using-damfn/" class="xref page">How
 to work with images using <code>damfn</code></a></p>
 </li>
 <li>
-<p><a href="../../../Templating/Template-scripts/Templating-functions/imgfn/" class="page"><code>imgfn</code> templating functions</a></p>
+<p><a href="../../../Templating/Template-scripts/Templating-functions/imgfn/" class="xref page"><code>imgfn</code> templating functions</a></p>
 </li>
 </ul>
 </div>
@@ -3210,7 +3234,7 @@ to work with images using <code>damfn</code></a></p>
 
 
 <div class="footer-terms">
-  <span>2021 Magnolia International Ltd. Some rights reserved.</span>
+  <span>2022 Magnolia International Ltd. Some rights reserved.</span>
   <a href="https://www.magnolia-cms.com/legal/privacy.html" target="_blank">Privacy policy</a>
 </div>
 

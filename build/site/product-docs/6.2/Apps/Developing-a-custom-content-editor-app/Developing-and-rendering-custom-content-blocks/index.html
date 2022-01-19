@@ -8,7 +8,7 @@
     <link rel="prev" href="../Block-definition/">
     <link rel="next" href="../../Enabling-versioning-in-content-apps/">
     <meta name="keywords" content="content-editor, how-to-guide, ui-framework, 6-ui">
-    <meta name="generator" content="Antora 2.3.3">
+    <meta name="generator" content="Antora 3.0.0">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
 
 <link rel="stylesheet" href="../../../../../_/css/site.css">
@@ -146,6 +146,12 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../../../Releases/Recent-features/">Recent features</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../../Releases/Release-notes-for-Magnolia-CMS-6.2.15/"><span class="smalltext">Release notes for Magnolia CMS 6.2.15</span></a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../../Releases/Release-notes-for-Magnolia-CMS-6.2.14/"><span class="smalltext">Release notes for Magnolia CMS 6.2.14</span></a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../../../Releases/Release-notes-for-Magnolia-CMS-6.2.13/"><span class="smalltext">Release notes for Magnolia CMS 6.2.13</span></a>
@@ -488,6 +494,9 @@
     <a class="nav-link" href="../../../Administration/Language/i18n-API/">i18n API</a>
   </li>
   <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../../Administration/Language/Choiceformatting-i18n-messages/">Choiceformatting i18n messages</a>
+  </li>
+  <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../../Administration/Language/i18n-best-practices/">i18n best practices</a>
   </li>
 </ul>
@@ -681,6 +690,9 @@
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../../Developing/SPA-development-and-Magnolia/Attaching-an-SPA-project-to-Magnolia/">Attaching an SPA project to Magnolia</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../../Developing/SPA-development-and-Magnolia/SPA-hosting/">Hosting the SPA</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../../Developing/SPA-development-and-Magnolia/Personalization-of-headless-SPA-projects/">Personalization of headless SPA projects</a>
@@ -1193,6 +1205,9 @@
     <a class="nav-link" href="../../../Modules/List-of-modules/Categorization-module/">Categorization module</a>
   </li>
   <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../../Modules/List-of-modules/Configuration-Framework-module/">Configuration Framework module</a>
+  </li>
+  <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../../Modules/List-of-modules/Contacts-module/">Contacts module</a>
   </li>
   <li class="nav-item" data-depth="3">
@@ -1374,17 +1389,23 @@
     <a class="nav-link" href="../../../Modules/List-of-modules/Personalization-module/My-first-personalized-campaign/">My first personalized campaign</a>
   </li>
   <li class="nav-item" data-depth="4">
+    <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../../../Modules/List-of-modules/Personalization-module/Creating-custom-traits/">Creating custom traits</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../../../Modules/List-of-modules/Personalization-module/Creating-custom-traits-with-complex-fields/">Creating custom traits with complex fields</a>
   </li>
-  <li class="nav-item" data-depth="4">
+  <li class="nav-item" data-depth="5">
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../../../Modules/List-of-modules/Personalization-module/Creating-custom-traits-without-Java/">Creating custom traits without Java</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="5">
+  <li class="nav-item" data-depth="6">
     <a class="nav-link" href="../../../Modules/List-of-modules/Personalization-module/Creating-custom-traits-without-Java/Cookies-trait-configuration/">Cookies trait configuration</a>
   </li>
-  <li class="nav-item" data-depth="5">
+  <li class="nav-item" data-depth="6">
     <a class="nav-link" href="../../../Modules/List-of-modules/Personalization-module/Creating-custom-traits-without-Java/Creating-a-custom-cookie-trait-without-Java/">Creating a custom cookie trait without Java</a>
+  </li>
+</ul>
   </li>
 </ul>
   </li>
@@ -1948,6 +1969,9 @@
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../Developing-a-custom-non-jcr-content-app/">Developing a custom (non-JCR) content app</a>
+  </li>
+  <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../">Developing a custom content editor app</a>
 <ul class="nav-list">
@@ -2335,7 +2359,7 @@
     <li class="component is-current">
       <span class="title">DX Core</span>
       <ul class="versions">
-        <li class="version is-current is-latest">
+        <li class="version is-current">
           <a href="../../../">6.2</a>
         </li>
       </ul>
@@ -2343,7 +2367,7 @@
     <li class="component">
       <span class="title">Magnolia SaaS</span>
       <ul class="versions">
-        <li class="version is-latest">
+        <li class="version">
           <a href="../../../../../saas/">master</a>
         </li>
       </ul>
@@ -2351,7 +2375,7 @@
     <li class="component">
       <span class="title">Magnolia SaaS CLI</span>
       <ul class="versions">
-        <li class="version is-latest">
+        <li class="version">
           <a href="../../../../../saas-cli/">master</a>
         </li>
       </ul>
@@ -2389,7 +2413,7 @@
 <div class="paragraph">
 <p>This page describes how to define and render custom content blocks that
 can be grouped to form content compositions in implementations of the
-<a href="../../../Features/Content-authoring/Content-editor/" class="page">Content editor</a>.</p>
+<a href="../../../Features/Content-authoring/Content-editor/" class="xref page">Content editor</a>.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -2402,10 +2426,7 @@ can be grouped to form content compositions in implementations of the
 <p>Compatibility note</p>
 </div>
 <div class="paragraph">
-<p><em>Magnolia 6 UI</em> framework is implemented in version 2 of the Content Editor module. Custom content editor and block definitions created in the <em>Magnolia 5 UI</em> framework are not compatible with this version of the module and must be migrated.</p>
-</div>
-<div class="paragraph">
-<p>If you wish to keep using the existing 5 UI block and custom content editor definitions, you must install version 1.3.10 of the Content Editor module and use them with this version.</p>
+<p>Custom content editor and block definitions created in the <em>Magnolia 5 UI</em> framework must be migrated.</p>
 </div>
 </td>
 </tr>
@@ -2424,7 +2445,7 @@ your custom content editor app:</p>
 <ul>
 <li>
 <p><code>text</code> - Compared to
-<a href="../../../Templating/Dialog-definition/Field-definition/List-of-fields/Text-field/" class="page"><code>TextFieldDefinition</code></a>,
+<a href="../../../Templating/Dialog-definition/Field-definition/List-of-fields/Text-field/" class="xref page"><code>TextFieldDefinition</code></a>,
 the <code>text</code> block implements a special <code>LightRichTextFieldDefinition</code> class, which
 features basic text formatting functions:</p>
 <div class="paragraph">
@@ -2515,7 +2536,7 @@ block:
 </ul>
 </div>
 <div class="paragraph">
-<p>These block types implement the 6 UI <code>dateField</code> and <code>linkField</code>, respectively. To see these blocks, you must have the <a href="../../../Getting-started-with-Magnolia/Demo/" class="page">Magnolia demo modules</a> installed.</p>
+<p>These block types implement the 6 UI <code>dateField</code> and <code>linkField</code>, respectively. To see these blocks, you must have the <a href="../../../Getting-started-with-Magnolia/Demo/" class="xref page">Magnolia demo modules</a> installed.</p>
 </div>
 </div>
 </div>
@@ -2531,14 +2552,14 @@ block:
 </td>
 <td class="content">
 <div class="paragraph">
-<p>You can quickly create your own custom block using Magnolia CLI. The <a href="#4.x@magnolia-cli:ROOT:magnolia-cli.adoc#_create_block" class="page unresolved">Magnolia CLI <code>create-block</code> command</a>. The command creates a block based on the <code>info.magnolia.block.BlockDefinition</code> class and includes many commonly used fields as a starting point: text, page link, DAM image, multivalue and select.</p>
+<p>You can quickly create your own custom block using Magnolia CLI. The <a href="#4.x@magnolia-cli:ROOT:magnolia-cli.adoc#_create_block" class="xref unresolved">Magnolia CLI <code>create-block</code> command</a>. The command creates a block based on the <code>info.magnolia.block.BlockDefinition</code> class and includes many commonly used fields as a starting point: text, page link, DAM image, multivalue and select.</p>
 </div>
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>To define a custom block, use a <a href="../../../Developing/YAML/#_yaml_in_the_context_of_magnolia" class="page">YAML definition file</a> and apply the <code>BlockDefinition</code> class of the Content editor module.</p>
+<p>To define a custom block, use a <a href="../../../Developing/YAML/#_yaml_in_the_context_of_magnolia" class="xref page">YAML definition file</a> and apply the <code>BlockDefinition</code> class of the Content editor module.</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -2553,7 +2574,7 @@ block:
 <p>The <code>templateId</code> of your block.</p>
 </li>
 <li>
-<p>A <code>block</code> node, with a list of fields the content block consists of. Use the properties in the same way as the properties for the <code><a href="../../../Templating/Dialog-definition/Field-definition/List-of-fields/Composite-field/" class="page">CompositeFieldDefinition</a></code>.</p>
+<p>A <code>block</code> node, with a list of fields the content block consists of. Use the properties in the same way as the properties for the <code><a href="../../../Templating/Dialog-definition/Field-definition/List-of-fields/Composite-field/" class="xref page">CompositeFieldDefinition</a></code>.</p>
 <div class="literalblock">
 <div class="content">
 <pre>class: info.magnolia.block.BlockDefinition
@@ -2600,7 +2621,7 @@ component template.</p>
 <h3 id="_the_cmsblock_directive"><a class="anchor" href="#_the_cmsblock_directive"></a>The <code>cms:block</code> directive</h3>
 <div class="paragraph">
 <p>The Content editor module provides <code>cms:block</code>, a Magnolia FreeMarker
-<a href="../../../Templating/Template-scripts/Directives/" class="page">directive</a> for fetching and
+<a href="../../../Templating/Template-scripts/Directives/" class="xref page">directive</a> for fetching and
 rendering block elements.</p>
 </div>
 <div class="paragraph">
@@ -2621,7 +2642,7 @@ template script.</p>
 <h3 id="_examples_of_block_rendering"><a class="anchor" href="#_examples_of_block_rendering"></a>Examples of block rendering</h3>
 <div class="paragraph">
 <p>The examples show how to render blocks within a
-<a href="../../../Templating/Template-scripts/" class="page">template script</a> of a page or
+<a href="../../../Templating/Template-scripts/" class="xref page">template script</a> of a page or
 component template. Using the Magnolia directive <code>cms.block</code>, the
 template script of the block is executed during the rendering of the
 page or component.</p>
@@ -2685,29 +2706,14 @@ a list:</p>
 <h2 id="_content_internationalization_i18n"><a class="anchor" href="#_content_internationalization_i18n"></a>Content internationalization (i18n)</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><a href="../../../Administration/Language/Internationalization/" class="page">Internationalization</a> (i18n) of content is not supported in the <code>1.3.x</code> and <code>2.0.x</code> versions of the Content Editor module and its Stories app submodule.</p>
-</div>
-<div class="paragraph">
-<p>The feature will only be enabled in version <code>2.1</code>. Until it is released for production-ready use, you cen test it out in version <code>2.1-beta</code>. This version is available on Magnolia Nexus under the following coordinates:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>&lt;dependency&gt;
-  &lt;groupId&gt;info.magnolia.editor&lt;/groupId&gt;
-  &lt;artifactId&gt;content-editor-parent&lt;/artifactId&gt;
-  &lt;version&gt;2.1-beta&lt;/version&gt;
-&lt;/dependency&gt;</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Before adding this beta into your webapp, you must remove the bundled version of the module.</p>
+<p><a href="../../../Administration/Language/Internationalization/" class="xref page">Internationalization</a> (i18n) of content is supported since version <code>2.1</code> of the Content Editor module. Block definitions and data structures created in the older versions of the module must be migrated.</p>
 </div>
 <div class="sect2">
 <h3 id="_compatibility_of_content_and_block_definitions"><a class="anchor" href="#_compatibility_of_content_and_block_definitions"></a>Compatibility of content and block definitions</h3>
 <div class="sect3">
 <h4 id="_flat_vs_nested_content_structure"><a class="anchor" href="#_flat_vs_nested_content_structure"></a>Flat vs nested content structure</h4>
 <div class="paragraph">
-<p>The data model for the internationalized Content Editor stories is different in the beta version. Whereas in <code>1.3.x</code> and <code>2.0.x</code> the <code>mgnl:block</code> elements are stored in a flat node structure,</p>
+<p>The data model has changed for internationalized stories. Whereas in versions <code>1.3.x</code> and <code>2.0.x</code> of the module, the <code>mgnl:block</code> elements are stored in a flat node structure,</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -2718,22 +2724,22 @@ a list:</p>
 </div>
 </div>
 <div class="paragraph">
-<p>in the i18n-supported version, the nodes are locale-nested under intermediate nodes of type <code>mgnl:contentNode</code>, named <code>custom_de</code> and <code>custom</code> in this example:</p>
+<p>in the i18n-supported version (<code>2.1</code> and later), the nodes are locale-nested under intermediate nodes of type <code>mgnl:contentNode</code>, named <code>blocks_de</code> and <code>blocks</code> in this example:</p>
 </div>
 <div class="listingblock">
 <div class="content">
 <pre>stories
 └── story1
-    └── custom_de
+    └── blocks_de
     │   ├── 0_de
     │   └── 1_de
-    └── custom
+    └── blocks
         ├── 0
         └── 1</pre>
 </div>
 </div>
 <div class="paragraph">
-<p>This must be reflected in your <code><a href="../../../Modules/List-of-modules/Content-Editor-module/Multi-JCR-block/" class="page">MultiJcrBlockDefinition</a></code>, where you need to add and enable the <code>i18n</code> property.</p>
+<p>This must be reflected in your <code><a href="../../../Modules/List-of-modules/Content-Editor-module/Multi-JCR-block/" class="xref page">MultiJcrBlockDefinition</a></code>, where you need to add and enable the <code>i18n</code> property.</p>
 </div>
 <div class="paragraph">
 <p>Instead of the <code>CurrentItemProvider</code>, the <code>CompatibleBlockProvider</code> is set as the default provider, which can resolve both flat and nested block nodes. You do not need to declare it in your block definition.</p>
@@ -2744,7 +2750,7 @@ a list:</p>
 <dd>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-yml hljs" data-lang="yml">custom:
+<pre class="highlightjs highlight"><code class="language-yml hljs" data-lang="yml">blocks:
   label: Blocks
   $type: multiJcrBlock
   i18n: true
@@ -2762,27 +2768,27 @@ a list:</p>
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-This applies only to the <code>2.0.x</code> block definitions. Block definitions created for version <code>1.3.x</code> (5 UI) of the module are not compatible with the <code>2.1-beta</code> version and must be fully migrated.
+This applies only to the <code>2.0.x</code> block definitions. Block definitions created for version <code>1.3.x</code> (5 UI) of the module are not compatible with the <code>2.1</code> version and must be fully migrated.
 </td>
 </tr>
 </table>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_migrating_content_to_2_1_beta"><a class="anchor" href="#_migrating_content_to_2_1_beta"></a>Migrating content to <code>2.1-beta</code></h4>
+<h4 id="_migrating_content"><a class="anchor" href="#_migrating_content"></a>Migrating content</h4>
 <div class="paragraph">
 <p>There are two ways you can migrate the non-i18n blocks to the i18n-compatible hierarchy: using a version handler or a Groovy script.</p>
 </div>
 <div class="sect4">
 <h5 id="_version_handler"><a class="anchor" href="#_version_handler"></a>Version handler</h5>
 <div class="paragraph">
-<p>When upgrading the Stories app submodule to version <code>2.1-beta</code> (or <code>2.1</code> once available), all block nodes in the <code>stories</code> workspace will be moved to intermediate nodes, see the <code>MigrateBlockToIntermediateParentTask</code> task.</p>
+<p>When upgrading the Stories app submodule to version <code>2.1</code> or higher, all block nodes in the <code>stories</code> workspace will be moved to intermediate nodes, see the <code>MigrateBlockToIntermediateParentTask</code> task.</p>
 </div>
 </div>
 <div class="sect4">
 <h5 id="_groovy_script"><a class="anchor" href="#_groovy_script"></a>Groovy script</h5>
 <div class="paragraph">
-<p>You can run the migration task in the <a href="../../List-of-apps/Groovy-app/" class="page">Groovy app</a>, especially in case a block node is stored in another workspace.</p>
+<p>You can run the migration task in the <a href="../../List-of-apps/Groovy-app/" class="xref page">Groovy app</a>, especially in case a block node is stored in another workspace.</p>
 </div>
 <div class="dlist">
 <dl>
@@ -2799,7 +2805,7 @@ import javax.jcr.Session
 
 
 Session session =  MgnlContext.getJCRSession("stories");
-task = new MigrateBlockToIntermediateParentTask("stories", "/", "custom");
+task = new MigrateBlockToIntermediateParentTask("stories", "/", "blocks");
 task.execute(Components.newInstance(InstallContextImpl.class));
 session.save();</code></pre>
 </div>
@@ -2816,43 +2822,9 @@ session.save();</code></pre>
 <p><code>/</code> - path</p>
 </li>
 <li>
-<p><code>custom</code> - name of the intermediate node, the name of the <code>multiJcrBlock</code> field, see <a href="https://git.magnolia-cms.com/projects/ENTERPRISE/repos/content-editor/browse/stories-app/src/main/resources/stories-app/apps/stories.yaml#555" class="bare">https://git.magnolia-cms.com/projects/ENTERPRISE/repos/content-editor/browse/stories-app/src/main/resources/stories-app/apps/stories.yaml#555</a>.</p>
+<p><code>blocks</code> - name of the intermediate node, the name of the <code>multiJcrBlock</code> field.</p>
 </li>
 </ul>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<div class="title">Editing and publishing aspects</div>
-<div class="dlist">
-<dl>
-<dt class="hdlist1">Locale selector is disabled</dt>
-<dd>
-<p>The locale selector combo box is disabled in the following cases:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>The <code>multiJcrBlock</code> field is configured with <code>i18n: true</code> but the story structure has not been migrated yet.</p>
-</li>
-<li>
-<p>The story complies with the new i18n structure but the <code>multiJcrBlock</code> field is configured with <code>i18n: false</code>.</p>
-</li>
-</ul>
-</div>
-</dd>
-<dt class="hdlist1">Publishing stories with multilanguage content</dt>
-<dd>
-<p>When you publish a story where multilanguage content is enabled and present, the whole story node is published, that is all language variants of the blocks in the story are always published.</p>
-</dd>
-</dl>
-</div>
-</td>
-</tr>
-</table>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -2860,16 +2832,16 @@ session.save();</code></pre>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="../Block-definition/" class="page">Block definition</a></p>
+<p><a href="../Block-definition/" class="xref page">Block definition</a></p>
 </li>
 <li>
-<p><a href="../" class="page">Developing a custom content editor app</a></p>
+<p><a href="../" class="xref page">Developing a custom content editor app</a></p>
 </li>
 <li>
-<p><a href="../../../Modules/List-of-modules/Content-Editor-module/" class="page">Content Editor module</a></p>
+<p><a href="../../../Modules/List-of-modules/Content-Editor-module/" class="xref page">Content Editor module</a></p>
 </li>
 <li>
-<p><a href="../../List-of-apps/Stories-app/" class="page">Stories app</a></p>
+<p><a href="../../List-of-apps/Stories-app/" class="xref page">Stories app</a></p>
 </li>
 </ul>
 </div>
@@ -2933,7 +2905,7 @@ session.save();</code></pre>
 
 
 <div class="footer-terms">
-  <span>2021 Magnolia International Ltd. Some rights reserved.</span>
+  <span>2022 Magnolia International Ltd. Some rights reserved.</span>
   <a href="https://www.magnolia-cms.com/legal/privacy.html" target="_blank">Privacy policy</a>
 </div>
 

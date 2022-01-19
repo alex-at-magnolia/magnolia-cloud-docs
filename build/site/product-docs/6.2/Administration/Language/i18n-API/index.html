@@ -6,9 +6,9 @@
     <title>i18n API :: Magnolia Cloud Service Internal Documentation</title>
     <link rel="canonical" href="https://saas-docs.beta.de.magnolia-cloud.com/saas/product-docs/6.2/Administration/Language/i18n-API/">
     <link rel="prev" href="../Generic-i18n-keys/">
-    <link rel="next" href="../i18n-best-practices/">
+    <link rel="next" href="../Choiceformatting-i18n-messages/">
     <meta name="keywords" content="i18n, api">
-    <meta name="generator" content="Antora 2.3.3">
+    <meta name="generator" content="Antora 3.0.0">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
 
 <link rel="stylesheet" href="../../../../../_/css/site.css">
@@ -146,6 +146,12 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../../../Releases/Recent-features/">Recent features</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../../Releases/Release-notes-for-Magnolia-CMS-6.2.15/"><span class="smalltext">Release notes for Magnolia CMS 6.2.15</span></a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../../Releases/Release-notes-for-Magnolia-CMS-6.2.14/"><span class="smalltext">Release notes for Magnolia CMS 6.2.14</span></a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../../../Releases/Release-notes-for-Magnolia-CMS-6.2.13/"><span class="smalltext">Release notes for Magnolia CMS 6.2.13</span></a>
@@ -488,6 +494,9 @@
     <a class="nav-link" href="./">i18n API</a>
   </li>
   <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Choiceformatting-i18n-messages/">Choiceformatting i18n messages</a>
+  </li>
+  <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../i18n-best-practices/">i18n best practices</a>
   </li>
 </ul>
@@ -681,6 +690,9 @@
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../../Developing/SPA-development-and-Magnolia/Attaching-an-SPA-project-to-Magnolia/">Attaching an SPA project to Magnolia</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../../Developing/SPA-development-and-Magnolia/SPA-hosting/">Hosting the SPA</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../../Developing/SPA-development-and-Magnolia/Personalization-of-headless-SPA-projects/">Personalization of headless SPA projects</a>
@@ -1193,6 +1205,9 @@
     <a class="nav-link" href="../../../Modules/List-of-modules/Categorization-module/">Categorization module</a>
   </li>
   <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../../Modules/List-of-modules/Configuration-Framework-module/">Configuration Framework module</a>
+  </li>
+  <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../../Modules/List-of-modules/Contacts-module/">Contacts module</a>
   </li>
   <li class="nav-item" data-depth="3">
@@ -1374,17 +1389,23 @@
     <a class="nav-link" href="../../../Modules/List-of-modules/Personalization-module/My-first-personalized-campaign/">My first personalized campaign</a>
   </li>
   <li class="nav-item" data-depth="4">
+    <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../../../Modules/List-of-modules/Personalization-module/Creating-custom-traits/">Creating custom traits</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../../../Modules/List-of-modules/Personalization-module/Creating-custom-traits-with-complex-fields/">Creating custom traits with complex fields</a>
   </li>
-  <li class="nav-item" data-depth="4">
+  <li class="nav-item" data-depth="5">
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../../../Modules/List-of-modules/Personalization-module/Creating-custom-traits-without-Java/">Creating custom traits without Java</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="5">
+  <li class="nav-item" data-depth="6">
     <a class="nav-link" href="../../../Modules/List-of-modules/Personalization-module/Creating-custom-traits-without-Java/Cookies-trait-configuration/">Cookies trait configuration</a>
   </li>
-  <li class="nav-item" data-depth="5">
+  <li class="nav-item" data-depth="6">
     <a class="nav-link" href="../../../Modules/List-of-modules/Personalization-module/Creating-custom-traits-without-Java/Creating-a-custom-cookie-trait-without-Java/">Creating a custom cookie trait without Java</a>
+  </li>
+</ul>
   </li>
 </ul>
   </li>
@@ -1948,6 +1969,9 @@
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../../Apps/Developing-a-custom-non-jcr-content-app/">Developing a custom (non-JCR) content app</a>
+  </li>
+  <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../../../Apps/Developing-a-custom-content-editor-app/">Developing a custom content editor app</a>
 <ul class="nav-list">
@@ -2335,7 +2359,7 @@
     <li class="component is-current">
       <span class="title">DX Core</span>
       <ul class="versions">
-        <li class="version is-current is-latest">
+        <li class="version is-current">
           <a href="../../../">6.2</a>
         </li>
       </ul>
@@ -2343,7 +2367,7 @@
     <li class="component">
       <span class="title">Magnolia SaaS</span>
       <ul class="versions">
-        <li class="version is-latest">
+        <li class="version">
           <a href="../../../../../saas/">master</a>
         </li>
       </ul>
@@ -2351,7 +2375,7 @@
     <li class="component">
       <span class="title">Magnolia SaaS CLI</span>
       <ul class="versions">
-        <li class="version is-latest">
+        <li class="version">
           <a href="../../../../../saas-cli/">master</a>
         </li>
       </ul>
@@ -2397,7 +2421,7 @@ resource bundles</a>.</p>
 <h2 id="_overview"><a class="anchor" href="#_overview"></a>Overview</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The Magnolia i18n API is based on <a href="#_thebase_javamessagebundle">Java
+<p>The Magnolia i18n API is based on <a href="#_the_base_java_message_bundle">Java
 resource bundles</a> and related classes. Among the main advantages of this
 API are:</p>
 </div>
@@ -2576,7 +2600,7 @@ order.</p>
 properties of items such as template definition, dialog definition,
 forms, fields, validators, column definitions, subapp description, app
 definition and others. Depending on the underlying
-<a href="https://nexus.magnolia-cms.com/#nexus-search;classname~I18nKeyGenerator">I18nKeyGenerator<sup></a>[I18nKeyGenerator</sup>], one or more
+<a href="https://nexus.magnolia-cms.com/#nexus-search;classname~I18nKeyGenerator" target="_blank" rel="noopener">I18nKeyGenerator</a>, one or more
 keys are generated for a property. As a result, you don’t have to assign
 keys to them. You only have to provide the translations, at least one
 translation for one key. Please note that you may nonetheless use your
@@ -2652,7 +2676,7 @@ foobar.customlabels.page.dilbert.title=Dilberts page :^)</code></pre>
 <div class="paragraph">
 <p>Note that Magnolia provides many so called <code>generic keys</code> which are
 already translated and which may fit to your items. See
-<a href="../Generic-i18n-keys/" class="page">generic i18n keys</a> for
+<a href="../Generic-i18n-keys/" class="xref page">generic i18n keys</a> for
 further details.</p>
 </div>
 </div>
@@ -2668,8 +2692,8 @@ the auto-generated keys.</p>
 </div>
 <div class="paragraph">
 <p>You can also implement your own custom key generator class. Implement
-<a href="https://nexus.magnolia-cms.com/#nexus-search;classname~I18nKeyGenerator">I18nKeyGenerator<sup></a>[I18nKeyGenerator</sup>] or extend
-<a href="https://nexus.magnolia-cms.com/#nexus-search;classname~AbstractI18nKeyGenerator">AbstractI18nKeyGenerator<sup></a>[AbstractI18nKeyGenerator</sup>].</p>
+<a href="https://nexus.magnolia-cms.com/#nexus-search;classname~I18nKeyGenerator" target="_blank" rel="noopener">I18nKeyGenerator</a> or extend
+<a href="https://nexus.magnolia-cms.com/#nexus-search;classname~AbstractI18nKeyGenerator" target="_blank" rel="noopener">AbstractI18nKeyGenerator</a>.</p>
 </div>
 </div>
 </div>
@@ -2713,18 +2737,18 @@ public interface RenderableDefinition extends NamedDefinition {
 <div class="ulist">
 <ul>
 <li>
-<p>Line 1: <a href="https://nexus.magnolia-cms.com/#nexus-search;classname~I18nable">I18nable<sup></a>[I18nable</sup>] annotation
+<p>Line 1: <a href="https://nexus.magnolia-cms.com/#nexus-search;classname~I18nable" target="_blank" rel="noopener">I18nable</a> annotation
 specifies the key generator class.</p>
 </li>
 <li>
-<p>Lines 11, 14: <a href="https://nexus.magnolia-cms.com/#nexus-search;classname~I18nText">I18nText<sup></a>[I18nText</sup>]
+<p>Lines 11, 14: <a href="https://nexus.magnolia-cms.com/#nexus-search;classname~I18nText" target="_blank" rel="noopener">I18nText</a>
 annotation marks methods that return text which should be translated.</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>Use <a href="https://nexus.magnolia-cms.com/#nexus-search;classname~I18nable">I18nable<sup></a>[I18nable</sup>] and
-<a href="https://nexus.magnolia-cms.com/#nexus-search;classname~I18nText">I18nText<sup></a>[I18nText</sup>] for custom definition
+<p>Use <a href="https://nexus.magnolia-cms.com/#nexus-search;classname~I18nable" target="_blank" rel="noopener">I18nable</a> and
+<a href="https://nexus.magnolia-cms.com/#nexus-search;classname~I18nText" target="_blank" rel="noopener">I18nText</a> for custom definition
 classes which should be i18n-ized.</p>
 </div>
 <div class="admonitionblock note">
@@ -2735,14 +2759,14 @@ classes which should be i18n-ized.</p>
 </td>
 <td class="content">
 From Magnolia 6.2.1, any method annotated with
-<a href="https://nexus.magnolia-cms.com/#nexus-search;classname~I18nText">I18nText<sup></a>[I18nText</sup>] uses <code>NO_FALLBACK</code> by
+<a href="https://nexus.magnolia-cms.com/#nexus-search;classname~I18nText" target="_blank" rel="noopener">I18nText</a> uses <code>NO_FALLBACK</code> by
 default if no translation is found.
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>info.magnolia.i18nsystem.I18nText</p>
+<p><code>info.magnolia.i18nsystem.I18nText</code></p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -2768,7 +2792,7 @@ default if no translation is found.
 <div class="paragraph">
 <p>If you want to internationalize UI elements or other things which are
 built directly on Java, use the
-<a href="https://nexus.magnolia-cms.com/#nexus-search;classname~SimpleTranslator">SimpleTranslator<sup></a>[SimpleTranslator</sup>] translation
+<a href="https://nexus.magnolia-cms.com/#nexus-search;classname~SimpleTranslator" target="_blank" rel="noopener">SimpleTranslator</a> translation
 service. In a simple content app, you probably won’t need to create UI
 elements in code since most of them can be configured. But if you do a
 custom app or anything more complex, below is the way the translation
@@ -2822,19 +2846,32 @@ public class MyClass {
 <p>The key <code>messages-app.app.button.sendMessage</code> must be in a message file
 with a value:</p>
 </div>
-<div class="paragraph">
-<p>myapp-messages_en.properties</p>
-</div>
 <div class="listingblock">
+<div class="title">myapp-messages_en.properties</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">messages-app.app.button.sendMessage=Send message</code></pre>
+</div>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Related topics</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="../../../Templating/Template-scripts/Rendering-context-objects/#_i18n" class="xref page">Rendering context objects: i18n</a></p>
+</li>
+<li>
+<p><a href="../Choiceformatting-i18n-messages/" class="xref page">Choiceformatting i18n messages</a></p>
+</li>
+</ul>
+</div>
 </div>
 </div>
 </div>
 </div>
 <nav class="pagination">
   <span class="prev"><a href="../Generic-i18n-keys/">Generic i18n keys</a></span>
-  <span class="next"><a href="../i18n-best-practices/">i18n best practices</a></span>
+  <span class="next"><a href="../Choiceformatting-i18n-messages/">Choiceformatting i18n messages</a></span>
 </nav>
 </article>
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
@@ -2885,7 +2922,7 @@ with a value:</p>
 
 
 <div class="footer-terms">
-  <span>2021 Magnolia International Ltd. Some rights reserved.</span>
+  <span>2022 Magnolia International Ltd. Some rights reserved.</span>
   <a href="https://www.magnolia-cms.com/legal/privacy.html" target="_blank">Privacy policy</a>
 </div>
 

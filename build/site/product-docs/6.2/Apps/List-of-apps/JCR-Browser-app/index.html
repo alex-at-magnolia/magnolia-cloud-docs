@@ -8,7 +8,7 @@
     <link rel="prev" href="../Groovy-app/">
     <link rel="next" href="../JCR-Tools-app/">
     <meta name="keywords" content="app, content-app">
-    <meta name="generator" content="Antora 2.3.3">
+    <meta name="generator" content="Antora 3.0.0">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
 
 <link rel="stylesheet" href="../../../../../_/css/site.css">
@@ -146,6 +146,12 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../../../Releases/Recent-features/">Recent features</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../../Releases/Release-notes-for-Magnolia-CMS-6.2.15/"><span class="smalltext">Release notes for Magnolia CMS 6.2.15</span></a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../../Releases/Release-notes-for-Magnolia-CMS-6.2.14/"><span class="smalltext">Release notes for Magnolia CMS 6.2.14</span></a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../../../Releases/Release-notes-for-Magnolia-CMS-6.2.13/"><span class="smalltext">Release notes for Magnolia CMS 6.2.13</span></a>
@@ -488,6 +494,9 @@
     <a class="nav-link" href="../../../Administration/Language/i18n-API/">i18n API</a>
   </li>
   <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../../Administration/Language/Choiceformatting-i18n-messages/">Choiceformatting i18n messages</a>
+  </li>
+  <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../../Administration/Language/i18n-best-practices/">i18n best practices</a>
   </li>
 </ul>
@@ -681,6 +690,9 @@
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../../Developing/SPA-development-and-Magnolia/Attaching-an-SPA-project-to-Magnolia/">Attaching an SPA project to Magnolia</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../../Developing/SPA-development-and-Magnolia/SPA-hosting/">Hosting the SPA</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../../Developing/SPA-development-and-Magnolia/Personalization-of-headless-SPA-projects/">Personalization of headless SPA projects</a>
@@ -1193,6 +1205,9 @@
     <a class="nav-link" href="../../../Modules/List-of-modules/Categorization-module/">Categorization module</a>
   </li>
   <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../../Modules/List-of-modules/Configuration-Framework-module/">Configuration Framework module</a>
+  </li>
+  <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../../Modules/List-of-modules/Contacts-module/">Contacts module</a>
   </li>
   <li class="nav-item" data-depth="3">
@@ -1374,17 +1389,23 @@
     <a class="nav-link" href="../../../Modules/List-of-modules/Personalization-module/My-first-personalized-campaign/">My first personalized campaign</a>
   </li>
   <li class="nav-item" data-depth="4">
+    <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../../../Modules/List-of-modules/Personalization-module/Creating-custom-traits/">Creating custom traits</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../../../Modules/List-of-modules/Personalization-module/Creating-custom-traits-with-complex-fields/">Creating custom traits with complex fields</a>
   </li>
-  <li class="nav-item" data-depth="4">
+  <li class="nav-item" data-depth="5">
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../../../Modules/List-of-modules/Personalization-module/Creating-custom-traits-without-Java/">Creating custom traits without Java</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="5">
+  <li class="nav-item" data-depth="6">
     <a class="nav-link" href="../../../Modules/List-of-modules/Personalization-module/Creating-custom-traits-without-Java/Cookies-trait-configuration/">Cookies trait configuration</a>
   </li>
-  <li class="nav-item" data-depth="5">
+  <li class="nav-item" data-depth="6">
     <a class="nav-link" href="../../../Modules/List-of-modules/Personalization-module/Creating-custom-traits-without-Java/Creating-a-custom-cookie-trait-without-Java/">Creating a custom cookie trait without Java</a>
+  </li>
+</ul>
   </li>
 </ul>
   </li>
@@ -1948,6 +1969,9 @@
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../Developing-a-custom-non-jcr-content-app/">Developing a custom (non-JCR) content app</a>
+  </li>
+  <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../../Developing-a-custom-content-editor-app/">Developing a custom content editor app</a>
 <ul class="nav-list">
@@ -2335,7 +2359,7 @@
     <li class="component is-current">
       <span class="title">DX Core</span>
       <ul class="versions">
-        <li class="version is-current is-latest">
+        <li class="version is-current">
           <a href="../../../">6.2</a>
         </li>
       </ul>
@@ -2343,7 +2367,7 @@
     <li class="component">
       <span class="title">Magnolia SaaS</span>
       <ul class="versions">
-        <li class="version is-latest">
+        <li class="version">
           <a href="../../../../../saas/">master</a>
         </li>
       </ul>
@@ -2351,7 +2375,7 @@
     <li class="component">
       <span class="title">Magnolia SaaS CLI</span>
       <ul class="versions">
-        <li class="version is-latest">
+        <li class="version">
           <a href="../../../../../saas-cli/">master</a>
         </li>
       </ul>
@@ -2389,7 +2413,7 @@
 <div class="paragraph">
 <p>The JCR Browser app is a Magnolia tool that allows you to work at the
 repository level in any
-<a href="../../../Administration/Architecture/Workspaces/" class="page">workspace</a>. You can see
+<a href="../../../Administration/Architecture/Workspaces/" class="xref page">workspace</a>. You can see
 details that are not readily visible in a specific app’s tree view as well as
 edit content and associated configuration.</p>
 </div>
@@ -2401,7 +2425,7 @@ edit content and associated configuration.</p>
 <div class="paragraph">
 <p>The JCR Browser app is in the JCR Tools app group that is only available
 to the <code>superuser</code> role. This restriction is configured in the
-<a href="../../App-configuration/App-launcher-layout/" class="page">app launcher layout</a>.</p>
+<a href="../../App-configuration/App-launcher-layout/" class="xref page">app launcher layout</a>.</p>
 </div>
 <div class="paragraph">
 <p>The app is configured in <code>/jcr-browser/apps/jcr-browser-app.yaml</code>.</p>
@@ -2482,7 +2506,7 @@ Publishing in the JCR browser might differ from publishing in a dedicated app be
 <div class="paragraph">
 <p>The JCR browser shows content as it is stored in the JCR and is useful
 for looking at details that you would not see in the
-<a href="../Pages-app/" class="page">Pages app</a>.</p>
+<a href="../Pages-app/" class="xref page">Pages app</a>.</p>
 </div>
 <div class="paragraph">
 <p><strong>Example</strong>: Compare the Travel Demo&#8217;s <strong>About</strong> page in the JCR browser and
@@ -2518,11 +2542,11 @@ in the editor.</p>
 </li>
 <li>
 <p>There are content nodes for each page
-<a href="../../../Templating/Template-definition/Area-definition/" class="page">area</a>.</p>
+<a href="../../../Templating/Template-definition/Area-definition/" class="xref page">area</a>.</p>
 </li>
 <li>
 <p>All area nodes reside at the same level, regardless of whether
-configured as main or <a href="../../../Templating/Template-definition/Area-definition/#_creating_nested_areas" class="page">nested</a>
+configured as main or <a href="../../../Templating/Template-definition/Area-definition/#_creating_nested_areas" class="xref page">nested</a>
 areas.</p>
 </li>
 </ul>
@@ -2537,7 +2561,7 @@ areas.</p>
 <ul>
 <li>
 <p><code>single</code> and <code>list</code>
-<a href="../../../Templating/Template-definition/Area-definition/" class="page">areas</a> have
+<a href="../../../Templating/Template-definition/Area-definition/" class="xref page">areas</a> have
 component subnodes.</p>
 </li>
 <li>
@@ -2567,7 +2591,7 @@ order may not match the numbering order.</p>
 <li>
 <p>Components with nested components follow the same structure as area
 nodes. See
-<a href="../../../Templating/Template-definition/Component-definition/" class="page">component
+<a href="../../../Templating/Template-definition/Component-definition/" class="xref page">component
 definition</a>.</p>
 </li>
 </ul>
@@ -2582,7 +2606,7 @@ definition</a>.</p>
 <ul>
 <li>
 <p>Property names correspond to dialog
-<a href="../../../Templating/Dialog-definition/Field-definition/" class="page">field</a> names.</p>
+<a href="../../../Templating/Dialog-definition/Field-definition/" class="xref page">field</a> names.</p>
 </li>
 <li>
 <p>i18n properties have a locale suffix by default.</p>
@@ -2669,7 +2693,7 @@ definition</a>.</p>
 
 
 <div class="footer-terms">
-  <span>2021 Magnolia International Ltd. Some rights reserved.</span>
+  <span>2022 Magnolia International Ltd. Some rights reserved.</span>
   <a href="https://www.magnolia-cms.com/legal/privacy.html" target="_blank">Privacy policy</a>
 </div>
 

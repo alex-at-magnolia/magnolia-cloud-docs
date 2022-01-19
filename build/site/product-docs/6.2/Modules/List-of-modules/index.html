@@ -7,7 +7,7 @@
     <link rel="canonical" href="https://saas-docs.beta.de.magnolia-cloud.com/saas/product-docs/6.2/Modules/List-of-modules/">
     <link rel="prev" href="../">
     <link rel="next" href="About-App-module/">
-    <meta name="generator" content="Antora 2.3.3">
+    <meta name="generator" content="Antora 3.0.0">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
 
 <link rel="stylesheet" href="../../../../_/css/site.css">
@@ -145,6 +145,12 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../../Releases/Recent-features/">Recent features</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../Releases/Release-notes-for-Magnolia-CMS-6.2.15/"><span class="smalltext">Release notes for Magnolia CMS 6.2.15</span></a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../Releases/Release-notes-for-Magnolia-CMS-6.2.14/"><span class="smalltext">Release notes for Magnolia CMS 6.2.14</span></a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../../Releases/Release-notes-for-Magnolia-CMS-6.2.13/"><span class="smalltext">Release notes for Magnolia CMS 6.2.13</span></a>
@@ -487,6 +493,9 @@
     <a class="nav-link" href="../../Administration/Language/i18n-API/">i18n API</a>
   </li>
   <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../Administration/Language/Choiceformatting-i18n-messages/">Choiceformatting i18n messages</a>
+  </li>
+  <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../Administration/Language/i18n-best-practices/">i18n best practices</a>
   </li>
 </ul>
@@ -680,6 +689,9 @@
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../Developing/SPA-development-and-Magnolia/Attaching-an-SPA-project-to-Magnolia/">Attaching an SPA project to Magnolia</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../Developing/SPA-development-and-Magnolia/SPA-hosting/">Hosting the SPA</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../Developing/SPA-development-and-Magnolia/Personalization-of-headless-SPA-projects/">Personalization of headless SPA projects</a>
@@ -1192,6 +1204,9 @@
     <a class="nav-link" href="Categorization-module/">Categorization module</a>
   </li>
   <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="Configuration-Framework-module/">Configuration Framework module</a>
+  </li>
+  <li class="nav-item" data-depth="3">
     <a class="nav-link" href="Contacts-module/">Contacts module</a>
   </li>
   <li class="nav-item" data-depth="3">
@@ -1373,17 +1388,23 @@
     <a class="nav-link" href="Personalization-module/My-first-personalized-campaign/">My first personalized campaign</a>
   </li>
   <li class="nav-item" data-depth="4">
+    <button class="nav-item-toggle"></button>
     <a class="nav-link" href="Personalization-module/Creating-custom-traits/">Creating custom traits</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="Personalization-module/Creating-custom-traits-with-complex-fields/">Creating custom traits with complex fields</a>
   </li>
-  <li class="nav-item" data-depth="4">
+  <li class="nav-item" data-depth="5">
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="Personalization-module/Creating-custom-traits-without-Java/">Creating custom traits without Java</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="5">
+  <li class="nav-item" data-depth="6">
     <a class="nav-link" href="Personalization-module/Creating-custom-traits-without-Java/Cookies-trait-configuration/">Cookies trait configuration</a>
   </li>
-  <li class="nav-item" data-depth="5">
+  <li class="nav-item" data-depth="6">
     <a class="nav-link" href="Personalization-module/Creating-custom-traits-without-Java/Creating-a-custom-cookie-trait-without-Java/">Creating a custom cookie trait without Java</a>
+  </li>
+</ul>
   </li>
 </ul>
   </li>
@@ -1947,6 +1968,9 @@
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../Apps/Developing-a-custom-non-jcr-content-app/">Developing a custom (non-JCR) content app</a>
+  </li>
+  <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../../Apps/Developing-a-custom-content-editor-app/">Developing a custom content editor app</a>
 <ul class="nav-list">
@@ -2334,7 +2358,7 @@
     <li class="component is-current">
       <span class="title">DX Core</span>
       <ul class="versions">
-        <li class="version is-current is-latest">
+        <li class="version is-current">
           <a href="../../">6.2</a>
         </li>
       </ul>
@@ -2342,7 +2366,7 @@
     <li class="component">
       <span class="title">Magnolia SaaS</span>
       <ul class="versions">
-        <li class="version is-latest">
+        <li class="version">
           <a href="../../../../saas/">master</a>
         </li>
       </ul>
@@ -2350,7 +2374,7 @@
     <li class="component">
       <span class="title">Magnolia SaaS CLI</span>
       <ul class="versions">
-        <li class="version is-latest">
+        <li class="version">
           <a href="../../../../saas-cli/">master</a>
         </li>
       </ul>
@@ -2401,391 +2425,397 @@
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="About-App-module/" class="page">About App module</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="About-App-module/" class="xref page">About App module</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">CE</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">6.2.13</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">6.2.15</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://jira.magnolia-cms.com/browse/ABTEST" target="_blank" rel="noopener">MGNLUI</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="Admincentral-module/" class="page">Admincentral module</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="Admincentral-module/" class="xref page">Admincentral module</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">CE</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">6.2.13</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">6.2.15</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://jira.magnolia-cms.com/browse/MGNLUI" target="_blank" rel="noopener">MGNLUI</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="Advanced-cache-modules/" class="page">Advanced cache modules</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="Advanced-cache-modules/" class="xref page">Advanced cache modules</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">DX Core</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">2.3.4</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://jira.magnolia-cms.com/browse/MGNLADVCACHE" target="_blank" rel="noopener">MGNLADVCACHE</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="Backup-module/" class="page">Backup module</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="Backup-module/" class="xref page">Backup module</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">DX Core</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2.4.1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2.4.2</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://jira.magnolia-cms.com/browse/MGNLBACKUP" target="_blank" rel="noopener">MGNLBACKUP</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="Blossom-module/" class="page">Blossom module</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="Blossom-module/" class="xref page">Blossom module</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">CE</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">3.4.7</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://jira.magnolia-cms.com/browse/BLOSSOM" target="_blank" rel="noopener">BLOSSOM</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="Cache-modules/" class="page">Cache modules</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="Cache-modules/" class="xref page">Cache modules</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Multiple (see modules)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">5.9.4</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://jira.magnolia-cms.com/browse/MGNLCACHE" target="_blank" rel="noopener">MGNLCACHE</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="Campaign-Publisher-module/" class="page">Campaign Publisher module</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="Campaign-Publisher-module/" class="xref page">Campaign Publisher module</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">DX Core</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">2.0</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://jira.magnolia-cms.com/browse/MGNLCAMPU" target="_blank" rel="noopener">MGNLCAMPU</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="CAS-module/" class="page">CAS module</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="CAS-module/" class="xref page">CAS module</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">DX Core</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">1.3.2</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://jira.magnolia-cms.com/browse/MGNLCAS" target="_blank" rel="noopener">MGNLCAS</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="Categorization-module/" class="page">Categorization module</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="Categorization-module/" class="xref page">Categorization module</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">CE</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">2.8</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://jira.magnolia-cms.com/browse/MGNLCAT" target="_blank" rel="noopener">MGNLCAT</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="Contacts-module/" class="page">Contacts module</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="Configuration-Framework-module/" class="xref page">Configuration Framework module</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">6.2.15</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://jira.magnolia-cms.com/browse/MAGNOLIA" target="_blank" rel="noopener">MAGNOLIA</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="Contacts-module/" class="xref page">Contacts module</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">CE</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">1.8.4</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://jira.magnolia-cms.com/browse/CNTCTSAPP" target="_blank" rel="noopener">CNTCTSAPP</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="Content-Dependencies-module/" class="page">Content Dependencies module</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="Content-Dependencies-module/" class="xref page">Content Dependencies module</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">DX Core</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">2.0.3</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://jira.magnolia-cms.com/browse/MGNLCDEP" target="_blank" rel="noopener">MGNLCDEP</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="Content-Editor-module/" class="page">Content Editor module</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="Content-Editor-module/" class="xref page">Content Editor module</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">DX Core</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2.0.3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2.1</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://jira.magnolia-cms.com/browse/CONTEDIT" target="_blank" rel="noopener">CONTEDIT</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="Content-Importer-module/" class="page">Content Importer module</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="Content-Importer-module/" class="xref page">Content Importer module</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">CE</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">1.0.4</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://jira.magnolia-cms.com/browse/MGNLCI" target="_blank" rel="noopener">MGNLCI</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="Content-Tags-module/" class="page">Content Tags module</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="Content-Tags-module/" class="xref page">Content Tags module</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">DX Core</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">2.0.4</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://jira.magnolia-cms.com/browse/CONTTAGS" target="_blank" rel="noopener">CONTTAGS</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="Content-Translation-Support-module/" class="page">Content Translation Support module</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="Content-Translation-Support-module/" class="xref page">Content Translation Support module</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">DX Core</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">2.5.4</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://jira.magnolia-cms.com/browse/MGNLCTS" target="_blank" rel="noopener">MGNLCTS</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="Content-Types-module/" class="page">Content Types module</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="Content-Types-module/" class="xref page">Content Types module</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">CE</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">1.2</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://jira.magnolia-cms.com/browse/MGNLCT" target="_blank" rel="noopener">MGNLCT</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="Definitions-App-module/" class="page">Definitions App module</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="Definitions-App-module/" class="xref page">Definitions App module</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">CE</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">2.1.2</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://jira.magnolia-cms.com/browse/CFGUI" target="_blank" rel="noopener">CFGUI</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="Device-Detection-module/" class="page">Device Detection module</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="Device-Detection-module/" class="xref page">Device Detection module</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">CE</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">1.1</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://jira.magnolia-cms.com/browse/DEVDECT" target="_blank" rel="noopener">DEVDECT</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="Diff-module/" class="page">Diff module</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="Diff-module/" class="xref page">Diff module</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">DX Core</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2.2.1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2.2.2</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://jira.magnolia-cms.com/browse/MGNLDIFF" target="_blank" rel="noopener">MGNLDIFF</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="Digital-Asset-Management-module/" class="page">Digital Asset Management module</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="Digital-Asset-Management-module/" class="xref page">Digital Asset Management module</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">CE</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">3.0.11</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3.0.12</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://jira.magnolia-cms.com/browse/DAM" target="_blank" rel="noopener">DAM</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="Form-module/" class="page">Form module</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="Form-module/" class="xref page">Form module</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">CE</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">2.7.3</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://jira.magnolia-cms.com/browse/MGNLFORM" target="_blank" rel="noopener">MGNLFORM</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="GraphQL-module/" class="page">GraphQL module</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="GraphQL-module/" class="xref page">GraphQL module</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">DX Core</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">1.0.2</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://jira.magnolia-cms.com/browse/MGNLGROOVY" target="_blank" rel="noopener">MGNLGQL</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="Groovy-module/" class="page">Groovy module</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="Groovy-module/" class="xref page">Groovy module</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">CE</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">3.0.1</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://jira.magnolia-cms.com/browse/MGNLGROOVY" target="_blank" rel="noopener">MGNLGROOVY</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="High-performance-caching-modules/" class="page">High performance caching modules</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="High-performance-caching-modules/" class="xref page">High performance caching modules</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">DX Core</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">multiple (see modules)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">multiple (see modules)</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="IBM-WebSphere-compatibility-module/" class="page">IBM WebSphere compatibility module</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="IBM-WebSphere-compatibility-module/" class="xref page">IBM WebSphere compatibility module</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">DX Core</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">1.5</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://jira.magnolia-cms.com/browse/MGNLEE" target="_blank" rel="noopener">MGNLEE</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="Image-Recognition-module/" class="page">Image Recognition module</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="Image-Recognition-module/" class="xref page">Image Recognition module</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">DX Core</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">1.2.5</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://jira.magnolia-cms.com/browse/IMGREC" target="_blank" rel="noopener">IMGREC</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="Imaging-module/" class="page">Imaging module</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="Imaging-module/" class="xref page">Imaging module</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">CE</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">3.5.1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3.5.2</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://jira.magnolia-cms.com/browse/MGNLIMG" target="_blank" rel="noopener">MGNLIMG</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="JavaScript-Models-module/" class="page">JavaScript Models module</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="JavaScript-Models-module/" class="xref page">JavaScript Models module</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">CE</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">1.1.2</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://jira.magnolia-cms.com/browse/JSMODELS" target="_blank" rel="noopener">JSMODELS</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="JCR-Tools-module/" class="page">JCR Tools module</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="JCR-Tools-module/" class="xref page">JCR Tools module</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">CE</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">1.3</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://jira.magnolia-cms.com/browse/JCRTOOLS" target="_blank" rel="noopener">JCRTOOLS</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="LDAP-Connector-module/" class="page">LDAP Connector module</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="LDAP-Connector-module/" class="xref page">LDAP Connector module</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">DX Core</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">1.10.3</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://jira.magnolia-cms.com/browse/MGNLLDAP" target="_blank" rel="noopener">MGNLLDAP</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="Log-Tools-module/" class="page">Log Tools module</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="Log-Tools-module/" class="xref page">Log Tools module</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">CE</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">1.1.2</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://jira.magnolia-cms.com/browse/LOGTOOLS" target="_blank" rel="noopener">LOGTOOLS</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="Mail-module/" class="page">Mail module</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="Mail-module/" class="xref page">Mail module</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">CE</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">5.5.9</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://jira.magnolia-cms.com/browse/MGNLMAIL" target="_blank" rel="noopener">MGNLMAIL</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="Marketing-Tags-module/" class="page">Marketing Tags module</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="Marketing-Tags-module/" class="xref page">Marketing Tags module</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">DX Core</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">1.4.4</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://jira.magnolia-cms.com/browse/MGNLTAGS" target="_blank" rel="noopener">MGNLTAGS</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="Messages-App-module/" class="page">Messages App module</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="Messages-App-module/" class="xref page">Messages App module</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">CE</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">6.2.13</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">6.2.15</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://jira.magnolia-cms.com/browse/MGNLUI" target="_blank" rel="noopener">MGNLUI</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="MTE-module/MTK-module/" class="page">MTK module</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="MTE-module/MTK-module/" class="xref page">MTK module</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">CE</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2.0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2.0.1</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://jira.magnolia-cms.com/browse/MTK" target="_blank" rel="noopener">MTK</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="MTE-module/" class="page">MTE module</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="MTE-module/" class="xref page">MTE module</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">CE</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2.0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2.0.1</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://jira.magnolia-cms.com/browse/MTE" target="_blank" rel="noopener">MTE</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="Multisite-module/" class="page">Multisite module</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="Multisite-module/" class="xref page">Multisite module</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">DX Core</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2.1.1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2.1.2</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://jira.magnolia-cms.com/browse/MULTISITE" target="_blank" rel="noopener">MULTISITE</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="Observation-module/" class="page">Observation module</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="Observation-module/" class="xref page">Observation module</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">CE</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">2.2</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://jira.magnolia-cms.com/browse/MGNLOBS" target="_blank" rel="noopener">MGNLOBS</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="Pages-module/" class="page">Pages module</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="Pages-module/" class="xref page">Pages module</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">CE</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">6.2.12</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">6.2.14</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://jira.magnolia-cms.com/browse/PAGES" target="_blank" rel="noopener">PAGES</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="Password-Manager-module/" class="page">Password Manager module</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="Password-Manager-module/" class="xref page">Password Manager module</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">CE</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">1.2.5</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://jira.magnolia-cms.com/browse/PSWDMNGR" target="_blank" rel="noopener">PSWDMNGR</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="Periscope-module/" class="page">Periscope module</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="Periscope-module/" class="xref page">Periscope module</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">CE</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">1.2.4</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://jira.magnolia-cms.com/browse/MGNLPER" target="_blank" rel="noopener">MGNLPER</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="Periscope-Result-Ranker-module/" class="page">Periscope Result Ranker module</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="Periscope-Result-Ranker-module/" class="xref page">Periscope Result Ranker module</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">DX Core</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">1.2.4</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://jira.magnolia-cms.com/browse/MLEARN" target="_blank" rel="noopener">MLEARN</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="Personalization-module/" class="page">Personalization module</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="Personalization-module/" class="xref page">Personalization module</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">DX Core</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">2.1.0</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://jira.magnolia-cms.com/browse/MGNLPN" target="_blank" rel="noopener">MGNLPN</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="Privacy-module/" class="page">Privacy module</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="Privacy-module/" class="xref page">Privacy module</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">DX Core</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">2.0</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://jira.magnolia-cms.com/browse/MGNLPRIV" target="_blank" rel="noopener">MGNLPRIV</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="Public-User-Registration-module/" class="page">Public User Registration module</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="Public-User-Registration-module/" class="xref page">Public User Registration module</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">CE</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">2.7.5</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://jira.magnolia-cms.com/browse/MGNLPUR" target="_blank" rel="noopener">MGNLPUR</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="Publishing-module/" class="page">Publishing module</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="Publishing-module/" class="xref page">Publishing module</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">CE</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1.3.2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.3.3</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://jira.magnolia-cms.com/browse/PUBLISHING" target="_blank" rel="noopener">PUBLISHING</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="Publishing-Transactional-module/" class="page">Publishing Transactional module</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="Publishing-Transactional-module/" class="xref page">Publishing Transactional module</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">DX Core</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">1.2</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://jira.magnolia-cms.com/browse/EEPUBLISH" target="_blank" rel="noopener">EEPUBLISH</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="Resources-module/" class="page">Resources module</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="Resources-module/" class="xref page">Resources module</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">CE</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">3.0.6</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://jira.magnolia-cms.com/browse/MGNLRES" target="_blank" rel="noopener">MGNLRES</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="REST-Client-module/" class="page">REST Client module</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="REST-Client-module/" class="xref page">REST Client module</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">CE</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">2.0.1</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://jira.magnolia-cms.com/browse/MGNLRESTCL" target="_blank" rel="noopener">MGNLRESTCL</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="REST-module/" class="page">REST module</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="REST-module/" class="xref page">REST module</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">CE</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2.2.9</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2.2.10</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://jira.magnolia-cms.com/browse/MGNLREST" target="_blank" rel="noopener">MGNLREST</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="RSS-Aggregator-module/" class="page">RSS Aggregator module</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="RSS-Aggregator-module/" class="xref page">RSS Aggregator module</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">CE</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">2.6.4</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://jira.magnolia-cms.com/browse/MGNLRSSAGG" target="_blank" rel="noopener">MGNLRSSAGG</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="Scheduler-module/" class="page">Scheduler module</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="Scheduler-module/" class="xref page">Scheduler module</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">CE</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">2.3.5</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://jira.magnolia-cms.com/browse/MGNLSCH" target="_blank" rel="noopener">MGNLSCH</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="Security-App-module/" class="page">Security App module</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="Security-App-module/" class="xref page">Security App module</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">CE</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">2.3.5</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://jira.magnolia-cms.com/browse/MGNLUI" target="_blank" rel="noopener">MGNLUI</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="Site-module/" class="page">Site module</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="Site-module/" class="xref page">Site module</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">CE</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">1.4.3</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://jira.magnolia-cms.com/browse/MGNLSITE" target="_blank" rel="noopener">MGNLSITE</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="Soft-Locking-module/" class="page">Soft Locking module</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="Soft-Locking-module/" class="xref page">Soft Locking module</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">DX Core</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">3.1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3.1.1</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://jira.magnolia-cms.com/browse/MGNLSLOCK" target="_blank" rel="noopener">MGNLSLOCK</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="Solr-module/" class="page">Solr module</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="Solr-module/" class="xref page">Solr module</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">DX Core</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">5.6</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://jira.magnolia-cms.com/browse/MGNLEESOLR" target="_blank" rel="noopener">MGNLEESOLR</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="SSO-module/" class="page">SSO module</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="SSO-module/" class="xref page">SSO module</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">DX Core</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2.0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2.0.2</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://jira.magnolia-cms.com/browse/MGNLSSO" target="_blank" rel="noopener">MGNLSSO</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="Synchronization-module/" class="page">Synchronization module</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="Synchronization-module/" class="xref page">Synchronization module</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">DX Core</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1.9.2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2.0</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://jira.magnolia-cms.com/browse/MGNLSYNC" target="_blank" rel="noopener">MGNLSYNC</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="Text-Classification-module/" class="page">Text Classification module</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="Text-Classification-module/" class="xref page">Text Classification module</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">DX Core</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">1.1.4</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://jira.magnolia-cms.com/browse/TXTREC" target="_blank" rel="noopener">TXTREC</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="Tools-module/" class="page">Tools module</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="Tools-module/" class="xref page">Tools module</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">DX Core</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">1.9.2</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://jira.magnolia-cms.com/browse/MGNLTOOLS" target="_blank" rel="noopener">MGNLTOOLS</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="UI-Framework-REST-Extensions-module/" class="page">UI Framework REST Extensions module</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="UI-Framework-REST-Extensions-module/" class="xref page">UI Framework REST Extensions module</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">DX Core</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">1.0.2</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://jira.magnolia-cms.com/browse/MGNLRESTUI" target="_blank" rel="noopener">MGNLRESTUI</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="UI-module/" class="page">UI module</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="UI-module/" class="xref page">UI module</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">CE,Cloud</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">6.2.13</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">6.2.15</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://jira.magnolia-cms.com/browse/MGNLUI" target="_blank" rel="noopener">MGNLUI</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="UI-module/UI-Media-Editor-module/" class="page">UI Media Editor module</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="UI-module/UI-Media-Editor-module/" class="xref page">UI Media Editor module</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">CE,Cloud</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">6.2.13</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">6.2.15</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://jira.magnolia-cms.com/browse/MGNLUI" target="_blank" rel="noopener">MGNLUI</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="Virtual-URI-module/" class="page">Virtual URI module</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="Virtual-URI-module/" class="xref page">Virtual URI module</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">CE</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">6.2.13</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">6.2.15</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://jira.magnolia-cms.com/browse/MAGNOLIA" target="_blank" rel="noopener">MAGNOLIA</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="Workflow-module/" class="page">Workflow module</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="Workflow-module/" class="xref page">Workflow module</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">DX Core</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">6.0.5</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://jira.magnolia-cms.com/browse/MGNLWORKFLOW" target="_blank" rel="noopener">MGNLWORKFLOW</a></p></td>
@@ -2813,31 +2843,31 @@
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../Connector-Packs/Analytics-Connector-Pack/Analytics-module/" class="page">Analytics module</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../Connector-Packs/Analytics-Connector-Pack/Analytics-module/" class="xref page">Analytics module</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Analytics Connector Pack</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">1.2.2</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://jira.magnolia-cms.com/browse/ANALYTICS" target="_blank" rel="noopener">Analytics</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../Connector-Packs/Commerce-Connector-Pack/E-commerce-module/" class="page">E-commerce module</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../Connector-Packs/Commerce-Connector-Pack/E-commerce-module/" class="xref page">E-commerce module</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Commerce Connector Pack</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">1.3.1</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://jira.magnolia-cms.com/browse/ECOMMERCE" target="_blank" rel="noopener">ECOMMERCE</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../Connector-Packs/DAM-Connector-Pack/External-DAM-module/" class="page">External DAM module</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../Connector-Packs/DAM-Connector-Pack/External-DAM-module/" class="xref page">External DAM module</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">DAM Connector Pack</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1.0.1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.1.1</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://jira.magnolia-cms.com/browse/EXTDAM" target="_blank" rel="noopener">EXTDAM</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../Connector-Packs/Marketing-Automation-Connector-Pack/Marketing-Automation-module/" class="page">Marketing Automation module</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../Connector-Packs/Marketing-Automation-Connector-Pack/Marketing-Automation-module/" class="xref page">Marketing Automation module</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Marketing Automation Connector Pack</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">1.0.3</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://jira.magnolia-cms.com/browse/MKTAUT" target="_blank" rel="noopener">MKTAUT</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../Connector-Packs/Optimization-Connector-Pack/Siteimprove-module/" class="page">Siteimprove module</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../Connector-Packs/Optimization-Connector-Pack/Siteimprove-module/" class="xref page">Siteimprove module</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Optimization Connector Pack</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">1.2</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://jira.magnolia-cms.com/browse/SIMPROVE" target="_blank" rel="noopener">SIMPROVE</a></p></td>
@@ -2862,13 +2892,13 @@
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../Special-Features/ABn-testing/ABn-testing-module/" class="page">A/B/n Testing module</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../Special-Features/ABn-testing/ABn-testing-module/" class="xref page">A/B/n Testing module</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">1.0.1</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://jira.magnolia-cms.com/browse/ABTEST" target="_blank" rel="noopener">ABTEST</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../Special-Features/Live-Copy/Live-Copy-module/" class="page">Live Copy module</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">3.2.6</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../Special-Features/Live-Copy/Live-Copy-module/" class="xref page">Live Copy module</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3.2.7</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://jira.magnolia-cms.com/browse/LIVECOPY" target="_blank" rel="noopener">LIVECOPY</a></p></td>
 </tr>
 </tbody>
@@ -2927,7 +2957,7 @@
 
 
 <div class="footer-terms">
-  <span>2021 Magnolia International Ltd. Some rights reserved.</span>
+  <span>2022 Magnolia International Ltd. Some rights reserved.</span>
   <a href="https://www.magnolia-cms.com/legal/privacy.html" target="_blank">Privacy policy</a>
 </div>
 

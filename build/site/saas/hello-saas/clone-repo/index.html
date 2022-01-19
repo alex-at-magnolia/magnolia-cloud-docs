@@ -7,7 +7,7 @@
     <link rel="canonical" href="https://saas-docs.beta.de.magnolia-cloud.com/saas/saas/hello-saas/clone-repo/">
     <link rel="prev" href="../">
     <link rel="next" href="../connect-with-git/">
-    <meta name="generator" content="Antora 2.3.3">
+    <meta name="generator" content="Antora 3.0.0">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
 
 <link rel="stylesheet" href="../../../_/css/site.css">
@@ -207,7 +207,7 @@
     <li class="component">
       <span class="title">DX Core</span>
       <ul class="versions">
-        <li class="version is-latest">
+        <li class="version">
           <a href="../../../product-docs/6.2/">6.2</a>
         </li>
       </ul>
@@ -215,7 +215,7 @@
     <li class="component is-current">
       <span class="title">Magnolia SaaS</span>
       <ul class="versions">
-        <li class="version is-current is-latest">
+        <li class="version is-current">
           <a href="../../">master</a>
         </li>
       </ul>
@@ -223,7 +223,7 @@
     <li class="component">
       <span class="title">Magnolia SaaS CLI</span>
       <ul class="versions">
-        <li class="version is-latest">
+        <li class="version">
           <a href="../../../saas-cli/">master</a>
         </li>
       </ul>
@@ -256,7 +256,7 @@
 <article class="doc">
 <h1 class="page">Clone the Hello SaaS repo</h1>
 <div class="paragraph">
-<p><span class="post">Hello SaaS</span></p>
+<p><span class="d-post">Hello SaaS</span></p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -288,6 +288,29 @@
 </tr>
 </table>
 </div>
+<div class="paragraph collapse">
+<p>New to GitHub or Bitbucket?</p>
+</div>
+<div class="exampleblock collapse-content">
+<div class="content">
+<div class="paragraph">
+<p>If you have created a new account in GitHub or Bitbucket, you may need to generate an SSH key for your account.</p>
+</div>
+<div class="paragraph">
+<p>See the following for help:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent" target="_blank" rel="noopener">GitHub SSH keys</a></p>
+</li>
+<li>
+<p><a href="https://support.atlassian.com/bitbucket-cloud/docs/set-up-an-ssh-key/" target="_blank" rel="noopener">BitBucket SSH keys</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
 </li>
 <li>
 <p>Navigate to the local folder containing your cloned <code>hello-saas</code> repository.</p>
@@ -296,63 +319,68 @@
 <p>Set your <code>remote origin</code> to the remote repository you just created.</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-sh hljs" data-lang="sh">git remote set-url origin &lt;ssh://repo/url.git&gt; <i class="conum" data-value="1"></i><b>(1)</b>
-git branch -m main <i class="conum" data-value="2"></i><b>(2)</b></code></pre>
+<pre class="highlightjs highlight"><code class="language-sh hljs" data-lang="sh">git remote add origin &lt;ssh://repo/url.git&gt;</code></pre>
 </div>
 </div>
-<div class="colist arabic">
-<table>
+<div class="paragraph collapse">
+<p>Where do I find this SSH URL?</p>
+</div>
+<div class="exampleblock collapse-content">
+<div class="content">
+<div class="paragraph">
+<p>You can typically find this where clone down your repository in your git provider.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
 <tr>
-<td><i class="conum" data-value="1"></i><b>1</b></td>
-<td>Sets the remote origin URL.</td>
+<th class="tableblock halign-left valign-top">GitHub</th>
+<th class="tableblock halign-left valign-top">Bitbucket Server</th>
+<th class="tableblock halign-left valign-top">Bitbucket Cloud</th>
 </tr>
+</thead>
+<tbody>
 <tr>
-<td><i class="conum" data-value="2"></i><b>2</b></td>
-<td>Sets your default branch to <code>main</code>.</td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock zoom">
+<div class="content">
+<img src="../../developers/_images/git/github-clone.jpg" alt="github clone">
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock zoom">
+<div class="content">
+<img src="../../developers/_images/git/bitbucket-clone.jpg" alt="bitbucket clone">
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock zoom">
+<div class="content">
+<img src="../../developers/_images/git/bitbucket-clone-cloud.jpg" alt="bitbucket clone cloud">
+</div>
+</div></div></td>
 </tr>
+</tbody>
 </table>
 </div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>To make sure adding the remote origin worked, run <code>git remote -v</code> in your terminal and you should get:</p>
 </div>
+</li>
+<li>
+<p>Set your default branch to <code>main</code>.</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>git remote -v
-origin &lt;/path/to/remote/repo&gt; (fetch)
-origin &lt;/path/to/remote/repo&gt; (push)</code></pre>
+<pre class="highlightjs highlight"><code class="language-sh hljs" data-lang="sh">git branch -m main</code></pre>
 </div>
-</div>
-</td>
-</tr>
-</table>
 </div>
 </li>
 <li>
 <p>Push everything to your remote git provider.</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-sh hljs" data-lang="sh">git push -u origin --all <i class="conum" data-value="3"></i><b>(3)</b>
-git push origin --tags <i class="conum" data-value="4"></i><b>(4)</b></code></pre>
+<pre class="highlightjs highlight"><code class="language-sh hljs" data-lang="sh">git push -u origin --all
+git push origin --tags</code></pre>
 </div>
-</div>
-<div class="colist arabic">
-<table>
-<tr>
-<td><i class="conum" data-value="1"></i><b>1</b></td>
-<td>Pushes everything to <code>main</code>.</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="2"></i><b>2</b></td>
-<td>Pushes all <code>--tags</code> to <code>main</code>.</td>
-</tr>
-</table>
 </div>
 </li>
 </ol>
@@ -410,7 +438,7 @@ git push origin --tags <i class="conum" data-value="4"></i><b>(4)</b></code></pr
 
 
 <div class="footer-terms">
-  <span>2021 Magnolia International Ltd. Some rights reserved.</span>
+  <span>2022 Magnolia International Ltd. Some rights reserved.</span>
   <a href="https://www.magnolia-cms.com/legal/privacy.html" target="_blank">Privacy policy</a>
 </div>
 

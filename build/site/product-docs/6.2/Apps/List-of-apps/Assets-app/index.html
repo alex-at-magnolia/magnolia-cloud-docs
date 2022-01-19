@@ -8,7 +8,7 @@
     <link rel="prev" href="../About-Magnolia-app/">
     <link rel="next" href="../Backup-app/">
     <meta name="keywords" content="app, content-app">
-    <meta name="generator" content="Antora 2.3.3">
+    <meta name="generator" content="Antora 3.0.0">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
 
 <link rel="stylesheet" href="../../../../../_/css/site.css">
@@ -146,6 +146,12 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../../../Releases/Recent-features/">Recent features</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../../Releases/Release-notes-for-Magnolia-CMS-6.2.15/"><span class="smalltext">Release notes for Magnolia CMS 6.2.15</span></a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../../Releases/Release-notes-for-Magnolia-CMS-6.2.14/"><span class="smalltext">Release notes for Magnolia CMS 6.2.14</span></a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../../../Releases/Release-notes-for-Magnolia-CMS-6.2.13/"><span class="smalltext">Release notes for Magnolia CMS 6.2.13</span></a>
@@ -488,6 +494,9 @@
     <a class="nav-link" href="../../../Administration/Language/i18n-API/">i18n API</a>
   </li>
   <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../../Administration/Language/Choiceformatting-i18n-messages/">Choiceformatting i18n messages</a>
+  </li>
+  <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../../Administration/Language/i18n-best-practices/">i18n best practices</a>
   </li>
 </ul>
@@ -681,6 +690,9 @@
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../../Developing/SPA-development-and-Magnolia/Attaching-an-SPA-project-to-Magnolia/">Attaching an SPA project to Magnolia</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../../Developing/SPA-development-and-Magnolia/SPA-hosting/">Hosting the SPA</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../../Developing/SPA-development-and-Magnolia/Personalization-of-headless-SPA-projects/">Personalization of headless SPA projects</a>
@@ -1193,6 +1205,9 @@
     <a class="nav-link" href="../../../Modules/List-of-modules/Categorization-module/">Categorization module</a>
   </li>
   <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../../Modules/List-of-modules/Configuration-Framework-module/">Configuration Framework module</a>
+  </li>
+  <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../../Modules/List-of-modules/Contacts-module/">Contacts module</a>
   </li>
   <li class="nav-item" data-depth="3">
@@ -1374,17 +1389,23 @@
     <a class="nav-link" href="../../../Modules/List-of-modules/Personalization-module/My-first-personalized-campaign/">My first personalized campaign</a>
   </li>
   <li class="nav-item" data-depth="4">
+    <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../../../Modules/List-of-modules/Personalization-module/Creating-custom-traits/">Creating custom traits</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../../../Modules/List-of-modules/Personalization-module/Creating-custom-traits-with-complex-fields/">Creating custom traits with complex fields</a>
   </li>
-  <li class="nav-item" data-depth="4">
+  <li class="nav-item" data-depth="5">
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../../../Modules/List-of-modules/Personalization-module/Creating-custom-traits-without-Java/">Creating custom traits without Java</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="5">
+  <li class="nav-item" data-depth="6">
     <a class="nav-link" href="../../../Modules/List-of-modules/Personalization-module/Creating-custom-traits-without-Java/Cookies-trait-configuration/">Cookies trait configuration</a>
   </li>
-  <li class="nav-item" data-depth="5">
+  <li class="nav-item" data-depth="6">
     <a class="nav-link" href="../../../Modules/List-of-modules/Personalization-module/Creating-custom-traits-without-Java/Creating-a-custom-cookie-trait-without-Java/">Creating a custom cookie trait without Java</a>
+  </li>
+</ul>
   </li>
 </ul>
   </li>
@@ -1948,6 +1969,9 @@
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../Developing-a-custom-non-jcr-content-app/">Developing a custom (non-JCR) content app</a>
+  </li>
+  <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../../Developing-a-custom-content-editor-app/">Developing a custom content editor app</a>
 <ul class="nav-list">
@@ -2335,7 +2359,7 @@
     <li class="component is-current">
       <span class="title">DX Core</span>
       <ul class="versions">
-        <li class="version is-current is-latest">
+        <li class="version is-current">
           <a href="../../../">6.2</a>
         </li>
       </ul>
@@ -2343,7 +2367,7 @@
     <li class="component">
       <span class="title">Magnolia SaaS</span>
       <ul class="versions">
-        <li class="version is-latest">
+        <li class="version">
           <a href="../../../../../saas/">master</a>
         </li>
       </ul>
@@ -2351,7 +2375,7 @@
     <li class="component">
       <span class="title">Magnolia SaaS CLI</span>
       <ul class="versions">
-        <li class="version is-latest">
+        <li class="version">
           <a href="../../../../../saas-cli/">master</a>
         </li>
       </ul>
@@ -2388,14 +2412,14 @@
 <div class="sectionbody">
 <div class="paragraph">
 <p>Magnolia Assets app is a container app for asset management subapps such
-as <a href="../Magnolia-Assets-subapp/" class="page">Magnolia Assets
+as <a href="../Magnolia-Assets-subapp/" class="xref page">Magnolia Assets
 subapp</a>, Amazon S3 Assets or Bynder.</p>
 </div>
 <div class="paragraph">
 <p>Unlike the older
-<a href="../../../Support/Magnolia-5-UI-documentation/Content-apps-5-UI/List-of-apps-5-UI/Assets-app-5-UI/" class="page">Assets
+<a href="../../../Support/Magnolia-5-UI-documentation/Content-apps-5-UI/List-of-apps-5-UI/Assets-app-5-UI/" class="xref page">Assets
 app - 5 UI</a> (artifactID <code>magnolia‑dam‑app-compatibility</code>), which is based on the UI framework used in Magnolia 5.7 (referred to as <em>Magnolia
-5 UI</em>), the Assets app (artifactID <code>magnolia-dam-app</code>) is based on the <a href="../../../Upgrading-to-Magnolia/Changes-in-Magnolia-6-UI/" class="page">Magnolia 6 UI
+5 UI</em>), the Assets app (artifactID <code>magnolia-dam-app</code>) is based on the <a href="../../../Upgrading-to-Magnolia/Changes-in-Magnolia-6-UI/" class="xref page">Magnolia 6 UI
 framework</a>.</p>
 </div>
 </div>
@@ -2405,7 +2429,7 @@ framework</a>.</p>
 <div class="sectionbody">
 <div class="paragraph">
 <p>The Assets app is installed by the
-<a href="../../../Modules/List-of-modules/Digital-Asset-Management-module/" class="page">Digital
+<a href="../../../Modules/List-of-modules/Digital-Asset-Management-module/" class="xref page">Digital
 Asset Management module</a> as its submodule and is bundled with the
 following Magnolia-built webapps:</p>
 </div>
@@ -2427,7 +2451,7 @@ following Magnolia-built webapps:</p>
 </div>
 <div class="paragraph">
 <p>If you want to use the app in your custom webapp, make sure that you
-also add an asset management subapp, for example the <a href="../Magnolia-Assets-subapp/" class="page">Magnolia Assets
+also add an asset management subapp, for example the <a href="../Magnolia-Assets-subapp/" class="xref page">Magnolia Assets
 subapp</a> (artifactID <code>magnolia-dam-app-jcr</code>).</p>
 </div>
 <div class="admonitionblock warning">
@@ -2451,7 +2475,7 @@ without a subapp.
 <div class="paragraph">
 <p>The app’s configuration is stored in <code>/dam-app-core/apps/dam.yaml</code>. The
 configuration can be modified for example by
-<a href="../../../Developing/Definition-decoration/" class="page">definition decoration</a>, as is the
+<a href="../../../Developing/Definition-decoration/" class="xref page">definition decoration</a>, as is the
 case of the Magnolia Assets subapp, with a definition decoration
 available in
 <code>/dam-app-jcr/decorations/dam-assets-app/apps/dam.subApps.yaml</code>.</p>
@@ -2482,19 +2506,19 @@ Assets subapp:</p>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="../Magnolia-Assets-subapp/" class="page">Magnolia Assets subapp</a></p>
+<p><a href="../Magnolia-Assets-subapp/" class="xref page">Magnolia Assets subapp</a></p>
 </li>
 <li>
-<p><a href="../../../Connector-Packs/DAM-Connector-Pack/" class="page">DAM Connector Pack</a></p>
+<p><a href="../../../Connector-Packs/DAM-Connector-Pack/" class="xref page">DAM Connector Pack</a></p>
 </li>
 <li>
-<p><a href="../../../Authoring/Editing-images/" class="page">Editing images</a></p>
+<p><a href="../../../Authoring/Editing-images/" class="xref page">Editing images</a></p>
 </li>
 <li>
-<p><a href="../../../Authoring/Managing-assets/" class="page">Managing assets</a></p>
+<p><a href="../../../Authoring/Managing-assets/" class="xref page">Managing assets</a></p>
 </li>
 <li>
-<p><a href="../../../Modules/List-of-modules/Digital-Asset-Management-module/" class="page">Digital
+<p><a href="../../../Modules/List-of-modules/Digital-Asset-Management-module/" class="xref page">Digital
 Asset Management module</a></p>
 </li>
 </ul>
@@ -2556,7 +2580,7 @@ Asset Management module</a></p>
 
 
 <div class="footer-terms">
-  <span>2021 Magnolia International Ltd. Some rights reserved.</span>
+  <span>2022 Magnolia International Ltd. Some rights reserved.</span>
   <a href="https://www.magnolia-cms.com/legal/privacy.html" target="_blank">Privacy policy</a>
 </div>
 

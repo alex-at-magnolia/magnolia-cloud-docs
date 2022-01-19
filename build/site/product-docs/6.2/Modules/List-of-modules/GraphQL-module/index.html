@@ -8,7 +8,7 @@
     <link rel="prev" href="../Form-module/">
     <link rel="next" href="../Groovy-module/">
     <meta name="keywords" content="module, graphql">
-    <meta name="generator" content="Antora 2.3.3">
+    <meta name="generator" content="Antora 3.0.0">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
 
 <link rel="stylesheet" href="../../../../../_/css/site.css">
@@ -146,6 +146,12 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../../../Releases/Recent-features/">Recent features</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../../Releases/Release-notes-for-Magnolia-CMS-6.2.15/"><span class="smalltext">Release notes for Magnolia CMS 6.2.15</span></a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../../Releases/Release-notes-for-Magnolia-CMS-6.2.14/"><span class="smalltext">Release notes for Magnolia CMS 6.2.14</span></a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../../../Releases/Release-notes-for-Magnolia-CMS-6.2.13/"><span class="smalltext">Release notes for Magnolia CMS 6.2.13</span></a>
@@ -488,6 +494,9 @@
     <a class="nav-link" href="../../../Administration/Language/i18n-API/">i18n API</a>
   </li>
   <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../../Administration/Language/Choiceformatting-i18n-messages/">Choiceformatting i18n messages</a>
+  </li>
+  <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../../Administration/Language/i18n-best-practices/">i18n best practices</a>
   </li>
 </ul>
@@ -681,6 +690,9 @@
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../../Developing/SPA-development-and-Magnolia/Attaching-an-SPA-project-to-Magnolia/">Attaching an SPA project to Magnolia</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../../Developing/SPA-development-and-Magnolia/SPA-hosting/">Hosting the SPA</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../../Developing/SPA-development-and-Magnolia/Personalization-of-headless-SPA-projects/">Personalization of headless SPA projects</a>
@@ -1193,6 +1205,9 @@
     <a class="nav-link" href="../Categorization-module/">Categorization module</a>
   </li>
   <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Configuration-Framework-module/">Configuration Framework module</a>
+  </li>
+  <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../Contacts-module/">Contacts module</a>
   </li>
   <li class="nav-item" data-depth="3">
@@ -1374,17 +1389,23 @@
     <a class="nav-link" href="../Personalization-module/My-first-personalized-campaign/">My first personalized campaign</a>
   </li>
   <li class="nav-item" data-depth="4">
+    <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../Personalization-module/Creating-custom-traits/">Creating custom traits</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../Personalization-module/Creating-custom-traits-with-complex-fields/">Creating custom traits with complex fields</a>
   </li>
-  <li class="nav-item" data-depth="4">
+  <li class="nav-item" data-depth="5">
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../Personalization-module/Creating-custom-traits-without-Java/">Creating custom traits without Java</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="5">
+  <li class="nav-item" data-depth="6">
     <a class="nav-link" href="../Personalization-module/Creating-custom-traits-without-Java/Cookies-trait-configuration/">Cookies trait configuration</a>
   </li>
-  <li class="nav-item" data-depth="5">
+  <li class="nav-item" data-depth="6">
     <a class="nav-link" href="../Personalization-module/Creating-custom-traits-without-Java/Creating-a-custom-cookie-trait-without-Java/">Creating a custom cookie trait without Java</a>
+  </li>
+</ul>
   </li>
 </ul>
   </li>
@@ -1948,6 +1969,9 @@
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../../Apps/Developing-a-custom-non-jcr-content-app/">Developing a custom (non-JCR) content app</a>
+  </li>
+  <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../../../Apps/Developing-a-custom-content-editor-app/">Developing a custom content editor app</a>
 <ul class="nav-list">
@@ -2335,7 +2359,7 @@
     <li class="component is-current">
       <span class="title">DX Core</span>
       <ul class="versions">
-        <li class="version is-current is-latest">
+        <li class="version is-current">
           <a href="../../../">6.2</a>
         </li>
       </ul>
@@ -2343,7 +2367,7 @@
     <li class="component">
       <span class="title">Magnolia SaaS</span>
       <ul class="versions">
-        <li class="version is-latest">
+        <li class="version">
           <a href="../../../../../saas/">master</a>
         </li>
       </ul>
@@ -2351,7 +2375,7 @@
     <li class="component">
       <span class="title">Magnolia SaaS CLI</span>
       <ul class="versions">
-        <li class="version is-latest">
+        <li class="version">
           <a href="../../../../../saas-cli/">master</a>
         </li>
       </ul>
@@ -2417,7 +2441,7 @@
 </tbody>
 </table>
 <div class="paragraph">
-<p>The GraphQL module allows you to expose content stored in JCR through <a href="http://graphql.org" target="_blank" rel="noopener">GraphQL</a> <span class="post">POST</span> and <span class="get">GET</span> requests. The module provides a <a href="../../../Developing/API/GraphQL-API/" class="page">GraphQL API</a>, a binding to Magnolia assets and a seamless integration with <a href="../../../Features/Content-Types/" class="page">content types</a>.</p>
+<p>The GraphQL module allows you to expose content stored in JCR through <a href="http://graphql.org" target="_blank" rel="noopener">GraphQL</a> <span class="d-post">POST</span> and <span class="d-get">GET</span> requests. The module provides a <a href="../../../Developing/API/GraphQL-API/" class="xref page">GraphQL API</a>, a binding to Magnolia assets and a seamless integration with <a href="../../../Features/Content-Types/" class="xref page">content types</a>.</p>
 </div>
 </div>
 </div>
@@ -2543,7 +2567,7 @@
 <p>From Magnolia 6.2.10, the module is bundled with <code>magnolia-dx-core-demo-webapp</code>.</p>
 </div>
 <div class="paragraph">
-<p>You can download the webapp from the <a href="../../../Releases/" class="page">release notes</a> or <a href="https://files.magnolia-cms.com" target="_blank" rel="noopener">files.magnolia-cms.com</a>.</p>
+<p>You can download the webapp from the <a href="../../../Releases/" class="xref page">release notes</a> or <a href="https://files.magnolia-cms.com" target="_blank" rel="noopener">files.magnolia-cms.com</a>.</p>
 </div>
 </div>
 </div>
@@ -2551,7 +2575,7 @@
 <h2 id="_configuration"><a class="anchor" href="#_configuration"></a>Configuration</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The module itself does not require any configuration adjustments. It is ready for use once your Magnolia instance is up and running. Registered GraphQL types can be verified using the <a href="../../../Apps/List-of-apps/Definitions-app/" class="page">Definitions app</a>:</p>
+<p>The module itself does not require any configuration adjustments. It is ready for use once your Magnolia instance is up and running. Registered GraphQL types can be verified using the <a href="../../../Apps/List-of-apps/Definitions-app/" class="xref page">Definitions app</a>:</p>
 </div>
 <div class="paragraph">
 <p><span class="image zoom"><img src="../../../_images/6-2-3-graphqlModule-typesInDefsApp.png" alt="GraphQL types in the Definitions app" width="600"></span></p>
@@ -2559,7 +2583,7 @@
 <div class="sect2">
 <h3 id="_disabling_specific_graphql_types"><a class="anchor" href="#_disabling_specific_graphql_types"></a>Disabling specific GraphQL types</h3>
 <div class="paragraph">
-<p>If you need to disable a GraphQL schema for a content type, you can do so through <a href="../../../Developing/Definition-decoration/" class="page">definition decoration</a>, for example:</p>
+<p>If you need to disable a GraphQL schema for a content type, you can do so through <a href="../../../Developing/Definition-decoration/" class="xref page">definition decoration</a>, for example:</p>
 </div>
 <div class="paragraph">
 <p><code>/your-module/decorations/graphql-core/graphqlTypes/character.yaml</code></p>
@@ -2585,7 +2609,7 @@
 <div class="sect2">
 <h3 id="_access_control"><a class="anchor" href="#_access_control"></a>Access control</h3>
 <div class="paragraph">
-<p>All requests to the GraphQL servlet pass through a filter chain. Make sure that the instance handling GraphQL requests in a production environment has an appropriate assignment of JCR Access Control Lists (ACLs) and Web Access permissions for the GraphQL endpoint and for the JCR workspaces where GraphQL content is stored. For more information, see the <a href="../../../Apps/List-of-apps/Security-app/" class="page">Security app</a>.</p>
+<p>All requests to the GraphQL servlet pass through a filter chain. Make sure that the instance handling GraphQL requests in a production environment has an appropriate assignment of JCR Access Control Lists (ACLs) and Web Access permissions for the GraphQL endpoint and for the JCR workspaces where GraphQL content is stored. For more information, see the <a href="../../../Apps/List-of-apps/Security-app/" class="xref page">Security app</a>.</p>
 </div>
 </div>
 <div class="sect2">
@@ -2599,7 +2623,7 @@
 <div class="ulist">
 <ul>
 <li>
-<p>As the <a href="../../../Apps/List-of-apps/GraphQL-app/" class="page">GraphQL app</a>, available in the <strong>Dev</strong> group of the App launcher.</p>
+<p>As the <a href="../../../Apps/List-of-apps/GraphQL-app/" class="xref page">GraphQL app</a>, available in the <strong>Dev</strong> group of the App launcher.</p>
 </li>
 <li>
 <p>Directly in your web browser. On a localhost installation of Magnolia, the URL to access the servlet is <code><a href="http://localhost:8080/magnoliaAuthor/.graphiql" target="_blank" rel="noopener">http://localhost:8080/magnoliaAuthor/.graphiql</a></code>.</p>
@@ -2703,7 +2727,7 @@
 <div class="ulist">
 <ul>
 <li>
-<p>See <a href="../../../Developing/API/GraphQL-API/" class="page">GraphQL API</a>.</p>
+<p>See <a href="../../../Developing/API/GraphQL-API/" class="xref page">GraphQL API</a>.</p>
 </li>
 </ul>
 </div>
@@ -2762,7 +2786,7 @@
 
 
 <div class="footer-terms">
-  <span>2021 Magnolia International Ltd. Some rights reserved.</span>
+  <span>2022 Magnolia International Ltd. Some rights reserved.</span>
   <a href="https://www.magnolia-cms.com/legal/privacy.html" target="_blank">Privacy policy</a>
 </div>
 

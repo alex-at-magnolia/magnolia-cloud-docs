@@ -6,9 +6,9 @@
     <title>Action bar definition :: Magnolia Cloud Service Internal Documentation</title>
     <link rel="canonical" href="https://saas-docs.beta.de.magnolia-cloud.com/saas/product-docs/6.2/Apps/App-configuration/Action-bar-definition/">
     <link rel="prev" href="../Action-definition/">
-    <link rel="next" href="../../Developing-a-custom-content-editor-app/">
+    <link rel="next" href="../../Developing-a-custom-non-jcr-content-app/">
     <meta name="keywords" content="configuration, action, app-config, ui-framework, content-app">
-    <meta name="generator" content="Antora 2.3.3">
+    <meta name="generator" content="Antora 3.0.0">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
 
 <link rel="stylesheet" href="../../../../../_/css/site.css">
@@ -146,6 +146,12 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../../../Releases/Recent-features/">Recent features</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../../Releases/Release-notes-for-Magnolia-CMS-6.2.15/"><span class="smalltext">Release notes for Magnolia CMS 6.2.15</span></a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../../Releases/Release-notes-for-Magnolia-CMS-6.2.14/"><span class="smalltext">Release notes for Magnolia CMS 6.2.14</span></a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../../../Releases/Release-notes-for-Magnolia-CMS-6.2.13/"><span class="smalltext">Release notes for Magnolia CMS 6.2.13</span></a>
@@ -488,6 +494,9 @@
     <a class="nav-link" href="../../../Administration/Language/i18n-API/">i18n API</a>
   </li>
   <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../../Administration/Language/Choiceformatting-i18n-messages/">Choiceformatting i18n messages</a>
+  </li>
+  <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../../Administration/Language/i18n-best-practices/">i18n best practices</a>
   </li>
 </ul>
@@ -681,6 +690,9 @@
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../../Developing/SPA-development-and-Magnolia/Attaching-an-SPA-project-to-Magnolia/">Attaching an SPA project to Magnolia</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../../Developing/SPA-development-and-Magnolia/SPA-hosting/">Hosting the SPA</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../../Developing/SPA-development-and-Magnolia/Personalization-of-headless-SPA-projects/">Personalization of headless SPA projects</a>
@@ -1193,6 +1205,9 @@
     <a class="nav-link" href="../../../Modules/List-of-modules/Categorization-module/">Categorization module</a>
   </li>
   <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../../Modules/List-of-modules/Configuration-Framework-module/">Configuration Framework module</a>
+  </li>
+  <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../../Modules/List-of-modules/Contacts-module/">Contacts module</a>
   </li>
   <li class="nav-item" data-depth="3">
@@ -1374,17 +1389,23 @@
     <a class="nav-link" href="../../../Modules/List-of-modules/Personalization-module/My-first-personalized-campaign/">My first personalized campaign</a>
   </li>
   <li class="nav-item" data-depth="4">
+    <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../../../Modules/List-of-modules/Personalization-module/Creating-custom-traits/">Creating custom traits</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../../../Modules/List-of-modules/Personalization-module/Creating-custom-traits-with-complex-fields/">Creating custom traits with complex fields</a>
   </li>
-  <li class="nav-item" data-depth="4">
+  <li class="nav-item" data-depth="5">
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../../../Modules/List-of-modules/Personalization-module/Creating-custom-traits-without-Java/">Creating custom traits without Java</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="5">
+  <li class="nav-item" data-depth="6">
     <a class="nav-link" href="../../../Modules/List-of-modules/Personalization-module/Creating-custom-traits-without-Java/Cookies-trait-configuration/">Cookies trait configuration</a>
   </li>
-  <li class="nav-item" data-depth="5">
+  <li class="nav-item" data-depth="6">
     <a class="nav-link" href="../../../Modules/List-of-modules/Personalization-module/Creating-custom-traits-without-Java/Creating-a-custom-cookie-trait-without-Java/">Creating a custom cookie trait without Java</a>
+  </li>
+</ul>
   </li>
 </ul>
   </li>
@@ -1948,6 +1969,9 @@
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../Developing-a-custom-non-jcr-content-app/">Developing a custom (non-JCR) content app</a>
+  </li>
+  <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../../Developing-a-custom-content-editor-app/">Developing a custom content editor app</a>
 <ul class="nav-list">
@@ -2335,7 +2359,7 @@
     <li class="component is-current">
       <span class="title">DX Core</span>
       <ul class="versions">
-        <li class="version is-current is-latest">
+        <li class="version is-current">
           <a href="../../../">6.2</a>
         </li>
       </ul>
@@ -2343,7 +2367,7 @@
     <li class="component">
       <span class="title">Magnolia SaaS</span>
       <ul class="versions">
-        <li class="version is-latest">
+        <li class="version">
           <a href="../../../../../saas/">master</a>
         </li>
       </ul>
@@ -2351,7 +2375,7 @@
     <li class="component">
       <span class="title">Magnolia SaaS CLI</span>
       <ul class="versions">
-        <li class="version is-latest">
+        <li class="version">
           <a href="../../../../../saas-cli/">master</a>
         </li>
       </ul>
@@ -2400,7 +2424,7 @@ only display actions that are relevant for that item.</p>
 </div>
 <div class="paragraph">
 <p>The action bar references actions that are
-<a href="../Action-definition/" class="page">defined elsewhere</a>. This
+<a href="../Action-definition/" class="xref page">defined elsewhere</a>. This
 separation allows you to define an action once and use it in many
 places, not only in the action bar.</p>
 </div>
@@ -2410,7 +2434,7 @@ places, not only in the action bar.</p>
 <h2 id="_example_definition"><a class="anchor" href="#_example_definition"></a>Example definition</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Action bar in the <a href="../../List-of-apps/Contacts-app/" class="page">Contacts app</a>:</p>
+<p>Action bar in the <a href="../../List-of-apps/Contacts-app/" class="xref page">Contacts app</a>:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -2533,7 +2557,7 @@ action bar.</p>
 </div>
 <div class="paragraph">
 <p>Name of the action. Must be the same as the name defined in
-<a href="../../../Templating/Dialog-definition/" class="page">Dialog definition</a>.</p>
+<a href="../../../Templating/Dialog-definition/" class="xref page">Dialog definition</a>.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -2584,7 +2608,7 @@ action bar is available.</p>
 <td class="content">
 <div class="paragraph">
 <p>Action bar availability is different from
-<a href="../Action-definition/#_action_availability" class="page">action
+<a href="../Action-definition/#_action_availability" class="xref page">action
 availability</a> where availability rules are defined on an individual
 action level and apply to each use of the action.</p>
 </div>
@@ -2594,7 +2618,7 @@ action level and apply to each use of the action.</p>
 </div>
 <div class="paragraph">
 <p>For example, in the action bar configuration in the
-<a href="../../List-of-apps/Contacts-app/" class="page">Contacts app</a>:</p>
+<a href="../../List-of-apps/Contacts-app/" class="xref page">Contacts app</a>:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -2610,7 +2634,7 @@ groups in the <code>root</code> section.</p>
 <li>
 <p>Actions in the <code>deletedContact</code> section appear on selection of a
 <code>mgnl:contact</code> node type, but the <code>IsDeletedRule</code>
-<a href="../Action-definition/#_action_availability_definition_classes" class="page">rule
+<a href="../Action-definition/#_action_availability_definition_classes" class="xref page">rule
 class</a> limits action availability to the <strong>Publish deletion</strong> and <strong>Restore
 previous version</strong> actions when a contact has been marked for deletion.
 This rule returns <code>true</code> if the item is a node and has the
@@ -2704,7 +2728,7 @@ This rule returns <code>true</code> if the item is a node and has the
 </div>
 <div class="paragraph">
 <p>Name of the
-<a href="../../../Administration/Security/Roles-and-access-control-lists/" class="page">role</a> that
+<a href="../../../Administration/Security/Roles-and-access-control-lists/" class="xref page">role</a> that
 is permitted to execute the action.</p>
 </div></div></td>
 </tr>
@@ -2733,7 +2757,7 @@ listed.</p>
 <p><strong>required</strong></p>
 </div>
 <div class="paragraph">
-<p>A valid <a href="../../../Administration/Architecture/Node-types/" class="page">node type</a> such as
+<p>A valid <a href="../../../Administration/Architecture/Node-types/" class="xref page">node type</a> such as
 <code>mgnl:folder</code>.</p>
 </div></div></td>
 </tr>
@@ -2816,7 +2840,7 @@ implementation.</p>
 </div>
 <nav class="pagination">
   <span class="prev"><a href="../Action-definition/">Action definition</a></span>
-  <span class="next"><a href="../../Developing-a-custom-content-editor-app/">Developing a custom content editor app</a></span>
+  <span class="next"><a href="../../Developing-a-custom-non-jcr-content-app/">Developing a custom (non-JCR) content app</a></span>
 </nav>
 </article>
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
@@ -2867,7 +2891,7 @@ implementation.</p>
 
 
 <div class="footer-terms">
-  <span>2021 Magnolia International Ltd. Some rights reserved.</span>
+  <span>2022 Magnolia International Ltd. Some rights reserved.</span>
   <a href="https://www.magnolia-cms.com/legal/privacy.html" target="_blank">Privacy policy</a>
 </div>
 

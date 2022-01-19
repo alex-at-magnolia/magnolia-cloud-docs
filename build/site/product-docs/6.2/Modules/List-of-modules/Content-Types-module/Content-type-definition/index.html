@@ -8,7 +8,7 @@
     <link rel="prev" href="../">
     <link rel="next" href="Content-type-Data-source-definition/">
     <meta name="keywords" content="configuration, content-types">
-    <meta name="generator" content="Antora 2.3.3">
+    <meta name="generator" content="Antora 3.0.0">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
 
 <link rel="stylesheet" href="../../../../../../_/css/site.css">
@@ -146,6 +146,12 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../../../../Releases/Recent-features/">Recent features</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../../../Releases/Release-notes-for-Magnolia-CMS-6.2.15/"><span class="smalltext">Release notes for Magnolia CMS 6.2.15</span></a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../../../Releases/Release-notes-for-Magnolia-CMS-6.2.14/"><span class="smalltext">Release notes for Magnolia CMS 6.2.14</span></a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../../../../Releases/Release-notes-for-Magnolia-CMS-6.2.13/"><span class="smalltext">Release notes for Magnolia CMS 6.2.13</span></a>
@@ -488,6 +494,9 @@
     <a class="nav-link" href="../../../../Administration/Language/i18n-API/">i18n API</a>
   </li>
   <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../../../Administration/Language/Choiceformatting-i18n-messages/">Choiceformatting i18n messages</a>
+  </li>
+  <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../../../Administration/Language/i18n-best-practices/">i18n best practices</a>
   </li>
 </ul>
@@ -681,6 +690,9 @@
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../../../Developing/SPA-development-and-Magnolia/Attaching-an-SPA-project-to-Magnolia/">Attaching an SPA project to Magnolia</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../../../Developing/SPA-development-and-Magnolia/SPA-hosting/">Hosting the SPA</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../../../Developing/SPA-development-and-Magnolia/Personalization-of-headless-SPA-projects/">Personalization of headless SPA projects</a>
@@ -1193,6 +1205,9 @@
     <a class="nav-link" href="../../Categorization-module/">Categorization module</a>
   </li>
   <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../Configuration-Framework-module/">Configuration Framework module</a>
+  </li>
+  <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../Contacts-module/">Contacts module</a>
   </li>
   <li class="nav-item" data-depth="3">
@@ -1374,17 +1389,23 @@
     <a class="nav-link" href="../../Personalization-module/My-first-personalized-campaign/">My first personalized campaign</a>
   </li>
   <li class="nav-item" data-depth="4">
+    <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../../Personalization-module/Creating-custom-traits/">Creating custom traits</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../../Personalization-module/Creating-custom-traits-with-complex-fields/">Creating custom traits with complex fields</a>
   </li>
-  <li class="nav-item" data-depth="4">
+  <li class="nav-item" data-depth="5">
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../../Personalization-module/Creating-custom-traits-without-Java/">Creating custom traits without Java</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="5">
+  <li class="nav-item" data-depth="6">
     <a class="nav-link" href="../../Personalization-module/Creating-custom-traits-without-Java/Cookies-trait-configuration/">Cookies trait configuration</a>
   </li>
-  <li class="nav-item" data-depth="5">
+  <li class="nav-item" data-depth="6">
     <a class="nav-link" href="../../Personalization-module/Creating-custom-traits-without-Java/Creating-a-custom-cookie-trait-without-Java/">Creating a custom cookie trait without Java</a>
+  </li>
+</ul>
   </li>
 </ul>
   </li>
@@ -1948,6 +1969,9 @@
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../../../Apps/Developing-a-custom-non-jcr-content-app/">Developing a custom (non-JCR) content app</a>
+  </li>
+  <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../../../../Apps/Developing-a-custom-content-editor-app/">Developing a custom content editor app</a>
 <ul class="nav-list">
@@ -2335,7 +2359,7 @@
     <li class="component is-current">
       <span class="title">DX Core</span>
       <ul class="versions">
-        <li class="version is-current is-latest">
+        <li class="version is-current">
           <a href="../../../../">6.2</a>
         </li>
       </ul>
@@ -2343,7 +2367,7 @@
     <li class="component">
       <span class="title">Magnolia SaaS</span>
       <ul class="versions">
-        <li class="version is-latest">
+        <li class="version">
           <a href="../../../../../../saas/">master</a>
         </li>
       </ul>
@@ -2351,7 +2375,7 @@
     <li class="component">
       <span class="title">Magnolia SaaS CLI</span>
       <ul class="versions">
-        <li class="version is-latest">
+        <li class="version">
           <a href="../../../../../../saas-cli/">master</a>
         </li>
       </ul>
@@ -2402,9 +2426,9 @@ relationships to other types of content. A content type is configured in
 a
 <a href="#">content
 type definition</a> that includes the
-<a href="Content-type-Data-source-definition/" class="page">data
+<a href="Content-type-Data-source-definition/" class="xref page">data
 source definition</a> and the
-<a href="Content-type-Model-definition/" class="page">model
+<a href="Content-type-Model-definition/" class="xref page">model
 definition</a>.</p>
 </div>
 <div class="paragraph">
@@ -2419,7 +2443,7 @@ workspaces, node types, and namespaces.</p>
 </div>
 <div class="paragraph">
 <p>The definition item can be supplied via any
-<a href="../../../../Developing/Resources/" class="page">Magnolia Resource origin</a>. You can create
+<a href="../../../../Developing/Resources/" class="xref page">Magnolia Resource origin</a>. You can create
 them in a light module, in a Magnolia Maven module or in the JCR
 <code>configuration</code> workspace (see
 <a href="#_location_of_the_content_type_definitions">Location of the content
@@ -2436,7 +2460,7 @@ the definition as the ID.</p>
 </td>
 <td class="content">
 <div class="paragraph">
-<p>Follow the <a href="../../../../Developing/Content-Types-tutorial/" class="page">Content Types
+<p>Follow the <a href="../../../../Developing/Content-Types-tutorial/" class="xref page">Content Types
 tutorial</a> to learn how to use Magnolia content types, create content
 type definitions and corresponding apps.</p>
 </div>
@@ -2452,10 +2476,8 @@ type definitions and corresponding apps.</p>
 <div class="paragraph">
 <p>Example configuration:</p>
 </div>
-<div class="paragraph">
-<p>/content-type-examples/contentTypes/tourGuide.yaml</p>
-</div>
 <div class="listingblock">
+<div class="title">/content-type-examples/contentTypes/tourGuide.yaml</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-yml hljs" data-lang="yml">datasource:
   workspace: tourguides
@@ -2495,7 +2517,7 @@ definition.</p>
 </div>
 <div class="paragraph">
 <p>Defines the data source. Please read
-<a href="Content-type-Data-source-definition/" class="page">Content
+<a href="Content-type-Data-source-definition/" class="xref page">Content
 type Data source definition</a> for further information.</p>
 </div></div></td>
 </tr>
@@ -2506,7 +2528,7 @@ type Data source definition</a> for further information.</p>
 </div>
 <div class="paragraph">
 <p>Defines the model of the content type. Please read the
-<a href="Content-type-Model-definition/" class="page">Content
+<a href="Content-type-Model-definition/" class="xref page">Content
 type Model definition</a> for further information.</p>
 </div></div></td>
 </tr>
@@ -2523,6 +2545,62 @@ suffix or JCR node name).</p>
 <div class="paragraph">
 <p>Set the property in the content definition to override the automatically
 assigned value.</p>
+</div>
+<div class="paragraph">
+<p> <br></p>
+</div>
+<div class="paragraph">
+<p>When you define a content type property, you should avoid using a 2-letter suffix. This is because Magnolia reads the suffix as a language such as <code>property_en</code> or <code>property_de</code>.</p>
+</div>
+<div class="paragraph">
+<p>If you add a 2-letter suffix, the property is not delivered when using the <a href="../../../../Developing/API/Delivery-API/" class="xref page">Delivery API</a>.</p>
+</div>
+<div class="paragraph collapse">
+<p>Example <span class="icon"><i class="fa fa-code"></i></span></p>
+</div>
+<div class="exampleblock collapse-content">
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">datasource:
+  workspace: tourguides
+  namespaces:
+    mt: https://www.magnolia-travel.com/jcr/1.0/mt
+  autoCreate: true
+
+model:
+  nodeType: mt:tourGuide
+  properties:
+    - name: description <i class="conum" data-value="1"></i><b>(1)</b>
+      type: String
+      i18n: true
+...
+    - name: description_ins <i class="conum" data-value="2"></i><b>(2)</b>
+      type: String
+      i18n: true
+...
+    - name: description_in <i class="conum" data-value="3"></i><b>(3)</b>
+      type: String
+      i18n: true</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>A correct property name with no suffix.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>A correct property name with an acceptable suffix.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>An incorrect property name with the 2-letter suffix.</td>
+</tr>
+</table>
+</div>
+</div>
 </div></div></td>
 </tr>
 </tbody>
@@ -2534,7 +2612,7 @@ assigned value.</p>
 <div class="sectionbody">
 <div class="paragraph">
 <p>The definition item can be supplied via any
-<a href="../../../../Developing/Resources/" class="page">Magnolia Resource origin</a>. You can create
+<a href="../../../../Developing/Resources/" class="xref page">Magnolia Resource origin</a>. You can create
 them in a light module, in a Magnolia Maven module or in the JCR
 <code>configuration</code> workspace.</p>
 </div>
@@ -2665,25 +2743,25 @@ implementation class is
 <div class="ulist">
 <ul>
 <li>
-<p><a href="../" class="page">Content Types
+<p><a href="../" class="xref page">Content Types
 module</a></p>
 </li>
 <li>
-<p><a href="Content-type-Data-source-definition/" class="page">Content
+<p><a href="Content-type-Data-source-definition/" class="xref page">Content
 type Data source definition</a></p>
 </li>
 <li>
-<p><a href="Content-type-Model-definition/" class="page">Content
+<p><a href="Content-type-Model-definition/" class="xref page">Content
 type Model definition</a></p>
 </li>
 <li>
-<p><a href="../../../../Developing/Content-Types-tutorial/" class="page">Content Types tutorial</a></p>
+<p><a href="../../../../Developing/Content-Types-tutorial/" class="xref page">Content Types tutorial</a></p>
 </li>
 <li>
-<p><a href="../../../../Apps/My-first-content-app/" class="page">My first content app</a></p>
+<p><a href="../../../../Apps/My-first-content-app/" class="xref page">My first content app</a></p>
 </li>
 <li>
-<p><a href="../../../../Developing/Defining-JCR-node-types-and-workspaces/" class="page">Defining JCR
+<p><a href="../../../../Developing/Defining-JCR-node-types-and-workspaces/" class="xref page">Defining JCR
 node types and workspaces</a></p>
 </li>
 </ul>
@@ -2745,7 +2823,7 @@ node types and workspaces</a></p>
 
 
 <div class="footer-terms">
-  <span>2021 Magnolia International Ltd. Some rights reserved.</span>
+  <span>2022 Magnolia International Ltd. Some rights reserved.</span>
   <a href="https://www.magnolia-cms.com/legal/privacy.html" target="_blank">Privacy policy</a>
 </div>
 

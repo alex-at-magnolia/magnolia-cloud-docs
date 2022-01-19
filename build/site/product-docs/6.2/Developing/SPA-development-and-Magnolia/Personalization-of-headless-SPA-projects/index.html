@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Personalization of headless SPA projects :: Magnolia Cloud Service Internal Documentation</title>
     <link rel="canonical" href="https://saas-docs.beta.de.magnolia-cloud.com/saas/product-docs/6.2/Developing/SPA-development-and-Magnolia/Personalization-of-headless-SPA-projects/">
-    <link rel="prev" href="../Attaching-an-SPA-project-to-Magnolia/">
+    <link rel="prev" href="../SPA-hosting/">
     <link rel="next" href="../../YAML/">
     <meta name="keywords" content="personalization (p13n), spa, headless">
-    <meta name="generator" content="Antora 2.3.3">
+    <meta name="generator" content="Antora 3.0.0">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
 
 <link rel="stylesheet" href="../../../../../_/css/site.css">
@@ -146,6 +146,12 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../../../Releases/Recent-features/">Recent features</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../../Releases/Release-notes-for-Magnolia-CMS-6.2.15/"><span class="smalltext">Release notes for Magnolia CMS 6.2.15</span></a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../../Releases/Release-notes-for-Magnolia-CMS-6.2.14/"><span class="smalltext">Release notes for Magnolia CMS 6.2.14</span></a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../../../Releases/Release-notes-for-Magnolia-CMS-6.2.13/"><span class="smalltext">Release notes for Magnolia CMS 6.2.13</span></a>
@@ -488,6 +494,9 @@
     <a class="nav-link" href="../../../Administration/Language/i18n-API/">i18n API</a>
   </li>
   <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../../Administration/Language/Choiceformatting-i18n-messages/">Choiceformatting i18n messages</a>
+  </li>
+  <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../../Administration/Language/i18n-best-practices/">i18n best practices</a>
   </li>
 </ul>
@@ -681,6 +690,9 @@
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../Attaching-an-SPA-project-to-Magnolia/">Attaching an SPA project to Magnolia</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../SPA-hosting/">Hosting the SPA</a>
   </li>
   <li class="nav-item is-current-page" data-depth="3">
     <a class="nav-link" href="./">Personalization of headless SPA projects</a>
@@ -1193,6 +1205,9 @@
     <a class="nav-link" href="../../../Modules/List-of-modules/Categorization-module/">Categorization module</a>
   </li>
   <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../../Modules/List-of-modules/Configuration-Framework-module/">Configuration Framework module</a>
+  </li>
+  <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../../Modules/List-of-modules/Contacts-module/">Contacts module</a>
   </li>
   <li class="nav-item" data-depth="3">
@@ -1374,17 +1389,23 @@
     <a class="nav-link" href="../../../Modules/List-of-modules/Personalization-module/My-first-personalized-campaign/">My first personalized campaign</a>
   </li>
   <li class="nav-item" data-depth="4">
+    <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../../../Modules/List-of-modules/Personalization-module/Creating-custom-traits/">Creating custom traits</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../../../Modules/List-of-modules/Personalization-module/Creating-custom-traits-with-complex-fields/">Creating custom traits with complex fields</a>
   </li>
-  <li class="nav-item" data-depth="4">
+  <li class="nav-item" data-depth="5">
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../../../Modules/List-of-modules/Personalization-module/Creating-custom-traits-without-Java/">Creating custom traits without Java</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="5">
+  <li class="nav-item" data-depth="6">
     <a class="nav-link" href="../../../Modules/List-of-modules/Personalization-module/Creating-custom-traits-without-Java/Cookies-trait-configuration/">Cookies trait configuration</a>
   </li>
-  <li class="nav-item" data-depth="5">
+  <li class="nav-item" data-depth="6">
     <a class="nav-link" href="../../../Modules/List-of-modules/Personalization-module/Creating-custom-traits-without-Java/Creating-a-custom-cookie-trait-without-Java/">Creating a custom cookie trait without Java</a>
+  </li>
+</ul>
   </li>
 </ul>
   </li>
@@ -1948,6 +1969,9 @@
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../../Apps/Developing-a-custom-non-jcr-content-app/">Developing a custom (non-JCR) content app</a>
+  </li>
+  <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../../../Apps/Developing-a-custom-content-editor-app/">Developing a custom content editor app</a>
 <ul class="nav-list">
@@ -2335,7 +2359,7 @@
     <li class="component is-current">
       <span class="title">DX Core</span>
       <ul class="versions">
-        <li class="version is-current is-latest">
+        <li class="version is-current">
           <a href="../../../">6.2</a>
         </li>
       </ul>
@@ -2343,7 +2367,7 @@
     <li class="component">
       <span class="title">Magnolia SaaS</span>
       <ul class="versions">
-        <li class="version is-latest">
+        <li class="version">
           <a href="../../../../../saas/">master</a>
         </li>
       </ul>
@@ -2351,7 +2375,7 @@
     <li class="component">
       <span class="title">Magnolia SaaS CLI</span>
       <ul class="versions">
-        <li class="version is-latest">
+        <li class="version">
           <a href="../../../../../saas-cli/">master</a>
         </li>
       </ul>
@@ -2387,13 +2411,13 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>Magnolia&#8217;s personalization features can be used on headless projects, including support for the <a href="https://hd.magnolia-cms.com/docs/visual-spa-editor/" target="_blank" rel="noopener">Visual SPA Editor</a>, as well as traditional FreeMarker-based projects. These features are available on headless and SPA with <a href="../../../Modules/List-of-modules/Personalization-module/" class="page">Personalization module</a> (version 2.1.0 and later) and the Magnolia <code>react-editor</code>, <code>vue-editor</code>, <code>angular-editor</code> <a href="https://www.npmjs.com/~magnolia" target="_blank" rel="noopener">npm packages</a> (version 1.1.0 and later).</p>
+<p>Magnolia&#8217;s personalization features can be used on headless projects, including support for the <a href="https://hd.magnolia-cms.com/docs/visual-spa-editor/" target="_blank" rel="noopener">Visual SPA Editor</a>, as well as traditional FreeMarker-based projects. These features are available on headless and SPA with <a href="../../../Modules/List-of-modules/Personalization-module/" class="xref page">Personalization module</a> (version 2.1.0 and later) and the Magnolia <code>react-editor</code>, <code>vue-editor</code>, <code>angular-editor</code> <a href="https://www.npmjs.com/~magnolia" target="_blank" rel="noopener">npm packages</a> (version 1.1.0 and later).</p>
 </div>
 <div class="paragraph">
-<p>As described on <a href="../../API/Delivery-API/Requesting-personalized-content-with-the-delivery-endpoint/" class="page">Requesting personalized content with the delivery endpoint</a>, the Personalization module brings personalization to the REST delivery endpoint as well as new simple request-based traits. These traits are ideal for headless scenarios where you would like to provide the trait information explicitly on the request via a cookie, header, query string, or body parameter.</p>
+<p>As described on <a href="../../API/Delivery-API/Requesting-personalized-content-with-the-delivery-endpoint/" class="xref page">Requesting personalized content with the delivery endpoint</a>, the Personalization module brings personalization to the REST delivery endpoint as well as new simple request-based traits. These traits are ideal for headless scenarios where you would like to provide the trait information explicitly on the request via a cookie, header, query string, or body parameter.</p>
 </div>
 <div class="paragraph">
-<p>This page describes how to implement personalization in a SPA project, using a <a href="https://git.magnolia-cms.com/projects/DEMOS/repos/minimal-headless-spa-demos/browse" target="_blank" rel="noopener">React Demo Project</a> as a concrete example.</p>
+<p>This page describes how to implement personalization in an SPA project, using a <a href="https://git.magnolia-cms.com/projects/DEMOS/repos/minimal-headless-spa-demos/browse" target="_blank" rel="noopener">React Demo Project</a> as a concrete example.</p>
 </div>
 </div>
 </div>
@@ -2423,7 +2447,7 @@
 <p>Traits are what authors can use in Magnolia to define the audience for any content variants that they create in the page editor. When developers define traits, they are then available to authors in the Choose audience dialog, and can also be used in defining segments.</p>
 </div>
 <div class="paragraph">
-<p>Magnolia has several traits available out-of-the-box, or you can add traits with <a href="../../../Modules/List-of-modules/Personalization-module/Creating-custom-traits-without-Java/Cookies-trait-configuration/" class="page">a simple configuration</a> or <a href="../../../Modules/List-of-modules/Personalization-module/Creating-custom-traits/" class="page">with Java</a>.</p>
+<p>Magnolia has several traits available out-of-the-box, or you can add traits with <a href="../../../Modules/List-of-modules/Personalization-module/Creating-custom-traits-without-Java/Cookies-trait-configuration/" class="xref page">a simple configuration</a> or <a href="../../../Modules/List-of-modules/Personalization-module/Creating-custom-traits/" class="xref page">with Java</a>.</p>
 </div>
 <div class="paragraph">
 <p>There are three trait types that enable developers to easily add traits commonly used in headless scenarios. The trait values are included directly on the http request to the delivery endpoint:</p>
@@ -2528,8 +2552,20 @@ For the edit mode, make sure you include <code>variants=all</code> on the query 
 </div>
 </div>
 </div>
+<div class="sect1">
+<h2 id="_known_issues"><a class="anchor" href="#_known_issues"></a>Known issues</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Components which contain areas cannot be personalized. While the <strong>Add variant</strong> action can be used, within the created variant the content of the area cannot be edited. For more information, see <a href="https://jira.magnolia-cms.com/browse/MGNLFE-147" target="_blank" rel="noopener">MGNLFE-147</a>.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
 <nav class="pagination">
-  <span class="prev"><a href="../Attaching-an-SPA-project-to-Magnolia/">Attaching an SPA project to Magnolia</a></span>
+  <span class="prev"><a href="../SPA-hosting/">Hosting the SPA</a></span>
   <span class="next"><a href="../../YAML/">YAML</a></span>
 </nav>
 </article>
@@ -2581,7 +2617,7 @@ For the edit mode, make sure you include <code>variants=all</code> on the query 
 
 
 <div class="footer-terms">
-  <span>2021 Magnolia International Ltd. Some rights reserved.</span>
+  <span>2022 Magnolia International Ltd. Some rights reserved.</span>
   <a href="https://www.magnolia-cms.com/legal/privacy.html" target="_blank">Privacy policy</a>
 </div>
 

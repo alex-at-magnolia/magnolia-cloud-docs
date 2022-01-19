@@ -8,7 +8,7 @@
     <link rel="prev" href="../Site-app/">
     <link rel="next" href="../Sync-Instance-app/">
     <meta name="keywords" content="content-editor, app, content-app, 6-ui">
-    <meta name="generator" content="Antora 2.3.3">
+    <meta name="generator" content="Antora 3.0.0">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
 
 <link rel="stylesheet" href="../../../../../_/css/site.css">
@@ -146,6 +146,12 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../../../Releases/Recent-features/">Recent features</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../../Releases/Release-notes-for-Magnolia-CMS-6.2.15/"><span class="smalltext">Release notes for Magnolia CMS 6.2.15</span></a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../../Releases/Release-notes-for-Magnolia-CMS-6.2.14/"><span class="smalltext">Release notes for Magnolia CMS 6.2.14</span></a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../../../Releases/Release-notes-for-Magnolia-CMS-6.2.13/"><span class="smalltext">Release notes for Magnolia CMS 6.2.13</span></a>
@@ -488,6 +494,9 @@
     <a class="nav-link" href="../../../Administration/Language/i18n-API/">i18n API</a>
   </li>
   <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../../Administration/Language/Choiceformatting-i18n-messages/">Choiceformatting i18n messages</a>
+  </li>
+  <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../../Administration/Language/i18n-best-practices/">i18n best practices</a>
   </li>
 </ul>
@@ -681,6 +690,9 @@
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../../Developing/SPA-development-and-Magnolia/Attaching-an-SPA-project-to-Magnolia/">Attaching an SPA project to Magnolia</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../../Developing/SPA-development-and-Magnolia/SPA-hosting/">Hosting the SPA</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../../Developing/SPA-development-and-Magnolia/Personalization-of-headless-SPA-projects/">Personalization of headless SPA projects</a>
@@ -1193,6 +1205,9 @@
     <a class="nav-link" href="../../../Modules/List-of-modules/Categorization-module/">Categorization module</a>
   </li>
   <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../../Modules/List-of-modules/Configuration-Framework-module/">Configuration Framework module</a>
+  </li>
+  <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../../Modules/List-of-modules/Contacts-module/">Contacts module</a>
   </li>
   <li class="nav-item" data-depth="3">
@@ -1374,17 +1389,23 @@
     <a class="nav-link" href="../../../Modules/List-of-modules/Personalization-module/My-first-personalized-campaign/">My first personalized campaign</a>
   </li>
   <li class="nav-item" data-depth="4">
+    <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../../../Modules/List-of-modules/Personalization-module/Creating-custom-traits/">Creating custom traits</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../../../Modules/List-of-modules/Personalization-module/Creating-custom-traits-with-complex-fields/">Creating custom traits with complex fields</a>
   </li>
-  <li class="nav-item" data-depth="4">
+  <li class="nav-item" data-depth="5">
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../../../Modules/List-of-modules/Personalization-module/Creating-custom-traits-without-Java/">Creating custom traits without Java</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="5">
+  <li class="nav-item" data-depth="6">
     <a class="nav-link" href="../../../Modules/List-of-modules/Personalization-module/Creating-custom-traits-without-Java/Cookies-trait-configuration/">Cookies trait configuration</a>
   </li>
-  <li class="nav-item" data-depth="5">
+  <li class="nav-item" data-depth="6">
     <a class="nav-link" href="../../../Modules/List-of-modules/Personalization-module/Creating-custom-traits-without-Java/Creating-a-custom-cookie-trait-without-Java/">Creating a custom cookie trait without Java</a>
+  </li>
+</ul>
   </li>
 </ul>
   </li>
@@ -1948,6 +1969,9 @@
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../Developing-a-custom-non-jcr-content-app/">Developing a custom (non-JCR) content app</a>
+  </li>
+  <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../../Developing-a-custom-content-editor-app/">Developing a custom content editor app</a>
 <ul class="nav-list">
@@ -2335,7 +2359,7 @@
     <li class="component is-current">
       <span class="title">DX Core</span>
       <ul class="versions">
-        <li class="version is-current is-latest">
+        <li class="version is-current">
           <a href="../../../">6.2</a>
         </li>
       </ul>
@@ -2343,7 +2367,7 @@
     <li class="component">
       <span class="title">Magnolia SaaS</span>
       <ul class="versions">
-        <li class="version is-latest">
+        <li class="version">
           <a href="../../../../../saas/">master</a>
         </li>
       </ul>
@@ -2351,7 +2375,7 @@
     <li class="component">
       <span class="title">Magnolia SaaS CLI</span>
       <ul class="versions">
-        <li class="version is-latest">
+        <li class="version">
           <a href="../../../../../saas-cli/">master</a>
         </li>
       </ul>
@@ -2387,13 +2411,16 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>This page describes how to use the Stories app, an example of a custom <a href="../../../Features/Content-authoring/Content-editor/" class="page">content editor</a> that authors can use to quickly create and publish flexible content in Magnolia.</p>
+<p>This page describes how to use the Stories app, an example of a custom <a href="../../../Features/Content-authoring/Content-editor/" class="xref page">content editor</a> that authors can use to quickly create and publish flexible content in Magnolia.</p>
 </div>
 <div class="paragraph">
 <p>Use the Stories app to create and edit stories on a Magnolia author instance. Complete the structured outline to give the story a set of key static properties. Then, build up the unstructured body of your story using content blocks you want: images, texts, videos and links. You can save and publish in one click to get your content on your website fast.</p>
 </div>
 <div class="paragraph">
-<p>Compared to <a href="../../../Authoring/Editing-pages/" class="page">pages</a>, stories are ideal for quickly producing free-form content without any page-hierarchy constraints. Stories, with a clear distinction between formatting and content, can then be published to different destinations: from a web page to a mobile app or as an article for an online newspaper.</p>
+<p>Compared to <a href="../../../Authoring/Editing-pages/" class="xref page">pages</a>, stories are ideal for quickly producing free-form content without any page-hierarchy constraints. Stories, with a clear distinction between formatting and content, can then be published to different destinations: from a web page to a mobile app or as an article for an online newspaper.</p>
+</div>
+<div class="paragraph">
+<p><a href="../../../Administration/Language/Internationalization/" class="xref page">Internationalization</a> (i18n) of content is fully supported in the Stories app since version <code>2.1</code> version of its parent Content Editor module. Authors can edit, add, delete and re-order story blocks independently for each locale configured and enabled in the app.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -2429,10 +2456,10 @@
 <div class="sect2">
 <h3 id="_demo_stories"><a class="anchor" href="#_demo_stories"></a>Demo stories</h3>
 <div class="paragraph">
-<p>If you have the <a href="../../../Getting-started-with-Magnolia/Demo/" class="page">Magnolia demo modules</a> installed, the Stories app contains some sample blogposts to show what you can do with the Stories app. Without the demo modules, the Stories app does not contain any content by default.</p>
+<p>If you have the <a href="../../../Getting-started-with-Magnolia/Demo/" class="xref page">Magnolia demo modules</a> installed, the Stories app contains some sample blogposts to show what you can do with the Stories app. Without the demo modules, the Stories app does not contain any content by default.</p>
 </div>
 <div class="paragraph">
-<p>In the demo, the Stories app has been <a href="../../../Developing/Definition-decoration/" class="page">decorated</a> (<code>/travel-demo-stories-app/decorations/stories-app/apps/stories.yaml</code>) to extend the default functionality described on this page. The customization of the Stories app mainly introduces two new blocks, <code>date</code> and <code>tour</code>.</p>
+<p>In the demo, the Stories app has been <a href="../../../Developing/Definition-decoration/" class="xref page">decorated</a> (<code>/travel-demo-stories-app/decorations/stories-app/apps/stories.yaml</code>) to extend the default functionality described on this page. The customization of the Stories app mainly introduces two new blocks, <code>date</code> and <code>tour</code>.</p>
 </div>
 </div>
 </div>
@@ -2441,13 +2468,13 @@
 <h2 id="_outline"><a class="anchor" href="#_outline"></a>Outline</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>When you create a new story, it provides the title and lead text fields as well as several collapsible multi-field sections where you can fill in some key properties.</p>
+<p>When you create a new story, the outline section provides the title and lead text fields as well as several collapsible multi-field sections where you can fill in some key properties.</p>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="../../../_images/6-2-storiesApp-newStory.png" alt="image" width="600"></span></p>
+<p><span class="image"><img src="../../../_images/6-3-storiesApp-newStoryStructure.png" alt="Outline and block sections in a story" width="600"></span></p>
 </div>
 <div class="paragraph">
-<p>By default, the outline consists of the following fields and collapsible sections:</p>
+<p>By default, the outline consists of the following fields and collapsible sections (the asterisk indicates mandatory fields).</p>
 </div>
 <div class="ulist">
 <ul>
@@ -2466,12 +2493,12 @@
 an <strong>Alternate image</strong>.</p>
 </li>
 <li>
-<p>For the <strong>Image</strong> option, you can select an asset from the <a href="../../../Features/Digital-asset-management/" class="page">Assets chooser</a> dialog and add
+<p>For the <strong>Image</strong> option, you can select an asset from the <a href="../../../Features/Digital-asset-management/" class="xref page">Assets chooser</a> dialog and add
 <strong>Alt text</strong>.</p>
 </li>
 <li>
 <p>For the <strong>Video</strong> option, you can select a video asset from the
-<a href="../../../Features/Digital-asset-management/" class="page">Assets chooser</a> dialog and add
+<a href="../../../Features/Digital-asset-management/" class="xref page">Assets chooser</a> dialog and add
 another asset as an <strong>Alternate image</strong>.</p>
 </li>
 <li>
@@ -2488,7 +2515,7 @@ another asset as an <strong>Alternate image</strong>.</p>
 <p><strong>Author name</strong></p>
 </li>
 <li>
-<p><strong>Author profile image</strong> with <a href="../../../Features/Digital-asset-management/" class="page">Assets chooser</a>.</p>
+<p><strong>Author profile image</strong> with <a href="../../../Features/Digital-asset-management/" class="xref page">Assets chooser</a>.</p>
 </li>
 <li>
 <p><strong>Author short bio</strong> - A text field with a maximum of 300 characters.</p>
@@ -2521,8 +2548,33 @@ related stories.</p>
 </li>
 </ul>
 </div>
+<div class="sect2">
+<h3 id="_outline_and_content_internationalization_i18n"><a class="anchor" href="#_outline_and_content_internationalization_i18n"></a>Outline and content internationalization (i18n)</h3>
 <div class="paragraph">
-<p>Mandatory fields are indicated by an asterisk.</p>
+<p>The fields in the outline section behave in the same way as fields in any other content app. If an outline field is not configured to handle internationalized content, (the <code>i18n</code> property is not set or is set to <code>false</code>), for example,</p>
+</div>
+<div class="listingblock">
+<div class="title">/stories-app/apps/stories.yaml</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">...
+subApps:
+  browser:
+...
+  editor:
+...
+    form:
+      properties:
+        title:
+          $type: expandingTextField
+          i18n: false
+          rows: 2
+          required: true
+...</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>then there will be no locale tag displayed next to the field&#8217;s name and fallback content will not apply for the field.</p>
+</div>
 </div>
 </div>
 </div>
@@ -2567,7 +2619,7 @@ content blocks to suit your requirements.</p>
 </ul>
 </div>
 <div class="paragraph">
-<p>The following two are provided by the <a href="../../../Getting-started-with-Magnolia/Demo/" class="page">Travel Demo</a>:</p>
+<p>The following two are provided by the <a href="../../../Getting-started-with-Magnolia/Demo/" class="xref page">Travel Demo</a>:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -2579,11 +2631,13 @@ content blocks to suit your requirements.</p>
 </li>
 </ul>
 </div>
+<div class="sect2">
+<h3 id="_adding_blocks"><a class="anchor" href="#_adding_blocks"></a>Adding blocks</h3>
 <div class="paragraph">
 <p>To add blocks to your story, click the plus icon in your story to expand the <strong>Block chooser</strong> menu and select the block type you want.</p>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="../../../_images/6-2-storiesApp-blockChooserToolbar-rbox.png" alt="image" width="600"></span></p>
+<p><span class="image"><img src="../../../_images/6-3-storiesApp-blockChooserToolbar-rbox.png" alt="Block hooser Toolbar" width="600"></span></p>
 </div>
 <div class="paragraph">
 <p>The <strong>… Others</strong> option at the bottom of the menu opens the <strong>Block chooser</strong> dialog.</p>
@@ -2594,6 +2648,31 @@ content blocks to suit your requirements.</p>
 <div class="paragraph">
 <p>To delete a block, click the trash icon to the right of the block or use
 the backspace <a href="#_shortcuts">shortcut</a>.</p>
+</div>
+<div class="sect3">
+<h4 id="_copying_blocks_to_create_language_variants"><a class="anchor" href="#_copying_blocks_to_create_language_variants"></a>Copying blocks to create language variants</h4>
+<div class="paragraph">
+<p>By default, blocks are not internationalized but you can create a block structure for a new language variant easily. You do not need to recreate the block structure from scratch.</p>
+</div>
+<div class="paragraph">
+<p>Select a new language in the language selector at the bottom left and press the <strong>Copy blocks from &lt;language&gt;</strong> button next to it. The app will create a new set of blocks (and content) by copying it from the original language variant of the story.</p>
+</div>
+<div class="paragraph">
+<p><span class="image zoom"><img src="../../../_images/6-3-contentEditorModule-copyBlocksButton.png" alt="Copy blocks button in the Stories app"></span></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The Copy blocks function cannot be used (the button is disabled) if the target language variant of the story already exists and has more than one content block in it.
+</td>
+</tr>
+</table>
+</div>
+</div>
 </div>
 <div class="sect2">
 <h3 id="_text_blocks"><a class="anchor" href="#_text_blocks"></a>Text blocks</h3>
@@ -2638,8 +2717,8 @@ to external URLs or emails.</p>
 <li>
 <p>Use the <span class="image"><img src="../../../_images/internal-link-icon.gif" alt="image"></span> internal link icon to link
 to content in another Magnolia app. By default, you can link to content
-in the <a href="../Magnolia-Assets-subapp/" class="page">Assets</a> and
-<a href="../Pages-app/" class="page">Pages</a> apps from the Stories app.</p>
+in the <a href="../Magnolia-Assets-subapp/" class="xref page">Assets</a> and
+<a href="../Pages-app/" class="xref page">Pages</a> apps from the Stories app.</p>
 </li>
 </ul>
 </div>
@@ -2654,7 +2733,7 @@ in the <a href="../Magnolia-Assets-subapp/" class="page">Assets</a> and
 </div>
 <div class="paragraph">
 <p>Click <strong>browse</strong> to open the
-<a href="../../../Features/Digital-asset-management/" class="page">Assets chooser</a> dialog and select an asset for your story or upload a new one. You can also add image-related or video-related metadata.</p>
+<a href="../../../Features/Digital-asset-management/" class="xref page">Assets chooser</a> dialog and select an asset for your story or upload a new one. You can also add image-related or video-related metadata.</p>
 </div>
 </div>
 <div class="sect2">
@@ -2680,7 +2759,7 @@ site owner embedded in their web page header.</p>
 and publish</strong> at the bottom of the story. Alternatively, you can select a
 story in the workbench and click <strong>Publish</strong>. The publication process and
 statuses are explained
-<a href="#/Administration/Architecture/Publishing-and-activation/Publishing-overview.adoc" class="page unresolved">here</a>.</p>
+<a href="#/Administration/Architecture/Publishing-and-activation/Publishing-overview.adoc" class="xref unresolved">here</a>.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -2690,7 +2769,7 @@ statuses are explained
 </td>
 <td class="content">
 <div class="paragraph">
-<p>You must publish any <a href="../../../Features/Digital-asset-management/" class="page">assets</a> you
+<p>You must publish any <a href="../../../Features/Digital-asset-management/" class="xref page">assets</a> you
 use in your stories separately.</p>
 </div>
 </td>
@@ -2699,11 +2778,60 @@ use in your stories separately.</p>
 </div>
 <div class="paragraph">
 <p>The Stories app does not provide any default page or component templates
-to render the stories. The <a href="../../../Templating/" class="page">templates</a> to render the
+to render the stories. The <a href="../../../Templating/" class="xref page">templates</a> to render the
 stories must be configured by your development team.</p>
 </div>
 <div class="paragraph">
-<p>You can see an example of published stories in the Magnolia <a href="../../../Getting-started-with-Magnolia/Demo/" class="page">demo</a>.</p>
+<p>You can see an example of published stories in the Magnolia <a href="../../../Getting-started-with-Magnolia/Demo/" class="xref page">demo</a>.</p>
+</div>
+<div class="sect2">
+<h3 id="_editing_publishing_and_internationalization_i18n"><a class="anchor" href="#_editing_publishing_and_internationalization_i18n"></a>Editing, publishing and internationalization (i18n)</h3>
+<div class="paragraph">
+<p><a href="../../../Administration/Language/Internationalization/" class="xref page">Internationalization</a> (i18n) of content is supported since version <code>2.1</code> the Content Editor. Content created for earlier versions of the module must be migrated. For details, see <a href="../../../Modules/List-of-modules/Content-Editor-module/#_content_internationalization_i18n" class="xref page">Content Editor module: Content internationalization (i18n)</a>.</p>
+</div>
+<div class="sect3">
+<h4 id="_limited_functionality"><a class="anchor" href="#_limited_functionality"></a>Limited functionality</h4>
+<div class="paragraph">
+<p>Together with the Save and Save and publish buttons, the locale selector combo box is disabled in the following cases:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The <code>multiJcrBlock</code> field is configured with <code>i18n: true</code> but the story structure has not been migrated yet.</p>
+</li>
+<li>
+<p>The story complies with the new i18n structure but the <code>multiJcrBlock</code> field is configured with <code>i18n: false</code>.</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+If an i18n incompatibility like this is detected, a pop-up message will inform the editor about it.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="../../../_images/i18nStoriesStructureIncompatibility-actionsDisabled.png" alt="Actions are disabled due to incompatibility of JCR sctructures for Stories content" width="image"></span></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_new_language_variant_is_empty"><a class="anchor" href="#_new_language_variant_is_empty"></a>New language variant is empty</h4>
+<div class="paragraph">
+<p>Use the locale selector to create a new language variant of the current story. Except for the <em>URL slug</em> field, all the other fields will be empty when you start creating a new language variant.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_publishing_stories_with_multilanguage_content"><a class="anchor" href="#_publishing_stories_with_multilanguage_content"></a>Publishing stories with multilanguage content</h4>
+<div class="paragraph">
+<p>When you publish a story where multilanguage content is enabled and present, the whole story node is published, that is all language variants of the blocks in the story are always published.</p>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -2752,197 +2880,19 @@ stories must be configured by your development team.</p>
 </tr>
 </tbody>
 </table>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_content_internationalization_i18n"><a class="anchor" href="#_content_internationalization_i18n"></a>Content internationalization (i18n)</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><a href="../../../Administration/Language/Internationalization/" class="page">Internationalization</a> (i18n) of content is not supported in the <code>1.3.x</code> and <code>2.0.x</code> versions of the Content Editor module and its Stories app submodule.</p>
-</div>
-<div class="paragraph">
-<p>The feature will only be enabled in version <code>2.1</code>. Until it is released for production-ready use, you cen test it out in version <code>2.1-beta</code>. This version is available on Magnolia Nexus under the following coordinates:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>&lt;dependency&gt;
-  &lt;groupId&gt;info.magnolia.editor&lt;/groupId&gt;
-  &lt;artifactId&gt;content-editor-parent&lt;/artifactId&gt;
-  &lt;version&gt;2.1-beta&lt;/version&gt;
-&lt;/dependency&gt;</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Before adding this beta into your webapp, you must remove the bundled version of the module.</p>
-</div>
-<div class="sect2">
-<h3 id="_compatibility_of_content_and_block_definitions"><a class="anchor" href="#_compatibility_of_content_and_block_definitions"></a>Compatibility of content and block definitions</h3>
-<div class="sect3">
-<h4 id="_flat_vs_nested_content_structure"><a class="anchor" href="#_flat_vs_nested_content_structure"></a>Flat vs nested content structure</h4>
-<div class="paragraph">
-<p>The data model for the internationalized Content Editor stories is different in the beta version. Whereas in <code>1.3.x</code> and <code>2.0.x</code> the <code>mgnl:block</code> elements are stored in a flat node structure,</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>stories
-└── story1
-    ├── 0
-    └── 1</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>in the i18n-supported version, the nodes are locale-nested under intermediate nodes of type <code>mgnl:contentNode</code>, named <code>custom_de</code> and <code>custom</code> in this example:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>stories
-└── story1
-    └── custom_de
-    │   ├── 0_de
-    │   └── 1_de
-    └── custom
-        ├── 0
-        └── 1</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>This must be reflected in your <code><a href="../../../Modules/List-of-modules/Content-Editor-module/Multi-JCR-block/" class="page">MultiJcrBlockDefinition</a></code>, where you need to add and enable the <code>i18n</code> property.</p>
-</div>
-<div class="paragraph">
-<p>Instead of the <code>CurrentItemProvider</code>, the <code>CompatibleBlockProvider</code> is set as the default provider, which can resolve both flat and nested block nodes. You do not need to declare it in your block definition.</p>
-</div>
-<div class="dlist">
-<dl>
-<dt class="hdlist1">Example definition</dt>
-<dd>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-yml hljs" data-lang="yml">custom:
-  label: Blocks
-  $type: multiJcrBlock
-  i18n: true
-  blocks:
-    - text</code></pre>
-</div>
-</div>
-</dd>
-</dl>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-This applies only to the <code>2.0.x</code> block definitions. Block definitions created for version <code>1.3.x</code> (5 UI) of the module are not compatible with the <code>2.1-beta</code> version and must be fully migrated.
-</td>
-</tr>
-</table>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_migrating_content_to_2_1_beta"><a class="anchor" href="#_migrating_content_to_2_1_beta"></a>Migrating content to <code>2.1-beta</code></h4>
-<div class="paragraph">
-<p>There are two ways you can migrate the non-i18n blocks to the i18n-compatible hierarchy: using a version handler or a Groovy script.</p>
-</div>
-<div class="sect4">
-<h5 id="_version_handler"><a class="anchor" href="#_version_handler"></a>Version handler</h5>
-<div class="paragraph">
-<p>When upgrading the Stories app submodule to version <code>2.1-beta</code> (or <code>2.1</code> once available), all block nodes in the <code>stories</code> workspace will be moved to intermediate nodes, see the <code>MigrateBlockToIntermediateParentTask</code> task.</p>
-</div>
-</div>
-<div class="sect4">
-<h5 id="_groovy_script"><a class="anchor" href="#_groovy_script"></a>Groovy script</h5>
-<div class="paragraph">
-<p>You can run the migration task in the <a href="../Groovy-app/" class="page">Groovy app</a>, especially in case a block node is stored in another workspace.</p>
-</div>
-<div class="dlist">
-<dl>
-<dt class="hdlist1">Example Groovy script</dt>
-</dl>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-groovy hljs" data-lang="groovy">import info.magnolia.editor.setup.MigrateBlockToIntermediateParentTask
-import info.magnolia.module.InstallContextImpl
-import info.magnolia.module.ModuleRegistryImpl
-import info.magnolia.objectfactory.Components
-import javax.jcr.Session
-
-
-Session session =  MgnlContext.getJCRSession("stories");
-task = new MigrateBlockToIntermediateParentTask("stories", "/", "custom");
-task.execute(Components.newInstance(InstallContextImpl.class));
-session.save();</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>The parameters in the <code>MigrateBlockToIntermediateParentTask</code>:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>stories</code> - workspace name</p>
-</li>
-<li>
-<p><code>/</code> - path</p>
-</li>
-<li>
-<p><code>custom</code> - name of the intermediate node, the name of the <code>multiJcrBlock</code> field, see <a href="https://git.magnolia-cms.com/projects/ENTERPRISE/repos/content-editor/browse/stories-app/src/main/resources/stories-app/apps/stories.yaml#555" class="bare">https://git.magnolia-cms.com/projects/ENTERPRISE/repos/content-editor/browse/stories-app/src/main/resources/stories-app/apps/stories.yaml#555</a>.</p>
-</li>
-</ul>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<div class="title">Editing and publishing aspects</div>
-<div class="dlist">
-<dl>
-<dt class="hdlist1">Locale selector is disabled</dt>
-<dd>
-<p>The locale selector combo box is disabled in the following cases:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>The <code>multiJcrBlock</code> field is configured with <code>i18n: true</code> but the story structure has not been migrated yet.</p>
-</li>
-<li>
-<p>The story complies with the new i18n structure but the <code>multiJcrBlock</code> field is configured with <code>i18n: false</code>.</p>
-</li>
-</ul>
-</div>
-</dd>
-<dt class="hdlist1">Publishing stories with multilanguage content</dt>
-<dd>
-<p>When you publish a story where multilanguage content is enabled and present, the whole story node is published, that is all language variants of the blocks in the story are always published.</p>
-</dd>
-</dl>
-</div>
-</td>
-</tr>
-</table>
-</div>
 <div class="sidebarblock">
 <div class="content">
 <div class="title">Related topics</div>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="../../../Features/Content-authoring/Content-editor/" class="page">Content Editor</a> (feature page)</p>
+<p><a href="../../../Features/Content-authoring/Content-editor/" class="xref page">Content Editor</a> (feature page)</p>
 </li>
 <li>
-<p><a href="../../../Modules/List-of-modules/Content-Editor-module/" class="page">Content Editor
+<p><a href="../../../Modules/List-of-modules/Content-Editor-module/" class="xref page">Content Editor
 module</a></p>
 </li>
 </ul>
-</div>
-</div>
 </div>
 </div>
 </div>
@@ -3002,7 +2952,7 @@ module</a></p>
 
 
 <div class="footer-terms">
-  <span>2021 Magnolia International Ltd. Some rights reserved.</span>
+  <span>2022 Magnolia International Ltd. Some rights reserved.</span>
   <a href="https://www.magnolia-cms.com/legal/privacy.html" target="_blank">Privacy policy</a>
 </div>
 

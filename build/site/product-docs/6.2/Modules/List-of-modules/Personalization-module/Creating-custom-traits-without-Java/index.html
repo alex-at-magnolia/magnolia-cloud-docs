@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Creating custom traits without Java :: Magnolia Cloud Service Internal Documentation</title>
     <link rel="canonical" href="https://saas-docs.beta.de.magnolia-cloud.com/saas/product-docs/6.2/Modules/List-of-modules/Personalization-module/Creating-custom-traits-without-Java/">
-    <link rel="prev" href="../Creating-custom-traits/">
+    <link rel="prev" href="../Creating-custom-traits-with-complex-fields/">
     <link rel="next" href="Cookies-trait-configuration/">
     <meta name="keywords" content="personalization">
-    <meta name="generator" content="Antora 2.3.3">
+    <meta name="generator" content="Antora 3.0.0">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
 
 <link rel="stylesheet" href="../../../../../../_/css/site.css">
@@ -146,6 +146,12 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../../../../Releases/Recent-features/">Recent features</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../../../Releases/Release-notes-for-Magnolia-CMS-6.2.15/"><span class="smalltext">Release notes for Magnolia CMS 6.2.15</span></a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../../../Releases/Release-notes-for-Magnolia-CMS-6.2.14/"><span class="smalltext">Release notes for Magnolia CMS 6.2.14</span></a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../../../../Releases/Release-notes-for-Magnolia-CMS-6.2.13/"><span class="smalltext">Release notes for Magnolia CMS 6.2.13</span></a>
@@ -488,6 +494,9 @@
     <a class="nav-link" href="../../../../Administration/Language/i18n-API/">i18n API</a>
   </li>
   <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../../../Administration/Language/Choiceformatting-i18n-messages/">Choiceformatting i18n messages</a>
+  </li>
+  <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../../../Administration/Language/i18n-best-practices/">i18n best practices</a>
   </li>
 </ul>
@@ -681,6 +690,9 @@
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../../../Developing/SPA-development-and-Magnolia/Attaching-an-SPA-project-to-Magnolia/">Attaching an SPA project to Magnolia</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../../../Developing/SPA-development-and-Magnolia/SPA-hosting/">Hosting the SPA</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../../../Developing/SPA-development-and-Magnolia/Personalization-of-headless-SPA-projects/">Personalization of headless SPA projects</a>
@@ -1193,6 +1205,9 @@
     <a class="nav-link" href="../../Categorization-module/">Categorization module</a>
   </li>
   <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../Configuration-Framework-module/">Configuration Framework module</a>
+  </li>
+  <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../Contacts-module/">Contacts module</a>
   </li>
   <li class="nav-item" data-depth="3">
@@ -1374,17 +1389,23 @@
     <a class="nav-link" href="../My-first-personalized-campaign/">My first personalized campaign</a>
   </li>
   <li class="nav-item" data-depth="4">
+    <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../Creating-custom-traits/">Creating custom traits</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../Creating-custom-traits-with-complex-fields/">Creating custom traits with complex fields</a>
   </li>
-  <li class="nav-item is-current-page" data-depth="4">
+  <li class="nav-item is-current-page" data-depth="5">
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="./">Creating custom traits without Java</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="5">
+  <li class="nav-item" data-depth="6">
     <a class="nav-link" href="Cookies-trait-configuration/">Cookies trait configuration</a>
   </li>
-  <li class="nav-item" data-depth="5">
+  <li class="nav-item" data-depth="6">
     <a class="nav-link" href="Creating-a-custom-cookie-trait-without-Java/">Creating a custom cookie trait without Java</a>
+  </li>
+</ul>
   </li>
 </ul>
   </li>
@@ -1948,6 +1969,9 @@
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../../../Apps/Developing-a-custom-non-jcr-content-app/">Developing a custom (non-JCR) content app</a>
+  </li>
+  <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../../../../Apps/Developing-a-custom-content-editor-app/">Developing a custom content editor app</a>
 <ul class="nav-list">
@@ -2335,7 +2359,7 @@
     <li class="component is-current">
       <span class="title">DX Core</span>
       <ul class="versions">
-        <li class="version is-current is-latest">
+        <li class="version is-current">
           <a href="../../../../">6.2</a>
         </li>
       </ul>
@@ -2343,7 +2367,7 @@
     <li class="component">
       <span class="title">Magnolia SaaS</span>
       <ul class="versions">
-        <li class="version is-latest">
+        <li class="version">
           <a href="../../../../../../saas/">master</a>
         </li>
       </ul>
@@ -2351,7 +2375,7 @@
     <li class="component">
       <span class="title">Magnolia SaaS CLI</span>
       <ul class="versions">
-        <li class="version is-latest">
+        <li class="version">
           <a href="../../../../../../saas-cli/">master</a>
         </li>
       </ul>
@@ -2377,6 +2401,7 @@
     <li><a href="../../../">Modules</a></li>
     <li><a href="../../">List of modules</a></li>
     <li><a href="../">Personalization module</a></li>
+    <li><a href="../Creating-custom-traits/">Creating custom traits</a></li>
     <li><a href="./">Creating custom traits without Java</a></li>
   </ul>
 </nav>
@@ -2388,7 +2413,7 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>You can use <a href="../../../../Features/Personalization/" class="page">personalization</a> in Magnolia
+<p>You can use <a href="../../../../Features/Personalization/" class="xref page">personalization</a> in Magnolia
 without writing any Java code by using the cookie trait for just about any kind of
 personalization feature.</p>
 </div>
@@ -2401,7 +2426,7 @@ personalization feature.</p>
 <h2 id="_two_magnolia_cookie_trait_implementations"><a class="anchor" href="#_two_magnolia_cookie_trait_implementations"></a>Two Magnolia cookie trait implementations</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Version 2.1.0 of the <a href="../" class="page">Personalization module</a> provides two implementations of cookie traits.</p>
+<p>Version 2.1.0 of the <a href="../" class="xref page">Personalization module</a> provides two implementations of cookie traits.</p>
 </div>
 <div class="sect2">
 <h3 id="_new_cookie_trait_implementation"><a class="anchor" href="#_new_cookie_trait_implementation"></a>New cookie trait implementation</h3>
@@ -2425,7 +2450,7 @@ personalization feature.</p>
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-Use this implementation for <a href="../../../../Developing/SPA-development-and-Magnolia/Personalization-of-headless-SPA-projects/" class="page">personalization of headless SPA projects</a>.
+Use this implementation for <a href="../../../../Developing/SPA-development-and-Magnolia/Personalization-of-headless-SPA-projects/" class="xref page">personalization of headless SPA projects</a>.
 </td>
 </tr>
 </table>
@@ -2449,7 +2474,7 @@ Use this implementation for <a href="../../../../Developing/SPA-development-and-
 <h2 id="_creating_a_custom_cookie_trait"><a class="anchor" href="#_creating_a_custom_cookie_trait"></a>Creating a custom cookie trait</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The <a href="Creating-a-custom-cookie-trait-without-Java/" class="page">Creating a custom cookie trait without Java</a> tutorial takes you through the process of creating, setting and using custom
+<p>The <a href="Creating-a-custom-cookie-trait-without-Java/" class="xref page">Creating a custom cookie trait without Java</a> tutorial takes you through the process of creating, setting and using custom
 cookies. There is no need to write further Java classes. All you need to do to
 create a custom cookie is to is adapt the cookie trait configuration and
 write some FreeMarker and JavaScript code. You can include your code in
@@ -2461,14 +2486,14 @@ a light module.</p>
 <h2 id="_cookie_traits_in_magnolia_demo"><a class="anchor" href="#_cookie_traits_in_magnolia_demo"></a>Cookie traits in Magnolia demo</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The DX Core Demo <a href="../../../../Developing/Bundles-and-webapps/" class="page">bundle</a> has two
+<p>The DX Core Demo <a href="../../../../Developing/Bundles-and-webapps/" class="xref page">bundle</a> has two
 example cookie traits:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
 <p><code>tourType</code>, used in the
-<a href="../../../../Getting-started-with-Magnolia/Demo/" class="page">Travel Demo</a> to set user’s tour
+<a href="../../../../Getting-started-with-Magnolia/Demo/" class="xref page">Travel Demo</a> to set user’s tour
 type preference.</p>
 </li>
 <li>
@@ -2482,30 +2507,30 @@ type preference.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="Cookies-trait-configuration/" class="page">Cookies
+<p><a href="Cookies-trait-configuration/" class="xref page">Cookies
 trait configuration</a></p>
 </li>
 <li>
-<p><a href="Creating-a-custom-cookie-trait-without-Java/" class="page">Creating
+<p><a href="Creating-a-custom-cookie-trait-without-Java/" class="xref page">Creating
 a custom cookie trait without Java</a></p>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="Creating-a-custom-cookie-trait-without-Java/Configuring-a-custom-cookie-trait/" class="page">Configuring
+<p><a href="Creating-a-custom-cookie-trait-without-Java/Configuring-a-custom-cookie-trait/" class="xref page">Configuring
 a custom cookie trait</a></p>
 </li>
 <li>
-<p><a href="Creating-a-custom-cookie-trait-without-Java/Setting-and-reading-a-custom-cookie/" class="page">Setting
+<p><a href="Creating-a-custom-cookie-trait-without-Java/Setting-and-reading-a-custom-cookie/" class="xref page">Setting
 and reading a custom cookie</a></p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p><a href="../../../../Features/Personalization/" class="page">Personalization</a></p>
+<p><a href="../../../../Features/Personalization/" class="xref page">Personalization</a></p>
 </li>
 <li>
-<p><a href="../../../../Features/Personalization/Component-personalization/" class="page">Component
+<p><a href="../../../../Features/Personalization/Component-personalization/" class="xref page">Component
 personalization</a></p>
 </li>
 </ul>
@@ -2515,7 +2540,7 @@ personalization</a></p>
 </div>
 </div>
 <nav class="pagination">
-  <span class="prev"><a href="../Creating-custom-traits/">Creating custom traits</a></span>
+  <span class="prev"><a href="../Creating-custom-traits-with-complex-fields/">Creating custom traits with complex fields</a></span>
   <span class="next"><a href="Cookies-trait-configuration/">Cookies trait configuration</a></span>
 </nav>
 </article>
@@ -2567,7 +2592,7 @@ personalization</a></p>
 
 
 <div class="footer-terms">
-  <span>2021 Magnolia International Ltd. Some rights reserved.</span>
+  <span>2022 Magnolia International Ltd. Some rights reserved.</span>
   <a href="https://www.magnolia-cms.com/legal/privacy.html" target="_blank">Privacy policy</a>
 </div>
 
