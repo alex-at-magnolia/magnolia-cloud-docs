@@ -148,6 +148,9 @@
     <a class="nav-link" href="../../../../Releases/Recent-features/">Recent features</a>
   </li>
   <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../../../Releases/Release-notes-for-Magnolia-CMS-6.2.16/"><span class="smalltext">Release notes for Magnolia CMS 6.2.16</span></a>
+  </li>
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../../../../Releases/Release-notes-for-Magnolia-CMS-6.2.15/"><span class="smalltext">Release notes for Magnolia CMS 6.2.15</span></a>
   </li>
   <li class="nav-item" data-depth="2">
@@ -680,7 +683,19 @@
     <a class="nav-link" href="../../../../Developing/SPA-development-and-Magnolia/">SPA development and Magnolia</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../../../../Developing/SPA-development-and-Magnolia/Magnolia-front-end-helpers-for-SPA/">Magnolia front-end helpers for SPA</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../../../Developing/SPA-development-and-Magnolia/Magnolia-front-end-helpers-for-SPA/Magnolia-Angular-Editor/">Magnolia Angular Editor</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../../../Developing/SPA-development-and-Magnolia/Magnolia-front-end-helpers-for-SPA/Magnolia-React-Editor/">Magnolia React Editor</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../../../Developing/SPA-development-and-Magnolia/Magnolia-front-end-helpers-for-SPA/Magnolia-Vue-Editor/">Magnolia Vue Editor</a>
+  </li>
+</ul>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../../../Developing/SPA-development-and-Magnolia/Mapping-between-Magnolia-and-SPA-components/">Mapping between Magnolia and SPA components</a>
@@ -1735,6 +1750,9 @@
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../../../Special-Features/Live-Copy/Live-Copy-module/">Live Copy module</a>
   </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../../../Special-Features/Live-Copy/Live-Copy-usage/">Using Live Copy</a>
+  </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
@@ -2536,9 +2554,7 @@ reacts on content changes rather than content served.</p>
 <h2 id="_configuration"><a class="anchor" href="#_configuration"></a>Configuration</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Cache configurations are defined in
-<code>/modules/cache/config/contentCaching/</code>. Within each configuration you
-can define:</p>
+<p>Cache configuration is defined in <code>/modules/cache/config/contentCaching/</code>. Within each configuration you can define:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -2560,12 +2576,7 @@ can define:</p>
 <p><span class="image zoom"><img src="../../../../_images/ADVT-cache-core-config.png" alt="image" width="300"></span></p>
 </div>
 <div class="paragraph">
-<p>To select one of the cache configurations, set the
-<code>defaultContentCachingConfigurationName</code> parameter in the
-<a href="../../../../Administration/Architecture/Request-processing-and-filters/Filters/" class="xref page">Cache
-filter</a>. The chosen configuration is read into a JavaBean using the
-<a href="../../../../Administration/Architecture/Configuration-management/" class="xref page">Node2Bean
-mechanism</a>, making it dynamically available to your own module code.</p>
+<p>To select one of the cache configurations, set the <code>defaultContentCachingConfigurationName</code> parameter in the <a href="../../../../Administration/Architecture/Request-processing-and-filters/Filters/" class="xref page">Cache filter</a>. The chosen configuration is read into a JavaBean using the <a href="#product-docs:ROOT:Administration/Architecture Configuration-management.adoc" class="xref unresolved">Node2Bean mechanism</a>, making it dynamically available to your own module code.</p>
 </div>
 <div class="paragraph">
 <p><span class="image zoom"><img src="../../../../_images/ADVT-cache-core-config1.png" alt="image" height="188"></span></p>
@@ -2578,23 +2589,14 @@ mechanism</a>, making it dynamically available to your own module code.</p>
 <div class="sect3">
 <h4 id="_server_cache_policy"><a class="anchor" href="#_server_cache_policy"></a>Server cache policy</h4>
 <div class="paragraph">
-<p>This policy defines whether the requested content should be cached or
-not. The decision to cache relies on
-<a href="../../../../Administration/Voters/" class="xref page">voters</a>, which are used whenever
-configuration values are not assigned at startup but depend on rules.
-Voters evaluate a rule such as <code>`should content residing at this URL be
-cached'' and return a positive or negative response. By default, all
-content on public instances is cached except the AdminCentral UI at
-`/.magnolia</code>. Server cache policy is configured in
-<code>/modules/cache/config/contentCaching/defaultPageCache/cachePolicy</code>. The
-default implementation
-(<a href="https://nexus.magnolia-cms.com/#nexus-search;classname~Default" target="_blank" rel="noopener">Default</a>) checks
-if the content exists in the cache store and requests caching if the
-content is not found. The alternative class,
-<a href="https://nexus.magnolia-cms.com/#nexus-search;classname~Never" target="_blank" rel="noopener">Never</a> instructs
-the cache not to store the generated content. Server-side re-caching of
-no-cache requests (shift reload) are configurable and set to <code>false</code> by
-default.</p>
+<p>This policy defines whether the requested content should be cached or not. The decision to cache relies on <a href="../../../../Administration/Voters/" class="xref page">voters</a>, which are used whenever configuration values are not assigned at startup but depend on rules.</p>
+</div>
+<div class="paragraph">
+<p>Voters evaluate a rule such as <code>`should content residing at this URL be cached'' and return a positive or negative response. By default, all content on public instances is cached except the AdminCentral UI at `/.magnolia</code>. Server cache policy is configured in <code>/modules/cache/config/contentCaching defaultPageCache/cachePolicy</code>.</p>
+</div>
+<div class="paragraph">
+<p>The default implementation (<a href="https://nexus.magnolia-cms.com/#nexus-search;classname~Default" target="_blank" rel="noopener">Default</a>) checks if the content exists in the cache store and requests caching if the
+content is not found. The alternative class, <a href="https://nexus.magnolia-cms.com/#nexus-search;classname~Never" target="_blank" rel="noopener">Never</a> instructs the cache not to store the generated content. Server-side re-caching of no-cache requests (shift reload) are configurable and set to <code>false</code> by default.</p>
 </div>
 <div class="paragraph">
 <p><span class="image zoom"><img src="../../../../_images/ADVT-cache-core-pol1.png" alt="image" width="600"></span></p>
@@ -2602,8 +2604,7 @@ default.</p>
 <div class="sect4">
 <h5 id="_cache_key_generator"><a class="anchor" href="#_cache_key_generator"></a>Cache key generator</h5>
 <div class="paragraph">
-<p>You can define a custom cache key generator or configure the default one
-to meet your needs.</p>
+<p>You can define a custom cache key generator or configure the default one to meet your needs.</p>
 </div>
 <div class="paragraph">
 <p><span class="image zoom"><img src="../../../../_images/ADVT-cache-core-pol2.png" alt="image" width="700"></span></p>
@@ -2674,8 +2675,7 @@ to meet your needs.</p>
 <p><code>true</code></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Save information whether this request was made using a secure channel,
-such as HTTPS as part of cache key.</p>
+<p>Save information whether this request was made using a secure channel, such as HTTPS as part of cache key.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -2697,8 +2697,7 @@ such as HTTPS as part of cache key.</p>
 <p><code>true</code></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Use locale <code>info.magnolia.cms.core.AggregationState#getLocale</code> as part
-of cache key.</p>
+<p>Use locale <code>info.magnolia.cms.core.AggregationState#getLocale</code> as part of cache key.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -2709,8 +2708,7 @@ of cache key.</p>
 <p><code>true</code></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Use channel <code>info.magnolia.cms.core.AggregationState#getChannel</code> as part
-of cache key.</p>
+<p>Use channel <code>info.magnolia.cms.core.AggregationState#getChannel</code> as part of cache key.</p>
 </div></div></td>
 </tr>
 </tbody>
@@ -2720,18 +2718,19 @@ of cache key.</p>
 <div class="sect3">
 <h4 id="_client_browser_cache_policy"><a class="anchor" href="#_client_browser_cache_policy"></a>Client (browser) cache policy</h4>
 <div class="paragraph">
-<p>Allows for different policies for different content types.
-<a href="../../../../Administration/Architecture/Configuration-management/" class="xref page">Voters</a> are
-used to define the caching rules. These policies define how long the
-browser may cache each content type. The time is passed to the browser
-in the response header. The
-<a href="https://nexus.magnolia-cms.com/#nexus-search;classname~FixedDuration" target="_blank" rel="noopener">FixedDuration</a>
-option instructs the browser to cache the content for the specified
-length of time in minutes.
-<a href="https://nexus.magnolia-cms.com/#nexus-search;classname~Never" target="_blank" rel="noopener">Never</a>
-instructs the browser to do nothing. Client cache policy is configured
-in
-<code>/modules/cache/config/contentCaching/defaultPageCache/browserCachePolicy</code>.</p>
+<p>Allows for different policies for different content types. <a href="../../../../Administration/Architecture/Configuration-management/" class="xref page">Voters</a> are used to define the caching rules. These policies define how long the browser may cache each content type. The time is passed to the browser in the response header. The javadoc:info.magnolia.module.cache.browsercachepolicy.FixedDuration[] option instructs the browser to cache the content for the specified length of time in minutes. javadoc:info.magnolia.module.cache.browsercachepolicy.Never[] instructs the browser to do nothing.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Client cache policy is configured in <code>/modules/cache/config/contentCaching/defaultPageCache/browserCachePolicy</code>.
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p><span class="image zoom"><img src="../../../../_images/ADVT-cache-core-client.png" alt="image" width="700"></span></p>
@@ -2740,25 +2739,13 @@ in
 <div class="sect3">
 <h4 id="_flush_policy"><a class="anchor" href="#_flush_policy"></a>Flush policy</h4>
 <div class="paragraph">
-<p>The Flush policy defines when to flush the cache. There are two policies
-installed per default.</p>
+<p>The Flush policy defines when to flush the cache. There are two policies installed per default.</p>
 </div>
 <div class="paragraph">
 <p><strong>Changes in workspaces</strong></p>
 </div>
 <div class="paragraph">
-<p>This configuration observes changes (content publication, import, edit) in a
-workspace and flushes the cache if new or modified content is detected.
-Cache can be flushed completely, partially or not at all. Each module
-can register its own flush policy (or multiple policies) and receive
-notification about new or modified content in each workspace. Flush
-policies are informed about changes in observed workspaces. The list of
-observed workspaces can be defined per policy under the <code>workspaces</code>
-subnode of each policy or all workspaces will trigger cache flush unless
-defined under <code>excludedWorkspaces</code> subnode (default configuration). If
-your custom workspace doesn’t affect the content of pages, you should
-register it under excludedWorkspaces, otherwise, a change in your
-workspace will unnecessarily flush the cache.</p>
+<p>This configuration observes changes (content publication, import, edit) in a workspace and flushes the cache if new or modified content is detected. Cache can be flushed completely, partially or not at all. Each module can register its own flush policy (or multiple policies) and receive notification about new or modified content in each workspace. Flush policies are informed about changes in observed workspaces. The list of observed workspaces can be defined per policy under the <code>workspaces</code> subnode of each policy or all workspaces will trigger cache flush unless defined under <code>excludedWorkspaces</code> subnode (default configuration). If your custom workspace doesn’t affect the content of pages, you should register it under excludedWorkspaces, otherwise, a change in your workspace will unnecessarily flush the cache.</p>
 </div>
 <div class="paragraph">
 <p><strong>Changes in light modules</strong></p>
@@ -2770,44 +2757,46 @@ workspace will unnecessarily flush the cache.</p>
 <i class="fa icon-warning" title="Warning"></i>
 </td>
 <td class="content">
-Magnolia 5.6.1+: A change in the light modules folder may also
-flush the server cache. See
-<code>/modules/cache/config/contentCaching/defaultPageCache/flushPolicy/policies/lightModule/pathToCacheMappings/defaultPageCache</code>
-with the <code>pattern</code> property, which specifies the pattern for the
-operation. The default value is <code>.<strong>/(templates|webresources|i18n)/.</strong></code>.
-</td>
-</tr>
-</table>
+<div class="paragraph">
+<p><strong>Magnolia <code>5.6.1</code>+:</strong> A change in the light modules folder may also flush the server cache. See <code>/modules/cache/config/contentCaching/defaultPageCache/flushPolicy/policies/lightModule/pathToCacheMappings/defaultPageCache</code> with the <code>pattern</code> property, which specifies the pattern for the operation. The default value is <code>.<strong>/(templates|webresources|i18n)/.</strong></code>.</p>
 </div>
 <div class="paragraph">
 <p><span class="image zoom"><img src="../../../../_images/ADVT-cache-core-flush.png" alt="image" width="700"></span></p>
+</div>
+</td>
+</tr>
+</table>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_executors"><a class="anchor" href="#_executors"></a>Executors</h4>
 <div class="paragraph">
-<p>These are actions taken once a caching decision has been made. There are
-three possible actions:</p>
+<p>These are actions taken once a caching decision has been made. There are three possible actions:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p><code>useCache</code>: Retrieves the cached item from the cache and streams it to
-the client.</p>
+<p><code>useCache</code>: Retrieves the cached item from the cache and streams it to the client.</p>
 </li>
 <li>
 <p><code>store</code>: Stores the response in the cache for future use.</p>
 </li>
 <li>
-<p><code>bypass</code>: Skips caching. This is useful for content that cannot or
-should not be cached.</p>
+<p><code>bypass</code>: Skips caching. This is useful for content that cannot or should not be cached.</p>
 </li>
 </ol>
 </div>
-<div class="paragraph">
-<p>Executors can be configured at
-<code>/modules/cache/config/contentCaching/defaultPageCache/executors</code>. Each
-of the executors is also responsible for configuring expiration headers.</p>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Executors can be configured at <code>/modules/cache/config/contentCaching/defaultPageCache/executors</code>. Each of the executors is also responsible for configuring expiration headers.
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p><span class="image zoom"><img src="../../../../_images/ADVT-cache-core-exec.png" alt="image" height="183"></span></p>
@@ -2817,30 +2806,16 @@ of the executors is also responsible for configuring expiration headers.</p>
 <div class="sect2">
 <h3 id="_compression"><a class="anchor" href="#_compression"></a>Compression</h3>
 <div class="paragraph">
-<p>Compression is a simple and effective way to save bandwidth and speed up
-your site. It is a common practice used by Google and Yahoo! for
-example.
-(<a href="http://betterexplained.com/articles/how-to-optimize-your-site-with-gzip-compression/">How
-to Optimize Your Site with GZIP Compression</a> is a great general
-introduction to the topic.) Compression is performed in the gzip filter,
-configured in <code>/server/filters/gzip</code>}. When a client requests a resource
-such as <code>index.html</code>, Magnolia delivers it zipped. A typical HTML page
-is compressed to 20% of its original size. So if your page is 100 kB
-uncompressed, it is 20 kB compressed. To improve performance further,
-zipped content is streamed from the repository to the client rather than
-read into memory first.</p>
+<p>Compression is a simple and effective way to save bandwidth and speed up your site. It is a common practice used by Google and Yahoo! for example.
+(<a href="http://betterexplained.com/articles/how-to-optimize-your-site-with-gzip-compression/" target="_blank" rel="noopener">How to Optimize Your Site with GZIP Compression</a> is a great general introduction to the topic).</p>
+</div>
+<div class="paragraph">
+<p>Compression is performed in the gzip filter, configured in <code>/server/filters/gzip</code>}. When a client requests a resource such as <code>index.html</code>, Magnolia delivers it zipped. A typical HTML page is compressed to 20% of its original size. So if your page is 100 kB uncompressed, it is 20 kB compressed. To improve performance further, zipped content is streamed from the repository to the client rather than read into memory first.</p>
 </div>
 <div class="sect3">
 <h4 id="_configuring"><a class="anchor" href="#_configuring"></a>Configuring</h4>
 <div class="paragraph">
-<p>You can configure which content types to compress. By default, the gzip
-filter bypasses compression for HTML, JavaScript and CSS because they
-are explicitly selected for compression in the Cache module
-configuration. These types can be compressed efficiently because they
-are text. The decision to compress a particular content type is made
-with voters. Voters are used whenever configuration values are not
-assigned at startup but depend on rules instead. In the Cache module
-configuration there are three voting rules based on content type:</p>
+<p>You can configure which content types to compress. By default, the gzip filter bypasses compression for HTML, JavaScript and CSS because they are explicitly selected for compression in the Cache module configuration. These types can be compressed efficiently because they are text. The decision to compress a particular content type is made with voters. Voters are used whenever configuration values are not assigned at startup but depend on rules instead. In the Cache module configuration there are three voting rules based on content type:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -2859,11 +2834,7 @@ configuration there are three voting rules based on content type:</p>
 <p><span class="image zoom"><img src="../../../../_images/ADVT-cache-core-comp1.png" alt="image" width="500"></span></p>
 </div>
 <div class="paragraph">
-<p>To add more content types, such as XML, create a numbered property under
-<code>allowed</code>. Use the Internet media type (MIME type) as value. Here are
-some
-<a href="http://en.wikipedia.org/wiki/Internet_media_type#List_of_common_media_types">common
-media types</a>:</p>
+<p>To add more content types, such as XML, create a numbered property under <code>allowed</code>. Use the Internet media type (MIME type) as value. Here are some <a href="http://en.wikipedia.org/wiki/Internet_media_type#List_of_common_media_types" target="_blank" rel="noopener">common media types</a>:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -2884,48 +2855,45 @@ media types</a>:</p>
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p>As a rule, compressing the HTML, JavaScript and CSS is sufficient; it is
-not necessary to compress binary content such as images. During the
-process, the browser sends a header telling the server that it accepts
-compressed content: <code>Accept-Encoding: gzip</code>. Note that Magnolia does not
-cache big binaries.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+As a rule, compressing the HTML, JavaScript and CSS is sufficient; it is not necessary to compress binary content such as images. During the process, the browser sends a header telling the server that it accepts compressed content: <code>Accept-Encoding: gzip</code>. Note that Magnolia does not cache big binaries.
+</td>
+</tr>
+</table>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_testing_compression"><a class="anchor" href="#_testing_compression"></a>Testing compression</h4>
 <div class="paragraph">
-<p>To test your compression configuration, use a tool such as
-<a href="http://websniffer.cc/">Web-Sniffer</a> that allows you to change the
-<code>Accept</code>, <code>Encoding</code> and <code>User-Agent</code> sent headers easily. Here’s what
-the headers look like when the
-<a href="http://demopublic.magnolia-cms.com/demo-project">Magnolia demo site</a> home
-page
-<a href="http://web-sniffer.net/?url=http%3A%2F%2Fdemopublic.magnolia-cms.com%2Fdemo-project.html&amp;submit=Submit&amp;http=1.1&amp;gzip=yes&amp;type=GET&amp;uak=3">is
-submitted</a> to the sniffer.</p>
+<p>To test your compression configuration, use a tool such as <a href="http://websniffer.cc/" target="_blank" rel="noopener">Web-Sniffer</a> that allows you to change the
+<code>Accept</code>, <code>Encoding</code> and <code>User-Agent</code> sent headers easily. Here’s what the headers look like when the <a href="http://demopublic.magnolia-cms.com/demo-project" target="_blank" rel="noopener">Magnolia demo site</a> home page <a href="http://web-sniffer.net/?url=http%3A%2F%2Fdemopublic.magnolia-cms.com%2Fdemo-project.html&amp;submit=Submit&amp;http=1.1&amp;gzip=yes&amp;type=GET&amp;uak=3">is submitted</a>^ to the sniffer.</p>
 </div>
-<div class="paragraph">
-<p>Request header:</p>
-</div>
-<div class="literalblock">
+<div class="listingblock">
+<div class="title">Request header</div>
 <div class="content">
-<pre>GET /demo-project.html HTTP/1.1 Host: demopublic.magnolia-cms.com
+<pre class="highlightjs highlight"><code class="language-none hljs">GET /demo-project.html HTTP/1.1 Host: demopublic.magnolia-cms.com
 Connection: close User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1;
 de; rv:1.9) Gecko/2008052906 Firefox/3.0 Accept-Encoding: gzip
 Accept-Charset: ISO-8859-1,UTF-8;q=0.7,*;q=0.7 Cache-Control: no
-Accept-Language: de,en;q=0.7,en-us;q=0.3 Referer: http://web-sniffer.net</pre>
+Acce
+[source]pt-Language: de,en;q=0.7,en-us;q=0.3 Referer: http://web-sniffer.net</code></pre>
 </div>
 </div>
-<div class="paragraph">
-<p>Response header:</p>
-</div>
-<div class="literalblock">
+<div class="listingblock">
+<div class="title">Response header</div>
 <div class="content">
-<pre>Status: HTTP/1.1 200 OK Date: Fri, 23 Jul 2010 07:45:10 GMT Server:
+<pre class="highlightjs highlight"><code class="language-none hljs">Status: HTTP/1.1 200 OK Date: Fri, 23 Jul 2010 07:45:10 GMT Server:
 Apache/2.2.9 X-Magnolia-Registration: Registered Cache-Control:
 max-age=900 Last-Modified: Thu, 01 Jul 2010 14:03:12 GMT
 Content-Encoding: gzip Vary: Accept-Encoding Content-Length: 3852
-Connection: close Content-Type: text/html;charset=UTF-8</pre>
+Conn
+[source]ection: close Content-Type: text/html;charset=UTF-8</code></pre>
 </div>
 </div>
 </div>
@@ -2933,9 +2901,7 @@ Connection: close Content-Type: text/html;charset=UTF-8</pre>
 <div class="sect2">
 <h3 id="_advanced_strategies"><a class="anchor" href="#_advanced_strategies"></a>Advanced strategies</h3>
 <div class="paragraph">
-<p>In DX Core, advanced caching strategies are available in separate
-<a href="../../Advanced-cache-modules/" class="xref page">Advanced Cache
-modules</a>.</p>
+<p>In DX Core, advanced caching strategies are available in separate <a href="../../Advanced-cache-modules/" class="xref page">Advanced Cache modules</a>.</p>
 </div>
 </div>
 </div>
@@ -3266,7 +3232,7 @@ custom renderer which does time-consuming operations:</p>
 <p>either the input must be included in the cache key, to allow Magnolia to generate an independent cache entry from it,</p>
 </li>
 <li>
-<p>or the component rendering such content needs to be marked as dynamic and excluded from the cache (see <a href="#xref:/Modules/List-of-modules/High-performance-caching-modules/Advanced-Cache-Dynamic-Page-Caching.adoc#_dynamic_page_caching" class="xref unresolved">Dynamic page caching</a> for more details),</p>
+<p>or the component rendering such content needs to be marked as dynamic and excluded from the cache (see <a href="../../High-performance-caching-modules/Advanced-Cache-Dynamic-Page-Caching/#_dynamic_page_caching" class="xref page">Dynamic page caching</a> for more details),</p>
 </li>
 <li>
 <p>or else the whole page needs to be excluded from the cache.</p>

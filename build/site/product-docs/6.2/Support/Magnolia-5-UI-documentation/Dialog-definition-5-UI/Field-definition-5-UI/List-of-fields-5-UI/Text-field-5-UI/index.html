@@ -148,6 +148,9 @@
     <a class="nav-link" href="../../../../../../Releases/Recent-features/">Recent features</a>
   </li>
   <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../../../../../Releases/Release-notes-for-Magnolia-CMS-6.2.16/"><span class="smalltext">Release notes for Magnolia CMS 6.2.16</span></a>
+  </li>
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../../../../../../Releases/Release-notes-for-Magnolia-CMS-6.2.15/"><span class="smalltext">Release notes for Magnolia CMS 6.2.15</span></a>
   </li>
   <li class="nav-item" data-depth="2">
@@ -680,7 +683,19 @@
     <a class="nav-link" href="../../../../../../Developing/SPA-development-and-Magnolia/">SPA development and Magnolia</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../../../../../../Developing/SPA-development-and-Magnolia/Magnolia-front-end-helpers-for-SPA/">Magnolia front-end helpers for SPA</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../../../../../Developing/SPA-development-and-Magnolia/Magnolia-front-end-helpers-for-SPA/Magnolia-Angular-Editor/">Magnolia Angular Editor</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../../../../../Developing/SPA-development-and-Magnolia/Magnolia-front-end-helpers-for-SPA/Magnolia-React-Editor/">Magnolia React Editor</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../../../../../Developing/SPA-development-and-Magnolia/Magnolia-front-end-helpers-for-SPA/Magnolia-Vue-Editor/">Magnolia Vue Editor</a>
+  </li>
+</ul>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../../../../../Developing/SPA-development-and-Magnolia/Mapping-between-Magnolia-and-SPA-components/">Mapping between Magnolia and SPA components</a>
@@ -1735,6 +1750,9 @@
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../../../../../Special-Features/Live-Copy/Live-Copy-module/">Live Copy module</a>
   </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../../../../../Special-Features/Live-Copy/Live-Copy-usage/">Using Live Copy</a>
+  </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
@@ -2524,249 +2542,9 @@ unlimited.</p>
 </tr>
 </tbody>
 </table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_common_field_properties_5_ui"><a class="anchor" href="#_common_field_properties_5_ui"></a>Common field properties - 5 UI</h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 30%;">
-<col style="width: 70%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Property</th>
-<th class="tableblock halign-left valign-top">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>fieldType`or `class</code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>required</strong></p>
-</div>
 <div class="paragraph">
-<p>Defines the field type via either a field alias name or a
-fully-qualified field definition class name. See
-<a href="../../#_field_types" class="xref page">Field
-definition: Field types</a>.</p>
+<p>include::partial$i/_Common-field-properties-5-UI.adoc</p>
 </div>
-<div class="paragraph">
-<p>To check the correct form of the name, use the
-<a href="../../../../../../Apps/List-of-apps/Definitions-app/" class="xref page">Definitions app</a>.</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>defaultValue</code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>optional</strong></p>
-</div>
-<div class="paragraph">
-<p>Pre-filled default value displayed in the field. The value can be
-overwritten by the user. Use alphanumeric characters.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-Applied only when creating a new item, not for
-already existing items.
-</td>
-</tr>
-</table>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>description</code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>optional</strong></p>
-</div>
-<div class="paragraph">
-<p>Help text displayed when the user clicks the help icon. The value can be
-literal or retrieved from the
-<a href="../../../../../../Administration/Language/Internationalization/" class="xref page">message bundle</a> with
-a key. Use alphanumeric characters in literal values. Not applicable to
-the
-<a href="../Static-field-5-UI/" class="xref page">static</a>
-field.</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>i18n</code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>optional</strong>, <em>default is <code>false</code></em></p>
-</div>
-<div class="paragraph">
-<p>Enables <a href="../../../../../../Administration/Language/Language-configuration/" class="xref page">i18n
-authoring support</a> which allows editors to write foreign-language or
-regionally targeted content. A two-letter language identifier (en, de,
-fr etc.) is displayed on controls where <code>i18n</code> is set to <code>true</code>.</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>i18nBasename</code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>optional</strong>, <em>default is the message bundle defined in the dialog
-definition_</em></p>
-</div>
-<div class="paragraph">
-<p><a href="../../../../../../Administration/Language/Internationalization/" class="xref page">Message bundle</a> such
-as <code>com.example.messages</code> for localized field labels. You can set this
-property in the parent
-<a href="../../../" class="xref page">dialog</a>,
-<a href="../../../Form-definition-5-UI/" class="xref page">form</a>
-or tab definition. Child fields will inherit the bundle.</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>label</code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>optional</strong></p>
-</div>
-<div class="paragraph">
-<p>Field label displayed to editors. The value can be literal such as
-<code>Product name</code> or retrieved from the
-<a href="../../../../../../Administration/Language/Internationalization/" class="xref page">message bundle</a> with
-a key such as <code>products.product.label</code>. Use alphanumeric characters in
-literal values.</p>
-</div>
-<div class="paragraph">
-<p>If you do not provide the property, Magnolia will fall back to a
-generated i18n key and display the key in the UI.</p>
-</div>
-<div class="paragraph">
-<p>If you do not want a label at all, define the property and set its value
-to a blank space such as <code>label: " "</code> in YAML.</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>name</code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>optional</strong>, <em>default is the name of the field’s parent node_</em></p>
-</div>
-<div class="paragraph">
-<p>Name of the node where the value is saved. The name <code>jcrName</code> is
-reserved. Use alphanumeric characters.<br></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>placeholder</code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>optional</strong></p>
-</div>
-<div class="paragraph">
-<p>Placeholder text to be displayed when the field is empty. The value is
-<a href="../../../../../../Administration/Language/Internationalization/" class="xref page">i18n</a>-able.</p>
-</div>
-<div class="admonitionblock warning">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-warning" title="Warning"></i>
-</td>
-<td class="content">
-Applicable to
-<a href="./" class="xref page">text</a>,
-<a href="../Link-field-5-UI/" class="xref page">link</a>
-and combobox fields.
-</td>
-</tr>
-</table>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>readOnly</code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>optional</strong>, <em>default is <code>false</code></em></p>
-</div>
-<div class="paragraph">
-<p>Makes the field uneditable. Adding this property has the same effect as
-creating a
-<a href="../Static-field-5-UI/" class="xref page">static</a>
-field.</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>required</code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>optional</strong>, <em>default is <code>false</code></em></p>
-</div>
-<div class="paragraph">
-<p>Makes the field required (mandatory). An asterisk is displayed next to
-the field label. See also
-<a href="../../Field-validators-5-UI/#_checking_for_null_values" class="xref page">Checking
-for null values</a>.</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>requiredErrorMessage</code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>optional</strong>, <em>default is <code>This field is required</code></em></p>
-</div>
-<div class="paragraph">
-<p>Error message displayed when required is true and the user saves an
-empty field. The value can be literal or retrieved from the
-<a href="../../../../../../Administration/Language/Internationalization/" class="xref page">message bundle</a> with
-a key such as <code>validation.message.required</code>.</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>styleName</code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>optional</strong></p>
-</div>
-<div class="paragraph">
-<p>Adds one or more style names to this component. Multiple styles can be
-specified as a space-separated list of style names such as
-<code>checkbox disabled</code>. The style name will be rendered as an HTML class
-name, which can be used in a CSS definition. The class name is added to
-the field by calling the Vaadin method
-<a href="https://vaadin.com/api/com/vaadin/ui/AbstractComponent.html#addStyleName%28java.lang.String%29">addStyleName</a>.</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>transformerClass</code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>optional</strong></p>
-</div>
-<div class="paragraph">
-<p>Property transformer classes define how field values are stored in the
-repository. Each field has a default transformer class. You don’t need
-to define a class unless you want to override the default. The value is
-a fully-qualified class name.</p>
-</div>
-<div class="admonitionblock warning">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-warning" title="Warning"></i>
-</td>
-<td class="content">
-Complex field definitions may define a different default
-transformer in their constructor. See
-<a href="../../Transforming-field-values-5-UI/" class="xref page">Transforming
-field values</a> for more.
-</td>
-</tr>
-</table>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>type</code></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>optional</strong>, <em>most fields set a default value automatically</em></p>
-</div>
-<div class="paragraph">
-<p>JCR property type of the stored value such as <code>String</code>, <code>Boolean</code>,
-<code>Date</code> or any other supported and defined data type.</p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
 </div>
 </div>
 <nav class="pagination">

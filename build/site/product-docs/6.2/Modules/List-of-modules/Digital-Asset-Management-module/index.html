@@ -148,6 +148,9 @@
     <a class="nav-link" href="../../../Releases/Recent-features/">Recent features</a>
   </li>
   <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../../Releases/Release-notes-for-Magnolia-CMS-6.2.16/"><span class="smalltext">Release notes for Magnolia CMS 6.2.16</span></a>
+  </li>
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../../../Releases/Release-notes-for-Magnolia-CMS-6.2.15/"><span class="smalltext">Release notes for Magnolia CMS 6.2.15</span></a>
   </li>
   <li class="nav-item" data-depth="2">
@@ -680,7 +683,19 @@
     <a class="nav-link" href="../../../Developing/SPA-development-and-Magnolia/">SPA development and Magnolia</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../../../Developing/SPA-development-and-Magnolia/Magnolia-front-end-helpers-for-SPA/">Magnolia front-end helpers for SPA</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../../Developing/SPA-development-and-Magnolia/Magnolia-front-end-helpers-for-SPA/Magnolia-Angular-Editor/">Magnolia Angular Editor</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../../Developing/SPA-development-and-Magnolia/Magnolia-front-end-helpers-for-SPA/Magnolia-React-Editor/">Magnolia React Editor</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../../Developing/SPA-development-and-Magnolia/Magnolia-front-end-helpers-for-SPA/Magnolia-Vue-Editor/">Magnolia Vue Editor</a>
+  </li>
+</ul>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../../Developing/SPA-development-and-Magnolia/Mapping-between-Magnolia-and-SPA-components/">Mapping between Magnolia and SPA components</a>
@@ -1735,6 +1750,9 @@
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../../Special-Features/Live-Copy/Live-Copy-module/">Live Copy module</a>
   </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../../Special-Features/Live-Copy/Live-Copy-usage/">Using Live Copy</a>
+  </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
@@ -2436,7 +2454,7 @@
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Latest</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">3.0.12</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3.0.13</p></td>
 </tr>
 </tbody>
 </table>
@@ -2608,7 +2626,7 @@ Preview module</a> page.
 <pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;dependency&gt;
   &lt;groupId&gt;info.magnolia.dam&lt;/groupId&gt;
   &lt;artifactId&gt;magnolia-dam-api&lt;/artifactId&gt;
-  &lt;version&gt;3.0.12&lt;/version&gt;
+  &lt;version&gt;3.0.13&lt;/version&gt;
 &lt;/dependency&gt;</code></pre>
 </div>
 </div>
@@ -2617,7 +2635,7 @@ Preview module</a> page.
 <pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;dependency&gt;
   &lt;groupId&gt;info.magnolia.dam&lt;/groupId&gt;
   &lt;artifactId&gt;magnolia-dam-app&lt;/artifactId&gt;
-  &lt;version&gt;3.0.12&lt;/version&gt;
+  &lt;version&gt;3.0.13&lt;/version&gt;
 &lt;/dependency&gt;</code></pre>
 </div>
 </div>
@@ -2626,7 +2644,7 @@ Preview module</a> page.
 <pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;dependency&gt;
   &lt;groupId&gt;info.magnolia.dam&lt;/groupId&gt;
   &lt;artifactId&gt;magnolia-dam-app-compatibility&lt;/artifactId&gt;
-  &lt;version&gt;3.0.12&lt;/version&gt;
+  &lt;version&gt;3.0.13&lt;/version&gt;
 &lt;/dependency&gt;</code></pre>
 </div>
 </div>
@@ -2647,7 +2665,7 @@ The dependency to <code>magnolia‑dam‑app-compatibility</code> is not mandato
 <pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;dependency&gt;
   &lt;groupId&gt;info.magnolia.dam&lt;/groupId&gt;
   &lt;artifactId&gt;magnolia-dam-core&lt;/artifactId&gt;
-  &lt;version&gt;3.0.12&lt;/version&gt;
+  &lt;version&gt;3.0.13&lt;/version&gt;
 &lt;/dependency&gt;</code></pre>
 </div>
 </div>
@@ -2656,7 +2674,7 @@ The dependency to <code>magnolia‑dam‑app-compatibility</code> is not mandato
 <pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;dependency&gt;
   &lt;groupId&gt;info.magnolia.dam&lt;/groupId&gt;
   &lt;artifactId&gt;magnolia-dam-jcr&lt;/artifactId&gt;
-  &lt;version&gt;3.0.12&lt;/version&gt;
+  &lt;version&gt;3.0.13&lt;/version&gt;
 &lt;/dependency&gt;</code></pre>
 </div>
 </div>
@@ -2665,7 +2683,7 @@ The dependency to <code>magnolia‑dam‑app-compatibility</code> is not mandato
 <pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;dependency&gt;
   &lt;groupId&gt;info.magnolia.dam&lt;/groupId&gt;
   &lt;artifactId&gt;magnolia-dam-app-jcr&lt;/artifactId&gt;
-  &lt;version&gt;3.0.12&lt;/version&gt;
+  &lt;version&gt;3.0.13&lt;/version&gt;
 &lt;/dependency&gt;</code></pre>
 </div>
 </div>
@@ -2686,7 +2704,7 @@ The dependency to <code>magnolia‑dam‑app-jcr</code> is not mandatory.
 <pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;dependency&gt;
   &lt;groupId&gt;info.magnolia.dam&lt;/groupId&gt;
   &lt;artifactId&gt;magnolia-dam-templating&lt;/artifactId&gt;
-  &lt;version&gt;3.0.12&lt;/version&gt;
+  &lt;version&gt;3.0.13&lt;/version&gt;
 &lt;/dependency&gt;</code></pre>
 </div>
 </div>
@@ -2695,7 +2713,7 @@ The dependency to <code>magnolia‑dam‑app-jcr</code> is not mandatory.
 <pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;dependency&gt;
   &lt;groupId&gt;info.magnolia.dam&lt;/groupId&gt;
   &lt;artifactId&gt;magnolia-dam-imaging&lt;/artifactId&gt;
-  &lt;version&gt;3.0.12&lt;/version&gt;
+  &lt;version&gt;3.0.13&lt;/version&gt;
 &lt;/dependency&gt;</code></pre>
 </div>
 </div>

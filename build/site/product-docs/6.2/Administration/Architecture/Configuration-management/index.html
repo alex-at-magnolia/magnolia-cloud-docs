@@ -148,6 +148,9 @@
     <a class="nav-link" href="../../../Releases/Recent-features/">Recent features</a>
   </li>
   <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../../Releases/Release-notes-for-Magnolia-CMS-6.2.16/"><span class="smalltext">Release notes for Magnolia CMS 6.2.16</span></a>
+  </li>
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../../../Releases/Release-notes-for-Magnolia-CMS-6.2.15/"><span class="smalltext">Release notes for Magnolia CMS 6.2.15</span></a>
   </li>
   <li class="nav-item" data-depth="2">
@@ -680,7 +683,19 @@
     <a class="nav-link" href="../../../Developing/SPA-development-and-Magnolia/">SPA development and Magnolia</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../../../Developing/SPA-development-and-Magnolia/Magnolia-front-end-helpers-for-SPA/">Magnolia front-end helpers for SPA</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../../Developing/SPA-development-and-Magnolia/Magnolia-front-end-helpers-for-SPA/Magnolia-Angular-Editor/">Magnolia Angular Editor</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../../Developing/SPA-development-and-Magnolia/Magnolia-front-end-helpers-for-SPA/Magnolia-React-Editor/">Magnolia React Editor</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../../Developing/SPA-development-and-Magnolia/Magnolia-front-end-helpers-for-SPA/Magnolia-Vue-Editor/">Magnolia Vue Editor</a>
+  </li>
+</ul>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../../Developing/SPA-development-and-Magnolia/Mapping-between-Magnolia-and-SPA-components/">Mapping between Magnolia and SPA components</a>
@@ -1735,6 +1750,9 @@
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../../Special-Features/Live-Copy/Live-Copy-module/">Live Copy module</a>
   </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../../Special-Features/Live-Copy/Live-Copy-usage/">Using Live Copy</a>
+  </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
@@ -2526,7 +2544,7 @@ allows for flexible customization.</p>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java"># Repository configuration
 magnolia.repositories.config = WEB-INF/config/default/repositories.xml
-magnolia.repositories.home = $\{magnolia.app.rootdir\}/repositories
+magnolia.repositories.home = ${magnolia.app.rootdir}/repositories
 magnolia.repositories.jackrabbit.config = WEB-INF/config/repo-conf/jackrabbit-bundle-h2-search.xml
 
 # Defining the instance as author instance
@@ -3237,10 +3255,8 @@ directory when developing locally, you can use <code>magnolia.resources.filesyst
 </div>
 <div class="paragraph">
 <p>The sensitivity (speed) with which the changes of the
-<a href="../../../Developing/Resources/" class="xref page">resources</a> in the
-<a href="#/_i/_What-is-magnolia.resources.dir.adoc" class="xref unresolved"><code>magnolia.resources.dir</code></a> are
-observed by the
-<a href="https://javadoc.magnolia-cms.com/info.magnolia.dirwatch.DirectoryWatcherService">DirectoryWatcherService</a>.</p>
+<a href="../../../Developing/Resources/" class="xref page">resources</a> in the <code>magnolia.resources.dir</code> are
+observed by the <a href="https://javadoc.magnolia-cms.com/info.magnolia.dirwatch.DirectoryWatcherService" target="_blank" rel="noopener">DirectoryWatcherService</a>.</p>
 </div>
 <div class="paragraph">
 <p>Possible values: <code>low</code>, <code>medium</code>, <code>high</code>. For development purposes on

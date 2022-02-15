@@ -148,6 +148,9 @@
     <a class="nav-link" href="../../../Releases/Recent-features/">Recent features</a>
   </li>
   <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../../Releases/Release-notes-for-Magnolia-CMS-6.2.16/"><span class="smalltext">Release notes for Magnolia CMS 6.2.16</span></a>
+  </li>
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../../../Releases/Release-notes-for-Magnolia-CMS-6.2.15/"><span class="smalltext">Release notes for Magnolia CMS 6.2.15</span></a>
   </li>
   <li class="nav-item" data-depth="2">
@@ -680,7 +683,19 @@
     <a class="nav-link" href="../../SPA-development-and-Magnolia/">SPA development and Magnolia</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../../SPA-development-and-Magnolia/Magnolia-front-end-helpers-for-SPA/">Magnolia front-end helpers for SPA</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../SPA-development-and-Magnolia/Magnolia-front-end-helpers-for-SPA/Magnolia-Angular-Editor/">Magnolia Angular Editor</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../SPA-development-and-Magnolia/Magnolia-front-end-helpers-for-SPA/Magnolia-React-Editor/">Magnolia React Editor</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../SPA-development-and-Magnolia/Magnolia-front-end-helpers-for-SPA/Magnolia-Vue-Editor/">Magnolia Vue Editor</a>
+  </li>
+</ul>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../SPA-development-and-Magnolia/Mapping-between-Magnolia-and-SPA-components/">Mapping between Magnolia and SPA components</a>
@@ -1735,6 +1750,9 @@
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../../Special-Features/Live-Copy/Live-Copy-module/">Live Copy module</a>
   </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../../Special-Features/Live-Copy/Live-Copy-usage/">Using Live Copy</a>
+  </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
@@ -2413,7 +2431,7 @@
 <p>This page describes the <code>delivery</code> endpoint version 2 for obtaining JCR data as JSON. Version 2 was introduced with Magnolia REST 2.1 and provides more flexibility. You can use it to define multiple endpoint configurations, deliver localized content and resolve references to nodes of other workspaces including assets and asset renditions.</p>
 </div>
 <div class="paragraph">
-<p>This REST resource is highly customizable. You can define multiple endpoint configurations to serve different needs. Each configured endpoint is accessed through a distinct <code>endpointPath</code> property]and provides three methods. The methods, called with HTTP <span class="d-get">GET</span>, allow you <strong>read a node</strong> (<em>and its subnodes</em>) by a given path, <strong>get children of a node</strong> and <strong>query nodes</strong>.</p>
+<p>This REST resource is highly customizable. You can define multiple endpoint configurations to serve different needs. Each configured endpoint is accessed through a distinct <code>endpointPath</code> property]and provides three methods. The methods, called with HTTP <span class="d-get">GET</span>, allow you to <strong>read a node</strong> (<em>and its subnodes</em>) by a given path, <strong>get children of a node</strong> and <strong>query nodes</strong>.</p>
 </div>
 <div class="paragraph">
 <p>To help you configure and try out the delivery scenarios mentioned on this page, we:</p>
@@ -2528,7 +2546,7 @@ Otherwise, you would have to use the <a href="../../../Apps/List-of-apps/Securit
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-sh hljs" data-lang="sh">curl "http://localhost:8080/magnoliaAuthor/.rest/delivery/ep/travel/about/main"</code></pre>
+<pre class="highlightjs highlight"><code class="language-sh hljs" data-lang="sh">curl "http://localhost:8080/magnoliaAuthor/.rest/delivery/&lt;myEndpoint&gt;/travel/about/main"</code></pre>
 </div>
 </div>
 <div class="listingblock">
@@ -2609,10 +2627,10 @@ The items in the response are returned in their natural (unsorted) order. See al
 <div class="sect3">
 <h4 id="_examples"><a class="anchor" href="#_examples"></a>Examples</h4>
 <div class="sect4">
-<h5 id="_get_child_nodes_in_the_root_of_the_ep_endpoint"><a class="anchor" href="#_get_child_nodes_in_the_root_of_the_ep_endpoint"></a>Get child nodes in the root of the <code>ep</code> endpoint:</h5>
+<h5 id="_get_child_nodes_in_the_root_of_the_myendpoint_endpoint"><a class="anchor" href="#_get_child_nodes_in_the_root_of_the_myendpoint_endpoint"></a>Get child nodes in the root of the <code>&lt;myEndpoint&gt;</code> endpoint:</h5>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-sh hljs" data-lang="sh">curl "http://localhost:8080/magnoliaAuthor/.rest/delivery/ep/@nodes"</code></pre>
+<pre class="highlightjs highlight"><code class="language-sh hljs" data-lang="sh">curl "http://localhost:8080/magnoliaAuthor/.rest/delivery/&lt;myEndpoint&gt;/@nodes"</code></pre>
 </div>
 </div>
 <div class="listingblock">
@@ -2661,7 +2679,7 @@ The items in the response are returned in their natural (unsorted) order. See al
 </div>
 </div>
 <div class="paragraph">
-<p>This result is returned for the endpoint called <code>ep</code> with the following configuration:</p>
+<p>This result is returned for the endpoint called <code>&lt;myEndpoint&gt;</code> with the following configuration:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -2677,7 +2695,7 @@ nodeTypes:
 <h5 id="_get_child_nodes_in_the_root_of_the_travel_page"><a class="anchor" href="#_get_child_nodes_in_the_root_of_the_travel_page"></a>Get child nodes in the root of the <code>/travel</code> page:</h5>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-sh hljs" data-lang="sh">curl "http://localhost:8080/magnoliaAuthor/.rest/delivery/ep/travel/@nodes"</code></pre>
+<pre class="highlightjs highlight"><code class="language-sh hljs" data-lang="sh">curl "http://localhost:8080/magnoliaAuthor/.rest/delivery/&lt;myEndpoint&gt;/travel/@nodes"</code></pre>
 </div>
 </div>
 <div class="listingblock">
@@ -2798,7 +2816,7 @@ nodeTypes:
 </div>
 </div>
 <div class="paragraph">
-<p>This result is returned for the endpoint called <code>ep</code> with the following configuration:</p>
+<p>This result is returned for the endpoint called <code>&lt;myEndpoint&gt;</code> with the following configuration:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -2991,7 +3009,7 @@ Up to Magnolia 5.6.5, the results provided by the endpoint were sorted alphabeti
 </div>
 </div>
 <div class="paragraph">
-<p>Let there be a page <code>/fldr/pg1</code> which can be delivered through the <code>ep</code> endpoint using the URL:</p>
+<p>Let there be a page <code>/fldr/pg1</code> which can be delivered through the <code>&lt;myEndpoint&gt;</code> endpoint using the URL:</p>
 </div>
 <div class="admonitionblock note best">
 <table>
@@ -3006,10 +3024,10 @@ Up to Magnolia 5.6.5, the results provided by the endpoint were sorted alphabeti
 <div class="ulist">
 <ul>
 <li>
-<p><code><a href="https://&lt;domain&gt;&gt;/&lt;webapp&gt;/.rest/preview/ep/fldr/pg1?version=1.0" class="bare">https://&lt;domain&gt;&gt;/&lt;webapp&gt;/.rest/preview/ep/fldr/pg1?version=1.0</a></code></p>
+<p><code><a href="https://&lt;domain&gt;&gt;/&lt;webapp&gt;/.rest/preview/&lt;myEndpoint&gt;/fldr/pg1?version=1.0" class="bare">https://&lt;domain&gt;&gt;/&lt;webapp&gt;/.rest/preview/&lt;myEndpoint&gt;/fldr/pg1?version=1.0</a></code></p>
 </li>
 <li>
-<p><code><a href="https://&lt;domain&gt;&gt;/&lt;webapp&gt;/.rest/preview/ep/fldr/pg1?version=1.1" class="bare">https://&lt;domain&gt;&gt;/&lt;webapp&gt;/.rest/preview/ep/fldr/pg1?version=1.1</a></code></p>
+<p><code><a href="https://&lt;domain&gt;&gt;/&lt;webapp&gt;/.rest/preview/&lt;myEndpoint&gt;/fldr/pg1?version=1.1" class="bare">https://&lt;domain&gt;&gt;/&lt;webapp&gt;/.rest/preview/&lt;myEndpoint&gt;/fldr/pg1?version=1.1</a></code></p>
 </li>
 </ul>
 </div>
@@ -3363,7 +3381,7 @@ workspace by sending a query such as</p>
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>http://localhost:8080/magnoliaAuthor/.rest/delivery/ep/?body[like]=%Erleben%</pre>
+<pre>http://localhost:8080/magnoliaAuthor/.rest/delivery/&lt;myEndpoint&gt;/?body[like]=%Erleben%</pre>
 </div>
 </div>
 <div class="paragraph">
@@ -3379,7 +3397,7 @@ case - the <code>_de</code> suffix to the <code>body</code> property and re-send
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>http://localhost:8080/magnoliaAuthor/.rest/delivery/ep/?body_de[like]=%Erleben%</pre>
+<pre>http://localhost:8080/magnoliaAuthor/.rest/delivery/&lt;myEndpoint&gt;/?body_de[like]=%Erleben%</pre>
 </div>
 </div>
 <div class="paragraph">
@@ -3417,7 +3435,7 @@ the actual result):</p>
 </div>
 </div>
 <div class="paragraph">
-<p>This result is returned for the endpoint called <code>ep</code> with the following
+<p>This result is returned for the endpoint called <code>&lt;myEndpoint&gt;</code> with the following
 configuration:</p>
 </div>
 <div class="listingblock">
@@ -3449,7 +3467,7 @@ Using this suffix in the query returns an empty result set:</p>
 </div>
 <div class="paragraph">
 <p>Alternatively, try searching with a more general search query such as
-<code>http://localhost:8080/magnoliaAuthor/.rest/delivery/ep/?q=Erleben</code>
+<code>http://localhost:8080/magnoliaAuthor/.rest/delivery/&lt;myEndpoint&gt;/?q=Erleben</code>
 which will also return a response where <em>Erleben</em> appears in the JCR
 (endpoint configuration is same as the one above):</p>
 </div>
@@ -3541,7 +3559,7 @@ locales configured or extends a site definition with desired locales.</p>
 <div class="sect3">
 <h4 id="_retrieving_language_variants_pages_app"><a class="anchor" href="#_retrieving_language_variants_pages_app"></a>Retrieving language variants (Pages app)</h4>
 <div class="paragraph">
-<p>You can also use <code>all</code> as the value of the <code>lang</code> property to retrieve all language variants of content. Compare below the three requests and responses issued against the <code>ep</code> endpoint configured as follows:</p>
+<p>You can also use <code>all</code> as the value of the <code>lang</code> property to retrieve all language variants of content. Compare below the three requests and responses issued against the <code>&lt;myEndpoint&gt;</code> endpoint configured as follows:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -3559,7 +3577,7 @@ nodeTypes:
 <h4 id="_lang_set_to_all"><a class="anchor" href="#_lang_set_to_all"></a><code>lang</code> set to <code>all</code></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">http://localhost:8080/magnoliaAuthor/.rest/delivery/ep/?lang=all</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">http://localhost:8080/magnoliaAuthor/.rest/delivery/&lt;myEndpoint&gt;/?lang=all</code></pre>
 </div>
 </div>
 <div class="listingblock">
@@ -3608,7 +3626,7 @@ nodeTypes:
 <h4 id="_lang_not_set"><a class="anchor" href="#_lang_not_set"></a><code>lang</code> not set</h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">http://localhost:8080/magnoliaAuthor/.rest/delivery/ep/</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">http://localhost:8080/magnoliaAuthor/.rest/delivery/&lt;myEndpoint&gt;/</code></pre>
 </div>
 </div>
 <div class="listingblock">
@@ -3654,7 +3672,7 @@ nodeTypes:
 <h4 id="_lang_set_to_de"><a class="anchor" href="#_lang_set_to_de"></a><code>lang</code> set to <code>de</code></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">http://localhost:8080/magnoliaAuthor/.rest/delivery/ep/?lang=de</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">http://localhost:8080/magnoliaAuthor/.rest/delivery/&lt;myEndpoint&gt;/?lang=de</code></pre>
 </div>
 </div>
 <div class="listingblock">
@@ -3720,7 +3738,7 @@ childNodeTypes:
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">http://localhost:8080/magnoliaAuthor/.rest/delivery/ep/?lang=all</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">http://localhost:8080/magnoliaAuthor/.rest/delivery/&lt;myEndpoint&gt;/?lang=all</code></pre>
 </div>
 </div>
 <div class="listingblock">
@@ -3848,7 +3866,7 @@ See <a href="../../../Modules/List-of-modules/REST-module/Tools-to-test-REST-req
 <p>Find webpages in the Travel Demo which were last modified before or on June 12, 2015:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">curl 'http://localhost:8080/magnoliaAuthor/.rest/delivery/ep/?mgnl:lastModified[lte]=2015-06-12' --globoff</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">curl 'http://localhost:8080/magnoliaAuthor/.rest/delivery/&lt;myEndpoint&gt;/?mgnl:lastModified[lte]=2015-06-12' --globoff</code></pre>
 </div>
 </div>
 <div class="admonitionblock note">
@@ -3866,7 +3884,7 @@ interpreted by cURL itself.
 </table>
 </div>
 <div class="paragraph">
-<p>Endpoint: <code>ep</code></p>
+<p>Endpoint: <code>&lt;myEndpoint&gt;</code></p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -3915,7 +3933,7 @@ includeSystemProperties: true</code></pre>
 <p>Find webpages with the word <code>Customer</code> in the title.</p>
 <div class="literalblock">
 <div class="content">
-<pre>curl -g -G "http://localhost:8080/magnoliaAuthor/.rest/delivery/ep" --data-urlencode "title[like]=%Customer%"</pre>
+<pre>curl -g -G "http://localhost:8080/magnoliaAuthor/.rest/delivery/&lt;myEndpoint&gt;" --data-urlencode "title[like]=%Customer%"</pre>
 </div>
 </div>
 <div class="paragraph">
@@ -3923,7 +3941,7 @@ includeSystemProperties: true</code></pre>
 values, if required.</p>
 </div>
 <div class="paragraph">
-<p>Endpoint: <code>ep</code></p>
+<p>Endpoint: <code>&lt;myEndpoint&gt;</code></p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -3976,11 +3994,11 @@ filter the number of results can potentially be higher.</p>
 <code>/travel/about/careers</code> is the ancestor:</p>
 <div class="literalblock">
 <div class="content">
-<pre>curl 'http://localhost:8080/magnoliaAuthor/.rest/delivery/ep/?@ancestor=/travel/about/careers'</pre>
+<pre>curl 'http://localhost:8080/magnoliaAuthor/.rest/delivery/&lt;myEndpoint&gt;/?@ancestor=/travel/about/careers'</pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Endpoint: <code>ep</code></p>
+<p>Endpoint: <code>&lt;myEndpoint&gt;</code></p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -4040,11 +4058,11 @@ nodeTypes:
 <code>location</code> property and restrict the number of results to two:</p>
 <div class="literalblock">
 <div class="content">
-<pre>curl 'http://localhost:8080/magnoliaAuthor/.rest/delivery/ep/?q=beach&amp;orderBy=location%20desc&amp;limit=2'</pre>
+<pre>curl 'http://localhost:8080/magnoliaAuthor/.rest/delivery/&lt;myEndpoint&gt;/?q=beach&amp;orderBy=location%20desc&amp;limit=2'</pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Endpoint: <code>ep</code></p>
+<p>Endpoint: <code>&lt;myEndpoint&gt;</code></p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -4113,7 +4131,7 @@ bypassWorkspaceAcls: true</code></pre>
 the variant in the German language:</p>
 <div class="literalblock">
 <div class="content">
-<pre>curl -g -G 'http://localhost:8080/magnoliaAuthor/.rest/delivery/ep?lang=de-DE' --data-urlencode "description[like]=%Japan%"</pre>
+<pre>curl -g -G 'http://localhost:8080/magnoliaAuthor/.rest/delivery/&lt;myEndpoint&gt;?lang=de-DE' --data-urlencode "description[like]=%Japan%"</pre>
 </div>
 </div>
 <div class="paragraph">
@@ -4122,7 +4140,7 @@ parameters, whereas the one that does not require encoding is added to
 the URL directly.</p>
 </div>
 <div class="paragraph">
-<p>Endpoint: <code>ep</code></p>
+<p>Endpoint: <code>&lt;myEndpoint&gt;</code></p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -4183,8 +4201,7 @@ bypassWorkspaceAcls: true</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">class: info.magnolia.rest.delivery.jcr.v2.JcrDeliveryEndpointDefinition
-workspace: website
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">workspace: website
 limit: 25
 depth: 2
 includeSystemProperties: true
@@ -4206,7 +4223,7 @@ childNodeTypes:
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Property</th>
 <th class="tableblock halign-left valign-top">Description</th>
 </tr>
 </thead>
@@ -4214,10 +4231,22 @@ childNodeTypes:
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>class</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>required</strong></p>
+<p><strong>optional</strong></p>
 </div>
 <div class="paragraph">
-<p>Must be <code>info.magnolia.rest.delivery.jcr.v2.JcrDeliveryEndpointDefinition</code> or a subclass.</p>
+<p>Must be <code>info.magnolia.rest.delivery.jcr.v2.JcrDeliveryEndpointDefinition</code> (default value) or a subclass.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The property is optional since version 2.2.11 of the <a href="../../../Modules/List-of-modules/REST-module/" class="xref page">REST module</a>.
+</td>
+</tr>
+</table>
 </div></div></td>
 </tr>
 <tr>
@@ -4323,7 +4352,7 @@ childNodeTypes:
 <p>You can specify the properties using a full property name, as seen on line 4 below, or using a wildcard character (line 5, to request for example <code>mgnl:lastActivatedBy</code>, <code>mgnl:createdBy</code> and so on):</p>
 </div>
 <div class="listingblock">
-<div class="title">&lt;light-module&gt;/restEndpoints/ep.yaml</div>
+<div class="title">&lt;light-module&gt;/restEndpoints/&lt;myEndpoint&gt;.yaml</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-yml hljs" data-lang="yml">class: info.magnolia.rest.delivery.jcr.v2.JcrDeliveryEndpointDefinition
 workspace: tours

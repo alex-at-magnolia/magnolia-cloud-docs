@@ -148,6 +148,9 @@
     <a class="nav-link" href="../../../Releases/Recent-features/">Recent features</a>
   </li>
   <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../../Releases/Release-notes-for-Magnolia-CMS-6.2.16/"><span class="smalltext">Release notes for Magnolia CMS 6.2.16</span></a>
+  </li>
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../../../Releases/Release-notes-for-Magnolia-CMS-6.2.15/"><span class="smalltext">Release notes for Magnolia CMS 6.2.15</span></a>
   </li>
   <li class="nav-item" data-depth="2">
@@ -680,7 +683,19 @@
     <a class="nav-link" href="../../../Developing/SPA-development-and-Magnolia/">SPA development and Magnolia</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../../../Developing/SPA-development-and-Magnolia/Magnolia-front-end-helpers-for-SPA/">Magnolia front-end helpers for SPA</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../../Developing/SPA-development-and-Magnolia/Magnolia-front-end-helpers-for-SPA/Magnolia-Angular-Editor/">Magnolia Angular Editor</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../../Developing/SPA-development-and-Magnolia/Magnolia-front-end-helpers-for-SPA/Magnolia-React-Editor/">Magnolia React Editor</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../../Developing/SPA-development-and-Magnolia/Magnolia-front-end-helpers-for-SPA/Magnolia-Vue-Editor/">Magnolia Vue Editor</a>
+  </li>
+</ul>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../../Developing/SPA-development-and-Magnolia/Mapping-between-Magnolia-and-SPA-components/">Mapping between Magnolia and SPA components</a>
@@ -1735,6 +1750,9 @@
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../../Special-Features/Live-Copy/Live-Copy-module/">Live Copy module</a>
   </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../../Special-Features/Live-Copy/Live-Copy-usage/">Using Live Copy</a>
+  </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
@@ -2449,11 +2467,21 @@
 <i class="fa icon-caution" title="Caution"></i>
 </td>
 <td class="content">
-<div class="paragraph">
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Upgrading</dt>
+<dd>
+<p>Upgrading to <code>2.1.x</code> is only possible from <code>2.0.x</code> module versions. To upgrade from <a href="https://documentation.magnolia-cms.com/display/DOCS57/Personalization+module" target="_blank" rel="noopener">Magnolia 5 Personalization module</a> (<code>1.6.x</code> version range), you need to upgrade to version <code>2.0</code> first.</p>
+</dd>
+<dt class="hdlist1">Bundling</dt>
+<dd>
 <p>Magnolia 6.2 <a href="../../../Developing/Bundles-and-webapps/#_magnolia_bundles_and_webapps" class="xref page">webapps</a> are shipped with the <code>2.0.x</code> module versions.</p>
-</div>
-<div class="paragraph">
-<p><a href="../../../Developing/API/Delivery-API/Requesting-personalized-content-with-the-delivery-endpoint/" class="xref page">Personalization support for the Delivery API</a> is only available in version <code>2.1.0</code> and later.</p>
+</dd>
+<dt class="hdlist1">Personalization and Delivery API</dt>
+<dd>
+<p><a href="../../../Developing/API/Delivery-API/Requesting-personalized-content-with-the-delivery-endpoint/" class="xref page">Personalization support for the Delivery API</a> is only available in version <code>2.1.0</code> and higher.</p>
+</dd>
+</dl>
 </div>
 </td>
 </tr>
@@ -2497,6 +2525,20 @@ traits to define what content is presented to which visitors and when.</p>
 <p>Integration: Personalization support for creating page
 <a href="../../../Getting-started-with-Magnolia/Glossary/#_variant" class="xref page">variants</a> and fields for selecting <a href="../../../Getting-started-with-Magnolia/Glossary/#_trait" class="xref page">traits</a>
 and audiences.</p>
+<div class="admonitionblock caution">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-caution" title="Caution"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Since version 2.0, this submodule has been deprecated and its functions relocated to the Compatibility submodule.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
 </li>
 <li>
 <p>Pages: Personalization integration for the Pages app.</p>

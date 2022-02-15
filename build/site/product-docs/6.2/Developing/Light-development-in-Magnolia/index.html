@@ -147,6 +147,9 @@
     <a class="nav-link" href="../../Releases/Recent-features/">Recent features</a>
   </li>
   <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../Releases/Release-notes-for-Magnolia-CMS-6.2.16/"><span class="smalltext">Release notes for Magnolia CMS 6.2.16</span></a>
+  </li>
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../../Releases/Release-notes-for-Magnolia-CMS-6.2.15/"><span class="smalltext">Release notes for Magnolia CMS 6.2.15</span></a>
   </li>
   <li class="nav-item" data-depth="2">
@@ -679,7 +682,19 @@
     <a class="nav-link" href="../SPA-development-and-Magnolia/">SPA development and Magnolia</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../SPA-development-and-Magnolia/Magnolia-front-end-helpers-for-SPA/">Magnolia front-end helpers for SPA</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../SPA-development-and-Magnolia/Magnolia-front-end-helpers-for-SPA/Magnolia-Angular-Editor/">Magnolia Angular Editor</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../SPA-development-and-Magnolia/Magnolia-front-end-helpers-for-SPA/Magnolia-React-Editor/">Magnolia React Editor</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../SPA-development-and-Magnolia/Magnolia-front-end-helpers-for-SPA/Magnolia-Vue-Editor/">Magnolia Vue Editor</a>
+  </li>
+</ul>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../SPA-development-and-Magnolia/Mapping-between-Magnolia-and-SPA-components/">Mapping between Magnolia and SPA components</a>
@@ -1734,6 +1749,9 @@
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../Special-Features/Live-Copy/Live-Copy-module/">Live Copy module</a>
   </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../Special-Features/Live-Copy/Live-Copy-usage/">Using Live Copy</a>
+  </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
@@ -2771,10 +2789,7 @@ elsewhere on your system.
 </div>
 <div class="paragraph">
 <p>Set the <code>magnolia.resources.filesystem.observation.excludedDirectories</code>
-property to exclude directories from being observed for changes. (See
-<a href="../../Administration/Architecture/Configuration-management/#_magnolia_resources_filesystem_observation_excludeddirectories" class="xref page">Configuration
-management -
-magnolia.resources.filesystem.observation.excludedDirectories</a>.)</p>
+property to exclude directories from being observed for changes. (See the table in the <a href="../../Administration/Architecture/Configuration-management/#_defining_properties" class="xref page">Configuration management: Defining properties</a> section.)</p>
 </div>
 </div>
 </div>
@@ -2800,10 +2815,9 @@ Config Info tab.</p>
 <div class="paragraph">
 <p><code>magnolia.resources.watcher.sensitivity</code> is a property that defines the
 sensitivity (speed) with which the changes of the
-<a href="../Resources/" class="xref page">resources</a> in the
-<a href="#/_i/_What-is-magnolia.resources.dir.adoc" class="xref unresolved"><code>magnolia.resources.dir</code></a> are
+<a href="../Resources/" class="xref page">resources</a> in the <code>magnolia.resources.dir</code> are
 observed by the
-<a href="https://nexus.magnolia-cms.com/#nexus-search;classname~DirectoryWatcherService">DirectoryWatcherService<sup></a>[DirectoryWatcherService</sup>]. The
+<a href="https://nexus.magnolia-cms.com/#nexus-search;classname~DirectoryWatcherService" target="_blank" rel="noopener">DirectoryWatcherService</a>. The
 property can be set in the
 <a href="../../Administration/Architecture/Configuration-management/" class="xref page"><code>magnolia.properties</code></a>
 configuration file to one of the following values: <code>low</code>, <code>medium</code>,

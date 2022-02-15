@@ -148,6 +148,9 @@
     <a class="nav-link" href="../../../Releases/Recent-features/">Recent features</a>
   </li>
   <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../../Releases/Release-notes-for-Magnolia-CMS-6.2.16/"><span class="smalltext">Release notes for Magnolia CMS 6.2.16</span></a>
+  </li>
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../../../Releases/Release-notes-for-Magnolia-CMS-6.2.15/"><span class="smalltext">Release notes for Magnolia CMS 6.2.15</span></a>
   </li>
   <li class="nav-item" data-depth="2">
@@ -680,7 +683,19 @@
     <a class="nav-link" href="../../../Developing/SPA-development-and-Magnolia/">SPA development and Magnolia</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../../../Developing/SPA-development-and-Magnolia/Magnolia-front-end-helpers-for-SPA/">Magnolia front-end helpers for SPA</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../../Developing/SPA-development-and-Magnolia/Magnolia-front-end-helpers-for-SPA/Magnolia-Angular-Editor/">Magnolia Angular Editor</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../../Developing/SPA-development-and-Magnolia/Magnolia-front-end-helpers-for-SPA/Magnolia-React-Editor/">Magnolia React Editor</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../../Developing/SPA-development-and-Magnolia/Magnolia-front-end-helpers-for-SPA/Magnolia-Vue-Editor/">Magnolia Vue Editor</a>
+  </li>
+</ul>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../../Developing/SPA-development-and-Magnolia/Mapping-between-Magnolia-and-SPA-components/">Mapping between Magnolia and SPA components</a>
@@ -1735,6 +1750,9 @@
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../../Special-Features/Live-Copy/Live-Copy-module/">Live Copy module</a>
   </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../../Special-Features/Live-Copy/Live-Copy-usage/">Using Live Copy</a>
+  </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
@@ -2434,7 +2452,7 @@
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Latest</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2.2.10</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2.2.11</p></td>
 </tr>
 </tbody>
 </table>
@@ -2594,7 +2612,7 @@ This is installed by default.
 <pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;dependency&gt;
   &lt;groupId&gt;info.magnolia.rest&lt;/groupId&gt;
   &lt;artifactId&gt;magnolia-rest-services&lt;/artifactId&gt;
-  &lt;version&gt;2.2.10&lt;/version&gt;
+  &lt;version&gt;2.2.11&lt;/version&gt;
 &lt;/dependency&gt;</code></pre>
 </div>
 </div>
@@ -2603,7 +2621,7 @@ This is installed by default.
 <pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;dependency&gt;
   &lt;groupId&gt;info.magnolia.rest&lt;/groupId&gt;
   &lt;artifactId&gt;magnolia-rest-integration&lt;/artifactId&gt;
-  &lt;version&gt;2.2.10&lt;/version&gt;
+  &lt;version&gt;2.2.11&lt;/version&gt;
 &lt;/dependency&gt;</code></pre>
 </div>
 </div>
@@ -2612,7 +2630,7 @@ This is installed by default.
 <pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;dependency&gt;
   &lt;groupId&gt;info.magnolia.rest&lt;/groupId&gt;
   &lt;artifactId&gt;magnolia-rest-content-delivery&lt;/artifactId&gt;
-  &lt;version&gt;2.2.10&lt;/version&gt;
+  &lt;version&gt;2.2.11&lt;/version&gt;
 &lt;/dependency&gt;</code></pre>
 </div>
 </div>
@@ -2621,7 +2639,7 @@ This is installed by default.
 <pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;dependency&gt;
   &lt;groupId&gt;info.magnolia.rest&lt;/groupId&gt;
   &lt;artifactId&gt;magnolia-rest-tools&lt;/artifactId&gt;
-  &lt;version&gt;2.2.10&lt;/version&gt;
+  &lt;version&gt;2.2.11&lt;/version&gt;
 &lt;/dependency&gt;</code></pre>
 </div>
 </div>
@@ -2816,13 +2834,11 @@ location of the endpoint definition, or it can be set explicitly in the
 configuration.</p>
 </div>
 <div class="paragraph">
-<p><code>&lt;magnolia-base-path&gt;/.rest/</code><strong><code>endpointPath</code></strong><code>/{path}</code><br>
-<code>&lt;magnolia-base-path&gt;/.rest/</code><strong><code>endpointPath</code></strong><code>?query-parameters</code></p>
-</div>
-<div class="paragraph">
-<p>restEndpoints/my-endpoint.yaml</p>
+<p><code>&lt;magnolia-base-path&gt;/.rest/endpointPath/{path}</code><br>
+<code>&lt;magnolia-base-path&gt;/.rest/endpointPath?query-parameters</code></p>
 </div>
 <div class="listingblock">
+<div class="title">restEndpoints/my-endpoint.yaml</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">class: info.magnolia.rest.delivery.jcr.v2.JcrDeliveryEndpointDefinition
 workspace: website

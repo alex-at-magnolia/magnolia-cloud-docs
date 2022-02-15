@@ -148,6 +148,9 @@
     <a class="nav-link" href="../../../../Releases/Recent-features/">Recent features</a>
   </li>
   <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../../../Releases/Release-notes-for-Magnolia-CMS-6.2.16/"><span class="smalltext">Release notes for Magnolia CMS 6.2.16</span></a>
+  </li>
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../../../../Releases/Release-notes-for-Magnolia-CMS-6.2.15/"><span class="smalltext">Release notes for Magnolia CMS 6.2.15</span></a>
   </li>
   <li class="nav-item" data-depth="2">
@@ -680,7 +683,19 @@
     <a class="nav-link" href="../../../../Developing/SPA-development-and-Magnolia/">SPA development and Magnolia</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../../../../Developing/SPA-development-and-Magnolia/Magnolia-front-end-helpers-for-SPA/">Magnolia front-end helpers for SPA</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../../../Developing/SPA-development-and-Magnolia/Magnolia-front-end-helpers-for-SPA/Magnolia-Angular-Editor/">Magnolia Angular Editor</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../../../Developing/SPA-development-and-Magnolia/Magnolia-front-end-helpers-for-SPA/Magnolia-React-Editor/">Magnolia React Editor</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../../../Developing/SPA-development-and-Magnolia/Magnolia-front-end-helpers-for-SPA/Magnolia-Vue-Editor/">Magnolia Vue Editor</a>
+  </li>
+</ul>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../../../Developing/SPA-development-and-Magnolia/Mapping-between-Magnolia-and-SPA-components/">Mapping between Magnolia and SPA components</a>
@@ -1735,6 +1750,9 @@
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../../../Special-Features/Live-Copy/Live-Copy-module/">Live Copy module</a>
   </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../../../Special-Features/Live-Copy/Live-Copy-usage/">Using Live Copy</a>
+  </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
@@ -2586,16 +2604,16 @@ Magnolia 5.4.6+ / Sitemesh 1.0.3+. You can configure the
 <div class="paragraph">
 <p>Set
 <code>/server/filters/sitemesh/decoratedFilter/contentProcessor/tagRuleBundles/magnolia/rules/InjectUriRule/tag/baseUrl</code>
-to <code><a href="http://localhost:8080${contextPath}" class="bare">http://localhost:8080${contextPath}</a></code>, for example.</p>
+to <code>http://localhost:8080${contextPath}</code>, for example.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Request: <code><a href="https://demo.magnolia-cms.com/" class="bare">https://demo.magnolia-cms.com/</a></code>.</p>
+<p>Request: <code>https://demo.magnolia-cms.com/</code>.</p>
 </li>
 <li>
 <p>Fragment request:
-<code><a href="https://localhost:8080/magnoliaPublic" class="bare">https://localhost:8080/magnoliaPublic</a><sub>mgnlArea=main</sub></code>.</p>
+<code>https://localhost:8080/magnoliaPublic~mgnlArea=main~</code>.</p>
 </li>
 </ul>
 </div>
@@ -2618,11 +2636,11 @@ account.
 <div class="ulist">
 <ul>
 <li>
-<p>Request: <code><a href="https://demo.magnolia-cms.com/" class="bare">https://demo.magnolia-cms.com/</a></code>.</p>
+<p>Request: <code>https://demo.magnolia-cms.com/</code>.</p>
 </li>
 <li>
 <p>Fragment request:
-<code><a href="https://demopublic.magnolia-cms.com/" class="bare">https://demopublic.magnolia-cms.com/</a><sub>mgnlArea=main</sub></code>.</p>
+<code>https://demopublic.magnolia-cms.com/~mgnlArea=main~</code>.</p>
 </li>
 </ul>
 </div>
@@ -2696,7 +2714,7 @@ accessing pages outside of admincentral.</p>
 <em>target</em> of this tag.</p>
 </div>
 <div class="paragraph">
-<p><code>&lt;mgnl:includeurl target=`http://somepage.html/[`http://somePage.html</code>]<code>/&gt;</code></p>
+<p><code>&lt;mgnl:includeurl target=http://somepage.html/&gt;</code></p>
 </div>
 <div class="dlist">
 <dl>
@@ -2721,7 +2739,7 @@ set as request headers such as <code>X-Magnolia-Fragment</code> header which all
 you to set time to live of this dynamic fragment.</p>
 </div>
 <div class="paragraph">
-<p><code>&lt;mgnl:injecturi             target="/demo-project/about<sub>mgnlArea=branding</sub>"              X-Magnolia-Fragment="             ttlValue             =0             , CacheKeyGenerator=,             " /&gt;</code></p>
+<p><code>&lt;mgnl:injecturi target="/demo-project/about~mgnlArea=branding~" X-Magnolia-Fragment="ttlValue=0,CacheKeyGenerator=,"/&gt;</code></p>
 </div>
 <div class="dlist">
 <dl>

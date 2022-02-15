@@ -148,6 +148,9 @@
     <a class="nav-link" href="../../Releases/Recent-features/">Recent features</a>
   </li>
   <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../Releases/Release-notes-for-Magnolia-CMS-6.2.16/"><span class="smalltext">Release notes for Magnolia CMS 6.2.16</span></a>
+  </li>
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../../Releases/Release-notes-for-Magnolia-CMS-6.2.15/"><span class="smalltext">Release notes for Magnolia CMS 6.2.15</span></a>
   </li>
   <li class="nav-item" data-depth="2">
@@ -680,7 +683,19 @@
     <a class="nav-link" href="../SPA-development-and-Magnolia/">SPA development and Magnolia</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../SPA-development-and-Magnolia/Magnolia-front-end-helpers-for-SPA/">Magnolia front-end helpers for SPA</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../SPA-development-and-Magnolia/Magnolia-front-end-helpers-for-SPA/Magnolia-Angular-Editor/">Magnolia Angular Editor</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../SPA-development-and-Magnolia/Magnolia-front-end-helpers-for-SPA/Magnolia-React-Editor/">Magnolia React Editor</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../SPA-development-and-Magnolia/Magnolia-front-end-helpers-for-SPA/Magnolia-Vue-Editor/">Magnolia Vue Editor</a>
+  </li>
+</ul>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../SPA-development-and-Magnolia/Mapping-between-Magnolia-and-SPA-components/">Mapping between Magnolia and SPA components</a>
@@ -1735,6 +1750,9 @@
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../Special-Features/Live-Copy/Live-Copy-module/">Live Copy module</a>
   </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../Special-Features/Live-Copy/Live-Copy-usage/">Using Live Copy</a>
+  </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
@@ -2473,7 +2491,7 @@ it to the file, before the <code>profiles</code> section.</p>
 <h2 id="_the_archetype_plugin"><a class="anchor" href="#_the_archetype_plugin"></a>The Archetype plugin</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The <a href="https://maven.apache.org/archetype/maven-archetype-plugin/">Maven
+<p>The <a href="https://maven.apache.org/archetype/maven-archetype-plugin/" target="_blank" rel="noopener">Maven
 Archetype Plugin</a> allows you to create a Maven project from an
 <em>archetype</em> – an existing template (a skeleton of files and
 directories).</p>
@@ -2549,13 +2567,13 @@ following <code>filter</code> option:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>The <code>magnolia-project-archetype</code> generates a Magnolia project with a parent POM and a <a href="#Developing/Bundles-and-webapps Creating-a-custom-webapp-with-Maven.adoc" class="xref unresolved">Magnolia webapp</a>.</p>
+<p>The <code>magnolia-project-archetype</code> generates a Magnolia project with a parent POM and a <a href="../Bundles-and-webapps/Creating-a-custom-webapp-with-Maven/" class="xref page">Magnolia webapp</a>.</p>
 </li>
 <li>
 <p>The <code>magnolia-module-archetype</code> generates a Magnolia Maven module. For details, please refer to the <a href="../../Modules/" class="xref page">Modules</a> page.</p>
 </li>
 <li>
-<p>The <code>magnolia-blossom-module-archetype</code> generates a Magnolia Maven module with support for the <a href="#/Modules/List-of-modules/Blossom-module.ado " class="xref unresolved">Blossom module</a>.</p>
+<p>The <code>magnolia-blossom-module-archetype</code> generates a Magnolia Maven module with support for the <a href="../../Modules/List-of-modules/Blossom-module/" class="xref page">Blossom module</a>.</p>
 </li>
 <li>
 <p>The <code>magnolia-cloud-project-archetype</code> generates a Magnolia project with both a parent POM and both the <code>dev</code> and <code>shared</code> directories. See <a href="#cloud:ROOT:Developing-for-Magnolia-in-the-cloud/Creating-and-deploying-custom-cloud-bundles.adoc" class="xref unresolved">cloud:ROOT:Developing-for-Magnolia-in-the-cloud/Creating-and-deploying-custom-cloud-bundles.adoc</a> for more details.</p>
@@ -2587,7 +2605,7 @@ following <code>filter</code> option:</p>
 <p><code>com.example</code></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>{groupId-def}</p>
+<p>Typically reflects the name or domain of your company or projects.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -2598,7 +2616,7 @@ following <code>filter</code> option:</p>
 <p><code>custom-project</code></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>{artifactId-def}</p>
+<p>Project-specific identifier.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -2609,15 +2627,7 @@ following <code>filter</code> option:</p>
 <p><code>1.0-SNAPSHOT</code></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>{version-def}</p>
-</div>
-<div class="dlist">
-<dl>
-<dt class="hdlist1">Example</dt>
-<dd>
-<p><code>1.0-SNAPSHOT</code>.</p>
-</dd>
-</dl>
+<p>Project version. Typically, when creating a new project, use the value suggested by Maven, for example <code>1.0-SNAPSHOT</code>.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -2628,7 +2638,7 @@ following <code>filter</code> option:</p>
 <p><code>com.example</code></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>{package-def}</p>
+<p>Package name for Java classes reflecting both your company (or domain) and the specific project.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -2636,7 +2646,7 @@ following <code>filter</code> option:</p>
 <p><code>magnolia-bundle-version</code></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>6.1</code></p>
+<p><code>6.2</code></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Magnolia version to be used in your custom project.</p>
@@ -2650,7 +2660,7 @@ following <code>filter</code> option:</p>
 <p><code>Custom Project</code></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>{project-name-def}</p>
+<p>Project name.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -2661,7 +2671,7 @@ following <code>filter</code> option:</p>
 <p><code>FoobarModule</code></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>The Java class name of the generated module class.</p>
+<p>Module name.</p>
 </div>
 <div class="admonitionblock note">
 <table>

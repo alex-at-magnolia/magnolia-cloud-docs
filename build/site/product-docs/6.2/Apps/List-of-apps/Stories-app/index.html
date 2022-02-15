@@ -148,6 +148,9 @@
     <a class="nav-link" href="../../../Releases/Recent-features/">Recent features</a>
   </li>
   <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../../Releases/Release-notes-for-Magnolia-CMS-6.2.16/"><span class="smalltext">Release notes for Magnolia CMS 6.2.16</span></a>
+  </li>
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../../../Releases/Release-notes-for-Magnolia-CMS-6.2.15/"><span class="smalltext">Release notes for Magnolia CMS 6.2.15</span></a>
   </li>
   <li class="nav-item" data-depth="2">
@@ -680,7 +683,19 @@
     <a class="nav-link" href="../../../Developing/SPA-development-and-Magnolia/">SPA development and Magnolia</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../../../Developing/SPA-development-and-Magnolia/Magnolia-front-end-helpers-for-SPA/">Magnolia front-end helpers for SPA</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../../Developing/SPA-development-and-Magnolia/Magnolia-front-end-helpers-for-SPA/Magnolia-Angular-Editor/">Magnolia Angular Editor</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../../Developing/SPA-development-and-Magnolia/Magnolia-front-end-helpers-for-SPA/Magnolia-React-Editor/">Magnolia React Editor</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../../Developing/SPA-development-and-Magnolia/Magnolia-front-end-helpers-for-SPA/Magnolia-Vue-Editor/">Magnolia Vue Editor</a>
+  </li>
+</ul>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../../Developing/SPA-development-and-Magnolia/Mapping-between-Magnolia-and-SPA-components/">Mapping between Magnolia and SPA components</a>
@@ -1735,6 +1750,9 @@
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../../Special-Features/Live-Copy/Live-Copy-module/">Live Copy module</a>
   </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../../Special-Features/Live-Copy/Live-Copy-usage/">Using Live Copy</a>
+  </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
@@ -2582,22 +2600,7 @@ subApps:
 <h2 id="_blocks"><a class="anchor" href="#_blocks"></a>Blocks</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Once you have completed the outline, you can add, reorder and delete
-content blocks to suit your requirements.</p>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>See the <a href="#_shortcuts">shortcuts</a> below to work even faster.</p>
-</div>
-</td>
-</tr>
-</table>
+<p>Once you have completed the outline, you can add, reorder and delete content blocks to suit your requirements. To work even faster, check out the keyboard <a href="#_shortcuts">shortcuts</a>.</p>
 </div>
 <div class="paragraph">
 <p>Magnolia provides the following block types out-of-the-box:</p>
@@ -2630,6 +2633,76 @@ content blocks to suit your requirements.</p>
 <p>Tour</p>
 </li>
 </ul>
+</div>
+<div class="paragraph collapse">
+<p><span class="icon"><i class="fa fa-cubes"></i></span> Want to create your own custom content blocks?</p>
+</div>
+<div class="exampleblock collapse-content">
+<div class="content">
+<div class="paragraph">
+<p>To define a custom block, use a <a href="../../../Developing/YAML/#_yaml_in_the_context_of_magnolia" class="xref page">YAML definition file</a> and apply the <code>BlockDefinition</code> class of the Content editor module.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Create a YAML file in the <code>blocks</code> folder of your module and add the following required definition elements.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">class: info.magnolia.block.BlockDefinition <i class="conum" data-value="1"></i><b>(1)</b>
+templateId: &lt;module-name&gt;:&lt;the-path-to-the-block-relative-to-the-module&gt; <i class="conum" data-value="2"></i><b>(2)</b>
+icon: &lt;icon-name&gt;
+label: &lt;i18n-label&gt;
+block: <i class="conum" data-value="3"></i><b>(3)</b>
+  itemProvider:
+    $type: jcrBlockGetIndexedChildNode
+  properties:
+    field1:
+      &lt;field1-property1&gt;
+      &lt;field1-property2&gt;
+    field2:
+      &lt;field2-property1&gt;
+      &lt;field2-property2&gt;
+      etc.</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>The <code>info.magnolia.block.BlockDefinition</code> class.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>The <code>templateId</code> of your block.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>A <code>block</code> node, with a list of fields the content block consists of. Use the properties in the same way as the properties for the <code><a href="../../../Templating/Dialog-definition/Field-definition/List-of-fields/Composite-field/" class="xref page">CompositeFieldDefinition</a></code>.</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>Provide a template definition file and a template script for your block in the <code>templates/blocks</code> subfolder of your module.</p>
+</li>
+<li>
+<p>Optionally, in the <code>i18n</code> folder of your module, provide a file with <code>i18n</code> keys for labels and descriptions of the block&#8217;s fields.</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+See <a href="../../Developing-a-custom-content-editor-app/Developing-and-rendering-custom-content-blocks/" class="xref page">Developing and rendering custom content blocks</a> for more details on custom blocks.
+</td>
+</tr>
+</table>
+</div>
+</div>
 </div>
 <div class="sect2">
 <h3 id="_adding_blocks"><a class="anchor" href="#_adding_blocks"></a>Adding blocks</h3>
@@ -2758,8 +2831,7 @@ site owner embedded in their web page header.</p>
 <p>When you have finished writing your story, you can directly click <strong>Save
 and publish</strong> at the bottom of the story. Alternatively, you can select a
 story in the workbench and click <strong>Publish</strong>. The publication process and
-statuses are explained
-<a href="#/Administration/Architecture/Publishing-and-activation/Publishing-overview.adoc" class="xref unresolved">here</a>.</p>
+statuses are explained in <a href="../../../Administration/Architecture/Publishing-overview/" class="xref page">Publishing overview</a>.</p>
 </div>
 <div class="admonitionblock note">
 <table>

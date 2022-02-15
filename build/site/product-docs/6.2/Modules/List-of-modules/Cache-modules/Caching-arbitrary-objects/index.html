@@ -148,6 +148,9 @@
     <a class="nav-link" href="../../../../Releases/Recent-features/">Recent features</a>
   </li>
   <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../../../Releases/Release-notes-for-Magnolia-CMS-6.2.16/"><span class="smalltext">Release notes for Magnolia CMS 6.2.16</span></a>
+  </li>
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../../../../Releases/Release-notes-for-Magnolia-CMS-6.2.15/"><span class="smalltext">Release notes for Magnolia CMS 6.2.15</span></a>
   </li>
   <li class="nav-item" data-depth="2">
@@ -680,7 +683,19 @@
     <a class="nav-link" href="../../../../Developing/SPA-development-and-Magnolia/">SPA development and Magnolia</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../../../../Developing/SPA-development-and-Magnolia/Magnolia-front-end-helpers-for-SPA/">Magnolia front-end helpers for SPA</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../../../Developing/SPA-development-and-Magnolia/Magnolia-front-end-helpers-for-SPA/Magnolia-Angular-Editor/">Magnolia Angular Editor</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../../../Developing/SPA-development-and-Magnolia/Magnolia-front-end-helpers-for-SPA/Magnolia-React-Editor/">Magnolia React Editor</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../../../Developing/SPA-development-and-Magnolia/Magnolia-front-end-helpers-for-SPA/Magnolia-Vue-Editor/">Magnolia Vue Editor</a>
+  </li>
+</ul>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../../../Developing/SPA-development-and-Magnolia/Mapping-between-Magnolia-and-SPA-components/">Mapping between Magnolia and SPA components</a>
@@ -1735,6 +1750,9 @@
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../../../Special-Features/Live-Copy/Live-Copy-module/">Live Copy module</a>
   </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../../../Special-Features/Live-Copy/Live-Copy-usage/">Using Live Copy</a>
+  </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
@@ -2440,7 +2458,7 @@ low-level functions.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="#/Modules/List-of-modules/Cache-modules/Ehcache3-module.adoc" class="xref unresolved"><code>magnolia-cache-ehcache3</code></a>
+<p><a href="../Ehcache-3-module/" class="xref page"><code>magnolia-cache-ehcache3</code></a>
 is the default implementation which uses <a href="http://www.ehcache.org/" target="_blank" rel="noopener">Ehcache3</a>.</p>
 </li>
 <li>
@@ -2501,8 +2519,7 @@ factory configuration is used.</p>
 <h3 id="_ehcache"><a class="anchor" href="#_ehcache"></a>Ehcache</h3>
 <div class="paragraph">
 <p>This is an example of how to configure a cache using Ehcache 2.
-<a href="#/INCL-Home/MDefunct/Ehcache-module.adoc" class="xref unresolved">Here</a> you will find
-documentation of all configuration options.</p>
+Documentation of all configuration options is available on our <a href="https://documentation.magnolia-cms.com/display/DOCS57/Ehcache+module" target="_blank" rel="noopener">Magnolia 5.7 Documentation site</a>.</p>
 </div>
 <div class="paragraph">
 <p>Extend the <code>default</code> factory and override the persistence strategy with
@@ -2532,8 +2549,7 @@ object within Java code.
 <h3 id="_ehcache3"><a class="anchor" href="#_ehcache3"></a>Ehcache3</h3>
 <div class="paragraph">
 <p>This is an example of how to configure a cache using Ehcache 3.
-<a href="#/DOCS60/Ehcache+3-module.adoc" class="xref unresolved">Here</a> you will find documentation of all
-configuration options.</p>
+On the <a href="../Ehcache-3-module/" class="xref page">Ehcache 3 module</a> page you will find documentation of all configuration options.</p>
 </div>
 <div class="paragraph">
 <p>Extend the <code>default</code> factory and override the persistence strategy for
@@ -2773,7 +2789,7 @@ same key.</p>
 <div class="paragraph">
 <p>This method is used more to <code>observe</code> or manage cached objects than to
 fetch a specific object. The Magnolia
-<a href="#/DOCS60/Cache-Browser-app.adoc" class="xref unresolved">Cache Browser app</a> is using #getQuiet,
+<a href="../Cache-Browser-app/" class="xref page">Cache Browser app</a> is using <code>#getQuiet</code>,
 for instance.</p>
 </div>
 <div class="paragraph">

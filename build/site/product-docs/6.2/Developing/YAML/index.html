@@ -148,6 +148,9 @@
     <a class="nav-link" href="../../Releases/Recent-features/">Recent features</a>
   </li>
   <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../Releases/Release-notes-for-Magnolia-CMS-6.2.16/"><span class="smalltext">Release notes for Magnolia CMS 6.2.16</span></a>
+  </li>
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../../Releases/Release-notes-for-Magnolia-CMS-6.2.15/"><span class="smalltext">Release notes for Magnolia CMS 6.2.15</span></a>
   </li>
   <li class="nav-item" data-depth="2">
@@ -680,7 +683,19 @@
     <a class="nav-link" href="../SPA-development-and-Magnolia/">SPA development and Magnolia</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../SPA-development-and-Magnolia/Magnolia-front-end-helpers-for-SPA/">Magnolia front-end helpers for SPA</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../SPA-development-and-Magnolia/Magnolia-front-end-helpers-for-SPA/Magnolia-Angular-Editor/">Magnolia Angular Editor</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../SPA-development-and-Magnolia/Magnolia-front-end-helpers-for-SPA/Magnolia-React-Editor/">Magnolia React Editor</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../SPA-development-and-Magnolia/Magnolia-front-end-helpers-for-SPA/Magnolia-Vue-Editor/">Magnolia Vue Editor</a>
+  </li>
+</ul>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../SPA-development-and-Magnolia/Mapping-between-Magnolia-and-SPA-components/">Mapping between Magnolia and SPA components</a>
@@ -1735,6 +1750,9 @@
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../Special-Features/Live-Copy/Live-Copy-module/">Live Copy module</a>
   </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../Special-Features/Live-Copy/Live-Copy-usage/">Using Live Copy</a>
+  </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
@@ -2665,33 +2683,6 @@ contentType: application/json</code></pre>
 <p>The new renderer named <code>json</code> inherits everything from the <code>freemarker</code>
 renderer but has a different contentType.</p>
 </div>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_referencing_fields_by_name_5_ui"><a class="anchor" href="#_referencing_fields_by_name_5_ui"></a>Referencing fields by name - 5 UI</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><strong>Reference a field by its name</strong></p>
-</div>
-<div class="paragraph">
-<p>Instead of defining the type of a
-<a href="../../Support/Magnolia-5-UI-documentation/Dialog-definition-5-UI/Field-definition-5-UI/" class="xref page">field</a>
-using the <code>class</code> property, you can reference the type using the
-<code>fieldType</code> property, which takes the field’s short and easy-to-remember
-alias name as the value.</p>
-</div>
-<div class="paragraph">
-<p>For example, use <code>fieldType: text</code> instead of
-<code>class: info.magnolia.ui.form.field.definition.TextFieldDefinition</code>.</p>
-</div>
-<div class="paragraph">
-<p>To view the field alias names, look at the
-<a href="../../Apps/List-of-apps/Definitions-app/" class="xref page">Definitions app</a>. See also
-<a href="../../Support/Magnolia-5-UI-documentation/Dialog-definition-5-UI/Field-definition-5-UI/Referencing-fields-5-UI/" class="xref page">Referencing
-fields</a>.</p>
-</div>
 <div class="admonitionblock tip">
 <table>
 <tr>
@@ -2705,6 +2696,7 @@ inherit and include</a> page.
 </td>
 </tr>
 </table>
+</div>
 </div>
 <div class="sect3">
 <h4 id="_yaml_include"><a class="anchor" href="#_yaml_include"></a>YAML <code>include</code></h4>
@@ -2798,6 +2790,7 @@ inherit and include</a>.
 <p>Use <code>!override</code> to completely ignore the properties of an inherited or
 included node. As a consequence, you have to add specify properties to
 the given node.</p>
+</div>
 </div>
 </div>
 <div class="sect2">
@@ -3069,18 +3062,18 @@ languages:
 <div class="ulist">
 <ul>
 <li>
-<p><a href="http://yaml.org">yaml.org</a> (The Official YAML Web Site)</p>
+<p><a href="https://yaml.org" target="_blank" rel="noopener">yaml.org</a> (The Official YAML Web Site)</p>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="http://yaml.org/spec/">YAML Specification Index</a></p>
+<p><a href="https://yaml.org/spec/" target="_blank" rel="noopener">YAML Specification Index</a></p>
 </li>
 <li>
-<p><a href="http://yaml.org/spec/1.2/spec.html#id2806177">Index of YAML terms</a>
+<p><a href="https://yaml.org/spec/1.2/spec.html#id2806177" target="_blank" rel="noopener">Index of YAML terms</a>
 (YAML 1.2)</p>
 </li>
 <li>
-<p><a href="http://www.yaml.org/refcard.html">A reference card</a> (YAML 1.1)</p>
+<p><a href="https://www.yaml.org/refcard.html" target="_blank" rel="noopener">A reference card</a> (YAML 1.1)</p>
 </li>
 </ul>
 </div>
@@ -3097,13 +3090,13 @@ used by Magnolia)</p>
 </div>
 </li>
 <li>
-<p><a href="http://en.wikipedia.org/wiki/YAML">en.wikipedia.org/wiki/YAML</a></p>
+<p><a href="https://en.wikipedia.org/wiki/YAML" target="_blank" rel="noopener">en.wikipedia.org/wiki/YAML</a></p>
 </li>
 <li>
-<p><a href="http://docs.ansible.com/YAMLSyntax.html">docs.ansible.com/YAMLSyntax.html</a></p>
+<p><a href="https://docs.ansible.com/YAMLSyntax.html" target="_blank" rel="noopener">docs.ansible.com/YAMLSyntax.html</a></p>
 </li>
 <li>
-<p><a href="http://camel.readthedocs.io/en/latest/yamlref.html">A Brief YAML
+<p><a href="https://camel.readthedocs.io/en/latest/yamlref.html" target="_blank" rel="noopener">A Brief YAML
 reference</a></p>
 </li>
 </ul>
@@ -3114,11 +3107,11 @@ reference</a></p>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="http://atom.io/">Atom</a> (<a href="https://atom.io/packages/search?q=yaml">YAML
+<p><a href="https://atom.io/" target="_blank" rel="noopener">Atom</a> (<a href="https://atom.io/packages/search?q=yaml" target="_blank" rel="noopener">YAML
 related packages</a>)</p>
 </li>
 <li>
-<p><a href="http://brackets.io/">Brackets</a></p>
+<p><a href="https://brackets.io/" target="_blank" rel="noopener">Brackets</a></p>
 </li>
 <li>
 <p><a href="https://eclipse.org/" target="_blank" rel="noopener">Eclipse</a> (with
@@ -3132,13 +3125,13 @@ related packages</a>)</p>
 <p><a href="https://www.jetbrains.com/idea/" target="_blank" rel="noopener">IntelliJ</a> (with plugin)</p>
 </li>
 <li>
-<p><a href="http://lighttable.com/">Light Table</a></p>
+<p><a href="https://lighttable.com/" target="_blank" rel="noopener">Light Table</a></p>
 </li>
 <li>
-<p><a href="http://www.sublimetext.com/">Sublime text</a></p>
+<p><a href="https://www.sublimetext.com/" target="_blank" rel="noopener">Sublime text</a></p>
 </li>
 <li>
-<p><a href="http://www.vim.org/">Vim</a> (with
+<p><a href="https://www.vim.org/" target="_blank" rel="noopener">Vim</a> (with
 <a href="https://github.com/ingydotnet/yaml-vim" target="_blank" rel="noopener">plugin</a> by YAML’s original
 author)</p>
 </li>
@@ -3154,13 +3147,13 @@ author)</p>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="http://yaml-online-parser.appspot.com/">yaml-online-parser.appspot.com</a></p>
+<p><a href="https://yaml-online-parser.appspot.com/" target="_blank" rel="noopener">yaml-online-parser.appspot.com</a></p>
 </li>
 <li>
-<p><a href="http://codebeautify.org/yaml-validator">codebeautify.org/yaml-validator</a></p>
+<p><a href="https://codebeautify.org/yaml-validator" target="_blank" rel="noopener">codebeautify.org/yaml-validator</a></p>
 </li>
 <li>
-<p><a href="http://www.yamllint.com/">yamllint.com</a></p>
+<p><a href="https://www.yamllint.com/" target="_blank" rel="noopener">yamllint.com</a></p>
 </li>
 </ul>
 </div>
@@ -3170,7 +3163,7 @@ author)</p>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="http://codebeautify.org/yaml-to-json-xml-csv">codebeautify.org/yaml-to-json-xml-csv</a></p>
+<p><a href="https://codebeautify.org/yaml-to-json-xml-csv" target="_blank" rel="noopener">codebeautify.org/yaml-to-json-xml-csv</a></p>
 </li>
 <li>
 <p><a href="https://www.json2yaml.com/" target="_blank" rel="noopener">www.json2yaml.com</a></p>

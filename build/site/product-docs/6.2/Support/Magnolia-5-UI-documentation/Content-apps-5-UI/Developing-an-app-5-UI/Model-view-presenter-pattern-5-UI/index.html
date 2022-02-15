@@ -148,6 +148,9 @@
     <a class="nav-link" href="../../../../../Releases/Recent-features/">Recent features</a>
   </li>
   <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../../../../Releases/Release-notes-for-Magnolia-CMS-6.2.16/"><span class="smalltext">Release notes for Magnolia CMS 6.2.16</span></a>
+  </li>
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../../../../../Releases/Release-notes-for-Magnolia-CMS-6.2.15/"><span class="smalltext">Release notes for Magnolia CMS 6.2.15</span></a>
   </li>
   <li class="nav-item" data-depth="2">
@@ -680,7 +683,19 @@
     <a class="nav-link" href="../../../../../Developing/SPA-development-and-Magnolia/">SPA development and Magnolia</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../../../../../Developing/SPA-development-and-Magnolia/Magnolia-front-end-helpers-for-SPA/">Magnolia front-end helpers for SPA</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../../../../Developing/SPA-development-and-Magnolia/Magnolia-front-end-helpers-for-SPA/Magnolia-Angular-Editor/">Magnolia Angular Editor</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../../../../Developing/SPA-development-and-Magnolia/Magnolia-front-end-helpers-for-SPA/Magnolia-React-Editor/">Magnolia React Editor</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../../../../Developing/SPA-development-and-Magnolia/Magnolia-front-end-helpers-for-SPA/Magnolia-Vue-Editor/">Magnolia Vue Editor</a>
+  </li>
+</ul>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../../../../Developing/SPA-development-and-Magnolia/Mapping-between-Magnolia-and-SPA-components/">Mapping between Magnolia and SPA components</a>
@@ -1735,6 +1750,9 @@
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../../../../Special-Features/Live-Copy/Live-Copy-module/">Live Copy module</a>
   </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../../../../Special-Features/Live-Copy/Live-Copy-usage/">Using Live Copy</a>
+  </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
@@ -2428,8 +2446,7 @@
 </div>
 <div class="paragraph">
 <p>For the updated implementation, see
-<a href="#Apps/Developing-an-app/UI-framework-and-development-pattern-changes-in-Magnolia+6.adoc" class="xref unresolved">UI
-framework and development pattern changes in Magnolia 6</a> instead.</p>
+<a href="../../../../../Apps/Developing-an-app/UI-framework-and-development-pattern-changes-in-Magnolia-6/" class="xref page">UI framework and development pattern changes in Magnolia 6</a> instead.</p>
 </div>
 </td>
 </tr>
@@ -2513,9 +2530,6 @@ subapp.</p>
 <li>
 <p>The View’s interface defines an inline <code>Listener</code> interface with the
 method <code>greetUser(String user)</code>.</p>
-</li>
-</ol>
-</div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">public interface HelloWorldMainSubAppView extends View {
@@ -2528,8 +2542,7 @@ method <code>greetUser(String user)</code>.</p>
 }</code></pre>
 </div>
 </div>
-<div class="olist arabic">
-<ol class="arabic">
+</li>
 <li>
 <p>The Presenter (subclass) implements:</p>
 <div class="ulist">
@@ -2550,12 +2563,6 @@ method.</p>
 <li>
 <p>In the <code>onSubAppStart()`method the `Presenter</code> calls the <code>View</code>’s
 interface `getView().addUser("Lisa")`method.</p>
-</li>
-</ul>
-</div>
-</li>
-</ol>
-</div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">//The Presenter implements the View's Listener by providing the View's callback method to the Presenter.
@@ -2592,10 +2599,13 @@ public class HelloWorldMainSubApp extends BaseSubApp implements HelloWorldMainSu
 }</code></pre>
 </div>
 </div>
-<div class="paragraph">
+</li>
+</ul>
+</div>
+</li>
+<li>
 <p><code>View</code> calls the <code>Presenter</code> via the <code>Listener&#8217;s</code> callback-function
 <code>listener.greetUser(user):</code></p>
-</div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">@Override
@@ -2610,6 +2620,9 @@ public void addUser(final String user) {
     layout.addComponent(button);
  }</code></pre>
 </div>
+</div>
+</li>
+</ol>
 </div>
 </div>
 </div>

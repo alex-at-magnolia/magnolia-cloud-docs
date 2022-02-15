@@ -148,6 +148,9 @@
     <a class="nav-link" href="../../../Releases/Recent-features/">Recent features</a>
   </li>
   <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../../Releases/Release-notes-for-Magnolia-CMS-6.2.16/"><span class="smalltext">Release notes for Magnolia CMS 6.2.16</span></a>
+  </li>
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../../../Releases/Release-notes-for-Magnolia-CMS-6.2.15/"><span class="smalltext">Release notes for Magnolia CMS 6.2.15</span></a>
   </li>
   <li class="nav-item" data-depth="2">
@@ -680,7 +683,19 @@
     <a class="nav-link" href="../../../Developing/SPA-development-and-Magnolia/">SPA development and Magnolia</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../../../Developing/SPA-development-and-Magnolia/Magnolia-front-end-helpers-for-SPA/">Magnolia front-end helpers for SPA</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../../Developing/SPA-development-and-Magnolia/Magnolia-front-end-helpers-for-SPA/Magnolia-Angular-Editor/">Magnolia Angular Editor</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../../Developing/SPA-development-and-Magnolia/Magnolia-front-end-helpers-for-SPA/Magnolia-React-Editor/">Magnolia React Editor</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../../Developing/SPA-development-and-Magnolia/Magnolia-front-end-helpers-for-SPA/Magnolia-Vue-Editor/">Magnolia Vue Editor</a>
+  </li>
+</ul>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../../Developing/SPA-development-and-Magnolia/Mapping-between-Magnolia-and-SPA-components/">Mapping between Magnolia and SPA components</a>
@@ -1735,6 +1750,9 @@
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../../Special-Features/Live-Copy/Live-Copy-module/">Live Copy module</a>
   </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../../Special-Features/Live-Copy/Live-Copy-usage/">Using Live Copy</a>
+  </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
@@ -2434,7 +2452,7 @@
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Latest</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">6.2.15</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">6.2.16</p></td>
 </tr>
 </tbody>
 </table>
@@ -2442,7 +2460,7 @@
 <p>The Admincentral module allows you to customize certain functional
 aspects of the <a href="../../../Features/Find-Bar/" class="xref page">Find Bar</a>, namely configuration
 of search filters, sizes of search result collections and presentation
-patterns of content suggestions.</p>
+patterns of content suggestions. It also allows you to set your default home screen with the optional <code>homeScreen</code> property.</p>
 </div>
 </div>
 </div>
@@ -2457,7 +2475,7 @@ patterns of content suggestions.</p>
 <pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;dependency&gt;
   &lt;groupId&gt;info.magnolia.admincentral&lt;/groupId&gt;
   &lt;artifactId&gt;magnolia-admincentral&lt;/artifactId&gt;
-  &lt;version&gt;6.2.15&lt;/version&gt;
+  &lt;version&gt;6.2.16&lt;/version&gt;
 &lt;/dependency&gt;</code></pre>
 </div>
 </div>
@@ -2481,9 +2499,10 @@ the <a href="../../../Apps/App-configuration/App-launcher-layout/" class="xref p
 <div class="sect1">
 <h2 id="_configuration"><a class="anchor" href="#_configuration"></a>Configuration</h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p>Since the original configuration is in the <code>config.yaml</code> file under
-<code>/modules/admincentral/</code>, you can modify the properties:</p>
+<div class="sect2">
+<h3 id="_global_home_screen_configuration"><a class="anchor" href="#_global_home_screen_configuration"></a>Global home screen configuration</h3>
+<div id="global-home-screen-config" class="paragraph">
+<p>The original configuration is found in the <code>config.yaml</code> file under <code>/modules/admincentral/</code>. You can modify the properties:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -2495,10 +2514,8 @@ the <a href="../../../Apps/App-configuration/App-launcher-layout/" class="xref p
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p><strong>Admincentral properties</strong></p>
-</div>
 <table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 1. Admincentral properties</caption>
 <colgroup>
 <col style="width: 30%;">
 <col style="width: 70%;">
@@ -2516,18 +2533,28 @@ the <a href="../../../Apps/App-configuration/App-launcher-layout/" class="xref p
 <p><strong>optional</strong>, <em>default is <code>FIND_BAR</code></em></p>
 </div>
 <div class="paragraph">
-<p>Screen that appears by default when the user logs in or closes an app. Possible values are <code>APP_LAUNCHER</code> and <code>FIND_BAR</code>.</p>
+<p>Screen that appears by default when a user logs in or closes an app. Possible values are <code>APP_LAUNCHER</code> and <code>FIND_BAR</code>.</p>
 </div>
-<div class="paragraph">
-<p>For the user configuration, see <a href="../../../Administration/Security/Users/#_setting_home_screen" class="xref page">Setting home screen</a>.</p>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+For the user-specific configuration, see <a href="../../../Administration/Security/Users/#user-home-screen-config" class="xref page">User home screen configuration</a>.
+</td>
+</tr>
+</table>
 </div></div></td>
 </tr>
 </tbody>
 </table>
-<div class="paragraph">
-<p><strong><code>findBar</code> properties</strong></p>
 </div>
+<div class="sect2">
+<h3 id="_find_bar_configuration"><a class="anchor" href="#_find_bar_configuration"></a>Find bar configuration</h3>
 <table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 2. <code>findBar</code> properties</caption>
 <colgroup>
 <col style="width: 30%;">
 <col style="width: 70%;">
@@ -2622,6 +2649,7 @@ result suppliers</a>.</p>
 <p><a href="../../../Apps/App-configuration/App-launcher-layout/" class="xref page">App launcher layout</a></p>
 </li>
 </ul>
+</div>
 </div>
 </div>
 </div>

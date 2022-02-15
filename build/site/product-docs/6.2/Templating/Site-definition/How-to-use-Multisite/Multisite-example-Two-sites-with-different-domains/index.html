@@ -147,6 +147,9 @@
     <a class="nav-link" href="../../../../Releases/Recent-features/">Recent features</a>
   </li>
   <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../../../Releases/Release-notes-for-Magnolia-CMS-6.2.16/"><span class="smalltext">Release notes for Magnolia CMS 6.2.16</span></a>
+  </li>
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../../../../Releases/Release-notes-for-Magnolia-CMS-6.2.15/"><span class="smalltext">Release notes for Magnolia CMS 6.2.15</span></a>
   </li>
   <li class="nav-item" data-depth="2">
@@ -679,7 +682,19 @@
     <a class="nav-link" href="../../../../Developing/SPA-development-and-Magnolia/">SPA development and Magnolia</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../../../../Developing/SPA-development-and-Magnolia/Magnolia-front-end-helpers-for-SPA/">Magnolia front-end helpers for SPA</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../../../Developing/SPA-development-and-Magnolia/Magnolia-front-end-helpers-for-SPA/Magnolia-Angular-Editor/">Magnolia Angular Editor</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../../../Developing/SPA-development-and-Magnolia/Magnolia-front-end-helpers-for-SPA/Magnolia-React-Editor/">Magnolia React Editor</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../../../Developing/SPA-development-and-Magnolia/Magnolia-front-end-helpers-for-SPA/Magnolia-Vue-Editor/">Magnolia Vue Editor</a>
+  </li>
+</ul>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../../../Developing/SPA-development-and-Magnolia/Mapping-between-Magnolia-and-SPA-components/">Mapping between Magnolia and SPA components</a>
@@ -1734,6 +1749,9 @@
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../../../Special-Features/Live-Copy/Live-Copy-module/">Live Copy module</a>
   </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../../../Special-Features/Live-Copy/Live-Copy-usage/">Using Live Copy</a>
+  </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
@@ -2427,7 +2445,7 @@ are his main business.</p>
 <div class="paragraph">
 <p>Eric has registered two domains: one for comics and one for vinyl. Since
 comics is his primary business, he registered the domain
-<a href="http://www.best-comics.net"><code>www.best-comics.net</code></a> for the comics first,
+<code>www.best-comics.net</code> for the comics first,
 so this will be his <em>main</em> domain.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
@@ -2552,8 +2570,8 @@ defines a
 <h2 id="_removing_unwanted_virtualurimapping_on_public_context"><a class="anchor" href="#_removing_unwanted_virtualurimapping_on_public_context"></a>Removing unwanted virtualURIMapping on public context</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Request the URL <a href="http://www.best-comics.net" class="bare">http://www.best-comics.net</a>. If you are redirected to the
-admin login page (<a href="http://www.best-comics.net/.magnolia/admincentral" class="bare">http://www.best-comics.net/.magnolia/admincentral</a>),
+<p>Request the URL <code>www.best-comics.net</code>. If you are redirected to the
+admin login page (<code>www.best-comics.net/.magnolia/admincentral</code>),
 the public context contains a virtualURIMapping. This URI mapping is
 fine for an author context but not for the public context.</p>
 </div>
@@ -2585,13 +2603,13 @@ fine for an author context but not for the public context.</p>
 <a href="#_setting_up_content">Setting up content</a> in both the author and public
 instances.</p>
 </div>
-<div class="sect3">
-<h4 id="_public_instance"><a class="anchor" href="#_public_instance"></a>Public instance</h4>
+<div class="sect2">
+<h3 id="_public_instance"><a class="anchor" href="#_public_instance"></a>Public instance</h3>
 <div class="sidebarblock">
 <div class="content">
 <div class="title"><code>/comics</code></div>
 <div class="paragraph">
-<p><a href="http://www.best-comics.net">www.best-comics.net</a></p>
+<p><code>www.best-comics.net</code></p>
 </div>
 <div class="paragraph">
 <p><span class="image zoom"><img src="../../../../_images/PUB_best-comics-root-page.png.png" alt="image" height="250"></span></p>
@@ -2602,7 +2620,7 @@ instances.</p>
 <div class="content">
 <div class="title"><code>/vinyl</code></div>
 <div class="paragraph">
-<p><a href="http://www.best-vinyl.net/">www.best-vinyl.net</a></p>
+<p><code>www.best-vinyl.net</code></p>
 </div>
 <div class="paragraph">
 <p><span class="image zoom"><img src="../../../../_images/PUB_best-vinyl-root-page.png.png" alt="image" height="250"></span></p>
@@ -2610,13 +2628,13 @@ instances.</p>
 </div>
 </div>
 </div>
-<div class="sect3">
-<h4 id="_author_instance"><a class="anchor" href="#_author_instance"></a>Author instance</h4>
+<div class="sect2">
+<h3 id="_author_instance"><a class="anchor" href="#_author_instance"></a>Author instance</h3>
 <div class="sidebarblock">
 <div class="content">
 <div class="title"><code>/comics</code></div>
 <div class="paragraph">
-<p><a href="http://author.best-comics.net/comics-site">author.best-comics.net/comics-site</a></p>
+<p><code>author.best-comics.net/comics-site</code></p>
 </div>
 <div class="paragraph">
 <p><span class="image zoom"><img src="../../../../_images/author_best-comics-root-page.png" alt="image" height="250"></span></p>
@@ -2627,7 +2645,7 @@ instances.</p>
 <div class="content">
 <div class="title"><code>/vinyl</code></div>
 <div class="paragraph">
-<p><a href="http://author.best-comics.net/vinyl-site">author.best-comics.net/vinyl-site</a></p>
+<p><code>author.best-comics.net/vinyl-site</code></p>
 </div>
 <div class="paragraph">
 <p><span class="image zoom"><img src="../../../../_images/author_best-vinyl-root-page.png.png" alt="image" height="250"></span></p>
@@ -2715,10 +2733,10 @@ scenario, the access URLs of the sites on author are:</p>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="http://author.best-comics.net/comics-site">author.best-comics.net/comics-site</a></p>
+<p><code>author.best-comics.net/comics-site</code></p>
 </li>
 <li>
-<p><a href="http://author.best-comics.net/vinyl-site">author.best-comics.net/vinyl-site</a></p>
+<p><code>author.best-comics.net/vinyl-site</code></p>
 </li>
 </ul>
 </div>
@@ -2732,10 +2750,10 @@ instance using:</p>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="http://www.best-comics.net/vinyl-site">www.best-comics.net/vinyl-site</a></p>
+<p><code>www.best-comics.net/vinyl-site</code></p>
 </li>
 <li>
-<p><a href="http://www.best-vinyl.net/comics-site">www.best-vinyl.net/comics-site</a></p>
+<p><code>www.best-vinyl.net/comics-site</code></p>
 </li>
 </ul>
 </div>
@@ -2752,7 +2770,7 @@ domain.</p>
 <li>
 <p>The same content is served from different URLs. This has a negative
 impact in the context of SEO
-(<a href="https://en.wikipedia.org/wiki/Search_engine_optimization">Search engine
+(<a href="https://en.wikipedia.org/wiki/Search_engine_optimization" target="_blank" rel="noopener">Search engine
 optimization</a>) and may decrease the Google ranking.</p>
 </li>
 <li>

@@ -147,6 +147,9 @@
     <a class="nav-link" href="../../../Releases/Recent-features/">Recent features</a>
   </li>
   <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../../Releases/Release-notes-for-Magnolia-CMS-6.2.16/"><span class="smalltext">Release notes for Magnolia CMS 6.2.16</span></a>
+  </li>
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../../../Releases/Release-notes-for-Magnolia-CMS-6.2.15/"><span class="smalltext">Release notes for Magnolia CMS 6.2.15</span></a>
   </li>
   <li class="nav-item" data-depth="2">
@@ -679,7 +682,19 @@
     <a class="nav-link" href="../../../Developing/SPA-development-and-Magnolia/">SPA development and Magnolia</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../../../Developing/SPA-development-and-Magnolia/Magnolia-front-end-helpers-for-SPA/">Magnolia front-end helpers for SPA</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../../Developing/SPA-development-and-Magnolia/Magnolia-front-end-helpers-for-SPA/Magnolia-Angular-Editor/">Magnolia Angular Editor</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../../Developing/SPA-development-and-Magnolia/Magnolia-front-end-helpers-for-SPA/Magnolia-React-Editor/">Magnolia React Editor</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../../Developing/SPA-development-and-Magnolia/Magnolia-front-end-helpers-for-SPA/Magnolia-Vue-Editor/">Magnolia Vue Editor</a>
+  </li>
+</ul>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../../Developing/SPA-development-and-Magnolia/Mapping-between-Magnolia-and-SPA-components/">Mapping between Magnolia and SPA components</a>
@@ -1734,6 +1749,9 @@
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../../Special-Features/Live-Copy/Live-Copy-module/">Live Copy module</a>
   </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../../Special-Features/Live-Copy/Live-Copy-usage/">Using Live Copy</a>
+  </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
@@ -2753,7 +2771,7 @@ java.nio.file.InvalidPathException: UNC path is missing sharename: /\website\/</
 </div>
 </div>
 <div class="paragraph">
-<p>As a temporary workaround, switch the <a href="#Modules/List-of-modules/Publishing-module.html#_lockmanagermode_property" class="xref unresolved">locking mode</a> to <code>compatibility</code> (JCR-based) locking in the configuration of the <code>publishing-core</code> module:</p>
+<p>As a temporary workaround, switch the <a href="../../../Modules/List-of-modules/Publishing-module/#_lockmanagermode_property" class="xref page">locking mode</a> to <code>compatibility</code> (JCR-based) locking in the configuration of the <code>publishing-core</code> module:</p>
 </div>
 <div class="paragraph">
 <p><code>/modules/publishing-core/config@lockManagerMode=compatibility</code></p>
@@ -3669,8 +3687,9 @@ For more details, see the reported <a href="https://github.com/bytedeco/javacv/i
 </table>
 </div>
 </div>
-<div class="sect3">
-<h4 id="_avxavx2_cpu_support"><a class="anchor" href="#_avxavx2_cpu_support"></a>AVX/AVX2 CPU Support</h4>
+</div>
+<div class="sect2">
+<h3 id="_avxavx2_cpu_support"><a class="anchor" href="#_avxavx2_cpu_support"></a>AVX/AVX2 CPU Support</h3>
 <div class="paragraph">
 <p>Advanced Vector Extensions (AVX) are a set of instructions extending the instruction set of the x86 family of microprocessors. AVX was first released in March 2008 for Intel and AMD, and AVX2 was released in 2013. If your hardware uses a processor that does not support AVX2, you will get the following message:</p>
 </div>
@@ -3761,7 +3780,6 @@ For more details, see the reported <a href="https://github.com/bytedeco/javacv/i
 </div>
 </div>
 </div>
-</div>
 <div class="sect2">
 <h3 id="_resizing_a_gif_image_results_in_an_http_500_error"><a class="anchor" href="#_resizing_a_gif_image_results_in_an_http_500_error"></a>Resizing a GIF image results in an HTTP 500 error</h3>
 <div class="paragraph">
@@ -3792,8 +3810,8 @@ More details about the error are shown if you open the image link directly:
 	info.magnolia.imaging.DefaultImageStreamer.write(DefaultImageStreamer.java:83)</code></pre>
 </div>
 </div>
-<div class="sect4">
-<h5 id="_workarounds"><a class="anchor" href="#_workarounds"></a>Workarounds</h5>
+<div class="sect3">
+<h4 id="_workarounds"><a class="anchor" href="#_workarounds"></a>Workarounds</h4>
 <div class="ulist">
 <ul>
 <li>

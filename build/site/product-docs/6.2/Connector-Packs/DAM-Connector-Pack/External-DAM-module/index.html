@@ -148,6 +148,9 @@
     <a class="nav-link" href="../../../Releases/Recent-features/">Recent features</a>
   </li>
   <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../../Releases/Release-notes-for-Magnolia-CMS-6.2.16/"><span class="smalltext">Release notes for Magnolia CMS 6.2.16</span></a>
+  </li>
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../../../Releases/Release-notes-for-Magnolia-CMS-6.2.15/"><span class="smalltext">Release notes for Magnolia CMS 6.2.15</span></a>
   </li>
   <li class="nav-item" data-depth="2">
@@ -680,7 +683,19 @@
     <a class="nav-link" href="../../../Developing/SPA-development-and-Magnolia/">SPA development and Magnolia</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../../../Developing/SPA-development-and-Magnolia/Magnolia-front-end-helpers-for-SPA/">Magnolia front-end helpers for SPA</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../../Developing/SPA-development-and-Magnolia/Magnolia-front-end-helpers-for-SPA/Magnolia-Angular-Editor/">Magnolia Angular Editor</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../../Developing/SPA-development-and-Magnolia/Magnolia-front-end-helpers-for-SPA/Magnolia-React-Editor/">Magnolia React Editor</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../../Developing/SPA-development-and-Magnolia/Magnolia-front-end-helpers-for-SPA/Magnolia-Vue-Editor/">Magnolia Vue Editor</a>
+  </li>
+</ul>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../../Developing/SPA-development-and-Magnolia/Mapping-between-Magnolia-and-SPA-components/">Mapping between Magnolia and SPA components</a>
@@ -1734,6 +1749,9 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../../Special-Features/Live-Copy/Live-Copy-module/">Live Copy module</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../../Special-Features/Live-Copy/Live-Copy-usage/">Using Live Copy</a>
   </li>
 </ul>
   </li>
@@ -3472,10 +3490,22 @@ The proxy service is only available with Magnolia 6.2.6+. If you use an earlier 
 <h2 id="_usage"><a class="anchor" href="#_usage"></a>Usage</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The <code>magnolia-external-dam</code> submodule provides a sample <strong>Text and external image</strong> page component so that editors and marketers can select and use external assets in the <a href="#/DOCS62/Pages-app.adoc" class="xref unresolved">Pages app</a>.</p>
+<p>The <code>magnolia-external-dam</code> submodule provides a sample <strong>Text and external image</strong> page component so that editors and marketers can select and use external assets in the <a href="../../../Apps/List-of-apps/Pages-app/" class="xref page">Pages app</a>.</p>
 </div>
 <div class="paragraph">
 <p>See <a href="../" class="xref page">DAM Connector Pack</a> for an example.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+If an asset is uploaded into the DAM app that has been compromised, for example, an image file containing malicious code, an error message is displayed.
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
@@ -3483,9 +3513,18 @@ The proxy service is only available with Magnolia 6.2.6+. If you use an earlier 
 <h2 id="_release_history"><a class="anchor" href="#_release_history"></a>Release history</h2>
 <div class="sectionbody">
 <div class="sect2">
+<h3 id="_external_dam_module_1_1_2"><a class="anchor" href="#_external_dam_module_1_1_2"></a>External DAM module 1.1.2</h3>
+<div class="paragraph">
+<p>Released on February 11, 2022.</p>
+</div>
+<div class="paragraph">
+<p>This maintenance release fixes a bug for customers using Bynder Assets with associated links that contain special characters. With this fix, special characters are encoded to avoid loading issues. (<a href="https://jira.magnolia-cms.com/browse/EXTDAM-327" target="_blank" rel="noopener">EXTDAM-327</a>)</p>
+</div>
+</div>
+<div class="sect2">
 <h3 id="_external_dam_module_1_1_1_and_1_0_9"><a class="anchor" href="#_external_dam_module_1_1_1_and_1_0_9"></a>External DAM module 1.1.1 and 1.0.9</h3>
 <div class="paragraph">
-<p>Released on November 15, 2021.</p>
+<p>Released on December 22, 2021.</p>
 </div>
 <div class="paragraph">
 <p>This maintenance release fixes a bug for Cloud customers using the <a href="../../../Developing/API/Delivery-API/" class="xref page">delivery endpoint</a> where, when working with S3 as your external asset management solution, the <code>time.now</code> timestamp was appended to the URL.</p>
@@ -3544,7 +3583,7 @@ You must <a href="#_configuring_the_proxy_service_to_protect_private_asset_urls"
 <p><span class="image zoom"><img src="../../../_images/extdam/extdam-bynder-derivatives.png" alt="Bynder derivatives information" width="400"></span></p>
 </div>
 <div class="paragraph">
-<p>See <a href="#modules/ROOT/pages/Connector-Packs/DAM-Connector-Pack/External-DAM-module.adoc#_using_bynder_image_derivatives" class="xref unresolved">Using Bynder image derivatives</a> for more information.</p>
+<p>See <a href="#_using_bynder_image_derivatives">Using Bynder image derivatives</a> for more information.</p>
 </div>
 <div class="paragraph">
 <p>For more information about Bynder derivatives, see <a href="https://support.bynder.com/hc/en-us/articles/360013931139-Derivatives-Create-Smaller-Versions-of-Assets-" target="_blank" rel="noopener">Derivatives (Create Smaller Versions of Assets)</a> in the Bynder documentation.</p>

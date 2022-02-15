@@ -147,6 +147,9 @@
     <a class="nav-link" href="../../Releases/Recent-features/">Recent features</a>
   </li>
   <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../Releases/Release-notes-for-Magnolia-CMS-6.2.16/"><span class="smalltext">Release notes for Magnolia CMS 6.2.16</span></a>
+  </li>
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../../Releases/Release-notes-for-Magnolia-CMS-6.2.15/"><span class="smalltext">Release notes for Magnolia CMS 6.2.15</span></a>
   </li>
   <li class="nav-item" data-depth="2">
@@ -679,7 +682,19 @@
     <a class="nav-link" href="../../Developing/SPA-development-and-Magnolia/">SPA development and Magnolia</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../../Developing/SPA-development-and-Magnolia/Magnolia-front-end-helpers-for-SPA/">Magnolia front-end helpers for SPA</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../Developing/SPA-development-and-Magnolia/Magnolia-front-end-helpers-for-SPA/Magnolia-Angular-Editor/">Magnolia Angular Editor</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../Developing/SPA-development-and-Magnolia/Magnolia-front-end-helpers-for-SPA/Magnolia-React-Editor/">Magnolia React Editor</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../Developing/SPA-development-and-Magnolia/Magnolia-front-end-helpers-for-SPA/Magnolia-Vue-Editor/">Magnolia Vue Editor</a>
+  </li>
+</ul>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../Developing/SPA-development-and-Magnolia/Mapping-between-Magnolia-and-SPA-components/">Mapping between Magnolia and SPA components</a>
@@ -1734,6 +1749,9 @@
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../Special-Features/Live-Copy/Live-Copy-module/">Live Copy module</a>
   </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../Special-Features/Live-Copy/Live-Copy-usage/">Using Live Copy</a>
+  </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
@@ -2712,10 +2730,69 @@ Chrome is supported.</p>
 <h2 id="_customizing_the_find_bar"><a class="anchor" href="#_customizing_the_find_bar"></a>Customizing the Find Bar</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Several functional aspects of the Find Bar can be customized. For more
-details and configuration properties, see the
-<a href="../../Modules/List-of-modules/Admincentral-module/" class="xref page">Admincentral module</a>
-page.</p>
+<p>You can configure how many search results are displayed. The configuration is found in the <code>config.yaml</code> file under <code>/modules/admincentral/</code> in the <a href="../../Apps/List-of-apps/Resource-Files-app/" class="xref page">Resource Files app</a>. Please refer to the <a href="../../Modules/List-of-modules/Admincentral-module/" class="xref page">Admincentral module</a> documentation for more details and configuration properties.</p>
+</div>
+<div class="sect2">
+<h3 id="_configurable_properties"><a class="anchor" href="#_configurable_properties"></a>Configurable Properties</h3>
+<div class="paragraph">
+<p>Table 1 below depicts two properties in the <a href="../../Modules/List-of-modules/Admincentral-module/" class="xref page">Admincentral module</a> that affect the number of results shown.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 1. Subset of <code>findBar</code> properties</caption>
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 70%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Property</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>defaultCountPerSupplier</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>optional</strong>, <em>default is <code>10</code></em></p>
+</div>
+<div class="paragraph">
+<p>Integer defining the maximum number of search results shown from any
+single search supplier.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>suggestionCountPerSupplier</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>optional</strong>, <em>default is <code>3</code></em></p>
+</div>
+<div class="paragraph">
+<p>Integer defining the grid size for content suggestions. Compare below
+the default setting of <code>3</code> on the left and <code>2</code> on the right:<br>
+<span class="image zoom"><img src="../../_images/6-1-AdmincentralModule-suggestionCountPerSupplier.png" alt="image"></span></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_configuration_instructions"><a class="anchor" href="#_configuration_instructions"></a>Configuration Instructions</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Open the <a href="../../Apps/List-of-apps/Resource-Files-app/" class="xref page">Resource Files app</a>.</p>
+</li>
+<li>
+<p>Go to the <code>config.yaml</code> file under the <strong>admincentral</strong> folder.<br>
+<span class="image zoom"><img src="../../_images/6-2_resource-files-app_admincentral.png" alt="image" width="600"></span></p>
+</li>
+<li>
+<p>Edit the file and update the properties that you want to change. For example, update <code>defaultCountPerSupplier</code> to 20 if you want to see up to 20 search results.<br>
+<span class="image zoom"><img src="../../_images/6-2_confg-yaml_admincentral.png" alt="image" width="600"></span></p>
+</li>
+<li>
+<p>Save your changes and then restart the webapp.</p>
+</li>
+</ol>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -2733,6 +2810,7 @@ Result Ranker module</a></p>
 <p><a href="../Image-recognition/" class="xref page">Image Recognition</a></p>
 </li>
 </ul>
+</div>
 </div>
 </div>
 </div>

@@ -148,6 +148,9 @@
     <a class="nav-link" href="../../../Releases/Recent-features/">Recent features</a>
   </li>
   <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../../Releases/Release-notes-for-Magnolia-CMS-6.2.16/"><span class="smalltext">Release notes for Magnolia CMS 6.2.16</span></a>
+  </li>
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../../../Releases/Release-notes-for-Magnolia-CMS-6.2.15/"><span class="smalltext">Release notes for Magnolia CMS 6.2.15</span></a>
   </li>
   <li class="nav-item" data-depth="2">
@@ -680,7 +683,19 @@
     <a class="nav-link" href="../../../Developing/SPA-development-and-Magnolia/">SPA development and Magnolia</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../../../Developing/SPA-development-and-Magnolia/Magnolia-front-end-helpers-for-SPA/">Magnolia front-end helpers for SPA</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../../Developing/SPA-development-and-Magnolia/Magnolia-front-end-helpers-for-SPA/Magnolia-Angular-Editor/">Magnolia Angular Editor</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../../Developing/SPA-development-and-Magnolia/Magnolia-front-end-helpers-for-SPA/Magnolia-React-Editor/">Magnolia React Editor</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../../Developing/SPA-development-and-Magnolia/Magnolia-front-end-helpers-for-SPA/Magnolia-Vue-Editor/">Magnolia Vue Editor</a>
+  </li>
+</ul>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../../Developing/SPA-development-and-Magnolia/Mapping-between-Magnolia-and-SPA-components/">Mapping between Magnolia and SPA components</a>
@@ -1735,6 +1750,9 @@
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../../Special-Features/Live-Copy/Live-Copy-module/">Live Copy module</a>
   </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../../Special-Features/Live-Copy/Live-Copy-usage/">Using Live Copy</a>
+  </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
@@ -2619,7 +2637,7 @@ If you use Keycloak and intend to deploy it by code, then take a look at the <a 
 <pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">authenticationService:
   path: /.magnolia/admincentral <i class="conum" data-value="1"></i><b>(1)</b>
   callbackUrl: http://localhost:8080/.auth <i class="conum" data-value="2"></i><b>(2)</b>
-  postLogoutRedirectUri: /.magnolia/admincentral <i class="conum" data-value="3"></i><b>(3)</b>
+  postLogoutRedirectUri: http://localhost:8080/.magnolia/admincentral <i class="conum" data-value="3"></i><b>(3)</b>
   authorizationGenerators: <i class="conum" data-value="4"></i><b>(4)</b>
     groupsAuthorizationGenerator:
       class: info.magnolia.sso.oidc.GroupsAuthorizationGenerator
@@ -2697,14 +2715,23 @@ Since version <code>1.1.1</code> of the SSO Module , if the supplied <code>callb
 <div class="paragraph">
 <p>The URI to where the user is returned after logging out. If the property is not defined, it falls back to the user&#8217;s current URL.</p>
 </div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+This must be an absolute URL.
+</td>
+</tr>
+</table>
+</div>
 <div class="exampleblock">
 <div class="title">Property defined</div>
 <div class="content">
 <div class="paragraph">
-<p><code>postLogoutRedirectUri: /.magnolia/admincentral/logout</code></p>
-</div>
-<div class="paragraph">
-<p>Jane is working on <code>/.magnolia/admincentral</code> and she logs out. Jane is redirected to <code>/.magnolia/admincentral/logout</code>.</p>
+<p>Jane is working on <code>http://localhost:8080/.magnolia/admincentral</code> and she logs out. Jane is redirected to <code>http://localhost:8080/.magnolia/admincentral/logout</code>.</p>
 </div>
 </div>
 </div>
@@ -2712,7 +2739,7 @@ Since version <code>1.1.1</code> of the SSO Module , if the supplied <code>callb
 <div class="title">Property not defined</div>
 <div class="content">
 <div class="paragraph">
-<p>Jane is working on <code>/.magnolia/admincentral</code> and she logs out. Jane is redirected back to <code>/.magnolia/admincentral</code>.</p>
+<p>Jane is working on <code>http://localhost:8080/.magnolia/admincentral</code> and she logs out. Jane is redirected back to <code>http://localhost:8080/.magnolia/admincentral</code>.</p>
 </div>
 </div>
 </div></div></td>

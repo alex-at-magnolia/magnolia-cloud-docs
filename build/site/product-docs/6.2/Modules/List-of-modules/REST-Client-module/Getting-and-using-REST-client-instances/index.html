@@ -147,6 +147,9 @@
     <a class="nav-link" href="../../../../Releases/Recent-features/">Recent features</a>
   </li>
   <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../../../Releases/Release-notes-for-Magnolia-CMS-6.2.16/"><span class="smalltext">Release notes for Magnolia CMS 6.2.16</span></a>
+  </li>
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../../../../Releases/Release-notes-for-Magnolia-CMS-6.2.15/"><span class="smalltext">Release notes for Magnolia CMS 6.2.15</span></a>
   </li>
   <li class="nav-item" data-depth="2">
@@ -679,7 +682,19 @@
     <a class="nav-link" href="../../../../Developing/SPA-development-and-Magnolia/">SPA development and Magnolia</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../../../../Developing/SPA-development-and-Magnolia/Magnolia-front-end-helpers-for-SPA/">Magnolia front-end helpers for SPA</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../../../Developing/SPA-development-and-Magnolia/Magnolia-front-end-helpers-for-SPA/Magnolia-Angular-Editor/">Magnolia Angular Editor</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../../../Developing/SPA-development-and-Magnolia/Magnolia-front-end-helpers-for-SPA/Magnolia-React-Editor/">Magnolia React Editor</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../../../Developing/SPA-development-and-Magnolia/Magnolia-front-end-helpers-for-SPA/Magnolia-Vue-Editor/">Magnolia Vue Editor</a>
+  </li>
+</ul>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../../../Developing/SPA-development-and-Magnolia/Mapping-between-Magnolia-and-SPA-components/">Mapping between Magnolia and SPA components</a>
@@ -1734,6 +1749,9 @@
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../../../Special-Features/Live-Copy/Live-Copy-module/">Live Copy module</a>
   </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../../../Special-Features/Live-Copy/Live-Copy-usage/">Using Live Copy</a>
+  </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
@@ -2476,7 +2494,7 @@ to a JavaScript variable to process JSON in a JavaScript context.</p>
 </td>
 <td class="content">
 <div class="paragraph">
-<p>During installation of the <code>magnolia-resteasy-client</code> module, <a href="https://nexus.magnolia-cms.com/#nexus-search;classname~RestEasyClientModuleVersionHandler" target="_blank" rel="noopener">RestEasyClientModuleVersionHandler</a> adds <code>restfn</code> to renderer configurations. Make sure that the <code>renderType</code> of your <a href="#Templating Template-definition.adoc" class="xref unresolved">template definition</a> points to a renderer that is configured to use <code>restfn</code>. See <a href="../../../../Templating/Template-scripts/Templating-functions/" class="xref page">Configure the functions in a renderer</a> on how to add templating functions to a renderer.</p>
+<p>During installation of the <code>magnolia-resteasy-client</code> module, <a href="https://nexus.magnolia-cms.com/#nexus-search;classname~RestEasyClientModuleVersionHandler" target="_blank" rel="noopener">RestEasyClientModuleVersionHandler</a> adds <code>restfn</code> to renderer configurations. Make sure that the <code>renderType</code> of your <a href="../../../../Templating/Template-definition/" class="xref page">template definition</a> points to a renderer that is configured to use <code>restfn</code>. See <a href="../../../../Templating/Template-scripts/Templating-functions/" class="xref page">Configure the functions in a renderer</a> on how to add templating functions to a renderer.</p>
 </div>
 </td>
 </tr>
@@ -2499,7 +2517,7 @@ parameter into the constructor and assign it as final instance variable
 (See lines 5, 7, 9.)</p>
 </li>
 <li>
-<p>Obtain <a href="#javadoc.adoc" class="xref unresolved">RestEasyClient</a> object from the RestClientRegistry. Note that <code>#getRestClient</code> requires the configured name of the rest client definition. (See line 17.)</p>
+<p>Obtain <a href="https://nexus.magnolia-cms.com/#nexus-search;classname~RestEasyClient" target="_blank" rel="noopener">RestEasyClient</a> object from the RestClientRegistry. Note that <code>#getRestClient</code> requires the configured name of the rest client definition. (See line 17.)</p>
 </li>
 <li>
 <p>Create an instance of the declared interface <code>IcndbService</code>. (See line 18.)</p>

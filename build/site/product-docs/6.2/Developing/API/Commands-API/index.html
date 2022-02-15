@@ -148,6 +148,9 @@
     <a class="nav-link" href="../../../Releases/Recent-features/">Recent features</a>
   </li>
   <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../../Releases/Release-notes-for-Magnolia-CMS-6.2.16/"><span class="smalltext">Release notes for Magnolia CMS 6.2.16</span></a>
+  </li>
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../../../Releases/Release-notes-for-Magnolia-CMS-6.2.15/"><span class="smalltext">Release notes for Magnolia CMS 6.2.15</span></a>
   </li>
   <li class="nav-item" data-depth="2">
@@ -680,7 +683,19 @@
     <a class="nav-link" href="../../SPA-development-and-Magnolia/">SPA development and Magnolia</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../../SPA-development-and-Magnolia/Magnolia-front-end-helpers-for-SPA/">Magnolia front-end helpers for SPA</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../SPA-development-and-Magnolia/Magnolia-front-end-helpers-for-SPA/Magnolia-Angular-Editor/">Magnolia Angular Editor</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../SPA-development-and-Magnolia/Magnolia-front-end-helpers-for-SPA/Magnolia-React-Editor/">Magnolia React Editor</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../SPA-development-and-Magnolia/Magnolia-front-end-helpers-for-SPA/Magnolia-Vue-Editor/">Magnolia Vue Editor</a>
+  </li>
+</ul>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../SPA-development-and-Magnolia/Mapping-between-Magnolia-and-SPA-components/">Mapping between Magnolia and SPA components</a>
@@ -1735,6 +1750,9 @@
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../../Special-Features/Live-Copy/Live-Copy-module/">Live Copy module</a>
   </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../../Special-Features/Live-Copy/Live-Copy-usage/">Using Live Copy</a>
+  </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
@@ -2414,35 +2432,44 @@
 trigger <a href="../../Commands/" class="xref page">commands</a> defined in
 <a href="../../Commands/#_catalogs" class="xref page">catalogs</a>.</p>
 </div>
-<div class="sidebarblock">
-<div class="content">
 <div class="paragraph">
 <p>Magnolia uses commands to publish and unpublish content, send email,
 flush cache, take backups, import and export data and for many other
 tasks.</p>
 </div>
 <div class="paragraph">
-<p>Commands can perform duties within the system or connect to external
-resources.</p>
+<p>The commands:</p>
 </div>
-<div class="paragraph">
-<p>Commands are typically executed by
-<a href="../../../Support/Magnolia-5-UI-documentation/Dialog-definition-5-UI/Dialog-action-definition-5-UI/" class="xref page">actions</a>
-or scheduled for execution by the
-<a href="../../../Modules/List-of-modules/Scheduler-module/" class="xref page">Scheduler module</a>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Can perform duties within the system or connect to external resources.</p>
+</li>
+<li>
+<p>Are typically executed by <a href="../../../Support/Magnolia-5-UI-documentation/Dialog-definition-5-UI/Dialog-action-definition-5-UI/" class="xref page">actions</a>
+or scheduled for execution by the <a href="../../../Modules/List-of-modules/Scheduler-module/" class="xref page">Scheduler module</a>.</p>
+</li>
+</ul>
 </div>
-</div>
-</div>
-<div class="paragraph">
-<p>The REST resource must be called with HTTP <span class="d-post">POST</span>.</p>
+<div class="admonitionblock caution">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-caution" title="Caution"></i>
+</td>
+<td class="content">
+The REST resource must be called with HTTP <span class="d-post">POST</span>.
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p>You can only call commands via REST which are whitelisted at
-<code>/modules/rest-services/rest-endpoints/commands/enabledCommands</code>. (For
+<code>/modules/rest-services/rest-endpoints/commands/enabledCommands</code>. For
 further details see
-<a href="../../../Modules/List-of-modules/REST-module/#_rest_services_module_configuring_the_commands_endpoint" class="xref page">REST
+<a href="../../../Modules/List-of-modules/REST-module/#_rest_services_module__configuring_the_commands_endpoint" class="xref page">REST
 module configuring the commands endpoint</a> and
-<a href="../../../Modules/List-of-modules/REST-module/REST-security/" class="xref page">REST security</a>.)</p>
+<a href="../../../Modules/List-of-modules/REST-module/REST-security/" class="xref page">REST security</a>.</p>
 </div>
 </div>
 </div>
@@ -2484,44 +2511,45 @@ module configuring the commands endpoint</a> and
 <p><code>commandName</code></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>required</strong></p>
-</div>
-<div class="paragraph">
-<p>The name of the command as defined in the
-<a href="../../Commands/#_command_definition" class="xref page">Command definition</a>.</p>
-</div>
-<div class="paragraph">
-<p>path</p>
-</div>
-<div class="paragraph">
-<p><code>String</code></p>
+<p><strong>required</strong>
+ The name of the command as defined in the <a href="../../Commands/#_command_definition" class="xref page">Command definition</a>.</p>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>catalogName</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>optional</strong>, <em>default catalog name is `default`</em></p>
-</div>
-<div class="paragraph">
-<p>The name of the <a href="../../Commands/#_catalogs" class="xref page">Command catalog</a>.</p>
-</div></div></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><code>path</code></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><code>String</code></p>
 </div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>catalogName</code></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>optional</strong>, <em>default catalog name is `default`</em>
+ The name of the <a href="../../Commands/#_catalogs" class="xref page">Command catalog</a>.</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>path</code></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>String</code></p>
+</div></div></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><code>body</code></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>required</strong></p>
-</div>
-<div class="paragraph">
-<p>Request body in JSON or XML format; it contains the parameters required
+<p><strong>required</strong>
+ Request body in JSON or XML format; it contains the parameters required
 to execute the command.</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>body</code></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>String</code></p>
 </div></div></td>
 </tr>
 </tbody>
@@ -2529,7 +2557,7 @@ to execute the command.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_example"><a class="anchor" href="#_example"></a>Example</h2>
+<h2 id="_examples"><a class="anchor" href="#_examples"></a>Examples</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Here are a couple of examples for publishing content using the commands
@@ -2542,7 +2570,7 @@ endpoint.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">curl http://localhost:8080/magnoliaAuthor/.rest/commands/v2/website/activate \
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">curl http://localhost:8080/magnoliaAuthor/.rest/commands/v2/website/activate \
   -H "Content-Type: application/json" \
   -X POST --user superuser:superuser \
   --data \
@@ -2566,7 +2594,7 @@ XML with the <code>Accept</code> header.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">curl http://localhost:8080/magnoliaAuthor/.rest/commands/v2/website/activate \
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">curl http://localhost:8080/magnoliaAuthor/.rest/commands/v2/website/activate \
   -H "Content-Type: application/json" \
   -X POST --user superuser:superuser \
   --data \
@@ -2576,6 +2604,38 @@ XML with the <code>Accept</code> header.</p>
   "repository": "website",
   "path": "/travel/hello",
   "recursive": false
+}'</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_call_the_markasdeleted_command"><a class="anchor" href="#_call_the_markasdeleted_command"></a>Call the <code>markAsDeleted</code> command</h3>
+<div class="paragraph">
+<p>This example shows how to call the <a href="https://nexus.magnolia-cms.com/#nexus-search;classname~MarkAsDeletedCommandActionDefinition" target="_blank" rel="noopener">MarkAsDeletedCommandActionDefinition</a> command. The following parameters are required for the call context:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The name of a repository.</p>
+</li>
+<li>
+<p>The name of the node to be marked.</p>
+</li>
+<li>
+<p>The UUID of the parent node.</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">curl http://localhost:8080/magnoliaAuthor/.rest/commands/v2/markAsDeleted \
+  -H "Content-Type: application/json" \
+  -X POST --user superuser:superuser \
+  --data \
+'{
+  "repository": "dam",
+  "deleteNode": "google-plus.png",
+  "uuid": "0234aab2-9a0a-456a-8f0b-fe0a6d4d83ec"
 }'</code></pre>
 </div>
 </div>
